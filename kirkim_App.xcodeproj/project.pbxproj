@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE3EA96527BB751800DA36EA /* MyAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3EA96427BB751800DA36EA /* MyAnimation.swift */; };
+		FE3EA96727BB8AC100DA36EA /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3EA96627BB8AC100DA36EA /* MyTextField.swift */; };
 		FE94DD6527B655190017D776 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE94DD6427B655190017D776 /* AppDelegate.swift */; };
 		FE94DD6727B655190017D776 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE94DD6627B655190017D776 /* SceneDelegate.swift */; };
 		FE94DD6927B655190017D776 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE94DD6827B655190017D776 /* ViewController.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE3EA96427BB751800DA36EA /* MyAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAnimation.swift; sourceTree = "<group>"; };
+		FE3EA96627BB8AC100DA36EA /* MyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
 		FE94DD6127B655190017D776 /* kirkim_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kirkim_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE94DD6427B655190017D776 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE94DD6627B655190017D776 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +75,7 @@
 				FE94DD7227B655190017D776 /* LaunchScreen.storyboard */,
 				FE94DD7527B655190017D776 /* Info.plist */,
 				FE94DD6D27B655190017D776 /* kirkim_App.xcdatamodeld */,
+				FE3EA96427BB751800DA36EA /* MyAnimation.swift */,
 			);
 			path = kirkim_App;
 			sourceTree = "<group>";
@@ -80,6 +85,7 @@
 			children = (
 				FEF8848427BA5C730038F138 /* LoginPage.storyboard */,
 				FEF8848627BA5C7E0038F138 /* LoginVC.swift */,
+				FE3EA96627BB8AC100DA36EA /* MyTextField.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -157,7 +163,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE94DD6927B655190017D776 /* ViewController.swift in Sources */,
+				FE3EA96727BB8AC100DA36EA /* MyTextField.swift in Sources */,
 				FEF8848727BA5C7E0038F138 /* LoginVC.swift in Sources */,
+				FE3EA96527BB751800DA36EA /* MyAnimation.swift in Sources */,
 				FE94DD6527B655190017D776 /* AppDelegate.swift in Sources */,
 				FE94DD6F27B655190017D776 /* kirkim_App.xcdatamodeld in Sources */,
 				FE94DD6727B655190017D776 /* SceneDelegate.swift in Sources */,

@@ -8,10 +8,24 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    private var isLogin: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkLogin()
+    }
+    
+    func checkLogin() {
+        if (self.isLogin == false) {
+            let loginVC = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "LoginVC")
+            loginVC.modalPresentationStyle = .fullScreen
+            self.present(loginVC, animated: true, completion: nil)
+        } else {
+            return
+        }
     }
 
 
