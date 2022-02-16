@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum TextFieldType {
+    case normal
+    case password
+}
+
 class MyTextField: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -16,7 +21,7 @@ class MyTextField: UITextField {
         super.init(coder: coder)
     }
     
-    func setUI() {
+    func setUI(type: TextFieldType) {
         self.borderStyle = .none
         let border = CALayer()
         border.frame = CGRect(x: 0, y: self.frame.size.height-1, width: self.frame.width, height: 1)
@@ -24,5 +29,12 @@ class MyTextField: UITextField {
         self.layer.addSublayer(border)
         self.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         self.textColor = UIColor.black
+        
+        switch type {
+        case .normal:
+            break
+        case .password:
+            self.isSecureTextEntry = true
+        }
     }
 }

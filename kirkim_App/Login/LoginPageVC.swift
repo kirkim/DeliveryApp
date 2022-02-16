@@ -7,10 +7,10 @@
 
 import UIKit
 
-class LoginVC:UIViewController {
+class LoginPageVC: UIViewController {
     
-    @IBOutlet weak var textFieldID: MyTextField!
-    @IBOutlet weak var textFieldPW: MyTextField!
+    @IBOutlet weak var idTextField: MyTextField!
+    @IBOutlet weak var passwordTextField: MyTextField!
     var myHttpDelegate: HttpDelegate?
     
     override func viewWillAppear(_ animated: Bool) {
@@ -19,15 +19,14 @@ class LoginVC:UIViewController {
     }
     
     private func initUI() {
-        textFieldID.setUI()
-        textFieldPW.setUI()
-        textFieldPW.isSecureTextEntry = true
+        idTextField.setUI(type: .normal)
+        passwordTextField.setUI(type: .password)
+        passwordTextField.isSecureTextEntry = true
     }
     
     @IBAction func handleLoginButton(_ sender: UIButton) {
-        guard let userID = textFieldID.text,
-              let password = textFieldPW.text
-        else { return }
+        guard let userID = idTextField.text,
+              let password = passwordTextField.text else { return }
         let httpClient = HttpClient()
         let user = User(userID: userID, password: password)
         
@@ -37,7 +36,7 @@ class LoginVC:UIViewController {
             }
             do {
                 let dataModel = try JSONDecoder().decode(UserDataMaster.self, from: data)
-                self.myHttpDelegate?.getUserModelDelegate(user: dataModel)
+                self.myHttpDelegate?.getUserByLogin(user: dataModel)
                 DispatchQueue.main.async {
                     self.dismiss(animated: true, completion: nil)
                 }

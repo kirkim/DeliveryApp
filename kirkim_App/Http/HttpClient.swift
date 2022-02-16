@@ -7,27 +7,41 @@
 
 import Foundation
 
-enum HttpActionType: String {
-    case postLogin = "http://localhost:8080/user/login"
-}
-
 class HttpClient {
+    enum HttpActionType: String {
+        case postLogin
+        case postSignUp
+        
+        var url: String {
+            let BASE_URL: String = "http://localhost:8080"
+            switch self {
+            case .postLogin:
+                return "\(BASE_URL)/user/login"
+            case .postSignUp:
+                return "\(BASE_URL)/user/signup"
+            }
+        }
+    }
+
     private let session = URLSession(configuration: URLSessionConfiguration.default)
     
     public func fetch(httpAction: HttpActionType, body: Any?, completion: @escaping (Any?) -> Void) {
-        guard let url = URL(string: httpAction.rawValue) else { return }
+        guard let url = URL(string: httpAction.url) else { return }
         var urlRequest = URLRequest(url: url)
         switch httpAction {
         case .postLogin:
-            guard let user = body as? User else { return }
-            postLogin(urlRequest: &urlRequest, user: user, completion: completion)
+            guard let user = body as? User,
+                  let uploadData = try? JSONEncoder().encode(user) else { return }
+            postHttp(urlRequest: &urlRequest, uploadData: uploadData, completion: completion)
+        case .postSignUp:
+            guard let userData = body as? UserData,
+                  let uploadData = try? JSONEncoder().encode(userData) else { return }
+            postHttp(urlRequest: &urlRequest, uploadData: uploadData, completion: completion)
         }
-
     }
     
-    private func postLogin(urlRequest: inout URLRequest, user: User, completion: @escaping (Any?) -> Void) {
+    private func postHttp(urlRequest: inout URLRequest, uploadData: Data, completion: @escaping (Any?) -> Void) {
         urlRequest.httpMethod = "POST"
-        guard let uploadData = try? JSONEncoder().encode(user) else { return }
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         let task = URLSession.shared.uploadTask(with: urlRequest, from: uploadData) { (data, response, error) in
             guard let httpResponse = response as? HTTPURLResponse, (200..<300).contains(httpResponse.statusCode) else {
@@ -45,7 +59,7 @@ class HttpClient {
         task.resume()
         completion(nil)
     }
-    
+
     //    private func getData(urlRequest: inout URLRequest, completion: @escaping (Any?) -> Void) {
     //        urlRequest.httpMethod = "GET"
     //        session.dataTask(with: urlRequest) { data, response, error in

@@ -24,7 +24,7 @@ class MainVC: UIViewController {
     
     func checkLogin() {
         if (self.isLogin == false) {
-            let loginVC = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+            let loginVC = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginPageVC
             loginVC.myHttpDelegate = self
             loginVC.modalPresentationStyle = .fullScreen
             self.present(loginVC, animated: true, completion: nil)
@@ -32,14 +32,11 @@ class MainVC: UIViewController {
             return
         }
     }
-    @IBAction func dsfadsfads(_ sender: Any) {
-        print(self.user)
-    }
 }
 
 //MARK: - HttpDelegate
 extension MainVC: HttpDelegate{
-    func getUserModelDelegate(user: UserDataMaster) {
+    func getUserByLogin(user: UserDataMaster) {
         self.user = user
         self.isLogin = true
         DispatchQueue.main.async {

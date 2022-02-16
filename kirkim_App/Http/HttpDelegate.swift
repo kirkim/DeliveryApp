@@ -8,5 +8,5 @@
 import Foundation
 
 protocol HttpDelegate {
-    func getUserModelDelegate(user: UserDataMaster)
+    func getUserByLogin(user: UserDataMaster)
 }
