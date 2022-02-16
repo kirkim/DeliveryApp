@@ -11,6 +11,7 @@ class HttpClient {
     enum HttpActionType: String {
         case postLogin
         case postSignUp
+        case getUsers__Dev
         
         var url: String {
             let BASE_URL: String = "http://localhost:8080"
@@ -19,6 +20,8 @@ class HttpClient {
                 return "\(BASE_URL)/user/login"
             case .postSignUp:
                 return "\(BASE_URL)/user/signup"
+            case .getUsers__Dev:
+                return "\(BASE_URL)/user"
             }
         }
     }
@@ -37,6 +40,8 @@ class HttpClient {
             guard let userData = body as? UserData,
                   let uploadData = try? JSONEncoder().encode(userData) else { return }
             postHttp(urlRequest: &urlRequest, uploadData: uploadData, completion: completion)
+        case .getUsers__Dev:
+            getHttp(urlRequest: &urlRequest, completion: completion)
         }
     }
     
@@ -60,21 +65,21 @@ class HttpClient {
         completion(nil)
     }
 
-    //    private func getData(urlRequest: inout URLRequest, completion: @escaping (Any?) -> Void) {
-    //        urlRequest.httpMethod = "GET"
-    //        session.dataTask(with: urlRequest) { data, response, error in
-    //            guard let httpResponse = response as? HTTPURLResponse, (200..<300).contains(httpResponse.statusCode) else {
-//                    print("error")
-    //                return
-    //            }
-    //            guard let data = data else {
-    //                print(error.debugDescription)
-    //                return
-    //            }
-    //            completion(data)
-    //        }.resume()
-    //        session.finishTasksAndInvalidate()
-    //        completion(nil)
-    //    }
+    private func getHttp(urlRequest: inout URLRequest, completion: @escaping (Any?) -> Void) {
+        urlRequest.httpMethod = "GET"
+        session.dataTask(with: urlRequest) { data, response, error in
+            guard let httpResponse = response as? HTTPURLResponse, (200..<300).contains(httpResponse.statusCode) else {
+                print("error")
+                return
+            }
+            guard let data = data else {
+                print(error.debugDescription)
+                return
+            }
+            completion(data)
+        }.resume()
+        session.finishTasksAndInvalidate()
+        completion(nil)
+    }
 }
 

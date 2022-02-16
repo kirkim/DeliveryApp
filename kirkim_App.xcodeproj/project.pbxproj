@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE2067EF27BCFDC7005EBEB5 /* KeyboardAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2067EE27BCFDC7005EBEB5 /* KeyboardAnimation.swift */; };
 		FE21132A27BCA6AE003293B2 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE21132927BCA6AE003293B2 /* HttpClient.swift */; };
 		FE21132C27BCC0A2003293B2 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE21132B27BCC0A2003293B2 /* UserModel.swift */; };
 		FE21132E27BCCAA6003293B2 /* HttpDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE21132D27BCCAA6003293B2 /* HttpDelegate.swift */; };
 		FE21133127BCD095003293B2 /* SignUpPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE21133027BCD095003293B2 /* SignUpPageVC.swift */; };
-		FE3EA96527BB751800DA36EA /* MyAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3EA96427BB751800DA36EA /* MyAnimation.swift */; };
+		FE21133427BCF441003293B2 /* Player.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE21133327BCF441003293B2 /* Player.storyboard */; };
+		FE3EA96527BB751800DA36EA /* TextAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3EA96427BB751800DA36EA /* TextAnimation.swift */; };
 		FE3EA96727BB8AC100DA36EA /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3EA96627BB8AC100DA36EA /* MyTextField.swift */; };
 		FE94DD6527B655190017D776 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE94DD6427B655190017D776 /* AppDelegate.swift */; };
 		FE94DD6727B655190017D776 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE94DD6627B655190017D776 /* SceneDelegate.swift */; };
@@ -25,11 +27,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE2067EE27BCFDC7005EBEB5 /* KeyboardAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAnimation.swift; sourceTree = "<group>"; };
 		FE21132927BCA6AE003293B2 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		FE21132B27BCC0A2003293B2 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		FE21132D27BCCAA6003293B2 /* HttpDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpDelegate.swift; sourceTree = "<group>"; };
 		FE21133027BCD095003293B2 /* SignUpPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPageVC.swift; sourceTree = "<group>"; };
-		FE3EA96427BB751800DA36EA /* MyAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAnimation.swift; sourceTree = "<group>"; };
+		FE21133327BCF441003293B2 /* Player.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Player.storyboard; sourceTree = "<group>"; };
+		FE3EA96427BB751800DA36EA /* TextAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAnimation.swift; sourceTree = "<group>"; };
 		FE3EA96627BB8AC100DA36EA /* MyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
 		FE94DD6127B655190017D776 /* kirkim_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kirkim_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE94DD6427B655190017D776 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,8 +71,18 @@
 		FE21132F27BCCEEF003293B2 /* PlayerApp */ = {
 			isa = PBXGroup;
 			children = (
+				FE21133327BCF441003293B2 /* Player.storyboard */,
 			);
 			path = PlayerApp;
+			sourceTree = "<group>";
+		};
+		FE21133227BCDD87003293B2 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				FE3EA96427BB751800DA36EA /* TextAnimation.swift */,
+				FE2067EE27BCFDC7005EBEB5 /* KeyboardAnimation.swift */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 		FE94DD5827B655190017D776 = {
@@ -90,6 +104,7 @@
 		FE94DD6327B655190017D776 /* kirkim_App */ = {
 			isa = PBXGroup;
 			children = (
+				FE21133227BCDD87003293B2 /* Animation */,
 				FE21132F27BCCEEF003293B2 /* PlayerApp */,
 				FE21132827BCA630003293B2 /* Http */,
 				FEF8848327BA5C670038F138 /* Login */,
@@ -101,7 +116,6 @@
 				FE94DD7227B655190017D776 /* LaunchScreen.storyboard */,
 				FE94DD7527B655190017D776 /* Info.plist */,
 				FE94DD6D27B655190017D776 /* kirkim_App.xcdatamodeld */,
-				FE3EA96427BB751800DA36EA /* MyAnimation.swift */,
 			);
 			path = kirkim_App;
 			sourceTree = "<group>";
@@ -178,6 +192,7 @@
 			files = (
 				FE94DD7427B655190017D776 /* LaunchScreen.storyboard in Resources */,
 				FEF8848527BA5C730038F138 /* LoginPage.storyboard in Resources */,
+				FE21133427BCF441003293B2 /* Player.storyboard in Resources */,
 				FE94DD7127B655190017D776 /* Assets.xcassets in Resources */,
 				FE94DD6C27B655190017D776 /* Main.storyboard in Resources */,
 			);
@@ -196,7 +211,8 @@
 				FE21133127BCD095003293B2 /* SignUpPageVC.swift in Sources */,
 				FE21132A27BCA6AE003293B2 /* HttpClient.swift in Sources */,
 				FEF8848727BA5C7E0038F138 /* LoginPageVC.swift in Sources */,
-				FE3EA96527BB751800DA36EA /* MyAnimation.swift in Sources */,
+				FE3EA96527BB751800DA36EA /* TextAnimation.swift in Sources */,
+				FE2067EF27BCFDC7005EBEB5 /* KeyboardAnimation.swift in Sources */,
 				FE94DD6527B655190017D776 /* AppDelegate.swift in Sources */,
 				FE94DD6F27B655190017D776 /* kirkim_App.xcdatamodeld in Sources */,
 				FE21132C27BCC0A2003293B2 /* UserModel.swift in Sources */,

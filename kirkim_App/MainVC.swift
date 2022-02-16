@@ -9,8 +9,7 @@ import UIKit
 
 class MainVC: UIViewController {
         
-    private var isLogin: Bool = false
-    private var user: UserDataMaster?
+    private var userModel = UserModel()
     @IBOutlet weak var greetingMessage: UILabel!
     
     override func viewDidLoad() {
@@ -23,7 +22,7 @@ class MainVC: UIViewController {
     }
     
     func checkLogin() {
-        if (self.isLogin == false) {
+        if (self.userModel.isLogin == false) {
             let loginVC = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginPageVC
             loginVC.myHttpDelegate = self
             loginVC.modalPresentationStyle = .fullScreen
@@ -32,13 +31,19 @@ class MainVC: UIViewController {
             return
         }
     }
+    @IBAction func handleLogoutButton(_ sender: UIButton) {
+        self.userModel.logOut()
+        let loginVC = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginPageVC
+        loginVC.myHttpDelegate = self
+        loginVC.modalPresentationStyle = .fullScreen
+        self.present(loginVC, animated: true, completion: nil)
+    }
 }
 
 //MARK: - HttpDelegate
 extension MainVC: HttpDelegate{
     func getUserByLogin(user: UserDataMaster) {
-        self.user = user
-        self.isLogin = true
+        self.userModel.setUser(user: user)
         DispatchQueue.main.async {
             self.greetingMessage.text = "\(user.data.name)님 반갑습니다!"
         }

@@ -30,3 +30,8 @@ export async function postSignUp(req: Request, res: Response) {
   await userDB.create(newUser);
   return res.sendStatus(200);
 }
+
+export async function getAllUser(_req: Request, res: Response) {
+  let datas = await userDB.getAllUser();
+  return res.status(200).send(datas);
+}

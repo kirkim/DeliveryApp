@@ -18,6 +18,13 @@ struct UserData: Codable {
     var name: String
 }
 
+struct OriginalUserData: Codable {
+    var userID: String
+    var password: String
+    var confirmPassword: String
+    var name: String
+}
+
 struct UserDataMaster: Codable {
     var data: UserData
     var id: String
@@ -26,6 +33,10 @@ struct UserDataMaster: Codable {
 final class UserModel {
     
     private let manager = UserManager.shared
+    
+    var isLogin: Bool {
+        return manager.isLogin
+    }
     
     var user: UserDataMaster? {
         return manager.user
@@ -42,17 +53,30 @@ final class UserModel {
     func isValidPassword(pwd: String) -> Bool {
         return manager.isValidPassword(pwd: pwd)
     }
+    
+    func logOut() {
+        manager.logOut()
+    }
 }
 
 class UserManager {
     static let shared = UserManager()
     
+    enum ValidatorResult {
+        case success
+        case wrongID
+        case wrongPW
+        case wrongConfimPW
+    }
+    
     private init() { }
     
     var user: UserDataMaster?
+    var isLogin: Bool = false
     
     func setUser(user: UserDataMaster) {
         self.user = user
+        self.isLogin = true
     }
     
     func isValidUserID(id: String) -> Bool {
@@ -67,5 +91,22 @@ class UserManager {
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
         return passwordTest.evaluate(with: pwd)
     }
-
+    
+    func validator(originalUserData: OriginalUserData) -> ValidatorResult {
+        if(self.isValidUserID(id: originalUserData.userID) == false) {
+            return ValidatorResult.wrongID
+        }
+        if(self.isValidPassword(pwd: originalUserData.password) == false) {
+            return ValidatorResult.wrongPW
+        }
+        if(originalUserData.password != originalUserData.confirmPassword) {
+            return ValidatorResult.wrongConfimPW
+        }
+        return ValidatorResult.success
+    }
+    
+    func logOut() {
+        self.user = nil
+        self.isLogin = false
+    }
 }

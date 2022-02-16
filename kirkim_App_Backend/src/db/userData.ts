@@ -50,3 +50,7 @@ export async function findByUserID(userID: string): Promise<UserData | undefined
 export async function findByID(id: string): Promise<UserData | undefined> {
   return userDatas.find((user) => user.id === id);
 }
+
+export async function getAllUser(): Promise<UserDatas> {
+  return userDatas;
+}

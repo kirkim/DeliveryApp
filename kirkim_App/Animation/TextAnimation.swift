@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyAnimation {
+class TextAnimation {
     static private func shakeTextFieldOneTime(textField: UITextField, withDuration duration: CGFloat, withWidth shakeWidth: CGFloat, completion: ((Bool)->Void)?) {
         UIView.animate(withDuration: duration, animations: {
             textField.frame.origin.x -= shakeWidth
