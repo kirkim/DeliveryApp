@@ -1,0 +1,44 @@
+:root {
+  --bg-main-color: #00000080;
+  --accent-color: #7ddf21;
+}
+
+li {
+  list-style: none;
+  padding-left: 0;
+}
+
+button {
+  background: transparent;
+  outline: 0;
+  border: 0;
+}
+
+.nav__title {
+  text-align: center;
+  margin: 20px;
+  color: var(--accent-color);
+}
+
+.control-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav__board {
+  text-align: center;
+  text-transform: uppercase;
+  user-select: none;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.footer {
+  text-align: center;
+}
+
+.document {
+  height: 500px;
+  background-color: gray;
+}

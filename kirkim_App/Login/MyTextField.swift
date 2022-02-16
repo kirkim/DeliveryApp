@@ -22,6 +22,7 @@ class MyTextField: UITextField {
         border.frame = CGRect(x: 0, y: self.frame.size.height-1, width: self.frame.width, height: 1)
         border.backgroundColor = UIColor.brown.cgColor
         self.layer.addSublayer(border)
+        self.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         self.textColor = UIColor.black
     }
 }
