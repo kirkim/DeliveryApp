@@ -12,7 +12,7 @@ enum TextFieldType {
     case password
 }
 
-class MyTextField: UITextField {
+class SimpleTextField: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -24,7 +24,7 @@ class MyTextField: UITextField {
     func setUI(type: TextFieldType) {
         self.borderStyle = .none
         let border = CALayer()
-        border.frame = CGRect(x: 0, y: self.frame.size.height-1, width: self.frame.width, height: 1)
+        border.frame = CGRect(x: 0, y: self.frame.size.height-1, width: UIScreen.main.bounds.width - 60, height: 1)
         border.backgroundColor = UIColor.brown.cgColor
         self.layer.addSublayer(border)
         self.font = UIFont.systemFont(ofSize: 20, weight: .medium)

@@ -9,19 +9,20 @@ import UIKit
 
 class LoginPageVC: UIViewController {
     
-    @IBOutlet weak var idTextField: MyTextField!
-    @IBOutlet weak var passwordTextField: MyTextField!
+    @IBOutlet weak var idTextField: SimpleTextField!
+    @IBOutlet weak var passwordTextField: SimpleTextField!
     var myHttpDelegate: HttpDelegate?
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        initUI()
         KeyboardAnimation.dismissKeyboardBytouchBackground(view: self.view)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        initUI()
-    }
+
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        initUI()
+//    }
     
     private func initUI() {
         idTextField.setUI(type: .normal)
@@ -65,7 +66,6 @@ class LoginPageVC: UIViewController {
             } catch {
                 print(error)
             }
-            
         })
     }
 }
@@ -80,3 +80,5 @@ extension LoginPageVC: UIGestureRecognizerDelegate {
         return true
     }
 }
+
+

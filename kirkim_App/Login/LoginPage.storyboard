@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,30 +13,30 @@
             <objects>
                 <viewController storyboardIdentifier="LoginVC" id="Y6W-OH-hqX" customClass="LoginPageVC" customModule="kirkim_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3N-fM-CWa">
-                                <rect key="frame" x="168" y="94" width="78" height="36"/>
+                                <rect key="frame" x="168" y="50" width="78" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="spo-0C-MYS">
-                                <rect key="frame" x="0.0" y="210" width="414" height="189"/>
+                                <rect key="frame" x="0.0" y="166" width="414" height="189"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lQS-gi-lTB" customClass="MyTextField" customModule="kirkim_App" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lQS-gi-lTB" customClass="SimpleTextField" customModule="kirkim_App" customModuleProvider="target">
                                         <rect key="frame" x="30" y="20" width="354" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PW" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vGL-Hd-vsa" customClass="MyTextField" customModule="kirkim_App" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PW" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vGL-Hd-vsa" customClass="SimpleTextField" customModule="kirkim_App" customModuleProvider="target">
                                         <rect key="frame" x="30" y="84" width="354" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfk-sA-Eqv">
-                                        <rect key="frame" x="176.5" y="138" width="61" height="31"/>
+                                        <rect key="frame" x="176.66666666666666" y="138" width="61" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="로그인"/>
                                         <connections>
@@ -58,12 +58,12 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rv9-bT-jnE">
-                                <rect key="frame" x="124.5" y="700" width="165" height="31"/>
+                                <rect key="frame" x="124.66666666666669" y="574" width="165" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="다른방법으로 로그인 하기"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmw-LF-GkQ">
-                                <rect key="frame" x="162.5" y="781" width="89" height="31"/>
+                                <rect key="frame" x="162.66666666666666" y="655" width="89" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="회원가입 →"/>
                                 <connections>
@@ -71,7 +71,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g96-7r-lrL">
-                                <rect key="frame" x="107" y="594" width="200" height="31"/>
+                                <rect key="frame" x="107" y="493" width="200" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="모드 유저데이터 보기(개발모드)"/>
                                 <connections>
@@ -84,8 +84,9 @@
                         <constraints>
                             <constraint firstItem="spo-0C-MYS" firstAttribute="top" secondItem="Y3N-fM-CWa" secondAttribute="bottom" constant="80" id="Apn-k6-N0R"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="spo-0C-MYS" secondAttribute="trailing" id="DED-ta-cDU"/>
+                            <constraint firstItem="g96-7r-lrL" firstAttribute="top" relation="greaterThanOrEqual" secondItem="spo-0C-MYS" secondAttribute="bottom" constant="20" id="GIv-jd-CUb"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="mmw-LF-GkQ" secondAttribute="bottom" constant="50" id="NSs-o5-pI8"/>
-                            <constraint firstItem="Rv9-bT-jnE" firstAttribute="top" secondItem="g96-7r-lrL" secondAttribute="bottom" constant="75" id="Qqn-gD-gln"/>
+                            <constraint firstItem="Rv9-bT-jnE" firstAttribute="top" secondItem="g96-7r-lrL" secondAttribute="bottom" constant="50" id="Qqn-gD-gln"/>
                             <constraint firstItem="Rv9-bT-jnE" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ZNg-bn-q3H"/>
                             <constraint firstItem="mmw-LF-GkQ" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="b2h-4a-Jjp"/>
                             <constraint firstItem="Y3N-fM-CWa" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="gSf-Ks-wJd"/>
@@ -109,34 +110,34 @@
             <objects>
                 <viewController id="vFn-4k-y9M" customClass="SignUpPageVC" customModule="kirkim_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Adb-Uw-V5j">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="taO-Zw-3w6">
-                                <rect key="frame" x="0.0" y="166" width="414" height="426"/>
+                                <rect key="frame" x="0.0" y="164" width="414" height="452"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pTN-29-A9P" customClass="MyTextField" customModule="kirkim_App" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="40" width="374" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pTN-29-A9P" customClass="SimpleTextField" customModule="kirkim_App" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="76" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yHX-yM-YmY" customClass="MyTextField" customModule="kirkim_App" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="114" width="374" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yHX-yM-YmY" customClass="SimpleTextField" customModule="kirkim_App" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="150" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호 확인" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gRt-LU-qBm" customClass="MyTextField" customModule="kirkim_App" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="188" width="374" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호 확인" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gRt-LU-qBm" customClass="SimpleTextField" customModule="kirkim_App" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="224" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mWd-HA-LEN" customClass="MyTextField" customModule="kirkim_App" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="262" width="374" height="34"/>
+                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mWd-HA-LEN" customClass="SimpleTextField" customModule="kirkim_App" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="298" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j94-fV-K9C">
-                                        <rect key="frame" x="160" y="336" width="94.5" height="50"/>
+                                        <rect key="frame" x="159.66666666666666" y="362" width="94.666666666666657" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="JOIN">
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
@@ -145,46 +146,50 @@
                                             <action selector="handleJoinButton:" destination="vFn-4k-y9M" eventType="touchUpInside" id="auV-pr-QkQ"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ts-5V-fr8">
+                                        <rect key="frame" x="20" y="20" width="374" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="j94-fV-K9C" firstAttribute="centerX" secondItem="taO-Zw-3w6" secondAttribute="centerX" id="2KV-ZL-4d5"/>
                                     <constraint firstAttribute="trailing" secondItem="yHX-yM-YmY" secondAttribute="trailing" constant="20" id="E6I-Ju-W4g"/>
+                                    <constraint firstItem="2ts-5V-fr8" firstAttribute="leading" secondItem="taO-Zw-3w6" secondAttribute="leading" constant="20" id="Ebe-M8-EHm"/>
                                     <constraint firstItem="gRt-LU-qBm" firstAttribute="leading" secondItem="taO-Zw-3w6" secondAttribute="leading" constant="20" id="GMP-41-v4E"/>
                                     <constraint firstAttribute="trailing" secondItem="mWd-HA-LEN" secondAttribute="trailing" constant="20" id="H0N-gd-b60"/>
+                                    <constraint firstItem="2ts-5V-fr8" firstAttribute="top" secondItem="taO-Zw-3w6" secondAttribute="top" constant="20" id="ITf-IZ-G5y"/>
                                     <constraint firstItem="mWd-HA-LEN" firstAttribute="leading" secondItem="taO-Zw-3w6" secondAttribute="leading" constant="20" id="SsA-hi-N9v"/>
                                     <constraint firstItem="yHX-yM-YmY" firstAttribute="leading" secondItem="taO-Zw-3w6" secondAttribute="leading" constant="20" id="T7I-66-ymu"/>
                                     <constraint firstAttribute="bottom" secondItem="j94-fV-K9C" secondAttribute="bottom" constant="40" id="YTH-eK-C6k"/>
-                                    <constraint firstItem="j94-fV-K9C" firstAttribute="top" secondItem="mWd-HA-LEN" secondAttribute="bottom" constant="40" id="arF-N0-2T7"/>
+                                    <constraint firstItem="j94-fV-K9C" firstAttribute="top" secondItem="mWd-HA-LEN" secondAttribute="bottom" constant="30" id="arF-N0-2T7"/>
                                     <constraint firstItem="yHX-yM-YmY" firstAttribute="top" secondItem="pTN-29-A9P" secondAttribute="bottom" constant="40" id="atg-Ek-Wm3"/>
+                                    <constraint firstAttribute="trailing" secondItem="2ts-5V-fr8" secondAttribute="trailing" constant="20" id="ckl-Xd-HT9"/>
                                     <constraint firstAttribute="trailing" secondItem="pTN-29-A9P" secondAttribute="trailing" constant="20" id="ez1-oP-MMG"/>
                                     <constraint firstItem="mWd-HA-LEN" firstAttribute="top" secondItem="gRt-LU-qBm" secondAttribute="bottom" constant="40" id="pWH-Ek-exn"/>
                                     <constraint firstItem="gRt-LU-qBm" firstAttribute="top" secondItem="yHX-yM-YmY" secondAttribute="bottom" constant="40" id="piv-pH-9cg"/>
                                     <constraint firstAttribute="trailing" secondItem="gRt-LU-qBm" secondAttribute="trailing" constant="20" id="r4X-V6-tMF"/>
-                                    <constraint firstItem="pTN-29-A9P" firstAttribute="top" secondItem="taO-Zw-3w6" secondAttribute="top" constant="40" id="u5G-bD-LEo"/>
+                                    <constraint firstItem="pTN-29-A9P" firstAttribute="top" secondItem="2ts-5V-fr8" secondAttribute="bottom" constant="20" id="wGt-ed-PdN"/>
                                     <constraint firstItem="pTN-29-A9P" firstAttribute="leading" secondItem="taO-Zw-3w6" secondAttribute="leading" constant="20" id="woH-6h-jUa"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UmY-XG-GZA">
-                                <rect key="frame" x="155" y="50" width="104" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Q7Z-oc-iCf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="UmY-XG-GZA" firstAttribute="centerX" secondItem="Adb-Uw-V5j" secondAttribute="centerX" id="Tqz-h6-SgR"/>
-                            <constraint firstItem="taO-Zw-3w6" firstAttribute="top" secondItem="UmY-XG-GZA" secondAttribute="bottom" constant="80" id="U8l-Dq-R8F"/>
-                            <constraint firstItem="UmY-XG-GZA" firstAttribute="top" secondItem="Q7Z-oc-iCf" secondAttribute="top" constant="50" id="YY2-MM-n8U"/>
+                            <constraint firstItem="Q7Z-oc-iCf" firstAttribute="bottom" secondItem="taO-Zw-3w6" secondAttribute="bottom" priority="250" constant="100" id="2sG-GL-OPD"/>
+                            <constraint firstItem="taO-Zw-3w6" firstAttribute="top" secondItem="Q7Z-oc-iCf" secondAttribute="top" priority="249" constant="50" id="5na-GL-fKp"/>
                             <constraint firstItem="Q7Z-oc-iCf" firstAttribute="trailing" secondItem="taO-Zw-3w6" secondAttribute="trailing" id="dgL-CF-NuR"/>
                             <constraint firstItem="taO-Zw-3w6" firstAttribute="leading" secondItem="Q7Z-oc-iCf" secondAttribute="leading" id="qdQ-IR-Kja"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8KV-Vd-ve5"/>
                     <connections>
+                        <outlet property="bottomConstraint" destination="2sG-GL-OPD" id="BdC-EY-pcO"/>
                         <outlet property="confirmPasswordTextField" destination="gRt-LU-qBm" id="gno-iS-CVx"/>
+                        <outlet property="contentView" destination="taO-Zw-3w6" id="cOc-c9-7mW"/>
                         <outlet property="idTextField" destination="pTN-29-A9P" id="ZJ2-VM-gQA"/>
                         <outlet property="nameTextField" destination="mWd-HA-LEN" id="Djy-7c-lKd"/>
                         <outlet property="passwordTextField" destination="yHX-yM-YmY" id="ylg-5S-eCu"/>
