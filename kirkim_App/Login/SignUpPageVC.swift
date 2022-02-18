@@ -67,6 +67,7 @@ class SignUpPageVC: UIViewController {
         })
     }
     
+    // TODO: MVVM패턴 적용을 위해 뷰모델에서 처리하도록 만들자 [before]
     // 새로운 유저아이디를 생성하기 전에 유효한 값인지 체크하는 메서드
     private func checkUserData(_ userID: String, _ password: String, _ confirmPassword: String, _ name: String) -> UserManager.ValidatorResult {
         let originalUserData = OriginalUserData(userID: userID, password: password, confirmPassword: confirmPassword, name: name)
