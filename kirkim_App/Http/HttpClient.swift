@@ -7,6 +7,7 @@
 
 import Foundation
 
+// TODO: fetch의 Data 타입을 뷰모델에서 처리하도록 바꾸자
 class HttpClient {
     enum HttpActionType: String {
         case postLogin
@@ -33,12 +34,18 @@ class HttpClient {
         var urlRequest = URLRequest(url: url)
         switch httpAction {
         case .postLogin:
-            guard let user = body as? User,
-                  let uploadData = try? JSONEncoder().encode(user) else { return }
+            guard let user = body as? LoginUser,
+                  let uploadData = try? JSONEncoder().encode(user) else {
+                      print("HttpClient - fetch postLogin error!")
+                      return
+                  }
             postHttp(urlRequest: &urlRequest, uploadData: uploadData, completion: completion)
         case .postSignUp:
-            guard let userData = body as? UserData,
-                  let uploadData = try? JSONEncoder().encode(userData) else { return }
+            guard let userData = body as? SignupUser,
+                  let uploadData = try? JSONEncoder().encode(userData) else {
+                      print("HttpClient - fetch postSignup error!")
+                      return
+                  }
             postHttp(urlRequest: &urlRequest, uploadData: uploadData, completion: completion)
         case .getUsers__Dev:
             getHttp(urlRequest: &urlRequest, completion: completion)

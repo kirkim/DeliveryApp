@@ -16,6 +16,7 @@ class SignUpPageVC: UIViewController {
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     private var constant: CGFloat = 0
     private var activeTextfieldY: CGFloat = 0
+    private let signupUserModel = SignupUserModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,46 +56,32 @@ class SignUpPageVC: UIViewController {
               let password = passwordTextField.text,
               let confirmPassword = confirmPasswordTextField.text,
               let name = nameTextField.text else { return }
-        let httpClient = HttpClient()
-    
-        if (checkUserData(userID, password, confirmPassword, name) != .success) { return }
         
-        let userData = UserData(userID: userID, password: password, name: name)
-        httpClient.fetch(httpAction: .postSignUp, body: userData, completion: { _ in
-            DispatchQueue.main.async {
-                self.dismiss(animated: true, completion: nil)
+        let userData = SignupUser(userID: userID, password: password, confirmPassword: confirmPassword, name: name)
+        
+        signupUserModel.signup(signupData: userData, completion: { validatorResult in
+            if (validatorResult != .success ) {
+                switch validatorResult {
+                case .wrongID:
+                    TextAnimation.shakeTextFiled(textField: self.idTextField, count: 2, withDuration: 0.1, withWidth: 10)
+                case .wrongPW:
+                    TextAnimation.shakeTextFiled(textField: self.passwordTextField, count: 2, withDuration: 0.1, withWidth: 10)
+                case .wrongConfimPW:
+                    TextAnimation.shakeTextFiled(textField: self.passwordTextField, count: 2, withDuration: 0.1, withWidth: 10)
+                    TextAnimation.shakeTextFiled(textField: self.confirmPasswordTextField, count: 2, withDuration: 0.1, withWidth: 10)
+                default:
+                    break
+                }
+                let alert = UIAlertController(title: nil, message: validatorResult.message, preferredStyle: .alert)
+                let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
+                alert.addAction(ok)
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true, completion: nil)
+                }
             }
         })
-    }
-    
-    // TODO: MVVM패턴 적용을 위해 뷰모델에서 처리하도록 만들자 [before]
-    // 새로운 유저아이디를 생성하기 전에 유효한 값인지 체크하는 메서드
-    private func checkUserData(_ userID: String, _ password: String, _ confirmPassword: String, _ name: String) -> UserManager.ValidatorResult {
-        let originalUserData = OriginalUserData(userID: userID, password: password, confirmPassword: confirmPassword, name: name)
-        let validatorResult = UserManager.shared.validator(originalUserData: originalUserData)
-        var message: String = ""
-        
-        if (validatorResult != .success ) {
-            switch validatorResult {
-            case .wrongID:
-                TextAnimation.shakeTextFiled(textField: self.idTextField, count: 2, withDuration: 0.1, withWidth: 10)
-                message = "유효한 아이디를 입력해주세요"
-            case .wrongPW:
-                TextAnimation.shakeTextFiled(textField: self.passwordTextField, count: 2, withDuration: 0.1, withWidth: 10)
-                message = "유효한 비밀번호를 입력해주세요"
-            case .wrongConfimPW:
-                TextAnimation.shakeTextFiled(textField: self.passwordTextField, count: 2, withDuration: 0.1, withWidth: 10)
-                TextAnimation.shakeTextFiled(textField: self.confirmPasswordTextField, count: 2, withDuration: 0.1, withWidth: 10)
-                message = "동일한 비밀번호를 입력해주세요"
-            default:
-                message = ""
-            }
-            let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-            let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
-            alert.addAction(ok)
-            self.present(alert, animated: true, completion: nil)
-        }
-        return validatorResult
     }
 }
 

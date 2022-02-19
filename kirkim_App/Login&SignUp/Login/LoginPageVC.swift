@@ -11,7 +11,7 @@ class LoginPageVC: UIViewController {
     
     @IBOutlet weak var idTextField: SimpleTextField!
     @IBOutlet weak var passwordTextField: SimpleTextField!
-    var myHttpDelegate: HttpDelegate?
+    private let loginUserModel = LoginUserModel()
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,22 +34,16 @@ class LoginPageVC: UIViewController {
     @IBAction func handleLoginButton(_ sender: UIButton) {
         guard let userID = idTextField.text,
               let password = passwordTextField.text else { return }
-        let httpClient = HttpClient()
-        let user = User(userID: userID, password: password)
-        
-        httpClient.fetch(httpAction: .postLogin, body: user, completion: { data in
-            guard let data = data as? Data else {
-                return
-            }
-            do {
-                let dataModel = try JSONDecoder().decode(UserDataMaster.self, from: data)
-                self.myHttpDelegate?.getUserByLogin(user: dataModel)
-                DispatchQueue.main.async {
-                    self.dismiss(animated: true, completion: nil)
+        loginUserModel.logIn(userID: userID, password: password, completion: { loginStatus in
+            DispatchQueue.main.async {
+                if (loginStatus == .success) {
+                        self.dismiss(animated: true, completion: nil)
+                } else {
+                    let alert = UIAlertController(title: nil, message: "아이디 또는 비밀번호를 확인하세요.", preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
+                    alert.addAction(ok)
+                    self.present(alert, animated: true, completion: nil)
                 }
-                print(dataModel)
-            } catch {
-                print(error)
             }
         })
     }
@@ -58,10 +52,9 @@ class LoginPageVC: UIViewController {
         print("seeAllUsers__Dev called! ------")
         let httpClient = HttpClient()
         httpClient.fetch(httpAction: .getUsers__Dev, body: nil, completion: { data in
-            print(data)
             guard let data = data as? Data else { return }
             do {
-                let dataModel = try JSONDecoder().decode([UserDataMaster].self, from: data)
+                let dataModel = try JSONDecoder().decode([User].self, from: data)
                 print(dataModel)
             } catch {
                 print(error)
