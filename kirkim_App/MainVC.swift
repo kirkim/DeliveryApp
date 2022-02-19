@@ -21,6 +21,13 @@ class MainVC: UIViewController {
         checkLogin()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if (userModel.isLogin == true) {
+            self.greetingMessage.text = "\(userModel.user!.data.name)님 반갑습니다!"
+        }
+    }
+    
     func checkLogin() {
         if (self.userModel.isLogin == false) {
             let loginVC = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginPageVC
@@ -35,14 +42,5 @@ class MainVC: UIViewController {
         let loginVC = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginPageVC
         loginVC.modalPresentationStyle = .fullScreen
         self.present(loginVC, animated: true, completion: nil)
-    }
-}
-
-//MARK: - HttpDelegate
-extension MainVC {
-    func getUserByLogin(user: User) {
-        DispatchQueue.main.async {
-            self.greetingMessage.text = "\(user.data.name)님 반갑습니다!"
-        }
     }
 }

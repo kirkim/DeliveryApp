@@ -15,6 +15,7 @@
 		FE3EA96527BB751800DA36EA /* TextAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3EA96427BB751800DA36EA /* TextAnimation.swift */; };
 		FE3EA96727BB8AC100DA36EA /* SimpleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3EA96627BB8AC100DA36EA /* SimpleTextField.swift */; };
 		FE47CACC27C0C5570077806D /* SignupUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE47CACB27C0C5570077806D /* SignupUserModel.swift */; };
+		FE47CAD027C114210077806D /* UserHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE47CACF27C114210077806D /* UserHttpClient.swift */; };
 		FE94DD6527B655190017D776 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE94DD6427B655190017D776 /* AppDelegate.swift */; };
 		FE94DD6727B655190017D776 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE94DD6627B655190017D776 /* SceneDelegate.swift */; };
 		FE94DD6927B655190017D776 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE94DD6827B655190017D776 /* MainVC.swift */; };
@@ -35,6 +36,7 @@
 		FE3EA96427BB751800DA36EA /* TextAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAnimation.swift; sourceTree = "<group>"; };
 		FE3EA96627BB8AC100DA36EA /* SimpleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextField.swift; sourceTree = "<group>"; };
 		FE47CACB27C0C5570077806D /* SignupUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupUserModel.swift; sourceTree = "<group>"; };
+		FE47CACF27C114210077806D /* UserHttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHttpClient.swift; sourceTree = "<group>"; };
 		FE94DD6127B655190017D776 /* kirkim_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kirkim_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE94DD6427B655190017D776 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE94DD6627B655190017D776 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				FE21132927BCA6AE003293B2 /* HttpClient.swift */,
+				FE47CACF27C114210077806D /* UserHttpClient.swift */,
 			);
 			path = Http;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				FE94DD6927B655190017D776 /* MainVC.swift in Sources */,
 				FE3EA96727BB8AC100DA36EA /* SimpleTextField.swift in Sources */,
 				FE21133127BCD095003293B2 /* SignUpPageVC.swift in Sources */,
+				FE47CAD027C114210077806D /* UserHttpClient.swift in Sources */,
 				FE21132A27BCA6AE003293B2 /* HttpClient.swift in Sources */,
 				FEF8848727BA5C7E0038F138 /* LoginPageVC.swift in Sources */,
 				FE3EA96527BB751800DA36EA /* TextAnimation.swift in Sources */,

@@ -8,8 +8,13 @@
 import Foundation
 
 struct User: Codable {
-    var data: SignupUser
+    var data: UserData
     var id: String
+}
+struct UserData: Codable {
+    var userID: String
+    var password: String
+    var name: String
 }
 
 struct SignupUser: Codable {
@@ -40,7 +45,7 @@ class SignupUserModel {
 class SignupUserManager {
     static let shared = SignupUserManager()
     private init() { }
-    private let httpClient = HttpClient()
+    private let httpClient = UserHttpClient()
     
     
     enum ValidatorResult {
@@ -48,16 +53,19 @@ class SignupUserManager {
         case wrongID
         case wrongPW
         case wrongConfimPW
+        case wrongName
         var message: String {
             switch self {
             case .success:
                 return ""
             case .wrongID:
-                return "유효한 아이디를 입력해주세요"
+                return "유효한 아이디를 입력해 주세요!"
             case .wrongPW:
-                return "유효한 비밀번호를 입력해주세요"
+                return "유효한 비밀번호를 입력해 주세요!"
             case .wrongConfimPW:
-                return "동일한 비밀번호를 입력해주세요"
+                return "동일한 비밀번호를 입력해 주세요!"
+            case .wrongName:
+                return "이름을 입렵해 주세요!"
             }
         }
     }
@@ -84,6 +92,9 @@ class SignupUserManager {
         if(checkData.password != checkData.confirmPassword) {
             return ValidatorResult.wrongConfimPW
         }
+        if(self.isValidName(name: checkData.name) == false) {
+            return ValidatorResult.wrongName
+        }
         return ValidatorResult.success
     }
     
@@ -98,5 +109,11 @@ class SignupUserManager {
         let passwordRegEx = "^[a-zA-Z0-9]{8,}$"
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
         return passwordTest.evaluate(with: pwd)
+    }
+    
+    func isValidName(name: String) -> Bool {
+        let nameRegEx = "[A-Z0-9a-z._%+-]{1,}"
+        let nameTest = NSPredicate(format: "SELF MATCHES %@", nameRegEx)
+        return nameTest.evaluate(with: name)
     }
 }

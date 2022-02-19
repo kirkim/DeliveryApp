@@ -69,6 +69,8 @@ class SignUpPageVC: UIViewController {
                 case .wrongConfimPW:
                     TextAnimation.shakeTextFiled(textField: self.passwordTextField, count: 2, withDuration: 0.1, withWidth: 10)
                     TextAnimation.shakeTextFiled(textField: self.confirmPasswordTextField, count: 2, withDuration: 0.1, withWidth: 10)
+                case .wrongName:
+                    TextAnimation.shakeTextFiled(textField: self.nameTextField, count: 2, withDuration: 0.1, withWidth: 10)
                 default:
                     break
                 }

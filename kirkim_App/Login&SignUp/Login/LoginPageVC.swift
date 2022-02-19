@@ -19,11 +19,6 @@ class LoginPageVC: UIViewController {
         KeyboardAnimation.dismissKeyboardBytouchBackground(view: self.view)
     }
 
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        initUI()
-//    }
-    
     private func initUI() {
         idTextField.setUI(type: .normal)
         passwordTextField.setUI(type: .password)
@@ -36,9 +31,10 @@ class LoginPageVC: UIViewController {
               let password = passwordTextField.text else { return }
         loginUserModel.logIn(userID: userID, password: password, completion: { loginStatus in
             DispatchQueue.main.async {
-                if (loginStatus == .success) {
-                        self.dismiss(animated: true, completion: nil)
-                } else {
+                switch loginStatus {
+                case .success:
+                    self.dismiss(animated: true, completion: nil)
+                case .fail:
                     let alert = UIAlertController(title: nil, message: "아이디 또는 비밀번호를 확인하세요.", preferredStyle: .alert)
                     let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
                     alert.addAction(ok)
@@ -50,7 +46,7 @@ class LoginPageVC: UIViewController {
     
     @IBAction func seeAllUsers__Dev(_ sender: UIButton) {
         print("seeAllUsers__Dev called! ------")
-        let httpClient = HttpClient()
+        let httpClient = UserHttpClient()
         httpClient.fetch(httpAction: .getUsers__Dev, body: nil, completion: { data in
             guard let data = data as? Data else { return }
             do {
@@ -62,16 +58,3 @@ class LoginPageVC: UIViewController {
         })
     }
 }
-
-//MARK: -
-extension LoginPageVC: UIGestureRecognizerDelegate {
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        print("화면이 터치 됐다")
-        UIView.transition(with: self.view, duration: 1, options: .autoreverse, animations: {
-            self.view.endEditing(true)
-        }, completion: nil)
-        return true
-    }
-}
-
-

@@ -24,7 +24,7 @@ final class LoginUserModel {
         return manager.isLogin
     }
     
-    var user: LoginUser? {
+    var user: User? {
         return manager.user
     }
     
@@ -40,26 +40,27 @@ final class LoginUserModel {
 class LoginUserManager {
     static let shared = LoginUserManager()
     private init() { }
-    let httpClient = HttpClient()
-    var user: LoginUser?
+    let httpClient = UserHttpClient()
+    var user: User?
     var isLogin: Bool = false
     
-    private func setUser(user: LoginUser) {
+    private func setUser(user: User) {
         self.user = user
         self.isLogin = true
     }
     
     func logIn(userID: String, password: String, completion: @escaping (LoginStatus) -> Void) {
-        httpClient.fetch(httpAction: .postLogin, body: LoginUser(userID: userID, password: password), completion: { data in
+        print("LoginUserMAnager logIn called")
+        httpClient.fetch(httpAction: .postLogin, body: LoginUser(userID: userID, password: password), completion: { [weak self] data in
             guard let data = data as? Data else {
+                print("LoginUserModel- logIn() fail data parsing")
                 completion(.fail)
                 return
             }
             do {
-                let dataModel = try JSONDecoder().decode(LoginUser.self, from: data)
-                self.setUser(user: dataModel)
+                let dataModel = try JSONDecoder().decode(User.self, from: data)
+                self?.setUser(user: dataModel)
                 completion(.success)
-                print(dataModel)
             } catch {
                 completion(.fail)
                 print(error)
