@@ -15,6 +15,14 @@ struct LoginUser: Codable {
 enum LoginStatus {
     case success
     case fail
+    var message: String {
+        switch self {
+        case .success:
+            return ""
+        case .fail:
+            return "아이디 또는 비밀번호를 확인하세요."
+        }
+    }
 }
 
 final class LoginUserModel {
@@ -40,7 +48,7 @@ final class LoginUserModel {
 class LoginUserManager {
     static let shared = LoginUserManager()
     private init() { }
-    let httpClient = UserHttpClient()
+    private let userHttpManager = UserHttpManager()
     var user: User?
     var isLogin: Bool = false
     
@@ -51,23 +59,26 @@ class LoginUserManager {
     
     func logIn(userID: String, password: String, completion: @escaping (LoginStatus) -> Void) {
         print("LoginUserMAnager logIn called")
-        httpClient.fetch(httpAction: .postLogin, body: LoginUser(userID: userID, password: password), completion: { [weak self] data in
-            guard let data = data as? Data else {
-                print("LoginUserModel- logIn() fail data parsing")
-                completion(.fail)
-                return
-            }
-            do {
-                let dataModel = try JSONDecoder().decode(User.self, from: data)
-                self?.setUser(user: dataModel)
-                completion(.success)
-            } catch {
-                completion(.fail)
+        let loginData = LoginUser(userID: userID, password: password)
+        userHttpManager.postFetch(type: .login, body: loginData, completion: { [weak self] result in
+            switch result {
+            case .success(let data):
+                do {
+                    let dataModel = try JSONDecoder().decode(User.self, from: data)
+                    self?.setUser(user: dataModel)
+                    completion(.success)
+                    self?.isLogin = true
+                } catch {
+                    print(error)
+                    completion(.fail)
+                }
+            case .failure(let error):
                 print(error)
+                completion(.fail)
             }
         })
     }
-        
+    
     func logOut() {
         self.user = nil
         self.isLogin = false

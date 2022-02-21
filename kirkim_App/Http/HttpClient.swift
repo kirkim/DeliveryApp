@@ -7,41 +7,84 @@
 
 import Foundation
 
-// TODO: fetch의 Data 타입을 뷰모델에서 처리하도록 바꾸자
-class HttpClient {
-    private let session = URLSession(configuration: URLSessionConfiguration.default)
+enum CustomError: Error {
+    case decodingError
+    case responseError
+    case noData
+    case error(Error)
+    case code(Int)
     
-    func postHttp(urlRequest: inout URLRequest, uploadData: Data, completion: @escaping (Any?) -> Void) {
+    var msg: String {
+        switch self {
+        case .decodingError:
+            return "Decoding Error"
+        case .noData:
+            return "No Data"
+        case .responseError:
+            return "Response Error"
+        case .error(let err):
+            return err.localizedDescription
+        case .code(let code):
+            return "\(code) Error"
+        }
+    }
+}
+
+protocol UrlType {
+    var url: String { get }
+}
+
+// TODO: fetch의 Data 타입을 뷰모델에서 처리하도록 바꾸자
+struct HttpClient {
+    func postHttp<T: UrlType, B: Codable>(type postType: T, body: B, completion: @escaping (Result<Data, CustomError>) -> Void) {
+        let session = URLSession(configuration: URLSessionConfiguration.default)
+        guard let url = URL(string: postType.url) else { return }
+        var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        guard let uploadData = try? JSONEncoder().encode(body) else {
+            completion(.failure(.decodingError))
+            return
+        }
         session.uploadTask(with: urlRequest, from: uploadData) { (data, response, error) in
             guard let httpResponse = response as? HTTPURLResponse, (200..<300).contains(httpResponse.statusCode) else {
-                print("error")
-                completion(nil)
+                completion(.failure(.responseError))
                 return
             }
-            if let e = error {
-                NSLog("An error has occured: \(e.localizedDescription)")
-                return
-            }
-            completion(data)
-        }.resume()
-    }
-
-    func getHttp(urlRequest: inout URLRequest, completion: @escaping (Any?) -> Void) {
-        urlRequest.httpMethod = "GET"
-        session.dataTask(with: urlRequest) { data, response, error in
-            guard let httpResponse = response as? HTTPURLResponse, (200..<300).contains(httpResponse.statusCode) else {
-                print("error")
+            if let err = error {
+                completion(.failure(.error(err)))
                 return
             }
             guard let data = data else {
-                print(error.debugDescription)
+                completion(.failure(.noData))
                 return
             }
-            completion(data)
+            completion(.success(data))
         }.resume()
-//        session.finishTasksAndInvalidate()
+        session.finishTasksAndInvalidate()
+    }
+
+    func getHttp<T: UrlType>(type getType: T, completion: @escaping (Result<Data, CustomError>) -> Void) {
+        let session = URLSession(configuration: URLSessionConfiguration.default)
+        guard let url = URL(string: getType.url) else { return }
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "GET"
+        session.dataTask(with: urlRequest) { data, response, error in
+            guard let httpResponse = response as? HTTPURLResponse, (200..<300).contains(httpResponse.statusCode) else {
+                completion(.failure(.responseError))
+                return
+            }
+            if let err = error {
+                completion(.failure(.error(err)))
+                return
+            }
+            guard let data = data else {
+                completion(.failure(.noData))
+                return
+            }
+            completion(.success(data))
+        }.resume()
+        session.finishTasksAndInvalidate()
     }
 }
 

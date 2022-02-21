@@ -35,7 +35,7 @@ class LoginPageVC: UIViewController {
                 case .success:
                     self.dismiss(animated: true, completion: nil)
                 case .fail:
-                    let alert = UIAlertController(title: nil, message: "아이디 또는 비밀번호를 확인하세요.", preferredStyle: .alert)
+                    let alert = UIAlertController(title: nil, message: loginStatus.message, preferredStyle: .alert)
                     let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
                     alert.addAction(ok)
                     self.present(alert, animated: true, completion: nil)
@@ -46,13 +46,17 @@ class LoginPageVC: UIViewController {
     
     @IBAction func seeAllUsers__Dev(_ sender: UIButton) {
         print("seeAllUsers__Dev called! ------")
-        let httpClient = UserHttpClient()
-        httpClient.fetch(httpAction: .getUsers__Dev, body: nil, completion: { data in
-            guard let data = data as? Data else { return }
-            do {
-                let dataModel = try JSONDecoder().decode([User].self, from: data)
-                print(dataModel)
-            } catch {
+        let httpClient = UserHttpManager()
+        httpClient.getFetch(type: .usersData__Dev, completion: { result in
+            switch result {
+            case .success(let data):
+                do {
+                    let dataModel = try JSONDecoder().decode([User].self, from: data)
+                    print(dataModel)
+                } catch {
+                    print(error)
+                }
+            case .failure(let error):
                 print(error)
             }
         })

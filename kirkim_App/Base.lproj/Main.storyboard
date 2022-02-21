@@ -16,42 +16,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EbM-NG-qth">
-                                <rect key="frame" x="20" y="158" width="374" height="32.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GwQ-jN-bsn">
+                                <rect key="frame" x="20" y="274" width="374" height="568"/>
+                                <color key="backgroundColor" systemColor="systemBrownColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2y9-gZ-TXh">
+                                <rect key="frame" x="20" y="138" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GwQ-jN-bsn">
-                                <rect key="frame" x="20" y="290.5" width="374" height="551.5"/>
-                                <color key="backgroundColor" systemColor="systemBrownColor"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wxq-Sy-IB9">
-                                <rect key="frame" x="324" y="108" width="73" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="로그아웃"/>
-                                <connections>
-                                    <action selector="handleLogoutButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HNL-dI-o8h"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="GwQ-jN-bsn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="0qb-PD-hB5"/>
-                            <constraint firstItem="EbM-NG-qth" firstAttribute="top" secondItem="Wxq-Sy-IB9" secondAttribute="bottom" constant="19" id="Blo-C8-NfQ"/>
+                            <constraint firstItem="2y9-gZ-TXh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="5PB-tR-kbS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GwQ-jN-bsn" secondAttribute="trailing" constant="20" id="BqS-OW-xDX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EbM-NG-qth" secondAttribute="trailing" constant="20" id="ChG-wq-mZy"/>
-                            <constraint firstItem="GwQ-jN-bsn" firstAttribute="top" secondItem="EbM-NG-qth" secondAttribute="bottom" constant="100" id="afI-ZL-038"/>
-                            <constraint firstItem="EbM-NG-qth" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="boG-sy-K9M"/>
-                            <constraint firstItem="EbM-NG-qth" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="gwq-Zy-D2v"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wxq-Sy-IB9" secondAttribute="trailing" constant="17" id="jNs-BR-3ru"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2y9-gZ-TXh" secondAttribute="trailing" constant="20" id="eVb-CT-XFM"/>
+                            <constraint firstItem="2y9-gZ-TXh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="hSp-by-Rwz"/>
+                            <constraint firstItem="GwQ-jN-bsn" firstAttribute="top" secondItem="2y9-gZ-TXh" secondAttribute="bottom" constant="100" id="vyl-HT-R3T"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GwQ-jN-bsn" secondAttribute="bottom" constant="20" id="ztC-JJ-84g"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="VAj-lH-bTe"/>
+                    <navigationItem key="navigationItem" id="VAj-lH-bTe">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="1ds-1W-TJ7"/>
+                    </navigationItem>
                     <connections>
-                        <outlet property="greetingMessage" destination="EbM-NG-qth" id="4co-jy-kxV"/>
+                        <outlet property="greetingMessage" destination="2y9-gZ-TXh" id="ad3-GY-p0m"/>
+                        <outlet property="sideBarMenuButton" destination="1ds-1W-TJ7" id="G5l-nc-HH1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

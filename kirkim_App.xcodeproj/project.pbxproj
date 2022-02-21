@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE078F1727C3449B00D19E34 /* SideBarMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE078F1527C3449B00D19E34 /* SideBarMenuVC.swift */; };
+		FE078F1827C3449B00D19E34 /* SideBarMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE078F1627C3449B00D19E34 /* SideBarMenuVC.xib */; };
+		FE078F1B27C34C7E00D19E34 /* SimpleProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE078F1A27C34C7E00D19E34 /* SimpleProfileView.swift */; };
 		FE2067EF27BCFDC7005EBEB5 /* KeyboardAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2067EE27BCFDC7005EBEB5 /* KeyboardAnimation.swift */; };
 		FE21132A27BCA6AE003293B2 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE21132927BCA6AE003293B2 /* HttpClient.swift */; };
 		FE21132C27BCC0A2003293B2 /* LoginUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE21132B27BCC0A2003293B2 /* LoginUserModel.swift */; };
@@ -15,7 +18,7 @@
 		FE3EA96527BB751800DA36EA /* TextAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3EA96427BB751800DA36EA /* TextAnimation.swift */; };
 		FE3EA96727BB8AC100DA36EA /* SimpleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3EA96627BB8AC100DA36EA /* SimpleTextField.swift */; };
 		FE47CACC27C0C5570077806D /* SignupUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE47CACB27C0C5570077806D /* SignupUserModel.swift */; };
-		FE47CAD027C114210077806D /* UserHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE47CACF27C114210077806D /* UserHttpClient.swift */; };
+		FE47CAD027C114210077806D /* UserHttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE47CACF27C114210077806D /* UserHttpManager.swift */; };
 		FE94DD6527B655190017D776 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE94DD6427B655190017D776 /* AppDelegate.swift */; };
 		FE94DD6727B655190017D776 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE94DD6627B655190017D776 /* SceneDelegate.swift */; };
 		FE94DD6927B655190017D776 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE94DD6827B655190017D776 /* MainVC.swift */; };
@@ -28,6 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE078F1527C3449B00D19E34 /* SideBarMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarMenuVC.swift; sourceTree = "<group>"; };
+		FE078F1627C3449B00D19E34 /* SideBarMenuVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideBarMenuVC.xib; sourceTree = "<group>"; };
+		FE078F1A27C34C7E00D19E34 /* SimpleProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleProfileView.swift; sourceTree = "<group>"; };
 		FE2067EE27BCFDC7005EBEB5 /* KeyboardAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAnimation.swift; sourceTree = "<group>"; };
 		FE21132927BCA6AE003293B2 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		FE21132B27BCC0A2003293B2 /* LoginUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserModel.swift; sourceTree = "<group>"; };
@@ -36,7 +42,7 @@
 		FE3EA96427BB751800DA36EA /* TextAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAnimation.swift; sourceTree = "<group>"; };
 		FE3EA96627BB8AC100DA36EA /* SimpleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextField.swift; sourceTree = "<group>"; };
 		FE47CACB27C0C5570077806D /* SignupUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupUserModel.swift; sourceTree = "<group>"; };
-		FE47CACF27C114210077806D /* UserHttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHttpClient.swift; sourceTree = "<group>"; };
+		FE47CACF27C114210077806D /* UserHttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHttpManager.swift; sourceTree = "<group>"; };
 		FE94DD6127B655190017D776 /* kirkim_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kirkim_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE94DD6427B655190017D776 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE94DD6627B655190017D776 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,11 +67,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE078F1227C341D100D19E34 /* SideBarMenu */ = {
+			isa = PBXGroup;
+			children = (
+				FE078F1527C3449B00D19E34 /* SideBarMenuVC.swift */,
+				FE078F1627C3449B00D19E34 /* SideBarMenuVC.xib */,
+			);
+			path = SideBarMenu;
+			sourceTree = "<group>";
+		};
+		FE078F1927C34C5000D19E34 /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				FE3EA96627BB8AC100DA36EA /* SimpleTextField.swift */,
+				FE078F1A27C34C7E00D19E34 /* SimpleProfileView.swift */,
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
 		FE21132827BCA630003293B2 /* Http */ = {
 			isa = PBXGroup;
 			children = (
 				FE21132927BCA6AE003293B2 /* HttpClient.swift */,
-				FE47CACF27C114210077806D /* UserHttpClient.swift */,
+				FE47CACF27C114210077806D /* UserHttpManager.swift */,
 			);
 			path = Http;
 			sourceTree = "<group>";
@@ -124,6 +148,8 @@
 		FE94DD6327B655190017D776 /* kirkim_App */ = {
 			isa = PBXGroup;
 			children = (
+				FE078F1927C34C5000D19E34 /* CustomUI */,
+				FE078F1227C341D100D19E34 /* SideBarMenu */,
 				FE21133227BCDD87003293B2 /* Animation */,
 				FE21132F27BCCEEF003293B2 /* PlayerApp */,
 				FE21132827BCA630003293B2 /* Http */,
@@ -146,7 +172,6 @@
 				FE47CACE27C0C8410077806D /* SignUp */,
 				FE47CACD27C0C8110077806D /* Login */,
 				FEF8848427BA5C730038F138 /* LoginPage.storyboard */,
-				FE3EA96627BB8AC100DA36EA /* SimpleTextField.swift */,
 			);
 			path = "Login&SignUp";
 			sourceTree = "<group>";
@@ -213,6 +238,7 @@
 				FEF8848527BA5C730038F138 /* LoginPage.storyboard in Resources */,
 				FE21133427BCF441003293B2 /* Player.storyboard in Resources */,
 				FE94DD7127B655190017D776 /* Assets.xcassets in Resources */,
+				FE078F1827C3449B00D19E34 /* SideBarMenuVC.xib in Resources */,
 				FE94DD6C27B655190017D776 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,10 +250,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE078F1B27C34C7E00D19E34 /* SimpleProfileView.swift in Sources */,
 				FE94DD6927B655190017D776 /* MainVC.swift in Sources */,
 				FE3EA96727BB8AC100DA36EA /* SimpleTextField.swift in Sources */,
 				FE21133127BCD095003293B2 /* SignUpPageVC.swift in Sources */,
-				FE47CAD027C114210077806D /* UserHttpClient.swift in Sources */,
+				FE47CAD027C114210077806D /* UserHttpManager.swift in Sources */,
+				FE078F1727C3449B00D19E34 /* SideBarMenuVC.swift in Sources */,
 				FE21132A27BCA6AE003293B2 /* HttpClient.swift in Sources */,
 				FEF8848727BA5C7E0038F138 /* LoginPageVC.swift in Sources */,
 				FE3EA96527BB751800DA36EA /* TextAnimation.swift in Sources */,

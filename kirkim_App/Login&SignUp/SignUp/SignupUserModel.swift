@@ -45,7 +45,7 @@ class SignupUserModel {
 class SignupUserManager {
     static let shared = SignupUserManager()
     private init() { }
-    private let httpClient = UserHttpClient()
+    private let userHttpManager = UserHttpManager()
     
     
     enum ValidatorResult {
@@ -54,6 +54,7 @@ class SignupUserManager {
         case wrongPW
         case wrongConfimPW
         case wrongName
+        case httpError
         var message: String {
             switch self {
             case .success:
@@ -66,6 +67,8 @@ class SignupUserManager {
                 return "동일한 비밀번호를 입력해 주세요!"
             case .wrongName:
                 return "이름을 입렵해 주세요!"
+            case .httpError:
+                return "Http Error"
             }
         }
     }
@@ -76,8 +79,15 @@ class SignupUserManager {
             completion(checkUserResult)
             return
         } else {
-            httpClient.fetch(httpAction: .postSignUp, body: signupData, completion: { _ in
-                completion(.success)
+            userHttpManager.postFetch(type: .signUp, body: signupData, completion: { result in
+                switch result {
+                case .success(_):
+                    completion(.success)
+                    break;
+                case .failure(let error):
+                    completion(.httpError)
+                    print(error)
+                }
             })
         }
     }

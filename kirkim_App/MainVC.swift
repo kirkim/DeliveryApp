@@ -10,33 +10,37 @@ import UIKit
 class MainVC: UIViewController {
         
     private var userModel = LoginUserModel()
+    @IBOutlet weak var sideBarMenuButton: UIBarButtonItem!
     @IBOutlet weak var greetingMessage: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        checkLogin()
+    private func makeSideBarMenuButtonUI() {
+        if (self.userModel.isLogin) {
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if (userModel.isLogin == true) {
+        if (checkLogin()) {
+            makeSideBarMenuButtonUI()
             self.greetingMessage.text = "\(userModel.user!.data.name)님 반갑습니다!"
         }
     }
     
-    func checkLogin() {
+    func checkLogin() -> Bool {
         if (self.userModel.isLogin == false) {
             let loginVC = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginPageVC
             loginVC.modalPresentationStyle = .fullScreen
             self.present(loginVC, animated: true, completion: nil)
+            return false
         } else {
-            return
+            return true
         }
     }
+    
     @IBAction func handleLogoutButton(_ sender: UIButton) {
         self.userModel.logOut()
         let loginVC = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginPageVC
