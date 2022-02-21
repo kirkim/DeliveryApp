@@ -8,10 +8,9 @@
 import UIKit
 
 class LoginPageVC: UIViewController {
-    
     @IBOutlet weak var idTextField: SimpleTextField!
     @IBOutlet weak var passwordTextField: SimpleTextField!
-    private let loginUserModel = LoginUserModel()
+    private let loginUserModel = LoginUserModel.shared
         
     override func viewDidLoad() {
         super.viewDidLoad()

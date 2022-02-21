@@ -9,8 +9,7 @@ import UIKit
 
 class MainVC: UIViewController {
         
-    private var userModel = LoginUserModel()
-    @IBOutlet weak var sideBarMenuButton: UIBarButtonItem!
+    private var userModel = LoginUserModel.shared
     @IBOutlet weak var greetingMessage: UILabel!
     
     override func viewDidLoad() {
@@ -18,8 +17,18 @@ class MainVC: UIViewController {
     }
     
     private func makeSideBarMenuButtonUI() {
-        if (self.userModel.isLogin) {
-        }
+        let userName = self.userModel.user?.data.name ?? "User"
+        let customButton = SimpleProfileView(userName: userName)
+        customButton.addTarget(self, action: #selector(handleSideBarMenuButton), for: .touchUpInside)
+        let sideBarMenuButton = UIBarButtonItem(customView: customButton)
+        self.navigationItem.rightBarButtonItem = sideBarMenuButton
+    }
+    
+    @objc private func handleSideBarMenuButton() {
+        let sideBarMenuVC = UIStoryboard(name: "SideBarMenu", bundle: nil).instantiateViewController(withIdentifier: "SideBarMenuVC")
+        sideBarMenuVC.modalPresentationStyle = .fullScreen
+        self.present(sideBarMenuVC, animated: true, completion: nil)
+//        self.navigationController?.pushViewController(sideBarMenuVC, animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,6 +50,7 @@ class MainVC: UIViewController {
         }
     }
     
+    // TODO: sidebar클래스로 옮겨야됨 [ ]
     @IBAction func handleLogoutButton(_ sender: UIButton) {
         self.userModel.logOut()
         let loginVC = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginPageVC

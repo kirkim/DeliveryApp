@@ -26,6 +26,8 @@ enum LoginStatus {
 }
 
 final class LoginUserModel {
+    static let shared = LoginUserModel()
+    private init() { }
     private let manager = LoginUserManager.shared
     
     var isLogin: Bool {

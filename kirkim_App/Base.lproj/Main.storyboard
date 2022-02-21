@@ -39,12 +39,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GwQ-jN-bsn" secondAttribute="bottom" constant="20" id="ztC-JJ-84g"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="VAj-lH-bTe">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="1ds-1W-TJ7"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="VAj-lH-bTe"/>
                     <connections>
                         <outlet property="greetingMessage" destination="2y9-gZ-TXh" id="ad3-GY-p0m"/>
-                        <outlet property="sideBarMenuButton" destination="1ds-1W-TJ7" id="G5l-nc-HH1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -25,7 +25,6 @@ struct SignupUser: Codable {
 }
 
 class SignupUserModel {
-    
     private let manager = SignupUserManager.shared
     
     func signup(signupData: SignupUser, completion: @escaping (SignupUserManager.ValidatorResult) -> Void) {
