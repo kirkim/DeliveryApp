@@ -7,8 +7,8 @@
 
 import UIKit
 
-class SideBarHeaderView: UITableViewHeaderFooterView {
-    static let identifier = "SideBarHeaderView"
+class SideMenuHeaderView: UITableViewHeaderFooterView {
+    static let identifier = "SideMenuHeaderView"
     private let user = LoginUserModel.shared.user
     
     private let profileView: SimpleProfileView = {
@@ -16,17 +16,18 @@ class SideBarHeaderView: UITableViewHeaderFooterView {
         return profileView
     }()
     
-    private let label: UILabel = {
+    private let nameLabel: UILabel = {
         let label = UILabel()
         label.text = LoginUserModel.shared.user?.data.name ?? "Geust"
         label.font = SideMenuSize.labelFont
         return label
     }()
-    
+        
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
-        contentView.addSubview(label)
+        contentView.addSubview(nameLabel)
         contentView.addSubview(profileView)
+        contentView.backgroundColor = .gray
     }
     
     required init?(coder: NSCoder) {
@@ -35,7 +36,7 @@ class SideBarHeaderView: UITableViewHeaderFooterView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        label.frame = SideMenuSize.headerLabelFrame
+        nameLabel.frame = SideMenuSize.headerLabelFrame
         profileView.frame = SideMenuSize.headerImageViewFrame
     }
 }

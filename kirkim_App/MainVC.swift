@@ -25,10 +25,9 @@ class MainVC: UIViewController {
     }
     
     @objc private func handleSideBarMenuButton() {
-        let sideBarMenuVC = UIStoryboard(name: "SideBarMenu", bundle: nil).instantiateViewController(withIdentifier: "SideBarMenuVC")
-        sideBarMenuVC.modalPresentationStyle = .fullScreen
-        self.present(sideBarMenuVC, animated: true, completion: nil)
-//        self.navigationController?.pushViewController(sideBarMenuVC, animated: true)
+        let sideBarMenuNavi = UIStoryboard(name: "SideMenu", bundle: nil).instantiateViewController(withIdentifier: "SideMenuNavi")
+        sideBarMenuNavi.modalPresentationStyle = .fullScreen
+        self.present(sideBarMenuNavi, animated: true, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {

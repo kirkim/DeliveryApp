@@ -24,7 +24,7 @@ struct SignupUser: Codable {
     var name: String
 }
 
-class SignupUserModel {
+struct SignupUserModel {
     private let manager = SignupUserManager.shared
     
     func signup(signupData: SignupUser, completion: @escaping (SignupUserManager.ValidatorResult) -> Void) {
@@ -121,7 +121,7 @@ class SignupUserManager {
     }
     
     func isValidName(name: String) -> Bool {
-        let nameRegEx = "[A-Z0-9a-z._%+-]{1,}"
+        let nameRegEx = "[A-Z0-9a-z가-힣._%+-]{1,}"
         let nameTest = NSPredicate(format: "SELF MATCHES %@", nameRegEx)
         return nameTest.evaluate(with: name)
     }
