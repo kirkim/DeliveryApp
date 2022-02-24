@@ -10,10 +10,15 @@ import UIKit
 class MainVC: UIViewController {
         
     private var userModel = LoginUserModel.shared
-    @IBOutlet weak var greetingMessage: UILabel!
     
+    // 베너뷰 추가
+    private var bannerView:BannerView?
     override func viewDidLoad() {
         super.viewDidLoad()
+        DispatchQueue.main.async {
+            self.bannerView = BannerView(frame: CGRect(x: 0, y: 100, width: UIScreen.main.bounds.width, height: 260))
+            self.view.addSubview(self.bannerView!)
+        }
     }
     
     private func makeSideBarMenuButtonUI() {
@@ -32,20 +37,19 @@ class MainVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if (checkLogin()) {
-            makeSideBarMenuButtonUI()
-            self.greetingMessage.text = "\(userModel.user!.data.name)님 반갑습니다!"
-        }
+//        checkLogin(completion: {
+//            makeSideBarMenuButtonUI()
+//            self.navigationItem.title = "\(userModel.user!.data.name)님 반갑습니다!"
+//        })
     }
     
-    func checkLogin() -> Bool {
+    func checkLogin(completion: () -> Void) {
         if (self.userModel.isLogin == false) {
             let loginVC = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginPageVC
             loginVC.modalPresentationStyle = .fullScreen
-            self.present(loginVC, animated: true, completion: nil)
-            return false
+            self.present(loginVC, animated: false, completion: nil)
         } else {
-            return true
+            completion()
         }
     }
     

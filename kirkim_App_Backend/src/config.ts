@@ -1,4 +1,5 @@
 import dotenv from 'dotenv';
+import path from 'path';
 
 dotenv.config();
 
@@ -18,6 +19,12 @@ const config = {
   },
   bcrypt: {
     saltRounds: parseInt(required('BCRTPY_SALT_ROUNDS', 10)),
+  },
+  static: {
+    url: required('BASE_URL', path.resolve() + '/assets'),
+  },
+  server: {
+    baseUrl: required('SERVER_BASE_URL', 'http://localhost:8080'),
   },
 };
 
