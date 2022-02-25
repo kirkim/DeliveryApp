@@ -27,4 +27,9 @@ final class BannerHttpManager {
     public func getFetch(type getType: BannerGetType, completion: @escaping (Result<Data, CustomError>) -> Void) {
         httpClient.getHttp(type: getType, completion: completion)
     }
+    
+    public func getFetchAsync(type getType: BannerGetType, completion: @escaping (Result<Data, CustomError>) -> Void) async {
+        await httpClient.getHttpAsync(type: getType, completion: completion)
+    }
+
 }

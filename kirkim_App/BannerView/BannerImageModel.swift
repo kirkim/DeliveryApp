@@ -38,14 +38,15 @@ class BannerImageManager {
     private let httpManager = BannerHttpManager()
     private init() { }
     private var bannerBundle: BannerBundle?
-    private var bannerImages: [UIImage] = []
+    private var bannerImages: [UIImage]?
     
     func update(completion: @escaping () -> Void) {
         self.updateBannerBundle(completion: {
-            let totalSize = self.getCount()
-            self.bannerImages = [UIImage](repeating: UIImage(), count: totalSize)
-            self.updateBannerImage(size: totalSize)
-            completion()
+            let totalCount = self.getCount()
+            Task {
+                await self.updateBannerImageAsync(totalCount: totalCount)
+                completion()
+            }
         })
     }
     
@@ -66,38 +67,35 @@ class BannerImageManager {
         })
     }
     
-    private func updateBannerImage(size: Int) {
-        guard let banners = self.bannerBundle?.banners else { return }
-        let totalCount: Int = size
-        var count: Int = 0
-        while(count < totalCount) {
-            var run = false
-            self.httpManager.getFetch(type: .image(urlString: banners[count].imageUrl), completion: {
-                result in
-                switch result {
-                case .failure(let error):
-                    print(error)
-                case .success(let data):
-                    guard let image = UIImage(data: data) else { break }
-                    self.bannerImages[count] = image
-                    run = true
-                }
-            })
-            while !run {
-            }
-            count += 1
+    private func saveImage(result: Result<Data, CustomError>, index: Int) {
+        switch result {
+        case .failure(let error):
+            print(error)
+        case .success(let data):
+            guard let image = UIImage(data: data) else { break }
+            self.bannerImages?[index] = image
         }
-        print("cnt: ", count)
-        print("images: ", self.bannerImages)
     }
     
-//    private let images: [String] = ["1.png", "2.png", "3.png", "4.png"]
+    private func updateBannerImageAsync(totalCount: Int) async {
+        self.bannerImages = Array.init(repeating: UIImage(), count: totalCount)
+        guard let banners = self.bannerBundle?.banners else { return }
+        await self.httpManager.getFetchAsync(type: .image(urlString: banners[0].imageUrl), completion: { result in
+            self.saveImage(result: result, index: 0)
+        })
+        for i in 1..<totalCount {
+            self.httpManager.getFetch(type: .image(urlString: banners[i].imageUrl), completion: { result in
+                self.saveImage(result: result, index: i)
+            })
+        }
+    }
+    
     func getCount() -> Int {
         return self.bannerBundle?.bannersCount ?? 0
     }
     
     func getImageByIndex(index: Int) -> UIImage {
-//        guard let image = UIImage(named: self.images[index]) else { return UIImage() }
-        return self.bannerImages[index]
+        guard let images = self.bannerImages else { return UIImage() } // 로딩이 안됐을 때 이미지를 리턴해주면 될듯
+        return images[index]
     }
 }

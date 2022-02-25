@@ -15,10 +15,14 @@ class MainVC: UIViewController {
     private var bannerView:BannerView?
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.async {
-            self.bannerView = BannerView(frame: CGRect(x: 0, y: 100, width: UIScreen.main.bounds.width, height: 260))
-            self.view.addSubview(self.bannerView!)
-        }
+        updateBannerUI()
+    }
+    
+    private func updateBannerUI() {
+        let width = UIScreen.main.bounds.width
+        let height = width / 2
+        self.bannerView = BannerView(frame: CGRect(x: 0, y: 100, width: width, height: height))
+        self.view.addSubview(self.bannerView!)
     }
     
     private func makeSideBarMenuButtonUI() {
