@@ -59,7 +59,7 @@ class BannerImageManager {
                     self.bannerBundle = dataModel
                     completion()
                 } catch {
-                    print(error)
+                    print(error.localizedDescription)
                 }
             case .failure(let error):
                 print(error)

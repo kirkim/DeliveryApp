@@ -60,4 +60,9 @@ class LoginPageVC: UIViewController {
             }
         })
     }
+    
+    @IBAction func handleCreateUserButton(_ sender: UIButton) {
+        let vc = SignUpPageVC(nibName: "SignUpPageVC", bundle: nil)
+        self.present(vc, animated: true, completion: nil)
+    }
 }

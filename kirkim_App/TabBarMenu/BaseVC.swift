@@ -30,15 +30,16 @@ class BaseVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        checkLogin(completion: {
-            makeSideBarMenuButtonUI()
-            self.navigationItem.title = "\(userModel.user!.data.name)님 반갑습니다!"
-        })
+//        checkLogin(completion: {
+//            makeSideBarMenuButtonUI()
+//            self.navigationItem.title = "\(userModel.user!.data.name)님 반갑습니다!"
+//        })
     }
     
     func checkLogin(completion: () -> Void) {
         if (self.userModel.isLogin == false) {
-            let loginVC = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginPageVC
+//            let loginVC = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginPageVC
+            let loginVC = LoginPageVC(nibName: "LoginPageVC", bundle: nil)
             loginVC.modalPresentationStyle = .fullScreen
             self.present(loginVC, animated: false, completion: nil)
         } else {
@@ -47,11 +48,11 @@ class BaseVC: UIViewController {
     }
     
     // TODO: sidebar클래스로 옮겨야됨 [ ]
-    @IBAction func handleLogoutButton(_ sender: UIButton) {
-        self.userModel.logOut()
-        let loginVC = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginPageVC
-        loginVC.modalPresentationStyle = .fullScreen
-        self.present(loginVC, animated: true, completion: nil)
-    }
+//    @IBAction func handleLogoutButton(_ sender: UIButton) {
+//        self.userModel.logOut()
+//        let loginVC = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginPageVC
+//        loginVC.modalPresentationStyle = .fullScreen
+//        self.present(loginVC, animated: true, completion: nil)
+//    }
 
 }
