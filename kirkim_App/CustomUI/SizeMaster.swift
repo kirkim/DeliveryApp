@@ -14,3 +14,7 @@ struct SideMenuSize {
 //    static let headerCloseButtonFrame = CGRect(x: 5, y: 5, width: 20, height: 20)
     static let labelFont = UIFont.systemFont(ofSize: 20, weight: .medium)
 }
+
+struct MainMenuSize {
+    static let bannerFrame = CGRect(x: 0, y: 100, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width/2)
+}

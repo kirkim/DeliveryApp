@@ -58,7 +58,7 @@ final class BannerView: UIView, FSPagerViewDelegate, FSPagerViewDataSource {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
     }
 }
 
@@ -71,7 +71,7 @@ extension BannerView {
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
         cell.imageView?.image = self.bannerImageModel.getImageByIndex(index: index)
-//            cell.textLabel?.text = ...
+        
             return cell
     }
     
