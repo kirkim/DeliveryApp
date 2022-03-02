@@ -30,6 +30,11 @@
 		FE3EA96727BB8AC100DA36EA /* SimpleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3EA96627BB8AC100DA36EA /* SimpleTextField.swift */; };
 		FE47CACC27C0C5570077806D /* SignupUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE47CACB27C0C5570077806D /* SignupUserModel.swift */; };
 		FE47CAD027C114210077806D /* UserHttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE47CACF27C114210077806D /* UserHttpManager.swift */; };
+		FE57F23827CF24CB00B205F9 /* KiflixPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57F23727CF24CB00B205F9 /* KiflixPlayerView.swift */; };
+		FE57F23B27CF29C000B205F9 /* KiflixDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57F23927CF29C000B205F9 /* KiflixDetailVC.swift */; };
+		FE57F23C27CF29C000B205F9 /* KiflixDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE57F23A27CF29C000B205F9 /* KiflixDetailVC.xib */; };
+		FE57F23E27CF2ACF00B205F9 /* extension+AVPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57F23D27CF2ACF00B205F9 /* extension+AVPlayer.swift */; };
+		FE57F24027CF956900B205F9 /* KiflixPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE57F23F27CF956900B205F9 /* KiflixPlayerView.xib */; };
 		FE74FE9427CDA82D00F40D5F /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74FE9327CDA82D00F40D5F /* BaseVC.swift */; };
 		FE74FEAC27CDBCA100F40D5F /* KiflixVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74FEAA27CDBCA100F40D5F /* KiflixVC.swift */; };
 		FE74FEAD27CDBCA100F40D5F /* KiflixVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE74FEAB27CDBCA100F40D5F /* KiflixVC.xib */; };
@@ -82,6 +87,11 @@
 		FE3EA96627BB8AC100DA36EA /* SimpleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextField.swift; sourceTree = "<group>"; };
 		FE47CACB27C0C5570077806D /* SignupUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupUserModel.swift; sourceTree = "<group>"; };
 		FE47CACF27C114210077806D /* UserHttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHttpManager.swift; sourceTree = "<group>"; };
+		FE57F23727CF24CB00B205F9 /* KiflixPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiflixPlayerView.swift; sourceTree = "<group>"; };
+		FE57F23927CF29C000B205F9 /* KiflixDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiflixDetailVC.swift; sourceTree = "<group>"; };
+		FE57F23A27CF29C000B205F9 /* KiflixDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KiflixDetailVC.xib; sourceTree = "<group>"; };
+		FE57F23D27CF2ACF00B205F9 /* extension+AVPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension+AVPlayer.swift"; sourceTree = "<group>"; };
+		FE57F23F27CF956900B205F9 /* KiflixPlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KiflixPlayerView.xib; sourceTree = "<group>"; };
 		FE74FE9327CDA82D00F40D5F /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		FE74FEAA27CDBCA100F40D5F /* KiflixVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiflixVC.swift; sourceTree = "<group>"; };
 		FE74FEAB27CDBCA100F40D5F /* KiflixVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KiflixVC.xib; sourceTree = "<group>"; };
@@ -212,6 +222,18 @@
 			path = SignUp;
 			sourceTree = "<group>";
 		};
+		FE57F23627CF24B100B205F9 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				FE57F23727CF24CB00B205F9 /* KiflixPlayerView.swift */,
+				FE57F23F27CF956900B205F9 /* KiflixPlayerView.xib */,
+				FE57F23927CF29C000B205F9 /* KiflixDetailVC.swift */,
+				FE57F23A27CF29C000B205F9 /* KiflixDetailVC.xib */,
+				FE57F23D27CF2ACF00B205F9 /* extension+AVPlayer.swift */,
+			);
+			path = DetailView;
+			sourceTree = "<group>";
+		};
 		FE74FEB427CDC3F900F40D5F /* TabBarMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +256,7 @@
 		FE74FEB627CDC43600F40D5F /* SecondItem-Kiflix */ = {
 			isa = PBXGroup;
 			children = (
+				FE57F23627CF24B100B205F9 /* DetailView */,
 				FE74FEAA27CDBCA100F40D5F /* KiflixVC.swift */,
 				FE74FEAB27CDBCA100F40D5F /* KiflixVC.xib */,
 				FE2FE4BB27CE086C004B8871 /* KiflixCollectionView.swift */,
@@ -403,6 +426,7 @@
 				FE2BD69A27CDD53B00A9FB73 /* LoginPageVC.xib in Resources */,
 				FE7FC0CE27C48F22009EB2AE /* TestView1-1.xib in Resources */,
 				FE7FC0DA27C48F4F009EB2AE /* TestView3-1.xib in Resources */,
+				FE57F23C27CF29C000B205F9 /* KiflixDetailVC.xib in Resources */,
 				FE94DD7427B655190017D776 /* LaunchScreen.storyboard in Resources */,
 				FE74FEAD27CDBCA100F40D5F /* KiflixVC.xib in Resources */,
 				FE7FC0D227C48F31009EB2AE /* TestView1-2.xib in Resources */,
@@ -412,6 +436,7 @@
 				FE2BD69227CDC9C400A9FB73 /* MainVC.xib in Resources */,
 				FE94DD6C27B655190017D776 /* Main.storyboard in Resources */,
 				FE7FC0D627C48F3F009EB2AE /* TestView2-1.xib in Resources */,
+				FE57F24027CF956900B205F9 /* KiflixPlayerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +500,7 @@
 				FE078F2F27C3634B00D19E34 /* SideMenuHeaderView.swift in Sources */,
 				FE078F3727C3737200D19E34 /* SizeMaster.swift in Sources */,
 				FE21133127BCD095003293B2 /* SignUpPageVC.swift in Sources */,
+				FE57F23E27CF2ACF00B205F9 /* extension+AVPlayer.swift in Sources */,
 				FE47CAD027C114210077806D /* UserHttpManager.swift in Sources */,
 				FE21132A27BCA6AE003293B2 /* HttpClient.swift in Sources */,
 				FE2FE4BC27CE086C004B8871 /* KiflixCollectionView.swift in Sources */,
@@ -485,9 +511,11 @@
 				FE3EA96527BB751800DA36EA /* TextAnimation.swift in Sources */,
 				FE2BD69727CDD34400A9FB73 /* KiflixCollectionCell.swift in Sources */,
 				FE18A28727C5CA4F00E56F39 /* BannerImageModel.swift in Sources */,
+				FE57F23827CF24CB00B205F9 /* KiflixPlayerView.swift in Sources */,
 				FEBA011727CDE08300E74FCB /* KiflixHttpManager.swift in Sources */,
 				FE47CACC27C0C5570077806D /* SignupUserModel.swift in Sources */,
 				FE2067EF27BCFDC7005EBEB5 /* KeyboardAnimation.swift in Sources */,
+				FE57F23B27CF29C000B205F9 /* KiflixDetailVC.swift in Sources */,
 				FE94DD6527B655190017D776 /* AppDelegate.swift in Sources */,
 				FE7FC0D927C48F4F009EB2AE /* TestView3-1.swift in Sources */,
 				FE94DD6F27B655190017D776 /* kirkim_App.xcdatamodeld in Sources */,

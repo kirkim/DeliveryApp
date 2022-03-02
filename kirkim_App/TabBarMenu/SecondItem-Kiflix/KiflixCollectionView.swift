@@ -13,13 +13,15 @@ class KiflixCollectionView: UICollectionView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         registCell()
+//        setCollectionViewUI()
     }
     
     private func registCell() {
-        let nib = UINib(nibName: "KiflixCollectionCell", bundle: nil)
-        self.register(nib, forCellWithReuseIdentifier: "KiflixCollectionCell")
         self.dataSource = self
-        self.delegate = self
+        let cellNib = UINib(nibName: "KiflixCollectionCell", bundle: nil)
+        self.register(cellNib, forCellWithReuseIdentifier: "KiflixCollectionCell")
+        let detailViewNib = UINib(nibName: "KiflixDetailVC", bundle: nil)
+        self.register(detailViewNib, forCellWithReuseIdentifier: "KiflixDetailVC")
     }
     
     func update(text: String) {
@@ -47,28 +49,16 @@ extension KiflixCollectionView: UICollectionViewDataSource {
         
         return cell
     }
-}
-
-//MARK: - UICollectionViewDelegateFlowLayout
-extension KiflixCollectionView: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let spacing: CGFloat = 8
-        let margin: CGFloat = 8
-        let width: CGFloat = (self.frame.width - (spacing * 2) - (margin * 2)) / 3
-        let height: CGFloat = width * (10/7)
-        return CGSize(width: width, height: height)
-    }
-        
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 8
-    }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+    func setCollectionViewUI(itemSpacing: CGFloat = 8, margin: CGFloat = 2) {
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        self.collectionViewLayout = layout
+        let width: CGFloat = (self.frame.width - (itemSpacing * 2) - (margin * 2)) / 3
+        let height: CGFloat = width * (10/7)
+//        layout.sectionInset = UIEdgeInsets(top: 80, left: margin, bottom: margin, right: margin)
+        self.contentInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
+        layout.itemSize = CGSize(width: width, height: height)
+        layout.minimumInteritemSpacing = itemSpacing
+        layout.minimumLineSpacing = itemSpacing
     }
-
 }

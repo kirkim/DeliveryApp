@@ -26,7 +26,6 @@ final class KiflixHttpManager {
     }
     
     public func getFetch(type getType: KiflixGetType, completion: @escaping (Result<Data, CustomError>) -> Void) {
-        print(getType.url)
         httpClient.getHttp(type: getType, completion: completion)
     }
     
