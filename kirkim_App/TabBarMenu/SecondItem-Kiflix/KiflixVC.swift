@@ -35,31 +35,8 @@ extension KiflixVC: UISearchBarDelegate {
 //MARK: - UICollectionViewDelegate
 extension KiflixVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detailVC = KiflixDetailVC(nibName: "KiflixDetailVC", bundle: nil)
-        print(detailVC)
+        let previewUrl = self.kiflixModel.data[indexPath.row].previewURL
+        let detailVC = KiflixDetailVC(previewUrl: previewUrl)
         self.present(detailVC, animated: true, completion: nil)
     }
 }
-
-////MARK: - UICollectionViewDelegateFlowLayout
-//extension KiflixVC: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let spacing: CGFloat = 8
-//        let margin: CGFloat = 8
-//        let width: CGFloat = (self.collectionView.frame.width - (spacing * 2) - (margin * 2)) / 3
-//        let height: CGFloat = width * (10/7)
-//        return CGSize(width: width, height: height)
-//    }
-//        
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return 8
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return 0
-//    }
-//}
