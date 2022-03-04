@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -53,7 +52,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="dxl-ew-2ZA" firstAttribute="leading" secondItem="ZvY-jb-pMD" secondAttribute="leading" constant="20" id="5wi-2t-ydB"/>
                         <constraint firstItem="dxl-ew-2ZA" firstAttribute="top" secondItem="ZvY-jb-pMD" secondAttribute="top" constant="20" id="Ia1-42-JjQ"/>
@@ -63,7 +62,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="ZvY-jb-pMD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3Kd-ud-Y1g"/>
                 <constraint firstAttribute="trailing" secondItem="ZvY-jb-pMD" secondAttribute="trailing" id="Ji1-i7-TSy"/>
@@ -77,8 +76,5 @@
         <image name="pause.fill" catalog="system" width="116" height="128"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

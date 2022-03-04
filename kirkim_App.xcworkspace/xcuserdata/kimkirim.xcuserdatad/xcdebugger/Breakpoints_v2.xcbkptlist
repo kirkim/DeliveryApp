@@ -30,8 +30,8 @@
             filePath = "kirkim_App/TabBarMenu/SecondItem-Kiflix/DetailView/Player/FullScreenPlayerVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "handlePlayButton(_:)"
             landmarkType = "7">
          </BreakpointContent>

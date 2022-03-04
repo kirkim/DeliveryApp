@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KiflixDetailVC" customModule="kirkim_App" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="SMz-dd-do0" id="NI8-4V-fgV"/>
+                <outlet property="scrollContentView" destination="XRn-0q-YVs" id="BQ3-jy-PVB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="4rO-ls-H5Z"/>
             </connections>
         </placeholder>
@@ -19,27 +20,71 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SMz-dd-do0">
-                    <rect key="frame" x="0.0" y="44" width="414" height="221"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SMz-dd-do0" userLabel="KiflixPlayer ViewController">
+                    <rect key="frame" x="0.0" y="44" width="414" height="276"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KiflixPlayerVC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evr-zz-Szz">
+                            <rect key="frame" x="75" y="114" width="264.5" height="48"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemGreenColor"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="SMz-dd-do0" secondAttribute="height" multiplier="15:8" id="TlW-Gh-Saa"/>
+                        <constraint firstAttribute="width" secondItem="SMz-dd-do0" secondAttribute="height" multiplier="3:2" id="TlW-Gh-Saa"/>
+                        <constraint firstItem="evr-zz-Szz" firstAttribute="centerX" secondItem="SMz-dd-do0" secondAttribute="centerX" id="tqD-5n-vtA"/>
+                        <constraint firstItem="evr-zz-Szz" firstAttribute="centerY" secondItem="SMz-dd-do0" secondAttribute="centerY" id="zF6-WF-7Nf"/>
                     </constraints>
                 </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bIK-Gt-TOq">
+                    <rect key="frame" x="0.0" y="320" width="414" height="542"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mxp-oo-b69" userLabel="Content View">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="534"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XRn-0q-YVs">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="534"/>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="XRn-0q-YVs" firstAttribute="top" secondItem="mxp-oo-b69" secondAttribute="top" id="N8u-Tf-gCO"/>
+                                <constraint firstAttribute="bottom" secondItem="XRn-0q-YVs" secondAttribute="bottom" id="Osp-s3-iBX"/>
+                                <constraint firstAttribute="trailing" secondItem="XRn-0q-YVs" secondAttribute="trailing" id="eEn-7v-PtZ"/>
+                                <constraint firstItem="XRn-0q-YVs" firstAttribute="leading" secondItem="mxp-oo-b69" secondAttribute="leading" id="vMu-lz-JAL"/>
+                                <constraint firstAttribute="height" priority="250" constant="534" id="wFy-1s-Eoc"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="mxp-oo-b69" firstAttribute="width" secondItem="rwt-gl-Q77" secondAttribute="width" id="5iw-FW-2lM"/>
+                        <constraint firstItem="mxp-oo-b69" firstAttribute="trailing" secondItem="5Fg-iS-Ga2" secondAttribute="trailing" id="96B-TR-w6N"/>
+                        <constraint firstItem="mxp-oo-b69" firstAttribute="bottom" secondItem="5Fg-iS-Ga2" secondAttribute="bottom" id="I5a-vc-lAi"/>
+                        <constraint firstItem="mxp-oo-b69" firstAttribute="leading" secondItem="5Fg-iS-Ga2" secondAttribute="leading" id="sqb-k7-HST"/>
+                        <constraint firstItem="mxp-oo-b69" firstAttribute="top" secondItem="5Fg-iS-Ga2" secondAttribute="top" id="zNZ-yr-qjn"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="5Fg-iS-Ga2"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="rwt-gl-Q77"/>
+                </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SMz-dd-do0" secondAttribute="trailing" id="6Y1-JI-Tim"/>
-                <constraint firstItem="SMz-dd-do0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fVN-7o-1s8"/>
-                <constraint firstItem="SMz-dd-do0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="nWl-k4-Z6r"/>
+                <constraint firstItem="bIK-Gt-TOq" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="4Vo-Bo-kFz"/>
+                <constraint firstItem="SMz-dd-do0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="QX9-Qq-gIm"/>
+                <constraint firstItem="SMz-dd-do0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="T7D-Oi-kyj"/>
+                <constraint firstItem="SMz-dd-do0" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="VaT-ih-xvZ"/>
+                <constraint firstItem="bIK-Gt-TOq" firstAttribute="top" secondItem="SMz-dd-do0" secondAttribute="bottom" id="mvF-U7-O0W"/>
+                <constraint firstItem="bIK-Gt-TOq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="p0N-M1-VX6"/>
+                <constraint firstItem="bIK-Gt-TOq" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="xhy-lJ-pJv"/>
             </constraints>
-            <point key="canvasLocation" x="132" y="90"/>
+            <point key="canvasLocation" x="131.8840579710145" y="89.732142857142847"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

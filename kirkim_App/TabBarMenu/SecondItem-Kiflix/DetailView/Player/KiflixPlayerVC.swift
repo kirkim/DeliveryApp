@@ -9,23 +9,39 @@ import AVFoundation
 import UIKit
 
 class KiflixPlayerVC: UIViewController {
+    @IBOutlet weak var controlView: UIView!
     @IBOutlet weak var playerView: PlayerView!
     @IBOutlet weak var playButton: UIButton!
     let player = KiflixPlayer.shared
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tapBackground()
+        player.play()
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         playerView.player = player
         toggleButtonUI()
     }
-// MARK: - KiflixPlayerView custom function
-    func setPlayer(playerUrlString: String) {
+// MARK: - KiflixPlayerVC init
+    init(playerUrlString: String) {
+        super.init(nibName: "KiflixPlayerVC", bundle: nil)
         guard let previewURL = URL(string: playerUrlString) else { return }
         let playerItem = AVPlayerItem(url: previewURL)
         KiflixPlayer.shared.replaceCurrentItem(with: playerItem)
-        player.play()
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        player.pause()
+        player.replaceCurrentItem(with: nil)
+    }
+// MARK: - KiflixPlayerVC custom function
     func toggleButtonUI() {
         if (player.isPlaying) {
             self.playButton.isSelected = true
@@ -33,9 +49,18 @@ class KiflixPlayerVC: UIViewController {
             self.playButton.isSelected = false
         }
     }
+    @objc func taphandler() {
+        UIView.animate(withDuration: 0.1, animations: { self.controlView.alpha = 1 }) { (true) in self.controlView.isHidden = false }
+    }
+    
+    func tapBackground() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(taphandler))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
     
 // MARK: - KiflixPlayerView @IBAction function
-    @IBAction func handlePlayButton(_ sender: Any) {
+    @IBAction func togglePlayButton(_ sender: Any) {
         if (player.isPlaying == false) {
             player.play()
         } else {

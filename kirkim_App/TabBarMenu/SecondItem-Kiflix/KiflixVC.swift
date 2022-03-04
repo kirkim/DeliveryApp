@@ -35,8 +35,8 @@ extension KiflixVC: UISearchBarDelegate {
 //MARK: - UICollectionViewDelegate
 extension KiflixVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let previewUrl = self.kiflixModel.data[indexPath.row].previewURL
-        let detailVC = KiflixDetailVC(previewUrl: previewUrl)
+        let data = self.kiflixModel.data[indexPath.row]
+        let detailVC = KiflixDetailVC(movieData: data)
         self.present(detailVC, animated: true, completion: nil)
     }
 }

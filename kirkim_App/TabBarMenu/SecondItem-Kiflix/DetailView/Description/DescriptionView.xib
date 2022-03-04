@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DescriptionView" customModule="kirkim_App" customModuleProvider="target">
+            <connections>
+                <outlet property="date" destination="0V1-lx-GdE" id="DGE-oX-6by"/>
+                <outlet property="director" destination="e6Z-tf-rPp" id="nd4-b8-I92"/>
+                <outlet property="longDescription" destination="0XL-ra-hU6" id="dAa-vB-GI1"/>
+                <outlet property="title" destination="okI-hn-cw2" id="DCQ-t3-IeX"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="7gG-nW-J38">
+            <rect key="frame" x="0.0" y="0.0" width="404" height="275"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okI-hn-cw2">
+                    <rect key="frame" x="10" y="10" width="364" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0V1-lx-GdE">
+                    <rect key="frame" x="10" y="51" width="364" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="director" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6Z-tf-rPp">
+                    <rect key="frame" x="10" y="75" width="364" height="26.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="long description" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0XL-ra-hU6">
+                    <rect key="frame" x="10" y="111.5" width="364" height="38.5"/>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="32"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="0V1-lx-GdE" firstAttribute="leading" secondItem="7gG-nW-J38" secondAttribute="leading" constant="10" id="Bp0-4x-sef"/>
+                <constraint firstItem="e6Z-tf-rPp" firstAttribute="leading" secondItem="7gG-nW-J38" secondAttribute="leading" constant="10" id="FtR-tf-0uc"/>
+                <constraint firstAttribute="trailing" secondItem="okI-hn-cw2" secondAttribute="trailing" constant="30" id="Jhh-x1-Rxx"/>
+                <constraint firstAttribute="trailing" secondItem="0V1-lx-GdE" secondAttribute="trailing" constant="30" id="RgQ-Wt-pDm"/>
+                <constraint firstItem="0XL-ra-hU6" firstAttribute="top" secondItem="e6Z-tf-rPp" secondAttribute="bottom" constant="10" id="haG-fN-caT"/>
+                <constraint firstAttribute="bottom" secondItem="0XL-ra-hU6" secondAttribute="bottom" priority="250" constant="30" id="k3N-md-UXx"/>
+                <constraint firstItem="0V1-lx-GdE" firstAttribute="top" secondItem="okI-hn-cw2" secondAttribute="bottom" constant="5" id="lu9-XT-B1n"/>
+                <constraint firstItem="okI-hn-cw2" firstAttribute="leading" secondItem="7gG-nW-J38" secondAttribute="leading" constant="10" id="mJ0-TG-oaB"/>
+                <constraint firstAttribute="trailing" secondItem="0XL-ra-hU6" secondAttribute="trailing" constant="30" id="mYk-Hy-bWE"/>
+                <constraint firstItem="okI-hn-cw2" firstAttribute="top" secondItem="7gG-nW-J38" secondAttribute="top" constant="10" id="mn4-El-5sE"/>
+                <constraint firstAttribute="trailing" secondItem="e6Z-tf-rPp" secondAttribute="trailing" constant="30" id="nY0-xE-jYM"/>
+                <constraint firstItem="0XL-ra-hU6" firstAttribute="leading" secondItem="7gG-nW-J38" secondAttribute="leading" constant="10" id="oXI-WQ-jQ6"/>
+                <constraint firstItem="e6Z-tf-rPp" firstAttribute="top" secondItem="0V1-lx-GdE" secondAttribute="bottom" constant="3" id="wcs-2X-f6s"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="479.71014492753625" y="-221.98660714285714"/>
+        </view>
+    </objects>
+</document>

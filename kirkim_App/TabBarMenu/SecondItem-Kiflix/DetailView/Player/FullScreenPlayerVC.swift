@@ -22,6 +22,7 @@ class FullScreenPlayerVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         playerView.player = player
+        
         toggleButtonUI()
     }
     
