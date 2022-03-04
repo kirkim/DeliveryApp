@@ -38,13 +38,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="long description" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0XL-ra-hU6">
-                    <rect key="frame" x="10" y="111.5" width="364" height="38.5"/>
-                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="32"/>
+                    <rect key="frame" x="10" y="111.5" width="364" height="20.5"/>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="0V1-lx-GdE" firstAttribute="leading" secondItem="7gG-nW-J38" secondAttribute="leading" constant="10" id="Bp0-4x-sef"/>
                 <constraint firstItem="e6Z-tf-rPp" firstAttribute="leading" secondItem="7gG-nW-J38" secondAttribute="leading" constant="10" id="FtR-tf-0uc"/>

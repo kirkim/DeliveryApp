@@ -13,6 +13,8 @@ class KiflixPlayerVC: UIViewController {
     @IBOutlet weak var playerView: PlayerView!
     @IBOutlet weak var playButton: UIButton!
     let player = KiflixPlayer.shared
+    private var observerCount: Int = 0
+    private var switchObserver: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,16 @@ class KiflixPlayerVC: UIViewController {
         super.viewWillAppear(animated)
         playerView.player = player
         toggleButtonUI()
+        switchObserver = true
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        disappearObserver()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        switchObserver = false
     }
 // MARK: - KiflixPlayerVC init
     init(playerUrlString: String) {
@@ -50,7 +62,8 @@ class KiflixPlayerVC: UIViewController {
         }
     }
     @objc func taphandler() {
-        UIView.animate(withDuration: 0.1, animations: { self.controlView.alpha = 1 }) { (true) in self.controlView.isHidden = false }
+        self.controlView.isHidden = false
+        addObserverGage()
     }
     
     func tapBackground() {
@@ -61,6 +74,7 @@ class KiflixPlayerVC: UIViewController {
     
 // MARK: - KiflixPlayerView @IBAction function
     @IBAction func togglePlayButton(_ sender: Any) {
+        addObserverGage()
         if (player.isPlaying == false) {
             player.play()
         } else {
@@ -74,6 +88,28 @@ class KiflixPlayerVC: UIViewController {
         let fullscreenVC = FullScreenPlayerVC(nibName: "FullScreenPlayerVC", bundle: nil)
         fullscreenVC.modalPresentationStyle = .fullScreen
         self.present(fullscreenVC, animated: false, completion: nil)
+    }
+    
+// MARK: - KiflixPlayerView Observer function
+    func addObserverGage() {
+        self.observerCount += 1
+        DispatchQueue.global().async {
+            sleep(3)
+            self.observerCount -= 1
+        }
+    }
+    
+    func disappearObserver() {
+        DispatchQueue.global().async {
+            while(self.switchObserver) {
+                sleep(1)
+                if (self.observerCount == 0) {
+                    DispatchQueue.main.async {
+                        self.controlView.isHidden = true
+                    }
+                }
+            }
+        }
     }
 }
 
