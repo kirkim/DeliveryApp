@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "FSPagerView",
+        "repositoryURL": "https://github.com/WenchaoD/FSPagerView",
+        "state": {
+          "branch": "master",
+          "revision": "968f0aaf120b8cb97d12c3a4447daa4926029f67",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

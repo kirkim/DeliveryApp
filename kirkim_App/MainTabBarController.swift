@@ -25,6 +25,11 @@ class MainTabBarController: UITabBarController {
         vc2.tabBarItem.image = UIImage(systemName:  "play.rectangle.fill")
         let nav2 = UINavigationController(rootViewController: vc2)
         
-        self.viewControllers = [nav1, nav2] //add your other  controllers here as needed
+        let vc3 = BeminVC(nibName: "BeminVC", bundle: nil)
+        vc3.tabBarItem.image = UIImage(systemName:  "scooter")
+        let nav3 = UINavigationController(rootViewController: vc3)
+
+        
+        self.viewControllers = [nav1, nav2, nav3] //add your other  controllers here as needed
     }
 }

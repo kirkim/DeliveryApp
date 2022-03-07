@@ -9,6 +9,7 @@ import UIKit
 
 class BaseVC: UIViewController {
     let userModel = LoginUserModel.shared
+    var dev_Mode: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +31,12 @@ class BaseVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        checkLogin(completion: {
-//            makeSideBarMenuButtonUI()
-//            self.navigationItem.title = "\(userModel.user!.data.name)님 반갑습니다!"
-//        })
+        if (dev_Mode == false) {
+            checkLogin(completion: {
+                makeSideBarMenuButtonUI()
+                self.navigationItem.title = "\(userModel.user!.data.name)님 반갑습니다!"
+            })
+        }
     }
     
     func checkLogin(completion: () -> Void) {
