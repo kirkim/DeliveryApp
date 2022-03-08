@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainVC" customModule="kirkim_App" customModuleProvider="target">
             <connections>
+                <outlet property="bannerView" destination="eJq-bh-AXs" id="79c-3U-0hR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,7 +19,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJq-bh-AXs" customClass="BannerView" customModule="kirkim_App" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJq-bh-AXs" customClass="BasicBannerView" customModule="kirkim_App" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="88" width="414" height="221"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>

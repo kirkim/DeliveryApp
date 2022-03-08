@@ -17,8 +17,23 @@ struct BannerBundle: Codable {
     let updatedAt: String
 }
 
+class BasicBannerModel {
+    static let shared = BannerImageModel(type: .basic)
+    private init() { }
+}
+
 struct BannerImageModel {
-    private let manager = BannerImageManager.shared
+    enum BannerType {
+        case basic
+    }
+    
+    private var manager: BannerImageManager
+    init(type: BannerType) {
+        switch type {
+        case .basic:
+            manager = BannerImageManager(type: .basic)
+        }
+    }
     
     func getCount() -> Int {
         return manager.getCount()
@@ -28,35 +43,42 @@ struct BannerImageModel {
         return manager.getImageByIndex(index: index)
     }
     
-    func update(completion: @escaping () -> Void) {
+    func update(completion: (() -> Void)? = nil) {
         return manager.update(completion: completion)
     }
 }
 
 class BannerImageManager {
-    static let shared = BannerImageManager()
     private let httpManager = BannerHttpManager()
-    private init() { }
     private var bannerBundle: BannerBundle?
     private var bannerImages: [UIImage]?
+    private var type: BannerHttpManager.BannerGetType
     
-    func update(completion: @escaping () -> Void) {
+    init(type: BannerHttpManager.BannerGetType) {
+        self.type = type
+    }
+    
+    func update(completion: (() -> Void)? = nil) {
+        print("hi")
         self.updateBannerBundle(completion: {
             let totalCount = self.getCount()
             Task {
                 await self.updateBannerImageAsync(totalCount: totalCount)
+                guard let completion = completion else {
+                    return
+                }
                 completion()
             }
         })
     }
     
     private func updateBannerBundle(completion: @escaping () -> Void) {
-        httpManager.getFetch(type: .getBanner, completion: { result in
+        httpManager.getFetch(type: self.type, completion: { [weak self] result in
             switch result {
             case .success(let data):
                 do {
                     let dataModel = try JSONDecoder().decode(BannerBundle.self, from: data)
-                    self.bannerBundle = dataModel
+                    self?.bannerBundle = dataModel
                     completion()
                 } catch {
                     print(error.localizedDescription)
@@ -80,12 +102,12 @@ class BannerImageManager {
     private func updateBannerImageAsync(totalCount: Int) async {
         self.bannerImages = Array.init(repeating: UIImage(), count: totalCount)
         guard let banners = self.bannerBundle?.banners else { return }
-        await self.httpManager.getFetchAsync(type: .image(urlString: banners[0].imageUrl), completion: { result in
-            self.saveImage(result: result, index: 0)
+        await self.httpManager.getFetchAsync(type: .image(urlString: banners[0].imageUrl), completion: { [weak self] result in
+            self?.saveImage(result: result, index: 0)
         })
         for i in 1..<totalCount {
-            self.httpManager.getFetch(type: .image(urlString: banners[i].imageUrl), completion: { result in
-                self.saveImage(result: result, index: i)
+            self.httpManager.getFetch(type: .image(urlString: banners[i].imageUrl), completion: { [weak self] result in
+                self?.saveImage(result: result, index: i)
             })
         }
     }

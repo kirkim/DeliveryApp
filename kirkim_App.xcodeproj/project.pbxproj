@@ -13,7 +13,6 @@
 		FE078F1F27C353B500D19E34 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE078F1E27C353B500D19E34 /* SideMenuVC.swift */; };
 		FE078F2F27C3634B00D19E34 /* SideMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE078F2E27C3634B00D19E34 /* SideMenuHeaderView.swift */; };
 		FE078F3727C3737200D19E34 /* SizeMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE078F3627C3737200D19E34 /* SizeMaster.swift */; };
-		FE18A28527C5C2D100E56F39 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE18A28427C5C2D100E56F39 /* BannerView.swift */; };
 		FE18A28727C5CA4F00E56F39 /* BannerImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE18A28627C5CA4F00E56F39 /* BannerImageModel.swift */; };
 		FE18A28927C5DE9B00E56F39 /* BannerHttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE18A28827C5DE9B00E56F39 /* BannerHttpManager.swift */; };
 		FE2067EF27BCFDC7005EBEB5 /* KeyboardAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2067EE27BCFDC7005EBEB5 /* KeyboardAnimation.swift */; };
@@ -38,6 +37,9 @@
 		FE3CCB8727D1CB2B00D770F8 /* DescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE3CCB8627D1CB2B00D770F8 /* DescriptionView.xib */; };
 		FE3EA96527BB751800DA36EA /* TextAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3EA96427BB751800DA36EA /* TextAnimation.swift */; };
 		FE3EA96727BB8AC100DA36EA /* SimpleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3EA96627BB8AC100DA36EA /* SimpleTextField.swift */; };
+		FE41DC9C27D706B400317493 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41DC9627D706B400317493 /* BannerCell.swift */; };
+		FE41DC9E27D706B400317493 /* MyBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41DC9827D706B400317493 /* MyBannerView.swift */; };
+		FE41DCA027D706B400317493 /* BannerControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41DC9A27D706B400317493 /* BannerControlButton.swift */; };
 		FE46F4F627D1AD6500DB31EE /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE46F4F527D1AD6500DB31EE /* DescriptionView.swift */; };
 		FE47CACC27C0C5570077806D /* SignupUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE47CACB27C0C5570077806D /* SignupUserModel.swift */; };
 		FE47CAD027C114210077806D /* UserHttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE47CACF27C114210077806D /* UserHttpManager.swift */; };
@@ -64,6 +66,7 @@
 		FE84E49D27D0718000B30F57 /* KiflixPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE84E49B27D0718000B30F57 /* KiflixPlayerVC.swift */; };
 		FE84E49E27D0718000B30F57 /* KiflixPlayerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE84E49C27D0718000B30F57 /* KiflixPlayerVC.xib */; };
 		FE84E4A027D07F1C00B30F57 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE84E49F27D07F1C00B30F57 /* PlayerView.swift */; };
+		FE8E456127D747DA0025779F /* MyBannerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8E456027D747DA0025779F /* MyBannerViewDelegate.swift */; };
 		FE94DD6527B655190017D776 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE94DD6427B655190017D776 /* AppDelegate.swift */; };
 		FE94DD6727B655190017D776 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE94DD6627B655190017D776 /* SceneDelegate.swift */; };
 		FE94DD6C27B655190017D776 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE94DD6A27B655190017D776 /* Main.storyboard */; };
@@ -85,7 +88,6 @@
 		FE078F1E27C353B500D19E34 /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
 		FE078F2E27C3634B00D19E34 /* SideMenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuHeaderView.swift; sourceTree = "<group>"; };
 		FE078F3627C3737200D19E34 /* SizeMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeMaster.swift; sourceTree = "<group>"; };
-		FE18A28427C5C2D100E56F39 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		FE18A28627C5CA4F00E56F39 /* BannerImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerImageModel.swift; sourceTree = "<group>"; };
 		FE18A28827C5DE9B00E56F39 /* BannerHttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerHttpManager.swift; sourceTree = "<group>"; };
 		FE2067EE27BCFDC7005EBEB5 /* KeyboardAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAnimation.swift; sourceTree = "<group>"; };
@@ -109,6 +111,9 @@
 		FE3CCB8627D1CB2B00D770F8 /* DescriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionView.xib; sourceTree = "<group>"; };
 		FE3EA96427BB751800DA36EA /* TextAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAnimation.swift; sourceTree = "<group>"; };
 		FE3EA96627BB8AC100DA36EA /* SimpleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextField.swift; sourceTree = "<group>"; };
+		FE41DC9627D706B400317493 /* BannerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
+		FE41DC9827D706B400317493 /* MyBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBannerView.swift; sourceTree = "<group>"; };
+		FE41DC9A27D706B400317493 /* BannerControlButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerControlButton.swift; sourceTree = "<group>"; };
 		FE46F4F527D1AD6500DB31EE /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 		FE47CACB27C0C5570077806D /* SignupUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupUserModel.swift; sourceTree = "<group>"; };
 		FE47CACF27C114210077806D /* UserHttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHttpManager.swift; sourceTree = "<group>"; };
@@ -135,6 +140,7 @@
 		FE84E49B27D0718000B30F57 /* KiflixPlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiflixPlayerVC.swift; sourceTree = "<group>"; };
 		FE84E49C27D0718000B30F57 /* KiflixPlayerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KiflixPlayerVC.xib; sourceTree = "<group>"; };
 		FE84E49F27D07F1C00B30F57 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		FE8E456027D747DA0025779F /* MyBannerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBannerViewDelegate.swift; sourceTree = "<group>"; };
 		FE94DD6127B655190017D776 /* kirkim_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kirkim_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE94DD6427B655190017D776 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE94DD6627B655190017D776 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -203,15 +209,6 @@
 			path = CustomUI;
 			sourceTree = "<group>";
 		};
-		FE18A27F27C5BE6F00E56F39 /* BannerView */ = {
-			isa = PBXGroup;
-			children = (
-				FE18A28427C5C2D100E56F39 /* BannerView.swift */,
-				FE18A28627C5CA4F00E56F39 /* BannerImageModel.swift */,
-			);
-			path = BannerView;
-			sourceTree = "<group>";
-		};
 		FE21132827BCA630003293B2 /* Http */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +273,18 @@
 				FE3CCB8627D1CB2B00D770F8 /* DescriptionView.xib */,
 			);
 			path = Description;
+			sourceTree = "<group>";
+		};
+		FE41DC9427D706B400317493 /* MyBanner */ = {
+			isa = PBXGroup;
+			children = (
+				FE18A28627C5CA4F00E56F39 /* BannerImageModel.swift */,
+				FE41DC9627D706B400317493 /* BannerCell.swift */,
+				FE41DC9827D706B400317493 /* MyBannerView.swift */,
+				FE41DC9A27D706B400317493 /* BannerControlButton.swift */,
+				FE8E456027D747DA0025779F /* MyBannerViewDelegate.swift */,
+			);
+			path = MyBanner;
 			sourceTree = "<group>";
 		};
 		FE47CACD27C0C8110077806D /* Login */ = {
@@ -425,11 +434,11 @@
 		FE94DD6327B655190017D776 /* kirkim_App */ = {
 			isa = PBXGroup;
 			children = (
+				FE41DC9427D706B400317493 /* MyBanner */,
 				FE2FF54D27D5BD44005DA688 /* MY_DevAPI */,
 				FEF8848327BA5C670038F138 /* Login&SignUp */,
 				FE74FEB427CDC3F900F40D5F /* TabBarMenu */,
 				FE078F1227C341D100D19E34 /* SideMenu */,
-				FE18A27F27C5BE6F00E56F39 /* BannerView */,
 				FE078F1927C34C5000D19E34 /* CustomUI */,
 				FE21132827BCA630003293B2 /* Http */,
 				FE94DD6427B655190017D776 /* AppDelegate.swift */,
@@ -597,6 +606,7 @@
 				FE078F1B27C34C7E00D19E34 /* SimpleProfileView.swift in Sources */,
 				FE74FEAF27CDBDDE00F40D5F /* MainTabBarController.swift in Sources */,
 				FE2FF54F27D5BE01005DA688 /* UIViewPreview.swift in Sources */,
+				FE41DC9E27D706B400317493 /* MyBannerView.swift in Sources */,
 				FE18A28927C5DE9B00E56F39 /* BannerHttpManager.swift in Sources */,
 				FE74FE9427CDA82D00F40D5F /* BaseVC.swift in Sources */,
 				FE3EA96727BB8AC100DA36EA /* SimpleTextField.swift in Sources */,
@@ -608,18 +618,19 @@
 				FE21133127BCD095003293B2 /* SignUpPageVC.swift in Sources */,
 				FE57F23E27CF2ACF00B205F9 /* extension+AVPlayer.swift in Sources */,
 				FE47CAD027C114210077806D /* UserHttpManager.swift in Sources */,
+				FE41DC9C27D706B400317493 /* BannerCell.swift in Sources */,
 				FE21132A27BCA6AE003293B2 /* HttpClient.swift in Sources */,
 				FE2FE4BC27CE086C004B8871 /* KiflixCollectionView.swift in Sources */,
 				FE74FEAC27CDBCA100F40D5F /* KiflixVC.swift in Sources */,
 				FE078F1F27C353B500D19E34 /* SideMenuVC.swift in Sources */,
 				FE2FF52627D5AAC8005DA688 /* MainBeminSubVC.swift in Sources */,
 				FEF8848727BA5C7E0038F138 /* LoginPageVC.swift in Sources */,
-				FE18A28527C5C2D100E56F39 /* BannerView.swift in Sources */,
 				FE3EA96527BB751800DA36EA /* TextAnimation.swift in Sources */,
 				FE2BD69727CDD34400A9FB73 /* KiflixCollectionCell.swift in Sources */,
 				FE18A28727C5CA4F00E56F39 /* BannerImageModel.swift in Sources */,
 				FEBA011727CDE08300E74FCB /* KiflixHttpManager.swift in Sources */,
 				FE2FF55127D5CC11005DA688 /* TestVC.swift in Sources */,
+				FE8E456127D747DA0025779F /* MyBannerViewDelegate.swift in Sources */,
 				FE47CACC27C0C5570077806D /* SignupUserModel.swift in Sources */,
 				FE2067EF27BCFDC7005EBEB5 /* KeyboardAnimation.swift in Sources */,
 				FE57F23B27CF29C000B205F9 /* KiflixDetailVC.swift in Sources */,
@@ -629,6 +640,7 @@
 				FE7FC0D927C48F4F009EB2AE /* TestView3-1.swift in Sources */,
 				FE94DD6F27B655190017D776 /* kirkim_App.xcdatamodeld in Sources */,
 				FE7FC0C627C48581009EB2AE /* SideMenuModel.swift in Sources */,
+				FE41DCA027D706B400317493 /* BannerControlButton.swift in Sources */,
 				FE84E4A027D07F1C00B30F57 /* PlayerView.swift in Sources */,
 				FE21132C27BCC0A2003293B2 /* LoginUserModel.swift in Sources */,
 				FE94DD6727B655190017D776 /* SceneDelegate.swift in Sources */,

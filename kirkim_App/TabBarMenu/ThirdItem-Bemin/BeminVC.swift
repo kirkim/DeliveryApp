@@ -7,11 +7,13 @@
 
 import UIKit
 import SwiftUI
+import SnapKit
 
 class BeminVC: BaseVC {
 
     @IBOutlet weak var contentStackView: UIStackView! {
         didSet {
+            addContentsView()
             let view1 = UIView()
             view1.translatesAutoresizingMaskIntoConstraints = false
             view1.heightAnchor.constraint(equalToConstant: 400).isActive = true
@@ -35,8 +37,20 @@ class BeminVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    
+    private func addContentsView() {
+        let vc = MainBeminSubVC(nibName: "MainBeminSubVC", bundle: nil)
+        addChild(vc)
+        contentStackView.addArrangedSubview(vc.view)
+        vc.didMove(toParent: self)
+        vc.view.snp.makeConstraints {
+            $0.height.equalTo(UIScreen.main.bounds.height)
+            $0.width.equalToSuperview()
+        }
     }
 }
 

@@ -11,13 +11,13 @@ final class BannerHttpManager {
     private let httpClient = HttpClient()
 
     enum BannerGetType: UrlType {
-        case getBanner
+        case basic
         case image(urlString: String)
         
         var url: String {
             let BASE_URL: String = "http://localhost:8080"
             switch self {
-            case .getBanner:
+            case .basic:
                 return "\(BASE_URL)/banner"
             case .image(urlString: let url):
                 return url

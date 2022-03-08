@@ -15,7 +15,7 @@ class TestVC: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let vc = MainBeminSubVC(nibName: "MainBeminSubVC", bundle: nil)
+        let vc = MainVC(nibName: "MainVC", bundle: nil)
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: false, completion: nil)
     }

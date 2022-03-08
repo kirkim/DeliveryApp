@@ -6,10 +6,20 @@
 //
 
 import UIKit
+import SnapKit
 
 class MainVC: BaseVC {
-
+    
+    @IBOutlet weak var bannerView: MyBannerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+}
+
+//MARK: - MainVC MyBannerViewDelegate, MyBannerViewDataSource
+extension MainVC: MyBannerViewDelegate {
+    func handleBannerControlButton() {
+        print("click!!")
     }
 }
