@@ -14,6 +14,15 @@ class MainVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.bannerView.delegate = self
+    }
+    
+    @IBAction func handleRefreshButton(_ sender: Any) {
+        self.bannerView.refresh()
+    }
+    @IBAction func sdf(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
     }
 }
 

@@ -59,7 +59,6 @@ class BannerImageManager {
     }
     
     func update(completion: (() -> Void)? = nil) {
-        print("hi")
         self.updateBannerBundle(completion: {
             let totalCount = self.getCount()
             Task {

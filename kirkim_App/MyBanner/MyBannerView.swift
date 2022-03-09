@@ -18,6 +18,8 @@ class MyBannerView: UIView {
     var collectionView: UICollectionView!
     var controlButton: UIButton!
     var totalBannerCount: Int = 0
+    weak var timer: Timer?
+    var isRefresh: Bool = false
     var delegate: MyBannerViewDelegate?
     var model: BannerImageModel?
         
@@ -27,7 +29,6 @@ class MyBannerView: UIView {
         self.model?.update(completion: {
             DispatchQueue.main.async {
                 self.initCollectionView()
-                self.collectionView.reloadData()
             }
         })
     }
@@ -77,16 +78,33 @@ class MyBannerView: UIView {
     @objc func handleControlButton(_ sender: Any) {
         self.delegate?.handleBannerControlButton()
     }
+    
+    func refresh() {
+        self.model?.update(completion: {
+            DispatchQueue.main.async {
+                self.initCollectionView()
+            }
+        })
+    }
 }
 
 // BannerCollectionView: UICollectionViewDataSource
 extension MyBannerView: UICollectionViewDataSource {
+    private func setUIRelatedToCount() {
+        if (isRefresh == false) {
+            isRefresh = true
+            self.bannerTimer()
+        } else {
+            nowPage = 0
+        }
+        self.initControlButton()
+    }
+    
     // 섹션의 갯수가 정해질 때 정확한 수치를 얻을 수 있다. 그래서 컨트롤버튼과 타이머를 이곳에서 초기화해주었다.
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let count = self.model?.getCount() ?? 0
         self.totalBannerCount = count
-        self.initControlButton()
-        self.bannerTimer()
+        self.setUIRelatedToCount()
         return count
     }
     
@@ -127,10 +145,10 @@ extension MyBannerView {
     
     func bannerTimer() {
         guard self.totalBannerCount != 0 else { return }
-        let _: Timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (Timer) in
+        timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (Timer) in
             self.bannerMove()
             self.setControlTitle()
-                    }
+        }
     }
     // 배너 움직이는 매서드
     func bannerMove() {

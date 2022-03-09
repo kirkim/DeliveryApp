@@ -26,11 +26,36 @@
                         <constraint firstAttribute="width" secondItem="eJq-bh-AXs" secondAttribute="height" multiplier="15:8" id="DUq-pk-91D"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4Y-Mm-zYG">
+                    <rect key="frame" x="30" y="526" width="354" height="31"/>
+                    <color key="backgroundColor" red="0.86078917980000003" green="0.83659013299999996" blue="0.2339074055" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="refresh">
+                        <color key="titleColor" systemColor="systemRedColor"/>
+                    </state>
+                    <connections>
+                        <action selector="handleRefreshButton:" destination="-1" eventType="touchUpInside" id="NmG-o2-vEB"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6m-jb-M3p">
+                    <rect key="frame" x="161" y="680" width="67" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                    <connections>
+                        <action selector="sdf:" destination="-1" eventType="touchUpInside" id="SQR-Qy-9Rh"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eJq-bh-AXs" secondAttribute="trailing" id="7bH-eW-b12"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="V4Y-Mm-zYG" secondAttribute="trailing" constant="30" id="8Pt-bB-zCa"/>
+                <constraint firstItem="V4Y-Mm-zYG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="JEb-Pz-Gc4"/>
+                <constraint firstItem="V4Y-Mm-zYG" firstAttribute="top" secondItem="eJq-bh-AXs" secondAttribute="bottom" constant="217" id="eQC-Fa-ZWg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="V4Y-Mm-zYG" secondAttribute="bottom" constant="305" id="fGa-Zh-QBm"/>
                 <constraint firstItem="eJq-bh-AXs" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="s9k-eB-odq"/>
                 <constraint firstItem="eJq-bh-AXs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vG6-Bg-5LQ"/>
             </constraints>
@@ -41,6 +66,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

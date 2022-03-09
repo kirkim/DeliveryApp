@@ -8,6 +8,7 @@
 import UIKit
 
 class TestVC: UIViewController {
+    var isPresent: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -15,8 +16,11 @@ class TestVC: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let vc = MainVC(nibName: "MainVC", bundle: nil)
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: false, completion: nil)
+//        if (isPresent == false) {
+            isPresent = true
+            let vc = MainVC(nibName: "MainVC", bundle: nil)
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: false, completion: nil)
+//        }
     }
 }
