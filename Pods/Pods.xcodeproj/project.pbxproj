@@ -7,175 +7,72 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05450D1493E6AA2067797FA8315AB5E0 /* Pods-kirkim_App-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A3B54364B99238DA968C1FE77B63A09B /* Pods-kirkim_App-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		29C03EAF5C27DC851118AEC88ABEC151 /* FSPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD6CDD416CDD62E164451B4E18CF7A0 /* FSPagerView.swift */; };
-		2E4A914423BA1B263C96C3BBC43E2245 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */; };
-		40987E046BAD603A58CA00B9A7648588 /* FSPageViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9620C112F0330566F4B89C4B962D2FEC /* FSPageViewLayout.swift */; };
-		488A767CF7494D169BFB886EDC470F5D /* FSPageViewTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD61E8F7E5A3F9C223CB3A8D35FA74BA /* FSPageViewTransformer.swift */; };
-		69C7244F5E0D41CF59E5ADC8952F8D0D /* FSPagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2F113F60774AE19D8129AA504CFF62 /* FSPagerViewCell.swift */; };
-		7399F0854271981516AA79727A0A06C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
-		91611428D06F5E61CECF70A53E6DA6C6 /* FSPagerViewObjcCompat.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DE77834550077BF8D096E05313230C3 /* FSPagerViewObjcCompat.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C7248FA892EB46E5947A455362EEBC3B /* Pods-kirkim_App-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F95B104660F46B0F9FF63E8AD3B31C04 /* Pods-kirkim_App-dummy.m */; };
-		C85C11573FFE927A84AD0C8BE456AD81 /* FSPagerViewLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755B6D47324B150431591FA0B0FF57AE /* FSPagerViewLayoutAttributes.swift */; };
-		CE2C6FD104092EA3F2F0A357C72460A8 /* FSPagerView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BE8A7EA2E88F1E59A16CEBBE8E70EBD9 /* FSPagerView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DEED39AE0C4679C1EE02E0D2A80D4012 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
-		EA89DFEFE15FAD82868C74E94F6F1B75 /* FSPagerViewObjcCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = C06835C7510750D7D8C6B0781317C0AA /* FSPagerViewObjcCompat.m */; };
-		ECA11CD4E20DFCA3327CB006B10A3DB8 /* FSPagerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F83B1F343C53DB55E4DD551557F9B0 /* FSPagerCollectionView.swift */; };
-		F2562CFCEC42E2989BADC7E823F2C9C3 /* FSPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D20917481C129BD31786C0800A5E4A5 /* FSPageControl.swift */; };
-		F6702D89104E55C112FE16943BE7D41A /* FSPagerView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 883B498B63505BC557AB391BF282C8EF /* FSPagerView-dummy.m */; };
+		A7B13EBD17E419E2F99504A39A4CC845 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		D07B724D7CA42A7D69EE1D16505755DA /* Pods-kirkim_App-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A0795FC67A1BB3F7605F2BD9A1A8D549 /* Pods-kirkim_App-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7CB162019FB0D3440E1037E8EF680C9 /* Pods-kirkim_App-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55CDE64CF0CF205F0DA18F6B6BF6F9 /* Pods-kirkim_App-dummy.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		EDDBA66DE8B9AB265EF75198DE81DC12 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D4F8239FB329387A8476B964D92D92E7;
-			remoteInfo = FSPagerView;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		0F47FB5E28EE8C8342B1776D813D1A4C /* FSPagerView */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FSPagerView; path = FSPagerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D20917481C129BD31786C0800A5E4A5 /* FSPageControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FSPageControl.swift; path = Sources/FSPageControl.swift; sourceTree = "<group>"; };
-		1E85256B312EEB4D9809020BEEF0E2C2 /* Pods-kirkim_App-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-kirkim_App-Info.plist"; sourceTree = "<group>"; };
-		4DE77834550077BF8D096E05313230C3 /* FSPagerViewObjcCompat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSPagerViewObjcCompat.h; path = Sources/FSPagerViewObjcCompat.h; sourceTree = "<group>"; };
+		015C87BEB4A624059B784AA92BA0B1BB /* Pods-kirkim_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-kirkim_App.debug.xcconfig"; sourceTree = "<group>"; };
+		3DBBB5549691A533BB3F8693C5AF6913 /* Pods-kirkim_App.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-kirkim_App.modulemap"; sourceTree = "<group>"; };
+		4A55CDE64CF0CF205F0DA18F6B6BF6F9 /* Pods-kirkim_App-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-kirkim_App-dummy.m"; sourceTree = "<group>"; };
 		4EB59CD1E537FAFE47ADCEC78886339C /* Pods-kirkim_App */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-kirkim_App"; path = Pods_kirkim_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		54C1376B42F87045871183577E717BE7 /* FSPagerView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FSPagerView.modulemap; sourceTree = "<group>"; };
-		54C6F16F5F313B818BD6E1CF1A33280A /* Pods-kirkim_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-kirkim_App.release.xcconfig"; sourceTree = "<group>"; };
-		5C4B95D67FD3A0B2ED2100C6B8ACDDF8 /* FSPagerView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FSPagerView-prefix.pch"; sourceTree = "<group>"; };
-		62E65C0C734197CE6D07F410261841B8 /* Pods-kirkim_App-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-kirkim_App-acknowledgements.plist"; sourceTree = "<group>"; };
-		755B6D47324B150431591FA0B0FF57AE /* FSPagerViewLayoutAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FSPagerViewLayoutAttributes.swift; path = Sources/FSPagerViewLayoutAttributes.swift; sourceTree = "<group>"; };
-		8704C7B0762E28C42347CF1BD4E30086 /* Pods-kirkim_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-kirkim_App.debug.xcconfig"; sourceTree = "<group>"; };
-		883B498B63505BC557AB391BF282C8EF /* FSPagerView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FSPagerView-dummy.m"; sourceTree = "<group>"; };
-		9620C112F0330566F4B89C4B962D2FEC /* FSPageViewLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FSPageViewLayout.swift; path = Sources/FSPageViewLayout.swift; sourceTree = "<group>"; };
-		97218C1C3D3BE330071C2AE6C42FE5A3 /* Pods-kirkim_App-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-kirkim_App-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9CB13683428BA303A262E9E7688F6810 /* Pods-kirkim_App-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-kirkim_App-frameworks.sh"; sourceTree = "<group>"; };
+		64A15386BAF8B3E546F4EFB05ED214AF /* Pods-kirkim_App-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-kirkim_App-acknowledgements.markdown"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A3B54364B99238DA968C1FE77B63A09B /* Pods-kirkim_App-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-kirkim_App-umbrella.h"; sourceTree = "<group>"; };
-		AAD6CDD416CDD62E164451B4E18CF7A0 /* FSPagerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FSPagerView.swift; path = Sources/FSPagerView.swift; sourceTree = "<group>"; };
-		B4F83B1F343C53DB55E4DD551557F9B0 /* FSPagerCollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FSPagerCollectionView.swift; path = Sources/FSPagerCollectionView.swift; sourceTree = "<group>"; };
-		BA57FBE3E9FACBCC7D8C186A500176BF /* Pods-kirkim_App.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-kirkim_App.modulemap"; sourceTree = "<group>"; };
-		BD61E8F7E5A3F9C223CB3A8D35FA74BA /* FSPageViewTransformer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FSPageViewTransformer.swift; path = Sources/FSPageViewTransformer.swift; sourceTree = "<group>"; };
-		BE8A7EA2E88F1E59A16CEBBE8E70EBD9 /* FSPagerView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FSPagerView-umbrella.h"; sourceTree = "<group>"; };
-		C06835C7510750D7D8C6B0781317C0AA /* FSPagerViewObjcCompat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSPagerViewObjcCompat.m; path = Sources/FSPagerViewObjcCompat.m; sourceTree = "<group>"; };
-		D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		E817F4D29D20E42F7071756A831DFA88 /* FSPagerView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FSPagerView-Info.plist"; sourceTree = "<group>"; };
-		EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		ED2F113F60774AE19D8129AA504CFF62 /* FSPagerViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FSPagerViewCell.swift; path = Sources/FSPagerViewCell.swift; sourceTree = "<group>"; };
-		EEE68582D06093A1C75A4D7FBF4EA533 /* FSPagerView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FSPagerView.debug.xcconfig; sourceTree = "<group>"; };
-		F939DD32A1D593BF543C03C115A544D6 /* FSPagerView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FSPagerView.release.xcconfig; sourceTree = "<group>"; };
-		F95B104660F46B0F9FF63E8AD3B31C04 /* Pods-kirkim_App-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-kirkim_App-dummy.m"; sourceTree = "<group>"; };
+		A0795FC67A1BB3F7605F2BD9A1A8D549 /* Pods-kirkim_App-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-kirkim_App-umbrella.h"; sourceTree = "<group>"; };
+		BA177137561A109F514E53BE2354C4B7 /* Pods-kirkim_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-kirkim_App.release.xcconfig"; sourceTree = "<group>"; };
+		D4F37437D83AEDF17AB5BF7BB641237B /* Pods-kirkim_App-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-kirkim_App-acknowledgements.plist"; sourceTree = "<group>"; };
+		DF2F556F132091D36FF4DB3FAF8A1CC7 /* Pods-kirkim_App-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-kirkim_App-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B52E1F0A6DA796BEE49A7EBC4886F2DB /* Frameworks */ = {
+		528CFCDDE63CE49347AE16C42BFB0618 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEED39AE0C4679C1EE02E0D2A80D4012 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E5ACBBCF353041B05D869DB1467D16B1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7399F0854271981516AA79727A0A06C8 /* Foundation.framework in Frameworks */,
-				2E4A914423BA1B263C96C3BBC43E2245 /* UIKit.framework in Frameworks */,
+				A7B13EBD17E419E2F99504A39A4CC845 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0CFB37C49ECD64DAB9F57673811063E8 /* FSPagerView */ = {
+		38E4913C851CB06263B44B8D7B308D82 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D20917481C129BD31786C0800A5E4A5 /* FSPageControl.swift */,
-				B4F83B1F343C53DB55E4DD551557F9B0 /* FSPagerCollectionView.swift */,
-				AAD6CDD416CDD62E164451B4E18CF7A0 /* FSPagerView.swift */,
-				ED2F113F60774AE19D8129AA504CFF62 /* FSPagerViewCell.swift */,
-				755B6D47324B150431591FA0B0FF57AE /* FSPagerViewLayoutAttributes.swift */,
-				4DE77834550077BF8D096E05313230C3 /* FSPagerViewObjcCompat.h */,
-				C06835C7510750D7D8C6B0781317C0AA /* FSPagerViewObjcCompat.m */,
-				9620C112F0330566F4B89C4B962D2FEC /* FSPageViewLayout.swift */,
-				BD61E8F7E5A3F9C223CB3A8D35FA74BA /* FSPageViewTransformer.swift */,
-				5B99539154F62E2C331C075575C13260 /* Support Files */,
-			);
-			name = FSPagerView;
-			path = FSPagerView;
-			sourceTree = "<group>";
-		};
-		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */,
-				D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		5B99539154F62E2C331C075575C13260 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				54C1376B42F87045871183577E717BE7 /* FSPagerView.modulemap */,
-				883B498B63505BC557AB391BF282C8EF /* FSPagerView-dummy.m */,
-				E817F4D29D20E42F7071756A831DFA88 /* FSPagerView-Info.plist */,
-				5C4B95D67FD3A0B2ED2100C6B8ACDDF8 /* FSPagerView-prefix.pch */,
-				BE8A7EA2E88F1E59A16CEBBE8E70EBD9 /* FSPagerView-umbrella.h */,
-				EEE68582D06093A1C75A4D7FBF4EA533 /* FSPagerView.debug.xcconfig */,
-				F939DD32A1D593BF543C03C115A544D6 /* FSPagerView.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/FSPagerView";
-			sourceTree = "<group>";
-		};
-		5DE3D0F0B06A6B1366B094D3727C370C /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				0CFB37C49ECD64DAB9F57673811063E8 /* FSPagerView */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		6258D22081EDC824BB0966C2F88C83D2 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				78F6737A5928DF907FD4F041AF36E91D /* Pods-kirkim_App */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		77584D365FBB5D633967C244A4EF0361 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0F47FB5E28EE8C8342B1776D813D1A4C /* FSPagerView */,
 				4EB59CD1E537FAFE47ADCEC78886339C /* Pods-kirkim_App */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		78F6737A5928DF907FD4F041AF36E91D /* Pods-kirkim_App */ = {
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				BA57FBE3E9FACBCC7D8C186A500176BF /* Pods-kirkim_App.modulemap */,
-				97218C1C3D3BE330071C2AE6C42FE5A3 /* Pods-kirkim_App-acknowledgements.markdown */,
-				62E65C0C734197CE6D07F410261841B8 /* Pods-kirkim_App-acknowledgements.plist */,
-				F95B104660F46B0F9FF63E8AD3B31C04 /* Pods-kirkim_App-dummy.m */,
-				9CB13683428BA303A262E9E7688F6810 /* Pods-kirkim_App-frameworks.sh */,
-				1E85256B312EEB4D9809020BEEF0E2C2 /* Pods-kirkim_App-Info.plist */,
-				A3B54364B99238DA968C1FE77B63A09B /* Pods-kirkim_App-umbrella.h */,
-				8704C7B0762E28C42347CF1BD4E30086 /* Pods-kirkim_App.debug.xcconfig */,
-				54C6F16F5F313B818BD6E1CF1A33280A /* Pods-kirkim_App.release.xcconfig */,
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		607332635B87D4F1760966B051278068 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7ED4748310FB27E2AB3A0BAF5F26E0D3 /* Pods-kirkim_App */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7ED4748310FB27E2AB3A0BAF5F26E0D3 /* Pods-kirkim_App */ = {
+			isa = PBXGroup;
+			children = (
+				3DBBB5549691A533BB3F8693C5AF6913 /* Pods-kirkim_App.modulemap */,
+				64A15386BAF8B3E546F4EFB05ED214AF /* Pods-kirkim_App-acknowledgements.markdown */,
+				D4F37437D83AEDF17AB5BF7BB641237B /* Pods-kirkim_App-acknowledgements.plist */,
+				4A55CDE64CF0CF205F0DA18F6B6BF6F9 /* Pods-kirkim_App-dummy.m */,
+				DF2F556F132091D36FF4DB3FAF8A1CC7 /* Pods-kirkim_App-Info.plist */,
+				A0795FC67A1BB3F7605F2BD9A1A8D549 /* Pods-kirkim_App-umbrella.h */,
+				015C87BEB4A624059B784AA92BA0B1BB /* Pods-kirkim_App.debug.xcconfig */,
+				BA177137561A109F514E53BE2354C4B7 /* Pods-kirkim_App.release.xcconfig */,
 			);
 			name = "Pods-kirkim_App";
 			path = "Target Support Files/Pods-kirkim_App";
@@ -185,30 +82,28 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
-				5DE3D0F0B06A6B1366B094D3727C370C /* Pods */,
-				77584D365FBB5D633967C244A4EF0361 /* Products */,
-				6258D22081EDC824BB0966C2F88C83D2 /* Targets Support Files */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				38E4913C851CB06263B44B8D7B308D82 /* Products */,
+				607332635B87D4F1760966B051278068 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		0608DA1408F82CC4ADBFAF480D0FA2B4 /* Headers */ = {
+		22CAFDF46298954678DCB9EE36CEB6A9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE2C6FD104092EA3F2F0A357C72460A8 /* FSPagerView-umbrella.h in Headers */,
-				91611428D06F5E61CECF70A53E6DA6C6 /* FSPagerViewObjcCompat.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		35E9A5C88B191B8CB5C88B7633AE7EA4 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				05450D1493E6AA2067797FA8315AB5E0 /* Pods-kirkim_App-umbrella.h in Headers */,
+				D07B724D7CA42A7D69EE1D16505755DA /* Pods-kirkim_App-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,39 +112,20 @@
 /* Begin PBXNativeTarget section */
 		968A939B72E57941A6437E29D3BF0C4E /* Pods-kirkim_App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FCF84E871941C1500CEC1F5344E443C2 /* Build configuration list for PBXNativeTarget "Pods-kirkim_App" */;
+			buildConfigurationList = 347CE6AC58B438EF91BA17B612FDA415 /* Build configuration list for PBXNativeTarget "Pods-kirkim_App" */;
 			buildPhases = (
-				35E9A5C88B191B8CB5C88B7633AE7EA4 /* Headers */,
-				DC42DBEC8DFB70C6BE4EA33858F3A6AA /* Sources */,
-				B52E1F0A6DA796BEE49A7EBC4886F2DB /* Frameworks */,
-				77F948BE10409EC98DAB6AC5779C4EEB /* Resources */,
+				22CAFDF46298954678DCB9EE36CEB6A9 /* Headers */,
+				F5AD02B956D5EEE41246B94B1DD2383F /* Sources */,
+				528CFCDDE63CE49347AE16C42BFB0618 /* Frameworks */,
+				CF2FDCBABDF593212D369F19E95F91C5 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D0BC21A75105E49B488916352CB28606 /* PBXTargetDependency */,
 			);
 			name = "Pods-kirkim_App";
 			productName = Pods_kirkim_App;
 			productReference = 4EB59CD1E537FAFE47ADCEC78886339C /* Pods-kirkim_App */;
-			productType = "com.apple.product-type.framework";
-		};
-		D4F8239FB329387A8476B964D92D92E7 /* FSPagerView */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 98343682D690F1F5CF2596A899F35F57 /* Build configuration list for PBXNativeTarget "FSPagerView" */;
-			buildPhases = (
-				0608DA1408F82CC4ADBFAF480D0FA2B4 /* Headers */,
-				5F08C52D6C5CBA958747935FFDA1DFC2 /* Sources */,
-				E5ACBBCF353041B05D869DB1467D16B1 /* Frameworks */,
-				C51D8DC25EB55BC76B82A9E61C8BE832 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = FSPagerView;
-			productName = FSPagerView;
-			productReference = 0F47FB5E28EE8C8342B1776D813D1A4C /* FSPagerView */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -270,25 +146,17 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 77584D365FBB5D633967C244A4EF0361 /* Products */;
+			productRefGroup = 38E4913C851CB06263B44B8D7B308D82 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D4F8239FB329387A8476B964D92D92E7 /* FSPagerView */,
 				968A939B72E57941A6437E29D3BF0C4E /* Pods-kirkim_App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		77F948BE10409EC98DAB6AC5779C4EEB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C51D8DC25EB55BC76B82A9E61C8BE832 /* Resources */ = {
+		CF2FDCBABDF593212D369F19E95F91C5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -298,149 +166,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		5F08C52D6C5CBA958747935FFDA1DFC2 /* Sources */ = {
+		F5AD02B956D5EEE41246B94B1DD2383F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2562CFCEC42E2989BADC7E823F2C9C3 /* FSPageControl.swift in Sources */,
-				ECA11CD4E20DFCA3327CB006B10A3DB8 /* FSPagerCollectionView.swift in Sources */,
-				29C03EAF5C27DC851118AEC88ABEC151 /* FSPagerView.swift in Sources */,
-				F6702D89104E55C112FE16943BE7D41A /* FSPagerView-dummy.m in Sources */,
-				69C7244F5E0D41CF59E5ADC8952F8D0D /* FSPagerViewCell.swift in Sources */,
-				C85C11573FFE927A84AD0C8BE456AD81 /* FSPagerViewLayoutAttributes.swift in Sources */,
-				EA89DFEFE15FAD82868C74E94F6F1B75 /* FSPagerViewObjcCompat.m in Sources */,
-				40987E046BAD603A58CA00B9A7648588 /* FSPageViewLayout.swift in Sources */,
-				488A767CF7494D169BFB886EDC470F5D /* FSPageViewTransformer.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC42DBEC8DFB70C6BE4EA33858F3A6AA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C7248FA892EB46E5947A455362EEBC3B /* Pods-kirkim_App-dummy.m in Sources */,
+				E7CB162019FB0D3440E1037E8EF680C9 /* Pods-kirkim_App-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		D0BC21A75105E49B488916352CB28606 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FSPagerView;
-			target = D4F8239FB329387A8476B964D92D92E7 /* FSPagerView */;
-			targetProxy = EDDBA66DE8B9AB265EF75198DE81DC12 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		31731D2A96C7FF5AA4EE56EC2EB0AE2F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F939DD32A1D593BF543C03C115A544D6 /* FSPagerView.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/FSPagerView/FSPagerView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FSPagerView/FSPagerView-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/FSPagerView/FSPagerView.modulemap";
-				PRODUCT_MODULE_NAME = FSPagerView;
-				PRODUCT_NAME = FSPagerView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		434E4A52CBC9F74FA2D8CDD170442C4A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EEE68582D06093A1C75A4D7FBF4EA533 /* FSPagerView.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/FSPagerView/FSPagerView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FSPagerView/FSPagerView-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/FSPagerView/FSPagerView.modulemap";
-				PRODUCT_MODULE_NAME = FSPagerView;
-				PRODUCT_NAME = FSPagerView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		8C34A67204A4BE5E69344D7BB72ADF77 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 54C6F16F5F313B818BD6E1CF1A33280A /* Pods-kirkim_App.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-kirkim_App/Pods-kirkim_App-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-kirkim_App/Pods-kirkim_App.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		90D4D09BCB6A4660E43ACBE9ECB6FE9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -569,9 +305,9 @@
 			};
 			name = Release;
 		};
-		C461E849F11602220B803B698057B640 /* Debug */ = {
+		D2D8EA5D3D5B7529FFA013CA452C950F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8704C7B0762E28C42347CF1BD4E30086 /* Pods-kirkim_App.debug.xcconfig */;
+			baseConfigurationReference = 015C87BEB4A624059B784AA92BA0B1BB /* Pods-kirkim_App.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -606,32 +342,61 @@
 			};
 			name = Debug;
 		};
+		E321FCCD27AFECD72ACEDFE4AEA9F1BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA177137561A109F514E53BE2354C4B7 /* Pods-kirkim_App.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-kirkim_App/Pods-kirkim_App-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-kirkim_App/Pods-kirkim_App.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		347CE6AC58B438EF91BA17B612FDA415 /* Build configuration list for PBXNativeTarget "Pods-kirkim_App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2D8EA5D3D5B7529FFA013CA452C950F /* Debug */,
+				E321FCCD27AFECD72ACEDFE4AEA9F1BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				90D4D09BCB6A4660E43ACBE9ECB6FE9A /* Debug */,
 				9553C89E183877A5CB2F3C6801BEC129 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		98343682D690F1F5CF2596A899F35F57 /* Build configuration list for PBXNativeTarget "FSPagerView" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				434E4A52CBC9F74FA2D8CDD170442C4A /* Debug */,
-				31731D2A96C7FF5AA4EE56EC2EB0AE2F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FCF84E871941C1500CEC1F5344E443C2 /* Build configuration list for PBXNativeTarget "Pods-kirkim_App" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C461E849F11602220B803B698057B640 /* Debug */,
-				8C34A67204A4BE5E69344D7BB72ADF77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

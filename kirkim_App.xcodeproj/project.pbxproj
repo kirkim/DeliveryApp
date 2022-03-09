@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C0CB903D005106C47A311E5A /* Pods_kirkim_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B190628E8B765E7AE2F36C /* Pods_kirkim_App.framework */; };
+		A2518EB63262A845BBFED192 /* Pods_kirkim_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC347EAAE3D6282F7DE4DE5 /* Pods_kirkim_App.framework */; };
 		FE078F1B27C34C7E00D19E34 /* SimpleProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE078F1A27C34C7E00D19E34 /* SimpleProfileView.swift */; };
 		FE078F1D27C353A900D19E34 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE078F1C27C353A900D19E34 /* SideMenu.storyboard */; };
 		FE078F1F27C353B500D19E34 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE078F1E27C353B500D19E34 /* SideMenuVC.swift */; };
@@ -25,13 +25,7 @@
 		FE2BD69827CDD34400A9FB73 /* KiflixCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE2BD69627CDD34400A9FB73 /* KiflixCollectionCell.xib */; };
 		FE2BD69A27CDD53B00A9FB73 /* LoginPageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE2BD69927CDD53B00A9FB73 /* LoginPageVC.xib */; };
 		FE2FE4BC27CE086C004B8871 /* KiflixCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2FE4BB27CE086C004B8871 /* KiflixCollectionView.swift */; };
-		FE2FF52127D59A3A005DA688 /* BeminVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2FF51F27D59A3A005DA688 /* BeminVC.swift */; };
-		FE2FF52227D59A3A005DA688 /* BeminVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE2FF52027D59A3A005DA688 /* BeminVC.xib */; };
-		FE2FF52627D5AAC8005DA688 /* MainBeminSubVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2FF52427D5AAC8005DA688 /* MainBeminSubVC.swift */; };
-		FE2FF52727D5AAC8005DA688 /* MainBeminSubVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE2FF52527D5AAC8005DA688 /* MainBeminSubVC.xib */; };
 		FE2FF52D27D5B414005DA688 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FE2FF52C27D5B414005DA688 /* SnapKit */; };
-		FE2FF53027D5B4C9005DA688 /* BeminCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2FF52F27D5B4C9005DA688 /* BeminCell.swift */; };
-		FE2FF53227D5B642005DA688 /* FirstBeminCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2FF53127D5B642005DA688 /* FirstBeminCell.swift */; };
 		FE2FF54F27D5BE01005DA688 /* UIViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2FF54E27D5BE01005DA688 /* UIViewPreview.swift */; };
 		FE2FF55127D5CC11005DA688 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2FF55027D5CC11005DA688 /* TestVC.swift */; };
 		FE3CCB8727D1CB2B00D770F8 /* DescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE3CCB8627D1CB2B00D770F8 /* DescriptionView.xib */; };
@@ -46,6 +40,8 @@
 		FE57F23B27CF29C000B205F9 /* KiflixDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57F23927CF29C000B205F9 /* KiflixDetailVC.swift */; };
 		FE57F23C27CF29C000B205F9 /* KiflixDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE57F23A27CF29C000B205F9 /* KiflixDetailVC.xib */; };
 		FE57F23E27CF2ACF00B205F9 /* extension+AVPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57F23D27CF2ACF00B205F9 /* extension+AVPlayer.swift */; };
+		FE6FF40927D8DD4700F0CB72 /* BeminCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6FF40727D8DD4700F0CB72 /* BeminCollectionVC.swift */; };
+		FE6FF40A27D8DD4700F0CB72 /* Bemin+StaticSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6FF40827D8DD4700F0CB72 /* Bemin+StaticSection.swift */; };
 		FE74FE9427CDA82D00F40D5F /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74FE9327CDA82D00F40D5F /* BaseVC.swift */; };
 		FE74FEAC27CDBCA100F40D5F /* KiflixVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74FEAA27CDBCA100F40D5F /* KiflixVC.swift */; };
 		FE74FEAD27CDBCA100F40D5F /* KiflixVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE74FEAB27CDBCA100F40D5F /* KiflixVC.xib */; };
@@ -80,9 +76,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		46B190628E8B765E7AE2F36C /* Pods_kirkim_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kirkim_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		51943665D1D5FF902C4A3F92 /* Pods-kirkim_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kirkim_App.release.xcconfig"; path = "Target Support Files/Pods-kirkim_App/Pods-kirkim_App.release.xcconfig"; sourceTree = "<group>"; };
-		831839DF6FBFB73F7066EF59 /* Pods-kirkim_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kirkim_App.debug.xcconfig"; path = "Target Support Files/Pods-kirkim_App/Pods-kirkim_App.debug.xcconfig"; sourceTree = "<group>"; };
+		3DC347EAAE3D6282F7DE4DE5 /* Pods_kirkim_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kirkim_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42FBEB299622500E5FA4B12B /* Pods-kirkim_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kirkim_App.debug.xcconfig"; path = "Target Support Files/Pods-kirkim_App/Pods-kirkim_App.debug.xcconfig"; sourceTree = "<group>"; };
+		52BAD1B580C61DB773B1B73C /* Pods-kirkim_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kirkim_App.release.xcconfig"; path = "Target Support Files/Pods-kirkim_App/Pods-kirkim_App.release.xcconfig"; sourceTree = "<group>"; };
 		FE078F1A27C34C7E00D19E34 /* SimpleProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleProfileView.swift; sourceTree = "<group>"; };
 		FE078F1C27C353A900D19E34 /* SideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
 		FE078F1E27C353B500D19E34 /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
@@ -100,12 +96,6 @@
 		FE2BD69627CDD34400A9FB73 /* KiflixCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KiflixCollectionCell.xib; sourceTree = "<group>"; };
 		FE2BD69927CDD53B00A9FB73 /* LoginPageVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginPageVC.xib; sourceTree = "<group>"; };
 		FE2FE4BB27CE086C004B8871 /* KiflixCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiflixCollectionView.swift; sourceTree = "<group>"; };
-		FE2FF51F27D59A3A005DA688 /* BeminVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeminVC.swift; sourceTree = "<group>"; };
-		FE2FF52027D59A3A005DA688 /* BeminVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeminVC.xib; sourceTree = "<group>"; };
-		FE2FF52427D5AAC8005DA688 /* MainBeminSubVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBeminSubVC.swift; sourceTree = "<group>"; };
-		FE2FF52527D5AAC8005DA688 /* MainBeminSubVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainBeminSubVC.xib; sourceTree = "<group>"; };
-		FE2FF52F27D5B4C9005DA688 /* BeminCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeminCell.swift; sourceTree = "<group>"; };
-		FE2FF53127D5B642005DA688 /* FirstBeminCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstBeminCell.swift; sourceTree = "<group>"; };
 		FE2FF54E27D5BE01005DA688 /* UIViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewPreview.swift; sourceTree = "<group>"; };
 		FE2FF55027D5CC11005DA688 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
 		FE3CCB8627D1CB2B00D770F8 /* DescriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionView.xib; sourceTree = "<group>"; };
@@ -120,6 +110,8 @@
 		FE57F23927CF29C000B205F9 /* KiflixDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiflixDetailVC.swift; sourceTree = "<group>"; };
 		FE57F23A27CF29C000B205F9 /* KiflixDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KiflixDetailVC.xib; sourceTree = "<group>"; };
 		FE57F23D27CF2ACF00B205F9 /* extension+AVPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension+AVPlayer.swift"; sourceTree = "<group>"; };
+		FE6FF40727D8DD4700F0CB72 /* BeminCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeminCollectionVC.swift; sourceTree = "<group>"; };
+		FE6FF40827D8DD4700F0CB72 /* Bemin+StaticSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bemin+StaticSection.swift"; sourceTree = "<group>"; };
 		FE74FE9327CDA82D00F40D5F /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		FE74FEAA27CDBCA100F40D5F /* KiflixVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiflixVC.swift; sourceTree = "<group>"; };
 		FE74FEAB27CDBCA100F40D5F /* KiflixVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KiflixVC.xib; sourceTree = "<group>"; };
@@ -161,28 +153,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE2FF52D27D5B414005DA688 /* SnapKit in Frameworks */,
-				C0CB903D005106C47A311E5A /* Pods_kirkim_App.framework in Frameworks */,
+				A2518EB63262A845BBFED192 /* Pods_kirkim_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2173D3EA1D3E7AFE07428FB0 /* Pods */ = {
+		4C03EE4FE6C15A40300F64F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				831839DF6FBFB73F7066EF59 /* Pods-kirkim_App.debug.xcconfig */,
-				51943665D1D5FF902C4A3F92 /* Pods-kirkim_App.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		35A37BE357A93052ED238E1F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				46B190628E8B765E7AE2F36C /* Pods_kirkim_App.framework */,
+				3DC347EAAE3D6282F7DE4DE5 /* Pods_kirkim_App.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6700F2DADA3136F62BF392DA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				42FBEB299622500E5FA4B12B /* Pods-kirkim_App.debug.xcconfig */,
+				52BAD1B580C61DB773B1B73C /* Pods-kirkim_App.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		FE078F1227C341D100D19E34 /* SideMenu */ = {
@@ -232,30 +224,10 @@
 		FE2FF51E27D59A07005DA688 /* ThirdItem-Bemin */ = {
 			isa = PBXGroup;
 			children = (
-				FE2FF52E27D5B473005DA688 /* BeminCellView */,
-				FE2FF52327D5AA7E005DA688 /* SubView */,
-				FE2FF51F27D59A3A005DA688 /* BeminVC.swift */,
-				FE2FF52027D59A3A005DA688 /* BeminVC.xib */,
+				FE6FF40827D8DD4700F0CB72 /* Bemin+StaticSection.swift */,
+				FE6FF40727D8DD4700F0CB72 /* BeminCollectionVC.swift */,
 			);
 			path = "ThirdItem-Bemin";
-			sourceTree = "<group>";
-		};
-		FE2FF52327D5AA7E005DA688 /* SubView */ = {
-			isa = PBXGroup;
-			children = (
-				FE2FF52427D5AAC8005DA688 /* MainBeminSubVC.swift */,
-				FE2FF52527D5AAC8005DA688 /* MainBeminSubVC.xib */,
-			);
-			path = SubView;
-			sourceTree = "<group>";
-		};
-		FE2FF52E27D5B473005DA688 /* BeminCellView */ = {
-			isa = PBXGroup;
-			children = (
-				FE2FF52F27D5B4C9005DA688 /* BeminCell.swift */,
-				FE2FF53127D5B642005DA688 /* FirstBeminCell.swift */,
-			);
-			path = BeminCellView;
 			sourceTree = "<group>";
 		};
 		FE2FF54D27D5BD44005DA688 /* MY_DevAPI */ = {
@@ -279,8 +251,8 @@
 			isa = PBXGroup;
 			children = (
 				FE18A28627C5CA4F00E56F39 /* BannerImageModel.swift */,
-				FE41DC9627D706B400317493 /* BannerCell.swift */,
 				FE41DC9827D706B400317493 /* MyBannerView.swift */,
+				FE41DC9627D706B400317493 /* BannerCell.swift */,
 				FE41DC9A27D706B400317493 /* BannerControlButton.swift */,
 				FE8E456027D747DA0025779F /* MyBannerViewDelegate.swift */,
 			);
@@ -418,8 +390,8 @@
 			children = (
 				FE94DD6327B655190017D776 /* kirkim_App */,
 				FE94DD6227B655190017D776 /* Products */,
-				2173D3EA1D3E7AFE07428FB0 /* Pods */,
-				35A37BE357A93052ED238E1F /* Frameworks */,
+				6700F2DADA3136F62BF392DA /* Pods */,
+				4C03EE4FE6C15A40300F64F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -474,7 +446,6 @@
 				FE94DD5D27B655190017D776 /* Sources */,
 				FE94DD5E27B655190017D776 /* Frameworks */,
 				FE94DD5F27B655190017D776 /* Resources */,
-				491F8D12119E7848824376BA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -542,11 +513,9 @@
 				FE94DD7127B655190017D776 /* Assets.xcassets in Resources */,
 				FEBA011327CDD5D700E74FCB /* SignUpPageVC.xib in Resources */,
 				FE84E49E27D0718000B30F57 /* KiflixPlayerVC.xib in Resources */,
-				FE2FF52727D5AAC8005DA688 /* MainBeminSubVC.xib in Resources */,
 				FE2BD69827CDD34400A9FB73 /* KiflixCollectionCell.xib in Resources */,
 				FE2BD69227CDC9C400A9FB73 /* MainVC.xib in Resources */,
 				FE94DD6C27B655190017D776 /* Main.storyboard in Resources */,
-				FE2FF52227D59A3A005DA688 /* BeminVC.xib in Resources */,
 				FE7FC0D627C48F3F009EB2AE /* TestView2-1.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -554,23 +523,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		491F8D12119E7848824376BA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-kirkim_App/Pods-kirkim_App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-kirkim_App/Pods-kirkim_App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kirkim_App/Pods-kirkim_App-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		DAEA94C5D921612012F143E0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -601,7 +553,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE7FC0CD27C48F22009EB2AE /* TestView1-1.swift in Sources */,
-				FE2FF52127D59A3A005DA688 /* BeminVC.swift in Sources */,
 				FE2BD69127CDC9C400A9FB73 /* MainVC.swift in Sources */,
 				FE078F1B27C34C7E00D19E34 /* SimpleProfileView.swift in Sources */,
 				FE74FEAF27CDBDDE00F40D5F /* MainTabBarController.swift in Sources */,
@@ -618,12 +569,12 @@
 				FE21133127BCD095003293B2 /* SignUpPageVC.swift in Sources */,
 				FE57F23E27CF2ACF00B205F9 /* extension+AVPlayer.swift in Sources */,
 				FE47CAD027C114210077806D /* UserHttpManager.swift in Sources */,
+				FE6FF40A27D8DD4700F0CB72 /* Bemin+StaticSection.swift in Sources */,
 				FE41DC9C27D706B400317493 /* BannerCell.swift in Sources */,
 				FE21132A27BCA6AE003293B2 /* HttpClient.swift in Sources */,
 				FE2FE4BC27CE086C004B8871 /* KiflixCollectionView.swift in Sources */,
 				FE74FEAC27CDBCA100F40D5F /* KiflixVC.swift in Sources */,
 				FE078F1F27C353B500D19E34 /* SideMenuVC.swift in Sources */,
-				FE2FF52627D5AAC8005DA688 /* MainBeminSubVC.swift in Sources */,
 				FEF8848727BA5C7E0038F138 /* LoginPageVC.swift in Sources */,
 				FE3EA96527BB751800DA36EA /* TextAnimation.swift in Sources */,
 				FE2BD69727CDD34400A9FB73 /* KiflixCollectionCell.swift in Sources */,
@@ -634,18 +585,17 @@
 				FE47CACC27C0C5570077806D /* SignupUserModel.swift in Sources */,
 				FE2067EF27BCFDC7005EBEB5 /* KeyboardAnimation.swift in Sources */,
 				FE57F23B27CF29C000B205F9 /* KiflixDetailVC.swift in Sources */,
-				FE2FF53227D5B642005DA688 /* FirstBeminCell.swift in Sources */,
 				FE84E49D27D0718000B30F57 /* KiflixPlayerVC.swift in Sources */,
 				FE94DD6527B655190017D776 /* AppDelegate.swift in Sources */,
 				FE7FC0D927C48F4F009EB2AE /* TestView3-1.swift in Sources */,
 				FE94DD6F27B655190017D776 /* kirkim_App.xcdatamodeld in Sources */,
+				FE6FF40927D8DD4700F0CB72 /* BeminCollectionVC.swift in Sources */,
 				FE7FC0C627C48581009EB2AE /* SideMenuModel.swift in Sources */,
 				FE41DCA027D706B400317493 /* BannerControlButton.swift in Sources */,
 				FE84E4A027D07F1C00B30F57 /* PlayerView.swift in Sources */,
 				FE21132C27BCC0A2003293B2 /* LoginUserModel.swift in Sources */,
 				FE94DD6727B655190017D776 /* SceneDelegate.swift in Sources */,
 				FE7FC0D127C48F31009EB2AE /* TestView1-2.swift in Sources */,
-				FE2FF53027D5B4C9005DA688 /* BeminCell.swift in Sources */,
 				FEBA011527CDDC5B00E74FCB /* KiflixModel.swift in Sources */,
 				FE7FC0E427C4AE90009EB2AE /* SideMenuCell.swift in Sources */,
 				FE46F4F627D1AD6500DB31EE /* DescriptionView.swift in Sources */,
@@ -792,7 +742,7 @@
 		};
 		FE94DD7927B655190017D776 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 831839DF6FBFB73F7066EF59 /* Pods-kirkim_App.debug.xcconfig */;
+			baseConfigurationReference = 42FBEB299622500E5FA4B12B /* Pods-kirkim_App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -822,7 +772,7 @@
 		};
 		FE94DD7A27B655190017D776 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 51943665D1D5FF902C4A3F92 /* Pods-kirkim_App.release.xcconfig */;
+			baseConfigurationReference = 52BAD1B580C61DB773B1B73C /* Pods-kirkim_App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
