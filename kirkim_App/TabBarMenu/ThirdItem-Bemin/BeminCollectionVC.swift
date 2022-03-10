@@ -8,41 +8,49 @@
 import UIKit
 
 class BeminCollectionVC: UICollectionViewController {
-    private static let STATIC_COUNT = StaticCollection.Section.allCases.count
+    private let STATIC_SECTION_TOTALCOUNT: Int
+    private let staticModel = StaticSectionModel()
+    
     init() {
-        super.init(collectionViewLayout: BeminCollectionVC.createLayout())
+        let layout = UICollectionViewLayout()
+        self.STATIC_SECTION_TOTALCOUNT = staticModel.getStaticSectionTotalCount()
+        super.init(collectionViewLayout: layout)
+        staticModel.registerCells(on: collectionView)
+        collectionView.collectionViewLayout = createLayout()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    static func createLayout() -> UICollectionViewCompositionalLayout {
+    func createLayout() -> UICollectionViewCompositionalLayout {
         return UICollectionViewCompositionalLayout { (sectionNumber, env) -> NSCollectionLayoutSection? in
-            if (sectionNumber < STATIC_COUNT) {
-                return StaticCollection.staticSectionLayout(sectionNumber: sectionNumber)
+            if (sectionNumber < self.STATIC_SECTION_TOTALCOUNT) {
+                return self.staticModel.staticSectionLayout(sectionNumber: sectionNumber)
             } else {
-                return StaticCollection.mainSection()
+                return self.staticModel.staticSectionLayout(sectionNumber: sectionNumber)
             }
         }
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return BeminCollectionVC.STATIC_COUNT
+        return self.STATIC_SECTION_TOTALCOUNT
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if (section < BeminCollectionVC.STATIC_COUNT) {
-            return StaticCollection.numberOfStaticItem(section: section)
+        if (section < self.STATIC_SECTION_TOTALCOUNT) {
+            return staticModel.numberOfStaticItem(section: section)
         } else {
             return 0
         }
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        cell.backgroundColor = .red
-        return cell
+        if (indexPath.section < self.STATIC_SECTION_TOTALCOUNT) {
+            return staticModel.getCellBySection(collectionView, cellForItemAt: indexPath)
+        } else {
+            return UICollectionViewCell()
+        }
     }
     private let cellId = "cellId"
     
@@ -55,7 +63,6 @@ class BeminCollectionVC: UICollectionViewController {
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
     }
 }
-
 
 import SwiftUI
 
