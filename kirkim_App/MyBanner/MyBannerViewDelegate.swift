@@ -9,4 +9,5 @@ import Foundation
 
 protocol MyBannerViewDelegate {
     func handleBannerControlButton()
+    func didSelectedBannerView(indexPath: IndexPath)
 }

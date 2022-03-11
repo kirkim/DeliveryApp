@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>title</key>
+		<string></string>
+		<key>eventDeadline</key>
+		<date>2022-03-15T11:28:57Z</date>
+		<key>smallImageName</key>
+		<string>1.png</string>
+		<key>bigImageName</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string></string>
+		<key>eventDeadline</key>
+		<date>2022-03-15T11:28:57Z</date>
+		<key>smallImageName</key>
+		<string>2.png</string>
+		<key>bigImageName</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string></string>
+		<key>eventDeadline</key>
+		<date>2022-03-15T11:28:57Z</date>
+		<key>smallImageName</key>
+		<string>3.png</string>
+		<key>bigImageName</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string></string>
+		<key>eventDeadline</key>
+		<date>2022-03-15T11:28:57Z</date>
+		<key>smallImageName</key>
+		<string>4.png</string>
+		<key>bigImageName</key>
+		<string></string>
+	</dict>
+</array>
+</plist>

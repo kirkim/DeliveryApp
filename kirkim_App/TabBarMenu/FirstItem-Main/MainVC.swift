@@ -10,25 +10,9 @@ import SnapKit
 
 class MainVC: BaseVC {
     
-    @IBOutlet weak var bannerView: MyBannerView!
+    @IBOutlet weak var bannerView: MyBannerByAPIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.bannerView.delegate = self
-    }
-    
-    @IBAction func handleRefreshButton(_ sender: Any) {
-        self.bannerView.refresh()
-    }
-    @IBAction func sdf(_ sender: Any) {
-        
-        self.dismiss(animated: true, completion: nil)
-    }
-}
-
-//MARK: - MainVC MyBannerViewDelegate, MyBannerViewDataSource
-extension MainVC: MyBannerViewDelegate {
-    func handleBannerControlButton() {
-        print("click!!")
     }
 }

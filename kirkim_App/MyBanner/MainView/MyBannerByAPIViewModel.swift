@@ -17,38 +17,36 @@ struct BannerBundle: Codable {
     let updatedAt: String
 }
 
-class BasicBannerModel {
-    static let shared = BannerImageModel(type: .basic)
-    private init() { }
-}
-
-struct BannerImageModel {
+struct MyBannerByAPIViewModel {
     enum BannerType {
         case basic
     }
     
-    private var manager: BannerImageManager
+    private var manager: MyBannerViewByAPIManager
     init(type: BannerType) {
         switch type {
         case .basic:
-            manager = BannerImageManager(type: .basic)
+            manager = MyBannerViewByAPIManager(type: .basic)
         }
     }
     
+    // 배너이미지 갯수를 반환
     func getCount() -> Int {
         return manager.getCount()
     }
     
+    // 인덱스(index) 이미지를 반환
     func getImageByIndex(index: Int) -> UIImage {
         return manager.getImageByIndex(index: index)
     }
     
+    // 데이터를 업데이트
     func update(completion: (() -> Void)? = nil) {
         return manager.update(completion: completion)
     }
 }
 
-class BannerImageManager {
+class MyBannerViewByAPIManager {
     private let httpManager = BannerHttpManager()
     private var bannerBundle: BannerBundle?
     private var bannerImages: [UIImage]?

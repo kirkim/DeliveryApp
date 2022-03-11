@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class BannerCell: UICollectionViewCell {
+class MyBannerCell: UICollectionViewCell {
     private var imageView = UIImageView()
     
     override init(frame: CGRect) {

@@ -34,38 +34,31 @@ class StaticSectionModel {
     func getCellBySection(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         return manager.getCellBySection(collectionView, cellForItemAt: indexPath)
     }
+    
+    func getBannerView() -> MyBannerByPlistView {
+        return manager.bannerView
+    }
 }
 
 
 class StaticSectionManager {
-    enum StaticSection: Int, CaseIterable {
-        case main
-        case takeout
-        case bMart
-        case beminStore
-        case etc
-        case banner
-        case userInfo
-        
-        var cellID: String {
-            switch self {
-            case .main:
-                return "mainCell"
-            case .takeout:
-                return "takeoutCell"
-            case .bMart:
-                return "bMartCell"
-            case .beminStore:
-                return "beminStoreCell"
-            case .etc:
-                return "etcCell"
-            case .banner:
-                return "bannerCell"
-            case .userInfo:
-                return "userInfoCell"
-            }
+    private var contents: [BeminStaticContent] {
+        guard let path = Bundle.main.path(forResource: "BeminStaticContent", ofType: "plist") else {
+            print("path error")
+            return []
         }
+        guard let data = FileManager.default.contents(atPath: path) else {
+            print("FileManager error")
+            return []
+        }
+        guard let list = try? PropertyListDecoder().decode([BeminStaticContent].self, from: data) else {
+            print("decode error")
+            return []
+        }
+        return list
     }
+    
+    var bannerView = MyBannerByPlistView(modelType: .staticEvent)
     
     private let itemSpacing: CGFloat = 16
     private let sideMargin: CGFloat = 16
@@ -76,80 +69,81 @@ class StaticSectionManager {
     private let smallHeight: CGFloat = 0.2
     private let midiumHeight: CGFloat = 0.25
     private let bannerHeight: CGFloat = 0.35
-    
+        
     func getStaticSectionTotalCount() -> Int {
-        return StaticSection.allCases.count
+        print("STaticSectionModel getStaticSectionTotalCount called:", contents.count)
+        return contents.count
     }
     
     func registerCells(on collectionView: UICollectionView) {
         collectionView.register(StaticBigCell.self, forCellWithReuseIdentifier: StaticBigCell.cellId)
         collectionView.register(StaticMediumCell.self, forCellWithReuseIdentifier: StaticMediumCell.cellId)
-        collectionView.register(StaticSmallCell.self, forCellWithReuseIdentifier: StaticSmallCell.cellId)
+        collectionView.register(StaticMedium_2Cell.self, forCellWithReuseIdentifier: StaticMedium_2Cell.cellId)
+        collectionView.register(StaticSmall_3Cell.self, forCellWithReuseIdentifier: StaticSmall_3Cell.cellId)
+        collectionView.register(StaticSmall_4Cell.self, forCellWithReuseIdentifier: StaticSmall_4Cell.cellId)
         collectionView.register(StaticBannerCell.self, forCellWithReuseIdentifier: StaticBannerCell.cellId)
     }
     
     func getCellBySection(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        switch indexPath.section {
-        case StaticSection.main.rawValue:
+        let content = contents[indexPath.section]
+        let item = content.contentItem[indexPath.row]
+        switch content.sectionType {
+        case .big:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StaticBigCell.cellId, for: indexPath) as? StaticBigCell else { return UICollectionViewCell() }
+            cell.titleLabel.text = item.title
+            cell.descriptionLabel.text = item.description
             return cell
-        case StaticSection.takeout.rawValue, StaticSection.bMart.rawValue, StaticSection.beminStore.rawValue:
+        case .medium:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StaticMediumCell.cellId, for: indexPath) as? StaticMediumCell else { return UICollectionViewCell() }
+            cell.titleLabel.text = item.title
+            cell.descriptionLabel.text = item.description
             return cell
-        case StaticSection.etc.rawValue, StaticSection.userInfo.rawValue:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StaticSmallCell.cellId, for: indexPath) as? StaticSmallCell else { return UICollectionViewCell() }
+        case .medium_2:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StaticMedium_2Cell.cellId, for: indexPath) as? StaticMedium_2Cell else { return UICollectionViewCell() }
+            cell.titleLabel.text = item.title
+            cell.descriptionLabel.text = item.description
             return cell
-        case StaticSection.banner.rawValue:
+        case .small_3:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StaticSmall_3Cell.cellId, for: indexPath) as? StaticSmall_3Cell else { return UICollectionViewCell() }
+            cell.titleLabel.text = item.title
+            return cell
+        case .small_4:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StaticSmall_4Cell.cellId, for: indexPath) as? StaticSmall_4Cell else { return UICollectionViewCell() }
+            cell.titleLabel.text = item.title
+            return cell
+        case .banner:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StaticBannerCell.cellId, for: indexPath) as? StaticBannerCell else { return UICollectionViewCell() }
+            cell.banner = self.bannerView
             return cell
-        default:
-            return UICollectionViewCell()
         }
     }
     
     func numberOfStaticItem(section: Int) -> Int {
-        switch section {
-        case StaticSection.main.rawValue:
-            return 2
-        case StaticSection.takeout.rawValue:
-            return 1
-        case StaticSection.bMart.rawValue:
-            return 2
-        case StaticSection.beminStore.rawValue:
-            return 1
-        case StaticSection.etc.rawValue:
-            return 3
-        case StaticSection.banner.rawValue:
-            return 1
-        case StaticSection.userInfo.rawValue:
-            return 4
-        default:
-            return 0
-        }
+        return contents[section].contentItem.count
     }
     
     func staticSectionLayout(sectionNumber: Int) -> NSCollectionLayoutSection {
-        switch sectionNumber {
-        case StaticSection.main.rawValue:
-            return self.mainSection()
-        case StaticSection.takeout.rawValue:
-            return self.takeoutSection()
-        case StaticSection.bMart.rawValue:
-            return self.bMartSection()
-        case StaticSection.beminStore.rawValue:
-            return self.beminStoreSection()
-        case StaticSection.etc.rawValue:
-            return self.etcSection()
-        case StaticSection.banner.rawValue:
+        switch contents[sectionNumber].sectionType {
+        case .big:
+            return self.bigSection()
+        case .medium:
+            return self.mediumSection()
+        case .medium_2:
+            return self.medium_2Section()
+        case .small_3:
+            return self.small_3Section()
+        case .small_4:
+            return self.small_4Section()
+        case .banner:
             return self.bannerSection()
-        case StaticSection.userInfo.rawValue:
-            return self.userInfo()
-        default:
-            return self.mainSection()
         }
     }
     
-    private func mainSection() -> NSCollectionLayoutSection {
+    func didSelectedCell(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
+    
+    private func bigSection() -> NSCollectionLayoutSection {
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
         item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: itemSpacing)
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(bigHeight)), subitem: item, count: 2)
@@ -158,7 +152,7 @@ class StaticSectionManager {
         return section
     }
     
-    private func takeoutSection() -> NSCollectionLayoutSection {
+    private func mediumSection() -> NSCollectionLayoutSection {
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
         item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: itemSpacing)
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(smallHeight)), subitem: item, count: 1)
@@ -167,7 +161,7 @@ class StaticSectionManager {
         return section
     }
     
-    private func bMartSection() -> NSCollectionLayoutSection {
+    private func medium_2Section() -> NSCollectionLayoutSection {
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
         item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: itemSpacing)
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(midiumHeight)), subitem: item, count: 2)
@@ -176,16 +170,7 @@ class StaticSectionManager {
         return section
     }
     
-    private func beminStoreSection() -> NSCollectionLayoutSection {
-        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
-        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: itemSpacing)
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(smallHeight)), subitem: item, count: 1)
-        let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: topMargin, leading: sideMargin, bottom: bottomMargin, trailing: sideMargin-itemSpacing)
-        return section
-    }
-    
-    private func etcSection() -> NSCollectionLayoutSection {
+    private func small_3Section() -> NSCollectionLayoutSection {
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
         item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: itemSpacing)
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(smallHeight)), subitem: item, count: 3)
@@ -203,7 +188,7 @@ class StaticSectionManager {
         return section
     }
     
-    private func userInfo() -> NSCollectionLayoutSection {
+    private func small_4Section() -> NSCollectionLayoutSection {
         let sevenSpacing:CGFloat = 1
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
         item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: sevenSpacing)

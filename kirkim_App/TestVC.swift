@@ -6,21 +6,24 @@
 //
 
 import UIKit
+import SnapKit
 
 class TestVC: UIViewController {
-    var isPresent: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        if (isPresent == false) {
-            isPresent = true
-            let vc = MainVC(nibName: "MainVC", bundle: nil)
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: false, completion: nil)
-//        }
+        let banner = MyBannerByPlistView(modelType: .staticEvent)
+        self.view.addSubview(banner)
+        banner.snp.makeConstraints {
+            $0.top.trailing.leading.equalToSuperview()
+            $0.height.equalTo(400)
+        }
+//        let vc = BeminCollectionVC()
+//            vc.modalPresentationStyle = .fullScreen
+//            self.present(vc, animated: false, completion: nil)
+
     }
 }

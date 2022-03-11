@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BannerControlButton: UIButton {
+class MyBannerTotalButton: UIButton {
     
 //MARK: - BannerControlButton init
     convenience init() {

@@ -6,14 +6,17 @@
 //
 
 import UIKit
+import SnapKit
 
-class BasicBannerView: MyBannerView {
+// coder를 이용해서 Basic배너뷰를 초기화했을 때용 => coder로 초기화시 인자를 주기힘들기 때문
+// 배너뷰의 type이 늘어나면 이와같은 클래스를 추가로 만들어 줘야함.
+class BasicBannerView: MyBannerByAPIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder, modelType: .basic)
     }
 }
 
-class MyBannerView: UIView {
+class MyBannerByAPIView: UIView {
     var nowPage: Int = 0
     var collectionView: UICollectionView!
     var controlButton: UIButton!
@@ -21,11 +24,11 @@ class MyBannerView: UIView {
     weak var timer: Timer?
     var isRefresh: Bool = false
     var delegate: MyBannerViewDelegate?
-    var model: BannerImageModel?
+    var model: MyBannerByAPIViewModel?
         
-    init(modelType: BannerImageModel.BannerType) {
+    init(modelType: MyBannerByAPIViewModel.BannerType) {
         super.init(frame: CGRect.zero)
-        self.model = BannerImageModel(type: modelType)
+        self.model = MyBannerByAPIViewModel(type: modelType)
         self.model?.update(completion: {
             DispatchQueue.main.async {
                 self.initCollectionView()
@@ -33,9 +36,9 @@ class MyBannerView: UIView {
         })
     }
     
-    init?(coder: NSCoder, modelType: BannerImageModel.BannerType) {
+    init?(coder: NSCoder, modelType: MyBannerByAPIViewModel.BannerType) {
         super.init(coder: coder)
-        self.model = BannerImageModel(type: modelType)
+        self.model = MyBannerByAPIViewModel(type: modelType)
         self.model?.update(completion: {
             DispatchQueue.main.async {
                 self.initCollectionView()
@@ -48,7 +51,7 @@ class MyBannerView: UIView {
         fatalError()
     }
     
-    func initCollectionView() {
+    private func initCollectionView() {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
         self.collectionView = UICollectionView(frame: self.frame, collectionViewLayout: flowLayout)
@@ -56,15 +59,15 @@ class MyBannerView: UIView {
         collectionView.snp.makeConstraints {
             $0.leading.top.trailing.bottom.equalToSuperview()
         }
-        collectionView.register(BannerCell.self, forCellWithReuseIdentifier: "BannerCell")
+        collectionView.register(MyBannerCell.self, forCellWithReuseIdentifier: "BannerCell")
         collectionView.collectionViewLayout = flowLayout
         collectionView.isPagingEnabled = true
         collectionView.dataSource = self
         collectionView.delegate = self
     }
     
-    func initControlButton() {
-        self.controlButton = BannerControlButton()
+    private func initControlButton() {
+        self.controlButton = MyBannerTotalButton()
         self.addSubview(self.controlButton)
         self.controlButton.snp.makeConstraints {
             $0.trailing.bottom.equalToSuperview().offset(-20)
@@ -76,6 +79,7 @@ class MyBannerView: UIView {
     }
     
     @objc func handleControlButton(_ sender: Any) {
+        print("helloo")
         self.delegate?.handleBannerControlButton()
     }
     
@@ -88,8 +92,15 @@ class MyBannerView: UIView {
     }
 }
 
+extension MyBannerByAPIView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("sdfjdslkfjlkdsflksdlkf")
+        delegate?.didSelectedBannerView(indexPath: indexPath)
+    }
+}
+
 // BannerCollectionView: UICollectionViewDataSource
-extension MyBannerView: UICollectionViewDataSource {
+extension MyBannerByAPIView: UICollectionViewDataSource {
     private func setUIRelatedToCount() {
         if (isRefresh == false) {
             isRefresh = true
@@ -109,7 +120,7 @@ extension MyBannerView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BannerCell", for: indexPath) as? BannerCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BannerCell", for: indexPath) as? MyBannerCell else { return UICollectionViewCell() }
             let image = self.model?.getImageByIndex(index: indexPath.row)
             cell.setData(image: image)
         return cell
@@ -117,7 +128,7 @@ extension MyBannerView: UICollectionViewDataSource {
 }
 
 // BannerCollectionView: UICollectionViewDelegateFlowLayout
-extension MyBannerView : UICollectionViewDelegateFlowLayout{
+extension MyBannerByAPIView : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
@@ -137,7 +148,7 @@ extension MyBannerView : UICollectionViewDelegateFlowLayout{
 }
 
 // MyBannerView Scroll horizontal & Timer
-extension MyBannerView {
+extension MyBannerByAPIView {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         nowPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
         self.setControlTitle()
@@ -166,6 +177,5 @@ extension MyBannerView {
     
     func setControlTitle() {
         self.controlButton.setTitle("\(self.nowPage + 1) / \(self.totalBannerCount) 모두보기", for: .normal)
-
     }
 }

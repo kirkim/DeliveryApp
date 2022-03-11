@@ -10,6 +10,7 @@ import SnapKit
 
 class StaticBannerCell: UICollectionViewCell, StaticCellProtocol {
     static let cellId = "StaticBannerCell"
+    var banner: UIView?
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -17,5 +18,12 @@ class StaticBannerCell: UICollectionViewCell, StaticCellProtocol {
         contentView.backgroundColor = .gray
         contentView.layer.cornerRadius = 5
         contentView.clipsToBounds = true
+        
+        if let hasBanner = banner {
+            contentView.addSubview(hasBanner)
+            hasBanner.snp.makeConstraints {
+                $0.leading.top.trailing.bottom.equalToSuperview()
+            }
+        }
     }
 }

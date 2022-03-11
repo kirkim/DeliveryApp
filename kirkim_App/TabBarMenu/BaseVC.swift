@@ -9,7 +9,7 @@ import UIKit
 
 class BaseVC: UIViewController {
     let userModel = LoginUserModel.shared
-    var dev_Mode: Bool = true
+    var dev_Mode: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
