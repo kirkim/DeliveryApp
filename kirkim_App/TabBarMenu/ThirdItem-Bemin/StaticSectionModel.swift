@@ -92,24 +92,29 @@ class StaticSectionManager {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StaticBigCell.cellId, for: indexPath) as? StaticBigCell else { return UICollectionViewCell() }
             cell.titleLabel.text = item.title
             cell.descriptionLabel.text = item.description
+            cell.imageView.image = item.image
             return cell
         case .medium:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StaticMediumCell.cellId, for: indexPath) as? StaticMediumCell else { return UICollectionViewCell() }
             cell.titleLabel.text = item.title
             cell.descriptionLabel.text = item.description
+            cell.imageView.image = item.image
             return cell
         case .medium_2:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StaticMedium_2Cell.cellId, for: indexPath) as? StaticMedium_2Cell else { return UICollectionViewCell() }
             cell.titleLabel.text = item.title
             cell.descriptionLabel.text = item.description
+            cell.imageView.image = item.image
             return cell
         case .small_3:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StaticSmall_3Cell.cellId, for: indexPath) as? StaticSmall_3Cell else { return UICollectionViewCell() }
             cell.titleLabel.text = item.title
+            cell.imageView.image = item.image
             return cell
         case .small_4:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StaticSmall_4Cell.cellId, for: indexPath) as? StaticSmall_4Cell else { return UICollectionViewCell() }
             cell.titleLabel.text = item.title
+            cell.imageView.image = item.image
             return cell
         case .banner:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StaticBannerCell.cellId, for: indexPath) as? StaticBannerCell else { return UICollectionViewCell() }

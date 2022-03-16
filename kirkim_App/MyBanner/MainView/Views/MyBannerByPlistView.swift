@@ -27,11 +27,13 @@ class MyBannerByPlistView: UIView {
         
     init(modelType: MyBannerByPlistViewModel.BannerType) {
         super.init(frame: CGRect.zero)
+        self.model = MyBannerByPlistViewModel(type: modelType)
         bannerInit()
     }
     
-    init?(coder: NSCoder, modelType: MyBannerByAPIViewModel.BannerType) {
+    init?(coder: NSCoder, modelType: MyBannerByPlistViewModel.BannerType) {
         super.init(coder: coder)
+        self.model = MyBannerByPlistViewModel(type: modelType)
         bannerInit()
     }
     
@@ -40,7 +42,6 @@ class MyBannerByPlistView: UIView {
     }
     
     private func bannerInit() {
-        self.model = MyBannerByPlistViewModel(type: .staticEvent)
         self.totalBannerCount = self.model?.getCount() ?? 0
         initCollectionView()
         bannerTimer()
@@ -57,12 +58,17 @@ class MyBannerByPlistView: UIView {
         collectionView.dataSource = self
         collectionView.delegate = self
     }
+    
     func createLayout() -> UICollectionViewCompositionalLayout {
         return UICollectionViewCompositionalLayout { (sectionNumber, env) -> NSCollectionLayoutSection? in
             let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)), subitems: [item])
             let section = NSCollectionLayoutSection(group: group)
-            section.orthogonalScrollingBehavior = .continuous
+            section.orthogonalScrollingBehavior = .groupPaging
+            section.visibleItemsInvalidationHandler = { (visibleItems, point, env) -> Void in
+                self.nowPage = Int(point.x) / Int(self.collectionView.frame.width)
+                self.setControlTitle()
+            }
             return section
         }
     }
@@ -115,7 +121,7 @@ extension MyBannerByPlistView {
     
     func bannerTimer() {
         guard self.totalBannerCount != 0 else { return }
-        timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (Timer) in
+        timer = Timer.scheduledTimer(withTimeInterval: 4, repeats: true) { (Timer) in
             self.bannerMove()
             self.setControlTitle()
         }
@@ -124,13 +130,10 @@ extension MyBannerByPlistView {
     func bannerMove() {
         // 현재페이지가 마지막 페이지일 경우
         if nowPage == self.totalBannerCount-1 {
-            // 맨 처음 페이지로 돌아감
-            self.collectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .right, animated: true)
             nowPage = 0
-            return
+        } else {
+            nowPage += 1
         }
-        // 다음 페이지로 전환
-        nowPage += 1
         self.collectionView.scrollToItem(at: NSIndexPath(item: nowPage, section: 0) as IndexPath, at: .right, animated: true)
     }
     

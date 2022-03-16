@@ -11,6 +11,7 @@ import SnapKit
 class StaticMedium_2Cell: UICollectionViewCell, StaticCellProtocol {
     static let cellId: String = "StaticMedium_2Cell"
     let titleLabel = UILabel()
+    let imageView = UIImageView()
     let descriptionLabel = UILabel()
 
     override func layoutSubviews() {
@@ -26,6 +27,14 @@ class StaticMedium_2Cell: UICollectionViewCell, StaticCellProtocol {
         titleLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(5)
             $0.top.equalToSuperview().offset(5)
+        }
+        
+        imageView.contentMode = .scaleToFill
+        contentView.addSubview(imageView)
+        imageView.snp.makeConstraints {
+            $0.bottom.trailing.equalToSuperview()
+            $0.height.equalToSuperview().multipliedBy(0.8)
+            $0.width.equalTo(imageView.snp.height)
         }
         
         descriptionLabel.font = .systemFont(ofSize: 15, weight: .medium)

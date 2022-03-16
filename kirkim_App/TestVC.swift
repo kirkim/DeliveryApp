@@ -11,19 +11,57 @@ import SnapKit
 class TestVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        makeTempBanner()
+    }
+    
+    func makeTempBanner() {
+        let basicLabel = UILabel()
+        basicLabel.text = "flowlayoutdelegate 사용"
+        let compositionalLabel = UILabel()
+        compositionalLabel.text = "CompositionalLayout 사용"
+        
+        [basicLabel, compositionalLabel].forEach {
+            $0.font = .systemFont(ofSize: 25, weight: .bold)
+            $0.textAlignment = .center
+            view.addSubview($0)
+        }
+        
+        let basicBanner = MyBannerBasicView(modelType: .staticEvent)
+        let compositionalBanner = MyBannerUsingRxswift(modelType: .staticEvent)
+        [basicBanner, compositionalBanner].forEach {
+            view.addSubview($0)
+        }
+        
+        basicLabel.snp.makeConstraints {
+            $0.top.equalTo(self.view.safeAreaLayoutGuide)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(50)
+        }
+        basicBanner.snp.makeConstraints {
+            $0.top.equalTo(basicLabel.snp.bottom).offset(10)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(200)
+        }
+        
+        
+        compositionalLabel.snp.makeConstraints {
+            $0.top.equalTo(basicBanner.snp.bottom).offset(50)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(50)
+        }
+        compositionalBanner.snp.makeConstraints {
+            $0.top.equalTo(compositionalLabel.snp.bottom).offset(10)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(200)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let banner = MyBannerByPlistView(modelType: .staticEvent)
-        self.view.addSubview(banner)
-        banner.snp.makeConstraints {
-            $0.top.trailing.leading.equalToSuperview()
-            $0.height.equalTo(400)
-        }
+        
 //        let vc = BeminCollectionVC()
-//            vc.modalPresentationStyle = .fullScreen
-//            self.present(vc, animated: false, completion: nil)
+//        vc.modalPresentationStyle = .fullScreen
+//        self.present(vc, animated: false, completion: nil)
 
     }
 }

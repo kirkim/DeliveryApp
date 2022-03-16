@@ -11,6 +11,7 @@ import SnapKit
 class StaticBannerCell: UICollectionViewCell, StaticCellProtocol {
     static let cellId = "StaticBannerCell"
     var banner: UIView?
+    let imageView = UIImageView()
     
     override func layoutSubviews() {
         super.layoutSubviews()

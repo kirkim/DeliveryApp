@@ -9,7 +9,7 @@ import SnapKit
 
 class StaticBigCell: UICollectionViewCell, StaticCellProtocol {
     static let cellId = "StaticBigCell"
-//    let imageView = UIImageView()
+    let imageView = UIImageView()
     let titleLabel = UILabel()
     let descriptionLabel = UILabel()
     
@@ -28,8 +28,16 @@ class StaticBigCell: UICollectionViewCell, StaticCellProtocol {
             $0.top.equalToSuperview().offset(20)
         }
         
+        imageView.contentMode = .scaleToFill
+        contentView.addSubview(imageView)
+        imageView.snp.makeConstraints {
+            $0.bottom.trailing.equalToSuperview().offset(-5)
+            $0.width.equalToSuperview().multipliedBy(0.8)
+            $0.height.equalTo(imageView.snp.width)
+        }
+        
         descriptionLabel.font = .systemFont(ofSize: 15, weight: .medium)
-        descriptionLabel.textColor = .purple
+        descriptionLabel.textColor = .white
         descriptionLabel.numberOfLines = 2
         contentView.addSubview(descriptionLabel)
         descriptionLabel.snp.makeConstraints {
@@ -38,10 +46,6 @@ class StaticBigCell: UICollectionViewCell, StaticCellProtocol {
             $0.top.equalTo(titleLabel.snp.bottom).offset(5)
         }
         
-//        imageView.contentMode = .scaleToFill
-//        contentView.addSubview(imageView)
-//        imageView.snp.makeConstraints {
-//            $0.edges.equalToSuperview() //contentView에 크기를 맞춰줘
-//        }
+        
     }
 }

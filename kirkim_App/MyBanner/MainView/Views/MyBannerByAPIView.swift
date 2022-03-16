@@ -165,16 +165,13 @@ extension MyBannerByAPIView {
     func bannerMove() {
         // 현재페이지가 마지막 페이지일 경우
         if nowPage == self.totalBannerCount-1 {
-            // 맨 처음 페이지로 돌아감
-            self.collectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .right, animated: true)
             nowPage = 0
-            return
+        } else {
+            nowPage += 1
         }
-        // 다음 페이지로 전환
-        nowPage += 1
         self.collectionView.scrollToItem(at: NSIndexPath(item: nowPage, section: 0) as IndexPath, at: .right, animated: true)
     }
-    
+
     func setControlTitle() {
         self.controlButton.setTitle("\(self.nowPage + 1) / \(self.totalBannerCount) 모두보기", for: .normal)
     }

@@ -21,10 +21,10 @@ struct StaticItem: Decodable {
     let description: String?
     let imageName: String?
     
-//    var image: UIImage {
-//        guard let imageName = imageName else {
-//            return UIImage()
-//        }
-//        return UIImage(named: imageName) ?? UIImage()
-//    }
+    var image: UIImage {
+        guard let imageName = imageName else {
+            return UIImage()
+        }
+        return UIImage(named: imageName) ?? UIImage()
+    }
 }

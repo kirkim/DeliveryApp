@@ -77,6 +77,11 @@
 		FE94DD6F27B655190017D776 /* kirkim_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE94DD6D27B655190017D776 /* kirkim_App.xcdatamodeld */; };
 		FE94DD7127B655190017D776 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE94DD7027B655190017D776 /* Assets.xcassets */; };
 		FE94DD7427B655190017D776 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE94DD7227B655190017D776 /* LaunchScreen.storyboard */; };
+		FEA95FFE27E1840B00FD78B3 /* MyBannerUsingRxswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA95FFD27E1840B00FD78B3 /* MyBannerUsingRxswift.swift */; };
+		FEA9600127E1874D00FD78B3 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = FEA9600027E1874D00FD78B3 /* RxCocoa */; };
+		FEA9600327E1874D00FD78B3 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = FEA9600227E1874D00FD78B3 /* RxRelay */; };
+		FEA9600527E1874D00FD78B3 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FEA9600427E1874D00FD78B3 /* RxSwift */; };
+		FEA9600727E19C5E00FD78B3 /* MyBannerBasicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA9600627E19C5E00FD78B3 /* MyBannerBasicView.swift */; };
 		FEBA011327CDD5D700E74FCB /* SignUpPageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEBA011227CDD5D700E74FCB /* SignUpPageVC.xib */; };
 		FEBA011527CDDC5B00E74FCB /* KiflixModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBA011427CDDC5B00E74FCB /* KiflixModel.swift */; };
 		FEBA011727CDE08300E74FCB /* KiflixHttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBA011627CDE08300E74FCB /* KiflixHttpManager.swift */; };
@@ -162,6 +167,8 @@
 		FE94DD7027B655190017D776 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE94DD7327B655190017D776 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE94DD7527B655190017D776 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEA95FFD27E1840B00FD78B3 /* MyBannerUsingRxswift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBannerUsingRxswift.swift; sourceTree = "<group>"; };
+		FEA9600627E19C5E00FD78B3 /* MyBannerBasicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBannerBasicView.swift; sourceTree = "<group>"; };
 		FEBA011227CDD5D700E74FCB /* SignUpPageVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpPageVC.xib; sourceTree = "<group>"; };
 		FEBA011427CDDC5B00E74FCB /* KiflixModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiflixModel.swift; sourceTree = "<group>"; };
 		FEBA011627CDE08300E74FCB /* KiflixHttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiflixHttpManager.swift; sourceTree = "<group>"; };
@@ -178,6 +185,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEA9600327E1874D00FD78B3 /* RxRelay in Frameworks */,
+				FEA9600127E1874D00FD78B3 /* RxCocoa in Frameworks */,
+				FEA9600527E1874D00FD78B3 /* RxSwift in Frameworks */,
 				FE2FF52D27D5B414005DA688 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,11 +315,9 @@
 		FE63140327DB626C008F4D48 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				FEA9600927E1A05B00FD78B3 /* Views */,
+				FEA9600827E1A03000FD78B3 /* Models */,
 				FE63140827DB65AC008F4D48 /* BannerPlist */,
-				FE18A28627C5CA4F00E56F39 /* MyBannerByAPIViewModel.swift */,
-				FE41DC9827D706B400317493 /* MyBannerByAPIView.swift */,
-				FE63140627DB647D008F4D48 /* MyBannerByPlistViewModel.swift */,
-				FE63140427DB6402008F4D48 /* MyBannerByPlistView.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -458,6 +466,26 @@
 			path = kirkim_App;
 			sourceTree = "<group>";
 		};
+		FEA9600827E1A03000FD78B3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FE18A28627C5CA4F00E56F39 /* MyBannerByAPIViewModel.swift */,
+				FE63140627DB647D008F4D48 /* MyBannerByPlistViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FEA9600927E1A05B00FD78B3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FE41DC9827D706B400317493 /* MyBannerByAPIView.swift */,
+				FE63140427DB6402008F4D48 /* MyBannerByPlistView.swift */,
+				FEA95FFD27E1840B00FD78B3 /* MyBannerUsingRxswift.swift */,
+				FEA9600627E19C5E00FD78B3 /* MyBannerBasicView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		FEEE0D4927D9E0E2002F47B0 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -500,6 +528,9 @@
 			name = kirkim_App;
 			packageProductDependencies = (
 				FE2FF52C27D5B414005DA688 /* SnapKit */,
+				FEA9600027E1874D00FD78B3 /* RxCocoa */,
+				FEA9600227E1874D00FD78B3 /* RxRelay */,
+				FEA9600427E1874D00FD78B3 /* RxSwift */,
 			);
 			productName = kirkim_App;
 			productReference = FE94DD6127B655190017D776 /* kirkim_App.app */;
@@ -531,6 +562,7 @@
 			mainGroup = FE94DD5827B655190017D776;
 			packageReferences = (
 				FE2FF52B27D5B414005DA688 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				FEA95FFF27E1874D00FD78B3 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = FE94DD6227B655190017D776 /* Products */;
 			projectDirPath = "";
@@ -630,6 +662,7 @@
 				FE2FE4BC27CE086C004B8871 /* KiflixCollectionView.swift in Sources */,
 				FE74FEAC27CDBCA100F40D5F /* KiflixVC.swift in Sources */,
 				FE078F1F27C353B500D19E34 /* SideMenuVC.swift in Sources */,
+				FEA95FFE27E1840B00FD78B3 /* MyBannerUsingRxswift.swift in Sources */,
 				FEF8848727BA5C7E0038F138 /* LoginPageVC.swift in Sources */,
 				FE3EA96527BB751800DA36EA /* TextAnimation.swift in Sources */,
 				FE2BD69727CDD34400A9FB73 /* KiflixCollectionCell.swift in Sources */,
@@ -637,6 +670,7 @@
 				FE18A28727C5CA4F00E56F39 /* MyBannerByAPIViewModel.swift in Sources */,
 				FEBA011727CDE08300E74FCB /* KiflixHttpManager.swift in Sources */,
 				FE2FF55127D5CC11005DA688 /* TestVC.swift in Sources */,
+				FEA9600727E19C5E00FD78B3 /* MyBannerBasicView.swift in Sources */,
 				FE63140527DB6402008F4D48 /* MyBannerByPlistView.swift in Sources */,
 				FE8E456127D747DA0025779F /* MyBannerViewDelegate.swift in Sources */,
 				FE47CACC27C0C5570077806D /* SignupUserModel.swift in Sources */,
@@ -892,6 +926,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		FEA95FFF27E1874D00FD78B3 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -899,6 +941,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FE2FF52B27D5B414005DA688 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		FEA9600027E1874D00FD78B3 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FEA95FFF27E1874D00FD78B3 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		FEA9600227E1874D00FD78B3 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FEA95FFF27E1874D00FD78B3 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		FEA9600427E1874D00FD78B3 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FEA95FFF27E1874D00FD78B3 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 
