@@ -12,15 +12,16 @@ import RxRelay
 
 class MyBannerUsingRxswift: UIView {
     let disposeBag = DisposeBag()
-    var dragPage: Int = 0
-    var nowPage = BehaviorSubject<Int>(value: 0)
+    var nowPage: Int = 0
+    var nowPageSubject = BehaviorSubject<Int>(value: 0)
     var collectionView: UICollectionView!
     var controlButton: UIButton!
     var totalBannerCount: Int = 0
     weak var timer: Timer?
     var delegate: MyBannerViewDelegate?
     var model: MyBannerByPlistViewModel?
-        
+
+//MARK: - MyBannerUsingRxswift init
     init(modelType: MyBannerByPlistViewModel.BannerType) {
         super.init(frame: CGRect.zero)
         self.model = MyBannerByPlistViewModel(type: modelType)
@@ -37,6 +38,7 @@ class MyBannerUsingRxswift: UIView {
         fatalError()
     }
     
+//MARK: - MyBannerUsingRxswift custom init
     private func bannerInit() {
         self.totalBannerCount = self.model?.getCount() ?? 0
         initCollectionView()
@@ -74,6 +76,7 @@ class MyBannerUsingRxswift: UIView {
     }
 }
 
+//MARK: - MyBannerUsingRxswift UICollectionViewDelegateFlowLayout
 extension MyBannerUsingRxswift : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -93,13 +96,14 @@ extension MyBannerUsingRxswift : UICollectionViewDelegateFlowLayout{
     }
 }
 
+//MARK: - MyBannerUsingRxswift UICollectionViewDelegate
 extension MyBannerUsingRxswift: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         delegate?.didSelectedBannerView(indexPath: indexPath)
     }
 }
 
-// BannerCollectionView: UICollectionViewDataSource
+//MARK: - MyBannerUsingRxswift UICollectionViewDataSource
 extension MyBannerUsingRxswift: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let count = self.model?.getCount() ?? 0
@@ -115,32 +119,36 @@ extension MyBannerUsingRxswift: UICollectionViewDataSource {
     }
 }
 
-// MyBannerView Scroll horizontal & Timer
+//MARK: - MyBannerUsingRxswift about Moving Banner Slide
 extension MyBannerUsingRxswift {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        self.dragPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
-        nowPage.onNext(self.dragPage)
+        let page = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+        nowPageSubject.onNext(page)
+        self.nowPage = page
     }
     
     func initTimer() {
         guard self.totalBannerCount != 0 else { return }
-        bannerTimer()
-        bannerMove()
+        bannerTimer(period: 3)
+        updateButtonTitle()
     }
     
-    func bannerTimer() {
+    func bannerTimer(period: Int) {
         Observable<Int>
-            .interval(.seconds(2), scheduler: MainScheduler.instance)
-            .subscribe(onNext: { _ in
-                self.dragPage = self.dragPage == self.totalBannerCount-1 ? 0 : self.dragPage+1
-                self.collectionView.scrollToItem(at: NSIndexPath(item: self.dragPage, section: 0) as IndexPath, at: .right, animated: true)
-                self.nowPage.onNext(self.dragPage)
+            .interval(.seconds(period), scheduler: MainScheduler.instance)
+            .map({ _ in
+                self.nowPage == self.totalBannerCount-1 ? 0 : self.nowPage+1
+            })
+            .subscribe(onNext: { page in
+                self.nowPageSubject.onNext(page)
+                self.nowPage = page
+                self.collectionView.scrollToItem(at: NSIndexPath(item: page, section: 0) as IndexPath, at: .right, animated: true)
             })
             .disposed(by: disposeBag)
     }
-    // 배너 움직이는 매서드
-    func bannerMove() {
-        nowPage
+    
+    func updateButtonTitle() {
+        nowPageSubject
             .subscribe(onNext: { [weak self] page in
             guard let self = self else { return }
             DispatchQueue.main.async {
