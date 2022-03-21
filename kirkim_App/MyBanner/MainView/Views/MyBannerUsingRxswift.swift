@@ -12,7 +12,6 @@ import RxRelay
 
 class MyBannerUsingRxswift: UIView {
     let disposeBag = DisposeBag()
-    var nowPage: Int = 0
     var nowPageSubject = BehaviorSubject<Int>(value: 0)
     var collectionView: UICollectionView!
     var controlButton: UIButton!
@@ -124,7 +123,6 @@ extension MyBannerUsingRxswift {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let page = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
         nowPageSubject.onNext(page)
-        self.nowPage = page
     }
     
     func initTimer() {
@@ -136,25 +134,23 @@ extension MyBannerUsingRxswift {
     func bannerTimer(period: Int) {
         Observable<Int>
             .interval(.seconds(period), scheduler: MainScheduler.instance)
-            .map({ _ in
-                self.nowPage == self.totalBannerCount-1 ? 0 : self.nowPage+1
-            })
-            .subscribe(onNext: { page in
-                self.nowPageSubject.onNext(page)
-                self.nowPage = page
-                self.collectionView.scrollToItem(at: NSIndexPath(item: page, section: 0) as IndexPath, at: .right, animated: true)
+            .withLatestFrom(nowPageSubject) {
+                return (1 + $1) % self.totalBannerCount
+            }
+            .subscribe(onNext: { [weak self] page in
+                self?.nowPageSubject.onNext(page)
+                self?.collectionView.scrollToItem(at: NSIndexPath(item: page, section: 0) as IndexPath, at: .right, animated: true)
             })
             .disposed(by: disposeBag)
     }
     
     func updateButtonTitle() {
         nowPageSubject
+            .observe(on: MainScheduler.asyncInstance)
             .subscribe(onNext: { [weak self] page in
-            guard let self = self else { return }
-            DispatchQueue.main.async {
+                guard let self = self else { return }
                 self.controlButton.setTitle("\(page + 1) / \(self.totalBannerCount) 모두보기", for: .normal)
-            }
-        })
-        .disposed(by: disposeBag)
+            })
+            .disposed(by: disposeBag)
     }
 }

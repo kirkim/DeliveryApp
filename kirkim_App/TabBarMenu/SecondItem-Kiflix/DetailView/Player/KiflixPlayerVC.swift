@@ -15,11 +15,13 @@ class KiflixPlayerVC: UIViewController {
     let player = KiflixPlayer.shared
     private var observerCount: Int = 0
     private var switchObserver: Bool = false
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tapBackground()
+//        tapBackground()
         player.play()
+        timer()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,7 +32,7 @@ class KiflixPlayerVC: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        disappearObserver()
+//        disappearObserver()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -63,7 +65,7 @@ class KiflixPlayerVC: UIViewController {
     }
     @objc func taphandler() {
         self.controlView.isHidden = false
-        addObserverGage()
+//        addObserverGage()
     }
     
     func tapBackground() {
@@ -74,7 +76,7 @@ class KiflixPlayerVC: UIViewController {
     
 // MARK: - KiflixPlayerView @IBAction function
     @IBAction func togglePlayButton(_ sender: Any) {
-        addObserverGage()
+//        addObserverGage()
         if (player.isPlaying == false) {
             player.play()
         } else {
@@ -113,3 +115,24 @@ class KiflixPlayerVC: UIViewController {
     }
 }
 
+// MARK: - KiflixPlayerView player timer
+import RxSwift
+import RxCocoa
+import RxGesture
+
+extension KiflixPlayerVC {
+    func timer() {
+        print("here")
+        self.view.rx.tapGesture()
+//            .when(.recognized)
+            .timeout(.seconds(15), scheduler: MainScheduler.instance)
+            .subscribe(
+                onNext: { _ in
+                self.controlView.isHidden = false
+            },
+                onError: { _ in
+                self.controlView.isHidden = true
+            })
+            .disposed(by: disposeBag)
+    }
+}

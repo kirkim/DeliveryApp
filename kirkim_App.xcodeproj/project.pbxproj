@@ -54,6 +54,7 @@
 		FE74FEAC27CDBCA100F40D5F /* KiflixVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74FEAA27CDBCA100F40D5F /* KiflixVC.swift */; };
 		FE74FEAD27CDBCA100F40D5F /* KiflixVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE74FEAB27CDBCA100F40D5F /* KiflixVC.xib */; };
 		FE74FEAF27CDBDDE00F40D5F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74FEAE27CDBDDE00F40D5F /* MainTabBarController.swift */; };
+		FE7C00E327E867F5005ED99C /* MyBannerByPlistViewModel+RxSwfit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7C00E227E867F5005ED99C /* MyBannerByPlistViewModel+RxSwfit.swift */; };
 		FE7FC0C627C48581009EB2AE /* SideMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7FC0C527C48581009EB2AE /* SideMenuModel.swift */; };
 		FE7FC0CD27C48F22009EB2AE /* TestView1-1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7FC0CB27C48F22009EB2AE /* TestView1-1.swift */; };
 		FE7FC0CE27C48F22009EB2AE /* TestView1-1.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE7FC0CC27C48F22009EB2AE /* TestView1-1.xib */; };
@@ -91,6 +92,7 @@
 		FEEE0D5127D9E8EF002F47B0 /* StaticBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEE0D5027D9E8EF002F47B0 /* StaticBannerCell.swift */; };
 		FEEE0D5527DA1136002F47B0 /* StaticCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEE0D5427DA1136002F47B0 /* StaticCellProtocol.swift */; };
 		FEF8848727BA5C7E0038F138 /* LoginPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF8848627BA5C7E0038F138 /* LoginPageVC.swift */; };
+		FEFAA53E27E6038300BA0706 /* RxGesture in Frameworks */ = {isa = PBXBuildFile; productRef = FEFAA53D27E6038300BA0706 /* RxGesture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -142,6 +144,7 @@
 		FE74FEAA27CDBCA100F40D5F /* KiflixVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiflixVC.swift; sourceTree = "<group>"; };
 		FE74FEAB27CDBCA100F40D5F /* KiflixVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KiflixVC.xib; sourceTree = "<group>"; };
 		FE74FEAE27CDBDDE00F40D5F /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		FE7C00E227E867F5005ED99C /* MyBannerByPlistViewModel+RxSwfit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyBannerByPlistViewModel+RxSwfit.swift"; sourceTree = "<group>"; };
 		FE7FC0C527C48581009EB2AE /* SideMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuModel.swift; sourceTree = "<group>"; };
 		FE7FC0CB27C48F22009EB2AE /* TestView1-1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestView1-1.swift"; sourceTree = "<group>"; };
 		FE7FC0CC27C48F22009EB2AE /* TestView1-1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "TestView1-1.xib"; sourceTree = "<group>"; };
@@ -187,6 +190,7 @@
 			files = (
 				FEA9600327E1874D00FD78B3 /* RxRelay in Frameworks */,
 				FEA9600127E1874D00FD78B3 /* RxCocoa in Frameworks */,
+				FEFAA53E27E6038300BA0706 /* RxGesture in Frameworks */,
 				FEA9600527E1874D00FD78B3 /* RxSwift in Frameworks */,
 				FE2FF52D27D5B414005DA688 /* SnapKit in Frameworks */,
 			);
@@ -471,6 +475,7 @@
 			children = (
 				FE18A28627C5CA4F00E56F39 /* MyBannerByAPIViewModel.swift */,
 				FE63140627DB647D008F4D48 /* MyBannerByPlistViewModel.swift */,
+				FE7C00E227E867F5005ED99C /* MyBannerByPlistViewModel+RxSwfit.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -531,6 +536,7 @@
 				FEA9600027E1874D00FD78B3 /* RxCocoa */,
 				FEA9600227E1874D00FD78B3 /* RxRelay */,
 				FEA9600427E1874D00FD78B3 /* RxSwift */,
+				FEFAA53D27E6038300BA0706 /* RxGesture */,
 			);
 			productName = kirkim_App;
 			productReference = FE94DD6127B655190017D776 /* kirkim_App.app */;
@@ -563,6 +569,7 @@
 			packageReferences = (
 				FE2FF52B27D5B414005DA688 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				FEA95FFF27E1874D00FD78B3 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				FEFAA53C27E6038200BA0706 /* XCRemoteSwiftPackageReference "RxGesture" */,
 			);
 			productRefGroup = FE94DD6227B655190017D776 /* Products */;
 			projectDirPath = "";
@@ -659,6 +666,7 @@
 				FEEE0D4F27D9E86F002F47B0 /* StaticSmall_3Cell.swift in Sources */,
 				FE41DC9C27D706B400317493 /* MyBannerCell.swift in Sources */,
 				FE21132A27BCA6AE003293B2 /* HttpClient.swift in Sources */,
+				FE7C00E327E867F5005ED99C /* MyBannerByPlistViewModel+RxSwfit.swift in Sources */,
 				FE2FE4BC27CE086C004B8871 /* KiflixCollectionView.swift in Sources */,
 				FE74FEAC27CDBCA100F40D5F /* KiflixVC.swift in Sources */,
 				FE078F1F27C353B500D19E34 /* SideMenuVC.swift in Sources */,
@@ -934,6 +942,14 @@
 				kind = branch;
 			};
 		};
+		FEFAA53C27E6038200BA0706 /* XCRemoteSwiftPackageReference "RxGesture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxGesture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -956,6 +972,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FEA95FFF27E1874D00FD78B3 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		FEFAA53D27E6038300BA0706 /* RxGesture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FEFAA53C27E6038200BA0706 /* XCRemoteSwiftPackageReference "RxGesture" */;
+			productName = RxGesture;
 		};
 /* End XCSwiftPackageProductDependency section */
 
