@@ -25,8 +25,9 @@ class SideMenuHeaderView: UITableViewHeaderFooterView {
         
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
-        contentView.addSubview(nameLabel)
-        contentView.addSubview(profileView)
+        [nameLabel, profileView].forEach {
+            contentView.addSubview($0)
+        }
         contentView.backgroundColor = .gray
     }
     

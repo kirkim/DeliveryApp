@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import RxSwift
 
 class SideMenuVC: UIViewController {
     @IBOutlet weak var menuTableView: UITableView!
+    private let user = LoginUserModel.shared
     private let sideMenuCellModel = SideMenuCellModel()
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,9 +20,9 @@ class SideMenuVC: UIViewController {
         self.menuTableView.delegate = self
         self.navigationItem.title = ""
         menuTableView.register(SideMenuHeaderView.self, forHeaderFooterViewReuseIdentifier: SideMenuHeaderView.identifier)
+        menuTableView.register(SideMenuFooterView.self, forHeaderFooterViewReuseIdentifier: SideMenuFooterView.identifier)
         registerCell()
-        let nib = UINib(nibName: "TestView1-1", bundle: nil)
-        self.menuTableView.register(nib, forCellReuseIdentifier: "TestView1-1")
+        
     }
     
     private func registerCell() {
@@ -51,6 +54,7 @@ extension SideMenuVC: UITableViewDataSource {
 
 //MARK: - UITableViewDelegate
 extension SideMenuVC: UITableViewDelegate {
+    //MARK: - Header
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if (section == 0) {
             let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: SideMenuHeaderView.identifier)
@@ -64,6 +68,28 @@ extension SideMenuVC: UITableViewDelegate {
             return SideMenuSize.headerHeight
         }
         return CGFloat.leastNormalMagnitude
+    }
+    
+    //MARK: - Footer
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        if (section == sideMenuCellModel.getSectionCount()-1) {
+            let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: SideMenuFooterView.identifier) as! SideMenuFooterView
+            footer.logoutButtonTapped
+                .subscribe(onNext: {
+                    self.user.logOut()
+                    self.dismiss(animated: false, completion: nil)
+                })
+                .disposed(by: disposeBag)
+            return footer
+        }
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if (section == sideMenuCellModel.getSectionCount()-1) {
+            return SideMenuSize.headerHeight
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
