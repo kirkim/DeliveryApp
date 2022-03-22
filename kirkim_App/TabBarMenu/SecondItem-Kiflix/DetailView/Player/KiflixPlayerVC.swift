@@ -32,7 +32,7 @@ class KiflixPlayerVC: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        disappearObserver()
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {

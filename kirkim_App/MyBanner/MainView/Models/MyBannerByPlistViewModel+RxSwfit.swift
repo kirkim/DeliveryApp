@@ -31,11 +31,9 @@ struct MyBannerViewModel_RxSwfit {
 
 struct MyBannerViewManager_RxSwfit {
     private var contents: [BannerPlistContent] = []
-    let shouldLoadResult: Observable<String>
     
     init(type: MyBannerByPlistViewModel.BannerType) {
         self.contents = getContents(type: type)
-        self.shouldLoadResult =
     }
     
     private func getContents(type: MyBannerByPlistViewModel.BannerType) -> [BannerPlistContent] {

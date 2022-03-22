@@ -35,7 +35,7 @@ class StaticSectionModel {
         return manager.getCellBySection(collectionView, cellForItemAt: indexPath)
     }
     
-    func getBannerView() -> MyBannerByPlistView {
+    func getBannerView() -> RxBannerView {
         return manager.bannerView
     }
 }
@@ -58,7 +58,7 @@ class StaticSectionManager {
         return list
     }
     
-    var bannerView = MyBannerByPlistView(modelType: .staticEvent)
+    let bannerView = RxBannerView()
     
     private let itemSpacing: CGFloat = 16
     private let sideMargin: CGFloat = 16
@@ -69,7 +69,10 @@ class StaticSectionManager {
     private let smallHeight: CGFloat = 0.2
     private let midiumHeight: CGFloat = 0.25
     private let bannerHeight: CGFloat = 0.35
-        
+     
+    init() {
+    }
+    
     func getStaticSectionTotalCount() -> Int {
         print("STaticSectionModel getStaticSectionTotalCount called:", contents.count)
         return contents.count
