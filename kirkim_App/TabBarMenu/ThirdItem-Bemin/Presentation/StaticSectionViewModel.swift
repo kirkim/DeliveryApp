@@ -7,8 +7,8 @@
 
 import UIKit
 
-class StaticSectionModel {
-    private let manager = StaticSectionManager()
+class StaticSectionViewModel {
+    private let manager = StaticSectionViewManager()
     
     // 스테틱 셀 아이템 갯수
     func numberOfStaticItem(section: Int) -> Int {
@@ -41,7 +41,7 @@ class StaticSectionModel {
 }
 
 
-class StaticSectionManager {
+class StaticSectionViewManager {
     private var contents: [BeminStaticContent] {
         guard let path = Bundle.main.path(forResource: "BeminStaticContent", ofType: "plist") else {
             print("path error")

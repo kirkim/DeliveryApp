@@ -8,7 +8,7 @@
 import UIKit
 
 class KiflixCollectionView: UICollectionView {
-    let kiflixModel = KiflixModel()
+    let kiflixModel = KiflixViewModel()
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)

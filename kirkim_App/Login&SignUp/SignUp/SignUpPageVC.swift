@@ -16,7 +16,7 @@ class SignUpPageVC: UIViewController {
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     private var constant: CGFloat = 0
     private var activeTextfieldY: CGFloat = 0
-    private let signupUserModel = SignupUserModel()
+    private let signupUserModel = SignUpPageViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()

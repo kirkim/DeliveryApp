@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-struct PlistModel {
+struct StaticBannerPlistModel {
     enum BannerType {
         case staticEvent
     }
@@ -19,7 +19,7 @@ struct PlistModel {
         self.contents = getContents(type: type)
     }
     
-    private func getContents(type: PlistModel.BannerType) -> [BannerContent] {
+    private func getContents(type: StaticBannerPlistModel.BannerType) -> [BannerContent] {
         switch type {
         case .staticEvent:
             guard let path = Bundle.main.path(forResource: StaticBannerContent.plistName, ofType: "plist"),

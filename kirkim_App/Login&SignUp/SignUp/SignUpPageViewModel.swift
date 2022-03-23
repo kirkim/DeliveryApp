@@ -7,27 +7,10 @@
 
 import Foundation
 
-struct User: Codable {
-    var data: UserData
-    var id: String
-}
-struct UserData: Codable {
-    var userID: String
-    var password: String
-    var name: String
-}
-
-struct SignupUser: Codable {
-    var userID: String
-    var password: String
-    var confirmPassword: String
-    var name: String
-}
-
-struct SignupUserModel {
-    private let manager = SignupUserManager.shared
+struct SignUpPageViewModel {
+    private let manager = SignUpPageViewManager.shared
     
-    func signup(signupData: SignupUser, completion: @escaping (SignupUserManager.ValidatorResult) -> Void) {
+    func signup(signupData: SignupUser, completion: @escaping (SignUpPageViewManager.ValidatorResult) -> Void) {
         manager.signup(signupData: signupData, completion: completion)
     }
     
@@ -41,8 +24,8 @@ struct SignupUserModel {
 
 }
 
-class SignupUserManager {
-    static let shared = SignupUserManager()
+class SignUpPageViewManager {
+    static let shared = SignUpPageViewManager()
     private init() { }
     private let userHttpManager = UserHttpManager()
     

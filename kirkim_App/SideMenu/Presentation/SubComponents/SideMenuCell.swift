@@ -10,12 +10,13 @@ import UIKit
 class SideMenuCell: UITableViewCell {
     private var mainTitle: UILabel = UILabel()
     private var thumbnailImageView = UIImageView()
-    private var info: SideMenuCellInfo?
+    private var info: SideMenuViewInfo?
         
-    init(info: SideMenuCellInfo) {
+    init(info: SideMenuViewInfo) {
         super.init(style: .default, reuseIdentifier: info.identifier)
         self.mainTitle.text = info.mainTitle
-        self.thumbnailImageView = UIImageView(image: info.thumnailImage)
+        let image = UIImage(systemName: info.thumnailImage ?? "x.circle")
+        self.thumbnailImageView = UIImageView(image: image)
         self.info = info
         contentView.addSubview(mainTitle)
         contentView.addSubview(thumbnailImageView)

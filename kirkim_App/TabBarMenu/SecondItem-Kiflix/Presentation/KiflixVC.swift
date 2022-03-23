@@ -8,7 +8,7 @@
 import UIKit
 
 class KiflixVC: BaseVC {
-    let kiflixModel = KiflixModel()
+    let kiflixModel = KiflixViewModel()
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: KiflixCollectionView!

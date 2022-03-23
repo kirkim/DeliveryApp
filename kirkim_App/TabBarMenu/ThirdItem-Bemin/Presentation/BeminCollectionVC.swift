@@ -20,7 +20,7 @@ class BeminVC: BaseVC {
 
 class BeminCollectionVC: UICollectionViewController {
     private let STATIC_SECTION_TOTALCOUNT: Int
-    private let staticModel = StaticSectionModel()
+    private let staticModel = StaticSectionViewModel()
     
 //MARK: - BeminCollectionVC init
     init() {

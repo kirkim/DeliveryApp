@@ -8,38 +8,8 @@
 import Foundation
 import UIKit
 
-struct Kiflix: Codable {
-    let resultCount: Int
-    let movies: [Movie]
-    
-    enum CodingKeys: String, CodingKey {
-        case resultCount
-        case movies = "results"
-    }
-}
-
-struct Movie: Codable {
-    let title: String
-    let director: String
-    let thumbnail: String
-    let shortDescription: String?
-    let longDescription: String?
-    let releaseDate: String
-    let previewURL: String
-    
-    enum CodingKeys: String, CodingKey {
-        case title = "trackName"
-        case director = "artistName"
-        case thumbnail = "artworkUrl100"
-        case shortDescription
-        case longDescription
-        case releaseDate
-        case previewURL = "previewUrl"
-    }
-}
-
-struct KiflixModel {
-    private let manager = KiflixManager.shared
+struct KiflixViewModel {
+    private let manager = KiflixViewManager.shared
     
     var data: [Movie] {
         return manager.data
@@ -54,8 +24,8 @@ struct KiflixModel {
     }
 }
 
-class KiflixManager {
-    static let shared = KiflixManager()
+class KiflixViewManager {
+    static let shared = KiflixViewManager()
     private init() { }
     private let httpManager = KiflixHttpManager()
     
@@ -66,7 +36,7 @@ class KiflixManager {
             switch result {
             case .success(let data):
                 do {
-                    let datamodel = try JSONDecoder().decode(Kiflix.self, from: data)
+                    let datamodel = try JSONDecoder().decode(KiflixModel.self, from: data)
                     self.data = datamodel.movies
                     completion()
                 } catch {

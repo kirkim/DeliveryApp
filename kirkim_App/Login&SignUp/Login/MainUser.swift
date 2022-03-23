@@ -25,17 +25,15 @@ enum LoginStatus {
     }
 }
 
-final class LoginUserModel {
-    static let shared = LoginUserModel()
-    private init() { }
-    private let manager = LoginUserManager.shared
+struct MainUser {
+    private let manager = MainUserManager.shared
     
     var isLogin: Bool {
         return manager.isLogin
     }
     
-    var user: User? {
-        return manager.user
+    var info: User? {
+        return manager.info
     }
     
     func logIn(userID: String, password: String, completion: @escaping (LoginStatus) -> Void) {
@@ -47,15 +45,15 @@ final class LoginUserModel {
     }
 }
 
-class LoginUserManager {
-    static let shared = LoginUserManager()
+final class MainUserManager {
+    static let shared = MainUserManager()
     private init() { }
     private let userHttpManager = UserHttpManager()
-    var user: User?
+    var info: User?
     var isLogin: Bool = false
     
     private func setUser(user: User) {
-        self.user = user
+        self.info = user
         self.isLogin = true
     }
     
@@ -82,7 +80,7 @@ class LoginUserManager {
     }
     
     func logOut() {
-        self.user = nil
+        self.info = nil
         self.isLogin = false
     }
 }

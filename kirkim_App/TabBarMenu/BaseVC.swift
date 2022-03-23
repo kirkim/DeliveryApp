@@ -8,7 +8,7 @@
 import UIKit
 
 class BaseVC: UIViewController {
-    let userModel = LoginUserModel.shared
+    let userModel = MainUser()
     var dev_Mode: Bool = false
     
     override func viewDidLoad() {
@@ -16,7 +16,7 @@ class BaseVC: UIViewController {
     }
     
     private func makeSideBarMenuButtonUI() {
-        let userName = self.userModel.user?.data.name ?? "User"
+        let userName = self.userModel.info?.data.name ?? "User"
         let customButton = SimpleProfileView(userName: userName)
         customButton.addTarget(self, action: #selector(handleSideBarMenuButton), for: .touchUpInside)
         let sideBarMenuButton = UIBarButtonItem(customView: customButton)
@@ -34,7 +34,7 @@ class BaseVC: UIViewController {
         if (dev_Mode == false) {
             checkLogin(completion: {
                 makeSideBarMenuButtonUI()
-                self.navigationItem.title = "\(userModel.user!.data.name)님 반갑습니다!"
+                self.navigationItem.title = "\(userModel.info!.data.name)님 반갑습니다!"
             })
         }
     }

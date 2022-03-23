@@ -7,8 +7,8 @@
 
 import UIKit
 
-class TestView1_1: UIViewController, SideMenuCellView {
-    static var sideMenuCellInfo = SideMenuCellInfo(thumnailImage: UIImage(systemName: "drop.fill"), mainTitle: "TestView1-1", section: .one, identifier: "TestView1-1")
+class TestView1_1: UIViewController, SideMenuView {
+    static var sideMenuViewInfo = SideMenuViewInfo(thumnailImage: "drop.fill", mainTitle: "TestView1-1", section: .one, identifier: "TestView1-1")
     
     override func viewDidLoad() {
         super.viewDidLoad()

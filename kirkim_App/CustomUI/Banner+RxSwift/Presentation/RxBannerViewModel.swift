@@ -10,7 +10,7 @@ import UIKit
 struct RxBannerViewModel {
     private let manager: RxBannerViewManager
     
-    init(plistType: PlistModel.BannerType) {
+    init(plistType: StaticBannerPlistModel.BannerType) {
         manager = RxBannerViewManager(type: .staticEvent)
     }
     
@@ -26,10 +26,10 @@ struct RxBannerViewModel {
 struct RxBannerViewManager {
     let bannerListViewModel: RxBannerListViewModel
     let buttonViewModel: RxBannerButtonViewModel
-    let plistModel: PlistModel
+    let plistModel: StaticBannerPlistModel
     
-    init(type: PlistModel.BannerType) {
-        self.plistModel = PlistModel(type: type)
+    init(type: StaticBannerPlistModel.BannerType) {
+        self.plistModel = StaticBannerPlistModel(type: type)
         self.bannerListViewModel = RxBannerListViewModel(imageNames: plistModel.getAllImageName())
         self.buttonViewModel = RxBannerButtonViewModel(bannerPageSubject: bannerListViewModel.nowPage, totalPage: plistModel.getCount())
     }

@@ -10,34 +10,14 @@
 
 import UIKit
 
-enum SideMenuSection: Int {
-    case one
-    case two
-    case three
-    static var count: Int {
-        return 3
-    }
-}
-
-protocol SideMenuCellView {
-    static var sideMenuCellInfo: SideMenuCellInfo { get }
-}
-
-struct SideMenuCellInfo {
-    var thumnailImage: UIImage?
-    var mainTitle: String?
-    var section: SideMenuSection?
-    var identifier: String?
-}
-
 struct SideMenuCellModel {
-    private let manager = SideMenuCellManager.shared
+    private let manager = SideMenuCellManager()
     
-    func getCellsBySection(section: Int) -> [SideMenuCellInfo] {
+    func getCellsBySection(section: Int) -> [SideMenuViewInfo] {
         return manager.getCellsBySection(section: section)
     }
     
-    func getAllCells() -> [SideMenuCellInfo] {
+    func getAllCells() -> [SideMenuViewInfo] {
         return manager.getAllCells()
     }
     
@@ -45,7 +25,7 @@ struct SideMenuCellModel {
         return manager.getCellByIndexPath(indexPath: indexPath)
     }
     
-    func getCellInfoByIndexPath(indexPath: IndexPath) -> SideMenuCellInfo {
+    func getCellInfoByIndexPath(indexPath: IndexPath) -> SideMenuViewInfo {
         return manager.getCellInfoByIndexPath(indexPath: indexPath)
     }
     
@@ -54,13 +34,15 @@ struct SideMenuCellModel {
     }
 }
 
-class SideMenuCellManager {
-    static let shared = SideMenuCellManager()
-    private init() { }
+struct SideMenuCellManager {
     // sidebar에 xib파일을 만들때마다 다음 storageData배열에 직접 추가해줘야함(단, xib파일은 SideMenuCellView프로토콜을 따른다)
-    private var storageData: [SideMenuCellInfo] = [TestView1_1.sideMenuCellInfo, TestView1_2.sideMenuCellInfo, TestView2_1.sideMenuCellInfo, TestView3_1.sideMenuCellInfo]
+    private var storageData: [SideMenuViewInfo] = [TestView1_1.sideMenuViewInfo, TestView1_2.sideMenuViewInfo, TestView2_1.sideMenuViewInfo, TestView3_1.sideMenuViewInfo]
     
-    func getCellsBySection(section: Int) -> [SideMenuCellInfo] {
+    init() {
+        
+    }
+    
+    func getCellsBySection(section: Int) -> [SideMenuViewInfo] {
         let validDatas = self.storageData.filter { data in
             if (data.section?.rawValue == section) {
                 return true
@@ -70,7 +52,7 @@ class SideMenuCellManager {
         return validDatas
     }
     
-    func getAllCells() -> [SideMenuCellInfo] {
+    func getAllCells() -> [SideMenuViewInfo] {
         return self.storageData
     }
     
@@ -81,7 +63,7 @@ class SideMenuCellManager {
         return cell
     }
     
-    func getCellInfoByIndexPath(indexPath: IndexPath) -> SideMenuCellInfo {
+    func getCellInfoByIndexPath(indexPath: IndexPath) -> SideMenuViewInfo {
         let cellsInfo = self.getCellsBySection(section: indexPath.section)
         return cellsInfo[indexPath.row]
     }
