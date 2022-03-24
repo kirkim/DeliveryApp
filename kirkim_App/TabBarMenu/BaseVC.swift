@@ -42,7 +42,8 @@ class BaseVC: UIViewController {
     func checkLogin(completion: () -> Void) {
         if (self.userModel.isLogin == false) {
 //            let loginVC = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginPageVC
-            let loginVC = LoginPageVC(nibName: "LoginPageVC", bundle: nil)
+//            let loginVC = LoginPageVC(nibName: "LoginPageVC", bundle: nil)
+            let loginVC = LoginPageVC()
             loginVC.modalPresentationStyle = .fullScreen
             self.present(loginVC, animated: false, completion: nil)
         } else {

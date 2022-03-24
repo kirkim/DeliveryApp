@@ -16,8 +16,10 @@ class SignUpPageVC: UIViewController {
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     private var constant: CGFloat = 0
     private var activeTextfieldY: CGFloat = 0
-    private let signupUserModel = SignUpPageViewModel()
+    private let viewModel = SignUpPageViewModel()
     
+    
+    //MARK: - SignUpPageVC: lifeCycle function
     override func viewDidLoad() {
         super.viewDidLoad()
         KeyboardAnimation.dismissKeyboardBytouchBackground(view: self.view)
@@ -41,16 +43,13 @@ class SignUpPageVC: UIViewController {
     }
 
     private func initUI() {
-        idTextField.setUI(type: .normal)
-        passwordTextField.setUI(type: .password)
-        confirmPasswordTextField.setUI(type: .password)
-        nameTextField.setUI(type: .normal)
         UIView.animate(withDuration: 0.5) {
             self.contentView.layoutIfNeeded()
         }
         self.constant = bottomConstraint.constant
     }
 
+    //MARK: - SignUpPageVC: @IBAction function
     @IBAction func handleJoinButton(_ sender: UIButton) {
         guard let userID = idTextField.text,
               let password = passwordTextField.text,
@@ -59,7 +58,7 @@ class SignUpPageVC: UIViewController {
         
         let userData = SignupUser(userID: userID, password: password, confirmPassword: confirmPassword, name: name)
         
-        signupUserModel.signup(signupData: userData, completion: { validatorResult in
+        viewModel.signup(signupData: userData, completion: { validatorResult in
             if (validatorResult != .success ) {
                 switch validatorResult {
                 case .wrongID:

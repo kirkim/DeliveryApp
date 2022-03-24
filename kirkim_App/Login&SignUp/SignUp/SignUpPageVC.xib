@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,11 +11,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpPageVC" customModule="kirkim_App" customModuleProvider="target">
             <connections>
                 <outlet property="bottomConstraint" destination="ENX-Mb-Tws" id="5vW-j8-VaM"/>
-                <outlet property="confirmPasswordTextField" destination="owb-Z1-HSW" id="XFt-OX-59d"/>
-                <outlet property="contentView" destination="Yl7-cy-ttb" id="WJC-6B-HFs"/>
-                <outlet property="idTextField" destination="4fZ-FL-x41" id="bum-YR-LeW"/>
-                <outlet property="nameTextField" destination="u4c-C5-1Xb" id="ZbM-0l-giS"/>
-                <outlet property="passwordTextField" destination="idq-PP-J5L" id="Ugw-2U-x1e"/>
+                <outlet property="confirmPasswordTextField" destination="owb-Z1-HSW" id="v7X-3Q-q36"/>
+                <outlet property="contentView" destination="V7J-85-gVL" id="skd-4s-Iv3"/>
+                <outlet property="idTextField" destination="4fZ-FL-x41" id="Vu8-Ky-lXF"/>
+                <outlet property="nameTextField" destination="u4c-C5-1Xb" id="2he-tT-RD8"/>
+                <outlet property="passwordTextField" destination="idq-PP-J5L" id="l7E-zS-QDL"/>
+                <outlet property="view" destination="Yl7-cy-ttb" id="SZL-VD-UAG"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -24,24 +25,24 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V7J-85-gVL">
-                    <rect key="frame" x="0.0" y="310" width="414" height="452"/>
+                    <rect key="frame" x="0.0" y="94" width="414" height="452"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4fZ-FL-x41" customClass="SimpleTextField" customModule="kirkim_App" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4fZ-FL-x41" customClass="NormalTextField" customModule="kirkim_App" customModuleProvider="target">
                             <rect key="frame" x="20" y="76" width="374" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="idq-PP-J5L" customClass="SimpleTextField" customModule="kirkim_App" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="idq-PP-J5L" customClass="SecretTextField" customModule="kirkim_App" customModuleProvider="target">
                             <rect key="frame" x="20" y="150" width="374" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호 확인" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="owb-Z1-HSW" customClass="SimpleTextField" customModule="kirkim_App" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호 확인" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="owb-Z1-HSW" customClass="SecretTextField" customModule="kirkim_App" customModuleProvider="target">
                             <rect key="frame" x="20" y="224" width="374" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u4c-C5-1Xb" customClass="SimpleTextField" customModule="kirkim_App" customModuleProvider="target">
+                        <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u4c-C5-1Xb" customClass="NormalTextField" customModule="kirkim_App" customModuleProvider="target">
                             <rect key="frame" x="20" y="298" width="374" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" textContentType="name"/>
@@ -78,6 +79,7 @@
                         <constraint firstAttribute="trailing" secondItem="idq-PP-J5L" secondAttribute="trailing" constant="20" id="ahz-uJ-Wfp"/>
                         <constraint firstItem="4fZ-FL-x41" firstAttribute="leading" secondItem="V7J-85-gVL" secondAttribute="leading" constant="20" id="eVi-7p-jOf"/>
                         <constraint firstItem="idq-PP-J5L" firstAttribute="leading" secondItem="V7J-85-gVL" secondAttribute="leading" constant="20" id="fmc-kd-Pww"/>
+                        <constraint firstAttribute="height" constant="452" id="hp9-Dd-20A"/>
                         <constraint firstItem="u4c-C5-1Xb" firstAttribute="top" secondItem="owb-Z1-HSW" secondAttribute="bottom" constant="40" id="iTO-qh-QfW"/>
                         <constraint firstAttribute="trailing" secondItem="4fZ-FL-x41" secondAttribute="trailing" constant="20" id="idf-gB-Auv"/>
                         <constraint firstItem="owb-Z1-HSW" firstAttribute="top" secondItem="idq-PP-J5L" secondAttribute="bottom" constant="40" id="kTG-lO-JDO"/>
@@ -92,7 +94,7 @@
                 <constraint firstItem="N0U-fX-02x" firstAttribute="trailing" secondItem="V7J-85-gVL" secondAttribute="trailing" id="4Gg-c1-n5l"/>
                 <constraint firstItem="N0U-fX-02x" firstAttribute="bottom" secondItem="V7J-85-gVL" secondAttribute="bottom" priority="250" constant="100" id="ENX-Mb-Tws"/>
                 <constraint firstItem="V7J-85-gVL" firstAttribute="leading" secondItem="N0U-fX-02x" secondAttribute="leading" id="m1S-Yi-5FS"/>
-                <constraint firstItem="V7J-85-gVL" firstAttribute="top" secondItem="N0U-fX-02x" secondAttribute="top" priority="249" constant="50" id="rEc-Ab-aGc"/>
+                <constraint firstItem="V7J-85-gVL" firstAttribute="top" relation="lessThanOrEqual" secondItem="N0U-fX-02x" secondAttribute="top" priority="251" constant="50" id="rEc-Ab-aGc"/>
             </constraints>
             <point key="canvasLocation" x="175" y="-585"/>
         </view>

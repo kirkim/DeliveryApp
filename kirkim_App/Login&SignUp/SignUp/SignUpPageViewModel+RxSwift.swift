@@ -1,36 +1,44 @@
 //
-//  SignupUserModel.swift
+//  SignUpPageViewModel+RxSwift.swift
 //  kirkim_App
 //
-//  Created by 김기림 on 2022/02/19.
+//  Created by 김기림 on 2022/03/24.
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
-struct SignUpPageViewModel {
-    private let manager = SignUpPageViewManager.shared
-    
-    func signup(signupData: SignupUser, completion: @escaping (SignUpPageViewManager.ValidatorResult) -> Void) {
-        manager.signup(signupData: signupData, completion: completion)
-    }
-    
-    func isValidUserID(id: String) -> Bool {
-        return manager.isValidUserID(id: id)
-    }
-    
-    func isValidPassword(pwd: String) -> Bool {
-        return manager.isValidPassword(pwd: pwd)
-    }
-}
+//struct RxSignUpPageViewModel {
+//    private let manager = RxSignUpPageViewManager.shared
+//
+//    func signup(signupData: SignupUser, completion: @escaping (RxSignUpPageViewManager.ValidatorResult) -> Void) {
+//        manager.signup(signupData: signupData, completion: completion)
+//    }
+//
+//    func isValidUserID(id: String) -> Bool {
+//        return manager.isValidUserID(id: id)
+//    }
+//
+//    func isValidPassword(pwd: String) -> Bool {
+//        return manager.isValidPassword(pwd: pwd)
+//    }
+//}
 
-class SignUpPageViewManager {
-    static let shared = SignUpPageViewManager()
-    private init() { }
+struct RxSignUpPageViewModel {
     private let userHttpManager = UserHttpManager()
     
     //View -> ViewModel
+    let idText = PublishRelay<String?>()
+    let pwText = PublishRelay<String?>()
+    let confirmPwText = PublishRelay<String?>()
+    let nameText = PublishRelay<String?>()
     
-    
+    //ViewModel -> View
+    private let isValidIdId: Signal<Bool>
+    private let isValidIdPw: Signal<Bool>
+    private let isValidIdConfirmPw: Signal<Bool>
+    private let isValidIdName: Signal<Bool>
     
     enum ValidatorResult {
         case success
