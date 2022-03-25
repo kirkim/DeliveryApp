@@ -8,6 +8,7 @@
 import Foundation
 
 enum CustomError: Error {
+    case invalidURL
     case decodingError
     case responseError
     case noData
@@ -16,6 +17,8 @@ enum CustomError: Error {
     
     var msg: String {
         switch self {
+        case .invalidURL:
+            return "InValid URL"
         case .decodingError:
             return "Decoding Error"
         case .noData:
@@ -38,7 +41,10 @@ protocol UrlType {
 struct HttpClient {
     func postHttp<T: UrlType, B: Codable>(type postType: T, body: B, completion: @escaping (Result<Data, CustomError>) -> Void) {
         let session = URLSession(configuration: URLSessionConfiguration.default)
-        guard let url = URL(string: postType.url) else { return }
+        guard let url = URL(string: postType.url) else {
+            completion(.failure(.invalidURL))
+            return
+        }
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -66,7 +72,10 @@ struct HttpClient {
 
     func getHttp<T: UrlType>(type getType: T, completion: @escaping (Result<Data, CustomError>) -> Void) {
         let session = URLSession(configuration: URLSessionConfiguration.default)
-        guard let url = URL(string: getType.url) else { return }
+        guard let url = URL(string: getType.url) else {
+            completion(.failure(.invalidURL))
+            return
+        }
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
         session.dataTask(with: urlRequest) { data, response, error in
@@ -88,7 +97,10 @@ struct HttpClient {
     }
     
     func getHttpAsync<T: UrlType>(type getType: T, completion: @escaping (Result<Data, CustomError>) -> Void) async {
-        guard let url = URL(string: getType.url) else { return }
+        guard let url = URL(string: getType.url) else {
+            completion(.failure(.invalidURL))
+            return
+        }
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
         

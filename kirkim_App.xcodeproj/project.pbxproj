@@ -22,11 +22,13 @@
 		FE2BD69227CDC9C400A9FB73 /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE2BD69027CDC9C400A9FB73 /* MainVC.xib */; };
 		FE2BD69727CDD34400A9FB73 /* KiflixCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2BD69527CDD34400A9FB73 /* KiflixCollectionCell.swift */; };
 		FE2BD69827CDD34400A9FB73 /* KiflixCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE2BD69627CDD34400A9FB73 /* KiflixCollectionCell.xib */; };
+		FE2FD15727EDA31A0094E094 /* RxHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2FD15627EDA31A0094E094 /* RxHttpClient.swift */; };
+		FE2FD15927EDFFFB0094E094 /* RxSignUpPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2FD15827EDFFFB0094E094 /* RxSignUpPageVC.swift */; };
 		FE2FE4BC27CE086C004B8871 /* KiflixCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2FE4BB27CE086C004B8871 /* KiflixCollectionView.swift */; };
 		FE2FF52D27D5B414005DA688 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FE2FF52C27D5B414005DA688 /* SnapKit */; };
 		FE2FF55127D5CC11005DA688 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2FF55027D5CC11005DA688 /* TestVC.swift */; };
 		FE3CCB8727D1CB2B00D770F8 /* DescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE3CCB8627D1CB2B00D770F8 /* DescriptionView.xib */; };
-		FE3CE34027ECA5760039C335 /* SignUpPageViewModel+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3CE33F27ECA5760039C335 /* SignUpPageViewModel+RxSwift.swift */; };
+		FE3CE34027ECA5760039C335 /* RxSignUpPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3CE33F27ECA5760039C335 /* RxSignUpPageViewModel.swift */; };
 		FE3EA96527BB751800DA36EA /* TextAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3EA96427BB751800DA36EA /* TextAnimation.swift */; };
 		FE3EA96727BB8AC100DA36EA /* SimpleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3EA96627BB8AC100DA36EA /* SimpleTextField.swift */; };
 		FE41DC9C27D706B400317493 /* MyBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41DC9627D706B400317493 /* MyBannerCell.swift */; };
@@ -131,10 +133,12 @@
 		FE2BD69027CDC9C400A9FB73 /* MainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
 		FE2BD69527CDD34400A9FB73 /* KiflixCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiflixCollectionCell.swift; sourceTree = "<group>"; };
 		FE2BD69627CDD34400A9FB73 /* KiflixCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KiflixCollectionCell.xib; sourceTree = "<group>"; };
+		FE2FD15627EDA31A0094E094 /* RxHttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxHttpClient.swift; sourceTree = "<group>"; };
+		FE2FD15827EDFFFB0094E094 /* RxSignUpPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSignUpPageVC.swift; sourceTree = "<group>"; };
 		FE2FE4BB27CE086C004B8871 /* KiflixCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiflixCollectionView.swift; sourceTree = "<group>"; };
 		FE2FF55027D5CC11005DA688 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
 		FE3CCB8627D1CB2B00D770F8 /* DescriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionView.xib; sourceTree = "<group>"; };
-		FE3CE33F27ECA5760039C335 /* SignUpPageViewModel+RxSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpPageViewModel+RxSwift.swift"; sourceTree = "<group>"; };
+		FE3CE33F27ECA5760039C335 /* RxSignUpPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSignUpPageViewModel.swift; sourceTree = "<group>"; };
 		FE3EA96427BB751800DA36EA /* TextAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAnimation.swift; sourceTree = "<group>"; };
 		FE3EA96627BB8AC100DA36EA /* SimpleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextField.swift; sourceTree = "<group>"; };
 		FE41DC9627D706B400317493 /* MyBannerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBannerCell.swift; sourceTree = "<group>"; };
@@ -269,7 +273,7 @@
 		FE21132827BCA630003293B2 /* Http */ = {
 			isa = PBXGroup;
 			children = (
-				FE21132927BCA6AE003293B2 /* HttpClient.swift */,
+				FE787A2B27ED5B2300673EA7 /* Base */,
 				FE47CACF27C114210077806D /* UserHttpManager.swift */,
 				FE18A28827C5DE9B00E56F39 /* BannerHttpManager.swift */,
 				FEBA011627CDE08300E74FCB /* KiflixHttpManager.swift */,
@@ -329,11 +333,8 @@
 		FE47CACE27C0C8410077806D /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				FE21133027BCD095003293B2 /* SignUpPageVC.swift */,
-				FEBA011227CDD5D700E74FCB /* SignUpPageVC.xib */,
-				FE47CACB27C0C5570077806D /* SignUpPageViewModel.swift */,
-				FE85B4F527EAAEF80031F5AC /* SignUpPageModel.swift */,
-				FE3CE33F27ECA5760039C335 /* SignUpPageViewModel+RxSwift.swift */,
+				FE787A2727ED543500673EA7 /* BeforeRefactoring */,
+				FE787A2827ED544E00673EA7 /* RefactoringUsingRxSwift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -396,6 +397,35 @@
 				FE85B4F127EAAC450031F5AC /* Entities */,
 			);
 			path = "SecondItem-Kiflix";
+			sourceTree = "<group>";
+		};
+		FE787A2727ED543500673EA7 /* BeforeRefactoring */ = {
+			isa = PBXGroup;
+			children = (
+				FE21133027BCD095003293B2 /* SignUpPageVC.swift */,
+				FEBA011227CDD5D700E74FCB /* SignUpPageVC.xib */,
+				FE47CACB27C0C5570077806D /* SignUpPageViewModel.swift */,
+				FE85B4F527EAAEF80031F5AC /* SignUpPageModel.swift */,
+			);
+			path = BeforeRefactoring;
+			sourceTree = "<group>";
+		};
+		FE787A2827ED544E00673EA7 /* RefactoringUsingRxSwift */ = {
+			isa = PBXGroup;
+			children = (
+				FE2FD15827EDFFFB0094E094 /* RxSignUpPageVC.swift */,
+				FE3CE33F27ECA5760039C335 /* RxSignUpPageViewModel.swift */,
+			);
+			path = RefactoringUsingRxSwift;
+			sourceTree = "<group>";
+		};
+		FE787A2B27ED5B2300673EA7 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				FE21132927BCA6AE003293B2 /* HttpClient.swift */,
+				FE2FD15627EDA31A0094E094 /* RxHttpClient.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		FE7FC0C727C48966009EB2AE /* SideMenuSubView */ = {
@@ -868,7 +898,7 @@
 				FE85B4E727EAA7090031F5AC /* EventPage1.swift in Sources */,
 				FE85B4E927EAA88C0031F5AC /* SideMenuView+Protocol.swift in Sources */,
 				FE078F1B27C34C7E00D19E34 /* SimpleProfileView.swift in Sources */,
-				FE3CE34027ECA5760039C335 /* SignUpPageViewModel+RxSwift.swift in Sources */,
+				FE3CE34027ECA5760039C335 /* RxSignUpPageViewModel.swift in Sources */,
 				FE74FEAF27CDBDDE00F40D5F /* MainTabBarController.swift in Sources */,
 				FE41DC9E27D706B400317493 /* MyBannerByAPIView.swift in Sources */,
 				FE18A28927C5DE9B00E56F39 /* BannerHttpManager.swift in Sources */,
@@ -911,8 +941,10 @@
 				FE3EA96527BB751800DA36EA /* TextAnimation.swift in Sources */,
 				FE2BD69727CDD34400A9FB73 /* KiflixCollectionCell.swift in Sources */,
 				FE48B6C427DAD04E001F7F9A /* BeminStaticContent.swift in Sources */,
+				FE2FD15727EDA31A0094E094 /* RxHttpClient.swift in Sources */,
 				FE18A28727C5CA4F00E56F39 /* MyBannerByAPIViewModel.swift in Sources */,
 				FEBA011727CDE08300E74FCB /* KiflixHttpManager.swift in Sources */,
+				FE2FD15927EDFFFB0094E094 /* RxSignUpPageVC.swift in Sources */,
 				FE2FF55127D5CC11005DA688 /* TestVC.swift in Sources */,
 				FE85B4F327EAAC5E0031F5AC /* KiflixModel.swift in Sources */,
 				FE85B4F627EAAEF80031F5AC /* SignUpPageModel.swift in Sources */,
