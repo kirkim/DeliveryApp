@@ -53,16 +53,16 @@ class LoginPageVC: UIViewController {
             .disposed(by: disposeBag)
         
         self.loginButton.rx.tap
-            .bind { self.handleLoginButton() }
+            .withLatestFrom(viewModel.isValidLogin) { $1 }  // 백엔드에서도 유효성검사를 하지만, 앱에서도 유효성검사를 한번 더해줌 => 불필요한 네트워크통신을 막음
+            .bind { isValidLogin in
+                if (isValidLogin) {
+                    self.handleLoginButton() // 이 곳에서 백엔드에 통신하며 유효성검사를 하게됨
+                }
+            }
             .disposed(by: disposeBag)
         
         self.createButton.rx.tap
-            .withLatestFrom(viewModel.isValidLogin) { $1 } // 백엔드에서도 유효성검사를 하지만, 앱에서도 유효성검사를 한번 더해줌 => 불필요한 네트워크통신을 막음
-            .bind { isValidLogin in
-                if (isValidLogin) {
-                    self.handleCreateUserButton() // 이 곳에서 백엔드에 통신하며 유효성검사를 하게됨
-                }
-            }
+            .bind { self.handleCreateUserButton() }
             .disposed(by: disposeBag)
     }
     

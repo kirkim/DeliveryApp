@@ -12,119 +12,78 @@ import CoreAudio
 import CoreMedia
 import simd
 
-struct RxSignUpPageViewModel {
+class RxSignUpPageViewModel {
     private let httpManager = RxUserHttpManager()
     private let disposeBag = DisposeBag()
-    
-    let bodyData: Driver<SignupUser>
+
+//    let bodyData: Driver<SignupUser>
     //View -> ViewModel
     let idText = PublishRelay<String>()
     let pwText = PublishRelay<String>()
     let confirmPwText = PublishRelay<String>()
     let nameText = PublishRelay<String>()
     let signupButtonTapped = PublishRelay<Void>()
-    
+
     //ViewModel -> View
-//    let isValidId: Signal<Bool>
-//    let isValidPw: Signal<Bool>
-//    let isValidConfirmPw: Signal<Bool>
-//    let isValidName: Signal<Bool>
-    let presentAlert = Signal<String>()
-    
+    let isValidId = BehaviorRelay<Bool>(value: false)
+    let isValidPw = BehaviorRelay<Bool>(value: false)
+    let isValidConfimPw = BehaviorRelay<Bool>(value: false)
+    let isValidName = BehaviorRelay<Bool>(value: false)
+    let isValidSignUp = BehaviorRelay<Bool>(value: false)
+//    let presentAlert = Signal<String>()
+
     init() {
-        isValidId = idText.map { id -> Bool in
-            let emailRegEx = "[A-Z0-9a-z._%+-]{1,}"
-            let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
-            return emailTest.evaluate(with: id)
-        }
-        .asSignal(onErrorJustReturn: false)
+        idText
+            .map { self.checkId($0) }
+            .bind(to: self.isValidId)
+            .disposed(by: disposeBag)
         
-        isValidPw = pwText.map { pw -> Bool in
-            let passwordRegEx = "^[a-zA-Z0-9]{8,}$"
-            let passwordTest = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
-            return passwordTest.evaluate(with: pw)
-        }
-        .asSignal(onErrorJustReturn: false)
+        pwText
+            .map { self.checkPw($0) }
+            .bind(to: self.isValidPw)
+            .disposed(by: disposeBag)
         
-        isValidConfirmPw = confirmPwText.withLatestFrom(pwText) { pw, confirmPw in
-            return pw == confirmPw
-        }
-        .asSignal(onErrorJustReturn: false)
-        
-        isValidName = nameText.map { name -> Bool in
-            let nameRegEx = "[A-Z0-9a-z가-힣._%+-]{1,}"
-            let nameTest = NSPredicate(format: "SELF MATCHES %@", nameRegEx)
-            return nameTest.evaluate(with: name)
-        }
-        .asSignal(onErrorJustReturn: false)
-        
-        let isValidSignUp = Signal
-            .combineLatest(
-                isValidId,
-                isValidPw,
-                isValidConfirmPw,
-                isValidName
-            ) { $0 && $1 && $2 && $3 }
-            
-        bodyData = Observable
-            .combineLatest(
-                idText,
-                pwText,
-                confirmPwText,
-                nameText
-            ) { SignupUser(userID: $0, password: $1, confirmPassword: $2, name: $3) }
-            .asDriver(onErrorDriveWith: .empty())
-        
-        let errorMessage = Signal
-            .combineLatest(
-                isValidId,
-                isValidPw,
-                isValidConfirmPw,
-                isValidName
-            )
-            .map { (validId, validPw, validCPw, validName) -> String? in
-                var message:[String] = []
-                if (!validId) {
-                    message.append("- 유효한 아이디를 입력해 주세요.")
-                }
-                if (!validPw) {
-                    message.append("- 유효한 비밀번호를 입력해 주세요.")
-                }
-                if (!validCPw) {
-                    message.append("- 확인비밀번호가 일치하지 않습니다.")
-                }
-                if (!validName) {
-                    message.append("- 유효한 이름을 입력해 주세요.")
-                }
-                return message.isEmpty ? nil : message.joined(separator: "\n")
+        confirmPwText
+            .withLatestFrom(pwText) {
+                self.checkConfirmPw($0, $1)
             }
+            .bind(to: self.isValidConfimPw)
+            .disposed(by: disposeBag)
         
-        self.presentAlert = self.signupButtonTapped
-            .withLatestFrom(errorMessage)
-            .filter({ message in
-                if (message == nil ) {
-                    httpManager.postFetch(type: .signUp, body: )
-                }
-            })
+        nameText
+            .map { self.checkName($0) }
+            .bind(to: self.isValidName)
+            .disposed(by: disposeBag)
+        
+        Observable.combineLatest(
+            isValidId,
+            isValidPw,
+            isValidConfimPw,
+            isValidName
+        ) { $0 && $1 && $2 && $3}
+            .asSignal(onErrorJustReturn: false)
+            .emit(to: self.isValidSignUp)
+            .disposed(by: disposeBag)
     }
-    func isValidUserID(_ id: String) -> Bool {
+    
+    func checkId(_ id: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]{1,}"
         let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: id)
     }
-    
+
     // 비밀번호 형식 검사
-    func isValidPw(_ pw: String) -> Bool {
+    func checkPw(_ pw: String) -> Bool {
         let passwordRegEx = "^[a-zA-Z0-9]{8,}$"
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
-        return passwordTest.evaluate(with: pwd)
+        return passwordTest.evaluate(with: pw)
     }
-    
-    func isValidConfirmPw(_ pw: String, _ confirmPw: String) -> Bool {
-        return pw == confirmPw
+
+    func checkConfirmPw(_ confirmPw: String, _ pw: String) -> Bool {
+        return confirmPw == pw
     }
-    
-    func isValidName(_ name: String) -> Bool {
+
+    func checkName(_ name: String) -> Bool {
         let nameRegEx = "[A-Z0-9a-z가-힣._%+-]{1,}"
         let nameTest = NSPredicate(format: "SELF MATCHES %@", nameRegEx)
         return nameTest.evaluate(with: name)

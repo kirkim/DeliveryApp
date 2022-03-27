@@ -11,7 +11,12 @@ import SnapKit
 class TestVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        makeTempBanner()
+//        makeTempBanner()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        test()
     }
     
     func makeTempBanner() {
@@ -57,18 +62,10 @@ class TestVC: UIViewController {
     }
     
     func test() {
-        let vc = KiflixVC(nibName: "KiflixVC", bundle: nil)
-        vc.dev_Mode = true
+        let vc = RxSignUpPageVC()
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-//        test()
-//        let vc = BeminCollectionVC()
-//        vc.modalPresentationStyle = .fullScreen
-//        self.present(vc, animated: false, completion: nil)
 
-    }
 }
