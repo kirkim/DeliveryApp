@@ -24,3 +24,7 @@ struct SignupUser: Codable {
     var confirmPassword: String
     var name: String
 }
+
+struct CheckId: Codable {
+    var userID: String
+}

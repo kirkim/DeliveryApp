@@ -35,3 +35,10 @@ export async function getAllUser(_req: Request, res: Response) {
   let datas = await userDB.getAllUser();
   return res.status(200).send(datas);
 }
+
+export async function checkId(req: Request, res: Response) {
+  const userID = req.body;
+  const exist = await userDB.findByID(userID);
+
+  return res.status(200).send(exist);
+}

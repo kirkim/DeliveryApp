@@ -5,12 +5,9 @@
 //  Created by 김기림 on 2022/03/24.
 //
 
-import Foundation
+import UIKit
 import RxSwift
 import RxCocoa
-import CoreAudio
-import CoreMedia
-import simd
 
 class RxSignUpPageViewModel {
     private let httpManager = RxUserHttpManager()
@@ -22,6 +19,7 @@ class RxSignUpPageViewModel {
     let pwText = PublishRelay<String>()
     let confirmPwText = PublishRelay<String>()
     let nameText = PublishRelay<String>()
+    let checkIdButtonTapped = PublishRelay<Void>()
     let signupButtonTapped = PublishRelay<Void>()
 
     //ViewModel -> View
@@ -30,7 +28,7 @@ class RxSignUpPageViewModel {
     let isValidConfimPw = BehaviorRelay<Bool>(value: false)
     let isValidName = BehaviorRelay<Bool>(value: false)
     let isValidSignUp = BehaviorRelay<Bool>(value: false)
-//    let presentAlert = Signal<String>()
+    let presentAlert = BehaviorRelay<String>(value: "")
 
     init() {
         idText
@@ -64,6 +62,50 @@ class RxSignUpPageViewModel {
             .asSignal(onErrorJustReturn: false)
             .emit(to: self.isValidSignUp)
             .disposed(by: disposeBag)
+        
+        checkIdButtonTapped
+            .withLatestFrom(idText) { $1 }
+            .map { id -> CheckId in
+                return CheckId(userID: id)
+            }
+            .bind { data in
+                self.httpManager.postFetch(type: .checkId, body: data)
+                    .subscribe({ result in
+                        let message = ""
+                        switch result {
+                        case .success(let data):
+                            do {
+                                let dataModel = try JSONDecoder().decode(String.self, from: data)
+                                if (dataModel) {
+                                    message = "사용 가능한 아이디 입니다."
+                                } else {
+                                    message = "사용 불가능한 아이디 입니다."
+                                }
+                            } catch {
+                                print(error.localizedDescription)
+                            }
+                            
+                        case .failure(let error):
+                            print(error)
+                        }
+                        return message
+                    })
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    func checkIdDuplicated(_ id: String) -> Bool {
+        let data = CheckId(userID: id)
+        httpManager.postFetch(type: .checkId, body: data)
+            .subscribe({ result in
+                switch result {
+                case .success(let data):
+                    print(data)
+                case .failure(let error):
+                    print(error)
+                }
+            })
+            .disposed(by: disposeBag)
     }
     
     func checkId(_ id: String) -> Bool {
@@ -88,23 +130,4 @@ class RxSignUpPageViewModel {
         let nameTest = NSPredicate(format: "SELF MATCHES %@", nameRegEx)
         return nameTest.evaluate(with: name)
     }
-    
-    //    func signup(signupData: SignupUser, completion: @escaping (ValidatorResult) -> Void) {
-//        let checkUserResult = checkUserData(checkData: signupData)
-//        if ( checkUserResult != .success) {
-//            completion(checkUserResult)
-//            return
-//        } else {
-//            userHttpManager.postFetch(type: .signUp, body: signupData, completion: { result in
-//                switch result {
-//                case .success(_):
-//                    completion(.success)
-//                    break;
-//                case .failure(let error):
-//                    completion(.httpError)
-//                    print(error)
-//                }
-//            })
-//        }
-//    }
 }

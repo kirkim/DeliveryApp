@@ -11,6 +11,7 @@ import RxSwift
 enum UserPostType: String, UrlType {
     case login
     case signUp
+    case checkId
     
     var url: String {
         let BASE_URL: String = "http://localhost:8080"
@@ -19,6 +20,8 @@ enum UserPostType: String, UrlType {
             return "\(BASE_URL)/user/login"
         case .signUp:
             return "\(BASE_URL)/user/signup"
+        case .checkId:
+            return "\(BASE_URL)/user/checkid"
         }
     }
 }
