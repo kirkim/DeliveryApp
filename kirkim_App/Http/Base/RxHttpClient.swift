@@ -16,7 +16,7 @@ class RxHttpClient {
     }
     
     typealias RequestValue = (value: String, key: String)
-    func postHttp<T: UrlType, B: Codable>(type postType: T, body: B, headers: [RequestValue]?) -> Single<Result<Data, CustomError>> {
+    func postHttp<T: Codable>(type postType: UrlType, body: T, headers: [RequestValue]?) -> Single<Result<Data, CustomError>> {
         guard let url = URL(string: postType.url) else {
             return .just(.failure(.invalidURL))
         }
@@ -42,7 +42,7 @@ class RxHttpClient {
             .asSingle()
     }
     
-    func getHttp<T: UrlType>(type postType: T, headers: [RequestValue]?) -> Single<Result<Data, CustomError>> {
+    func getHttp(type postType: UrlType, headers: [RequestValue]?) -> Single<Result<Data, CustomError>> {
         guard let url = URL(string: postType.url) else {
             return .just(.failure(.invalidURL))
         }

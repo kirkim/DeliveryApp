@@ -15,14 +15,14 @@ class RxSignUpPageVC: UIViewController {
     let titleLabel = UILabel()
     let idTextField = SimpleTextField(type: .normal)
     let idErrorMessage = UILabel()
-    let checkIdButton = UIButton(type: .system)
+    let checkIdButton = ChekcIdButton()
     let pwTextField = SimpleTextField(type: .password)
     let pwErrorMessage = UILabel()
     let confirmPwTextField = SimpleTextField(type: .password)
     let confirmPwErrorMessage = UILabel()
     let nameTextField = SimpleTextField(type: .normal)
     let nameErrorMessage = UILabel()
-    let joinButton = UIButton(type: .system)
+    let joinButton = JoinButton()
     // RxCocoa
     let disposeBag = DisposeBag()
     
@@ -40,8 +40,18 @@ class RxSignUpPageVC: UIViewController {
     //MARK: - bind function
     
     func bind(_ viewModel: RxSignUpPageViewModel) {
-        idTextField.rx.text.orEmpty
+        let checkButtonViewModel = viewModel.checkIdButtonViewModel
+        let joinButtonViewModel = viewModel.joinButtonViewModel
+        let idTextObservable = idTextField.rx.text.orEmpty.share()
+        self.checkIdButton.bind(checkButtonViewModel)
+        self.joinButton.bind(joinButtonViewModel)
+        
+        idTextObservable
             .bind(to: viewModel.idText)
+            .disposed(by: disposeBag)
+        
+        idTextObservable
+            .bind(to: checkButtonViewModel.checkValue)
             .disposed(by: disposeBag)
 
         pwTextField.rx.text.orEmpty
@@ -56,8 +66,30 @@ class RxSignUpPageVC: UIViewController {
             .bind(to: viewModel.nameText)
             .disposed(by: disposeBag)
         
-        checkIdButton.rx.tap
-            .bind { self.test() }
+        checkButtonViewModel.presentAlert
+            .subscribe(onNext: { result in
+                let alert = UIAlertController(title: result, message: nil, preferredStyle: .alert)
+                let action = UIAlertAction(title: "확인", style: .default)
+                alert.addAction(action)
+                self.present(alert, animated: true)
+            })
+            .disposed(by: disposeBag)
+        
+        joinButtonViewModel.presentAlert
+            .subscribe(onNext: { result in
+                let alert = UIAlertController(title: result, message: nil, preferredStyle: .alert)
+                let action = UIAlertAction(title: "확인", style: .default)
+                alert.addAction(action)
+                self.present(alert, animated: true)
+            })
+            .disposed(by: disposeBag)
+        
+        joinButtonViewModel.succeedSignUp
+            .subscribe(onNext: { value in
+                if (value) {
+                    self.dismiss(animated: true)
+                }
+            })
             .disposed(by: disposeBag)
         
         viewModel.isValidId
@@ -83,22 +115,6 @@ class RxSignUpPageVC: UIViewController {
                 self.nameErrorMessage.isHidden = $0
             }
             .disposed(by: disposeBag)
-        
-        viewModel.isValidSignUp
-            .bind {
-                self.joinButton.isEnabled = $0
-            }
-            .disposed(by: disposeBag)
-    }
-    
-    func test() {
-        print("click!")
-        idTextField.snp.makeConstraints {
-            $0.top.equalTo(20)
-        }
-        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 2, delay: 0, options: [], animations: {
-            self.view.layoutIfNeeded()
-        })
     }
     
     //MARK: - attribute()
@@ -112,21 +128,11 @@ class RxSignUpPageVC: UIViewController {
         
         idTextField.placeholder = "ID"
         
-        checkIdButton.setTitle(" 중복확인 ", for: .normal)
-        checkIdButton.titleLabel?.font = .systemFont(ofSize: 15, weight: .medium)
-        checkIdButton.tintColor = .white
-        checkIdButton.layer.cornerRadius = 5
-        checkIdButton.backgroundColor = .brown
-        
         pwTextField.placeholder = "비밀번호"
         
         confirmPwTextField.placeholder = "비밀번호 확인"
         
         nameTextField.placeholder = "이름"
-        
-        joinButton.setTitle("JOIN", for: .normal)
-        joinButton.titleLabel?.font = .systemFont(ofSize: 30, weight: .bold)
-        joinButton.isEnabled = false
         
         //MARK: Error massage layout
         [idErrorMessage, pwErrorMessage, confirmPwErrorMessage, nameErrorMessage].forEach {

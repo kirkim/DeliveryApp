@@ -12,33 +12,39 @@ import RxCocoa
 class RxSignUpPageViewModel {
     private let httpManager = RxUserHttpManager()
     private let disposeBag = DisposeBag()
-
+    let checkIdButtonViewModel = CheckIdButtonViewModel()
+    let joinButtonViewModel = JoinButtonViewModel()
+    
 //    let bodyData: Driver<SignupUser>
     //View -> ViewModel
     let idText = PublishRelay<String>()
     let pwText = PublishRelay<String>()
     let confirmPwText = PublishRelay<String>()
     let nameText = PublishRelay<String>()
-    let checkIdButtonTapped = PublishRelay<Void>()
-    let signupButtonTapped = PublishRelay<Void>()
 
     //ViewModel -> View
     let isValidId = BehaviorRelay<Bool>(value: false)
     let isValidPw = BehaviorRelay<Bool>(value: false)
     let isValidConfimPw = BehaviorRelay<Bool>(value: false)
     let isValidName = BehaviorRelay<Bool>(value: false)
-    let isValidSignUp = BehaviorRelay<Bool>(value: false)
-    let presentAlert = BehaviorRelay<String>(value: "")
 
     init() {
-        idText
+        let idObservable = idText.share()
+        idObservable
             .map { self.checkId($0) }
             .bind(to: self.isValidId)
             .disposed(by: disposeBag)
+        idObservable
+            .bind(to: joinButtonViewModel.idText)
+            .disposed(by: disposeBag)
         
-        pwText
+        let pwObservable = pwText.share()
+        pwObservable
             .map { self.checkPw($0) }
             .bind(to: self.isValidPw)
+            .disposed(by: disposeBag)
+        pwObservable
+            .bind(to: joinButtonViewModel.pwText)
             .disposed(by: disposeBag)
         
         confirmPwText
@@ -48,63 +54,24 @@ class RxSignUpPageViewModel {
             .bind(to: self.isValidConfimPw)
             .disposed(by: disposeBag)
         
-        nameText
+        let nameObservable = nameText
+        nameObservable
             .map { self.checkName($0) }
             .bind(to: self.isValidName)
             .disposed(by: disposeBag)
         
-        Observable.combineLatest(
-            isValidId,
-            isValidPw,
-            isValidConfimPw,
-            isValidName
-        ) { $0 && $1 && $2 && $3}
-            .asSignal(onErrorJustReturn: false)
-            .emit(to: self.isValidSignUp)
+        nameObservable
+            .bind(to: joinButtonViewModel.nameText)
             .disposed(by: disposeBag)
         
-        checkIdButtonTapped
-            .withLatestFrom(idText) { $1 }
-            .map { id -> CheckId in
-                return CheckId(userID: id)
-            }
-            .bind { data in
-                self.httpManager.postFetch(type: .checkId, body: data)
-                    .subscribe({ result in
-                        let message = ""
-                        switch result {
-                        case .success(let data):
-                            do {
-                                let dataModel = try JSONDecoder().decode(String.self, from: data)
-                                if (dataModel) {
-                                    message = "사용 가능한 아이디 입니다."
-                                } else {
-                                    message = "사용 불가능한 아이디 입니다."
-                                }
-                            } catch {
-                                print(error.localizedDescription)
-                            }
-                            
-                        case .failure(let error):
-                            print(error)
-                        }
-                        return message
-                    })
-            }
-            .disposed(by: disposeBag)
-    }
-    
-    func checkIdDuplicated(_ id: String) -> Bool {
-        let data = CheckId(userID: id)
-        httpManager.postFetch(type: .checkId, body: data)
-            .subscribe({ result in
-                switch result {
-                case .success(let data):
-                    print(data)
-                case .failure(let error):
-                    print(error)
-                }
-            })
+        Observable.combineLatest(
+            isValidPw,
+            isValidConfimPw,
+            isValidName,
+            checkIdButtonViewModel.isValidButton.asObservable()
+        ) { $0 && $1 && $2 && $3 }
+            .asSignal(onErrorJustReturn: false)
+            .emit(to: joinButtonViewModel.isValidSignUp)
             .disposed(by: disposeBag)
     }
     

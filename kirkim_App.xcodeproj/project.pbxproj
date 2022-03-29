@@ -79,6 +79,9 @@
 		FE85B4F327EAAC5E0031F5AC /* KiflixModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85B4F227EAAC5E0031F5AC /* KiflixModel.swift */; };
 		FE85B4F627EAAEF80031F5AC /* SignUpPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85B4F527EAAEF80031F5AC /* SignUpPageModel.swift */; };
 		FE8ABDE927EB01D40020DD65 /* LoginPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8ABDE827EB01D40020DD65 /* LoginPageViewModel.swift */; };
+		FE8BE4BF27F2CD2C002F744F /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8BE4BE27F2CD2C002F744F /* CustomError.swift */; };
+		FE8BE4C327F31CA1002F744F /* JoinButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8BE4C227F31CA1002F744F /* JoinButton.swift */; };
+		FE8BE4C527F31D1B002F744F /* JoinButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8BE4C427F31D1B002F744F /* JoinButtonViewModel.swift */; };
 		FE8E456127D747DA0025779F /* MyBannerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8E456027D747DA0025779F /* MyBannerViewDelegate.swift */; };
 		FE8F025E27E9EC2D0053224A /* SideMenuFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8F025D27E9EC2D0053224A /* SideMenuFooterView.swift */; };
 		FE94DD6527B655190017D776 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE94DD6427B655190017D776 /* AppDelegate.swift */; };
@@ -87,6 +90,9 @@
 		FE94DD6F27B655190017D776 /* kirkim_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE94DD6D27B655190017D776 /* kirkim_App.xcdatamodeld */; };
 		FE94DD7127B655190017D776 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE94DD7027B655190017D776 /* Assets.xcassets */; };
 		FE94DD7427B655190017D776 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE94DD7227B655190017D776 /* LaunchScreen.storyboard */; };
+		FE9AF67727F20AE0006E8472 /* CheckIdButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9AF67627F20AE0006E8472 /* CheckIdButton.swift */; };
+		FE9AF67927F20B33006E8472 /* CheckIdButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9AF67827F20B33006E8472 /* CheckIdButtonViewModel.swift */; };
+		FE9AF67B27F20DD0006E8472 /* RxUserHttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9AF67A27F20DD0006E8472 /* RxUserHttpManager.swift */; };
 		FEA95FFE27E1840B00FD78B3 /* MyBannerUsingRxswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA95FFD27E1840B00FD78B3 /* MyBannerUsingRxswift.swift */; };
 		FEA9600127E1874D00FD78B3 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = FEA9600027E1874D00FD78B3 /* RxCocoa */; };
 		FEA9600327E1874D00FD78B3 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = FEA9600227E1874D00FD78B3 /* RxRelay */; };
@@ -189,6 +195,9 @@
 		FE85B4F227EAAC5E0031F5AC /* KiflixModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiflixModel.swift; sourceTree = "<group>"; };
 		FE85B4F527EAAEF80031F5AC /* SignUpPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPageModel.swift; sourceTree = "<group>"; };
 		FE8ABDE827EB01D40020DD65 /* LoginPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewModel.swift; sourceTree = "<group>"; };
+		FE8BE4BE27F2CD2C002F744F /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		FE8BE4C227F31CA1002F744F /* JoinButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinButton.swift; sourceTree = "<group>"; };
+		FE8BE4C427F31D1B002F744F /* JoinButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinButtonViewModel.swift; sourceTree = "<group>"; };
 		FE8E456027D747DA0025779F /* MyBannerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBannerViewDelegate.swift; sourceTree = "<group>"; };
 		FE8F025D27E9EC2D0053224A /* SideMenuFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuFooterView.swift; sourceTree = "<group>"; };
 		FE94DD6127B655190017D776 /* kirkim_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kirkim_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +208,9 @@
 		FE94DD7027B655190017D776 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE94DD7327B655190017D776 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE94DD7527B655190017D776 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE9AF67627F20AE0006E8472 /* CheckIdButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIdButton.swift; sourceTree = "<group>"; };
+		FE9AF67827F20B33006E8472 /* CheckIdButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIdButtonViewModel.swift; sourceTree = "<group>"; };
+		FE9AF67A27F20DD0006E8472 /* RxUserHttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxUserHttpManager.swift; sourceTree = "<group>"; };
 		FEA95FFD27E1840B00FD78B3 /* MyBannerUsingRxswift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBannerUsingRxswift.swift; sourceTree = "<group>"; };
 		FEA9600627E19C5E00FD78B3 /* MyBannerBasicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBannerBasicView.swift; sourceTree = "<group>"; };
 		FEBA011227CDD5D700E74FCB /* SignUpPageVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpPageVC.xib; sourceTree = "<group>"; };
@@ -275,6 +287,7 @@
 			children = (
 				FE787A2B27ED5B2300673EA7 /* Base */,
 				FE47CACF27C114210077806D /* UserHttpManager.swift */,
+				FE9AF67A27F20DD0006E8472 /* RxUserHttpManager.swift */,
 				FE18A28827C5DE9B00E56F39 /* BannerHttpManager.swift */,
 				FEBA011627CDE08300E74FCB /* KiflixHttpManager.swift */,
 			);
@@ -405,7 +418,6 @@
 				FE21133027BCD095003293B2 /* SignUpPageVC.swift */,
 				FEBA011227CDD5D700E74FCB /* SignUpPageVC.xib */,
 				FE47CACB27C0C5570077806D /* SignUpPageViewModel.swift */,
-				FE85B4F527EAAEF80031F5AC /* SignUpPageModel.swift */,
 			);
 			path = BeforeRefactoring;
 			sourceTree = "<group>";
@@ -413,6 +425,8 @@
 		FE787A2827ED544E00673EA7 /* RefactoringUsingRxSwift */ = {
 			isa = PBXGroup;
 			children = (
+				FE8BE4C627F332A9002F744F /* Entities */,
+				FE9AF67527F20AA3006E8472 /* SubComponents */,
 				FE2FD15827EDFFFB0094E094 /* RxSignUpPageVC.swift */,
 				FE3CE33F27ECA5760039C335 /* RxSignUpPageViewModel.swift */,
 			);
@@ -422,6 +436,7 @@
 		FE787A2B27ED5B2300673EA7 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				FE8BE4BE27F2CD2C002F744F /* CustomError.swift */,
 				FE21132927BCA6AE003293B2 /* HttpClient.swift */,
 				FE2FD15627EDA31A0094E094 /* RxHttpClient.swift */,
 			);
@@ -602,6 +617,14 @@
 			path = ProfileView;
 			sourceTree = "<group>";
 		};
+		FE8BE4C627F332A9002F744F /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				FE85B4F527EAAEF80031F5AC /* SignUpPageModel.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		FE8F025C27E9E6650053224A /* EventPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -654,6 +677,17 @@
 				FE2FF55027D5CC11005DA688 /* TestVC.swift */,
 			);
 			path = kirkim_App;
+			sourceTree = "<group>";
+		};
+		FE9AF67527F20AA3006E8472 /* SubComponents */ = {
+			isa = PBXGroup;
+			children = (
+				FE9AF67627F20AE0006E8472 /* CheckIdButton.swift */,
+				FE9AF67827F20B33006E8472 /* CheckIdButtonViewModel.swift */,
+				FE8BE4C227F31CA1002F744F /* JoinButton.swift */,
+				FE8BE4C427F31D1B002F744F /* JoinButtonViewModel.swift */,
+			);
+			path = SubComponents;
 			sourceTree = "<group>";
 		};
 		FEA9600827E1A03000FD78B3 /* Models */ = {
@@ -899,8 +933,10 @@
 				FE85B4E927EAA88C0031F5AC /* SideMenuView+Protocol.swift in Sources */,
 				FE078F1B27C34C7E00D19E34 /* SimpleProfileView.swift in Sources */,
 				FE3CE34027ECA5760039C335 /* RxSignUpPageViewModel.swift in Sources */,
+				FE9AF67B27F20DD0006E8472 /* RxUserHttpManager.swift in Sources */,
 				FE74FEAF27CDBDDE00F40D5F /* MainTabBarController.swift in Sources */,
 				FE41DC9E27D706B400317493 /* MyBannerByAPIView.swift in Sources */,
+				FE8BE4C327F31CA1002F744F /* JoinButton.swift in Sources */,
 				FE18A28927C5DE9B00E56F39 /* BannerHttpManager.swift in Sources */,
 				FE8F025E27E9EC2D0053224A /* SideMenuFooterView.swift in Sources */,
 				FE74FE9427CDA82D00F40D5F /* BaseVC.swift in Sources */,
@@ -912,6 +948,7 @@
 				FEBF326C27E9A16600DFB792 /* BannerContent+protocol.swift in Sources */,
 				FE7FC0D527C48F3F009EB2AE /* TestView2-1.swift in Sources */,
 				FE63140727DB647D008F4D48 /* MyBannerByPlistViewModel.swift in Sources */,
+				FE9AF67727F20AE0006E8472 /* CheckIdButton.swift in Sources */,
 				FE63140227DB58C5008F4D48 /* MyBannerTotalListVC.swift in Sources */,
 				FE078F2F27C3634B00D19E34 /* SideMenuHeaderView.swift in Sources */,
 				FE84E49627D0666600B30F57 /* KiflixPlayer.swift in Sources */,
@@ -924,10 +961,12 @@
 				FE21133127BCD095003293B2 /* SignUpPageVC.swift in Sources */,
 				FE57F23E27CF2ACF00B205F9 /* extension+AVPlayer.swift in Sources */,
 				FE8ABDE927EB01D40020DD65 /* LoginPageViewModel.swift in Sources */,
+				FE8BE4BF27F2CD2C002F744F /* CustomError.swift in Sources */,
 				FE47CAD027C114210077806D /* UserHttpManager.swift in Sources */,
 				FE6FF40A27D8DD4700F0CB72 /* StaticSectionViewModel.swift in Sources */,
 				FE48B6C827DAD4DC001F7F9A /* StaticMedium_2Cell.swift in Sources */,
 				FEEE0D4F27D9E86F002F47B0 /* StaticSmall_3Cell.swift in Sources */,
+				FE9AF67927F20B33006E8472 /* CheckIdButtonViewModel.swift in Sources */,
 				FE41DC9C27D706B400317493 /* MyBannerCell.swift in Sources */,
 				FE21132A27BCA6AE003293B2 /* HttpClient.swift in Sources */,
 				FEBF326527E9A16600DFB792 /* RxBannerCell.swift in Sources */,
@@ -970,6 +1009,7 @@
 				FEBF326227E9A16600DFB792 /* RxBannerViewModel.swift in Sources */,
 				FE94DD6727B655190017D776 /* SceneDelegate.swift in Sources */,
 				FE7FC0D127C48F31009EB2AE /* TestView1-2.swift in Sources */,
+				FE8BE4C527F31D1B002F744F /* JoinButtonViewModel.swift in Sources */,
 				FEBA011527CDDC5B00E74FCB /* KiflixViewModel.swift in Sources */,
 				FE7FC0E427C4AE90009EB2AE /* SideMenuCell.swift in Sources */,
 				FE46F4F627D1AD6500DB31EE /* DescriptionView.swift in Sources */,

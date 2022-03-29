@@ -7,39 +7,13 @@
 
 import Foundation
 
-enum CustomError: Error {
-    case invalidURL
-    case decodingError
-    case responseError
-    case noData
-    case error(Error)
-    case code(Int)
-    
-    var msg: String {
-        switch self {
-        case .invalidURL:
-            return "InValid URL"
-        case .decodingError:
-            return "Decoding Error"
-        case .noData:
-            return "No Data"
-        case .responseError:
-            return "Response Error"
-        case .error(let err):
-            return err.localizedDescription
-        case .code(let code):
-            return "\(code) Error"
-        }
-    }
-}
-
 protocol UrlType {
     var url: String { get }
 }
 
 // TODO: fetch의 Data 타입을 뷰모델에서 처리하도록 바꾸자
 struct HttpClient {
-    func postHttp<T: UrlType, B: Codable>(type postType: T, body: B, completion: @escaping (Result<Data, CustomError>) -> Void) {
+    func postHttp<T: Codable>(type postType: UrlType, body: T, completion: @escaping (Result<Data, CustomError>) -> Void) {
         let session = URLSession(configuration: URLSessionConfiguration.default)
         guard let url = URL(string: postType.url) else {
             completion(.failure(.invalidURL))
@@ -70,7 +44,7 @@ struct HttpClient {
         session.finishTasksAndInvalidate()
     }
 
-    func getHttp<T: UrlType>(type getType: T, completion: @escaping (Result<Data, CustomError>) -> Void) {
+    func getHttp(type getType: UrlType, completion: @escaping (Result<Data, CustomError>) -> Void) {
         let session = URLSession(configuration: URLSessionConfiguration.default)
         guard let url = URL(string: getType.url) else {
             completion(.failure(.invalidURL))
@@ -96,7 +70,7 @@ struct HttpClient {
         session.finishTasksAndInvalidate()
     }
     
-    func getHttpAsync<T: UrlType>(type getType: T, completion: @escaping (Result<Data, CustomError>) -> Void) async {
+    func getHttpAsync(type getType: UrlType, completion: @escaping (Result<Data, CustomError>) -> Void) async {
         guard let url = URL(string: getType.url) else {
             completion(.failure(.invalidURL))
             return

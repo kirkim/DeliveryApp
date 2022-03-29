@@ -49,14 +49,4 @@ final class UserHttpManager {
     }
 }
 
-class RxUserHttpManager {
-    private let httpClient = RxHttpClient()
-    
-    public func postFetch<T: Codable>(type postType: UserPostType, body: T) -> Single<Result<Data, CustomError>> {
-        return httpClient.postHttp(type: postType, body: body, headers: nil)
-    }
-    
-    public func getFetch(type getType: UserGetType) -> Single<Result<Data, CustomError>> {
-        return httpClient.getHttp(type: getType, headers: nil)
-    }
-}
+

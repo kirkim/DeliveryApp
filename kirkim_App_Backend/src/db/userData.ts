@@ -51,6 +51,16 @@ export async function findByID(id: string): Promise<UserData | undefined> {
   return userDatas.find((user) => user.id === id);
 }
 
+export async function checkByUserID(userID: string): Promise<Boolean> {
+  console.log(userID);
+  let checkValue = userDatas.find((user) => user.data.userID === userID);
+  console.log(checkValue);
+  if (checkValue === undefined) {
+    return true;
+  }
+  return false;
+}
+
 export async function getAllUser(): Promise<UserDatas> {
   return userDatas;
 }

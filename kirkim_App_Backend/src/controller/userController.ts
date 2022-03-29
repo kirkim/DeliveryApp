@@ -37,8 +37,8 @@ export async function getAllUser(_req: Request, res: Response) {
 }
 
 export async function checkId(req: Request, res: Response) {
-  const userID = req.body;
-  const exist = await userDB.findByID(userID);
+  const userID = req.body.userID;
+  const exist = await userDB.checkByUserID(userID);
 
-  return res.status(200).send(exist);
+  return res.status(200).json(exist);
 }
