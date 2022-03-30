@@ -19,7 +19,8 @@ class JoinButtonViewModel {
     //ViewModel -> View
     let isValidSignUp = PublishRelay<Bool>()
     let presentAlert = PublishRelay<String>()
-    let succeedSignUp = PublishRelay<Bool>()
+    let presentSucceedAlert = PublishRelay<String>()
+    let succeedSignUp = BehaviorRelay<Bool>(value:false)
     
     let idText = PublishRelay<String>()
     let pwText = PublishRelay<String>()
@@ -36,7 +37,6 @@ class JoinButtonViewModel {
             .withLatestFrom(userData) { $1 }
             .bind(onNext: self.signUp)
             .disposed(by: disposeBag)
-
     }
     
     private func signUp(userData: UserData) {
@@ -45,11 +45,11 @@ class JoinButtonViewModel {
             .subscribe { result in
                 switch result {
                 case .success(_):
-                    self.presentAlert.accept("회와가입이 완료되었습니다!")
+                    self.presentSucceedAlert.accept("회원가입이 완료되었습니다!")
                     self.succeedSignUp.accept(true)
                 case .failure(let error):
                     print(error)
-                    self.presentAlert.accept("회와가입에 실패하였습니다!")
+                    self.presentAlert.accept("회원가입에 실패하였습니다!")
                     self.succeedSignUp.accept(false)
                 }
             }

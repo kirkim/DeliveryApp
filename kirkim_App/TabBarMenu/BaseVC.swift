@@ -9,7 +9,6 @@ import UIKit
 
 class BaseVC: UIViewController {
     let userModel = MainUser()
-    var dev_Mode: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,18 +30,14 @@ class BaseVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if (dev_Mode == false) {
-            checkLogin(completion: {
-                makeSideBarMenuButtonUI()
-                self.navigationItem.title = "\(userModel.info!.data.name)님 반갑습니다!"
-            })
-        }
+        checkLogin(completion: {
+            makeSideBarMenuButtonUI()
+            self.navigationItem.title = "\(userModel.info!.data.name)님 반갑습니다!"
+        })
     }
     
     func checkLogin(completion: () -> Void) {
         if (self.userModel.isLogin == false) {
-//            let loginVC = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginPageVC
-//            let loginVC = LoginPageVC(nibName: "LoginPageVC", bundle: nil)
             let loginVC = LoginPageVC()
             loginVC.modalPresentationStyle = .fullScreen
             self.present(loginVC, animated: false, completion: nil)
@@ -50,13 +45,4 @@ class BaseVC: UIViewController {
             completion()
         }
     }
-    
-    // TODO: sidebar클래스로 옮겨야됨 [ ]
-//    @IBAction func handleLogoutButton(_ sender: UIButton) {
-//        self.userModel.logOut()
-//        let loginVC = UIStoryboard(name: "LoginPage", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginPageVC
-//        loginVC.modalPresentationStyle = .fullScreen
-//        self.present(loginVC, animated: true, completion: nil)
-//    }
-
 }

@@ -10,15 +10,16 @@ import RxSwift
 import RxCocoa
 
 class LoginPageVC: UIViewController {
-    let titleLabel = UILabel()
-    let idTextField = SimpleTextField(type: .normal)
-    let idErrorLabel = UILabel()
-    let passwordTextField = SimpleTextField(type: .password)
-    let pwErrorLabel = UILabel()
-    let loginButton = UIButton()
-    let createButton = UIButton()
+    private let titleLabel = UILabel()
+    private let idTextField = SimpleTextField(type: .normal)
+    private let idErrorLabel = UILabel()
+    private let passwordTextField = SimpleTextField(type: .password)
+    private let pwErrorLabel = UILabel()
+    private let loginButton = UIButton()
+    private let createButton = UIButton()
     private let loginUserModel = MainUser()
     private let disposeBag = DisposeBag()
+    private let signUpViewModel = RxSignUpPageViewModel()
         
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -168,7 +169,8 @@ class LoginPageVC: UIViewController {
     }
         
     private func handleCreateUserButton() {
-        let vc = SignUpPageVC(nibName: "SignUpPageVC", bundle: nil)
-        self.present(vc, animated: true, completion: nil)
+        let signUpVC = RxSignUpPageVC()
+        signUpVC.bind(signUpViewModel)
+        self.present(signUpVC, animated: true, completion: nil)
     }
 }

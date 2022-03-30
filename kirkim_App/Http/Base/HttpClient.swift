@@ -7,10 +7,6 @@
 
 import Foundation
 
-protocol UrlType {
-    var url: String { get }
-}
-
 // TODO: fetch의 Data 타입을 뷰모델에서 처리하도록 바꾸자
 struct HttpClient {
     func postHttp<T: Codable>(type postType: UrlType, body: T, completion: @escaping (Result<Data, CustomError>) -> Void) {

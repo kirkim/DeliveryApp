@@ -15,6 +15,7 @@ class CheckIdButtonViewModel {
     //View -> ViewModel
     let buttonTapped = PublishRelay<Void>()
     let checkValue = PublishRelay<String>()
+    
     //ViewModel -> View
     let presentAlert = PublishRelay<String>()
     let isValidButton = PublishRelay<Bool>()
