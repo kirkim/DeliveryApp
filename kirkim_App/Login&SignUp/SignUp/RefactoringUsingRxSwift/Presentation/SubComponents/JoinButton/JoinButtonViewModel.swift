@@ -18,8 +18,7 @@ class JoinButtonViewModel {
     
     //ViewModel -> View
     let isValidSignUp = PublishRelay<Bool>()
-    let presentAlert = PublishRelay<String>()
-    let presentSucceedAlert = PublishRelay<String>()
+    let presentAlert = PublishRelay<CustomAlert>()
     let succeedSignUp = BehaviorRelay<Bool>(value:false)
     
     let idText = PublishRelay<String>()
@@ -45,11 +44,11 @@ class JoinButtonViewModel {
             .subscribe { result in
                 switch result {
                 case .success(_):
-                    self.presentSucceedAlert.accept("회원가입이 완료되었습니다!")
+                    self.presentAlert.accept(CustomAlert(message: "회원가입이 완료되었습니다!", isDismiss: true))
                     self.succeedSignUp.accept(true)
                 case .failure(let error):
                     print(error)
-                    self.presentAlert.accept("회원가입에 실패하였습니다!")
+                    self.presentAlert.accept(CustomAlert(message: "회원가입에 실패하였습니다!", isDismiss: true))
                     self.succeedSignUp.accept(false)
                 }
             }

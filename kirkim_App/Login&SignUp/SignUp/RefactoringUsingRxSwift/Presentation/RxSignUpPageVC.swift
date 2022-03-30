@@ -39,19 +39,12 @@ class RxSignUpPageVC: UIViewController {
         self.joinButton.bind(joinButtonModel)
         
         viewModel.presentAlert
-            .subscribe(onNext: { [weak self] message in
-                let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
-                let action = UIAlertAction(title: "확인", style: .default, handler: nil)
-                alert.addAction(action)
-                self?.present(alert, animated: true)
-            })
-            .disposed(by: disposeBag)
-        
-        joinButtonModel.presentSucceedAlert
-            .subscribe(onNext: { [weak self] message in
-                let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
-                let action = UIAlertAction(title: "확인", style: .default, handler: {_ in 
-                    self?.dismiss(animated: true)
+            .subscribe(onNext: { [weak self] result in
+                let alert = UIAlertController(title: result.message, message: nil, preferredStyle: .alert)
+                let action = UIAlertAction(title: "확인", style: .default, handler: {_ in
+                    if (result.isDismiss) {
+                        self?.dismiss(animated: true)
+                    }
                 })
                 alert.addAction(action)
                 self?.present(alert, animated: true)

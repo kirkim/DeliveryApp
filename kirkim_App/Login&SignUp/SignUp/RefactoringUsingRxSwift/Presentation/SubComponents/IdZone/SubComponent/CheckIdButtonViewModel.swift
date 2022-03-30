@@ -17,7 +17,7 @@ class CheckIdButtonViewModel {
     let checkValue = PublishRelay<String>()
     
     //ViewModel -> View
-    let presentAlert = PublishRelay<String>()
+    let presentAlert = PublishRelay<CustomAlert>()
     let isValidButton = PublishRelay<Bool>()
     private var currentId = "" // 단순히 id에 커서가 올려갔을때 Join버튼이 비활성화 되는 것을 방지하기 위함
     
@@ -41,7 +41,7 @@ class CheckIdButtonViewModel {
     
     private func checkId(id: String) {
         guard id != "" else {
-            self.presentAlert.accept("아이디를 입력하세요.")
+            self.presentAlert.accept(CustomAlert(message: "아이디를 입력하세요.",isDismiss: false))
             self.isValidButton.accept(false)
             return
         }
@@ -56,17 +56,17 @@ class CheckIdButtonViewModel {
                         let json = try JSONDecoder().decode(Bool.self, from: data)
                         let message = json ? "사용가능한 아이디 입니다." : "이미 있는 아이디 입니다."
                         self.isValidButton.accept(json)
-                        self.presentAlert.accept(message)
+                        self.presentAlert.accept(CustomAlert(message: message, isDismiss: false))
                     } catch {
                         print("catch error: ", error.localizedDescription)
-                        self.presentAlert.accept("catch error: \(error.localizedDescription)")
+                        self.presentAlert.accept(CustomAlert(message: error.localizedDescription, isDismiss: false))
                     }
                 case .failure(let error):
                     print("fail error: ", error.localizedDescription)
-                    self.presentAlert.accept("fail error: \(error.localizedDescription)")
+                    self.presentAlert.accept(CustomAlert(message: "fail error: \(error.localizedDescription)", isDismiss: false))
                 }
             } onFailure: { error in
-                self.presentAlert.accept("fail!")
+                self.presentAlert.accept(CustomAlert(message: "fail!", isDismiss: false))
             } onDisposed: {
                 print("disposed!")
             }

@@ -18,7 +18,7 @@ struct IdZoneViewModel {
     //ViewModel -> View
     let isValidId: Signal<Bool>
     let isValid: Signal<Bool>
-    let presentAlert: Signal<String>
+    let presentAlert: Signal<CustomAlert>
     
     init() {
         isValidId = idText

@@ -20,7 +20,7 @@ class RxSignUpPageViewModel {
     let joinButtonModel = JoinButtonViewModel()
     
     //ViewModel -> View
-    let presentAlert = BehaviorRelay<String>(value: "d")
+    let presentAlert = PublishRelay<CustomAlert>()
     
     init() {
         SharedSequence.combineLatest(

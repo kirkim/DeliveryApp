@@ -94,6 +94,7 @@
 		FE8EF16727F425E300EEAC69 /* NameZoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8EF15727F425E300EEAC69 /* NameZoneViewModel.swift */; };
 		FE8EF16827F425E300EEAC69 /* RxSignUpPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8EF15827F425E300EEAC69 /* RxSignUpPageViewModel.swift */; };
 		FE8EF16927F425E300EEAC69 /* SignUpPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8EF15A27F425E300EEAC69 /* SignUpPageModel.swift */; };
+		FE8EF16B27F42E8300EEAC69 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8EF16A27F42E8300EEAC69 /* CustomAlert.swift */; };
 		FE8F025E27E9EC2D0053224A /* SideMenuFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8F025D27E9EC2D0053224A /* SideMenuFooterView.swift */; };
 		FE94DD6527B655190017D776 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE94DD6427B655190017D776 /* AppDelegate.swift */; };
 		FE94DD6727B655190017D776 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE94DD6627B655190017D776 /* SceneDelegate.swift */; };
@@ -219,6 +220,7 @@
 		FE8EF15727F425E300EEAC69 /* NameZoneViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameZoneViewModel.swift; sourceTree = "<group>"; };
 		FE8EF15827F425E300EEAC69 /* RxSignUpPageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSignUpPageViewModel.swift; sourceTree = "<group>"; };
 		FE8EF15A27F425E300EEAC69 /* SignUpPageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPageModel.swift; sourceTree = "<group>"; };
+		FE8EF16A27F42E8300EEAC69 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		FE8F025D27E9EC2D0053224A /* SideMenuFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuFooterView.swift; sourceTree = "<group>"; };
 		FE94DD6127B655190017D776 /* kirkim_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kirkim_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE94DD6427B655190017D776 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -723,6 +725,7 @@
 			isa = PBXGroup;
 			children = (
 				FE8EF15A27F425E300EEAC69 /* SignUpPageModel.swift */,
+				FE8EF16A27F42E8300EEAC69 /* CustomAlert.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1092,6 +1095,7 @@
 				FE2067EF27BCFDC7005EBEB5 /* KeyboardAnimation.swift in Sources */,
 				FE57F23B27CF29C000B205F9 /* KiflixDetailVC.swift in Sources */,
 				FE84E49D27D0718000B30F57 /* KiflixPlayerVC.swift in Sources */,
+				FE8EF16B27F42E8300EEAC69 /* CustomAlert.swift in Sources */,
 				FE8EF16027F425E300EEAC69 /* CheckIdButtonViewModel.swift in Sources */,
 				FE94DD6527B655190017D776 /* AppDelegate.swift in Sources */,
 				FE7FC0D927C48F4F009EB2AE /* TestView3-1.swift in Sources */,
