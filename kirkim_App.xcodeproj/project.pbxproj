@@ -22,6 +22,10 @@
 		FE2BD69227CDC9C400A9FB73 /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE2BD69027CDC9C400A9FB73 /* MainVC.xib */; };
 		FE2BD69727CDD34400A9FB73 /* KiflixCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2BD69527CDD34400A9FB73 /* KiflixCollectionCell.swift */; };
 		FE2BD69827CDD34400A9FB73 /* KiflixCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE2BD69627CDD34400A9FB73 /* KiflixCollectionCell.xib */; };
+		FE2D52EB27F5347800106E5A /* NormalTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2D52EA27F5347800106E5A /* NormalTextField.swift */; };
+		FE2D52ED27F534AB00106E5A /* SecretTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2D52EC27F534AB00106E5A /* SecretTextField.swift */; };
+		FE2D52F027F534D000106E5A /* TextFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2D52EF27F534D000106E5A /* TextFieldType.swift */; };
+		FE2D52F227F537EA00106E5A /* SimpleTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2D52F127F537EA00106E5A /* SimpleTextFieldViewModel.swift */; };
 		FE2FD15727EDA31A0094E094 /* RxHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2FD15627EDA31A0094E094 /* RxHttpClient.swift */; };
 		FE2FE4BC27CE086C004B8871 /* KiflixCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2FE4BB27CE086C004B8871 /* KiflixCollectionView.swift */; };
 		FE2FF52D27D5B414005DA688 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FE2FF52C27D5B414005DA688 /* SnapKit */; };
@@ -98,7 +102,6 @@
 		FE8F025E27E9EC2D0053224A /* SideMenuFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8F025D27E9EC2D0053224A /* SideMenuFooterView.swift */; };
 		FE94DD6527B655190017D776 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE94DD6427B655190017D776 /* AppDelegate.swift */; };
 		FE94DD6727B655190017D776 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE94DD6627B655190017D776 /* SceneDelegate.swift */; };
-		FE94DD6C27B655190017D776 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE94DD6A27B655190017D776 /* Main.storyboard */; };
 		FE94DD6F27B655190017D776 /* kirkim_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE94DD6D27B655190017D776 /* kirkim_App.xcdatamodeld */; };
 		FE94DD7127B655190017D776 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE94DD7027B655190017D776 /* Assets.xcassets */; };
 		FE94DD7427B655190017D776 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE94DD7227B655190017D776 /* LaunchScreen.storyboard */; };
@@ -149,6 +152,10 @@
 		FE2BD69027CDC9C400A9FB73 /* MainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
 		FE2BD69527CDD34400A9FB73 /* KiflixCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiflixCollectionCell.swift; sourceTree = "<group>"; };
 		FE2BD69627CDD34400A9FB73 /* KiflixCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KiflixCollectionCell.xib; sourceTree = "<group>"; };
+		FE2D52EA27F5347800106E5A /* NormalTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalTextField.swift; sourceTree = "<group>"; };
+		FE2D52EC27F534AB00106E5A /* SecretTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretTextField.swift; sourceTree = "<group>"; };
+		FE2D52EF27F534D000106E5A /* TextFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldType.swift; sourceTree = "<group>"; };
+		FE2D52F127F537EA00106E5A /* SimpleTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextFieldViewModel.swift; sourceTree = "<group>"; };
 		FE2FD15627EDA31A0094E094 /* RxHttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxHttpClient.swift; sourceTree = "<group>"; };
 		FE2FE4BB27CE086C004B8871 /* KiflixCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiflixCollectionView.swift; sourceTree = "<group>"; };
 		FE2FF55027D5CC11005DA688 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
@@ -225,7 +232,6 @@
 		FE94DD6127B655190017D776 /* kirkim_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kirkim_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE94DD6427B655190017D776 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE94DD6627B655190017D776 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FE94DD6B27B655190017D776 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE94DD6E27B655190017D776 /* kirkim_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = kirkim_App.xcdatamodel; sourceTree = "<group>"; };
 		FE94DD7027B655190017D776 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE94DD7327B655190017D776 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -295,7 +301,7 @@
 				FEBF325027E9A16600DFB792 /* Banner+RxSwift */,
 				FE41DC9427D706B400317493 /* MyBanner--Trash */,
 				FE85B4F927EAB4EA0031F5AC /* SizeMaster */,
-				FE85B4FA27EAB4F40031F5AC /* TextField */,
+				FE85B4FA27EAB4F40031F5AC /* SimpleTextField */,
 				FE85B4FB27EAB5030031F5AC /* ProfileView */,
 				FE21133227BCDD87003293B2 /* Animation */,
 			);
@@ -322,6 +328,23 @@
 				FE2067EE27BCFDC7005EBEB5 /* KeyboardAnimation.swift */,
 			);
 			path = Animation;
+			sourceTree = "<group>";
+		};
+		FE2D52E927F5345D00106E5A /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				FE3EA96627BB8AC100DA36EA /* SimpleTextField.swift */,
+				FE2D52F127F537EA00106E5A /* SimpleTextFieldViewModel.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		FE2D52EE27F534BA00106E5A /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				FE2D52EF27F534D000106E5A /* TextFieldType.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		FE2FF51E27D59A07005DA688 /* ThirdItem-Bemin */ = {
@@ -610,12 +633,15 @@
 			path = SizeMaster;
 			sourceTree = "<group>";
 		};
-		FE85B4FA27EAB4F40031F5AC /* TextField */ = {
+		FE85B4FA27EAB4F40031F5AC /* SimpleTextField */ = {
 			isa = PBXGroup;
 			children = (
-				FE3EA96627BB8AC100DA36EA /* SimpleTextField.swift */,
+				FE2D52EE27F534BA00106E5A /* Entity */,
+				FE2D52E927F5345D00106E5A /* Base */,
+				FE2D52EA27F5347800106E5A /* NormalTextField.swift */,
+				FE2D52EC27F534AB00106E5A /* SecretTextField.swift */,
 			);
-			path = TextField;
+			path = SimpleTextField;
 			sourceTree = "<group>";
 		};
 		FE85B4FB27EAB5030031F5AC /* ProfileView */ = {
@@ -772,7 +798,6 @@
 				FE21132827BCA630003293B2 /* Http */,
 				FE94DD6427B655190017D776 /* AppDelegate.swift */,
 				FE94DD6627B655190017D776 /* SceneDelegate.swift */,
-				FE94DD6A27B655190017D776 /* Main.storyboard */,
 				FE74FEAE27CDBDDE00F40D5F /* MainTabBarController.swift */,
 				FE94DD7027B655190017D776 /* Assets.xcassets */,
 				FE94DD7227B655190017D776 /* LaunchScreen.storyboard */,
@@ -982,7 +1007,6 @@
 				FE2BD69827CDD34400A9FB73 /* KiflixCollectionCell.xib in Resources */,
 				FEBF326927E9A16600DFB792 /* StaticBannerContent.plist in Resources */,
 				FE2BD69227CDC9C400A9FB73 /* MainVC.xib in Resources */,
-				FE94DD6C27B655190017D776 /* Main.storyboard in Resources */,
 				FE7FC0D627C48F3F009EB2AE /* TestView2-1.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1023,6 +1047,7 @@
 				FE7FC0CD27C48F22009EB2AE /* TestView1-1.swift in Sources */,
 				FE8EF12827F3E74F00EEAC69 /* UserType.swift in Sources */,
 				FE63140E27DB6DFC008F4D48 /* BannerPlistContent+protocol.swift in Sources */,
+				FE2D52F227F537EA00106E5A /* SimpleTextFieldViewModel.swift in Sources */,
 				FE2BD69127CDC9C400A9FB73 /* MainVC.swift in Sources */,
 				FE85B4E727EAA7090031F5AC /* EventPage1.swift in Sources */,
 				FE85B4E927EAA88C0031F5AC /* SideMenuView+Protocol.swift in Sources */,
@@ -1035,6 +1060,7 @@
 				FE8F025E27E9EC2D0053224A /* SideMenuFooterView.swift in Sources */,
 				FE74FE9427CDA82D00F40D5F /* BaseVC.swift in Sources */,
 				FEEE0D4B27D9E535002F47B0 /* StaticBigCell.swift in Sources */,
+				FE2D52EB27F5347800106E5A /* NormalTextField.swift in Sources */,
 				FE3EA96727BB8AC100DA36EA /* SimpleTextField.swift in Sources */,
 				FE84E49927D06B5000B30F57 /* FullScreenPlayerVC.swift in Sources */,
 				FEBF326327E9A16600DFB792 /* RxBannerButton.swift in Sources */,
@@ -1064,11 +1090,13 @@
 				FE8EF16827F425E300EEAC69 /* RxSignUpPageViewModel.swift in Sources */,
 				FE41DC9C27D706B400317493 /* MyBannerCell.swift in Sources */,
 				FE21132A27BCA6AE003293B2 /* HttpClient.swift in Sources */,
+				FE2D52F027F534D000106E5A /* TextFieldType.swift in Sources */,
 				FEBF326527E9A16600DFB792 /* RxBannerCell.swift in Sources */,
 				FEBF326A27E9A16600DFB792 /* StaticBannerContent.swift in Sources */,
 				FE7C00E327E867F5005ED99C /* MyBannerByPlistViewModel+RxSwfit.swift in Sources */,
 				FE2FE4BC27CE086C004B8871 /* KiflixCollectionView.swift in Sources */,
 				FE8EF12C27F3E7F500EEAC69 /* UrlType+Protocol.swift in Sources */,
+				FE2D52ED27F534AB00106E5A /* SecretTextField.swift in Sources */,
 				FEBF326827E9A16600DFB792 /* RxBannerView.swift in Sources */,
 				FE8EF16227F425E300EEAC69 /* IdZone.swift in Sources */,
 				FE8EF15E27F425E300EEAC69 /* PasswordZoneViewModel.swift in Sources */,
@@ -1123,14 +1151,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FE94DD6A27B655190017D776 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FE94DD6B27B655190017D776 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FE94DD7227B655190017D776 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1271,7 +1291,6 @@
 				INFOPLIST_FILE = kirkim_App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1301,7 +1320,6 @@
 				INFOPLIST_FILE = kirkim_App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

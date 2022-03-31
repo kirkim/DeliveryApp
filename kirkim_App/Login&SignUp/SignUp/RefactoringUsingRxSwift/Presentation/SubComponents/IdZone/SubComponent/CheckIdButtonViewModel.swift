@@ -66,7 +66,7 @@ class CheckIdButtonViewModel {
                     self.presentAlert.accept(CustomAlert(message: "fail error: \(error.localizedDescription)", isDismiss: false))
                 }
             } onFailure: { error in
-                self.presentAlert.accept(CustomAlert(message: "fail!", isDismiss: false))
+                self.presentAlert.accept(CustomAlert(message: "Network Error!", isDismiss: false))
             } onDisposed: {
                 print("disposed!")
             }
