@@ -10,40 +10,17 @@ import RxSwift
 import RxCocoa
 
 struct LoginPageViewModel {
+    let basicLoginViewModel = BasicLoginViewModel()
+    let createUserButtonViewModel = CreateUserButtonViewModel()
+    
     let disposeBag = DisposeBag()
     
     //View -> ViewModel
-    let idText = PublishRelay<String?>()
-    let pwText = PublishRelay<String?>()
     
     //ViewModel -> View
-    let isValidId: Signal<Bool>
-    let isValidPw: Signal<Bool>
-    let isValidLogin: Signal<Bool>
+    let clickedLoginButton: Signal<LoginStatus>
     
     init() {
-        self.isValidId = idText.map { id -> Bool in
-            return id != ""
-        }
-        .asSignal(onErrorJustReturn: false)
-        
-        self.isValidPw = pwText.map { pw -> Bool in
-            return pw != ""
-        }
-        .asSignal(onErrorJustReturn: false)
-        
-        self.isValidLogin = SharedSequence
-            .combineLatest(
-                isValidId,
-                isValidPw
-            ) { $0 && $1 }
-    }
-    
-    private func checkIDValid(_ id: String?) -> Bool {
-        return true
-    }
-    
-    private func checkPasswordValid(_ password: String?) -> Bool {
-        return true
+        clickedLoginButton = basicLoginViewModel.clickedLoginButton
     }
 }

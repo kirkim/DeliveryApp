@@ -62,7 +62,7 @@ class TestVC: UIViewController {
     }
     
     func test() {
-        let vc = RxSignUpPageVC()
+        let vc = RxSignupPageVC()
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true)
     }

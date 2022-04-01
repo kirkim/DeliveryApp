@@ -1,15 +1,15 @@
 //
-//  SignUpButton.swift
-//  kirkim_App
+//  LoginButton.swift
+//  TestSeparatingSignUpPage
 //
-//  Created by 김기림 on 2022/03/29.
+//  Created by 김기림 on 2022/04/01.
 //
 
 import UIKit
 import RxSwift
 import RxCocoa
 
-class JoinButton: UIButton {
+class LoginButton: UIButton {
     private let disposeBag = DisposeBag()
     
     convenience init() {
@@ -25,23 +25,16 @@ class JoinButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func bind(_ viewModel: JoinButtonViewModel) {
+    func bind(_ viewModel: LoginButtonViewModel) {
         self.rx.tap
             .bind(to: viewModel.buttonTapped)
-            .disposed(by: disposeBag)
-        
-        viewModel.isValid
-            .bind { isValid in
-                self.isEnabled = isValid
-            }
             .disposed(by: disposeBag)
     }
     
     private func attribute() {
-        self.setTitle(" JOIN ", for: .normal)
+        self.setTitle(" LOGIN ", for: .normal)
         self.titleLabel?.font = .systemFont(ofSize: 30, weight: .bold)
-        self.setTitleColor(.blue, for: .normal)
+        self.setTitleColor(.brown, for: .normal)
         self.setTitleColor(.gray, for: .disabled)
-        self.isEnabled = false
     }
 }

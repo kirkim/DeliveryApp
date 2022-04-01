@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-struct IdZoneViewModel {
+struct SignupIdZoneViewModel {
     let disposBag = DisposeBag()
     let checkIdButtonViewModel = CheckIdButtonViewModel()
     //View -> ViewModel

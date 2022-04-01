@@ -17,12 +17,11 @@ struct JoinButtonViewModel {
     let buttonTapped = PublishRelay<Void>()
     
     //ViewModel -> View
-    let isValidSignUp = PublishRelay<Bool>()
+    let isValid = PublishRelay<Bool>()
     let presentAlert = PublishRelay<CustomAlert>()
-    let succeedSignUp = BehaviorRelay<Bool>(value:false)
     
-    //ParentViewModel(RxSignUpPageViewModel) -> ViewModel
-    let postSigUp = PublishRelay<UserData>()
+    //ParentViewModel(RxSignupPageViewModel) -> ViewModel
+    let postSigUp = PublishRelay<SignupUser>()
     
     init() {
         buttonTapped
@@ -31,18 +30,16 @@ struct JoinButtonViewModel {
             .disposed(by: disposeBag)
     }
     
-    private func signUp(userData: UserData) {
+    private func signUp(userData: SignupUser) {
         self.httpManager.signUpUser(userData: userData)
             .observe(on: MainScheduler.instance)
             .subscribe { result in
                 switch result {
                 case .success(_):
                     self.presentAlert.accept(CustomAlert(message: "회원가입이 완료되었습니다!", isDismiss: true))
-                    self.succeedSignUp.accept(true)
                 case .failure(let error):
                     print(error)
-                    self.presentAlert.accept(CustomAlert(message: "회원가입에 실패하였습니다!", isDismiss: true))
-                    self.succeedSignUp.accept(false)
+                    self.presentAlert.accept(CustomAlert(message: "회원가입에 실패하였습니다!", isDismiss: false))
                 }
             }
             .disposed(by: disposeBag)

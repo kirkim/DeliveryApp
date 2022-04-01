@@ -56,7 +56,7 @@ class SignUpPageVC: UIViewController {
               let confirmPassword = confirmPasswordTextField.text,
               let name = nameTextField.text else { return }
         
-        let userData = SignupUser(userID: userID, password: password, confirmPassword: confirmPassword, name: name)
+        let userData = SignUserData(userID: userID, password: password, confirmPassword: confirmPassword, name: name)
         
         viewModel.signup(signupData: userData, completion: { validatorResult in
             if (validatorResult != .success ) {

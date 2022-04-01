@@ -1,8 +1,8 @@
 //
-//  NameZone.swift
+//  LoginIdZone.swift
 //  TestSeparatingSignUpPage
 //
-//  Created by 김기림 on 2022/03/30.
+//  Created by 김기림 on 2022/04/01.
 //
 
 import UIKit
@@ -10,11 +10,12 @@ import RxSwift
 import RxCocoa
 import SnapKit
 
-class NameZone: UIView {
-    private let nameTextField = SimpleTextField(type: .normal)
-    private let nameErrorMessage = SignUpErrorLabel()
-
+class LoginIdZone: UIView {
+    private let idTextField = SimpleTextField(type: .normal)
+    private let idErrorMessage = LoginErrorLabel()
+    
     private let disposeBag = DisposeBag()
+    
     //MARK: - init function
     convenience init() {
         self.init(frame: CGRect.zero)
@@ -31,41 +32,43 @@ class NameZone: UIView {
     }
     
     //MARK: - bind function
-    func bind(_ viewModel: NameZoneViewModel) {
-        self.nameTextField.rx.text.orEmpty
-            .bind(to: viewModel.nameText)
+    func bind(_ viewModel: LoginIdZoneViewModel) {
+        idTextField.rx.text.orEmpty
+            .bind(to: viewModel.idText)
             .disposed(by: disposeBag)
         
         viewModel.isValid
-            .emit { [weak self] isValid in
-                self?.nameErrorMessage.isHidden = isValid
+            .emit { isValid in
+                self.idErrorMessage.isHidden = isValid
             }
             .disposed(by: disposeBag)
     }
     
     //MARK: - attribute, layout function
     private func attribute() {
-        nameErrorMessage.text = "유효한 이름을 입력해 주세요"
-        self.nameTextField.placeholder = "이름"
+        idErrorMessage.text = "유효한 아이디를 입력해 주세요"
+        idErrorMessage.font = .systemFont(ofSize: 13, weight: .light)
+        idErrorMessage.textColor = .systemRed
+        self.idTextField.placeholder = "ID"
     }
     
     private func layout() {
-        [nameTextField, nameErrorMessage].forEach {
+        [idTextField, idErrorMessage].forEach {
             self.addSubview($0)
         }
         
-        nameTextField.snp.makeConstraints {
+        idTextField.snp.makeConstraints {
             $0.top.leading.trailing.equalToSuperview()
         }
         
-        nameErrorMessage.snp.makeConstraints {
-            $0.top.equalTo(nameTextField.snp.bottom).offset(5)
+        idErrorMessage.snp.makeConstraints {
+            $0.top.equalTo(idTextField.snp.bottom).offset(5)
             $0.leading.trailing.equalToSuperview()
         }
 
         self.snp.makeConstraints {
-            $0.bottom.equalTo(nameErrorMessage.snp.bottom)
+            $0.bottom.equalTo(idErrorMessage.snp.bottom)
         }
     }
+    
 }
-

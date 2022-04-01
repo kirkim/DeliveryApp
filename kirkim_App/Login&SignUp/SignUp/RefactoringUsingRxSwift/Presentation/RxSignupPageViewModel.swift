@@ -9,14 +9,13 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class RxSignUpPageViewModel {
+class RxSignupPageViewModel {
     private let disposeBag = DisposeBag()
-    let disMissView: Bool = false
     
     //subComponent ViewModel
-    let idZoneViewModel = IdZoneViewModel()
-    let pwZoneViewModel = PasswordZoneViewModel()
-    let nameZoneViewModel = NameZoneViewModel()
+    let idZoneViewModel = SignupIdZoneViewModel()
+    let pwZoneViewModel = SignupPwZoneViewModel()
+    let nameZoneViewModel = SignupNameZoneViewModel()
     let joinButtonModel = JoinButtonViewModel()
     
     //ViewModel -> View
@@ -27,8 +26,8 @@ class RxSignUpPageViewModel {
             idZoneViewModel.idText.share(),
             pwZoneViewModel.pwText.share(),
             nameZoneViewModel.nameText.share()
-        ) {  UserData(userID: $0, password: $1, name: $2) }
-            .asSignal(onErrorJustReturn:  UserData(userID: "", password: "", name: ""))
+        ) {  SignupUser(userID: $0, password: $1, name: $2) }
+            .asSignal(onErrorJustReturn:  SignupUser(userID: "", password: "", name: ""))
         
         SharedSequence.combineLatest(
             idZoneViewModel.isValid,
@@ -36,7 +35,7 @@ class RxSignUpPageViewModel {
             nameZoneViewModel.isValid
         ) { $0 && $1 && $2 }
             .filter { isValidSignUp in
-                self.joinButtonModel.isValidSignUp.accept(isValidSignUp)
+                self.joinButtonModel.isValid.accept(isValidSignUp)
                 return isValidSignUp
             } // 모든유효성검사가 참일때 데이터를 전달
             .withLatestFrom(signupUserData)

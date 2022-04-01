@@ -1,13 +1,13 @@
 //
-//  SignUpErrorLabel.swift
-//  kirkim_App
+//  LoginErrorLabel.swift
+//  TestSeparatingSignUpPage
 //
-//  Created by 김기림 on 2022/03/30.
+//  Created by 김기림 on 2022/04/01.
 //
 
 import UIKit
 
-class SignUpErrorLabel: UILabel {
+class LoginErrorLabel: UILabel {
     convenience init() {
         self.init(frame: CGRect.zero)
     }

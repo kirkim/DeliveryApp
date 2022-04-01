@@ -10,11 +10,11 @@ import RxSwift
 import RxCocoa
 import SnapKit
 
-class PasswordZone: UIView {
+class SignupPwZone: UIView {
     private let pwTextField = SimpleTextField(type: .password)
-    private let pwErrorMessage = SignUpErrorLabel()
+    private let pwErrorMessage = SignupErrorLabel()
     private let confirmPwTextField = SimpleTextField(type: .password)
-    private let confirmPwErrorMessage = SignUpErrorLabel()
+    private let confirmPwErrorMessage = SignupErrorLabel()
     
     private let disposeBag = DisposeBag()
     
@@ -34,7 +34,7 @@ class PasswordZone: UIView {
     }
     
     //MARK: - bind function
-    func bind(_ viewModel: PasswordZoneViewModel) {
+    func bind(_ viewModel: SignupPwZoneViewModel) {
         self.pwTextField.rx.text.orEmpty
             .bind(to: viewModel.pwText)
             .disposed(by: disposeBag)

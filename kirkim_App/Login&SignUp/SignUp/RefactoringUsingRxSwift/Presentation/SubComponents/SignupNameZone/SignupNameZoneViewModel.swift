@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-struct NameZoneViewModel {
+struct SignupNameZoneViewModel {
     //View -> ViewModel
     let nameText = PublishRelay<String>()
     

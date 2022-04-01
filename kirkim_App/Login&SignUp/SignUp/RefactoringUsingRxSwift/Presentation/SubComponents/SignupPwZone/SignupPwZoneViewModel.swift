@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-struct PasswordZoneViewModel {
+struct SignupPwZoneViewModel {
     //View -> ViewModel
     let pwText = PublishRelay<String>()
     let conformPwText = PublishRelay<String>()

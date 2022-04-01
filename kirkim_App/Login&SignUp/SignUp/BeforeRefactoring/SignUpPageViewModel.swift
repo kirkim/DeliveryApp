@@ -10,7 +10,7 @@ import Foundation
 struct SignUpPageViewModel {
     private let manager = SignUpPageViewManager.shared
     
-    func signup(signupData: SignupUser, completion: @escaping (SignUpPageViewManager.ValidatorResult) -> Void) {
+    func signup(signupData: SignUserData, completion: @escaping (SignUpPageViewManager.ValidatorResult) -> Void) {
         manager.signup(signupData: signupData, completion: completion)
     }
     
@@ -57,7 +57,7 @@ class SignUpPageViewManager {
         }
     }
     
-    func signup(signupData: SignupUser, completion: @escaping (ValidatorResult) -> Void) {
+    func signup(signupData: SignUserData, completion: @escaping (ValidatorResult) -> Void) {
         let checkUserResult = checkUserData(checkData: signupData)
         if ( checkUserResult != .success) {
             completion(checkUserResult)
@@ -76,7 +76,7 @@ class SignUpPageViewManager {
         }
     }
     
-    private func checkUserData(checkData: SignupUser) -> ValidatorResult {
+    private func checkUserData(checkData: SignUserData) -> ValidatorResult {
         if(self.isValidUserID(id: checkData.userID) == false) {
             return ValidatorResult.wrongID
         }

@@ -10,9 +10,9 @@ import RxSwift
 import RxCocoa
 import SnapKit
 
-class IdZone: UIView {
+class SignupIdZone: UIView {
     private let idTextField = SimpleTextField(type: .normal)
-    private let idErrorMessage = SignUpErrorLabel()
+    private let idErrorMessage = SignupErrorLabel()
     private let checkIdButton = ChekcIdButton()
     
     private let disposeBag = DisposeBag()
@@ -33,7 +33,7 @@ class IdZone: UIView {
     }
     
     //MARK: - bind function
-    func bind(_ viewModel: IdZoneViewModel) {
+    func bind(_ viewModel: SignupIdZoneViewModel) {
         let checkIdButtonViewModel = viewModel.checkIdButtonViewModel
         self.checkIdButton.bind(checkIdButtonViewModel)
         let idTextObservable = idTextField.rx.text.orEmpty.share()

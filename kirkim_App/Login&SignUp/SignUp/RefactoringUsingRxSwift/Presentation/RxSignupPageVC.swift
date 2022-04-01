@@ -10,11 +10,11 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-class RxSignUpPageVC: UIViewController {
+class RxSignupPageVC: UIViewController {
     private let titleLabel = UILabel()
-    private let idView = IdZone()
-    private let pwView = PasswordZone()
-    private let nameView = NameZone()
+    private let idView = SignupIdZone()
+    private let pwView = SignupPwZone()
+    private let nameView = SignupNameZone()
     private let joinButton = JoinButton()
     private let disposeBag = DisposeBag()
 
@@ -30,7 +30,7 @@ class RxSignUpPageVC: UIViewController {
     }
     
     //MARK: - bind function
-    func bind(_ viewModel: RxSignUpPageViewModel) {
+    func bind(_ viewModel: RxSignupPageViewModel) {
         let idZoneViewModel = viewModel.idZoneViewModel
         let joinButtonModel = viewModel.joinButtonModel
         self.idView.bind(idZoneViewModel)
@@ -102,7 +102,7 @@ class RxSignUpPageVC: UIViewController {
 }
 
 //MARK: - RxSignUpPageVC: UITextFieldDelegate + 키보드에 따른 텍스트필드 위치조정 메서드
-extension RxSignUpPageVC {
+extension RxSignupPageVC {
     func initKeyboardEvent() {
         KeyboardAnimation.dismissKeyboardBytouchBackground(view: self.view)
     }
