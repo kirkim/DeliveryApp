@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class JoinButtonViewModel {
+struct JoinButtonViewModel {
     let httpManager = RxUserHttpManager()
     let disposeBag = DisposeBag()
     
@@ -21,19 +21,12 @@ class JoinButtonViewModel {
     let presentAlert = PublishRelay<CustomAlert>()
     let succeedSignUp = BehaviorRelay<Bool>(value:false)
     
-    let idText = PublishRelay<String>()
-    let pwText = PublishRelay<String>()
-    let nameText = PublishRelay<String>()
+    //ParentViewModel(RxSignUpPageViewModel) -> ViewModel
+    let postSigUp = PublishRelay<UserData>()
     
     init() {
-        let userData = Observable.combineLatest(
-            idText,
-            pwText,
-            nameText
-        ) { UserData(userID: $0, password: $1, name: $2) }
-        
         buttonTapped
-            .withLatestFrom(userData) { $1 }
+            .withLatestFrom(postSigUp) { $1 }
             .bind(onNext: self.signUp)
             .disposed(by: disposeBag)
     }

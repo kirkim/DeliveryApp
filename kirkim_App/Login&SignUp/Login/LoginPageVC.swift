@@ -17,7 +17,7 @@ class LoginPageVC: UIViewController {
     private let pwErrorLabel = UILabel()
     private let loginButton = UIButton()
     private let createButton = UIButton()
-    private let loginUserModel = MainUser()
+    private let loginUserModel = UserModel()
     private let disposeBag = DisposeBag()
     private let signUpViewModel = RxSignUpPageViewModel()
         

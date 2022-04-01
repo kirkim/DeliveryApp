@@ -16,7 +16,7 @@
 		FE18A28927C5DE9B00E56F39 /* BannerHttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE18A28827C5DE9B00E56F39 /* BannerHttpManager.swift */; };
 		FE2067EF27BCFDC7005EBEB5 /* KeyboardAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2067EE27BCFDC7005EBEB5 /* KeyboardAnimation.swift */; };
 		FE21132A27BCA6AE003293B2 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE21132927BCA6AE003293B2 /* HttpClient.swift */; };
-		FE21132C27BCC0A2003293B2 /* MainUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE21132B27BCC0A2003293B2 /* MainUser.swift */; };
+		FE21132C27BCC0A2003293B2 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE21132B27BCC0A2003293B2 /* UserModel.swift */; };
 		FE21133127BCD095003293B2 /* SignUpPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE21133027BCD095003293B2 /* SignUpPageVC.swift */; };
 		FE2BD69127CDC9C400A9FB73 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2BD68F27CDC9C400A9FB73 /* MainVC.swift */; };
 		FE2BD69227CDC9C400A9FB73 /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE2BD69027CDC9C400A9FB73 /* MainVC.xib */; };
@@ -126,6 +126,8 @@
 		FEBF326B27E9A16600DFB792 /* StaticBannerPlistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF326027E9A16600DFB792 /* StaticBannerPlistModel.swift */; };
 		FEBF326C27E9A16600DFB792 /* BannerContent+protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF326127E9A16600DFB792 /* BannerContent+protocol.swift */; };
 		FEBF326E27E9A26000DFB792 /* TextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF326D27E9A26000DFB792 /* TextVC.swift */; };
+		FEC5011327F67D07000C185F /* LoginUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5011227F67D07000C185F /* LoginUserModel.swift */; };
+		FEC5011527F67D75000C185F /* LoginStatus+enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5011427F67D75000C185F /* LoginStatus+enum.swift */; };
 		FEEE0D4B27D9E535002F47B0 /* StaticBigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEE0D4A27D9E535002F47B0 /* StaticBigCell.swift */; };
 		FEEE0D4D27D9E821002F47B0 /* StaticMediumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEE0D4C27D9E821002F47B0 /* StaticMediumCell.swift */; };
 		FEEE0D4F27D9E86F002F47B0 /* StaticSmall_3Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEE0D4E27D9E86F002F47B0 /* StaticSmall_3Cell.swift */; };
@@ -146,7 +148,7 @@
 		FE18A28827C5DE9B00E56F39 /* BannerHttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerHttpManager.swift; sourceTree = "<group>"; };
 		FE2067EE27BCFDC7005EBEB5 /* KeyboardAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAnimation.swift; sourceTree = "<group>"; };
 		FE21132927BCA6AE003293B2 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
-		FE21132B27BCC0A2003293B2 /* MainUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUser.swift; sourceTree = "<group>"; };
+		FE21132B27BCC0A2003293B2 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		FE21133027BCD095003293B2 /* SignUpPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPageVC.swift; sourceTree = "<group>"; };
 		FE2BD68F27CDC9C400A9FB73 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		FE2BD69027CDC9C400A9FB73 /* MainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
@@ -254,6 +256,8 @@
 		FEBF326027E9A16600DFB792 /* StaticBannerPlistModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticBannerPlistModel.swift; sourceTree = "<group>"; };
 		FEBF326127E9A16600DFB792 /* BannerContent+protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BannerContent+protocol.swift"; sourceTree = "<group>"; };
 		FEBF326D27E9A26000DFB792 /* TextVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextVC.swift; sourceTree = "<group>"; };
+		FEC5011227F67D07000C185F /* LoginUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserModel.swift; sourceTree = "<group>"; };
+		FEC5011427F67D75000C185F /* LoginStatus+enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginStatus+enum.swift"; sourceTree = "<group>"; };
 		FEEE0D4A27D9E535002F47B0 /* StaticBigCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticBigCell.swift; sourceTree = "<group>"; };
 		FEEE0D4C27D9E821002F47B0 /* StaticMediumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticMediumCell.swift; sourceTree = "<group>"; };
 		FEEE0D4E27D9E86F002F47B0 /* StaticSmall_3Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticSmall_3Cell.swift; sourceTree = "<group>"; };
@@ -380,7 +384,8 @@
 		FE47CACD27C0C8110077806D /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				FE21132B27BCC0A2003293B2 /* MainUser.swift */,
+				FEC5011127F67CED000C185F /* Entities */,
+				FE21132B27BCC0A2003293B2 /* UserModel.swift */,
 				FE8ABDE827EB01D40020DD65 /* LoginPageViewModel.swift */,
 				FE635A5027EC62F000BDC67E /* LoginPageVC.swift */,
 			);
@@ -896,6 +901,15 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		FEC5011127F67CED000C185F /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				FEC5011227F67D07000C185F /* LoginUserModel.swift */,
+				FEC5011427F67D75000C185F /* LoginStatus+enum.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		FEEE0D4927D9E0E2002F47B0 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -1052,8 +1066,10 @@
 				FE85B4E727EAA7090031F5AC /* EventPage1.swift in Sources */,
 				FE85B4E927EAA88C0031F5AC /* SideMenuView+Protocol.swift in Sources */,
 				FE078F1B27C34C7E00D19E34 /* SimpleProfileView.swift in Sources */,
+				FEC5011527F67D75000C185F /* LoginStatus+enum.swift in Sources */,
 				FE9AF67B27F20DD0006E8472 /* RxUserHttpManager.swift in Sources */,
 				FE74FEAF27CDBDDE00F40D5F /* MainTabBarController.swift in Sources */,
+				FEC5011327F67D07000C185F /* LoginUserModel.swift in Sources */,
 				FE8EF16127F425E300EEAC69 /* CheckIdButton.swift in Sources */,
 				FE41DC9E27D706B400317493 /* MyBannerByAPIView.swift in Sources */,
 				FE18A28927C5DE9B00E56F39 /* BannerHttpManager.swift in Sources */,
@@ -1135,7 +1151,7 @@
 				FE7FC0C627C48581009EB2AE /* SideMenuModel.swift in Sources */,
 				FE41DCA027D706B400317493 /* MyBannerTotalButton.swift in Sources */,
 				FE84E4A027D07F1C00B30F57 /* PlayerView.swift in Sources */,
-				FE21132C27BCC0A2003293B2 /* MainUser.swift in Sources */,
+				FE21132C27BCC0A2003293B2 /* UserModel.swift in Sources */,
 				FEBF326227E9A16600DFB792 /* RxBannerViewModel.swift in Sources */,
 				FE94DD6727B655190017D776 /* SceneDelegate.swift in Sources */,
 				FE7FC0D127C48F31009EB2AE /* TestView1-2.swift in Sources */,

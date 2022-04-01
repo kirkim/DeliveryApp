@@ -8,7 +8,7 @@
 import UIKit
 
 class BaseVC: UIViewController {
-    let userModel = MainUser()
+    let userModel = UserModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()

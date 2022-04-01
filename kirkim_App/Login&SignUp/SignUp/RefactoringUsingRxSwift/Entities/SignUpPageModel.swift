@@ -18,6 +18,7 @@ struct UserData: Codable {
     var name: String
 }
 
+//SignupUser은 Rx버전에서는 사용x
 struct SignupUser: Codable {
     var userID: String
     var password: String

@@ -9,7 +9,7 @@ import UIKit
 
 class SideMenuHeaderView: UITableViewHeaderFooterView {
     static let identifier = "SideMenuHeaderView"
-    private let user = MainUser()
+    private let user = UserModel()
     
     private var profileView: SimpleProfileView
     private let nameLabel = UILabel()

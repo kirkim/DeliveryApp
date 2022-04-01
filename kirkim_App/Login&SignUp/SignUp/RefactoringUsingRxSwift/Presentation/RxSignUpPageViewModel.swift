@@ -23,13 +23,24 @@ class RxSignUpPageViewModel {
     let presentAlert = PublishRelay<CustomAlert>()
     
     init() {
+        let signupUserData = Observable.combineLatest(
+            idZoneViewModel.idText.share(),
+            pwZoneViewModel.pwText.share(),
+            nameZoneViewModel.nameText.share()
+        ) {  UserData(userID: $0, password: $1, name: $2) }
+            .asSignal(onErrorJustReturn:  UserData(userID: "", password: "", name: ""))
+        
         SharedSequence.combineLatest(
             idZoneViewModel.isValid,
             pwZoneViewModel.isValid,
             nameZoneViewModel.isValid
         ) { $0 && $1 && $2 }
-            .asSignal(onErrorJustReturn: false)
-            .emit(to: joinButtonModel.isValidSignUp)
+            .filter { isValidSignUp in
+                self.joinButtonModel.isValidSignUp.accept(isValidSignUp)
+                return isValidSignUp
+            } // 모든유효성검사가 참일때 데이터를 전달
+            .withLatestFrom(signupUserData)
+            .emit(to: joinButtonModel.postSigUp)
             .disposed(by: disposeBag)
         
         idZoneViewModel.presentAlert
@@ -43,17 +54,5 @@ class RxSignUpPageViewModel {
                 self?.presentAlert.accept(message)
             })
             .disposed(by: disposeBag)        
-            
-        idZoneViewModel.idText.share()
-            .bind(to: joinButtonModel.idText)
-            .disposed(by: disposeBag)
-        
-        pwZoneViewModel.pwText.share()
-            .bind(to: joinButtonModel.pwText)
-            .disposed(by: disposeBag)
-
-        nameZoneViewModel.nameText.share()
-            .bind(to: joinButtonModel.nameText)
-            .disposed(by: disposeBag)
-    }
+        }
 }

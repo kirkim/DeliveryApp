@@ -7,26 +7,8 @@
 
 import Foundation
 
-struct LoginUser: Codable {
-    var userID: String
-    var password: String
-}
-
-enum LoginStatus {
-    case success
-    case fail
-    var message: String {
-        switch self {
-        case .success:
-            return ""
-        case .fail:
-            return "아이디 또는 비밀번호를 확인하세요."
-        }
-    }
-}
-
-struct MainUser {
-    private let manager = MainUserManager.shared
+struct UserModel {
+    private let manager = UserManager.shared
     
     var isLogin: Bool {
         return manager.isLogin
@@ -45,8 +27,8 @@ struct MainUser {
     }
 }
 
-final class MainUserManager {
-    static let shared = MainUserManager()
+final class UserManager {
+    static let shared = UserManager()
     private init() { }
     private let userHttpManager = UserHttpManager()
     var info: User?

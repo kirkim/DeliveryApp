@@ -10,7 +10,7 @@ import RxSwift
 
 class SideMenuVC: UIViewController {
     @IBOutlet weak var menuTableView: UITableView!
-    private let user = MainUser()
+    private let user = UserModel()
     private let sideMenuCellModel = SideMenuCellModel()
     private let disposeBag = DisposeBag()
     
