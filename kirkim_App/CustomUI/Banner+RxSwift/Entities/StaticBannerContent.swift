@@ -8,7 +8,7 @@
 import UIKit
 
 struct StaticBannerContent: Decodable, BannerContent {
-    static let plistName: String = "StaticEventContent"
+    static let plistName: String = "StaticBannerContent"
     let title: String
     let eventDeadline: Date
     let smallImageName: String?

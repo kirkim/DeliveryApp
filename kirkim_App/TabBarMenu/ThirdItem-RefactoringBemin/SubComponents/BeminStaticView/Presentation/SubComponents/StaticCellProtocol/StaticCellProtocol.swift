@@ -9,4 +9,5 @@ import UIKit
 
 protocol StaticCellProtocol {
     static var cellId: String { get }
+    func setData(item: StaticItem)
 }

@@ -12,11 +12,8 @@ import RxCocoa
 
 class RxBannerView: UIView {
     let disposeBag = DisposeBag()
-    var nowPageSubject = BehaviorSubject<Int>(value: 0)
     private var bannerListView: RxBannerListView
     private let bannerButton = RxBannerButton()
-    var totalBannerCount: Int = 0
-    weak var timer: Timer?
 
     //MARK: - MyBannerUsingRxswift init
     init() {

@@ -11,7 +11,7 @@ struct RxBannerViewModel {
     private let manager: RxBannerViewManager
     
     init(plistType: StaticBannerPlistModel.BannerType) {
-        manager = RxBannerViewManager(type: .staticEvent)
+        manager = RxBannerViewManager(type: plistType)
     }
     
     var buttonViewModel: RxBannerButtonViewModel {
