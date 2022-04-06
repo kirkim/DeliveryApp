@@ -26,7 +26,8 @@ class CreateUserButton: UIButton {
     }
     
     func bind(_ viewModel: CreateUserButtonViewModel) {
-        viewModel.presentVC.bind(viewModel.presentViewModel)
+        self.rx.tap.bind(to: viewModel.buttonTapped)
+            .disposed(by: disposeBag)
     }
     
     private func attribute() {

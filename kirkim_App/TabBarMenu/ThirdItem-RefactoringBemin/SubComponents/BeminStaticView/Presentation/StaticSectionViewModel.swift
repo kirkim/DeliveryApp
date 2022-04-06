@@ -12,9 +12,11 @@ import RxDataSources
 
 struct StaticSectionViewModel {
     var sectionContents: [RxStaticSectionData]
-    var sectionUIType: [StaticCellUIType]
+    private var sectionUIType: [StaticCellUIType]
     
+    // View -> ViewModel
     let itemSelected = PublishRelay<IndexPath>()
+    // ViewModel -> View
     let presentVC: Driver<UIViewController>
     
     init() {

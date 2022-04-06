@@ -25,10 +25,6 @@ class SimpleProfileView: UIButton {
         self.layer.cornerRadius = 20
         self.backgroundColor = .blue
         self.setTitle(self.firstLetter, for: .normal)
-//        self.text = self.firstLetter
         self.tintColor = .white
-//        self.font = UIFont.systemFont(ofSize: 20, weight: .medium)
-//        self.textAlignment = .center
-//        self.textColor = .white
     }
 }

@@ -22,7 +22,6 @@ class SideMenuVC: UIViewController {
         menuTableView.register(SideMenuHeaderView.self, forHeaderFooterViewReuseIdentifier: SideMenuHeaderView.identifier)
         menuTableView.register(SideMenuFooterView.self, forHeaderFooterViewReuseIdentifier: SideMenuFooterView.identifier)
         registerCell()
-        
     }
     
     private func registerCell() {
@@ -57,7 +56,14 @@ extension SideMenuVC: UITableViewDelegate {
     //MARK: - Header
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if (section == 0) {
-            let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: SideMenuHeaderView.identifier)
+            let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: SideMenuHeaderView.identifier) as! SideMenuHeaderView
+            header.detailProfileButtonTapped
+                .subscribe(onNext: {
+                    let detailProfileVC = DetailProfileVC()
+                    self.navigationController?.pushViewController(detailProfileVC, animated: true)
+                })
+                .disposed(by: disposeBag)
+            
             return header
         }
         return nil
@@ -78,6 +84,13 @@ extension SideMenuVC: UITableViewDelegate {
                 .subscribe(onNext: {
                     self.user.logOut()
                     self.dismiss(animated: false, completion: nil)
+                })
+                .disposed(by: disposeBag)
+            footer.copyrightButtonTapped
+                .subscribe(onNext: {
+                    let directorBlogPage = DirectorBlogWebkitView()
+                    self.navigationController?.pushViewController(directorBlogPage, animated: true)
+
                 })
                 .disposed(by: disposeBag)
             return footer

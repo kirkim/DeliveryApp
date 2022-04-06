@@ -39,8 +39,10 @@ class BaseVC: UIViewController {
     func checkLogin(completion: () -> Void) {
         if (self.userModel.isLogin == false) {
             let loginVC = LoginPageVC()
-            loginVC.modalPresentationStyle = .fullScreen
-            self.present(loginVC, animated: false, completion: nil)
+            let nav = UINavigationController(rootViewController: loginVC)
+            loginVC.title = "로그인"
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: false, completion: nil)
         } else {
             completion()
         }

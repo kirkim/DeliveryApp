@@ -28,15 +28,21 @@ class LoginPageVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     func bind(_ viewModel: LoginPageViewModel) {
         let createUserButtonViewModel = viewModel.createUserButtonViewModel
         self.basicLoginView.bind(viewModel.basicLoginViewModel)
         self.createButton.bind(createUserButtonViewModel)
         
-        self.createButton.rx.tap
-            .subscribe(onNext: {
-                self.present(createUserButtonViewModel.presentVC, animated: true)
-            })
+        createUserButtonViewModel.presentVC
+            .emit { [weak self] createVC in
+                self?.navigationController?.pushViewController(createVC, animated: true)
+                self?.navigationController?.isNavigationBarHidden = false
+            }
             .disposed(by: disposeBag)
         
         viewModel.clickedLoginButton

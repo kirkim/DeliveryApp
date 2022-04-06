@@ -41,7 +41,7 @@ class RxSignupPageVC: UIViewController {
         viewModel.presentAlert
             .subscribe(onNext: { [weak self] result in
                 let alert = UIAlertController(title: result.message, message: nil, preferredStyle: .alert)
-                let action = UIAlertAction(title: "확인", style: .default, handler: {_ in
+                let action = UIAlertAction(title: "확인", style: .default, handler: { [weak self] _ in
                     if (result.isDismiss) {
                         self?.dismiss(animated: true)
                     }

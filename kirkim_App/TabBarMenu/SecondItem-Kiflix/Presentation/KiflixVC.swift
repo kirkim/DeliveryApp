@@ -21,6 +21,7 @@ class KiflixVC: BaseVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         collectionView.setCollectionViewUI(itemSpacing: 7, margin: 3)
+        self.navigationItem.title = "Kiflix"
     }
 }
 

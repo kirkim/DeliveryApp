@@ -12,17 +12,19 @@ import RxSwift
 
 class SideMenuFooterView: UITableViewHeaderFooterView {
     static let identifier = "SideMenuFooterView"
-    private let logoutButton = UIButton()
-    private let makerButton = UIButton()
+    private let logoutView = LogoutView()
+    private let copyrightInfoView = CopyrightInfoView()
     private let disposeBag = DisposeBag()
+    
+    // View -> ParentView(SideMenuVC)
     let logoutButtonTapped = PublishRelay<Void>()
+    let copyrightButtonTapped = PublishRelay<Void>()
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         layout()
         attribute()
         bind()
-        contentView.backgroundColor = .brown
     }
     
     required init?(coder: NSCoder) {
@@ -30,36 +32,31 @@ class SideMenuFooterView: UITableViewHeaderFooterView {
     }
     
     private func layout() {
-        [logoutButton, makerButton].forEach {
+        [logoutView, copyrightInfoView].forEach {
             contentView.addSubview($0)
         }
         
-        logoutButton.snp.makeConstraints {
+        logoutView.snp.makeConstraints {
             $0.leading.top.trailing.equalTo(contentView)
-            $0.height.equalTo(50)
         }
         
-        makerButton.snp.makeConstraints {
+        copyrightInfoView.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(logoutButton.snp.bottom).offset(10)
+            $0.top.equalTo(logoutView.snp.bottom)
         }
     }
     
     private func bind() {
-        logoutButton.rx.tap
+        self.logoutView.buttonTapped
             .bind(to: logoutButtonTapped)
+            .disposed(by: disposeBag)
+        
+        self.copyrightInfoView.buttonTapped
+            .bind(to: copyrightButtonTapped)
             .disposed(by: disposeBag)
     }
     
     private func attribute() {
-        logoutButton.backgroundColor = .blue
-        makerButton.backgroundColor = .purple
-        
-        logoutButton.setImage(UIImage(systemName: "rectangle.portrait.and.arrow.right"), for: .normal)
-        logoutButton.setTitle(" 로그아웃", for: .normal)
-        logoutButton.contentHorizontalAlignment = .leading
-        logoutButton.configuration?.contentInsets = .init(top: 0, leading: 30, bottom: 0, trailing: 0)
-        
-        makerButton.setTitle("Make By Kirkim", for: .normal)
+        contentView.backgroundColor = .systemGray6
     }
 }

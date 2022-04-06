@@ -11,7 +11,7 @@ import RxCocoa
 import SnapKit
 
 class LoginPwZone: UIView {
-    private let pwTextField = SimpleTextField(type: .normal)
+    private let pwTextField = SimpleTextField(type: .password)
     private let pwErrorMessage = LoginErrorLabel()
     
     private let disposeBag = DisposeBag()

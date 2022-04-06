@@ -29,6 +29,11 @@
 		FE2FE4BC27CE086C004B8871 /* KiflixCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2FE4BB27CE086C004B8871 /* KiflixCollectionView.swift */; };
 		FE2FF52D27D5B414005DA688 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FE2FF52C27D5B414005DA688 /* SnapKit */; };
 		FE2FF55127D5CC11005DA688 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2FF55027D5CC11005DA688 /* TestVC.swift */; };
+		FE302FFC27FD16DE006F2C63 /* LogoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE302FFB27FD16DE006F2C63 /* LogoutView.swift */; };
+		FE302FFE27FD2DE9006F2C63 /* CopyrightInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE302FFD27FD2DE9006F2C63 /* CopyrightInfoView.swift */; };
+		FE30300327FD3502006F2C63 /* DetailProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE30300227FD3502006F2C63 /* DetailProfileButton.swift */; };
+		FE30300627FD37F2006F2C63 /* DetailProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE30300527FD37F2006F2C63 /* DetailProfileVC.swift */; };
+		FE30300927FD3DC6006F2C63 /* DirectorBlogWebkitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE30300827FD3DC6006F2C63 /* DirectorBlogWebkitView.swift */; };
 		FE38F45E27F7170F008BBE8B /* LoginPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE38F44927F7170F008BBE8B /* LoginPageViewModel.swift */; };
 		FE38F45F27F7170F008BBE8B /* LoginButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE38F44E27F7170F008BBE8B /* LoginButtonViewModel.swift */; };
 		FE38F46027F7170F008BBE8B /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE38F44F27F7170F008BBE8B /* LoginButton.swift */; };
@@ -192,6 +197,11 @@
 		FE2FD15627EDA31A0094E094 /* RxHttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxHttpClient.swift; sourceTree = "<group>"; };
 		FE2FE4BB27CE086C004B8871 /* KiflixCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiflixCollectionView.swift; sourceTree = "<group>"; };
 		FE2FF55027D5CC11005DA688 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
+		FE302FFB27FD16DE006F2C63 /* LogoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutView.swift; sourceTree = "<group>"; };
+		FE302FFD27FD2DE9006F2C63 /* CopyrightInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyrightInfoView.swift; sourceTree = "<group>"; };
+		FE30300227FD3502006F2C63 /* DetailProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProfileButton.swift; sourceTree = "<group>"; };
+		FE30300527FD37F2006F2C63 /* DetailProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProfileVC.swift; sourceTree = "<group>"; };
+		FE30300827FD3DC6006F2C63 /* DirectorBlogWebkitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectorBlogWebkitView.swift; sourceTree = "<group>"; };
 		FE38F44927F7170F008BBE8B /* LoginPageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewModel.swift; sourceTree = "<group>"; };
 		FE38F44E27F7170F008BBE8B /* LoginButtonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginButtonViewModel.swift; sourceTree = "<group>"; };
 		FE38F44F27F7170F008BBE8B /* LoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
@@ -354,6 +364,20 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		FE05950A27FC6AB100C2BFB5 /* PresentView */ = {
+			isa = PBXGroup;
+			children = (
+				FE8D303627FC682900F55EEE /* Section1 */,
+				FE8D305227FC682900F55EEE /* Section2 */,
+				FE8D304627FC682900F55EEE /* Section3 */,
+				FE8D304A27FC682900F55EEE /* Section4 */,
+				FE8D304D27FC682900F55EEE /* Section5 */,
+				FE8D303A27FC682900F55EEE /* Section6 */,
+				FE8D303027FC682900F55EEE /* Section7 */,
+			);
+			path = PresentView;
+			sourceTree = "<group>";
+		};
 		FE078F1227C341D100D19E34 /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -413,6 +437,49 @@
 				FE2D52EF27F534D000106E5A /* TextFieldType.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		FE302FFF27FD3486006F2C63 /* Footer */ = {
+			isa = PBXGroup;
+			children = (
+				FE8F025D27E9EC2D0053224A /* SideMenuFooterView.swift */,
+				FE8F025F27E9FC870053224A /* SubComponents */,
+			);
+			path = Footer;
+			sourceTree = "<group>";
+		};
+		FE30300027FD348C006F2C63 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				FE078F2E27C3634B00D19E34 /* SideMenuHeaderView.swift */,
+				FE30300127FD3499006F2C63 /* SubComponents */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		FE30300127FD3499006F2C63 /* SubComponents */ = {
+			isa = PBXGroup;
+			children = (
+				FE30300227FD3502006F2C63 /* DetailProfileButton.swift */,
+				FE30300427FD37D9006F2C63 /* PresentView */,
+			);
+			path = SubComponents;
+			sourceTree = "<group>";
+		};
+		FE30300427FD37D9006F2C63 /* PresentView */ = {
+			isa = PBXGroup;
+			children = (
+				FE30300527FD37F2006F2C63 /* DetailProfileVC.swift */,
+			);
+			path = PresentView;
+			sourceTree = "<group>";
+		};
+		FE30300727FD3CA7006F2C63 /* PresentView */ = {
+			isa = PBXGroup;
+			children = (
+				FE30300827FD3DC6006F2C63 /* DirectorBlogWebkitView.swift */,
+			);
+			path = PresentView;
 			sourceTree = "<group>";
 		};
 		FE38F44827F7170F008BBE8B /* LoginPage */ = {
@@ -661,9 +728,8 @@
 		FE7FC0DF27C4ACE3009EB2AE /* Header&Footer */ = {
 			isa = PBXGroup;
 			children = (
-				FE078F2E27C3634B00D19E34 /* SideMenuHeaderView.swift */,
-				FE8F025D27E9EC2D0053224A /* SideMenuFooterView.swift */,
-				FE8F025F27E9FC870053224A /* SubContent */,
+				FE30300027FD348C006F2C63 /* Header */,
+				FE302FFF27FD3486006F2C63 /* Footer */,
 			);
 			path = "Header&Footer";
 			sourceTree = "<group>";
@@ -807,10 +873,10 @@
 		FE8D302D27FC682900F55EEE /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				FE8D302E27FC682900F55EEE /* wwww.swift */,
-				FE8D302F27FC682900F55EEE /* SubComponents */,
 				FE8D305527FC682900F55EEE /* StaticSectionCell.swift */,
 				FE8D305627FC682900F55EEE /* StaticSectionViewModel.swift */,
+				FE8D302E27FC682900F55EEE /* wwww.swift */,
+				FE8D302F27FC682900F55EEE /* SubComponents */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -818,16 +884,10 @@
 		FE8D302F27FC682900F55EEE /* SubComponents */ = {
 			isa = PBXGroup;
 			children = (
-				FE8D303027FC682900F55EEE /* Section7 */,
-				FE8D303627FC682900F55EEE /* Section1 */,
-				FE8D303A27FC682900F55EEE /* Section6 */,
 				FE8D303C27FC682900F55EEE /* StaticCellProtocol */,
-				FE8D303E27FC682900F55EEE /* EventPage */,
 				FE8D304027FC682900F55EEE /* StaticCellUIType */,
-				FE8D304627FC682900F55EEE /* Section3 */,
-				FE8D304A27FC682900F55EEE /* Section4 */,
-				FE8D304D27FC682900F55EEE /* Section5 */,
-				FE8D305227FC682900F55EEE /* Section2 */,
+				FE05950A27FC6AB100C2BFB5 /* PresentView */,
+				FE8D303E27FC682900F55EEE /* EventPage */,
 			);
 			path = SubComponents;
 			sourceTree = "<group>";
@@ -871,7 +931,6 @@
 		FE8D303A27FC682900F55EEE /* Section6 */ = {
 			isa = PBXGroup;
 			children = (
-				FE8D303B27FC682900F55EEE /* StaticBannerCell.swift */,
 			);
 			path = Section6;
 			sourceTree = "<group>";
@@ -900,6 +959,7 @@
 				FE8D304327FC682900F55EEE /* StaticSmall_3Cell.swift */,
 				FE8D304427FC682900F55EEE /* StaticMedium_2Cell.swift */,
 				FE8D304527FC682900F55EEE /* StaticMediumCell.swift */,
+				FE8D303B27FC682900F55EEE /* StaticBannerCell.swift */,
 			);
 			path = StaticCellUIType;
 			sourceTree = "<group>";
@@ -1086,11 +1146,14 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		FE8F025F27E9FC870053224A /* SubContent */ = {
+		FE8F025F27E9FC870053224A /* SubComponents */ = {
 			isa = PBXGroup;
 			children = (
+				FE302FFB27FD16DE006F2C63 /* LogoutView.swift */,
+				FE302FFD27FD2DE9006F2C63 /* CopyrightInfoView.swift */,
+				FE30300727FD3CA7006F2C63 /* PresentView */,
 			);
-			path = SubContent;
+			path = SubComponents;
 			sourceTree = "<group>";
 		};
 		FE94DD5827B655190017D776 = {
@@ -1362,8 +1425,10 @@
 				FE2BD69127CDC9C400A9FB73 /* MainVC.swift in Sources */,
 				FE38F46F27F719F5008BBE8B /* CreateUserButton.swift in Sources */,
 				FE38F46927F7170F008BBE8B /* UserModel.swift in Sources */,
+				FE302FFC27FD16DE006F2C63 /* LogoutView.swift in Sources */,
 				FE38F47127F71A93008BBE8B /* CreateUserButtonViewModel.swift in Sources */,
 				FE85B4E927EAA88C0031F5AC /* SideMenuView+Protocol.swift in Sources */,
+				FE30300327FD3502006F2C63 /* DetailProfileButton.swift in Sources */,
 				FE078F1B27C34C7E00D19E34 /* SimpleProfileView.swift in Sources */,
 				FE9AF67B27F20DD0006E8472 /* RxUserHttpManager.swift in Sources */,
 				FE8D306827FC682A00F55EEE /* EventPage1.swift in Sources */,
@@ -1440,6 +1505,7 @@
 				FE8D306627FC682A00F55EEE /* StaticBannerCell.swift in Sources */,
 				FE2FD15727EDA31A0094E094 /* RxHttpClient.swift in Sources */,
 				FEF9811E27FA7C8A00AA784F /* RxBannerViewDelegate.swift in Sources */,
+				FE302FFE27FD2DE9006F2C63 /* CopyrightInfoView.swift in Sources */,
 				FE18A28727C5CA4F00E56F39 /* MyBannerByAPIViewModel.swift in Sources */,
 				FEBA011727CDE08300E74FCB /* KiflixHttpManager.swift in Sources */,
 				FE8D306F27FC682A00F55EEE /* StaticCell3_1.swift in Sources */,
@@ -1484,11 +1550,13 @@
 				FE8D306427FC682A00F55EEE /* StaticCell1_1.swift in Sources */,
 				FE8EF16727F425E300EEAC69 /* SignupNameZoneViewModel.swift in Sources */,
 				FE8EF15F27F425E300EEAC69 /* SignupPwZone.swift in Sources */,
+				FE30300927FD3DC6006F2C63 /* DirectorBlogWebkitView.swift in Sources */,
 				FE8EF15D27F425E300EEAC69 /* SignupErrorLabel.swift in Sources */,
 				FE7FC0E427C4AE90009EB2AE /* SideMenuCell.swift in Sources */,
 				FE8D306227FC682A00F55EEE /* StaticCell7_4.swift in Sources */,
 				FE8D307827FC682A00F55EEE /* StaticItem.swift in Sources */,
 				FE46F4F627D1AD6500DB31EE /* DescriptionView.swift in Sources */,
+				FE30300627FD37F2006F2C63 /* DetailProfileVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

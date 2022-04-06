@@ -10,6 +10,21 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
+class BeminVC: BaseVC {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let beminCollectionVC = MainBeminVC()
+        addChild(beminCollectionVC)
+        beminCollectionVC.view.frame = view.frame
+        view.addSubview(beminCollectionVC.view)
+        beminCollectionVC.didMove(toParent: self)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = "배민"
+    }
+}
+
 class MainBeminVC: UIViewController {
     private let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
     private let viewModel = MainBeminViewModel()
