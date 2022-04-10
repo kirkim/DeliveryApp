@@ -94,7 +94,6 @@
 		FE8BE4BF27F2CD2C002F744F /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8BE4BE27F2CD2C002F744F /* CustomError.swift */; };
 		FE8D305D27FC682A00F55EEE /* MainBeminCVViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D302827FC682900F55EEE /* MainBeminCVViewModel.swift */; };
 		FE8D305E27FC682A00F55EEE /* BeminSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D302B27FC682900F55EEE /* BeminSearchView.swift */; };
-		FE8D305F27FC682A00F55EEE /* wwww.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D302E27FC682900F55EEE /* wwww.swift */; };
 		FE8D306027FC682A00F55EEE /* StaticCell7_3.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D303227FC682900F55EEE /* StaticCell7_3.swift */; };
 		FE8D306127FC682A00F55EEE /* StaticCell7_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D303327FC682900F55EEE /* StaticCell7_1.swift */; };
 		FE8D306227FC682A00F55EEE /* StaticCell7_4.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D303427FC682900F55EEE /* StaticCell7_4.swift */; };
@@ -171,6 +170,28 @@
 		FEBF326E27E9A26000DFB792 /* TextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF326D27E9A26000DFB792 /* TextVC.swift */; };
 		FEF9811E27FA7C8A00AA784F /* RxBannerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF9811D27FA7C8A00AA784F /* RxBannerViewDelegate.swift */; };
 		FEFAA53E27E6038300BA0706 /* RxGesture in Frameworks */ = {isa = PBXBuildFile; productRef = FEFAA53D27E6038300BA0706 /* RxGesture */; };
+		FEFBB5DF28029D3F00864528 /* TopBarMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFBB5C928029D3F00864528 /* TopBarMainViewController.swift */; };
+		FEFBB5E028029D3F00864528 /* TopBarMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFBB5CA28029D3F00864528 /* TopBarMainViewModel.swift */; };
+		FEFBB5E128029D3F00864528 /* TopBarLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFBB5CD28029D3F00864528 /* TopBarLayoutView.swift */; };
+		FEFBB5E228029D3F00864528 /* TopBarLayoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFBB5CE28029D3F00864528 /* TopBarLayoutViewModel.swift */; };
+		FEFBB5E328029D3F00864528 /* TopBarLayoutViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFBB5D028029D3F00864528 /* TopBarLayoutViewCell.swift */; };
+		FEFBB5E428029D3F00864528 /* TopBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFBB5D228029D3F00864528 /* TopBarViewModel.swift */; };
+		FEFBB5E528029D3F00864528 /* TopBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFBB5D428029D3F00864528 /* TopBarCell.swift */; };
+		FEFBB5E628029D3F00864528 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFBB5D528029D3F00864528 /* TopBar.swift */; };
+		FEFBB5E728029D3F00864528 /* BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFBB5D728029D3F00864528 /* BottomBar.swift */; };
+		FEFBB5E828029D3F00864528 /* BottomBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFBB5D828029D3F00864528 /* BottomBarViewModel.swift */; };
+		FEFBB5E928029D3F00864528 /* BundleBaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFBB5DA28029D3F00864528 /* BundleBaseButton.swift */; };
+		FEFBB5EA28029D3F00864528 /* BundleBaseButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFBB5DB28029D3F00864528 /* BundleBaseButtonViewModel.swift */; };
+		FEFBB5EB28029D3F00864528 /* TopBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFBB5DD28029D3F00864528 /* TopBarItem.swift */; };
+		FEFBB5EC28029D3F00864528 /* BottomBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFBB5DE28029D3F00864528 /* BottomBarItem.swift */; };
+		FEFBB5EE28029E3A00864528 /* StaticSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFBB5ED28029E3A00864528 /* StaticSectionModel.swift */; };
+		FEFBB5F728029E7200864528 /* Test2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFBB5F028029E7100864528 /* Test2.swift */; };
+		FEFBB5F828029E7200864528 /* ButtonVC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFBB5F128029E7100864528 /* ButtonVC3.swift */; };
+		FEFBB5F928029E7200864528 /* Test1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFBB5F228029E7100864528 /* Test1.swift */; };
+		FEFBB5FA28029E7200864528 /* ButtonVC4.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFBB5F328029E7100864528 /* ButtonVC4.swift */; };
+		FEFBB5FB28029E7200864528 /* Test3.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFBB5F428029E7200864528 /* Test3.swift */; };
+		FEFBB5FC28029E7200864528 /* ButtonVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFBB5F528029E7200864528 /* ButtonVC1.swift */; };
+		FEFBB5FD28029E7200864528 /* ButtonVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFBB5F628029E7200864528 /* ButtonVC2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -262,7 +283,6 @@
 		FE8BE4BE27F2CD2C002F744F /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		FE8D302827FC682900F55EEE /* MainBeminCVViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainBeminCVViewModel.swift; sourceTree = "<group>"; };
 		FE8D302B27FC682900F55EEE /* BeminSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeminSearchView.swift; sourceTree = "<group>"; };
-		FE8D302E27FC682900F55EEE /* wwww.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wwww.swift; sourceTree = "<group>"; };
 		FE8D303227FC682900F55EEE /* StaticCell7_3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticCell7_3.swift; sourceTree = "<group>"; };
 		FE8D303327FC682900F55EEE /* StaticCell7_1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticCell7_1.swift; sourceTree = "<group>"; };
 		FE8D303427FC682900F55EEE /* StaticCell7_4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticCell7_4.swift; sourceTree = "<group>"; };
@@ -336,6 +356,28 @@
 		FEBF326127E9A16600DFB792 /* BannerContent+protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BannerContent+protocol.swift"; sourceTree = "<group>"; };
 		FEBF326D27E9A26000DFB792 /* TextVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextVC.swift; sourceTree = "<group>"; };
 		FEF9811D27FA7C8A00AA784F /* RxBannerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxBannerViewDelegate.swift; sourceTree = "<group>"; };
+		FEFBB5C928029D3F00864528 /* TopBarMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBarMainViewController.swift; sourceTree = "<group>"; };
+		FEFBB5CA28029D3F00864528 /* TopBarMainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBarMainViewModel.swift; sourceTree = "<group>"; };
+		FEFBB5CD28029D3F00864528 /* TopBarLayoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBarLayoutView.swift; sourceTree = "<group>"; };
+		FEFBB5CE28029D3F00864528 /* TopBarLayoutViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBarLayoutViewModel.swift; sourceTree = "<group>"; };
+		FEFBB5D028029D3F00864528 /* TopBarLayoutViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBarLayoutViewCell.swift; sourceTree = "<group>"; };
+		FEFBB5D228029D3F00864528 /* TopBarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBarViewModel.swift; sourceTree = "<group>"; };
+		FEFBB5D428029D3F00864528 /* TopBarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBarCell.swift; sourceTree = "<group>"; };
+		FEFBB5D528029D3F00864528 /* TopBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
+		FEFBB5D728029D3F00864528 /* BottomBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomBar.swift; sourceTree = "<group>"; };
+		FEFBB5D828029D3F00864528 /* BottomBarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomBarViewModel.swift; sourceTree = "<group>"; };
+		FEFBB5DA28029D3F00864528 /* BundleBaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleBaseButton.swift; sourceTree = "<group>"; };
+		FEFBB5DB28029D3F00864528 /* BundleBaseButtonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleBaseButtonViewModel.swift; sourceTree = "<group>"; };
+		FEFBB5DD28029D3F00864528 /* TopBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBarItem.swift; sourceTree = "<group>"; };
+		FEFBB5DE28029D3F00864528 /* BottomBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomBarItem.swift; sourceTree = "<group>"; };
+		FEFBB5ED28029E3A00864528 /* StaticSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticSectionModel.swift; sourceTree = "<group>"; };
+		FEFBB5F028029E7100864528 /* Test2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test2.swift; sourceTree = "<group>"; };
+		FEFBB5F128029E7100864528 /* ButtonVC3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonVC3.swift; sourceTree = "<group>"; };
+		FEFBB5F228029E7100864528 /* Test1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test1.swift; sourceTree = "<group>"; };
+		FEFBB5F328029E7100864528 /* ButtonVC4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonVC4.swift; sourceTree = "<group>"; };
+		FEFBB5F428029E7200864528 /* Test3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test3.swift; sourceTree = "<group>"; };
+		FEFBB5F528029E7200864528 /* ButtonVC1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonVC1.swift; sourceTree = "<group>"; };
+		FEFBB5F628029E7200864528 /* ButtonVC2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonVC2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -390,6 +432,7 @@
 		FE078F1927C34C5000D19E34 /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
+				FEFBB5C828029D3F00864528 /* TopBarViewController */,
 				FEBF325027E9A16600DFB792 /* Banner+RxSwift */,
 				FE41DC9427D706B400317493 /* MyBanner--Trash */,
 				FE85B4F927EAB4EA0031F5AC /* SizeMaster */,
@@ -873,9 +916,10 @@
 		FE8D302D27FC682900F55EEE /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				FEFBB5EF28029E6500864528 /* SampleVC */,
 				FE8D305527FC682900F55EEE /* StaticSectionCell.swift */,
 				FE8D305627FC682900F55EEE /* StaticSectionViewModel.swift */,
-				FE8D302E27FC682900F55EEE /* wwww.swift */,
+				FEFBB5ED28029E3A00864528 /* StaticSectionModel.swift */,
 				FE8D302F27FC682900F55EEE /* SubComponents */,
 			);
 			path = Presentation;
@@ -1291,6 +1335,105 @@
 			path = "Login&SignUp";
 			sourceTree = "<group>";
 		};
+		FEFBB5C828029D3F00864528 /* TopBarViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FEFBB5C928029D3F00864528 /* TopBarMainViewController.swift */,
+				FEFBB5CA28029D3F00864528 /* TopBarMainViewModel.swift */,
+				FEFBB5CB28029D3F00864528 /* SubComponents */,
+				FEFBB5DC28029D3F00864528 /* Entities */,
+			);
+			path = TopBarViewController;
+			sourceTree = "<group>";
+		};
+		FEFBB5CB28029D3F00864528 /* SubComponents */ = {
+			isa = PBXGroup;
+			children = (
+				FEFBB5CC28029D3F00864528 /* LayoutView */,
+				FEFBB5D128029D3F00864528 /* TopBar */,
+				FEFBB5D628029D3F00864528 /* BottomBar */,
+			);
+			path = SubComponents;
+			sourceTree = "<group>";
+		};
+		FEFBB5CC28029D3F00864528 /* LayoutView */ = {
+			isa = PBXGroup;
+			children = (
+				FEFBB5CD28029D3F00864528 /* TopBarLayoutView.swift */,
+				FEFBB5CE28029D3F00864528 /* TopBarLayoutViewModel.swift */,
+				FEFBB5CF28029D3F00864528 /* Cell */,
+			);
+			path = LayoutView;
+			sourceTree = "<group>";
+		};
+		FEFBB5CF28029D3F00864528 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FEFBB5D028029D3F00864528 /* TopBarLayoutViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FEFBB5D128029D3F00864528 /* TopBar */ = {
+			isa = PBXGroup;
+			children = (
+				FEFBB5D228029D3F00864528 /* TopBarViewModel.swift */,
+				FEFBB5D328029D3F00864528 /* Cell */,
+				FEFBB5D528029D3F00864528 /* TopBar.swift */,
+			);
+			path = TopBar;
+			sourceTree = "<group>";
+		};
+		FEFBB5D328029D3F00864528 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FEFBB5D428029D3F00864528 /* TopBarCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FEFBB5D628029D3F00864528 /* BottomBar */ = {
+			isa = PBXGroup;
+			children = (
+				FEFBB5D728029D3F00864528 /* BottomBar.swift */,
+				FEFBB5D828029D3F00864528 /* BottomBarViewModel.swift */,
+				FEFBB5D928029D3F00864528 /* SubComponents */,
+			);
+			path = BottomBar;
+			sourceTree = "<group>";
+		};
+		FEFBB5D928029D3F00864528 /* SubComponents */ = {
+			isa = PBXGroup;
+			children = (
+				FEFBB5DA28029D3F00864528 /* BundleBaseButton.swift */,
+				FEFBB5DB28029D3F00864528 /* BundleBaseButtonViewModel.swift */,
+			);
+			path = SubComponents;
+			sourceTree = "<group>";
+		};
+		FEFBB5DC28029D3F00864528 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				FEFBB5DD28029D3F00864528 /* TopBarItem.swift */,
+				FEFBB5DE28029D3F00864528 /* BottomBarItem.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		FEFBB5EF28029E6500864528 /* SampleVC */ = {
+			isa = PBXGroup;
+			children = (
+				FEFBB5F528029E7200864528 /* ButtonVC1.swift */,
+				FEFBB5F628029E7200864528 /* ButtonVC2.swift */,
+				FEFBB5F128029E7100864528 /* ButtonVC3.swift */,
+				FEFBB5F328029E7100864528 /* ButtonVC4.swift */,
+				FEFBB5F228029E7100864528 /* Test1.swift */,
+				FEFBB5F028029E7100864528 /* Test2.swift */,
+				FEFBB5F428029E7200864528 /* Test3.swift */,
+			);
+			path = SampleVC;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1419,29 +1562,38 @@
 			files = (
 				FE7FC0CD27C48F22009EB2AE /* TestView1-1.swift in Sources */,
 				FE8EF12827F3E74F00EEAC69 /* UserType.swift in Sources */,
+				FEFBB5E928029D3F00864528 /* BundleBaseButton.swift in Sources */,
 				FE63140E27DB6DFC008F4D48 /* BannerPlistContent+protocol.swift in Sources */,
 				FE2D52F227F537EA00106E5A /* SimpleTextFieldViewModel.swift in Sources */,
 				FE38F46427F7170F008BBE8B /* LoginPwZone.swift in Sources */,
 				FE2BD69127CDC9C400A9FB73 /* MainVC.swift in Sources */,
+				FEFBB5EA28029D3F00864528 /* BundleBaseButtonViewModel.swift in Sources */,
 				FE38F46F27F719F5008BBE8B /* CreateUserButton.swift in Sources */,
 				FE38F46927F7170F008BBE8B /* UserModel.swift in Sources */,
+				FEFBB5E728029D3F00864528 /* BottomBar.swift in Sources */,
 				FE302FFC27FD16DE006F2C63 /* LogoutView.swift in Sources */,
 				FE38F47127F71A93008BBE8B /* CreateUserButtonViewModel.swift in Sources */,
+				FEFBB5F828029E7200864528 /* ButtonVC3.swift in Sources */,
 				FE85B4E927EAA88C0031F5AC /* SideMenuView+Protocol.swift in Sources */,
 				FE30300327FD3502006F2C63 /* DetailProfileButton.swift in Sources */,
+				FEFBB5EC28029D3F00864528 /* BottomBarItem.swift in Sources */,
 				FE078F1B27C34C7E00D19E34 /* SimpleProfileView.swift in Sources */,
 				FE9AF67B27F20DD0006E8472 /* RxUserHttpManager.swift in Sources */,
 				FE8D306827FC682A00F55EEE /* EventPage1.swift in Sources */,
 				FE74FEAF27CDBDDE00F40D5F /* MainTabBarController.swift in Sources */,
 				FE8EF16127F425E300EEAC69 /* CheckIdButton.swift in Sources */,
 				FE8D306327FC682A00F55EEE /* StaticCell7_2.swift in Sources */,
+				FEFBB5FD28029E7200864528 /* ButtonVC2.swift in Sources */,
 				FE41DC9E27D706B400317493 /* MyBannerByAPIView.swift in Sources */,
 				FE8D307027FC682A00F55EEE /* StaticCell4_1.swift in Sources */,
+				FEFBB5FA28029E7200864528 /* ButtonVC4.swift in Sources */,
 				FE18A28927C5DE9B00E56F39 /* BannerHttpManager.swift in Sources */,
 				FE8D305E27FC682A00F55EEE /* BeminSearchView.swift in Sources */,
+				FEFBB5F928029E7200864528 /* Test1.swift in Sources */,
 				FE8F025E27E9EC2D0053224A /* SideMenuFooterView.swift in Sources */,
 				FE8D306027FC682A00F55EEE /* StaticCell7_3.swift in Sources */,
 				FE74FE9427CDA82D00F40D5F /* BaseVC.swift in Sources */,
+				FEFBB5FC28029E7200864528 /* ButtonVC1.swift in Sources */,
 				FE2D52EB27F5347800106E5A /* NormalTextField.swift in Sources */,
 				FE3EA96727BB8AC100DA36EA /* SimpleTextField.swift in Sources */,
 				FE38F46627F7170F008BBE8B /* BasicLoginViewModel.swift in Sources */,
@@ -1458,11 +1610,13 @@
 				FE63140227DB58C5008F4D48 /* MyBannerTotalListVC.swift in Sources */,
 				FE078F2F27C3634B00D19E34 /* SideMenuHeaderView.swift in Sources */,
 				FE84E49627D0666600B30F57 /* KiflixPlayer.swift in Sources */,
+				FEFBB5E128029D3F00864528 /* TopBarLayoutView.swift in Sources */,
 				FE078F3727C3737200D19E34 /* SizeMaster.swift in Sources */,
 				FEBF326427E9A16600DFB792 /* RxBannerButtonViewModel.swift in Sources */,
 				FEBF326B27E9A16600DFB792 /* StaticBannerPlistModel.swift in Sources */,
 				FEBF326E27E9A26000DFB792 /* TextVC.swift in Sources */,
 				FE8D307927FC682A00F55EEE /* RxStaticSectionData.swift in Sources */,
+				FEFBB5E628029D3F00864528 /* TopBar.swift in Sources */,
 				FEBF326627E9A16600DFB792 /* RxBannerListViewModel.swift in Sources */,
 				FE8D307527FC682A00F55EEE /* StaticSectionCell.swift in Sources */,
 				FE8EF16327F425E300EEAC69 /* SignupIdZoneViewModel.swift in Sources */,
@@ -1472,7 +1626,9 @@
 				FE8BE4BF27F2CD2C002F744F /* CustomError.swift in Sources */,
 				FE38F46A27F7170F008BBE8B /* LoginUserModel.swift in Sources */,
 				FE47CAD027C114210077806D /* UserHttpManager.swift in Sources */,
+				FEFBB5E228029D3F00864528 /* TopBarLayoutViewModel.swift in Sources */,
 				FE38F46127F7170F008BBE8B /* LoginIdZone.swift in Sources */,
+				FEFBB5E428029D3F00864528 /* TopBarViewModel.swift in Sources */,
 				FE8EF16427F425E300EEAC69 /* JoinButtonViewModel.swift in Sources */,
 				FE8EF16827F425E300EEAC69 /* RxSignupPageViewModel.swift in Sources */,
 				FE41DC9C27D706B400317493 /* MyBannerCell.swift in Sources */,
@@ -1488,13 +1644,13 @@
 				FE38F46227F7170F008BBE8B /* LoginIdZoneViewModel.swift in Sources */,
 				FE2FE4BC27CE086C004B8871 /* KiflixCollectionView.swift in Sources */,
 				FE8EF12C27F3E7F500EEAC69 /* UrlType+Protocol.swift in Sources */,
-				FE8D305F27FC682A00F55EEE /* wwww.swift in Sources */,
 				FE2D52ED27F534AB00106E5A /* SecretTextField.swift in Sources */,
 				FEBF326827E9A16600DFB792 /* RxBannerView.swift in Sources */,
 				FE38F45E27F7170F008BBE8B /* LoginPageViewModel.swift in Sources */,
 				FE8EF16227F425E300EEAC69 /* SignupIdZone.swift in Sources */,
 				FE8EF15E27F425E300EEAC69 /* SignupPwZoneViewModel.swift in Sources */,
 				FE74FEAC27CDBCA100F40D5F /* KiflixVC.swift in Sources */,
+				FEFBB5FB28029E7200864528 /* Test3.swift in Sources */,
 				FE078F1F27C353B500D19E34 /* SideMenuVC.swift in Sources */,
 				FE8EF16927F425E300EEAC69 /* SignUpPageModel.swift in Sources */,
 				FEA95FFE27E1840B00FD78B3 /* MyBannerUsingRxswift.swift in Sources */,
@@ -1502,10 +1658,14 @@
 				FE2BD69727CDD34400A9FB73 /* KiflixCollectionCell.swift in Sources */,
 				FE8D307427FC682A00F55EEE /* StaticCell2_1.swift in Sources */,
 				FE8EF15C27F425E300EEAC69 /* RxSignupPageVC.swift in Sources */,
+				FEFBB5E528029D3F00864528 /* TopBarCell.swift in Sources */,
 				FE8D306627FC682A00F55EEE /* StaticBannerCell.swift in Sources */,
 				FE2FD15727EDA31A0094E094 /* RxHttpClient.swift in Sources */,
+				FEFBB5E828029D3F00864528 /* BottomBarViewModel.swift in Sources */,
+				FEFBB5DF28029D3F00864528 /* TopBarMainViewController.swift in Sources */,
 				FEF9811E27FA7C8A00AA784F /* RxBannerViewDelegate.swift in Sources */,
 				FE302FFE27FD2DE9006F2C63 /* CopyrightInfoView.swift in Sources */,
+				FEFBB5EE28029E3A00864528 /* StaticSectionModel.swift in Sources */,
 				FE18A28727C5CA4F00E56F39 /* MyBannerByAPIViewModel.swift in Sources */,
 				FEBA011727CDE08300E74FCB /* KiflixHttpManager.swift in Sources */,
 				FE8D306F27FC682A00F55EEE /* StaticCell3_1.swift in Sources */,
@@ -1513,16 +1673,19 @@
 				FE85B4F327EAAC5E0031F5AC /* KiflixModel.swift in Sources */,
 				FEA9600727E19C5E00FD78B3 /* MyBannerBasicView.swift in Sources */,
 				FE63140527DB6402008F4D48 /* MyBannerByPlistView.swift in Sources */,
+				FEFBB5F728029E7200864528 /* Test2.swift in Sources */,
 				FE38F46327F7170F008BBE8B /* LoginPwZoneViewModel.swift in Sources */,
 				FE8EF16527F425E300EEAC69 /* JoinButton.swift in Sources */,
 				FE8D306927FC682A00F55EEE /* StaticBigCell.swift in Sources */,
 				FE8E456127D747DA0025779F /* MyBannerViewDelegate.swift in Sources */,
 				FE47CACC27C0C5570077806D /* SignUpPageViewModel.swift in Sources */,
+				FEFBB5EB28029D3F00864528 /* TopBarItem.swift in Sources */,
 				FE8D306A27FC682A00F55EEE /* StaticSmall_4Cell.swift in Sources */,
 				FE38F45F27F7170F008BBE8B /* LoginButtonViewModel.swift in Sources */,
 				FE2067EF27BCFDC7005EBEB5 /* KeyboardAnimation.swift in Sources */,
 				FE57F23B27CF29C000B205F9 /* KiflixDetailVC.swift in Sources */,
 				FE84E49D27D0718000B30F57 /* KiflixPlayerVC.swift in Sources */,
+				FEFBB5E028029D3F00864528 /* TopBarMainViewModel.swift in Sources */,
 				FE8EF16B27F42E8300EEAC69 /* CustomAlert.swift in Sources */,
 				FE8D306C27FC682A00F55EEE /* StaticMedium_2Cell.swift in Sources */,
 				FE8EF16027F425E300EEAC69 /* CheckIdButtonViewModel.swift in Sources */,
@@ -1531,6 +1694,7 @@
 				FE94DD6527B655190017D776 /* AppDelegate.swift in Sources */,
 				FE8D307B27FC682A00F55EEE /* MainBeminVC.swift in Sources */,
 				FE7FC0D927C48F4F009EB2AE /* TestView3-1.swift in Sources */,
+				FEFBB5E328029D3F00864528 /* TopBarLayoutViewCell.swift in Sources */,
 				FE8EF16627F425E300EEAC69 /* SignupNameZone.swift in Sources */,
 				FE38F46B27F7170F008BBE8B /* LoginPageVC.swift in Sources */,
 				FE8D306B27FC682A00F55EEE /* StaticSmall_3Cell.swift in Sources */,

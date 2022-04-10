@@ -9,17 +9,17 @@
 		<array>
 			<dict>
 				<key>title</key>
-				<string>타이틀1</string>
+				<string>배민1</string>
 				<key>description</key>
-				<string>xxxxxxxxxxxxxxxx</string>
+				<string>한 번에 한 집만 빠르게 배달해요!</string>
 				<key>imageName</key>
 				<string>free.png</string>
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>타이틀2</string>
+				<string>배달</string>
 				<key>description</key>
-				<string>xxxxxxxxxxxxxxxx</string>
+				<string>세상은 넓고 맛집은 많다</string>
 				<key>imageName</key>
 				<string>free.png</string>
 			</dict>
@@ -32,9 +32,9 @@
 		<array>
 			<dict>
 				<key>title</key>
-				<string>타이틀3</string>
+				<string>포장</string>
 				<key>description</key>
-				<string>xxxxxxxxxxxxxxxx</string>
+				<string>가까운 가게는 직접 가지러 가지요</string>
 				<key>imageName</key>
 				<string>free.png</string>
 			</dict>
@@ -47,17 +47,17 @@
 		<array>
 			<dict>
 				<key>title</key>
-				<string>타이틀4</string>
+				<string>B마트</string>
 				<key>description</key>
-				<string>xxxxxxxxxxx</string>
+				<string>장보기도 즉시배달</string>
 				<key>imageName</key>
 				<string>free.png</string>
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>타이틀5</string>
+				<string>간편식/밀키트</string>
 				<key>description</key>
-				<string>xxxxxxxxxxx</string>
+				<string>뚝딱 만드는 근사한 한끼</string>
 				<key>imageName</key>
 				<string>free.png</string>
 			</dict>
@@ -70,9 +70,9 @@
 		<array>
 			<dict>
 				<key>title</key>
-				<string>타이틀6</string>
+				<string>배민스토어</string>
 				<key>description</key>
-				<string>xxxxxxxxxxx</string>
+				<string>꾸까의 예쁜 꽃을 바로 배달!</string>
 				<key>imageName</key>
 				<string>free.png</string>
 			</dict>
@@ -85,7 +85,7 @@
 		<array>
 			<dict>
 				<key>title</key>
-				<string>타이틀7</string>
+				<string>쇼핑라이브</string>
 				<key>description</key>
 				<string></string>
 				<key>imageName</key>
@@ -93,7 +93,7 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>타이틀8</string>
+				<string>선물하기</string>
 				<key>description</key>
 				<string></string>
 				<key>imageName</key>
@@ -101,7 +101,7 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>타이틀9</string>
+				<string>전국별미</string>
 				<key>description</key>
 				<string></string>
 				<key>imageName</key>
@@ -131,7 +131,7 @@
 		<array>
 			<dict>
 				<key>title</key>
-				<string>타이틀10</string>
+				<string>포인트</string>
 				<key>description</key>
 				<string></string>
 				<key>imageName</key>
@@ -139,7 +139,7 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>타이틀11</string>
+				<string>쿠폰함</string>
 				<key>description</key>
 				<string></string>
 				<key>imageName</key>
@@ -147,7 +147,7 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>타이틀12</string>
+				<string>선물함</string>
 				<key>description</key>
 				<string></string>
 				<key>imageName</key>
@@ -155,7 +155,7 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>타이틀13</string>
+				<string>찜</string>
 				<key>description</key>
 				<string></string>
 				<key>imageName</key>

@@ -21,7 +21,7 @@ class StaticMedium_2Cell: UICollectionViewCell, StaticCellProtocol {
     
     private func attribute() {
         contentView.backgroundColor = .yellow
-        contentView.layer.cornerRadius = 5
+        contentView.layer.cornerRadius = 10
         contentView.clipsToBounds = true
         
         titleLabel.font = .systemFont(ofSize: 25, weight: .black)
@@ -52,7 +52,7 @@ class StaticMedium_2Cell: UICollectionViewCell, StaticCellProtocol {
         
         descriptionLabel.snp.makeConstraints {
             $0.leading.equalTo(titleLabel.snp.leading)
-            $0.trailing.equalToSuperview().offset(-50)
+            $0.width.equalTo(90)
             $0.top.equalTo(titleLabel.snp.bottom).offset(5)
         }
     }

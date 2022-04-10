@@ -13,7 +13,9 @@ import RxDataSources
 struct StaticSectionViewModel {
     var sectionContents: [RxStaticSectionData]
     private var sectionUIType: [StaticCellUIType]
+    private let staticSectionModel = StaticSectionModel()
     
+    private let disposeBag = DisposeBag()
     // View -> ViewModel
     let itemSelected = PublishRelay<IndexPath>()
     // ViewModel -> View
@@ -30,11 +32,10 @@ struct StaticSectionViewModel {
         self.sectionUIType = parsingPlist.map{ $0.sectionType }
         self.sectionContents = parsingPlist.map { RxStaticSectionData(items: $0.contentItem) }
         
-        presentVC = itemSelected
-            .map { indexPath in
-                return wwww()
-            }
-            .asDriver(onErrorJustReturn: UIViewController())
+        itemSelected.bind(to: staticSectionModel.itemSelected)
+            .disposed(by: disposeBag)
+        
+        presentVC = staticSectionModel.presentVC
     }
     
     // RxDataSources 형식으로 만든 셀 데이터

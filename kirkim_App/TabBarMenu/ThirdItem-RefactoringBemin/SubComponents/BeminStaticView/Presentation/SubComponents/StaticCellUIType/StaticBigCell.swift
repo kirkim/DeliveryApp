@@ -22,7 +22,7 @@ class StaticBigCell: UICollectionViewCell, StaticCellProtocol {
     
     private func attribute() {
         contentView.backgroundColor = .red
-        contentView.layer.cornerRadius = 5
+        contentView.layer.cornerRadius = 10
         contentView.clipsToBounds = true
         
         titleLabel.font = .systemFont(ofSize: 25, weight: .black)
@@ -31,7 +31,7 @@ class StaticBigCell: UICollectionViewCell, StaticCellProtocol {
         imageView.contentMode = .scaleToFill
         
         descriptionLabel.font = .systemFont(ofSize: 15, weight: .medium)
-        descriptionLabel.textColor = .white
+        descriptionLabel.textColor = .black
         descriptionLabel.numberOfLines = 2
     }
     

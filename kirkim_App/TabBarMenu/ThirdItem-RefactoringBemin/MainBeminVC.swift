@@ -41,9 +41,14 @@ class MainBeminVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     private func attribute() {
         self.view.backgroundColor = .white
-        self.collectionView.register(StaticSectionCell.self, forCellWithReuseIdentifier: "test1")
+        self.collectionView.register(StaticSectionCell.self, forCellWithReuseIdentifier: "StaticSectionCell")
         self.collectionView.collectionViewLayout = createLayout()
 //        self.collectionView.refreshControl = UIRefreshControl()
 //        self.collectionView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
@@ -70,10 +75,11 @@ class MainBeminVC: UIViewController {
         
         viewModel.cellData
             .drive(collectionView.rx.items) { cv, row, data in
-                let cell = cv.dequeueReusableCell(withReuseIdentifier: "test1", for: IndexPath(row: row, section: 0)) as! StaticSectionCell
+                let cell = cv.dequeueReusableCell(withReuseIdentifier: "StaticSectionCell", for: IndexPath(row: row, section: 0)) as! StaticSectionCell
                 cell.bind(staticSectionViewModel)
                 staticSectionViewModel.presentVC.drive { [weak self] vc in
-                    self?.present(vc, animated: true)
+                    self?.navigationController?.pushViewController(vc, animated: true)
+                    self?.tabBarController?.tabBar.isHidden = true
                 }
                 .disposed(by: self.disposeBag)
                 return cell

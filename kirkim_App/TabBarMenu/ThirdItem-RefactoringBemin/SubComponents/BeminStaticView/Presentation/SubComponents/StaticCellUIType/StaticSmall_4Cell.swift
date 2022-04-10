@@ -20,7 +20,7 @@ class StaticSmall_4Cell: UICollectionViewCell, StaticCellProtocol {
     
     private func attribute() {
         contentView.backgroundColor = .purple
-        contentView.layer.cornerRadius = 5
+        contentView.layer.cornerRadius = 10
         contentView.clipsToBounds = true
         
         titleLabel.font = .systemFont(ofSize: 15, weight: .black)

@@ -1,16 +1,16 @@
 //
-//  wwww.swift
-//  RefactoringBeminVC
+//  Test3.swift
+//  CustomTabBar
 //
-//  Created by 김기림 on 2022/04/05.
+//  Created by 김기림 on 2022/04/07.
 //
 
 import UIKit
 
-class wwww: UIViewController {
+class Test3: UIViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        self.view.backgroundColor = .brown
+        self.view.backgroundColor = .blue
     }
     
     required init?(coder: NSCoder) {

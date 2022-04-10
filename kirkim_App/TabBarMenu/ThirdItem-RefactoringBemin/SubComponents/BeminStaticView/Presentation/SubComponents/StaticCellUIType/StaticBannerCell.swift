@@ -26,7 +26,7 @@ class StaticBannerCell: UICollectionViewCell, StaticCellProtocol {
     
     private func attribute() {
         contentView.backgroundColor = .gray
-        contentView.layer.cornerRadius = 5
+        contentView.layer.cornerRadius = 10
         contentView.clipsToBounds = true
     }
     
