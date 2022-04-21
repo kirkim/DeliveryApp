@@ -1,8 +1,8 @@
 import express from 'express';
 import * as bannerController from '../controller/bannerController.js';
 
-const userRouter = express.Router();
+const bannerRouter = express.Router();
 
-userRouter.route('/').get(bannerController.getValidBanners);
+bannerRouter.route('/').get(bannerController.getValidBanners);
 
-export default userRouter;
+export default bannerRouter;

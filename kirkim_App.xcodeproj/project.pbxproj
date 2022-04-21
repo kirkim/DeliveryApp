@@ -1301,17 +1301,17 @@
 			children = (
 				FEBF325B27E9A16600DFB792 /* RxBannerListView.swift */,
 				FEBF325A27E9A16600DFB792 /* RxBannerListViewModel.swift */,
-				FEBF325827E9A16600DFB792 /* SubComponents */,
+				FEBF325827E9A16600DFB792 /* Cell */,
 			);
 			path = BannerList;
 			sourceTree = "<group>";
 		};
-		FEBF325827E9A16600DFB792 /* SubComponents */ = {
+		FEBF325827E9A16600DFB792 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				FEBF325927E9A16600DFB792 /* RxBannerCell.swift */,
 			);
-			path = SubComponents;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		FEBF325D27E9A16600DFB792 /* Entities */ = {
@@ -1377,9 +1377,9 @@
 		FEFBB5D128029D3F00864528 /* TopBar */ = {
 			isa = PBXGroup;
 			children = (
+				FEFBB5D528029D3F00864528 /* TopBar.swift */,
 				FEFBB5D228029D3F00864528 /* TopBarViewModel.swift */,
 				FEFBB5D328029D3F00864528 /* Cell */,
-				FEFBB5D528029D3F00864528 /* TopBar.swift */,
 			);
 			path = TopBar;
 			sourceTree = "<group>";

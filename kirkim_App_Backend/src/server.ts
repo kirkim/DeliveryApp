@@ -4,6 +4,7 @@ import config from './config.js';
 import cors from 'cors';
 import userRouter from './router/userRouter.js';
 import bannerRouter from './router/bannerRouter.js';
+import deliveryRouter from './router/deliveryRouter.js';
 
 const server = express();
 const PORT = config.host.port;
@@ -16,6 +17,7 @@ server.use(express.static(staticUrl));
 // server.use(express.urlencoded({ extended: true }));
 server.use('/user', userRouter);
 server.use('/banner', bannerRouter);
+server.use('/delivery', deliveryRouter);
 
 server.use((_req: Request, res: Response, _next: NextFunction) => {
   return res.sendStatus(404);
