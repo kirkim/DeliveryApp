@@ -1,4 +1,4 @@
-import { data, StoreType } from './data/deliveryStorage.js';
+import { data, StoreType, DetailStore, ReviewBundle, Review } from './data/deliveryStorage.js';
 
 export type SummaryStore = {
   code: string;
@@ -10,7 +10,7 @@ export type SummaryStore = {
   twoMainMenuName: [string, string];
 };
 
-export async function getSummaryStores(type: StoreType) {
+export async function getSummaryStores(type: StoreType): Promise<Array<SummaryStore>> {
   let validStores = data.stores.filter((store) => {
     return store.storeType == type;
   });
@@ -31,4 +31,46 @@ export async function getSummaryStores(type: StoreType) {
     return summaryStore;
   });
   return summaryStores;
+}
+
+export async function getDetailStore(storeCode: string): Promise<DetailStore | undefined> {
+  let store = data.stores.find((store) => store.code === storeCode);
+  if (store == undefined) {
+    return undefined;
+  }
+  let detailStore: DetailStore = {
+    code: store.code,
+    storeName: store.storeName,
+    deliveryPrice: store.deliveryPrice,
+    minPrice: store.minPrice,
+    address: store.address,
+    bannerPhotoUrl: store.bannerPhotoUrl,
+    thumbnailUrl: store.thumbnailUrl,
+    menuSection: store.menuSection,
+  };
+  return detailStore;
+}
+
+export async function getAllReviews(storeCode: string): Promise<ReviewBundle | undefined> {
+  let store = data.stores.find((store) => store.code === storeCode);
+  if (store == undefined) {
+    return undefined;
+  }
+  return store.review;
+}
+
+export async function getReviews(storeCode: string, count: number): Promise<Review[] | undefined> {
+  let store = data.stores.find((store) => store.code === storeCode);
+  if (store == undefined) {
+    return undefined;
+  }
+  let reviewBundle = store.review.reviews;
+  let reviews: Review[] = [];
+  for (let i = 0; i < count; i++) {
+    let review = reviewBundle[i];
+    if (review !== undefined) {
+      reviews.push(review);
+    }
+  }
+  return reviews;
 }

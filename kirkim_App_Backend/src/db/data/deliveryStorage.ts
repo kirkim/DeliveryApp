@@ -3,10 +3,10 @@ import config from '../../config.js';
 
 export type Review = {
   reviewId: number;
-  userId: number;
+  userId: string;
   rating: number;
   description: string;
-  photoUrl: string[];
+  photoUrl: string;
   createAt: Date;
 };
 
@@ -41,6 +41,17 @@ export type Store = {
   review: ReviewBundle;
 };
 
+export type DetailStore = {
+  code: string;
+  storeName: string;
+  deliveryPrice: number;
+  minPrice: number;
+  address: string;
+  bannerPhotoUrl: string[];
+  thumbnailUrl: string;
+  menuSection: Array<MenuSection>;
+};
+
 export type StoreBundle = {
   storeCount: number;
   stores: Array<Store>;
@@ -49,27 +60,26 @@ export type StoreBundle = {
 
 export let data: StoreBundle;
 
-function updateData() {
-  let mainUrl = config.static.url + '/delivery';
+let mainUrl = config.static.url + '/delivery';
+let hostUrl = config.server.baseUrl + '/delivery';
+
+function updateData(storeCount: number) {
   let storeBundle: Store[] = [];
-  fs.readdir(mainUrl, (_err, files) => {
-    files.forEach((storeName) => {
-      let storeUrl = mainUrl + '/' + storeName;
-      let store: Store = {
-        code: storeName,
-        storeType: randomStoreType(),
-        storeName: storeName,
-        deliveryPrice: randomDeliveryPrice(),
-        minPrice: randomPrice(),
-        address: randomAddressType(),
-        bannerPhotoUrl: makeBannerImageUrlBundle(storeUrl),
-        thumbnailUrl: getThumbnailUrl(storeUrl),
-        menuSection: makeSection(storeUrl),
-        review: makeReview(storeUrl),
-      };
-      storeBundle.push(store);
-    });
-  });
+  for (let i = 0; i < storeCount; i++) {
+    let store: Store = {
+      code: i.toString(),
+      storeType: randomStoreType(),
+      storeName: randomStoreName(),
+      deliveryPrice: randomDeliveryPrice(),
+      minPrice: randomPrice(),
+      address: randomAddressType(),
+      bannerPhotoUrl: makeBannerImageUrlBundle(),
+      thumbnailUrl: getThumbnailUrl(),
+      menuSection: makeSection(),
+      review: makeReview(),
+    };
+    storeBundle.push(store);
+  }
   data = {
     storeCount: storeBundle.length,
     stores: storeBundle,
@@ -77,106 +87,112 @@ function updateData() {
   };
 }
 
-function getThumbnailUrl(storeUrl: string): string {
+function getThumbnailUrl(): string {
   let thumbnail = '';
-  let thumbnailUrl = storeUrl + '/thumbnail';
-  fs.readdir(thumbnailUrl, (_err, files) => {
-    files.forEach((thumbnailName) => {
-      let url = thumbnailUrl + '/' + thumbnailName;
-      thumbnail = url;
-    });
+  fs.readdir(mainUrl + '/thumbnail', (_err, files) => {
+    let rand = Math.floor(Math.random() * files.length);
+    thumbnail = files[rand] ?? '';
   });
   return thumbnail;
 }
 
-function makeBannerImageUrlBundle(storeUrl: string): string[] {
+function makeBannerImageUrlBundle(): string[] {
   let bannerUrlBundle: string[] = [];
-  let bannerUrl = storeUrl + '/banner';
-  fs.readdir(bannerUrl, (_err, files) => {
-    files.forEach((bannerName) => {
-      let url = bannerUrl + '/' + bannerName;
-      bannerUrlBundle.push(url);
+  fs.readdir(mainUrl + '/banner', (_err, files) => {
+    let rand = Math.floor(Math.random() * files.length);
+    let bannerBundle = files[rand];
+    fs.readdir(mainUrl + '/banner/' + bannerBundle, (_err, files) => {
+      files.forEach((banner) => {
+        let url = hostUrl + '/banner/' + bannerBundle + '/' + banner;
+        bannerUrlBundle.push(url);
+      });
     });
   });
   return bannerUrlBundle;
 }
 
-function makeSection(storeUrl: string): MenuSection[] {
+function makeSection(): MenuSection[] {
   let sectionBundle: MenuSection[] = [];
-  let sectionUrl = storeUrl + '/menu_section';
-  fs.readdir(sectionUrl, (_err, files) => {
-    files.forEach((sectionName) => {
-      let section: MenuSection = {
-        title: sectionName,
-        menu: makeMenu(sectionUrl + '/' + sectionName),
-      };
-      sectionBundle.push(section);
-    });
-  });
+  let rand = Math.floor(Math.random() * 5 + 2);
+  for (let i = 0; i < rand; i++) {
+    let section: MenuSection = {
+      title: randomSectionName(),
+      menu: makeMenu(),
+    };
+    sectionBundle.push(section);
+  }
   return sectionBundle;
 }
 
-function makeMenu(sectionUrl: string): Menu[] {
+function makeMenu(): Menu[] {
   let menuBundle: Menu[] = [];
-  fs.readdir(sectionUrl, (_err, files) => {
-    var index: number = 0;
-    files.forEach((menuThumnail) => {
-      let menuName = cutFileName(menuThumnail);
+  fs.readdir(mainUrl + '/menu', (_err, files) => {
+    let totalCount = files.length;
+    const minCount = 2;
+    let rand = Math.floor(Math.random() * (totalCount - minCount) + minCount);
+    let numberArray = randomNumberArray(rand, totalCount);
+    numberArray.forEach((index) => {
       let item: Menu = {
         menuCode: index,
-        menuName: menuName,
+        menuName: randomMenuName(),
         description: randomMenuDescription(),
-        menuPhotoUrl: menuThumnail,
+        menuPhotoUrl: hostUrl + '/menu/' + files[index],
         price: randomPrice(),
       };
       menuBundle.push(item);
-      index += 1;
     });
   });
   return menuBundle;
 }
 
-function makeReview(storeUrl: string): ReviewBundle {
+function makeReview(): ReviewBundle {
   let reviewBundle: ReviewBundle;
-  let reviews: Array<Review> = [];
-  var index: number = 0;
-  var sumRating: number = 0;
-  let reviewUrl = storeUrl + '/review';
-  fs.readdir(reviewUrl, (_err, files) => {
-    files.forEach((reviewName) => {
-      index += 1;
-      let item: Review = {
-        reviewId: index,
-        userId: 1,
-        rating: randomRating(),
-        description: randomReviewDescription(),
-        photoUrl: getReviewlUrl(reviewName),
-        createAt: randomDate(),
-      };
-      sumRating += item.rating;
-      reviews.push(item);
-    });
+  let reviews: Review[] = [];
+  let reviewCount: number = 0;
+  let sumRating: number = 0;
+
+  let files = fs.readdirSync(mainUrl + '/review'); // 리뷰모델은 요소들의 평점 평균값을 실시간으로 계산해야하므로 동기적으로 처리함
+  let totalCount = files.length;
+  let minCount = 4;
+  let rand = Math.floor(Math.random() * (totalCount - minCount) + minCount);
+  let numberArray = randomNumberArray(rand, totalCount);
+  numberArray.forEach((index) => {
+    let item: Review = {
+      reviewId: index,
+      userId: '1', // [TODO] 랜덤유저아이디 만들어주자
+      rating: randomRating(),
+      description: randomReviewDescription(),
+      photoUrl: hostUrl + /review/ + files[index],
+      createAt: randomDate(),
+    };
+    sumRating += item.rating;
+    reviewCount++;
+    reviews.push(item);
   });
   reviewBundle = {
     reviews: reviews,
-    averageRating: sumRating / index,
+    averageRating: sumRating / reviewCount,
   };
   return reviewBundle;
 }
 
-function getReviewlUrl(reviewUrl: string): string[] {
-  let reviewImageBundle: string[] = [];
-  fs.readdir(reviewUrl, (_err, files) => {
-    files.forEach((reviewImage) => {
-      let url = reviewUrl + '/' + reviewImage;
-      reviewImageBundle.push(url);
-    });
-  });
-  return reviewImageBundle;
+function randomNumberArray(pickCount: number, totalCount: number): number[] {
+  if (pickCount > totalCount) {
+    console.log('why pickCount is bigger than totalCount!');
+    return [];
+  }
+  let result: number[] = [];
+  while (pickCount-- > 0) {
+    let rand = Math.floor(Math.random() * (totalCount - 1) + 1);
+    if (!result.includes(rand)) {
+      result.push(rand);
+    }
+  }
+  return result;
 }
 
 function randomPrice(): number {
-  let price: number[] = [3500, 7000, 10000, 150000, 23000];
+  let price: number[] = [3500, 7000, 8500, 4500, 2400, 10000, 15000, 23000];
   let rand = Math.floor(Math.random() * price.length);
   let rValue = price[rand];
   if (rValue == undefined) {
@@ -228,13 +244,55 @@ function randomAddressType(): string {
   return rValue;
 }
 
+function randomMenuName(): string {
+  let menu: string[] = [
+    '[신제품] 바스크 치즈 케이크 플레인',
+    '계란말이',
+    '마파두부',
+    '국민반반피자',
+    '서오릉 반반피자L',
+    '미국식 닭고기 덮밥',
+    '[셰프 추천]통목살 볶음밥',
+    '칼국수손만두국(반공기밥포함)',
+    '후라이드치킨',
+    '떡튀순 세트',
+    '석관동 로제떡볶이',
+    '냉모밀(김치+단무지+무오로시+와사비)',
+    '치즈돈가츠 정식(2P)',
+    '의성마늘떡맵쌈',
+    '2인 보쌈수육',
+    '스파이시 크림파스타',
+    '부채살 스테이크(구운야채를 곁들인)',
+    '[NEW]봉골레파스타(면170g)',
+    '꼰뻬찌오네 삐꼴라 (젤라또 4가지맛)',
+    '춘천감자빵',
+    '그릭요거망고놀라',
+    '(HOT)아메리카노',
+    '//달달쫀쫀// 말렌카 [카카오초코] 꿀 케이크',
+    '크렘브륄레(톡깨서먹는 정통크림브륄레)',
+    '초코커스터즈도넛',
+    '에그마요 샌드위치',
+    '마라샹궈',
+    '새우살 청경채볶음',
+    '똠양꿍쌀국수 1인분',
+    '바삭킹8&너겟킹10+까망베르치즈소스',
+    '에그 베이컨 해쉬브라운 부리또',
+  ];
+  let rand = Math.floor(Math.random() * menu.length);
+  let rValue = menu[rand];
+  if (rValue == undefined) {
+    rValue = '마라샹궈';
+  }
+  return rValue;
+}
+
 export const enum StoreType {
-  'Cafe',
-  'Korean',
-  'Japanese',
-  'Chinese',
-  'Soup',
-  'FastFood',
+  Cafe = 'Cafe',
+  Korean = 'Korean',
+  Japanese = 'Japanese',
+  Chinese = 'Chinese',
+  Soup = 'Soup',
+  FastFood = 'FastFood',
 }
 
 function randomStoreType(): StoreType {
@@ -256,7 +314,7 @@ function randomStoreType(): StoreType {
 
 function randomMenuDescription(): string {
   let description: string[] = [
-    '계란, 베이컨, 옥수수, 올리브, 병아리콩, 토마토 추천 드레싱:갈릭',
+    '계란, 베이컨, 옥수수, 올리브, 병아리콩, 토마토 \n추천 드레싱:갈릭',
     '1인매뉴에 적합',
     '허니크리스피강정(중), 볼케이노크리스피강정(중), 떡볶이, 아메리카노(2잔), 과일주스(1잔)',
     '[추천] Sugar50% / Ice고정',
@@ -290,9 +348,50 @@ function randomReviewDescription(): string {
   return rValue;
 }
 
-function cutFileName(files: string): string {
-  let array = files.split('.', 2);
-  let result = array[0] != undefined ? array[0] : '';
-  return result;
+function randomSectionName(): string {
+  let description: string[] = [
+    '추천메뉴',
+    '20대가 선호하는 메뉴',
+    '주문량이 많은 메뉴',
+    '사이드 메뉴',
+    '별미',
+    '재주문이 높은 메뉴',
+    '세트 메뉴',
+    '당일 손질하여 만든 한정판 메뉴',
+  ];
+  let rand = Math.floor(Math.random() * description.length);
+  let rValue = description[rand];
+  if (rValue == undefined) {
+    rValue = '';
+  }
+  return rValue;
 }
-updateData();
+
+function randomStoreName(): string {
+  let description: string[] = [
+    '아름다운밤 연어육회 성신여대점',
+    '스시 캘리포니아',
+    '난바우동',
+    '돈카와치&돈까스앤우동',
+    '줄스시오',
+    '기절초풍탕수육',
+    '강화집밥',
+    '뜸들이다성신여대점',
+    '압구정 샌드위치',
+    '국대떡볶이길음역점',
+    '서울회관 성신여대점',
+    '후라이드 참잘하는집(한성대점)',
+    '폭풍토핑 피자스톰',
+    '따띠 삼겹 성신여대점',
+    '구구족 성신여대역점',
+    '베트남쌀국수 몬스터포 성북점',
+  ];
+  let rand = Math.floor(Math.random() * description.length);
+  let rValue = description[rand];
+  if (rValue == undefined) {
+    rValue = '';
+  }
+  return rValue;
+}
+
+updateData(5);
