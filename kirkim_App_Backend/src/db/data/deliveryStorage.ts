@@ -6,7 +6,7 @@ export type Review = {
   userId: string;
   rating: number;
   description: string;
-  photoUrl: string;
+  photoUrl: string | undefined;
   createAt: Date;
 };
 
@@ -155,14 +155,16 @@ function makeReview(): ReviewBundle {
   let totalCount = files.length;
   let minCount = 4;
   let rand = Math.floor(Math.random() * (totalCount - minCount) + minCount);
+  console.log(rand);
   let numberArray = randomNumberArray(rand, totalCount);
+  console.log(numberArray);
   numberArray.forEach((index) => {
     let item: Review = {
       reviewId: index,
       userId: '1', // [TODO] 랜덤유저아이디 만들어주자
       rating: randomRating(),
       description: randomReviewDescription(),
-      photoUrl: hostUrl + /review/ + files[index],
+      photoUrl: sometimesGiveUndefined(files[index]!),
       createAt: randomDate(),
     };
     sumRating += item.rating;
@@ -176,6 +178,15 @@ function makeReview(): ReviewBundle {
   return reviewBundle;
 }
 
+function sometimesGiveUndefined(fileName: string): string | undefined {
+  let rand = Math.floor(Math.random() * 10);
+  if (rand > 3) {
+    return hostUrl + /review/ + fileName;
+  } else {
+    return undefined;
+  }
+}
+
 function randomNumberArray(pickCount: number, totalCount: number): number[] {
   if (pickCount > totalCount) {
     console.log('why pickCount is bigger than totalCount!');
@@ -183,12 +194,18 @@ function randomNumberArray(pickCount: number, totalCount: number): number[] {
   }
   let result: number[] = [];
   while (pickCount-- > 0) {
-    let rand = Math.floor(Math.random() * (totalCount - 1) + 1);
-    if (!result.includes(rand)) {
-      result.push(rand);
-    }
+    result.push(pushNumber(result, totalCount));
   }
   return result;
+}
+
+function pushNumber(result: number[], totalCount: number): number {
+  let rand = Math.floor(Math.random() * (totalCount - 1) + 1);
+  if (!result.includes(rand)) {
+    return rand;
+  } else {
+    return pushNumber(result, totalCount);
+  }
 }
 
 function randomPrice(): number {
