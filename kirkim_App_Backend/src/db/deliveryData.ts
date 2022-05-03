@@ -64,8 +64,11 @@ export async function getReviews(storeCode: string, count: number): Promise<Revi
   if (store == undefined) {
     return undefined;
   }
-  let reviewBundle = store.review.reviews;
+  let reviewBundle = store.review.reviews.filter((review) => {
+    return review.photoUrl !== undefined;
+  });
   let reviews: Review[] = [];
+  count = count > reviewBundle.length ? reviewBundle.length : count;
   for (let i = 0; i < count; i++) {
     let review = reviewBundle[i];
     if (review !== undefined) {

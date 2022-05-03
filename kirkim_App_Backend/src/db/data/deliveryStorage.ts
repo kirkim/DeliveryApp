@@ -1,6 +1,7 @@
 import fs from 'fs';
 import config from '../../config.js';
 
+/****** Review ******/
 export type Review = {
   reviewId: number;
   userId: string;
@@ -15,14 +16,34 @@ export type ReviewBundle = {
   averageRating: number;
 };
 
+/****** Menu ******/
 export type Menu = {
-  menuCode: number;
+  menuCode: string;
   menuName: string;
   description: string;
   menuPhotoUrl: string;
   price: number;
+  menuDetail: MenuDetail;
 };
 
+export type MenuDetail = {
+  description: string | undefined;
+  optionSection: Array<OptionSection>;
+};
+
+export type OptionSection = {
+  title: string;
+  min: number | undefined;
+  max: number | undefined;
+  optionMenu: Array<OptionMenu>;
+};
+
+export type OptionMenu = {
+  title: string;
+  price: number | undefined;
+};
+
+/****** Section ******/
 export type MenuSection = {
   title: string;
   menu: Array<Menu>;
@@ -117,14 +138,14 @@ function makeSection(): MenuSection[] {
   for (let i = 0; i < rand; i++) {
     let section: MenuSection = {
       title: randomSectionName(),
-      menu: makeMenu(),
+      menu: makeMenu(i.toString()),
     };
     sectionBundle.push(section);
   }
   return sectionBundle;
 }
 
-function makeMenu(): Menu[] {
+function makeMenu(sectionNumber: string): Menu[] {
   let menuBundle: Menu[] = [];
   fs.readdir(mainUrl + '/menu', (_err, files) => {
     let totalCount = files.length;
@@ -133,16 +154,59 @@ function makeMenu(): Menu[] {
     let numberArray = randomNumberArray(rand, totalCount);
     numberArray.forEach((index) => {
       let item: Menu = {
-        menuCode: index,
+        menuCode: sectionNumber + '_' + index.toString(),
         menuName: randomMenuName(),
         description: randomMenuDescription(),
         menuPhotoUrl: hostUrl + '/menu/' + files[index],
         price: randomPrice(),
+        menuDetail: makeMenuDetail(),
       };
       menuBundle.push(item);
     });
   });
   return menuBundle;
+}
+
+function makeMenuDetail(): MenuDetail {
+  let sectionBundle: OptionSection[] = [];
+  let maxCount = 5;
+  let minCount = 2;
+  let rand = Math.floor(Math.random() * (maxCount - minCount) + minCount);
+  for (let i = 0; i < rand; i++) {
+    let section: OptionSection = makeDetailSection();
+    sectionBundle.push(section);
+  }
+  let menuDetail: MenuDetail = {
+    description: randomDetailMenuDescription(),
+    optionSection: sectionBundle,
+  };
+  return menuDetail;
+}
+
+function makeDetailSection(): OptionSection {
+  let optionMenuBundle: OptionMenu[] = [];
+  let maxCount = 5;
+  let minCount = 2;
+  let rand = Math.floor(Math.random() * (maxCount - minCount) + minCount);
+  for (let i = 0; i < rand; i++) {
+    let optionMenu: OptionMenu = makeOptionMenu();
+    optionMenuBundle.push(optionMenu);
+  }
+  let section: OptionSection = {
+    title: randomDetailSectionName(),
+    min: randomNumber(0, 2),
+    max: randomNumber(1, 5),
+    optionMenu: optionMenuBundle,
+  };
+  return section;
+}
+
+function makeOptionMenu(): OptionMenu {
+  let optionMenu: OptionMenu = {
+    title: randomOptionName(),
+    price: randomPriceOrUndefined(),
+  };
+  return optionMenu;
 }
 
 function makeReview(): ReviewBundle {
@@ -153,11 +217,9 @@ function makeReview(): ReviewBundle {
 
   let files = fs.readdirSync(mainUrl + '/review'); // 리뷰모델은 요소들의 평점 평균값을 실시간으로 계산해야하므로 동기적으로 처리함
   let totalCount = files.length;
-  let minCount = 4;
+  let minCount = 0;
   let rand = Math.floor(Math.random() * (totalCount - minCount) + minCount);
-  console.log(rand);
   let numberArray = randomNumberArray(rand, totalCount);
-  console.log(numberArray);
   numberArray.forEach((index) => {
     let item: Review = {
       reviewId: index,
@@ -173,7 +235,7 @@ function makeReview(): ReviewBundle {
   });
   reviewBundle = {
     reviews: reviews,
-    averageRating: sumRating / reviewCount,
+    averageRating: reviewCount == 0 ? 0.0 : sumRating / reviewCount,
   };
   return reviewBundle;
 }
@@ -218,6 +280,13 @@ function randomPrice(): number {
   return rValue;
 }
 
+function randomPriceOrUndefined(): number | undefined {
+  let price: number[] = [3500, 7000, 8500, 4500, 2400, 10000, 15000, 23000];
+  let rand = Math.floor(Math.random() * (price.length + 2));
+  let rValue = price[rand];
+  return rValue;
+}
+
 function randomRating(): number {
   let price: number[] = [1, 2, 3, 4, 5];
   let rand = Math.floor(Math.random() * price.length);
@@ -239,9 +308,10 @@ function randomDeliveryPrice(): number {
 }
 
 function randomDate(): Date {
-  const maxDate = Date.now();
-  const timestamp = Math.floor(Math.random() * maxDate);
-  return new Date(timestamp);
+  const today = new Date();
+  const rand = Math.floor(Math.random() * 60);
+  const resultDate = new Date(today.setDate(today.getDate() - rand));
+  return resultDate;
 }
 
 function randomAddressType(): string {
@@ -294,6 +364,12 @@ function randomMenuName(): string {
     '똠양꿍쌀국수 1인분',
     '바삭킹8&너겟킹10+까망베르치즈소스',
     '에그 베이컨 해쉬브라운 부리또',
+    '직화 돼지숙주덮밥',
+    '참치마요덮밥',
+    '엄청큰후라이드',
+    '웰빙파닭',
+    '순살3종세트',
+    '간장 바베큐 치킨',
   ];
   let rand = Math.floor(Math.random() * menu.length);
   let rValue = menu[rand];
@@ -346,6 +422,21 @@ function randomMenuDescription(): string {
   return rValue;
 }
 
+function randomDetailMenuDescription(): string | undefined {
+  let description: string[] = [
+    '계란, 베이컨, 옥수수, 올리브, 병아리콩, 토마토 \n추천 드레싱:갈릭',
+    '1인매뉴에 적합',
+    '허니크리스피강정(중), 볼케이노크리스피강정(중), 떡볶이, 아메리카노(2잔), 과일주스(1잔)',
+    '[추천] Sugar50% / Ice고정',
+    '아라비아따 리코타 치킨 버거 + 후렌치 후라이 (L) + 콜라 (L) 부드럽고 고소한 리코타 치즈와 매콤한 아라비아따 소스, 그리고 매콤 바삭한 상하이 치킨 패티가 조화를 이루는 치킨 버거.',
+    '100% 알래스카 폴락 패티의 바삭함, 맥도날드의 타르타르소스와 부드러운 스팀번이 조화로운 필레 오 피쉬',
+  ];
+  let rand = Math.floor(Math.random() * (description.length + 3)); // 3개확률로 undefined배정
+  let rValue = description[rand];
+
+  return rValue;
+}
+
 function randomReviewDescription(): string {
   let description: string[] = [
     '떡볶이 쫄깃하고 맵달하니 맛있어요! 순대는 하도 맛있다길래 얼마나 맛있나 했더니 아버지도 먹자마자 순대 맛있단 말씀부터 하시네요 ㅋㅋㅋ',
@@ -356,6 +447,16 @@ function randomReviewDescription(): string {
     '로제 떡볶이도 완전 맛있는 소스였고~ 빙수는 양이 많아 좋습니다 맛있어요',
     '별점 난리났길래 걱정했는데 잘 왔음',
     '야채 진짜 꽉채워주시고 배송도 빨라요!!!! 대만족 앞으로도 섭웨이는 여기서 시켜먹을겁니당 ㅎㅎ',
+    '항상 가서만 먹었는데 너무 빨리 가져다주시고 감사합니다 너무 맛있게 잘 먹었습니다👍🏻 👍🏻 👍🏻',
+    '음식 너무 맛있는데/n배달 너무 늦었어요.o.o/n음료수라도 주실줄 알았는데..ㅡㅡ',
+    '찹쌀페이스트리는 언제 먹어도 맛있네요',
+    '너무 늦은 시간에 주문했는데 수락해주시고 정성껏 만들어 보내주셔서 감사합니다!',
+    '달달하고 너무 맛있어용',
+    '도우가 너무 특별했습니다 말랑말랑 부드럽고 피자를 먹으면 소화가 잘 안되는데 속이 너무 편하고 소화가 잘 됐습니다 그래서 우리아이가 피자를 싫어하는데 이건 너무 맛있다고 합니다 맛도 있고 양도 푸짐하고 피자는 여기로 정착해야 겠어요~~^^',
+    '역시는역시!!굿굿',
+    '',
+    '두 번째로 시켰는데 역시 맛있었습니다 양도 푸짐하고 ㅎㅎ 혼밥러 최고 배달집입니다',
+    '어떤분이 리뷰에서 추천한 새우볼 진짜 맛있어요! 맵찔이인 저에게 보통맛도 맵지만 ㅠ 맛있게 먹었습니다.. 맵찔이도 매운거 먹고 싶은 날이 있잖아요..\n맛있게 매워요!',
   ];
   let rand = Math.floor(Math.random() * description.length);
   let rValue = description[rand];
@@ -375,6 +476,12 @@ function randomSectionName(): string {
     '재주문이 높은 메뉴',
     '세트 메뉴',
     '당일 손질하여 만든 한정판 메뉴',
+    '직화류',
+    '고기만',
+    '탕류',
+    '메인메뉴',
+    '튀김',
+    '추가 메뉴',
   ];
   let rand = Math.floor(Math.random() * description.length);
   let rValue = description[rand];
@@ -402,6 +509,64 @@ function randomStoreName(): string {
     '따띠 삼겹 성신여대점',
     '구구족 성신여대역점',
     '베트남쌀국수 몬스터포 성북점',
+  ];
+  let rand = Math.floor(Math.random() * description.length);
+  let rValue = description[rand];
+  if (rValue == undefined) {
+    rValue = '';
+  }
+  return rValue;
+}
+
+function randomDetailSectionName(): string {
+  let description: string[] = [
+    '추가선택',
+    '식사 선택1',
+    '사이즈업',
+    '서비스',
+    '가격',
+    '빨대 선택',
+    '추가선택',
+    '가격',
+    '가격',
+  ];
+  let rand = Math.floor(Math.random() * description.length);
+  let rValue = description[rand];
+  if (rValue == undefined) {
+    rValue = '';
+  }
+  return rValue;
+}
+
+function randomNumber(min: number, max: number): number | undefined {
+  let undefinedRand = Math.random() * 10;
+  if (undefinedRand < 5) {
+    return undefined;
+  }
+  let rand = Math.floor(Math.random() * (max - min) + min);
+  return rand;
+}
+
+function randomOptionName(): string {
+  let description: string[] = [
+    '소',
+    '중',
+    '대',
+    '콜라',
+    '사이다',
+    '중국당면',
+    '라면사리',
+    '우동사리',
+    '넙적당면',
+    '1인분',
+    '특',
+    '곱빼기',
+    '정식',
+    '식전빵',
+    '튀김',
+    '돈까스토핑',
+    '기본',
+    '와사비추가',
   ];
   let rand = Math.floor(Math.random() * description.length);
   let rValue = description[rand];
