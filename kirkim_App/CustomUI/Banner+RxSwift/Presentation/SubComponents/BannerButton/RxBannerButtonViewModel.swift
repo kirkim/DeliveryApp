@@ -29,7 +29,7 @@ struct RxBannerButtonViewModel {
     }
     
     func buttonTap(_ viewController: UIViewController) {
-        let vc = TextVC()
+        let vc = UIViewController() //TODO: ssaf
         viewController.present(vc, animated: true)
     }
     

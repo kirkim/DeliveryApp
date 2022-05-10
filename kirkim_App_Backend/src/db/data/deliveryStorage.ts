@@ -195,7 +195,7 @@ function makeDetailSection(): OptionSection {
   let section: OptionSection = {
     title: randomDetailSectionName(),
     min: randomNumber(0, 2),
-    max: randomNumber(1, 5),
+    max: randomNumber(0, 3),
     optionMenu: optionMenuBundle,
   };
   return section;
@@ -217,7 +217,7 @@ function makeReview(): ReviewBundle {
 
   let files = fs.readdirSync(mainUrl + '/review'); // 리뷰모델은 요소들의 평점 평균값을 실시간으로 계산해야하므로 동기적으로 처리함
   let totalCount = files.length;
-  let minCount = 0;
+  let minCount = 4;
   let rand = Math.floor(Math.random() * (totalCount - minCount) + minCount);
   let numberArray = randomNumberArray(rand, totalCount);
   numberArray.forEach((index) => {
@@ -380,27 +380,39 @@ function randomMenuName(): string {
 }
 
 export const enum StoreType {
-  Cafe = 'Cafe',
-  Korean = 'Korean',
-  Japanese = 'Japanese',
-  Chinese = 'Chinese',
-  Soup = 'Soup',
-  FastFood = 'FastFood',
+  cafe = 'cafe',
+  korean = 'korean',
+  japanese = 'japanese',
+  chinese = 'chinese',
+  soup = 'soup',
+  fastfood = 'fastfood',
+  chicken = 'chicken',
+  pizza = 'pizza',
+  asian = 'asian',
+  western = 'western',
+  meat = 'meat',
+  snackbar = 'snackbar',
 }
 
 function randomStoreType(): StoreType {
   let storeType: StoreType[] = [
-    StoreType.Cafe,
-    StoreType.Korean,
-    StoreType.Japanese,
-    StoreType.Chinese,
-    StoreType.FastFood,
-    StoreType.Soup,
+    StoreType.cafe,
+    StoreType.korean,
+    StoreType.japanese,
+    StoreType.chinese,
+    StoreType.fastfood,
+    StoreType.soup,
+    StoreType.chicken,
+    StoreType.pizza,
+    StoreType.asian,
+    StoreType.western,
+    StoreType.meat,
+    StoreType.snackbar,
   ];
   let rand = Math.floor(Math.random() * storeType.length);
   let rValue = storeType[rand];
   if (rValue == undefined) {
-    rValue = StoreType.Korean;
+    rValue = StoreType.korean;
   }
   return rValue;
 }
@@ -576,4 +588,4 @@ function randomOptionName(): string {
   return rValue;
 }
 
-updateData(5);
+updateData(200);

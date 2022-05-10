@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "reusable",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AliSoftware/Reusable",
+      "state" : {
+        "branch" : "main",
+        "revision" : "85e8ef7b2441433ffed2fc8cf4942961b70a83f6"
+      }
+    },
+    {
       "identity" : "rxdatasources",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/RxSwiftCommunity/RxDataSources",

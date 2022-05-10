@@ -12,7 +12,6 @@
 		FE078F1F27C353B500D19E34 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE078F1E27C353B500D19E34 /* SideMenuVC.swift */; };
 		FE078F2F27C3634B00D19E34 /* SideMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE078F2E27C3634B00D19E34 /* SideMenuHeaderView.swift */; };
 		FE078F3727C3737200D19E34 /* SizeMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE078F3627C3737200D19E34 /* SizeMaster.swift */; };
-		FE18A28727C5CA4F00E56F39 /* MyBannerByAPIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE18A28627C5CA4F00E56F39 /* MyBannerByAPIViewModel.swift */; };
 		FE18A28927C5DE9B00E56F39 /* BannerHttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE18A28827C5DE9B00E56F39 /* BannerHttpManager.swift */; };
 		FE2067EF27BCFDC7005EBEB5 /* KeyboardAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2067EE27BCFDC7005EBEB5 /* KeyboardAnimation.swift */; };
 		FE21132A27BCA6AE003293B2 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE21132927BCA6AE003293B2 /* HttpClient.swift */; };
@@ -28,7 +27,6 @@
 		FE2FD15727EDA31A0094E094 /* RxHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2FD15627EDA31A0094E094 /* RxHttpClient.swift */; };
 		FE2FE4BC27CE086C004B8871 /* KiflixCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2FE4BB27CE086C004B8871 /* KiflixCollectionView.swift */; };
 		FE2FF52D27D5B414005DA688 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FE2FF52C27D5B414005DA688 /* SnapKit */; };
-		FE2FF55127D5CC11005DA688 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2FF55027D5CC11005DA688 /* TestVC.swift */; };
 		FE302FFC27FD16DE006F2C63 /* LogoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE302FFB27FD16DE006F2C63 /* LogoutView.swift */; };
 		FE302FFE27FD2DE9006F2C63 /* CopyrightInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE302FFD27FD2DE9006F2C63 /* CopyrightInfoView.swift */; };
 		FE30300327FD3502006F2C63 /* DetailProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE30300227FD3502006F2C63 /* DetailProfileButton.swift */; };
@@ -53,26 +51,16 @@
 		FE3CCB8727D1CB2B00D770F8 /* DescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE3CCB8627D1CB2B00D770F8 /* DescriptionView.xib */; };
 		FE3EA96527BB751800DA36EA /* TextAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3EA96427BB751800DA36EA /* TextAnimation.swift */; };
 		FE3EA96727BB8AC100DA36EA /* SimpleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3EA96627BB8AC100DA36EA /* SimpleTextField.swift */; };
-		FE41DC9C27D706B400317493 /* MyBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41DC9627D706B400317493 /* MyBannerCell.swift */; };
-		FE41DC9E27D706B400317493 /* MyBannerByAPIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41DC9827D706B400317493 /* MyBannerByAPIView.swift */; };
-		FE41DCA027D706B400317493 /* MyBannerTotalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41DC9A27D706B400317493 /* MyBannerTotalButton.swift */; };
 		FE46F4F627D1AD6500DB31EE /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE46F4F527D1AD6500DB31EE /* DescriptionView.swift */; };
 		FE47CACC27C0C5570077806D /* SignUpPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE47CACB27C0C5570077806D /* SignUpPageViewModel.swift */; };
 		FE47CAD027C114210077806D /* UserHttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE47CACF27C114210077806D /* UserHttpManager.swift */; };
 		FE57F23B27CF29C000B205F9 /* KiflixDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57F23927CF29C000B205F9 /* KiflixDetailVC.swift */; };
 		FE57F23C27CF29C000B205F9 /* KiflixDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE57F23A27CF29C000B205F9 /* KiflixDetailVC.xib */; };
 		FE57F23E27CF2ACF00B205F9 /* extension+AVPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57F23D27CF2ACF00B205F9 /* extension+AVPlayer.swift */; };
-		FE63140227DB58C5008F4D48 /* MyBannerTotalListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE63140127DB58C5008F4D48 /* MyBannerTotalListVC.swift */; };
-		FE63140527DB6402008F4D48 /* MyBannerByPlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE63140427DB6402008F4D48 /* MyBannerByPlistView.swift */; };
-		FE63140727DB647D008F4D48 /* MyBannerByPlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE63140627DB647D008F4D48 /* MyBannerByPlistViewModel.swift */; };
-		FE63140A27DB661A008F4D48 /* StaticEventContent.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE63140927DB661A008F4D48 /* StaticEventContent.plist */; };
-		FE63140C27DB663E008F4D48 /* StaticEventContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE63140B27DB663E008F4D48 /* StaticEventContent.swift */; };
-		FE63140E27DB6DFC008F4D48 /* BannerPlistContent+protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE63140D27DB6DFC008F4D48 /* BannerPlistContent+protocol.swift */; };
 		FE74FE9427CDA82D00F40D5F /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74FE9327CDA82D00F40D5F /* BaseVC.swift */; };
 		FE74FEAC27CDBCA100F40D5F /* KiflixVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74FEAA27CDBCA100F40D5F /* KiflixVC.swift */; };
 		FE74FEAD27CDBCA100F40D5F /* KiflixVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE74FEAB27CDBCA100F40D5F /* KiflixVC.xib */; };
 		FE74FEAF27CDBDDE00F40D5F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74FEAE27CDBDDE00F40D5F /* MainTabBarController.swift */; };
-		FE7C00E327E867F5005ED99C /* MyBannerByPlistViewModel+RxSwfit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7C00E227E867F5005ED99C /* MyBannerByPlistViewModel+RxSwfit.swift */; };
 		FE7FC0C627C48581009EB2AE /* SideMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7FC0C527C48581009EB2AE /* SideMenuModel.swift */; };
 		FE7FC0CD27C48F22009EB2AE /* TestView1-1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7FC0CB27C48F22009EB2AE /* TestView1-1.swift */; };
 		FE7FC0CE27C48F22009EB2AE /* TestView1-1.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE7FC0CC27C48F22009EB2AE /* TestView1-1.xib */; };
@@ -94,12 +82,6 @@
 		FE8BE4BF27F2CD2C002F744F /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8BE4BE27F2CD2C002F744F /* CustomError.swift */; };
 		FE8D305D27FC682A00F55EEE /* MainBeminCVViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D302827FC682900F55EEE /* MainBeminCVViewModel.swift */; };
 		FE8D305E27FC682A00F55EEE /* BeminSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D302B27FC682900F55EEE /* BeminSearchView.swift */; };
-		FE8D306027FC682A00F55EEE /* StaticCell7_3.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D303227FC682900F55EEE /* StaticCell7_3.swift */; };
-		FE8D306127FC682A00F55EEE /* StaticCell7_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D303327FC682900F55EEE /* StaticCell7_1.swift */; };
-		FE8D306227FC682A00F55EEE /* StaticCell7_4.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D303427FC682900F55EEE /* StaticCell7_4.swift */; };
-		FE8D306327FC682A00F55EEE /* StaticCell7_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D303527FC682900F55EEE /* StaticCell7_2.swift */; };
-		FE8D306427FC682A00F55EEE /* StaticCell1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D303827FC682900F55EEE /* StaticCell1_1.swift */; };
-		FE8D306527FC682A00F55EEE /* StaticCell1_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D303927FC682900F55EEE /* StaticCell1_2.swift */; };
 		FE8D306627FC682A00F55EEE /* StaticBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D303B27FC682900F55EEE /* StaticBannerCell.swift */; };
 		FE8D306727FC682A00F55EEE /* StaticCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D303D27FC682900F55EEE /* StaticCellProtocol.swift */; };
 		FE8D306827FC682A00F55EEE /* EventPage1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D303F27FC682900F55EEE /* EventPage1.swift */; };
@@ -108,13 +90,6 @@
 		FE8D306B27FC682A00F55EEE /* StaticSmall_3Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D304327FC682900F55EEE /* StaticSmall_3Cell.swift */; };
 		FE8D306C27FC682A00F55EEE /* StaticMedium_2Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D304427FC682900F55EEE /* StaticMedium_2Cell.swift */; };
 		FE8D306D27FC682A00F55EEE /* StaticMediumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D304527FC682900F55EEE /* StaticMediumCell.swift */; };
-		FE8D306E27FC682A00F55EEE /* StaticCell3_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D304827FC682900F55EEE /* StaticCell3_2.swift */; };
-		FE8D306F27FC682A00F55EEE /* StaticCell3_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D304927FC682900F55EEE /* StaticCell3_1.swift */; };
-		FE8D307027FC682A00F55EEE /* StaticCell4_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D304C27FC682900F55EEE /* StaticCell4_1.swift */; };
-		FE8D307127FC682A00F55EEE /* StaticCell5_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D304F27FC682900F55EEE /* StaticCell5_2.swift */; };
-		FE8D307227FC682A00F55EEE /* StaticCell5_3.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D305027FC682900F55EEE /* StaticCell5_3.swift */; };
-		FE8D307327FC682A00F55EEE /* StaticCell5_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D305127FC682900F55EEE /* StaticCell5_1.swift */; };
-		FE8D307427FC682A00F55EEE /* StaticCell2_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D305427FC682900F55EEE /* StaticCell2_1.swift */; };
 		FE8D307527FC682A00F55EEE /* StaticSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D305527FC682900F55EEE /* StaticSectionCell.swift */; };
 		FE8D307627FC682A00F55EEE /* StaticSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D305627FC682900F55EEE /* StaticSectionViewModel.swift */; };
 		FE8D307727FC682A00F55EEE /* BeminStaticContent.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE8D305827FC682900F55EEE /* BeminStaticContent.plist */; };
@@ -123,7 +98,6 @@
 		FE8D307A27FC682A00F55EEE /* BeminStaticContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D305B27FC682900F55EEE /* BeminStaticContent.swift */; };
 		FE8D307B27FC682A00F55EEE /* MainBeminVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D305C27FC682A00F55EEE /* MainBeminVC.swift */; };
 		FE8D307E27FC688300F55EEE /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = FE8D307D27FC688300F55EEE /* RxDataSources */; };
-		FE8E456127D747DA0025779F /* MyBannerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8E456027D747DA0025779F /* MyBannerViewDelegate.swift */; };
 		FE8EF12827F3E74F00EEAC69 /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8EF12727F3E74F00EEAC69 /* UserType.swift */; };
 		FE8EF12C27F3E7F500EEAC69 /* UrlType+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8EF12B27F3E7F500EEAC69 /* UrlType+Protocol.swift */; };
 		FE8EF15C27F425E300EEAC69 /* RxSignupPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8EF14527F425E300EEAC69 /* RxSignupPageVC.swift */; };
@@ -148,11 +122,9 @@
 		FE94DD7127B655190017D776 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE94DD7027B655190017D776 /* Assets.xcassets */; };
 		FE94DD7427B655190017D776 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE94DD7227B655190017D776 /* LaunchScreen.storyboard */; };
 		FE9AF67B27F20DD0006E8472 /* RxUserHttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9AF67A27F20DD0006E8472 /* RxUserHttpManager.swift */; };
-		FEA95FFE27E1840B00FD78B3 /* MyBannerUsingRxswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA95FFD27E1840B00FD78B3 /* MyBannerUsingRxswift.swift */; };
 		FEA9600127E1874D00FD78B3 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = FEA9600027E1874D00FD78B3 /* RxCocoa */; };
 		FEA9600327E1874D00FD78B3 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = FEA9600227E1874D00FD78B3 /* RxRelay */; };
 		FEA9600527E1874D00FD78B3 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FEA9600427E1874D00FD78B3 /* RxSwift */; };
-		FEA9600727E19C5E00FD78B3 /* MyBannerBasicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA9600627E19C5E00FD78B3 /* MyBannerBasicView.swift */; };
 		FEBA011327CDD5D700E74FCB /* SignUpPageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEBA011227CDD5D700E74FCB /* SignUpPageVC.xib */; };
 		FEBA011527CDDC5B00E74FCB /* KiflixViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBA011427CDDC5B00E74FCB /* KiflixViewModel.swift */; };
 		FEBA011727CDE08300E74FCB /* KiflixHttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBA011627CDE08300E74FCB /* KiflixHttpManager.swift */; };
@@ -167,8 +139,111 @@
 		FEBF326A27E9A16600DFB792 /* StaticBannerContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF325F27E9A16600DFB792 /* StaticBannerContent.swift */; };
 		FEBF326B27E9A16600DFB792 /* StaticBannerPlistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF326027E9A16600DFB792 /* StaticBannerPlistModel.swift */; };
 		FEBF326C27E9A16600DFB792 /* BannerContent+protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF326127E9A16600DFB792 /* BannerContent+protocol.swift */; };
-		FEBF326E27E9A26000DFB792 /* TextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF326D27E9A26000DFB792 /* TextVC.swift */; };
 		FEF9811E27FA7C8A00AA784F /* RxBannerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF9811D27FA7C8A00AA784F /* RxBannerViewDelegate.swift */; };
+		FEFA1BDA2829EF140088BEEB /* BeminBannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1BC82829EF140088BEEB /* BeminBannerViewModel.swift */; };
+		FEFA1BDB2829EF140088BEEB /* BeminBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1BC92829EF140088BEEB /* BeminBannerView.swift */; };
+		FEFA1BDC2829EF140088BEEB /* BeminBannerButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1BCC2829EF140088BEEB /* BeminBannerButtonViewModel.swift */; };
+		FEFA1BDD2829EF140088BEEB /* BeminBannerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1BCD2829EF140088BEEB /* BeminBannerButton.swift */; };
+		FEFA1BDE2829EF140088BEEB /* TotalBannerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1BCF2829EF140088BEEB /* TotalBannerListView.swift */; };
+		FEFA1BDF2829EF140088BEEB /* TotalBannerListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1BD12829EF140088BEEB /* TotalBannerListCell.swift */; };
+		FEFA1BE02829EF140088BEEB /* TotalBannerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1BD22829EF140088BEEB /* TotalBannerListViewModel.swift */; };
+		FEFA1BE12829EF140088BEEB /* BeminBannerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1BD42829EF140088BEEB /* BeminBannerListViewModel.swift */; };
+		FEFA1BE22829EF140088BEEB /* BeminBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1BD62829EF140088BEEB /* BeminBannerCell.swift */; };
+		FEFA1BE32829EF140088BEEB /* BeminBannerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1BD72829EF140088BEEB /* BeminBannerListView.swift */; };
+		FEFA1BE42829EF140088BEEB /* BannerSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1BD92829EF140088BEEB /* BannerSources.swift */; };
+		FEFA1BE72829F0350088BEEB /* DeliveryHttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1BE62829F0350088BEEB /* DeliveryHttpManager.swift */; };
+		FEFA1ED72829FACD0088BEEB /* DeliveryMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1EAB2829FACD0088BEEB /* DeliveryMenuModel.swift */; };
+		FEFA1ED82829FACD0088BEEB /* DeliveryMenuSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1EAD2829FACD0088BEEB /* DeliveryMenuSectionModel.swift */; };
+		FEFA1ED92829FACD0088BEEB /* DeliveryMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1EAE2829FACD0088BEEB /* DeliveryMenuViewModel.swift */; };
+		FEFA1EDA2829FACD0088BEEB /* TopSlideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1EB22829FACD0088BEEB /* TopSlideBar.swift */; };
+		FEFA1EDB2829FACD0088BEEB /* TopSlideBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1EB32829FACD0088BEEB /* TopSlideBarViewModel.swift */; };
+		FEFA1EDC2829FACD0088BEEB /* TopSlideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1EB52829FACD0088BEEB /* TopSlideCell.swift */; };
+		FEFA1EDD2829FACD0088BEEB /* SelectStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1EB62829FACD0088BEEB /* SelectStoreVC.swift */; };
+		FEFA1EDE2829FACD0088BEEB /* SortSlideBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1EB82829FACD0088BEEB /* SortSlideBarViewModel.swift */; };
+		FEFA1EDF2829FACD0088BEEB /* SortSlideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1EBA2829FACD0088BEEB /* SortSlideCell.swift */; };
+		FEFA1EE02829FACD0088BEEB /* SortSlideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1EBB2829FACD0088BEEB /* SortSlideBar.swift */; };
+		FEFA1EE12829FACD0088BEEB /* SelectStoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1EBC2829FACD0088BEEB /* SelectStoreViewModel.swift */; };
+		FEFA1EE22829FACD0088BEEB /* StoreListSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1EC22829FACD0088BEEB /* StoreListSectionModel.swift */; };
+		FEFA1EE32829FACD0088BEEB /* StoreListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1EC32829FACD0088BEEB /* StoreListView.swift */; };
+		FEFA1EE42829FACD0088BEEB /* StoreListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1EC42829FACD0088BEEB /* StoreListViewModel.swift */; };
+		FEFA1EE52829FACD0088BEEB /* StoreListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1EC62829FACD0088BEEB /* StoreListCell.swift */; };
+		FEFA1EE62829FACD0088BEEB /* StoreListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1EC72829FACD0088BEEB /* StoreListModel.swift */; };
+		FEFA1EE72829FACD0088BEEB /* StoreListSectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1EC82829FACD0088BEEB /* StoreListSectionManager.swift */; };
+		FEFA1EE82829FACD0088BEEB /* ContainerStoreListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1ECA2829FACD0088BEEB /* ContainerStoreListViewCell.swift */; };
+		FEFA1EE92829FACD0088BEEB /* ContainerStoreListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1ECB2829FACD0088BEEB /* ContainerStoreListViewModel.swift */; };
+		FEFA1EEA2829FACD0088BEEB /* StoreListHttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1ECC2829FACD0088BEEB /* StoreListHttpManager.swift */; };
+		FEFA1EEB2829FACD0088BEEB /* ContainerStoreListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1ECD2829FACD0088BEEB /* ContainerStoreListView.swift */; };
+		FEFA1EEC2829FACD0088BEEB /* DeliveryMenuSpecialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1ECF2829FACD0088BEEB /* DeliveryMenuSpecialCell.swift */; };
+		FEFA1EED2829FACD0088BEEB /* DeliveryMenuBasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1ED02829FACD0088BEEB /* DeliveryMenuBasicCell.swift */; };
+		FEFA1EEE2829FACD0088BEEB /* DeliveryMenuBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1ED12829FACD0088BEEB /* DeliveryMenuBannerCell.swift */; };
+		FEFA1EEF2829FACD0088BEEB /* DeliveryMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1ED22829FACD0088BEEB /* DeliveryMenuVC.swift */; };
+		FEFA1EF02829FACD0088BEEB /* DeliveryMenuSectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1ED32829FACD0088BEEB /* DeliveryMenuSectionManager.swift */; };
+		FEFA1EF12829FACD0088BEEB /* StoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1ED52829FACD0088BEEB /* StoreType.swift */; };
+		FEFA1EF22829FACD0088BEEB /* SortSlideType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1ED62829FACD0088BEEB /* SortSlideType.swift */; };
+		FEFA1F532829FAEC0088BEEB /* MagnetReviewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1EF72829FAEC0088BEEB /* MagnetReviewSection.swift */; };
+		FEFA1F542829FAEC0088BEEB /* MagnetReviewHttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1EF82829FAEC0088BEEB /* MagnetReviewHttpManager.swift */; };
+		FEFA1F552829FAEC0088BEEB /* PickSortTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1EFA2829FAEC0088BEEB /* PickSortTypeViewModel.swift */; };
+		FEFA1F562829FAEC0088BEEB /* PickSortTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1EFB2829FAEC0088BEEB /* PickSortTypeView.swift */; };
+		FEFA1F572829FAEC0088BEEB /* MagnetReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1EFC2829FAEC0088BEEB /* MagnetReviewViewModel.swift */; };
+		FEFA1F582829FAEC0088BEEB /* MagnetReviewTotalRatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1EFE2829FAEC0088BEEB /* MagnetReviewTotalRatingCell.swift */; };
+		FEFA1F592829FAEC0088BEEB /* MagnetReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1EFF2829FAEC0088BEEB /* MagnetReviewCell.swift */; };
+		FEFA1F5A2829FAEC0088BEEB /* MagnetReviewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F002829FAEC0088BEEB /* MagnetReviewHeaderCell.swift */; };
+		FEFA1F5B2829FAEC0088BEEB /* MagnetReviewHeaderCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F012829FAEC0088BEEB /* MagnetReviewHeaderCellViewModel.swift */; };
+		FEFA1F5C2829FAEC0088BEEB /* MagnetReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEFA1F022829FAEC0088BEEB /* MagnetReviewCell.xib */; };
+		FEFA1F5D2829FAEC0088BEEB /* MagnetReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F032829FAEC0088BEEB /* MagnetReviewVC.swift */; };
+		FEFA1F5E2829FAEC0088BEEB /* MagnetReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F042829FAEC0088BEEB /* MagnetReviewModel.swift */; };
+		FEFA1F5F2829FAEC0088BEEB /* MagnetBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F062829FAEC0088BEEB /* MagnetBarViewModel.swift */; };
+		FEFA1F602829FAEC0088BEEB /* RemoteMainListBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F092829FAEC0088BEEB /* RemoteMainListBar.swift */; };
+		FEFA1F612829FAEC0088BEEB /* RemoteMainListBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F0A2829FAEC0088BEEB /* RemoteMainListBarViewModel.swift */; };
+		FEFA1F622829FAEC0088BEEB /* RemoteMainListBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F0C2829FAEC0088BEEB /* RemoteMainListBarCell.swift */; };
+		FEFA1F632829FAEC0088BEEB /* MagnetNavigationBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F0E2829FAEC0088BEEB /* MagnetNavigationBarViewModel.swift */; };
+		FEFA1F642829FAEC0088BEEB /* MagnetNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F0F2829FAEC0088BEEB /* MagnetNavigationBar.swift */; };
+		FEFA1F652829FAEC0088BEEB /* MagnetSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F122829FAEC0088BEEB /* MagnetSection.swift */; };
+		FEFA1F662829FAEC0088BEEB /* MagnetListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F132829FAEC0088BEEB /* MagnetListView.swift */; };
+		FEFA1F672829FAEC0088BEEB /* MagnetPresentMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F172829FAEC0088BEEB /* MagnetPresentMenuModel.swift */; };
+		FEFA1F682829FAEC0088BEEB /* MagnetPresentMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F192829FAEC0088BEEB /* MagnetPresentMenuHeaderView.swift */; };
+		FEFA1F692829FAEC0088BEEB /* MagnetPresentMainTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F1A2829FAEC0088BEEB /* MagnetPresentMainTitleCell.swift */; };
+		FEFA1F6A2829FAEC0088BEEB /* MagnetPresentMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F1B2829FAEC0088BEEB /* MagnetPresentMenuCell.swift */; };
+		FEFA1F6B2829FAEC0088BEEB /* CountCheckerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F1D2829FAEC0088BEEB /* CountCheckerViewModel.swift */; };
+		FEFA1F6C2829FAEC0088BEEB /* MagnetPresentCountSelectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F1E2829FAEC0088BEEB /* MagnetPresentCountSelectViewModel.swift */; };
+		FEFA1F6D2829FAEC0088BEEB /* CountChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F1F2829FAEC0088BEEB /* CountChecker.swift */; };
+		FEFA1F6E2829FAEC0088BEEB /* MagnetPresentCountSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F202829FAEC0088BEEB /* MagnetPresentCountSelectCell.swift */; };
+		FEFA1F6F2829FAEC0088BEEB /* MagnetPresentMenuSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F222829FAEC0088BEEB /* MagnetPresentMenuSection.swift */; };
+		FEFA1F702829FAEC0088BEEB /* PopupLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F242829FAEC0088BEEB /* PopupLabel.swift */; };
+		FEFA1F712829FAEC0088BEEB /* MagnetSubmitTapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F252829FAEC0088BEEB /* MagnetSubmitTapView.swift */; };
+		FEFA1F722829FAEC0088BEEB /* MagnetSubmitTapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F262829FAEC0088BEEB /* MagnetSubmitTapViewModel.swift */; };
+		FEFA1F732829FAEC0088BEEB /* MagnetPresentMenuSectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F272829FAEC0088BEEB /* MagnetPresentMenuSectionManager.swift */; };
+		FEFA1F742829FAEC0088BEEB /* MagnetPresentMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F282829FAEC0088BEEB /* MagnetPresentMenuViewModel.swift */; };
+		FEFA1F752829FAEC0088BEEB /* MagnetPresentMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F292829FAEC0088BEEB /* MagnetPresentMenuVC.swift */; };
+		FEFA1F762829FAEC0088BEEB /* MagnetMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F2A2829FAEC0088BEEB /* MagnetMenuCell.swift */; };
+		FEFA1F772829FAEC0088BEEB /* MagnetMenuHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F2B2829FAEC0088BEEB /* MagnetMenuHeaderCell.swift */; };
+		FEFA1F782829FAEC0088BEEB /* MagnetStickyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F2D2829FAEC0088BEEB /* MagnetStickyCell.swift */; };
+		FEFA1F792829FAEC0088BEEB /* MagnetInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F2F2829FAEC0088BEEB /* MagnetInfoCell.swift */; };
+		FEFA1F7A2829FAEC0088BEEB /* MagnetInfoNavBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F322829FAEC0088BEEB /* MagnetInfoNavBarViewModel.swift */; };
+		FEFA1F7B2829FAEC0088BEEB /* MagnetInfoNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F332829FAEC0088BEEB /* MagnetInfoNavBar.swift */; };
+		FEFA1F7C2829FAEC0088BEEB /* MagnetInfoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F342829FAEC0088BEEB /* MagnetInfoButton.swift */; };
+		FEFA1F7D2829FAEC0088BEEB /* MagnetInfoReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F392829FAEC0088BEEB /* MagnetInfoReviewCell.swift */; };
+		FEFA1F7E2829FAEC0088BEEB /* MagnetInfoMoreButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F3A2829FAEC0088BEEB /* MagnetInfoMoreButtonCell.swift */; };
+		FEFA1F7F2829FAEC0088BEEB /* SummaryReviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F3C2829FAEC0088BEEB /* SummaryReviewData.swift */; };
+		FEFA1F802829FAEC0088BEEB /* MagnetSummaryReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F3D2829FAEC0088BEEB /* MagnetSummaryReviewModel.swift */; };
+		FEFA1F812829FAEC0088BEEB /* MagnetSummaryReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F3E2829FAEC0088BEEB /* MagnetSummaryReviewViewModel.swift */; };
+		FEFA1F822829FAEC0088BEEB /* MagnetSummaryReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F3F2829FAEC0088BEEB /* MagnetSummaryReviewView.swift */; };
+		FEFA1F832829FAEC0088BEEB /* TakeoutInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F412829FAEC0088BEEB /* TakeoutInfoView.swift */; };
+		FEFA1F842829FAEC0088BEEB /* DeliveryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F422829FAEC0088BEEB /* DeliveryInfoView.swift */; };
+		FEFA1F852829FAEC0088BEEB /* MagnetInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F432829FAEC0088BEEB /* MagnetInfoView.swift */; };
+		FEFA1F862829FAEC0088BEEB /* MagnetInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F442829FAEC0088BEEB /* MagnetInfoViewModel.swift */; };
+		FEFA1F872829FAEC0088BEEB /* MagnetInfoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F462829FAEC0088BEEB /* MagnetInfoType.swift */; };
+		FEFA1F882829FAEC0088BEEB /* MagnetHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F492829FAEC0088BEEB /* MagnetHeaderView.swift */; };
+		FEFA1F892829FAEC0088BEEB /* MagnetHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F4A2829FAEC0088BEEB /* MagnetHeaderViewModel.swift */; };
+		FEFA1F8A2829FAEC0088BEEB /* MagnetBannerCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F4B2829FAEC0088BEEB /* MagnetBannerCellViewModel.swift */; };
+		FEFA1F8B2829FAEC0088BEEB /* MagnetBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F4C2829FAEC0088BEEB /* MagnetBannerCell.swift */; };
+		FEFA1F8C2829FAEC0088BEEB /* MagnetListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F4D2829FAEC0088BEEB /* MagnetListViewModel.swift */; };
+		FEFA1F8D2829FAEC0088BEEB /* MagnetListSectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F4E2829FAEC0088BEEB /* MagnetListSectionManager.swift */; };
+		FEFA1F8E2829FAEC0088BEEB /* MagnetBarHttpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F4F2829FAEC0088BEEB /* MagnetBarHttpModel.swift */; };
+		FEFA1F8F2829FAEC0088BEEB /* MagnetBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F502829FAEC0088BEEB /* MagnetBarView.swift */; };
+		FEFA1F902829FAEC0088BEEB /* Int+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F522829FAEC0088BEEB /* Int+extension.swift */; };
+		FEFA1F932829FB550088BEEB /* Reusable in Frameworks */ = {isa = PBXBuildFile; productRef = FEFA1F922829FB550088BEEB /* Reusable */; };
+		FEFA1F96282A05150088BEEB /* TopBarVCWithProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F95282A05150088BEEB /* TopBarVCWithProfile.swift */; };
 		FEFAA53E27E6038300BA0706 /* RxGesture in Frameworks */ = {isa = PBXBuildFile; productRef = FEFAA53D27E6038300BA0706 /* RxGesture */; };
 		FEFBB5DF28029D3F00864528 /* TopBarMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFBB5C928029D3F00864528 /* TopBarMainViewController.swift */; };
 		FEFBB5E028029D3F00864528 /* TopBarMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFBB5CA28029D3F00864528 /* TopBarMainViewModel.swift */; };
@@ -202,7 +277,6 @@
 		FE078F1E27C353B500D19E34 /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
 		FE078F2E27C3634B00D19E34 /* SideMenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuHeaderView.swift; sourceTree = "<group>"; };
 		FE078F3627C3737200D19E34 /* SizeMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeMaster.swift; sourceTree = "<group>"; };
-		FE18A28627C5CA4F00E56F39 /* MyBannerByAPIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBannerByAPIViewModel.swift; sourceTree = "<group>"; };
 		FE18A28827C5DE9B00E56F39 /* BannerHttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerHttpManager.swift; sourceTree = "<group>"; };
 		FE2067EE27BCFDC7005EBEB5 /* KeyboardAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAnimation.swift; sourceTree = "<group>"; };
 		FE21132927BCA6AE003293B2 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
@@ -217,7 +291,6 @@
 		FE2D52F127F537EA00106E5A /* SimpleTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextFieldViewModel.swift; sourceTree = "<group>"; };
 		FE2FD15627EDA31A0094E094 /* RxHttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxHttpClient.swift; sourceTree = "<group>"; };
 		FE2FE4BB27CE086C004B8871 /* KiflixCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiflixCollectionView.swift; sourceTree = "<group>"; };
-		FE2FF55027D5CC11005DA688 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
 		FE302FFB27FD16DE006F2C63 /* LogoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutView.swift; sourceTree = "<group>"; };
 		FE302FFD27FD2DE9006F2C63 /* CopyrightInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyrightInfoView.swift; sourceTree = "<group>"; };
 		FE30300227FD3502006F2C63 /* DetailProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProfileButton.swift; sourceTree = "<group>"; };
@@ -242,26 +315,16 @@
 		FE3CCB8627D1CB2B00D770F8 /* DescriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionView.xib; sourceTree = "<group>"; };
 		FE3EA96427BB751800DA36EA /* TextAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAnimation.swift; sourceTree = "<group>"; };
 		FE3EA96627BB8AC100DA36EA /* SimpleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextField.swift; sourceTree = "<group>"; };
-		FE41DC9627D706B400317493 /* MyBannerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBannerCell.swift; sourceTree = "<group>"; };
-		FE41DC9827D706B400317493 /* MyBannerByAPIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBannerByAPIView.swift; sourceTree = "<group>"; };
-		FE41DC9A27D706B400317493 /* MyBannerTotalButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBannerTotalButton.swift; sourceTree = "<group>"; };
 		FE46F4F527D1AD6500DB31EE /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 		FE47CACB27C0C5570077806D /* SignUpPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPageViewModel.swift; sourceTree = "<group>"; };
 		FE47CACF27C114210077806D /* UserHttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHttpManager.swift; sourceTree = "<group>"; };
 		FE57F23927CF29C000B205F9 /* KiflixDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiflixDetailVC.swift; sourceTree = "<group>"; };
 		FE57F23A27CF29C000B205F9 /* KiflixDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KiflixDetailVC.xib; sourceTree = "<group>"; };
 		FE57F23D27CF2ACF00B205F9 /* extension+AVPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension+AVPlayer.swift"; sourceTree = "<group>"; };
-		FE63140127DB58C5008F4D48 /* MyBannerTotalListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBannerTotalListVC.swift; sourceTree = "<group>"; };
-		FE63140427DB6402008F4D48 /* MyBannerByPlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBannerByPlistView.swift; sourceTree = "<group>"; };
-		FE63140627DB647D008F4D48 /* MyBannerByPlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBannerByPlistViewModel.swift; sourceTree = "<group>"; };
-		FE63140927DB661A008F4D48 /* StaticEventContent.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = StaticEventContent.plist; sourceTree = "<group>"; };
-		FE63140B27DB663E008F4D48 /* StaticEventContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticEventContent.swift; sourceTree = "<group>"; };
-		FE63140D27DB6DFC008F4D48 /* BannerPlistContent+protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BannerPlistContent+protocol.swift"; sourceTree = "<group>"; };
 		FE74FE9327CDA82D00F40D5F /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		FE74FEAA27CDBCA100F40D5F /* KiflixVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiflixVC.swift; sourceTree = "<group>"; };
 		FE74FEAB27CDBCA100F40D5F /* KiflixVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KiflixVC.xib; sourceTree = "<group>"; };
 		FE74FEAE27CDBDDE00F40D5F /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		FE7C00E227E867F5005ED99C /* MyBannerByPlistViewModel+RxSwfit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyBannerByPlistViewModel+RxSwfit.swift"; sourceTree = "<group>"; };
 		FE7FC0C527C48581009EB2AE /* SideMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuModel.swift; sourceTree = "<group>"; };
 		FE7FC0CB27C48F22009EB2AE /* TestView1-1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestView1-1.swift"; sourceTree = "<group>"; };
 		FE7FC0CC27C48F22009EB2AE /* TestView1-1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "TestView1-1.xib"; sourceTree = "<group>"; };
@@ -283,12 +346,6 @@
 		FE8BE4BE27F2CD2C002F744F /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		FE8D302827FC682900F55EEE /* MainBeminCVViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainBeminCVViewModel.swift; sourceTree = "<group>"; };
 		FE8D302B27FC682900F55EEE /* BeminSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeminSearchView.swift; sourceTree = "<group>"; };
-		FE8D303227FC682900F55EEE /* StaticCell7_3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticCell7_3.swift; sourceTree = "<group>"; };
-		FE8D303327FC682900F55EEE /* StaticCell7_1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticCell7_1.swift; sourceTree = "<group>"; };
-		FE8D303427FC682900F55EEE /* StaticCell7_4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticCell7_4.swift; sourceTree = "<group>"; };
-		FE8D303527FC682900F55EEE /* StaticCell7_2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticCell7_2.swift; sourceTree = "<group>"; };
-		FE8D303827FC682900F55EEE /* StaticCell1_1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticCell1_1.swift; sourceTree = "<group>"; };
-		FE8D303927FC682900F55EEE /* StaticCell1_2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticCell1_2.swift; sourceTree = "<group>"; };
 		FE8D303B27FC682900F55EEE /* StaticBannerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticBannerCell.swift; sourceTree = "<group>"; };
 		FE8D303D27FC682900F55EEE /* StaticCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticCellProtocol.swift; sourceTree = "<group>"; };
 		FE8D303F27FC682900F55EEE /* EventPage1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPage1.swift; sourceTree = "<group>"; };
@@ -297,13 +354,6 @@
 		FE8D304327FC682900F55EEE /* StaticSmall_3Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticSmall_3Cell.swift; sourceTree = "<group>"; };
 		FE8D304427FC682900F55EEE /* StaticMedium_2Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticMedium_2Cell.swift; sourceTree = "<group>"; };
 		FE8D304527FC682900F55EEE /* StaticMediumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticMediumCell.swift; sourceTree = "<group>"; };
-		FE8D304827FC682900F55EEE /* StaticCell3_2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticCell3_2.swift; sourceTree = "<group>"; };
-		FE8D304927FC682900F55EEE /* StaticCell3_1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticCell3_1.swift; sourceTree = "<group>"; };
-		FE8D304C27FC682900F55EEE /* StaticCell4_1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticCell4_1.swift; sourceTree = "<group>"; };
-		FE8D304F27FC682900F55EEE /* StaticCell5_2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticCell5_2.swift; sourceTree = "<group>"; };
-		FE8D305027FC682900F55EEE /* StaticCell5_3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticCell5_3.swift; sourceTree = "<group>"; };
-		FE8D305127FC682900F55EEE /* StaticCell5_1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticCell5_1.swift; sourceTree = "<group>"; };
-		FE8D305427FC682900F55EEE /* StaticCell2_1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticCell2_1.swift; sourceTree = "<group>"; };
 		FE8D305527FC682900F55EEE /* StaticSectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticSectionCell.swift; sourceTree = "<group>"; };
 		FE8D305627FC682900F55EEE /* StaticSectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticSectionViewModel.swift; sourceTree = "<group>"; };
 		FE8D305827FC682900F55EEE /* BeminStaticContent.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BeminStaticContent.plist; sourceTree = "<group>"; };
@@ -311,7 +361,6 @@
 		FE8D305A27FC682900F55EEE /* RxStaticSectionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxStaticSectionData.swift; sourceTree = "<group>"; };
 		FE8D305B27FC682900F55EEE /* BeminStaticContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeminStaticContent.swift; sourceTree = "<group>"; };
 		FE8D305C27FC682A00F55EEE /* MainBeminVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainBeminVC.swift; sourceTree = "<group>"; };
-		FE8E456027D747DA0025779F /* MyBannerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBannerViewDelegate.swift; sourceTree = "<group>"; };
 		FE8EF12727F3E74F00EEAC69 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
 		FE8EF12B27F3E7F500EEAC69 /* UrlType+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UrlType+Protocol.swift"; sourceTree = "<group>"; };
 		FE8EF14527F425E300EEAC69 /* RxSignupPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSignupPageVC.swift; sourceTree = "<group>"; };
@@ -338,8 +387,6 @@
 		FE94DD7327B655190017D776 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE94DD7527B655190017D776 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE9AF67A27F20DD0006E8472 /* RxUserHttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxUserHttpManager.swift; sourceTree = "<group>"; };
-		FEA95FFD27E1840B00FD78B3 /* MyBannerUsingRxswift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBannerUsingRxswift.swift; sourceTree = "<group>"; };
-		FEA9600627E19C5E00FD78B3 /* MyBannerBasicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBannerBasicView.swift; sourceTree = "<group>"; };
 		FEBA011227CDD5D700E74FCB /* SignUpPageVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpPageVC.xib; sourceTree = "<group>"; };
 		FEBA011427CDDC5B00E74FCB /* KiflixViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiflixViewModel.swift; sourceTree = "<group>"; };
 		FEBA011627CDE08300E74FCB /* KiflixHttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiflixHttpManager.swift; sourceTree = "<group>"; };
@@ -354,8 +401,110 @@
 		FEBF325F27E9A16600DFB792 /* StaticBannerContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticBannerContent.swift; sourceTree = "<group>"; };
 		FEBF326027E9A16600DFB792 /* StaticBannerPlistModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticBannerPlistModel.swift; sourceTree = "<group>"; };
 		FEBF326127E9A16600DFB792 /* BannerContent+protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BannerContent+protocol.swift"; sourceTree = "<group>"; };
-		FEBF326D27E9A26000DFB792 /* TextVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextVC.swift; sourceTree = "<group>"; };
 		FEF9811D27FA7C8A00AA784F /* RxBannerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxBannerViewDelegate.swift; sourceTree = "<group>"; };
+		FEFA1BC82829EF140088BEEB /* BeminBannerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeminBannerViewModel.swift; sourceTree = "<group>"; };
+		FEFA1BC92829EF140088BEEB /* BeminBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeminBannerView.swift; sourceTree = "<group>"; };
+		FEFA1BCC2829EF140088BEEB /* BeminBannerButtonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeminBannerButtonViewModel.swift; sourceTree = "<group>"; };
+		FEFA1BCD2829EF140088BEEB /* BeminBannerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeminBannerButton.swift; sourceTree = "<group>"; };
+		FEFA1BCF2829EF140088BEEB /* TotalBannerListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalBannerListView.swift; sourceTree = "<group>"; };
+		FEFA1BD12829EF140088BEEB /* TotalBannerListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalBannerListCell.swift; sourceTree = "<group>"; };
+		FEFA1BD22829EF140088BEEB /* TotalBannerListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalBannerListViewModel.swift; sourceTree = "<group>"; };
+		FEFA1BD42829EF140088BEEB /* BeminBannerListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeminBannerListViewModel.swift; sourceTree = "<group>"; };
+		FEFA1BD62829EF140088BEEB /* BeminBannerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeminBannerCell.swift; sourceTree = "<group>"; };
+		FEFA1BD72829EF140088BEEB /* BeminBannerListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeminBannerListView.swift; sourceTree = "<group>"; };
+		FEFA1BD92829EF140088BEEB /* BannerSources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerSources.swift; sourceTree = "<group>"; };
+		FEFA1BE62829F0350088BEEB /* DeliveryHttpManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryHttpManager.swift; sourceTree = "<group>"; };
+		FEFA1EAB2829FACD0088BEEB /* DeliveryMenuModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryMenuModel.swift; sourceTree = "<group>"; };
+		FEFA1EAD2829FACD0088BEEB /* DeliveryMenuSectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryMenuSectionModel.swift; sourceTree = "<group>"; };
+		FEFA1EAE2829FACD0088BEEB /* DeliveryMenuViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryMenuViewModel.swift; sourceTree = "<group>"; };
+		FEFA1EB22829FACD0088BEEB /* TopSlideBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopSlideBar.swift; sourceTree = "<group>"; };
+		FEFA1EB32829FACD0088BEEB /* TopSlideBarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopSlideBarViewModel.swift; sourceTree = "<group>"; };
+		FEFA1EB52829FACD0088BEEB /* TopSlideCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopSlideCell.swift; sourceTree = "<group>"; };
+		FEFA1EB62829FACD0088BEEB /* SelectStoreVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectStoreVC.swift; sourceTree = "<group>"; };
+		FEFA1EB82829FACD0088BEEB /* SortSlideBarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortSlideBarViewModel.swift; sourceTree = "<group>"; };
+		FEFA1EBA2829FACD0088BEEB /* SortSlideCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortSlideCell.swift; sourceTree = "<group>"; };
+		FEFA1EBB2829FACD0088BEEB /* SortSlideBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortSlideBar.swift; sourceTree = "<group>"; };
+		FEFA1EBC2829FACD0088BEEB /* SelectStoreViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectStoreViewModel.swift; sourceTree = "<group>"; };
+		FEFA1EC22829FACD0088BEEB /* StoreListSectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreListSectionModel.swift; sourceTree = "<group>"; };
+		FEFA1EC32829FACD0088BEEB /* StoreListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreListView.swift; sourceTree = "<group>"; };
+		FEFA1EC42829FACD0088BEEB /* StoreListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreListViewModel.swift; sourceTree = "<group>"; };
+		FEFA1EC62829FACD0088BEEB /* StoreListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreListCell.swift; sourceTree = "<group>"; };
+		FEFA1EC72829FACD0088BEEB /* StoreListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreListModel.swift; sourceTree = "<group>"; };
+		FEFA1EC82829FACD0088BEEB /* StoreListSectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreListSectionManager.swift; sourceTree = "<group>"; };
+		FEFA1ECA2829FACD0088BEEB /* ContainerStoreListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerStoreListViewCell.swift; sourceTree = "<group>"; };
+		FEFA1ECB2829FACD0088BEEB /* ContainerStoreListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerStoreListViewModel.swift; sourceTree = "<group>"; };
+		FEFA1ECC2829FACD0088BEEB /* StoreListHttpManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreListHttpManager.swift; sourceTree = "<group>"; };
+		FEFA1ECD2829FACD0088BEEB /* ContainerStoreListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerStoreListView.swift; sourceTree = "<group>"; };
+		FEFA1ECF2829FACD0088BEEB /* DeliveryMenuSpecialCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryMenuSpecialCell.swift; sourceTree = "<group>"; };
+		FEFA1ED02829FACD0088BEEB /* DeliveryMenuBasicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryMenuBasicCell.swift; sourceTree = "<group>"; };
+		FEFA1ED12829FACD0088BEEB /* DeliveryMenuBannerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryMenuBannerCell.swift; sourceTree = "<group>"; };
+		FEFA1ED22829FACD0088BEEB /* DeliveryMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryMenuVC.swift; sourceTree = "<group>"; };
+		FEFA1ED32829FACD0088BEEB /* DeliveryMenuSectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryMenuSectionManager.swift; sourceTree = "<group>"; };
+		FEFA1ED52829FACD0088BEEB /* StoreType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreType.swift; sourceTree = "<group>"; };
+		FEFA1ED62829FACD0088BEEB /* SortSlideType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortSlideType.swift; sourceTree = "<group>"; };
+		FEFA1EF72829FAEC0088BEEB /* MagnetReviewSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetReviewSection.swift; sourceTree = "<group>"; };
+		FEFA1EF82829FAEC0088BEEB /* MagnetReviewHttpManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetReviewHttpManager.swift; sourceTree = "<group>"; };
+		FEFA1EFA2829FAEC0088BEEB /* PickSortTypeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickSortTypeViewModel.swift; sourceTree = "<group>"; };
+		FEFA1EFB2829FAEC0088BEEB /* PickSortTypeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickSortTypeView.swift; sourceTree = "<group>"; };
+		FEFA1EFC2829FAEC0088BEEB /* MagnetReviewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetReviewViewModel.swift; sourceTree = "<group>"; };
+		FEFA1EFE2829FAEC0088BEEB /* MagnetReviewTotalRatingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetReviewTotalRatingCell.swift; sourceTree = "<group>"; };
+		FEFA1EFF2829FAEC0088BEEB /* MagnetReviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetReviewCell.swift; sourceTree = "<group>"; };
+		FEFA1F002829FAEC0088BEEB /* MagnetReviewHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetReviewHeaderCell.swift; sourceTree = "<group>"; };
+		FEFA1F012829FAEC0088BEEB /* MagnetReviewHeaderCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetReviewHeaderCellViewModel.swift; sourceTree = "<group>"; };
+		FEFA1F022829FAEC0088BEEB /* MagnetReviewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MagnetReviewCell.xib; sourceTree = "<group>"; };
+		FEFA1F032829FAEC0088BEEB /* MagnetReviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetReviewVC.swift; sourceTree = "<group>"; };
+		FEFA1F042829FAEC0088BEEB /* MagnetReviewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetReviewModel.swift; sourceTree = "<group>"; };
+		FEFA1F062829FAEC0088BEEB /* MagnetBarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetBarViewModel.swift; sourceTree = "<group>"; };
+		FEFA1F092829FAEC0088BEEB /* RemoteMainListBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteMainListBar.swift; sourceTree = "<group>"; };
+		FEFA1F0A2829FAEC0088BEEB /* RemoteMainListBarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteMainListBarViewModel.swift; sourceTree = "<group>"; };
+		FEFA1F0C2829FAEC0088BEEB /* RemoteMainListBarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteMainListBarCell.swift; sourceTree = "<group>"; };
+		FEFA1F0E2829FAEC0088BEEB /* MagnetNavigationBarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetNavigationBarViewModel.swift; sourceTree = "<group>"; };
+		FEFA1F0F2829FAEC0088BEEB /* MagnetNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetNavigationBar.swift; sourceTree = "<group>"; };
+		FEFA1F122829FAEC0088BEEB /* MagnetSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetSection.swift; sourceTree = "<group>"; };
+		FEFA1F132829FAEC0088BEEB /* MagnetListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetListView.swift; sourceTree = "<group>"; };
+		FEFA1F172829FAEC0088BEEB /* MagnetPresentMenuModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetPresentMenuModel.swift; sourceTree = "<group>"; };
+		FEFA1F192829FAEC0088BEEB /* MagnetPresentMenuHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetPresentMenuHeaderView.swift; sourceTree = "<group>"; };
+		FEFA1F1A2829FAEC0088BEEB /* MagnetPresentMainTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetPresentMainTitleCell.swift; sourceTree = "<group>"; };
+		FEFA1F1B2829FAEC0088BEEB /* MagnetPresentMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetPresentMenuCell.swift; sourceTree = "<group>"; };
+		FEFA1F1D2829FAEC0088BEEB /* CountCheckerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountCheckerViewModel.swift; sourceTree = "<group>"; };
+		FEFA1F1E2829FAEC0088BEEB /* MagnetPresentCountSelectViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetPresentCountSelectViewModel.swift; sourceTree = "<group>"; };
+		FEFA1F1F2829FAEC0088BEEB /* CountChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountChecker.swift; sourceTree = "<group>"; };
+		FEFA1F202829FAEC0088BEEB /* MagnetPresentCountSelectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetPresentCountSelectCell.swift; sourceTree = "<group>"; };
+		FEFA1F222829FAEC0088BEEB /* MagnetPresentMenuSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetPresentMenuSection.swift; sourceTree = "<group>"; };
+		FEFA1F242829FAEC0088BEEB /* PopupLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupLabel.swift; sourceTree = "<group>"; };
+		FEFA1F252829FAEC0088BEEB /* MagnetSubmitTapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetSubmitTapView.swift; sourceTree = "<group>"; };
+		FEFA1F262829FAEC0088BEEB /* MagnetSubmitTapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetSubmitTapViewModel.swift; sourceTree = "<group>"; };
+		FEFA1F272829FAEC0088BEEB /* MagnetPresentMenuSectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetPresentMenuSectionManager.swift; sourceTree = "<group>"; };
+		FEFA1F282829FAEC0088BEEB /* MagnetPresentMenuViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetPresentMenuViewModel.swift; sourceTree = "<group>"; };
+		FEFA1F292829FAEC0088BEEB /* MagnetPresentMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetPresentMenuVC.swift; sourceTree = "<group>"; };
+		FEFA1F2A2829FAEC0088BEEB /* MagnetMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetMenuCell.swift; sourceTree = "<group>"; };
+		FEFA1F2B2829FAEC0088BEEB /* MagnetMenuHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetMenuHeaderCell.swift; sourceTree = "<group>"; };
+		FEFA1F2D2829FAEC0088BEEB /* MagnetStickyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetStickyCell.swift; sourceTree = "<group>"; };
+		FEFA1F2F2829FAEC0088BEEB /* MagnetInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetInfoCell.swift; sourceTree = "<group>"; };
+		FEFA1F322829FAEC0088BEEB /* MagnetInfoNavBarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetInfoNavBarViewModel.swift; sourceTree = "<group>"; };
+		FEFA1F332829FAEC0088BEEB /* MagnetInfoNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetInfoNavBar.swift; sourceTree = "<group>"; };
+		FEFA1F342829FAEC0088BEEB /* MagnetInfoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetInfoButton.swift; sourceTree = "<group>"; };
+		FEFA1F392829FAEC0088BEEB /* MagnetInfoReviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetInfoReviewCell.swift; sourceTree = "<group>"; };
+		FEFA1F3A2829FAEC0088BEEB /* MagnetInfoMoreButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetInfoMoreButtonCell.swift; sourceTree = "<group>"; };
+		FEFA1F3C2829FAEC0088BEEB /* SummaryReviewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryReviewData.swift; sourceTree = "<group>"; };
+		FEFA1F3D2829FAEC0088BEEB /* MagnetSummaryReviewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetSummaryReviewModel.swift; sourceTree = "<group>"; };
+		FEFA1F3E2829FAEC0088BEEB /* MagnetSummaryReviewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetSummaryReviewViewModel.swift; sourceTree = "<group>"; };
+		FEFA1F3F2829FAEC0088BEEB /* MagnetSummaryReviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetSummaryReviewView.swift; sourceTree = "<group>"; };
+		FEFA1F412829FAEC0088BEEB /* TakeoutInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakeoutInfoView.swift; sourceTree = "<group>"; };
+		FEFA1F422829FAEC0088BEEB /* DeliveryInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryInfoView.swift; sourceTree = "<group>"; };
+		FEFA1F432829FAEC0088BEEB /* MagnetInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetInfoView.swift; sourceTree = "<group>"; };
+		FEFA1F442829FAEC0088BEEB /* MagnetInfoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetInfoViewModel.swift; sourceTree = "<group>"; };
+		FEFA1F462829FAEC0088BEEB /* MagnetInfoType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetInfoType.swift; sourceTree = "<group>"; };
+		FEFA1F492829FAEC0088BEEB /* MagnetHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetHeaderView.swift; sourceTree = "<group>"; };
+		FEFA1F4A2829FAEC0088BEEB /* MagnetHeaderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetHeaderViewModel.swift; sourceTree = "<group>"; };
+		FEFA1F4B2829FAEC0088BEEB /* MagnetBannerCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetBannerCellViewModel.swift; sourceTree = "<group>"; };
+		FEFA1F4C2829FAEC0088BEEB /* MagnetBannerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetBannerCell.swift; sourceTree = "<group>"; };
+		FEFA1F4D2829FAEC0088BEEB /* MagnetListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetListViewModel.swift; sourceTree = "<group>"; };
+		FEFA1F4E2829FAEC0088BEEB /* MagnetListSectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetListSectionManager.swift; sourceTree = "<group>"; };
+		FEFA1F4F2829FAEC0088BEEB /* MagnetBarHttpModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetBarHttpModel.swift; sourceTree = "<group>"; };
+		FEFA1F502829FAEC0088BEEB /* MagnetBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetBarView.swift; sourceTree = "<group>"; };
+		FEFA1F522829FAEC0088BEEB /* Int+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+extension.swift"; sourceTree = "<group>"; };
+		FEFA1F95282A05150088BEEB /* TopBarVCWithProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarVCWithProfile.swift; sourceTree = "<group>"; };
 		FEFBB5C928029D3F00864528 /* TopBarMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBarMainViewController.swift; sourceTree = "<group>"; };
 		FEFBB5CA28029D3F00864528 /* TopBarMainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBarMainViewModel.swift; sourceTree = "<group>"; };
 		FEFBB5CD28029D3F00864528 /* TopBarLayoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBarLayoutView.swift; sourceTree = "<group>"; };
@@ -386,6 +535,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEA9600327E1874D00FD78B3 /* RxRelay in Frameworks */,
+				FEFA1F932829FB550088BEEB /* Reusable in Frameworks */,
 				FEA9600127E1874D00FD78B3 /* RxCocoa in Frameworks */,
 				FEFAA53E27E6038300BA0706 /* RxGesture in Frameworks */,
 				FE8D307E27FC688300F55EEE /* RxDataSources in Frameworks */,
@@ -406,20 +556,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		FE05950A27FC6AB100C2BFB5 /* PresentView */ = {
-			isa = PBXGroup;
-			children = (
-				FE8D303627FC682900F55EEE /* Section1 */,
-				FE8D305227FC682900F55EEE /* Section2 */,
-				FE8D304627FC682900F55EEE /* Section3 */,
-				FE8D304A27FC682900F55EEE /* Section4 */,
-				FE8D304D27FC682900F55EEE /* Section5 */,
-				FE8D303A27FC682900F55EEE /* Section6 */,
-				FE8D303027FC682900F55EEE /* Section7 */,
-			);
-			path = PresentView;
-			sourceTree = "<group>";
-		};
 		FE078F1227C341D100D19E34 /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -432,9 +568,9 @@
 		FE078F1927C34C5000D19E34 /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
+				FEFA1BC62829EF140088BEEB /* BeminBannerView */,
 				FEFBB5C828029D3F00864528 /* TopBarViewController */,
 				FEBF325027E9A16600DFB792 /* Banner+RxSwift */,
-				FE41DC9427D706B400317493 /* MyBanner--Trash */,
 				FE85B4F927EAB4EA0031F5AC /* SizeMaster */,
 				FE85B4FA27EAB4F40031F5AC /* SimpleTextField */,
 				FE85B4FB27EAB5030031F5AC /* ProfileView */,
@@ -452,6 +588,7 @@
 				FE9AF67A27F20DD0006E8472 /* RxUserHttpManager.swift */,
 				FE18A28827C5DE9B00E56F39 /* BannerHttpManager.swift */,
 				FEBA011627CDE08300E74FCB /* KiflixHttpManager.swift */,
+				FEFA1BE62829F0350088BEEB /* DeliveryHttpManager.swift */,
 			);
 			path = Http;
 			sourceTree = "<group>";
@@ -629,18 +766,6 @@
 			path = Description;
 			sourceTree = "<group>";
 		};
-		FE41DC9427D706B400317493 /* MyBanner--Trash */ = {
-			isa = PBXGroup;
-			children = (
-				FE63140327DB626C008F4D48 /* MainView */,
-				FE41DC9627D706B400317493 /* MyBannerCell.swift */,
-				FE8E456027D747DA0025779F /* MyBannerViewDelegate.swift */,
-				FE41DC9A27D706B400317493 /* MyBannerTotalButton.swift */,
-				FE63140127DB58C5008F4D48 /* MyBannerTotalListVC.swift */,
-			);
-			path = "MyBanner--Trash";
-			sourceTree = "<group>";
-		};
 		FE47CACE27C0C8410077806D /* SignUpPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -659,26 +784,6 @@
 				FE3CCB8827D1D73C00D770F8 /* Description */,
 			);
 			path = DetailView;
-			sourceTree = "<group>";
-		};
-		FE63140327DB626C008F4D48 /* MainView */ = {
-			isa = PBXGroup;
-			children = (
-				FEA9600927E1A05B00FD78B3 /* Views */,
-				FEA9600827E1A03000FD78B3 /* Models */,
-				FE63140827DB65AC008F4D48 /* BannerPlist */,
-			);
-			path = MainView;
-			sourceTree = "<group>";
-		};
-		FE63140827DB65AC008F4D48 /* BannerPlist */ = {
-			isa = PBXGroup;
-			children = (
-				FE63140D27DB6DFC008F4D48 /* BannerPlistContent+protocol.swift */,
-				FE63140927DB661A008F4D48 /* StaticEventContent.plist */,
-				FE63140B27DB663E008F4D48 /* StaticEventContent.swift */,
-			);
-			path = BannerPlist;
 			sourceTree = "<group>";
 		};
 		FE74FEB427CDC3F900F40D5F /* TabBarMenu */ = {
@@ -883,6 +988,7 @@
 				FE8D305C27FC682A00F55EEE /* MainBeminVC.swift */,
 				FE8D302827FC682900F55EEE /* MainBeminCVViewModel.swift */,
 				FE8D302927FC682900F55EEE /* SubComponents */,
+				FEFA1BE52829EFD30088BEEB /* ChildPresntPage */,
 			);
 			path = "ThirdItem-RefactoringBemin";
 			sourceTree = "<group>";
@@ -890,6 +996,7 @@
 		FE8D302927FC682900F55EEE /* SubComponents */ = {
 			isa = PBXGroup;
 			children = (
+				FEF3131F2824B856004F764E /* DeliveryMenuPage */,
 				FE8D302A27FC682900F55EEE /* SearchView */,
 				FE8D302C27FC682900F55EEE /* BeminStaticView */,
 			);
@@ -920,6 +1027,7 @@
 				FE8D305527FC682900F55EEE /* StaticSectionCell.swift */,
 				FE8D305627FC682900F55EEE /* StaticSectionViewModel.swift */,
 				FEFBB5ED28029E3A00864528 /* StaticSectionModel.swift */,
+				FEFA1F94282A04720088BEEB /* SubViewController */,
 				FE8D302F27FC682900F55EEE /* SubComponents */,
 			);
 			path = Presentation;
@@ -930,53 +1038,9 @@
 			children = (
 				FE8D303C27FC682900F55EEE /* StaticCellProtocol */,
 				FE8D304027FC682900F55EEE /* StaticCellUIType */,
-				FE05950A27FC6AB100C2BFB5 /* PresentView */,
 				FE8D303E27FC682900F55EEE /* EventPage */,
 			);
 			path = SubComponents;
-			sourceTree = "<group>";
-		};
-		FE8D303027FC682900F55EEE /* Section7 */ = {
-			isa = PBXGroup;
-			children = (
-				FE8D303127FC682900F55EEE /* Cells */,
-			);
-			path = Section7;
-			sourceTree = "<group>";
-		};
-		FE8D303127FC682900F55EEE /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				FE8D303227FC682900F55EEE /* StaticCell7_3.swift */,
-				FE8D303327FC682900F55EEE /* StaticCell7_1.swift */,
-				FE8D303427FC682900F55EEE /* StaticCell7_4.swift */,
-				FE8D303527FC682900F55EEE /* StaticCell7_2.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		FE8D303627FC682900F55EEE /* Section1 */ = {
-			isa = PBXGroup;
-			children = (
-				FE8D303727FC682900F55EEE /* Cells */,
-			);
-			path = Section1;
-			sourceTree = "<group>";
-		};
-		FE8D303727FC682900F55EEE /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				FE8D303827FC682900F55EEE /* StaticCell1_1.swift */,
-				FE8D303927FC682900F55EEE /* StaticCell1_2.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		FE8D303A27FC682900F55EEE /* Section6 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Section6;
 			sourceTree = "<group>";
 		};
 		FE8D303C27FC682900F55EEE /* StaticCellProtocol */ = {
@@ -1006,73 +1070,6 @@
 				FE8D303B27FC682900F55EEE /* StaticBannerCell.swift */,
 			);
 			path = StaticCellUIType;
-			sourceTree = "<group>";
-		};
-		FE8D304627FC682900F55EEE /* Section3 */ = {
-			isa = PBXGroup;
-			children = (
-				FE8D304727FC682900F55EEE /* Cells */,
-			);
-			path = Section3;
-			sourceTree = "<group>";
-		};
-		FE8D304727FC682900F55EEE /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				FE8D304827FC682900F55EEE /* StaticCell3_2.swift */,
-				FE8D304927FC682900F55EEE /* StaticCell3_1.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		FE8D304A27FC682900F55EEE /* Section4 */ = {
-			isa = PBXGroup;
-			children = (
-				FE8D304B27FC682900F55EEE /* Cells */,
-			);
-			path = Section4;
-			sourceTree = "<group>";
-		};
-		FE8D304B27FC682900F55EEE /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				FE8D304C27FC682900F55EEE /* StaticCell4_1.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		FE8D304D27FC682900F55EEE /* Section5 */ = {
-			isa = PBXGroup;
-			children = (
-				FE8D304E27FC682900F55EEE /* Cells */,
-			);
-			path = Section5;
-			sourceTree = "<group>";
-		};
-		FE8D304E27FC682900F55EEE /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				FE8D304F27FC682900F55EEE /* StaticCell5_2.swift */,
-				FE8D305027FC682900F55EEE /* StaticCell5_3.swift */,
-				FE8D305127FC682900F55EEE /* StaticCell5_1.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		FE8D305227FC682900F55EEE /* Section2 */ = {
-			isa = PBXGroup;
-			children = (
-				FE8D305327FC682900F55EEE /* Cells */,
-			);
-			path = Section2;
-			sourceTree = "<group>";
-		};
-		FE8D305327FC682900F55EEE /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				FE8D305427FC682900F55EEE /* StaticCell2_1.swift */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		FE8D305727FC682900F55EEE /* Entities */ = {
@@ -1232,31 +1229,8 @@
 				FE94DD7227B655190017D776 /* LaunchScreen.storyboard */,
 				FE94DD7527B655190017D776 /* Info.plist */,
 				FE94DD6D27B655190017D776 /* kirkim_App.xcdatamodeld */,
-				FEBF326D27E9A26000DFB792 /* TextVC.swift */,
-				FE2FF55027D5CC11005DA688 /* TestVC.swift */,
 			);
 			path = kirkim_App;
-			sourceTree = "<group>";
-		};
-		FEA9600827E1A03000FD78B3 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				FE18A28627C5CA4F00E56F39 /* MyBannerByAPIViewModel.swift */,
-				FE63140627DB647D008F4D48 /* MyBannerByPlistViewModel.swift */,
-				FE7C00E227E867F5005ED99C /* MyBannerByPlistViewModel+RxSwfit.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		FEA9600927E1A05B00FD78B3 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				FE41DC9827D706B400317493 /* MyBannerByAPIView.swift */,
-				FE63140427DB6402008F4D48 /* MyBannerByPlistView.swift */,
-				FEA95FFD27E1840B00FD78B3 /* MyBannerUsingRxswift.swift */,
-				FEA9600627E19C5E00FD78B3 /* MyBannerBasicView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		FEBF325027E9A16600DFB792 /* Banner+RxSwift */ = {
@@ -1326,6 +1300,13 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		FEF3131F2824B856004F764E /* DeliveryMenuPage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DeliveryMenuPage;
+			sourceTree = "<group>";
+		};
 		FEF8848327BA5C670038F138 /* Login&SignUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -1333,6 +1314,601 @@
 				FE38F44827F7170F008BBE8B /* LoginPage */,
 			);
 			path = "Login&SignUp";
+			sourceTree = "<group>";
+		};
+		FEFA1BC62829EF140088BEEB /* BeminBannerView */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1BC72829EF140088BEEB /* Presentation */,
+				FEFA1BD82829EF140088BEEB /* Entities */,
+			);
+			path = BeminBannerView;
+			sourceTree = "<group>";
+		};
+		FEFA1BC72829EF140088BEEB /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1BC82829EF140088BEEB /* BeminBannerViewModel.swift */,
+				FEFA1BC92829EF140088BEEB /* BeminBannerView.swift */,
+				FEFA1BCA2829EF140088BEEB /* SubComponents */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		FEFA1BCA2829EF140088BEEB /* SubComponents */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1BCB2829EF140088BEEB /* BannerButton */,
+				FEFA1BCE2829EF140088BEEB /* TotalBannerListView */,
+				FEFA1BD32829EF140088BEEB /* BannerList */,
+			);
+			path = SubComponents;
+			sourceTree = "<group>";
+		};
+		FEFA1BCB2829EF140088BEEB /* BannerButton */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1BCC2829EF140088BEEB /* BeminBannerButtonViewModel.swift */,
+				FEFA1BCD2829EF140088BEEB /* BeminBannerButton.swift */,
+			);
+			path = BannerButton;
+			sourceTree = "<group>";
+		};
+		FEFA1BCE2829EF140088BEEB /* TotalBannerListView */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1BCF2829EF140088BEEB /* TotalBannerListView.swift */,
+				FEFA1BD02829EF140088BEEB /* Cell */,
+				FEFA1BD22829EF140088BEEB /* TotalBannerListViewModel.swift */,
+			);
+			path = TotalBannerListView;
+			sourceTree = "<group>";
+		};
+		FEFA1BD02829EF140088BEEB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1BD12829EF140088BEEB /* TotalBannerListCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FEFA1BD32829EF140088BEEB /* BannerList */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1BD42829EF140088BEEB /* BeminBannerListViewModel.swift */,
+				FEFA1BD52829EF140088BEEB /* Cell */,
+				FEFA1BD72829EF140088BEEB /* BeminBannerListView.swift */,
+			);
+			path = BannerList;
+			sourceTree = "<group>";
+		};
+		FEFA1BD52829EF140088BEEB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1BD62829EF140088BEEB /* BeminBannerCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FEFA1BD82829EF140088BEEB /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1BD92829EF140088BEEB /* BannerSources.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		FEFA1BE52829EFD30088BEEB /* ChildPresntPage */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1EF32829FAEC0088BEEB /* DeliveryDetailPage */,
+				FEFA1EAA2829FACD0088BEEB /* DeliveryListPage */,
+			);
+			path = ChildPresntPage;
+			sourceTree = "<group>";
+		};
+		FEFA1EAA2829FACD0088BEEB /* DeliveryListPage */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1ED22829FACD0088BEEB /* DeliveryMenuVC.swift */,
+				FEFA1EAE2829FACD0088BEEB /* DeliveryMenuViewModel.swift */,
+				FEFA1EAB2829FACD0088BEEB /* DeliveryMenuModel.swift */,
+				FEFA1ED32829FACD0088BEEB /* DeliveryMenuSectionManager.swift */,
+				FEFA1EAC2829FACD0088BEEB /* SectionModel */,
+				FEFA1EAF2829FACD0088BEEB /* PresentPage */,
+				FEFA1ECE2829FACD0088BEEB /* Cell */,
+				FEFA1ED42829FACD0088BEEB /* Entities */,
+			);
+			path = DeliveryListPage;
+			sourceTree = "<group>";
+		};
+		FEFA1EAC2829FACD0088BEEB /* SectionModel */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1EAD2829FACD0088BEEB /* DeliveryMenuSectionModel.swift */,
+			);
+			path = SectionModel;
+			sourceTree = "<group>";
+		};
+		FEFA1EAF2829FACD0088BEEB /* PresentPage */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1EB02829FACD0088BEEB /* SubComponents */,
+			);
+			path = PresentPage;
+			sourceTree = "<group>";
+		};
+		FEFA1EB02829FACD0088BEEB /* SubComponents */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1EB62829FACD0088BEEB /* SelectStoreVC.swift */,
+				FEFA1EBC2829FACD0088BEEB /* SelectStoreViewModel.swift */,
+				FEFA1EB12829FACD0088BEEB /* TopSlideBar */,
+				FEFA1EB72829FACD0088BEEB /* SortSlideBar */,
+				FEFA1EBD2829FACD0088BEEB /* ContainerStoreListView */,
+			);
+			path = SubComponents;
+			sourceTree = "<group>";
+		};
+		FEFA1EB12829FACD0088BEEB /* TopSlideBar */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1EB22829FACD0088BEEB /* TopSlideBar.swift */,
+				FEFA1EB32829FACD0088BEEB /* TopSlideBarViewModel.swift */,
+				FEFA1EB42829FACD0088BEEB /* Cell */,
+			);
+			path = TopSlideBar;
+			sourceTree = "<group>";
+		};
+		FEFA1EB42829FACD0088BEEB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1EB52829FACD0088BEEB /* TopSlideCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FEFA1EB72829FACD0088BEEB /* SortSlideBar */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1EB82829FACD0088BEEB /* SortSlideBarViewModel.swift */,
+				FEFA1EB92829FACD0088BEEB /* Cell */,
+				FEFA1EBB2829FACD0088BEEB /* SortSlideBar.swift */,
+			);
+			path = SortSlideBar;
+			sourceTree = "<group>";
+		};
+		FEFA1EB92829FACD0088BEEB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1EBA2829FACD0088BEEB /* SortSlideCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FEFA1EBD2829FACD0088BEEB /* ContainerStoreListView */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1EBE2829FACD0088BEEB /* Cell */,
+			);
+			path = ContainerStoreListView;
+			sourceTree = "<group>";
+		};
+		FEFA1EBE2829FACD0088BEEB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1EBF2829FACD0088BEEB /* SubComponents */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FEFA1EBF2829FACD0088BEEB /* SubComponents */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1EC02829FACD0088BEEB /* StoreListView */,
+				FEFA1EC92829FACD0088BEEB /* Cell */,
+				FEFA1ECB2829FACD0088BEEB /* ContainerStoreListViewModel.swift */,
+				FEFA1ECC2829FACD0088BEEB /* StoreListHttpManager.swift */,
+				FEFA1ECD2829FACD0088BEEB /* ContainerStoreListView.swift */,
+			);
+			path = SubComponents;
+			sourceTree = "<group>";
+		};
+		FEFA1EC02829FACD0088BEEB /* StoreListView */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1EC12829FACD0088BEEB /* SectionModel */,
+				FEFA1EC32829FACD0088BEEB /* StoreListView.swift */,
+				FEFA1EC42829FACD0088BEEB /* StoreListViewModel.swift */,
+				FEFA1EC52829FACD0088BEEB /* Cell */,
+				FEFA1EC72829FACD0088BEEB /* StoreListModel.swift */,
+				FEFA1EC82829FACD0088BEEB /* StoreListSectionManager.swift */,
+			);
+			path = StoreListView;
+			sourceTree = "<group>";
+		};
+		FEFA1EC12829FACD0088BEEB /* SectionModel */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1EC22829FACD0088BEEB /* StoreListSectionModel.swift */,
+			);
+			path = SectionModel;
+			sourceTree = "<group>";
+		};
+		FEFA1EC52829FACD0088BEEB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1EC62829FACD0088BEEB /* StoreListCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FEFA1EC92829FACD0088BEEB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1ECA2829FACD0088BEEB /* ContainerStoreListViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FEFA1ECE2829FACD0088BEEB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1ECF2829FACD0088BEEB /* DeliveryMenuSpecialCell.swift */,
+				FEFA1ED02829FACD0088BEEB /* DeliveryMenuBasicCell.swift */,
+				FEFA1ED12829FACD0088BEEB /* DeliveryMenuBannerCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FEFA1ED42829FACD0088BEEB /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1ED52829FACD0088BEEB /* StoreType.swift */,
+				FEFA1ED62829FACD0088BEEB /* SortSlideType.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		FEFA1EF32829FAEC0088BEEB /* DeliveryDetailPage */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1EF42829FAEC0088BEEB /* Present */,
+				FEFA1F512829FAEC0088BEEB /* Extension */,
+			);
+			path = DeliveryDetailPage;
+			sourceTree = "<group>";
+		};
+		FEFA1EF42829FAEC0088BEEB /* Present */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1EF52829FAEC0088BEEB /* ReviewView */,
+				FEFA1F052829FAEC0088BEEB /* MagnetBarView */,
+			);
+			path = Present;
+			sourceTree = "<group>";
+		};
+		FEFA1EF52829FAEC0088BEEB /* ReviewView */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1EF62829FAEC0088BEEB /* SectionModel */,
+				FEFA1EF82829FAEC0088BEEB /* MagnetReviewHttpManager.swift */,
+				FEFA1EF92829FAEC0088BEEB /* PopupView */,
+				FEFA1EFC2829FAEC0088BEEB /* MagnetReviewViewModel.swift */,
+				FEFA1EFD2829FAEC0088BEEB /* Cell */,
+				FEFA1F032829FAEC0088BEEB /* MagnetReviewVC.swift */,
+				FEFA1F042829FAEC0088BEEB /* MagnetReviewModel.swift */,
+			);
+			path = ReviewView;
+			sourceTree = "<group>";
+		};
+		FEFA1EF62829FAEC0088BEEB /* SectionModel */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1EF72829FAEC0088BEEB /* MagnetReviewSection.swift */,
+			);
+			path = SectionModel;
+			sourceTree = "<group>";
+		};
+		FEFA1EF92829FAEC0088BEEB /* PopupView */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1EFA2829FAEC0088BEEB /* PickSortTypeViewModel.swift */,
+				FEFA1EFB2829FAEC0088BEEB /* PickSortTypeView.swift */,
+			);
+			path = PopupView;
+			sourceTree = "<group>";
+		};
+		FEFA1EFD2829FAEC0088BEEB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1EFE2829FAEC0088BEEB /* MagnetReviewTotalRatingCell.swift */,
+				FEFA1EFF2829FAEC0088BEEB /* MagnetReviewCell.swift */,
+				FEFA1F002829FAEC0088BEEB /* MagnetReviewHeaderCell.swift */,
+				FEFA1F012829FAEC0088BEEB /* MagnetReviewHeaderCellViewModel.swift */,
+				FEFA1F022829FAEC0088BEEB /* MagnetReviewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FEFA1F052829FAEC0088BEEB /* MagnetBarView */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F062829FAEC0088BEEB /* MagnetBarViewModel.swift */,
+				FEFA1F072829FAEC0088BEEB /* SubComponent */,
+				FEFA1F4F2829FAEC0088BEEB /* MagnetBarHttpModel.swift */,
+				FEFA1F502829FAEC0088BEEB /* MagnetBarView.swift */,
+			);
+			path = MagnetBarView;
+			sourceTree = "<group>";
+		};
+		FEFA1F072829FAEC0088BEEB /* SubComponent */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F082829FAEC0088BEEB /* RemoteMainListBar */,
+				FEFA1F0D2829FAEC0088BEEB /* NavigationBar */,
+				FEFA1F102829FAEC0088BEEB /* MainListView */,
+			);
+			path = SubComponent;
+			sourceTree = "<group>";
+		};
+		FEFA1F082829FAEC0088BEEB /* RemoteMainListBar */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F092829FAEC0088BEEB /* RemoteMainListBar.swift */,
+				FEFA1F0A2829FAEC0088BEEB /* RemoteMainListBarViewModel.swift */,
+				FEFA1F0B2829FAEC0088BEEB /* Cell */,
+			);
+			path = RemoteMainListBar;
+			sourceTree = "<group>";
+		};
+		FEFA1F0B2829FAEC0088BEEB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F0C2829FAEC0088BEEB /* RemoteMainListBarCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FEFA1F0D2829FAEC0088BEEB /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F0E2829FAEC0088BEEB /* MagnetNavigationBarViewModel.swift */,
+				FEFA1F0F2829FAEC0088BEEB /* MagnetNavigationBar.swift */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		FEFA1F102829FAEC0088BEEB /* MainListView */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F112829FAEC0088BEEB /* SectionModel */,
+				FEFA1F132829FAEC0088BEEB /* MagnetListView.swift */,
+				FEFA1F142829FAEC0088BEEB /* Cell */,
+				FEFA1F4D2829FAEC0088BEEB /* MagnetListViewModel.swift */,
+				FEFA1F4E2829FAEC0088BEEB /* MagnetListSectionManager.swift */,
+			);
+			path = MainListView;
+			sourceTree = "<group>";
+		};
+		FEFA1F112829FAEC0088BEEB /* SectionModel */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F122829FAEC0088BEEB /* MagnetSection.swift */,
+			);
+			path = SectionModel;
+			sourceTree = "<group>";
+		};
+		FEFA1F142829FAEC0088BEEB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F152829FAEC0088BEEB /* MenuCell */,
+				FEFA1F2C2829FAEC0088BEEB /* StickyCell */,
+				FEFA1F2E2829FAEC0088BEEB /* InfoCell */,
+				FEFA1F472829FAEC0088BEEB /* BannerCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FEFA1F152829FAEC0088BEEB /* MenuCell */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F162829FAEC0088BEEB /* PresentVC */,
+				FEFA1F2A2829FAEC0088BEEB /* MagnetMenuCell.swift */,
+				FEFA1F2B2829FAEC0088BEEB /* MagnetMenuHeaderCell.swift */,
+			);
+			path = MenuCell;
+			sourceTree = "<group>";
+		};
+		FEFA1F162829FAEC0088BEEB /* PresentVC */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F172829FAEC0088BEEB /* MagnetPresentMenuModel.swift */,
+				FEFA1F182829FAEC0088BEEB /* Cells */,
+				FEFA1F212829FAEC0088BEEB /* SectionModel */,
+				FEFA1F232829FAEC0088BEEB /* SubComponent */,
+				FEFA1F272829FAEC0088BEEB /* MagnetPresentMenuSectionManager.swift */,
+				FEFA1F282829FAEC0088BEEB /* MagnetPresentMenuViewModel.swift */,
+				FEFA1F292829FAEC0088BEEB /* MagnetPresentMenuVC.swift */,
+			);
+			path = PresentVC;
+			sourceTree = "<group>";
+		};
+		FEFA1F182829FAEC0088BEEB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F192829FAEC0088BEEB /* MagnetPresentMenuHeaderView.swift */,
+				FEFA1F1A2829FAEC0088BEEB /* MagnetPresentMainTitleCell.swift */,
+				FEFA1F1B2829FAEC0088BEEB /* MagnetPresentMenuCell.swift */,
+				FEFA1F1C2829FAEC0088BEEB /* CountSelectCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FEFA1F1C2829FAEC0088BEEB /* CountSelectCell */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F1D2829FAEC0088BEEB /* CountCheckerViewModel.swift */,
+				FEFA1F1E2829FAEC0088BEEB /* MagnetPresentCountSelectViewModel.swift */,
+				FEFA1F1F2829FAEC0088BEEB /* CountChecker.swift */,
+				FEFA1F202829FAEC0088BEEB /* MagnetPresentCountSelectCell.swift */,
+			);
+			path = CountSelectCell;
+			sourceTree = "<group>";
+		};
+		FEFA1F212829FAEC0088BEEB /* SectionModel */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F222829FAEC0088BEEB /* MagnetPresentMenuSection.swift */,
+			);
+			path = SectionModel;
+			sourceTree = "<group>";
+		};
+		FEFA1F232829FAEC0088BEEB /* SubComponent */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F242829FAEC0088BEEB /* PopupLabel.swift */,
+				FEFA1F252829FAEC0088BEEB /* MagnetSubmitTapView.swift */,
+				FEFA1F262829FAEC0088BEEB /* MagnetSubmitTapViewModel.swift */,
+			);
+			path = SubComponent;
+			sourceTree = "<group>";
+		};
+		FEFA1F2C2829FAEC0088BEEB /* StickyCell */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F2D2829FAEC0088BEEB /* MagnetStickyCell.swift */,
+			);
+			path = StickyCell;
+			sourceTree = "<group>";
+		};
+		FEFA1F2E2829FAEC0088BEEB /* InfoCell */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F2F2829FAEC0088BEEB /* MagnetInfoCell.swift */,
+				FEFA1F302829FAEC0088BEEB /* SubComponents */,
+				FEFA1F452829FAEC0088BEEB /* Entities */,
+			);
+			path = InfoCell;
+			sourceTree = "<group>";
+		};
+		FEFA1F302829FAEC0088BEEB /* SubComponents */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F312829FAEC0088BEEB /* NavBar */,
+				FEFA1F352829FAEC0088BEEB /* LayoutView */,
+			);
+			path = SubComponents;
+			sourceTree = "<group>";
+		};
+		FEFA1F312829FAEC0088BEEB /* NavBar */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F322829FAEC0088BEEB /* MagnetInfoNavBarViewModel.swift */,
+				FEFA1F332829FAEC0088BEEB /* MagnetInfoNavBar.swift */,
+				FEFA1F342829FAEC0088BEEB /* MagnetInfoButton.swift */,
+			);
+			path = NavBar;
+			sourceTree = "<group>";
+		};
+		FEFA1F352829FAEC0088BEEB /* LayoutView */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F362829FAEC0088BEEB /* SubComponents */,
+				FEFA1F432829FAEC0088BEEB /* MagnetInfoView.swift */,
+				FEFA1F442829FAEC0088BEEB /* MagnetInfoViewModel.swift */,
+			);
+			path = LayoutView;
+			sourceTree = "<group>";
+		};
+		FEFA1F362829FAEC0088BEEB /* SubComponents */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F372829FAEC0088BEEB /* ReviewSummaryCollectionView */,
+				FEFA1F402829FAEC0088BEEB /* DeliveryOrTakeoutInfoView */,
+			);
+			path = SubComponents;
+			sourceTree = "<group>";
+		};
+		FEFA1F372829FAEC0088BEEB /* ReviewSummaryCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F382829FAEC0088BEEB /* Cells */,
+				FEFA1F3B2829FAEC0088BEEB /* Entitiy */,
+				FEFA1F3D2829FAEC0088BEEB /* MagnetSummaryReviewModel.swift */,
+				FEFA1F3E2829FAEC0088BEEB /* MagnetSummaryReviewViewModel.swift */,
+				FEFA1F3F2829FAEC0088BEEB /* MagnetSummaryReviewView.swift */,
+			);
+			path = ReviewSummaryCollectionView;
+			sourceTree = "<group>";
+		};
+		FEFA1F382829FAEC0088BEEB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F392829FAEC0088BEEB /* MagnetInfoReviewCell.swift */,
+				FEFA1F3A2829FAEC0088BEEB /* MagnetInfoMoreButtonCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FEFA1F3B2829FAEC0088BEEB /* Entitiy */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F3C2829FAEC0088BEEB /* SummaryReviewData.swift */,
+			);
+			path = Entitiy;
+			sourceTree = "<group>";
+		};
+		FEFA1F402829FAEC0088BEEB /* DeliveryOrTakeoutInfoView */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F412829FAEC0088BEEB /* TakeoutInfoView.swift */,
+				FEFA1F422829FAEC0088BEEB /* DeliveryInfoView.swift */,
+			);
+			path = DeliveryOrTakeoutInfoView;
+			sourceTree = "<group>";
+		};
+		FEFA1F452829FAEC0088BEEB /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F462829FAEC0088BEEB /* MagnetInfoType.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		FEFA1F472829FAEC0088BEEB /* BannerCell */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F482829FAEC0088BEEB /* MainHeader */,
+				FEFA1F4B2829FAEC0088BEEB /* MagnetBannerCellViewModel.swift */,
+				FEFA1F4C2829FAEC0088BEEB /* MagnetBannerCell.swift */,
+			);
+			path = BannerCell;
+			sourceTree = "<group>";
+		};
+		FEFA1F482829FAEC0088BEEB /* MainHeader */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F492829FAEC0088BEEB /* MagnetHeaderView.swift */,
+				FEFA1F4A2829FAEC0088BEEB /* MagnetHeaderViewModel.swift */,
+			);
+			path = MainHeader;
+			sourceTree = "<group>";
+		};
+		FEFA1F512829FAEC0088BEEB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F522829FAEC0088BEEB /* Int+extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		FEFA1F94282A04720088BEEB /* SubViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F95282A05150088BEEB /* TopBarVCWithProfile.swift */,
+			);
+			path = SubViewController;
 			sourceTree = "<group>";
 		};
 		FEFBB5C828029D3F00864528 /* TopBarViewController */ = {
@@ -1458,6 +2034,7 @@
 				FEA9600427E1874D00FD78B3 /* RxSwift */,
 				FEFAA53D27E6038300BA0706 /* RxGesture */,
 				FE8D307D27FC688300F55EEE /* RxDataSources */,
+				FEFA1F922829FB550088BEEB /* Reusable */,
 			);
 			productName = kirkim_App;
 			productReference = FE94DD6127B655190017D776 /* kirkim_App.app */;
@@ -1492,6 +2069,7 @@
 				FEA95FFF27E1874D00FD78B3 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				FEFAA53C27E6038200BA0706 /* XCRemoteSwiftPackageReference "RxGesture" */,
 				FE8D307C27FC688300F55EEE /* XCRemoteSwiftPackageReference "RxDataSources" */,
+				FEFA1F912829FB550088BEEB /* XCRemoteSwiftPackageReference "Reusable" */,
 			);
 			productRefGroup = FE94DD6227B655190017D776 /* Products */;
 			projectDirPath = "";
@@ -1510,13 +2088,13 @@
 				FE078F1D27C353A900D19E34 /* SideMenu.storyboard in Resources */,
 				FE7FC0CE27C48F22009EB2AE /* TestView1-1.xib in Resources */,
 				FE7FC0DA27C48F4F009EB2AE /* TestView3-1.xib in Resources */,
-				FE63140A27DB661A008F4D48 /* StaticEventContent.plist in Resources */,
 				FE57F23C27CF29C000B205F9 /* KiflixDetailVC.xib in Resources */,
 				FE84E49A27D06B5000B30F57 /* FullScreenPlayerVC.xib in Resources */,
 				FE8D307727FC682A00F55EEE /* BeminStaticContent.plist in Resources */,
 				FE94DD7427B655190017D776 /* LaunchScreen.storyboard in Resources */,
 				FE74FEAD27CDBCA100F40D5F /* KiflixVC.xib in Resources */,
 				FE7FC0D227C48F31009EB2AE /* TestView1-2.xib in Resources */,
+				FEFA1F5C2829FAEC0088BEEB /* MagnetReviewCell.xib in Resources */,
 				FE3CCB8727D1CB2B00D770F8 /* DescriptionView.xib in Resources */,
 				FE94DD7127B655190017D776 /* Assets.xcassets in Resources */,
 				FEBA011327CDD5D700E74FCB /* SignUpPageVC.xib in Resources */,
@@ -1560,19 +2138,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEFA1BE02829EF140088BEEB /* TotalBannerListViewModel.swift in Sources */,
+				FEFA1EDB2829FACD0088BEEB /* TopSlideBarViewModel.swift in Sources */,
 				FE7FC0CD27C48F22009EB2AE /* TestView1-1.swift in Sources */,
+				FEFA1F802829FAEC0088BEEB /* MagnetSummaryReviewModel.swift in Sources */,
 				FE8EF12827F3E74F00EEAC69 /* UserType.swift in Sources */,
 				FEFBB5E928029D3F00864528 /* BundleBaseButton.swift in Sources */,
-				FE63140E27DB6DFC008F4D48 /* BannerPlistContent+protocol.swift in Sources */,
+				FEFA1F542829FAEC0088BEEB /* MagnetReviewHttpManager.swift in Sources */,
+				FEFA1F7F2829FAEC0088BEEB /* SummaryReviewData.swift in Sources */,
+				FEFA1EE72829FACD0088BEEB /* StoreListSectionManager.swift in Sources */,
 				FE2D52F227F537EA00106E5A /* SimpleTextFieldViewModel.swift in Sources */,
 				FE38F46427F7170F008BBE8B /* LoginPwZone.swift in Sources */,
 				FE2BD69127CDC9C400A9FB73 /* MainVC.swift in Sources */,
 				FEFBB5EA28029D3F00864528 /* BundleBaseButtonViewModel.swift in Sources */,
 				FE38F46F27F719F5008BBE8B /* CreateUserButton.swift in Sources */,
+				FEFA1F852829FAEC0088BEEB /* MagnetInfoView.swift in Sources */,
 				FE38F46927F7170F008BBE8B /* UserModel.swift in Sources */,
 				FEFBB5E728029D3F00864528 /* BottomBar.swift in Sources */,
 				FE302FFC27FD16DE006F2C63 /* LogoutView.swift in Sources */,
 				FE38F47127F71A93008BBE8B /* CreateUserButtonViewModel.swift in Sources */,
+				FEFA1EDA2829FACD0088BEEB /* TopSlideBar.swift in Sources */,
 				FEFBB5F828029E7200864528 /* ButtonVC3.swift in Sources */,
 				FE85B4E927EAA88C0031F5AC /* SideMenuView+Protocol.swift in Sources */,
 				FE30300327FD3502006F2C63 /* DetailProfileButton.swift in Sources */,
@@ -1582,145 +2167,212 @@
 				FE8D306827FC682A00F55EEE /* EventPage1.swift in Sources */,
 				FE74FEAF27CDBDDE00F40D5F /* MainTabBarController.swift in Sources */,
 				FE8EF16127F425E300EEAC69 /* CheckIdButton.swift in Sources */,
-				FE8D306327FC682A00F55EEE /* StaticCell7_2.swift in Sources */,
 				FEFBB5FD28029E7200864528 /* ButtonVC2.swift in Sources */,
-				FE41DC9E27D706B400317493 /* MyBannerByAPIView.swift in Sources */,
-				FE8D307027FC682A00F55EEE /* StaticCell4_1.swift in Sources */,
+				FEFA1F6E2829FAEC0088BEEB /* MagnetPresentCountSelectCell.swift in Sources */,
 				FEFBB5FA28029E7200864528 /* ButtonVC4.swift in Sources */,
 				FE18A28927C5DE9B00E56F39 /* BannerHttpManager.swift in Sources */,
 				FE8D305E27FC682A00F55EEE /* BeminSearchView.swift in Sources */,
 				FEFBB5F928029E7200864528 /* Test1.swift in Sources */,
 				FE8F025E27E9EC2D0053224A /* SideMenuFooterView.swift in Sources */,
-				FE8D306027FC682A00F55EEE /* StaticCell7_3.swift in Sources */,
+				FEFA1F7B2829FAEC0088BEEB /* MagnetInfoNavBar.swift in Sources */,
+				FEFA1F6A2829FAEC0088BEEB /* MagnetPresentMenuCell.swift in Sources */,
+				FEFA1F712829FAEC0088BEEB /* MagnetSubmitTapView.swift in Sources */,
+				FEFA1F842829FAEC0088BEEB /* DeliveryInfoView.swift in Sources */,
 				FE74FE9427CDA82D00F40D5F /* BaseVC.swift in Sources */,
 				FEFBB5FC28029E7200864528 /* ButtonVC1.swift in Sources */,
 				FE2D52EB27F5347800106E5A /* NormalTextField.swift in Sources */,
 				FE3EA96727BB8AC100DA36EA /* SimpleTextField.swift in Sources */,
 				FE38F46627F7170F008BBE8B /* BasicLoginViewModel.swift in Sources */,
+				FEFA1F632829FAEC0088BEEB /* MagnetNavigationBarViewModel.swift in Sources */,
 				FE84E49927D06B5000B30F57 /* FullScreenPlayerVC.swift in Sources */,
+				FEFA1F6D2829FAEC0088BEEB /* CountChecker.swift in Sources */,
 				FE8D307A27FC682A00F55EEE /* BeminStaticContent.swift in Sources */,
-				FE8D307327FC682A00F55EEE /* StaticCell5_1.swift in Sources */,
 				FEBF326327E9A16600DFB792 /* RxBannerButton.swift in Sources */,
-				FE63140C27DB663E008F4D48 /* StaticEventContent.swift in Sources */,
+				FEFA1BE32829EF140088BEEB /* BeminBannerListView.swift in Sources */,
 				FE8D305D27FC682A00F55EEE /* MainBeminCVViewModel.swift in Sources */,
+				FEFA1F7A2829FAEC0088BEEB /* MagnetInfoNavBarViewModel.swift in Sources */,
 				FEBF326C27E9A16600DFB792 /* BannerContent+protocol.swift in Sources */,
+				FEFA1F96282A05150088BEEB /* TopBarVCWithProfile.swift in Sources */,
 				FE7FC0D527C48F3F009EB2AE /* TestView2-1.swift in Sources */,
-				FE8D306527FC682A00F55EEE /* StaticCell1_2.swift in Sources */,
-				FE63140727DB647D008F4D48 /* MyBannerByPlistViewModel.swift in Sources */,
-				FE63140227DB58C5008F4D48 /* MyBannerTotalListVC.swift in Sources */,
+				FEFA1F7E2829FAEC0088BEEB /* MagnetInfoMoreButtonCell.swift in Sources */,
 				FE078F2F27C3634B00D19E34 /* SideMenuHeaderView.swift in Sources */,
+				FEFA1F5D2829FAEC0088BEEB /* MagnetReviewVC.swift in Sources */,
 				FE84E49627D0666600B30F57 /* KiflixPlayer.swift in Sources */,
+				FEFA1BE72829F0350088BEEB /* DeliveryHttpManager.swift in Sources */,
 				FEFBB5E128029D3F00864528 /* TopBarLayoutView.swift in Sources */,
 				FE078F3727C3737200D19E34 /* SizeMaster.swift in Sources */,
 				FEBF326427E9A16600DFB792 /* RxBannerButtonViewModel.swift in Sources */,
+				FEFA1EDC2829FACD0088BEEB /* TopSlideCell.swift in Sources */,
 				FEBF326B27E9A16600DFB792 /* StaticBannerPlistModel.swift in Sources */,
-				FEBF326E27E9A26000DFB792 /* TextVC.swift in Sources */,
 				FE8D307927FC682A00F55EEE /* RxStaticSectionData.swift in Sources */,
 				FEFBB5E628029D3F00864528 /* TopBar.swift in Sources */,
+				FEFA1F7D2829FAEC0088BEEB /* MagnetInfoReviewCell.swift in Sources */,
+				FEFA1F782829FAEC0088BEEB /* MagnetStickyCell.swift in Sources */,
+				FEFA1F772829FAEC0088BEEB /* MagnetMenuHeaderCell.swift in Sources */,
 				FEBF326627E9A16600DFB792 /* RxBannerListViewModel.swift in Sources */,
 				FE8D307527FC682A00F55EEE /* StaticSectionCell.swift in Sources */,
 				FE8EF16327F425E300EEAC69 /* SignupIdZoneViewModel.swift in Sources */,
 				FE21133127BCD095003293B2 /* SignUpPageVC.swift in Sources */,
-				FE8D307127FC682A00F55EEE /* StaticCell5_2.swift in Sources */,
+				FEFA1EEE2829FACD0088BEEB /* DeliveryMenuBannerCell.swift in Sources */,
+				FEFA1F552829FAEC0088BEEB /* PickSortTypeViewModel.swift in Sources */,
 				FE57F23E27CF2ACF00B205F9 /* extension+AVPlayer.swift in Sources */,
 				FE8BE4BF27F2CD2C002F744F /* CustomError.swift in Sources */,
 				FE38F46A27F7170F008BBE8B /* LoginUserModel.swift in Sources */,
 				FE47CAD027C114210077806D /* UserHttpManager.swift in Sources */,
+				FEFA1F7C2829FAEC0088BEEB /* MagnetInfoButton.swift in Sources */,
+				FEFA1BDB2829EF140088BEEB /* BeminBannerView.swift in Sources */,
+				FEFA1EE82829FACD0088BEEB /* ContainerStoreListViewCell.swift in Sources */,
+				FEFA1F5A2829FAEC0088BEEB /* MagnetReviewHeaderCell.swift in Sources */,
+				FEFA1EF12829FACD0088BEEB /* StoreType.swift in Sources */,
 				FEFBB5E228029D3F00864528 /* TopBarLayoutViewModel.swift in Sources */,
 				FE38F46127F7170F008BBE8B /* LoginIdZone.swift in Sources */,
 				FEFBB5E428029D3F00864528 /* TopBarViewModel.swift in Sources */,
+				FEFA1F822829FAEC0088BEEB /* MagnetSummaryReviewView.swift in Sources */,
 				FE8EF16427F425E300EEAC69 /* JoinButtonViewModel.swift in Sources */,
 				FE8EF16827F425E300EEAC69 /* RxSignupPageViewModel.swift in Sources */,
-				FE41DC9C27D706B400317493 /* MyBannerCell.swift in Sources */,
+				FEFA1F792829FAEC0088BEEB /* MagnetInfoCell.swift in Sources */,
 				FE21132A27BCA6AE003293B2 /* HttpClient.swift in Sources */,
+				FEFA1BE12829EF140088BEEB /* BeminBannerListViewModel.swift in Sources */,
 				FE2D52F027F534D000106E5A /* TextFieldType.swift in Sources */,
 				FEBF326527E9A16600DFB792 /* RxBannerCell.swift in Sources */,
+				FEFA1EEC2829FACD0088BEEB /* DeliveryMenuSpecialCell.swift in Sources */,
 				FEBF326A27E9A16600DFB792 /* StaticBannerContent.swift in Sources */,
-				FE7C00E327E867F5005ED99C /* MyBannerByPlistViewModel+RxSwfit.swift in Sources */,
-				FE8D306127FC682A00F55EEE /* StaticCell7_1.swift in Sources */,
 				FE38F46027F7170F008BBE8B /* LoginButton.swift in Sources */,
-				FE8D306E27FC682A00F55EEE /* StaticCell3_2.swift in Sources */,
 				FE38F46727F7170F008BBE8B /* LoginErrorLabel.swift in Sources */,
+				FEFA1F702829FAEC0088BEEB /* PopupLabel.swift in Sources */,
+				FEFA1F612829FAEC0088BEEB /* RemoteMainListBarViewModel.swift in Sources */,
 				FE38F46227F7170F008BBE8B /* LoginIdZoneViewModel.swift in Sources */,
+				FEFA1F582829FAEC0088BEEB /* MagnetReviewTotalRatingCell.swift in Sources */,
+				FEFA1F762829FAEC0088BEEB /* MagnetMenuCell.swift in Sources */,
+				FEFA1F6C2829FAEC0088BEEB /* MagnetPresentCountSelectViewModel.swift in Sources */,
+				FEFA1F562829FAEC0088BEEB /* PickSortTypeView.swift in Sources */,
 				FE2FE4BC27CE086C004B8871 /* KiflixCollectionView.swift in Sources */,
 				FE8EF12C27F3E7F500EEAC69 /* UrlType+Protocol.swift in Sources */,
 				FE2D52ED27F534AB00106E5A /* SecretTextField.swift in Sources */,
 				FEBF326827E9A16600DFB792 /* RxBannerView.swift in Sources */,
 				FE38F45E27F7170F008BBE8B /* LoginPageViewModel.swift in Sources */,
+				FEFA1EDF2829FACD0088BEEB /* SortSlideCell.swift in Sources */,
 				FE8EF16227F425E300EEAC69 /* SignupIdZone.swift in Sources */,
 				FE8EF15E27F425E300EEAC69 /* SignupPwZoneViewModel.swift in Sources */,
 				FE74FEAC27CDBCA100F40D5F /* KiflixVC.swift in Sources */,
 				FEFBB5FB28029E7200864528 /* Test3.swift in Sources */,
+				FEFA1ED82829FACD0088BEEB /* DeliveryMenuSectionModel.swift in Sources */,
+				FEFA1EDD2829FACD0088BEEB /* SelectStoreVC.swift in Sources */,
 				FE078F1F27C353B500D19E34 /* SideMenuVC.swift in Sources */,
+				FEFA1F5F2829FAEC0088BEEB /* MagnetBarViewModel.swift in Sources */,
 				FE8EF16927F425E300EEAC69 /* SignUpPageModel.swift in Sources */,
-				FEA95FFE27E1840B00FD78B3 /* MyBannerUsingRxswift.swift in Sources */,
+				FEFA1F672829FAEC0088BEEB /* MagnetPresentMenuModel.swift in Sources */,
+				FEFA1EE42829FACD0088BEEB /* StoreListViewModel.swift in Sources */,
 				FE3EA96527BB751800DA36EA /* TextAnimation.swift in Sources */,
 				FE2BD69727CDD34400A9FB73 /* KiflixCollectionCell.swift in Sources */,
-				FE8D307427FC682A00F55EEE /* StaticCell2_1.swift in Sources */,
+				FEFA1EEA2829FACD0088BEEB /* StoreListHttpManager.swift in Sources */,
+				FEFA1EF02829FACD0088BEEB /* DeliveryMenuSectionManager.swift in Sources */,
+				FEFA1EE02829FACD0088BEEB /* SortSlideBar.swift in Sources */,
+				FEFA1F742829FAEC0088BEEB /* MagnetPresentMenuViewModel.swift in Sources */,
+				FEFA1EDE2829FACD0088BEEB /* SortSlideBarViewModel.swift in Sources */,
+				FEFA1F812829FAEC0088BEEB /* MagnetSummaryReviewViewModel.swift in Sources */,
+				FEFA1F8C2829FAEC0088BEEB /* MagnetListViewModel.swift in Sources */,
+				FEFA1F572829FAEC0088BEEB /* MagnetReviewViewModel.swift in Sources */,
 				FE8EF15C27F425E300EEAC69 /* RxSignupPageVC.swift in Sources */,
 				FEFBB5E528029D3F00864528 /* TopBarCell.swift in Sources */,
 				FE8D306627FC682A00F55EEE /* StaticBannerCell.swift in Sources */,
 				FE2FD15727EDA31A0094E094 /* RxHttpClient.swift in Sources */,
 				FEFBB5E828029D3F00864528 /* BottomBarViewModel.swift in Sources */,
+				FEFA1F8A2829FAEC0088BEEB /* MagnetBannerCellViewModel.swift in Sources */,
 				FEFBB5DF28029D3F00864528 /* TopBarMainViewController.swift in Sources */,
 				FEF9811E27FA7C8A00AA784F /* RxBannerViewDelegate.swift in Sources */,
+				FEFA1F532829FAEC0088BEEB /* MagnetReviewSection.swift in Sources */,
+				FEFA1F882829FAEC0088BEEB /* MagnetHeaderView.swift in Sources */,
+				FEFA1EEF2829FACD0088BEEB /* DeliveryMenuVC.swift in Sources */,
 				FE302FFE27FD2DE9006F2C63 /* CopyrightInfoView.swift in Sources */,
 				FEFBB5EE28029E3A00864528 /* StaticSectionModel.swift in Sources */,
-				FE18A28727C5CA4F00E56F39 /* MyBannerByAPIViewModel.swift in Sources */,
 				FEBA011727CDE08300E74FCB /* KiflixHttpManager.swift in Sources */,
-				FE8D306F27FC682A00F55EEE /* StaticCell3_1.swift in Sources */,
-				FE2FF55127D5CC11005DA688 /* TestVC.swift in Sources */,
 				FE85B4F327EAAC5E0031F5AC /* KiflixModel.swift in Sources */,
-				FEA9600727E19C5E00FD78B3 /* MyBannerBasicView.swift in Sources */,
-				FE63140527DB6402008F4D48 /* MyBannerByPlistView.swift in Sources */,
+				FEFA1EE32829FACD0088BEEB /* StoreListView.swift in Sources */,
 				FEFBB5F728029E7200864528 /* Test2.swift in Sources */,
 				FE38F46327F7170F008BBE8B /* LoginPwZoneViewModel.swift in Sources */,
+				FEFA1F5B2829FAEC0088BEEB /* MagnetReviewHeaderCellViewModel.swift in Sources */,
+				FEFA1BDD2829EF140088BEEB /* BeminBannerButton.swift in Sources */,
+				FEFA1F8B2829FAEC0088BEEB /* MagnetBannerCell.swift in Sources */,
 				FE8EF16527F425E300EEAC69 /* JoinButton.swift in Sources */,
+				FEFA1BDC2829EF140088BEEB /* BeminBannerButtonViewModel.swift in Sources */,
 				FE8D306927FC682A00F55EEE /* StaticBigCell.swift in Sources */,
-				FE8E456127D747DA0025779F /* MyBannerViewDelegate.swift in Sources */,
 				FE47CACC27C0C5570077806D /* SignUpPageViewModel.swift in Sources */,
 				FEFBB5EB28029D3F00864528 /* TopBarItem.swift in Sources */,
 				FE8D306A27FC682A00F55EEE /* StaticSmall_4Cell.swift in Sources */,
 				FE38F45F27F7170F008BBE8B /* LoginButtonViewModel.swift in Sources */,
+				FEFA1F862829FAEC0088BEEB /* MagnetInfoViewModel.swift in Sources */,
 				FE2067EF27BCFDC7005EBEB5 /* KeyboardAnimation.swift in Sources */,
 				FE57F23B27CF29C000B205F9 /* KiflixDetailVC.swift in Sources */,
 				FE84E49D27D0718000B30F57 /* KiflixPlayerVC.swift in Sources */,
 				FEFBB5E028029D3F00864528 /* TopBarMainViewModel.swift in Sources */,
 				FE8EF16B27F42E8300EEAC69 /* CustomAlert.swift in Sources */,
+				FEFA1F8F2829FAEC0088BEEB /* MagnetBarView.swift in Sources */,
+				FEFA1ED72829FACD0088BEEB /* DeliveryMenuModel.swift in Sources */,
+				FEFA1F872829FAEC0088BEEB /* MagnetInfoType.swift in Sources */,
+				FEFA1EE62829FACD0088BEEB /* StoreListModel.swift in Sources */,
 				FE8D306C27FC682A00F55EEE /* StaticMedium_2Cell.swift in Sources */,
+				FEFA1F8E2829FAEC0088BEEB /* MagnetBarHttpModel.swift in Sources */,
 				FE8EF16027F425E300EEAC69 /* CheckIdButtonViewModel.swift in Sources */,
-				FE8D307227FC682A00F55EEE /* StaticCell5_3.swift in Sources */,
+				FEFA1F602829FAEC0088BEEB /* RemoteMainListBar.swift in Sources */,
+				FEFA1F592829FAEC0088BEEB /* MagnetReviewCell.swift in Sources */,
+				FEFA1F692829FAEC0088BEEB /* MagnetPresentMainTitleCell.swift in Sources */,
 				FE8D306727FC682A00F55EEE /* StaticCellProtocol.swift in Sources */,
 				FE94DD6527B655190017D776 /* AppDelegate.swift in Sources */,
 				FE8D307B27FC682A00F55EEE /* MainBeminVC.swift in Sources */,
+				FEFA1F5E2829FAEC0088BEEB /* MagnetReviewModel.swift in Sources */,
 				FE7FC0D927C48F4F009EB2AE /* TestView3-1.swift in Sources */,
 				FEFBB5E328029D3F00864528 /* TopBarLayoutViewCell.swift in Sources */,
 				FE8EF16627F425E300EEAC69 /* SignupNameZone.swift in Sources */,
 				FE38F46B27F7170F008BBE8B /* LoginPageVC.swift in Sources */,
+				FEFA1F722829FAEC0088BEEB /* MagnetSubmitTapViewModel.swift in Sources */,
+				FEFA1BDE2829EF140088BEEB /* TotalBannerListView.swift in Sources */,
+				FEFA1EF22829FACD0088BEEB /* SortSlideType.swift in Sources */,
 				FE8D306B27FC682A00F55EEE /* StaticSmall_3Cell.swift in Sources */,
+				FEFA1F622829FAEC0088BEEB /* RemoteMainListBarCell.swift in Sources */,
+				FEFA1EE92829FACD0088BEEB /* ContainerStoreListViewModel.swift in Sources */,
+				FEFA1F682829FAEC0088BEEB /* MagnetPresentMenuHeaderView.swift in Sources */,
+				FEFA1F892829FAEC0088BEEB /* MagnetHeaderViewModel.swift in Sources */,
+				FEFA1EE22829FACD0088BEEB /* StoreListSectionModel.swift in Sources */,
 				FE38F46827F7170F008BBE8B /* LoginStatus+enum.swift in Sources */,
 				FE94DD6F27B655190017D776 /* kirkim_App.xcdatamodeld in Sources */,
 				FEBF326727E9A16600DFB792 /* RxBannerListView.swift in Sources */,
 				FE8D306D27FC682A00F55EEE /* StaticMediumCell.swift in Sources */,
+				FEFA1F6F2829FAEC0088BEEB /* MagnetPresentMenuSection.swift in Sources */,
+				FEFA1F732829FAEC0088BEEB /* MagnetPresentMenuSectionManager.swift in Sources */,
 				FE7FC0C627C48581009EB2AE /* SideMenuModel.swift in Sources */,
-				FE41DCA027D706B400317493 /* MyBannerTotalButton.swift in Sources */,
+				FEFA1ED92829FACD0088BEEB /* DeliveryMenuViewModel.swift in Sources */,
 				FE8D307627FC682A00F55EEE /* StaticSectionViewModel.swift in Sources */,
+				FEFA1F6B2829FAEC0088BEEB /* CountCheckerViewModel.swift in Sources */,
 				FE84E4A027D07F1C00B30F57 /* PlayerView.swift in Sources */,
 				FEBF326227E9A16600DFB792 /* RxBannerViewModel.swift in Sources */,
+				FEFA1EEB2829FACD0088BEEB /* ContainerStoreListView.swift in Sources */,
+				FEFA1F832829FAEC0088BEEB /* TakeoutInfoView.swift in Sources */,
+				FEFA1F902829FAEC0088BEEB /* Int+extension.swift in Sources */,
 				FE94DD6727B655190017D776 /* SceneDelegate.swift in Sources */,
+				FEFA1EED2829FACD0088BEEB /* DeliveryMenuBasicCell.swift in Sources */,
 				FE38F46527F7170F008BBE8B /* BasicLoginView.swift in Sources */,
 				FE7FC0D127C48F31009EB2AE /* TestView1-2.swift in Sources */,
 				FEBA011527CDDC5B00E74FCB /* KiflixViewModel.swift in Sources */,
-				FE8D306427FC682A00F55EEE /* StaticCell1_1.swift in Sources */,
 				FE8EF16727F425E300EEAC69 /* SignupNameZoneViewModel.swift in Sources */,
 				FE8EF15F27F425E300EEAC69 /* SignupPwZone.swift in Sources */,
 				FE30300927FD3DC6006F2C63 /* DirectorBlogWebkitView.swift in Sources */,
 				FE8EF15D27F425E300EEAC69 /* SignupErrorLabel.swift in Sources */,
+				FEFA1F652829FAEC0088BEEB /* MagnetSection.swift in Sources */,
+				FEFA1F8D2829FAEC0088BEEB /* MagnetListSectionManager.swift in Sources */,
 				FE7FC0E427C4AE90009EB2AE /* SideMenuCell.swift in Sources */,
-				FE8D306227FC682A00F55EEE /* StaticCell7_4.swift in Sources */,
+				FEFA1BDF2829EF140088BEEB /* TotalBannerListCell.swift in Sources */,
+				FEFA1BDA2829EF140088BEEB /* BeminBannerViewModel.swift in Sources */,
+				FEFA1F662829FAEC0088BEEB /* MagnetListView.swift in Sources */,
+				FEFA1BE22829EF140088BEEB /* BeminBannerCell.swift in Sources */,
 				FE8D307827FC682A00F55EEE /* StaticItem.swift in Sources */,
+				FEFA1EE12829FACD0088BEEB /* SelectStoreViewModel.swift in Sources */,
+				FEFA1F642829FAEC0088BEEB /* MagnetNavigationBar.swift in Sources */,
 				FE46F4F627D1AD6500DB31EE /* DescriptionView.swift in Sources */,
+				FEFA1BE42829EF140088BEEB /* BannerSources.swift in Sources */,
 				FE30300627FD37F2006F2C63 /* DetailProfileVC.swift in Sources */,
+				FEFA1EE52829FACD0088BEEB /* StoreListCell.swift in Sources */,
+				FEFA1F752829FAEC0088BEEB /* MagnetPresentMenuVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1960,6 +2612,14 @@
 				kind = branch;
 			};
 		};
+		FEFA1F912829FB550088BEEB /* XCRemoteSwiftPackageReference "Reusable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AliSoftware/Reusable";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		FEFAA53C27E6038200BA0706 /* XCRemoteSwiftPackageReference "RxGesture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RxSwiftCommunity/RxGesture";
@@ -1995,6 +2655,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FEA95FFF27E1874D00FD78B3 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		FEFA1F922829FB550088BEEB /* Reusable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FEFA1F912829FB550088BEEB /* XCRemoteSwiftPackageReference "Reusable" */;
+			productName = Reusable;
 		};
 		FEFAA53D27E6038300BA0706 /* RxGesture */ = {
 			isa = XCSwiftPackageProductDependency;

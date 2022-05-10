@@ -10,7 +10,6 @@ import SnapKit
 
 class MainVC: BaseVC {
     
-    @IBOutlet weak var bannerView: MyBannerByAPIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

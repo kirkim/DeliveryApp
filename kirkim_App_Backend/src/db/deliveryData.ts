@@ -1,9 +1,11 @@
 import { data, StoreType, DetailStore, ReviewBundle, Review } from './data/deliveryStorage.js';
 
 export type SummaryStore = {
-  code: string;
+  storeCode: string;
+  storeType: StoreType;
   storeName: string;
   averageRating: number;
+  reviewCount: number;
   minPrice: number;
   deliveryPrice: number;
   thumbnailUrl: string;
@@ -17,9 +19,11 @@ export async function getSummaryStores(type: StoreType): Promise<Array<SummarySt
 
   let summaryStores: Array<SummaryStore> = validStores.map((store) => {
     let summaryStore: SummaryStore = {
-      code: store.code,
+      storeCode: store.code,
+      storeType: store.storeType,
       storeName: store.storeName,
       averageRating: store.review.averageRating,
+      reviewCount: store.review.reviews.length,
       minPrice: store.minPrice,
       deliveryPrice: store.deliveryPrice,
       thumbnailUrl: store.thumbnailUrl,

@@ -79,7 +79,6 @@ class TopBar: UICollectionView {
 extension TopBar: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         guard let slot = self.cellData?[indexPath.row] else { return CGSize.zero }
-        print(slot.count)
         let length = slot.count * 15 + 20
         return CGSize(width: length , height: Int(self.frame.height)-20)
     }

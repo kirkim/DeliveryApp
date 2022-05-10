@@ -13,6 +13,7 @@ import RxDataSources
 class StaticSectionCell: UICollectionViewCell {
     private let disposeBag = DisposeBag()
     private let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
+    private var flag: Bool = false
     
 //MARK: - BeminStaticCell init
     override init(frame: CGRect) {
@@ -41,15 +42,19 @@ class StaticSectionCell: UICollectionViewCell {
     
     //MARK: - BeminStaticCell: bind
     func bind(_ viewModel: StaticSectionViewModel) {
-        collectionView.collectionViewLayout = viewModel.createLayout()
-        
-        collectionView.rx.itemSelected
-            .bind(to: viewModel.itemSelected)
-            .disposed(by: disposeBag)
-        
-        Observable.just(viewModel.sectionContents)
-            .bind(to: collectionView.rx.items(dataSource: viewModel.dataSource()))
-            .disposed(by: disposeBag)
+        if (self.flag == false) {
+            self.flag = true
+            collectionView.collectionViewLayout = viewModel.createLayout()
+            
+            collectionView.rx.itemSelected
+                .bind(to: viewModel.itemSelected)
+                .disposed(by: disposeBag)
+            
+            Observable.just(viewModel.sectionContents)
+                .bind(to: collectionView.rx.items(dataSource: viewModel.dataSource()))
+                .disposed(by: disposeBag)
+            
+        }
     }
     
     func registerCells(on collectionView: UICollectionView) {

@@ -7,6 +7,7 @@ export async function getSummaryStores(req: Request, res: Response) {
   if (type == undefined) {
     return res.sendStatus(400);
   }
+  console.log(type);
   let datas = await deliveryDB.getSummaryStores(type as StoreType);
   return res.status(200).send(datas);
 }

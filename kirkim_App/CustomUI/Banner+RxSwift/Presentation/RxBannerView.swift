@@ -50,7 +50,7 @@ class RxBannerView: UIView {
         self.bannerButton.bind(viewModel.buttonViewModel)
         
         viewModel.buttonViewModel.buttonTapped.subscribe(onNext: {
-            let vc = TextVC()
+            let vc = UIViewController() //TODO: ss
             parentViewController.present(vc, animated: true)
         })
         .disposed(by: disposeBag)
