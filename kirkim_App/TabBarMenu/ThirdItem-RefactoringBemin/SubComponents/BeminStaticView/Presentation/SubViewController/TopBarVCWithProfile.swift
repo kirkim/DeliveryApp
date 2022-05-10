@@ -15,12 +15,14 @@ class TopBarVCWithProfile: BaseVC {
     
     init(startPage: Int) {
         self.startPage = startPage
+        
         self.viewModel = TopBarMainViewModel(
             topBarItems: [
                 TopBarItem(viewController: deliveryListVC, itemTitle: "배민1"),
                 TopBarItem(viewController: Test2(), itemTitle: "배달"),
                 TopBarItem(viewController: Test3(), itemTitle: "포장"),
                 TopBarItem(viewController: Test1(), itemTitle: "B마트"),
+                TopBarItem(viewController: Test3(), itemTitle: "간편식/밀키트"),
                 TopBarItem(viewController: Test2(), itemTitle: "배민스토어"),
                 TopBarItem(viewController: Test3(), itemTitle: "쇼핑라이브"),
                 TopBarItem(viewController: Test1(), itemTitle: "선물하기"),

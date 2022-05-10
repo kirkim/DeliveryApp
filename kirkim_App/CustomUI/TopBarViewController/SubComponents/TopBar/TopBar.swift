@@ -14,9 +14,12 @@ class TopBar: UICollectionView {
     private let disposeBag = DisposeBag()
     private var cellData: [String]?
     private let startPage: Int
+    private var flag: Bool = false
+    private var selectedPage: Int
     
     init(startPage: Int) {
         self.startPage = startPage
+        self.selectedPage = startPage
         super.init(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
         attribute()
         layout()
@@ -29,13 +32,14 @@ class TopBar: UICollectionView {
     func bind(_ viewModel: TopBarViewModel) {
         self.cellData = viewModel.data
         Driver.just(viewModel.data)
-            .drive(self.rx.items(cellIdentifier: "TopBarCell", cellType: TopBarCell.self)) { row, data, cell in
+            .drive(self.rx.items(cellIdentifier: "TopBarCell", cellType: TopBarCell.self)) { [weak self] row, data, cell in
                 cell.setData(title: data)
-                cell.layer.cornerRadius = 15
-                if (row == self.startPage) {
-                    cell.backgroundColor = .systemMint
-                    cell.titleLabel.textColor = .white
-                    self.scrollToItem(at: IndexPath(row: row, section: 0), at: .centeredHorizontally, animated: true)
+                if (self?.flag == false) {
+                    self?.scrollToItem(at: IndexPath(row: (self?.startPage)!, section: 0), at: .centeredHorizontally, animated: true)
+                }
+                if ((row == self?.startPage && self?.flag == false) || (row == self?.selectedPage)) {
+                    self?.flag = true
+                    cell.isValid(true)
                 }
             }
             .disposed(by: disposeBag)
@@ -48,13 +52,12 @@ class TopBar: UICollectionView {
         viewModel.slotChanging
             .bind { [weak self] indexPath in
                 self?.visibleCells.forEach { cell in
-                    cell.backgroundColor = .clear
-                    (cell as? TopBarCell)?.titleLabel.textColor = .black
+                    (cell as? TopBarCell)?.isValid(false)
                 }
                 guard let cell = self?.cellForItem(at: indexPath) as? TopBarCell else { return }
-                self?.cellForItem(at: indexPath)?.backgroundColor = .systemMint
-                cell.titleLabel.textColor = .white
+                cell.isValid(true)
                 self?.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+                self?.selectedPage = indexPath.row
             }
             .disposed(by: disposeBag)
     }

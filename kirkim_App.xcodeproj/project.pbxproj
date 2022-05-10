@@ -244,6 +244,14 @@
 		FEFA1F902829FAEC0088BEEB /* Int+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F522829FAEC0088BEEB /* Int+extension.swift */; };
 		FEFA1F932829FB550088BEEB /* Reusable in Frameworks */ = {isa = PBXBuildFile; productRef = FEFA1F922829FB550088BEEB /* Reusable */; };
 		FEFA1F96282A05150088BEEB /* TopBarVCWithProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F95282A05150088BEEB /* TopBarVCWithProfile.swift */; };
+		FEFA1F99282A18B70088BEEB /* ShoppingcartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F98282A18B70088BEEB /* ShoppingcartVC.swift */; };
+		FEFA1F9C282A1B050088BEEB /* CartTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F9B282A1B050088BEEB /* CartTableView.swift */; };
+		FEFA1F9E282A1B770088BEEB /* CartTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F9D282A1B770088BEEB /* CartTableViewModel.swift */; };
+		FEFA1FA7282A21570088BEEB /* CountStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1FA6282A21570088BEEB /* CountStepper.swift */; };
+		FEFA1FA9282A218E0088BEEB /* CountStepperViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1FA8282A218E0088BEEB /* CountStepperViewModel.swift */; };
+		FEFA1FAC282A223E0088BEEB /* CartItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1FAA282A223E0088BEEB /* CartItemCell.swift */; };
+		FEFA1FAD282A223E0088BEEB /* CartItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEFA1FAB282A223E0088BEEB /* CartItemCell.xib */; };
+		FEFA1FB3282A261D0088BEEB /* ShoppingCartSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1FB2282A261D0088BEEB /* ShoppingCartSectionModel.swift */; };
 		FEFAA53E27E6038300BA0706 /* RxGesture in Frameworks */ = {isa = PBXBuildFile; productRef = FEFAA53D27E6038300BA0706 /* RxGesture */; };
 		FEFBB5DF28029D3F00864528 /* TopBarMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFBB5C928029D3F00864528 /* TopBarMainViewController.swift */; };
 		FEFBB5E028029D3F00864528 /* TopBarMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFBB5CA28029D3F00864528 /* TopBarMainViewModel.swift */; };
@@ -505,6 +513,14 @@
 		FEFA1F502829FAEC0088BEEB /* MagnetBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetBarView.swift; sourceTree = "<group>"; };
 		FEFA1F522829FAEC0088BEEB /* Int+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+extension.swift"; sourceTree = "<group>"; };
 		FEFA1F95282A05150088BEEB /* TopBarVCWithProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarVCWithProfile.swift; sourceTree = "<group>"; };
+		FEFA1F98282A18B70088BEEB /* ShoppingcartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingcartVC.swift; sourceTree = "<group>"; };
+		FEFA1F9B282A1B050088BEEB /* CartTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableView.swift; sourceTree = "<group>"; };
+		FEFA1F9D282A1B770088BEEB /* CartTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewModel.swift; sourceTree = "<group>"; };
+		FEFA1FA6282A21570088BEEB /* CountStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountStepper.swift; sourceTree = "<group>"; };
+		FEFA1FA8282A218E0088BEEB /* CountStepperViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountStepperViewModel.swift; sourceTree = "<group>"; };
+		FEFA1FAA282A223E0088BEEB /* CartItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCell.swift; sourceTree = "<group>"; };
+		FEFA1FAB282A223E0088BEEB /* CartItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartItemCell.xib; sourceTree = "<group>"; };
+		FEFA1FB2282A261D0088BEEB /* ShoppingCartSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartSectionModel.swift; sourceTree = "<group>"; };
 		FEFBB5C928029D3F00864528 /* TopBarMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBarMainViewController.swift; sourceTree = "<group>"; };
 		FEFBB5CA28029D3F00864528 /* TopBarMainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBarMainViewModel.swift; sourceTree = "<group>"; };
 		FEFBB5CD28029D3F00864528 /* TopBarLayoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBarLayoutView.swift; sourceTree = "<group>"; };
@@ -996,7 +1012,6 @@
 		FE8D302927FC682900F55EEE /* SubComponents */ = {
 			isa = PBXGroup;
 			children = (
-				FEF3131F2824B856004F764E /* DeliveryMenuPage */,
 				FE8D302A27FC682900F55EEE /* SearchView */,
 				FE8D302C27FC682900F55EEE /* BeminStaticView */,
 			);
@@ -1221,6 +1236,7 @@
 				FE74FEB427CDC3F900F40D5F /* TabBarMenu */,
 				FE078F1227C341D100D19E34 /* SideMenu */,
 				FE078F1927C34C5000D19E34 /* CustomUI */,
+				FEFA1F512829FAEC0088BEEB /* Extension */,
 				FE21132827BCA630003293B2 /* Http */,
 				FE94DD6427B655190017D776 /* AppDelegate.swift */,
 				FE94DD6627B655190017D776 /* SceneDelegate.swift */,
@@ -1298,13 +1314,6 @@
 				FEF9811D27FA7C8A00AA784F /* RxBannerViewDelegate.swift */,
 			);
 			path = Entities;
-			sourceTree = "<group>";
-		};
-		FEF3131F2824B856004F764E /* DeliveryMenuPage */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DeliveryMenuPage;
 			sourceTree = "<group>";
 		};
 		FEF8848327BA5C670038F138 /* Login&SignUp */ = {
@@ -1401,6 +1410,7 @@
 		FEFA1BE52829EFD30088BEEB /* ChildPresntPage */ = {
 			isa = PBXGroup;
 			children = (
+				FEFA1F97282A183E0088BEEB /* ShoppingCartPage */,
 				FEFA1EF32829FAEC0088BEEB /* DeliveryDetailPage */,
 				FEFA1EAA2829FACD0088BEEB /* DeliveryListPage */,
 			);
@@ -1471,9 +1481,9 @@
 		FEFA1EB72829FACD0088BEEB /* SortSlideBar */ = {
 			isa = PBXGroup;
 			children = (
+				FEFA1EBB2829FACD0088BEEB /* SortSlideBar.swift */,
 				FEFA1EB82829FACD0088BEEB /* SortSlideBarViewModel.swift */,
 				FEFA1EB92829FACD0088BEEB /* Cell */,
-				FEFA1EBB2829FACD0088BEEB /* SortSlideBar.swift */,
 			);
 			path = SortSlideBar;
 			sourceTree = "<group>";
@@ -1573,19 +1583,10 @@
 		FEFA1EF32829FAEC0088BEEB /* DeliveryDetailPage */ = {
 			isa = PBXGroup;
 			children = (
-				FEFA1EF42829FAEC0088BEEB /* Present */,
-				FEFA1F512829FAEC0088BEEB /* Extension */,
+				FEFA1F052829FAEC0088BEEB /* MagnetBarView */,
+				FEFA1EF52829FAEC0088BEEB /* ReviewView */,
 			);
 			path = DeliveryDetailPage;
-			sourceTree = "<group>";
-		};
-		FEFA1EF42829FAEC0088BEEB /* Present */ = {
-			isa = PBXGroup;
-			children = (
-				FEFA1EF52829FAEC0088BEEB /* ReviewView */,
-				FEFA1F052829FAEC0088BEEB /* MagnetBarView */,
-			);
-			path = Present;
 			sourceTree = "<group>";
 		};
 		FEFA1EF52829FAEC0088BEEB /* ReviewView */ = {
@@ -1634,10 +1635,10 @@
 		FEFA1F052829FAEC0088BEEB /* MagnetBarView */ = {
 			isa = PBXGroup;
 			children = (
-				FEFA1F062829FAEC0088BEEB /* MagnetBarViewModel.swift */,
-				FEFA1F072829FAEC0088BEEB /* SubComponent */,
-				FEFA1F4F2829FAEC0088BEEB /* MagnetBarHttpModel.swift */,
 				FEFA1F502829FAEC0088BEEB /* MagnetBarView.swift */,
+				FEFA1F062829FAEC0088BEEB /* MagnetBarViewModel.swift */,
+				FEFA1F4F2829FAEC0088BEEB /* MagnetBarHttpModel.swift */,
+				FEFA1F072829FAEC0088BEEB /* SubComponent */,
 			);
 			path = MagnetBarView;
 			sourceTree = "<group>";
@@ -1682,11 +1683,11 @@
 		FEFA1F102829FAEC0088BEEB /* MainListView */ = {
 			isa = PBXGroup;
 			children = (
-				FEFA1F112829FAEC0088BEEB /* SectionModel */,
 				FEFA1F132829FAEC0088BEEB /* MagnetListView.swift */,
-				FEFA1F142829FAEC0088BEEB /* Cell */,
 				FEFA1F4D2829FAEC0088BEEB /* MagnetListViewModel.swift */,
 				FEFA1F4E2829FAEC0088BEEB /* MagnetListSectionManager.swift */,
+				FEFA1F112829FAEC0088BEEB /* SectionModel */,
+				FEFA1F142829FAEC0088BEEB /* Cell */,
 			);
 			path = MainListView;
 			sourceTree = "<group>";
@@ -1702,10 +1703,10 @@
 		FEFA1F142829FAEC0088BEEB /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				FEFA1F152829FAEC0088BEEB /* MenuCell */,
-				FEFA1F2C2829FAEC0088BEEB /* StickyCell */,
-				FEFA1F2E2829FAEC0088BEEB /* InfoCell */,
 				FEFA1F472829FAEC0088BEEB /* BannerCell */,
+				FEFA1F2E2829FAEC0088BEEB /* InfoCell */,
+				FEFA1F2C2829FAEC0088BEEB /* StickyCell */,
+				FEFA1F152829FAEC0088BEEB /* MenuCell */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1748,9 +1749,9 @@
 		FEFA1F1C2829FAEC0088BEEB /* CountSelectCell */ = {
 			isa = PBXGroup;
 			children = (
-				FEFA1F1D2829FAEC0088BEEB /* CountCheckerViewModel.swift */,
 				FEFA1F1E2829FAEC0088BEEB /* MagnetPresentCountSelectViewModel.swift */,
 				FEFA1F1F2829FAEC0088BEEB /* CountChecker.swift */,
+				FEFA1F1D2829FAEC0088BEEB /* CountCheckerViewModel.swift */,
 				FEFA1F202829FAEC0088BEEB /* MagnetPresentCountSelectCell.swift */,
 			);
 			path = CountSelectCell;
@@ -1909,6 +1910,61 @@
 				FEFA1F95282A05150088BEEB /* TopBarVCWithProfile.swift */,
 			);
 			path = SubViewController;
+			sourceTree = "<group>";
+		};
+		FEFA1F97282A183E0088BEEB /* ShoppingCartPage */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F98282A18B70088BEEB /* ShoppingcartVC.swift */,
+				FEFA1F9A282A1AE00088BEEB /* SubComponents */,
+			);
+			path = ShoppingCartPage;
+			sourceTree = "<group>";
+		};
+		FEFA1F9A282A1AE00088BEEB /* SubComponents */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F9B282A1B050088BEEB /* CartTableView.swift */,
+				FEFA1F9D282A1B770088BEEB /* CartTableViewModel.swift */,
+				FEFA1FB1282A25FE0088BEEB /* SectionModel */,
+				FEFA1F9F282A1B8B0088BEEB /* Cells */,
+			);
+			path = SubComponents;
+			sourceTree = "<group>";
+		};
+		FEFA1F9F282A1B8B0088BEEB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1FAF282A246F0088BEEB /* CountItemCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FEFA1FAF282A246F0088BEEB /* CountItemCell */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1FAA282A223E0088BEEB /* CartItemCell.swift */,
+				FEFA1FAB282A223E0088BEEB /* CartItemCell.xib */,
+				FEFA1FB0282A248B0088BEEB /* SubComponents */,
+			);
+			path = CountItemCell;
+			sourceTree = "<group>";
+		};
+		FEFA1FB0282A248B0088BEEB /* SubComponents */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1FA6282A21570088BEEB /* CountStepper.swift */,
+				FEFA1FA8282A218E0088BEEB /* CountStepperViewModel.swift */,
+			);
+			path = SubComponents;
+			sourceTree = "<group>";
+		};
+		FEFA1FB1282A25FE0088BEEB /* SectionModel */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1FB2282A261D0088BEEB /* ShoppingCartSectionModel.swift */,
+			);
+			path = SectionModel;
 			sourceTree = "<group>";
 		};
 		FEFBB5C828029D3F00864528 /* TopBarViewController */ = {
@@ -2088,6 +2144,7 @@
 				FE078F1D27C353A900D19E34 /* SideMenu.storyboard in Resources */,
 				FE7FC0CE27C48F22009EB2AE /* TestView1-1.xib in Resources */,
 				FE7FC0DA27C48F4F009EB2AE /* TestView3-1.xib in Resources */,
+				FEFA1FAD282A223E0088BEEB /* CartItemCell.xib in Resources */,
 				FE57F23C27CF29C000B205F9 /* KiflixDetailVC.xib in Resources */,
 				FE84E49A27D06B5000B30F57 /* FullScreenPlayerVC.xib in Resources */,
 				FE8D307727FC682A00F55EEE /* BeminStaticContent.plist in Resources */,
@@ -2207,11 +2264,13 @@
 				FE8D307927FC682A00F55EEE /* RxStaticSectionData.swift in Sources */,
 				FEFBB5E628029D3F00864528 /* TopBar.swift in Sources */,
 				FEFA1F7D2829FAEC0088BEEB /* MagnetInfoReviewCell.swift in Sources */,
+				FEFA1FB3282A261D0088BEEB /* ShoppingCartSectionModel.swift in Sources */,
 				FEFA1F782829FAEC0088BEEB /* MagnetStickyCell.swift in Sources */,
 				FEFA1F772829FAEC0088BEEB /* MagnetMenuHeaderCell.swift in Sources */,
 				FEBF326627E9A16600DFB792 /* RxBannerListViewModel.swift in Sources */,
 				FE8D307527FC682A00F55EEE /* StaticSectionCell.swift in Sources */,
 				FE8EF16327F425E300EEAC69 /* SignupIdZoneViewModel.swift in Sources */,
+				FEFA1FA9282A218E0088BEEB /* CountStepperViewModel.swift in Sources */,
 				FE21133127BCD095003293B2 /* SignUpPageVC.swift in Sources */,
 				FEFA1EEE2829FACD0088BEEB /* DeliveryMenuBannerCell.swift in Sources */,
 				FEFA1F552829FAEC0088BEEB /* PickSortTypeViewModel.swift in Sources */,
@@ -2219,6 +2278,7 @@
 				FE8BE4BF27F2CD2C002F744F /* CustomError.swift in Sources */,
 				FE38F46A27F7170F008BBE8B /* LoginUserModel.swift in Sources */,
 				FE47CAD027C114210077806D /* UserHttpManager.swift in Sources */,
+				FEFA1F9C282A1B050088BEEB /* CartTableView.swift in Sources */,
 				FEFA1F7C2829FAEC0088BEEB /* MagnetInfoButton.swift in Sources */,
 				FEFA1BDB2829EF140088BEEB /* BeminBannerView.swift in Sources */,
 				FEFA1EE82829FACD0088BEEB /* ContainerStoreListViewCell.swift in Sources */,
@@ -2232,6 +2292,7 @@
 				FE8EF16827F425E300EEAC69 /* RxSignupPageViewModel.swift in Sources */,
 				FEFA1F792829FAEC0088BEEB /* MagnetInfoCell.swift in Sources */,
 				FE21132A27BCA6AE003293B2 /* HttpClient.swift in Sources */,
+				FEFA1F99282A18B70088BEEB /* ShoppingcartVC.swift in Sources */,
 				FEFA1BE12829EF140088BEEB /* BeminBannerListViewModel.swift in Sources */,
 				FE2D52F027F534D000106E5A /* TextFieldType.swift in Sources */,
 				FEBF326527E9A16600DFB792 /* RxBannerCell.swift in Sources */,
@@ -2289,6 +2350,7 @@
 				FEBA011727CDE08300E74FCB /* KiflixHttpManager.swift in Sources */,
 				FE85B4F327EAAC5E0031F5AC /* KiflixModel.swift in Sources */,
 				FEFA1EE32829FACD0088BEEB /* StoreListView.swift in Sources */,
+				FEFA1FA7282A21570088BEEB /* CountStepper.swift in Sources */,
 				FEFBB5F728029E7200864528 /* Test2.swift in Sources */,
 				FE38F46327F7170F008BBE8B /* LoginPwZoneViewModel.swift in Sources */,
 				FEFA1F5B2829FAEC0088BEEB /* MagnetReviewHeaderCellViewModel.swift in Sources */,
@@ -2307,6 +2369,7 @@
 				FE84E49D27D0718000B30F57 /* KiflixPlayerVC.swift in Sources */,
 				FEFBB5E028029D3F00864528 /* TopBarMainViewModel.swift in Sources */,
 				FE8EF16B27F42E8300EEAC69 /* CustomAlert.swift in Sources */,
+				FEFA1FAC282A223E0088BEEB /* CartItemCell.swift in Sources */,
 				FEFA1F8F2829FAEC0088BEEB /* MagnetBarView.swift in Sources */,
 				FEFA1ED72829FACD0088BEEB /* DeliveryMenuModel.swift in Sources */,
 				FEFA1F872829FAEC0088BEEB /* MagnetInfoType.swift in Sources */,
@@ -2336,6 +2399,7 @@
 				FEFA1EE22829FACD0088BEEB /* StoreListSectionModel.swift in Sources */,
 				FE38F46827F7170F008BBE8B /* LoginStatus+enum.swift in Sources */,
 				FE94DD6F27B655190017D776 /* kirkim_App.xcdatamodeld in Sources */,
+				FEFA1F9E282A1B770088BEEB /* CartTableViewModel.swift in Sources */,
 				FEBF326727E9A16600DFB792 /* RxBannerListView.swift in Sources */,
 				FE8D306D27FC682A00F55EEE /* StaticMediumCell.swift in Sources */,
 				FEFA1F6F2829FAEC0088BEEB /* MagnetPresentMenuSection.swift in Sources */,

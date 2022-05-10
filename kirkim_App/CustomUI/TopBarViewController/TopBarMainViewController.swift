@@ -46,7 +46,11 @@ class TopBarMainViewController: UIViewController {
         
         viewModel.dismissVC
             .emit { [weak self] _ in
-                self?.dismiss(animated: true)
+                if (self?.navigationController != nil) {
+                    self?.navigationController?.popViewController(animated: true)
+                } else {
+                    self?.dismiss(animated: true)
+                }
             }
             .disposed(by: disposeBag)
     }
