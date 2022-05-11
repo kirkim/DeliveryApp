@@ -9,45 +9,53 @@ import Foundation
 
 class CartManager {
     static let shared = CartManager()
-    private var data: [ShoppingCartSectionModel]?
+//    private var data: [ShoppingCartSectionModel]?
     private var itemDatas: [CartMenuItem]?
-    private var cartTypeData: CartTypeItem?
-    private var priceData: CartPriceItem?
+//    private var cartTypeData: CartTypeItem?
+//    private var priceData: CartPriceItem?
     
     let userDefaults = UserDefaults(suiteName: "ShoppingCart")!
     
     private init() {
+        
+    }
+    
+//    func saveData(data: [ShoppingCartSectionModel]) {
+//        guard let items = data[0].items as? [CartMenuItem] else { return }
+//        saveItem(data: items)
+//    }
+    
+    func getData() -> [ShoppingCartSectionModel] {
         if let items = getItem() {
             let type = getType()
             let price = getPrice()
+            
+            self.itemDatas = items // 앱을 껏다켰을때 최신데이터를 임시데이터에 저장
+            
             let itemData = ShoppingCartSectionModel.cartMenuSection(items: items)
             let cartTypeData = ShoppingCartSectionModel.cartTypeSection(items: [type])
             let priceData = ShoppingCartSectionModel.cartPriceSection(items: [price])
-            data = [itemData, cartTypeData, priceData]
+            
+            return [itemData, cartTypeData, priceData]
         }
-    }
-    
-    func getData() -> [ShoppingCartSectionModel] {
-        guard let data = data else {
-            return []
-        }
-        return data
+        return []
     }
     
     func saveItem(data: [CartMenuItem]) {
-        self.itemDatas = data
+        self.itemDatas = data // 메뉴아이템섹션의 셀은 여러개 나중에 수정할때 참고하기위한 변수
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(data) {
             userDefaults.setValue(encoded, forKey: "item")
         }
     }
     
-    func changeItemCount(indexPath: IndexPath) {
-        guard let itemDatas = itemDatas else {
+    func changeItemCount(indexPath: IndexPath, value: Int) {
+        guard var itemDatas = self.itemDatas else {
+            print("here")
             return
         }
-
-        let changeItem = itemDatas
+        itemDatas[indexPath.row].count = value
+        self.saveItem(data: itemDatas)
     }
     
     func getItem() -> [CartMenuItem]? {
@@ -60,7 +68,7 @@ class CartManager {
     }
     
     func saveType(data: CartTypeItem) {
-        self.cartTypeData = data
+//        self.cartTypeData = data
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(data) {
             userDefaults.setValue(encoded, forKey: "type")
@@ -77,7 +85,7 @@ class CartManager {
     }
     
     func savePrcie(data: CartPriceItem) {
-        self.priceData = data
+//        self.priceData = data
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(data) {
             userDefaults.setValue(encoded, forKey: "price")

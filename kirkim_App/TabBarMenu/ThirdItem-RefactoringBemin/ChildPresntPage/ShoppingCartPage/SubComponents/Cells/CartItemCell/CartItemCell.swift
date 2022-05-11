@@ -19,6 +19,7 @@ class CartItemCell: UITableViewCell {
 //    private var flag:Bool = false
     private let stepperViewModel = CountStepperViewModel()
     private let disposeBag = DisposeBag()
+    private let cartManager = CartManager.shared
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -44,6 +45,13 @@ class CartItemCell: UITableViewCell {
         stepperViewModel.totalCount
             .bind { value in
                 self.priceLabel.text = (self.basePrice * value).parsingToKoreanPrice()
+            }
+            .disposed(by: disposeBag)
+        stepperViewModel.totalCountChanged
+            .bind { value in
+                if let indexPath = self.indexPath {
+                    self.cartManager.changeItemCount(indexPath: indexPath, value: value)
+                }
             }
             .disposed(by: disposeBag)
     }

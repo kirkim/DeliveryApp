@@ -9,21 +9,14 @@ import UIKit
 import RxDataSources
 
 struct CartTableViewModel {
-    let data:[ShoppingCartSectionModel] = [
-        ShoppingCartSectionModel.cartMenuSection(items: [
-            CartMenuItem(title: "토시살스테이크 세트", thumbnailUrl: "", menuString: ["음료 추가: 펨시 355ml", "사리 추가: 우동사리", "서비스: 콘칩"], price: 22500, count: 3),
-            CartMenuItem(title: "햄버거 세트", thumbnailUrl: "", menuString: [], price: 6500, count: 2),
-            CartMenuItem(title: "파스타 세트", thumbnailUrl: "", menuString: [], price: 12500, count: 1),
-        ]),
-        ShoppingCartSectionModel.cartTypeSection(items: [CartTypeItem(type: .delivery)]),
-        ShoppingCartSectionModel.cartPriceSection(items: [CartPriceItem(totalPrice: 22500, deliveryPrice: 300)])
-    ]
+    let cartManager = CartManager.shared
+    let data:[ShoppingCartSectionModel]
     
 //    let cartItemViewModel = CartItemViewModel()
     let cartTypeViewModel = CartTypeViewModel()
     
     init() {
-        
+        self.data = cartManager.getData()
     }
     
     func dataSource() -> RxTableViewSectionedReloadDataSource<ShoppingCartSectionModel> {

@@ -13,17 +13,24 @@ struct CountStepperViewModel {
     let buttonClicked = PublishRelay<Int>()
 //    let totalCount: Signal<Int>
     let totalCount = BehaviorRelay<Int>(value: 1)
+    let totalCountChanged = PublishRelay<Int>()
     let disposeBag = DisposeBag()
     
     init() {
-        buttonClicked.withLatestFrom(totalCount, resultSelector: { value, totalCount in
+        let clickStream = buttonClicked.withLatestFrom(totalCount, resultSelector: { value, totalCount -> Int in
             if (value + totalCount <= 0) {
                 return 1
             }
             return value + totalCount
         })
-        .bind(to: totalCount)
-        .disposed(by: disposeBag)
+            .share()
+        clickStream
+            .bind(to: totalCount)
+            .disposed(by: disposeBag)
+        
+        clickStream
+            .bind(to: totalCountChanged)
+            .disposed(by: disposeBag)
     }
     
     func setCount(count: Int) {
