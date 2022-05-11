@@ -8,37 +8,36 @@
 import UIKit
 import RxDataSources
 
-enum ShoppingCartType {
+enum ShoppingCartType: Codable {
     case delivery
     case takeout
 }
 
-protocol ShoppingCartItem {
+protocol ShoppingCartItem: Codable {
     
 }
 
-struct cartMenuItem: ShoppingCartItem {
-    var reviewId: Int
-    var userId: String
-    var rating: Int
-    var description: String
-    var photoUrl: String?
-    var createAt: String
+struct CartMenuItem: ShoppingCartItem {
+    var title: String
+    var thumbnailUrl: String
+    var menuString: [String]
+    var price: Int
+    var count: Int
 }
 
-struct cartTypeItem: ShoppingCartItem {
+struct CartTypeItem: ShoppingCartItem {
     var type: ShoppingCartType
 }
 
-struct cartPriceItem: ShoppingCartItem {
+struct CartPriceItem: ShoppingCartItem {
     var totalPrice: Int
     var deliveryPrice: Int
 }
 
 enum ShoppingCartSectionModel {
-    case cartMenuSection(items: [cartMenuItem])
-    case cartTypeSection(items: [cartTypeItem])
-    case cartPriceSection(items: [cartPriceItem])
+    case cartMenuSection(items: [CartMenuItem])
+    case cartTypeSection(items: [CartTypeItem])
+    case cartPriceSection(items: [CartPriceItem])
 }
 
 extension ShoppingCartSectionModel: SectionModelType {

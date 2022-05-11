@@ -19,7 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.windowWidth = self.window?.frame.width
 //        let rootVC = UIStoryboard(name: "SideMenu", bundle: nil).instantiateViewController(withIdentifier: "SideMenuNavi")
         let RootTabBarController = MainTabBarController()
-        self.window?.rootViewController = RootTabBarController
+        let vc = ShoppingcartVC()
+        self.window?.rootViewController = vc
         self.window?.makeKeyAndVisible()
     }
 

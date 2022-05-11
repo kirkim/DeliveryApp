@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import SnapKit
 
 class ShoppingcartVC: UIViewController {
+    private let cartTableView = CartTableView()
+    
     init() {
         super.init(nibName: nil, bundle: nil)
         attribute()
@@ -23,6 +26,13 @@ class ShoppingcartVC: UIViewController {
     }
     
     private func layout() {
+        [cartTableView].forEach {
+            self.view.addSubview($0)
+        }
         
+        cartTableView.snp.makeConstraints {
+            $0.top.equalTo(self.view.safeAreaLayoutGuide)
+            $0.leading.trailing.bottom.equalToSuperview()
+        }
     }
 }

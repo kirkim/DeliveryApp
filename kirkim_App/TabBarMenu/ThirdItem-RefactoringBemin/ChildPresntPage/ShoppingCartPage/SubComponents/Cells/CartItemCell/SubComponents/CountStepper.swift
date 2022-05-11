@@ -29,7 +29,7 @@ class CountStepper: UIView {
 
     }
     
-    func bind(_ viewModel: CountCheckerViewModel) {
+    func bind(_ viewModel: CountStepperViewModel) {
         self.plusButton.rx.tap
             .map { 1 }
             .bind(to: viewModel.buttonClicked)
@@ -41,8 +41,8 @@ class CountStepper: UIView {
             .disposed(by: disposeBag)
         
         viewModel.totalCount
-            .emit { value in
-                self.countLabel.text = "\(value)개"
+            .bind { value in
+                self.countLabel.text = "\(value)"
             }
             .disposed(by: disposeBag)
     }
@@ -52,7 +52,7 @@ class CountStepper: UIView {
         self.minusButton.tintColor = .black
         self.plusButton.setImage(UIImage(systemName: "plus"), for: .normal)
         self.plusButton.tintColor = .black
-        self.countLabel.text = "1개"
+        self.countLabel.text = "1"
         self.countLabel.textAlignment = .center
         
     }
