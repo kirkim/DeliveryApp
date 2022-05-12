@@ -20,7 +20,7 @@ class PPPUP: UIViewController {
     }
     
     private func setUI() {
-        
+        self.view.backgroundColor = .yellow
         presentButton.setTitle("페이지 열기", for: .normal)
         presentButton.addAction(UIAction(handler: { _ in
             let vc = ShoppingcartVC()

@@ -6,17 +6,19 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 import RxDataSources
 
 struct CartTableViewModel {
     let cartManager = CartManager.shared
-    let data:[ShoppingCartSectionModel]
+    let data: BehaviorRelay<[ShoppingCartSectionModel]>
     
 //    let cartItemViewModel = CartItemViewModel()
     let cartTypeViewModel = CartTypeViewModel()
     
     init() {
-        self.data = cartManager.getData()
+        self.data = cartManager.getDataObserver()
     }
     
     func dataSource() -> RxTableViewSectionedReloadDataSource<ShoppingCartSectionModel> {
@@ -35,6 +37,7 @@ struct CartTableViewModel {
                     return cell
                 case .cartPriceSection(items: let items):
                     let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CartPriceCell.self)
+                    cell.setData(deliveryPrice: items[indexPath.row].deliveryPrice)
                     return cell
                 }
             })

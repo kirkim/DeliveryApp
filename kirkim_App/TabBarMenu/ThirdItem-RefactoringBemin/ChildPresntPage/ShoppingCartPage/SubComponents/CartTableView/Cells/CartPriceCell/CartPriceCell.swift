@@ -7,6 +7,8 @@
 
 import UIKit
 import Reusable
+import RxSwift
+import RxCocoa
 
 class CartPriceCell: UITableViewCell, Reusable {
     private let menuTitleLabel = UILabel()
@@ -18,14 +20,33 @@ class CartPriceCell: UITableViewCell, Reusable {
     private let lineView = UILabel()
     private let totalPriceLabel = UILabel()
     
+    private var deliveryPrice = 0
+    private let cartManager = CartManager.shared
+    private let disposeBag = DisposeBag()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         attribute()
         layout()
+        bind()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func bind() {
+        cartManager.getTotalPriceObserver().withLatestFrom(cartManager.getDeliveryTipObserver(), resultSelector: { ($0, $1) })
+        .bind { (menuPrice, deliveryPrice) in
+            self.menuPriceLabel.text = menuPrice.parsingToKoreanPrice()
+            self.totalPriceLabel.text = (menuPrice + deliveryPrice).parsingToKoreanPrice()
+        }
+        .disposed(by: disposeBag)
+    }
+    
+    func setData(deliveryPrice: Int) {
+        self.deliveryPrice = deliveryPrice
+        self.deliveryPriceLabel.text = deliveryPrice.parsingToKoreanPrice()
     }
     
     private func attribute() {
@@ -35,8 +56,6 @@ class CartPriceCell: UITableViewCell, Reusable {
         totalTitleLabel.text = "결제예정금액"
         
         // temp
-        menuPriceLabel.text = 22500.parsingToKoreanPrice()
-        deliveryPriceLabel.text = 3000.parsingToKoreanPrice()
         totalPriceLabel.text = 25500.parsingToKoreanPrice()
         
         lineView.backgroundColor = .systemGray3

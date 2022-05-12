@@ -28,7 +28,7 @@ class CartTableView: UITableView {
     
     func bind(_ viewModel: CartTableViewModel) {
         let datasource = viewModel.dataSource()
-        Observable.just(viewModel.data)
+        viewModel.data
             .bind(to: self.rx.items(dataSource: datasource))
             .disposed(by: disposeBag)
     }

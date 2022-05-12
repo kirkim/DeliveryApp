@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 class CartItemCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
@@ -14,9 +15,10 @@ class CartItemCell: UITableViewCell {
     @IBOutlet weak var menuLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var countStepper: CountStepper!
+    @IBOutlet weak var deleteButton: UIButton!
+    
     private var basePrice: Int = 0
     private var indexPath: IndexPath?
-//    private var flag:Bool = false
     private let stepperViewModel = CountStepperViewModel()
     private let disposeBag = DisposeBag()
     private let cartManager = CartManager.shared
@@ -27,19 +29,6 @@ class CartItemCell: UITableViewCell {
         bind()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
-//    func bind(_ viewModel: CartItemViewModel) {
-//        if (flag == false) {
-//            flag = true
-//
-//        }
-//    }
-    
     private func bind() {
         self.countStepper.bind(stepperViewModel)
         stepperViewModel.totalCount
@@ -52,6 +41,12 @@ class CartItemCell: UITableViewCell {
                 if let indexPath = self.indexPath {
                     self.cartManager.changeItemCount(indexPath: indexPath, value: value)
                 }
+            }
+            .disposed(by: disposeBag)
+        
+        self.deleteButton.rx.tap
+            .bind {
+                self.cartManager.deleteItem(indexPath: self.indexPath!)
             }
             .disposed(by: disposeBag)
     }

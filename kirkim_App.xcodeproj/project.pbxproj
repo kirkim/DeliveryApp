@@ -136,6 +136,7 @@
 		FEBA011327CDD5D700E74FCB /* SignUpPageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEBA011227CDD5D700E74FCB /* SignUpPageVC.xib */; };
 		FEBA011527CDDC5B00E74FCB /* KiflixViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBA011427CDDC5B00E74FCB /* KiflixViewModel.swift */; };
 		FEBA011727CDE08300E74FCB /* KiflixHttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBA011627CDE08300E74FCB /* KiflixHttpManager.swift */; };
+		FEBDC027282CAAF100AB9FD2 /* EmptyCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBDC026282CAAF100AB9FD2 /* EmptyCartView.swift */; };
 		FEBF326227E9A16600DFB792 /* RxBannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF325227E9A16600DFB792 /* RxBannerViewModel.swift */; };
 		FEBF326327E9A16600DFB792 /* RxBannerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF325527E9A16600DFB792 /* RxBannerButton.swift */; };
 		FEBF326427E9A16600DFB792 /* RxBannerButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF325627E9A16600DFB792 /* RxBannerButtonViewModel.swift */; };
@@ -414,6 +415,7 @@
 		FEBA011227CDD5D700E74FCB /* SignUpPageVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpPageVC.xib; sourceTree = "<group>"; };
 		FEBA011427CDDC5B00E74FCB /* KiflixViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiflixViewModel.swift; sourceTree = "<group>"; };
 		FEBA011627CDE08300E74FCB /* KiflixHttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiflixHttpManager.swift; sourceTree = "<group>"; };
+		FEBDC026282CAAF100AB9FD2 /* EmptyCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCartView.swift; sourceTree = "<group>"; };
 		FEBF325227E9A16600DFB792 /* RxBannerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxBannerViewModel.swift; sourceTree = "<group>"; };
 		FEBF325527E9A16600DFB792 /* RxBannerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxBannerButton.swift; sourceTree = "<group>"; };
 		FEBF325627E9A16600DFB792 /* RxBannerButtonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxBannerButtonViewModel.swift; sourceTree = "<group>"; };
@@ -1301,6 +1303,25 @@
 			path = PopupView;
 			sourceTree = "<group>";
 		};
+		FEBDC024282CAA3D00AB9FD2 /* CartTableView */ = {
+			isa = PBXGroup;
+			children = (
+				FEFA1F9B282A1B050088BEEB /* CartTableView.swift */,
+				FEFA1F9D282A1B770088BEEB /* CartTableViewModel.swift */,
+				FEFA1FB1282A25FE0088BEEB /* SectionModel */,
+				FEFA1F9F282A1B8B0088BEEB /* Cells */,
+			);
+			path = CartTableView;
+			sourceTree = "<group>";
+		};
+		FEBDC025282CAAA200AB9FD2 /* EmptyCartView */ = {
+			isa = PBXGroup;
+			children = (
+				FEBDC026282CAAF100AB9FD2 /* EmptyCartView.swift */,
+			);
+			path = EmptyCartView;
+			sourceTree = "<group>";
+		};
 		FEBF325027E9A16600DFB792 /* Banner+RxSwift */ = {
 			isa = PBXGroup;
 			children = (
@@ -1977,10 +1998,8 @@
 		FEFA1F9A282A1AE00088BEEB /* SubComponents */ = {
 			isa = PBXGroup;
 			children = (
-				FEFA1F9B282A1B050088BEEB /* CartTableView.swift */,
-				FEFA1F9D282A1B770088BEEB /* CartTableViewModel.swift */,
-				FEFA1FB1282A25FE0088BEEB /* SectionModel */,
-				FEFA1F9F282A1B8B0088BEEB /* Cells */,
+				FEBDC025282CAAA200AB9FD2 /* EmptyCartView */,
+				FEBDC024282CAA3D00AB9FD2 /* CartTableView */,
 			);
 			path = SubComponents;
 			sourceTree = "<group>";
@@ -2308,6 +2327,7 @@
 				FEFA1BE32829EF140088BEEB /* BeminBannerListView.swift in Sources */,
 				FE8D305D27FC682A00F55EEE /* MainBeminCVViewModel.swift in Sources */,
 				FEFA1F7A2829FAEC0088BEEB /* MagnetInfoNavBarViewModel.swift in Sources */,
+				FEBDC027282CAAF100AB9FD2 /* EmptyCartView.swift in Sources */,
 				FEBF326C27E9A16600DFB792 /* BannerContent+protocol.swift in Sources */,
 				FEFA1F96282A05150088BEEB /* TopBarVCWithProfile.swift in Sources */,
 				FE7FC0D527C48F3F009EB2AE /* TestView2-1.swift in Sources */,

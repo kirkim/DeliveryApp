@@ -18,58 +18,70 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTb-2C-i4a">
-                        <rect key="frame" x="15" y="10" width="375" height="21"/>
+                        <rect key="frame" x="15" y="10" width="41.5" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hka-E3-5UL">
-                        <rect key="frame" x="15" y="41" width="70" height="70"/>
+                        <rect key="frame" x="15" y="40" width="70" height="70"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="hka-E3-5UL" secondAttribute="height" multiplier="1:1" id="3cf-iG-b3E"/>
                             <constraint firstAttribute="width" constant="70" id="6En-AA-SGz"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEk-yG-4uD">
-                        <rect key="frame" x="95" y="41" width="295" height="20.5"/>
+                        <rect key="frame" x="95" y="40" width="295" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sB-DV-cGg">
-                        <rect key="frame" x="95" y="68.5" width="295" height="21"/>
+                        <rect key="frame" x="95" y="67.5" width="295" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LyR-ZT-Wut" customClass="CountStepper" customModule="kirkim_App" customModuleProvider="target">
-                        <rect key="frame" x="286" y="109.5" width="104" height="56.5"/>
+                        <rect key="frame" x="286" y="108.5" width="104" height="57.5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="104" id="me6-gz-2Oi"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CbK-Wj-gau">
+                        <rect key="frame" x="365" y="10" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="JSH-HV-MVV"/>
+                            <constraint firstAttribute="width" secondItem="CbK-Wj-gau" secondAttribute="height" multiplier="1:1" id="dUW-I6-9On"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="xmark.app" catalog="system"/>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="dTb-2C-i4a" secondAttribute="trailing" constant="15" id="BVt-9k-Eka"/>
+                    <constraint firstItem="9sB-DV-cGg" firstAttribute="trailing" secondItem="qEk-yG-4uD" secondAttribute="trailing" id="70h-1y-YoZ"/>
+                    <constraint firstItem="CbK-Wj-gau" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="88w-2l-i0P"/>
                     <constraint firstItem="qEk-yG-4uD" firstAttribute="top" secondItem="hka-E3-5UL" secondAttribute="top" id="Dc6-YM-U0u"/>
-                    <constraint firstItem="qEk-yG-4uD" firstAttribute="trailing" secondItem="dTb-2C-i4a" secondAttribute="trailing" id="EPc-ed-8Rq"/>
                     <constraint firstItem="hka-E3-5UL" firstAttribute="leading" secondItem="dTb-2C-i4a" secondAttribute="leading" id="JjT-xq-VWv"/>
+                    <constraint firstItem="qEk-yG-4uD" firstAttribute="top" secondItem="CbK-Wj-gau" secondAttribute="bottom" constant="5" id="M7x-Gr-Tns"/>
                     <constraint firstItem="9sB-DV-cGg" firstAttribute="leading" secondItem="qEk-yG-4uD" secondAttribute="leading" id="O8X-As-TAx"/>
-                    <constraint firstItem="LyR-ZT-Wut" firstAttribute="trailing" secondItem="dTb-2C-i4a" secondAttribute="trailing" id="Qy5-2N-Bgp"/>
                     <constraint firstItem="dTb-2C-i4a" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="RjH-pg-NRV"/>
                     <constraint firstItem="LyR-ZT-Wut" firstAttribute="top" secondItem="9sB-DV-cGg" secondAttribute="bottom" constant="20" id="SAx-wU-Abz"/>
                     <constraint firstItem="qEk-yG-4uD" firstAttribute="leading" secondItem="hka-E3-5UL" secondAttribute="trailing" constant="10" id="V32-HQ-mxI"/>
                     <constraint firstItem="9sB-DV-cGg" firstAttribute="top" secondItem="qEk-yG-4uD" secondAttribute="bottom" constant="7" id="cdD-9f-xaJ"/>
-                    <constraint firstItem="9sB-DV-cGg" firstAttribute="trailing" secondItem="dTb-2C-i4a" secondAttribute="trailing" id="ifU-Qg-Dcl"/>
+                    <constraint firstAttribute="trailing" secondItem="qEk-yG-4uD" secondAttribute="trailing" constant="15" id="gon-NB-iFy"/>
+                    <constraint firstAttribute="trailing" secondItem="CbK-Wj-gau" secondAttribute="trailing" constant="15" id="ota-7H-lYA"/>
                     <constraint firstItem="dTb-2C-i4a" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="rvO-1N-zn6"/>
                     <constraint firstAttribute="bottom" secondItem="LyR-ZT-Wut" secondAttribute="bottom" constant="30" id="uJo-qT-0Cg"/>
+                    <constraint firstItem="LyR-ZT-Wut" firstAttribute="trailing" secondItem="qEk-yG-4uD" secondAttribute="trailing" id="udX-Ma-fh7"/>
                     <constraint firstItem="hka-E3-5UL" firstAttribute="top" secondItem="dTb-2C-i4a" secondAttribute="bottom" constant="10" id="urt-3M-pLh"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="countStepper" destination="LyR-ZT-Wut" id="APE-Mn-8e6"/>
+                <outlet property="deleteButton" destination="CbK-Wj-gau" id="VwQ-Xv-87O"/>
                 <outlet property="menuLabel" destination="qEk-yG-4uD" id="ZZi-9u-QhT"/>
                 <outlet property="priceLabel" destination="9sB-DV-cGg" id="qVF-J0-XkX"/>
                 <outlet property="thumbnailImageView" destination="hka-E3-5UL" id="bi6-1d-J9T"/>
@@ -79,6 +91,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="xmark.app" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

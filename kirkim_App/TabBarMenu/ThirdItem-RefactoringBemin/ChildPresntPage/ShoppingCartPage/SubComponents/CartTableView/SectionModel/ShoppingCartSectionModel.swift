@@ -30,7 +30,6 @@ struct CartTypeItem: ShoppingCartItem {
 }
 
 struct CartPriceItem: ShoppingCartItem {
-    var totalPrice: Int
     var deliveryPrice: Int
 }
 
