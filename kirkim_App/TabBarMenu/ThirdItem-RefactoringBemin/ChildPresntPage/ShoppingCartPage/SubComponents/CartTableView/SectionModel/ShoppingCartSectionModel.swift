@@ -30,7 +30,8 @@ struct CartTypeItem: ShoppingCartItem {
 }
 
 struct CartPriceItem: ShoppingCartItem {
-    var deliveryPrice: Int
+    var deliveryTip: Int
+    var menuPrice: Int
 }
 
 enum ShoppingCartSectionModel {

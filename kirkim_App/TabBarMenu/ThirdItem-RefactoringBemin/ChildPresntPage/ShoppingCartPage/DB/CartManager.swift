@@ -11,26 +11,21 @@ import RxCocoa
 
 class CartManager {
     static let shared = CartManager()
-    
     private var itemDatas: [CartMenuItem]?
-    private var totalPrice: Int?
-    private var totalPriceObserver: BehaviorRelay<Int>?
-    private var deliveryTipObserver: BehaviorRelay<Int>?
-    
     private let dataObserver = BehaviorRelay<[ShoppingCartSectionModel]>(value: [])
     private let isValidObserver = BehaviorRelay<Bool>(value: true)
     private let userDefaults = UserDefaults(suiteName: "ShoppingCart")!
     
     private init() {
-        load()
         saveItem(data: [
             CartMenuItem(title: "찹스테이크", thumbnailUrl: "", menuString: ["굽기: rare"], price: 20000, count: 3),
             CartMenuItem(title: "포테이토칩", thumbnailUrl: "", menuString: ["salt: 많이", "소스: 머스타드"], price: 5000, count: 7),
             CartMenuItem(title: "투움바 파스타", thumbnailUrl: "", menuString: ["사리: 면사리추가, 소스추가"], price: 15000, count: 2),
         ])
+        update()
     }
     
-    private func load() {
+    private func update() {
         var dataValue: [ShoppingCartSectionModel] = []
         let items = getItem()
         if (items?.count != 0 && items != nil) {
@@ -39,17 +34,14 @@ class CartManager {
             
             self.itemDatas = items // 앱을 껏다켰을때 최신데이터를 임시데이터에 저장
             
+            var totalPrice = 0
+            items!.forEach { item in
+                totalPrice += item.price * item.count
+            }
+            
             let itemData = ShoppingCartSectionModel.cartMenuSection(items: items!)
             let cartTypeData = ShoppingCartSectionModel.cartTypeSection(items: [type])
-            let priceData = ShoppingCartSectionModel.cartPriceSection(items: [CartPriceItem(deliveryPrice: deliveryTip)])
-            
-            var value = 0
-            items!.forEach { item in
-                value += item.price * item.count
-            }
-            self.totalPriceObserver = BehaviorRelay<Int>(value: value)
-            self.totalPrice = value
-            self.deliveryTipObserver = BehaviorRelay<Int>(value: deliveryTip)
+            let priceData = ShoppingCartSectionModel.cartPriceSection(items: [CartPriceItem(deliveryTip: deliveryTip, menuPrice: totalPrice)])
             
             dataValue = [itemData, cartTypeData, priceData]
             self.isValidObserver.accept(true)
@@ -65,7 +57,7 @@ class CartManager {
         }
         self.itemDatas!.remove(at: indexPath.row)
         saveItem(data: self.itemDatas!)
-        load()
+        update()
     }
     
     func getIsValidObserver() -> BehaviorRelay<Bool> {
@@ -73,35 +65,18 @@ class CartManager {
     }
     
     func getDataObserver() -> BehaviorRelay<[ShoppingCartSectionModel]> {
-        load()
+        update()
         return self.dataObserver
-    }
-    
-    func getTotalPriceObserver() -> BehaviorRelay<Int> {
-        guard let totalPriceObserver = totalPriceObserver else {
-            fatalError()
-        }
-        return totalPriceObserver
-    }
-    
-    func getDeliveryTipObserver() -> BehaviorRelay<Int> {
-        guard let deliveryTipObserver = deliveryTipObserver else {
-            fatalError()
-        }
-        return deliveryTipObserver
     }
     
     func changeItemCount(indexPath: IndexPath, value: Int) {
         guard var itemDatas = self.itemDatas else {
             return
         }
-        let difCount = value - itemDatas[indexPath.row].count
-        let difPrice = itemDatas[indexPath.row].price * difCount
-        self.totalPrice = (self.totalPrice ?? 0) + difPrice
-        self.totalPriceObserver?.accept(self.totalPrice!)
         
         itemDatas[indexPath.row].count = value
         self.saveItem(data: itemDatas)
+        update()
     }
     
     private func saveItem(data: [CartMenuItem]) {
@@ -139,9 +114,8 @@ class CartManager {
     
     private func saveDeliveryTip(data: Int) {
         self.userDefaults.set(data, forKey: "deliveryTip")
-        self.deliveryTipObserver?.accept(data)
     }
-    
+
     private func getDeliveryTip() -> Int {
         let savedData = userDefaults.integer(forKey: "deliveryTip")
         return savedData

@@ -37,7 +37,7 @@ struct CartTableViewModel {
                     return cell
                 case .cartPriceSection(items: let items):
                     let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CartPriceCell.self)
-                    cell.setData(deliveryPrice: items[indexPath.row].deliveryPrice)
+                    cell.setData(data: items[indexPath.row])
                     return cell
                 }
             })

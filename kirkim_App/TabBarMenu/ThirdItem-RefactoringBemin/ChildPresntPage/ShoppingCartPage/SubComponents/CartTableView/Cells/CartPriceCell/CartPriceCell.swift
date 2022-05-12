@@ -20,7 +20,7 @@ class CartPriceCell: UITableViewCell, Reusable {
     private let lineView = UILabel()
     private let totalPriceLabel = UILabel()
     
-    private var deliveryPrice = 0
+//    private var deliveryPrice = 0
     private let cartManager = CartManager.shared
     private let disposeBag = DisposeBag()
     
@@ -28,25 +28,27 @@ class CartPriceCell: UITableViewCell, Reusable {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         attribute()
         layout()
-        bind()
+//        bind()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func bind() {
-        cartManager.getTotalPriceObserver().withLatestFrom(cartManager.getDeliveryTipObserver(), resultSelector: { ($0, $1) })
-        .bind { (menuPrice, deliveryPrice) in
-            self.menuPriceLabel.text = menuPrice.parsingToKoreanPrice()
-            self.totalPriceLabel.text = (menuPrice + deliveryPrice).parsingToKoreanPrice()
-        }
-        .disposed(by: disposeBag)
-    }
+//    func bind() {
+//        cartManager.getTotalPriceObserver().withLatestFrom(cartManager.getDeliveryTipObserver(), resultSelector: { ($0, $1) })
+//        .bind { (menuPrice, deliveryPrice) in
+//            self.menuPriceLabel.text = menuPrice.parsingToKoreanPrice()
+//            self.totalPriceLabel.text = (menuPrice + deliveryPrice).parsingToKoreanPrice()
+//        }
+//        .disposed(by: disposeBag)
+//    }
     
-    func setData(deliveryPrice: Int) {
-        self.deliveryPrice = deliveryPrice
-        self.deliveryPriceLabel.text = deliveryPrice.parsingToKoreanPrice()
+    func setData(data: CartPriceItem) {
+//        self.deliveryPrice = data.deliveryTip
+        self.deliveryPriceLabel.text = data.deliveryTip.parsingToKoreanPrice()
+        self.menuPriceLabel.text = data.menuPrice.parsingToKoreanPrice()
+        self.totalPriceLabel.text = (data.deliveryTip + data.menuPrice).parsingToKoreanPrice()
     }
     
     private func attribute() {
