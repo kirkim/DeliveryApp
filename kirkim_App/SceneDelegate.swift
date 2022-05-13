@@ -21,8 +21,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let RootTabBarController = MainTabBarController()
 //        let vc = ShoppingcartVC()
         let vc = PPPUP()
-        
-        self.window?.rootViewController = vc
+        let nav = UINavigationController(rootViewController: vc)
+        self.window?.rootViewController = nav
         self.window?.makeKeyAndVisible()
     }
 

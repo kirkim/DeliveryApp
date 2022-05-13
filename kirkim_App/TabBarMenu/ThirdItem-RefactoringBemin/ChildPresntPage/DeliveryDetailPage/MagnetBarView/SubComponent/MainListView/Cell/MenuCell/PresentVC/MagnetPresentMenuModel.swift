@@ -21,12 +21,15 @@ struct MagnetPresentMenuModel {
         hasData?.optionSection.forEach({ section in
             let sectionType = self.setSectionType(min: section.min, max: section.max)
             var menuBundle:[PresentMenuItem] = []
+            var i = 0
             section.optionMenu.forEach { menu in
-                menuBundle.append(PresentMenuItem(title: menu.title, price: menu.price))
+                i += 1
+                let isSelected = (sectionType == .mustOne && i == 1) ? true : false
+                menuBundle.append(PresentMenuItem(title: menu.title, price: menu.price, isSelected: isSelected))
             }
-            self.data.append(PresentMenuSectionModel.SectionMenu(header: section.title, selecType: sectionType, items: menuBundle))
+            self.data.append(PresentMenuSectionModel.SectionMenu(header: section.title, selectType: sectionType, items: menuBundle))
         })
-        self.data.append(PresentMenuSectionModel.SectionSelectCount(items: [PresentSelectCountItem(title: "")]))
+        self.data.append(PresentMenuSectionModel.SectionSelectCount(items: [PresentSelectCountItem(count: 1)]))
     }
     
     func setSectionType(min: Int?, max: Int?) -> SelectType {

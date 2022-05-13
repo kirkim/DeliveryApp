@@ -10,5 +10,5 @@ import RxCocoa
 
 struct MagnetSubmitTapViewModel {
     let canSubmit = BehaviorRelay<Bool>(value: false)
-    let currentPrice = BehaviorRelay<Int>(value: 0)
+    let currentPrice = PublishRelay<Int>()
 }

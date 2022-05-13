@@ -17,8 +17,12 @@ struct CartTableViewModel {
 //    let cartItemViewModel = CartItemViewModel()
     let cartTypeViewModel = CartTypeViewModel()
     
+    // ViewModel -> ParentViewController (ShoppingcartVC)
+    let tappedTypeLabel: Signal<ShoppingCartType>
+    
     init() {
         self.data = cartManager.getDataObserver()
+        self.tappedTypeLabel = cartTypeViewModel.tappedTypeLabel.asSignal()
     }
     
     func dataSource() -> RxTableViewSectionedReloadDataSource<ShoppingCartSectionModel> {

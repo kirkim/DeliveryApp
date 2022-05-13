@@ -62,7 +62,7 @@ class CartTypeCell: UITableViewCell, Reusable {
     
     private func layout() {
         [toggleTypeLabel, subLabel].forEach {
-            self.addSubview($0)
+            self.contentView.addSubview($0)
         }
         
         toggleTypeLabel.snp.makeConstraints {

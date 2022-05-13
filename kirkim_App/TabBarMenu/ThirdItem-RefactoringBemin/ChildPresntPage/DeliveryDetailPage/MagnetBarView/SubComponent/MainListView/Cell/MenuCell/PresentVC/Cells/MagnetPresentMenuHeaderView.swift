@@ -27,7 +27,7 @@ class MagnetPresentMenuHeaderView: UICollectionReusableView, Reusable {
         self.titleLabel.text = header
         switch type {
         case .mustOne:
-            break;
+            self.checkCountLabel.text = ""
         case .custom(min: let min, max: let max):
             let maxValue = max < itemCount ? max : 0
             let minValue = min < 0 ? 0 : min

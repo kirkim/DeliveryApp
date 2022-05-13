@@ -136,6 +136,9 @@
 		FEBA011327CDD5D700E74FCB /* SignUpPageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEBA011227CDD5D700E74FCB /* SignUpPageVC.xib */; };
 		FEBA011527CDDC5B00E74FCB /* KiflixViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBA011427CDDC5B00E74FCB /* KiflixViewModel.swift */; };
 		FEBA011727CDE08300E74FCB /* KiflixHttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBA011627CDE08300E74FCB /* KiflixHttpManager.swift */; };
+		FEBA8D3A282DDE8100C3E719 /* SampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBA8D39282DDE8100C3E719 /* SampleViewModel.swift */; };
+		FEBA8D3C282DDF2A00C3E719 /* SampleSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBA8D3B282DDF2A00C3E719 /* SampleSectionModel.swift */; };
+		FEBA8D3E282DE14C00C3E719 /* PresentMenuStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBA8D3D282DE14C00C3E719 /* PresentMenuStateManager.swift */; };
 		FEBDC027282CAAF100AB9FD2 /* EmptyCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBDC026282CAAF100AB9FD2 /* EmptyCartView.swift */; };
 		FEBF326227E9A16600DFB792 /* RxBannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF325227E9A16600DFB792 /* RxBannerViewModel.swift */; };
 		FEBF326327E9A16600DFB792 /* RxBannerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF325527E9A16600DFB792 /* RxBannerButton.swift */; };
@@ -148,6 +151,9 @@
 		FEBF326A27E9A16600DFB792 /* StaticBannerContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF325F27E9A16600DFB792 /* StaticBannerContent.swift */; };
 		FEBF326B27E9A16600DFB792 /* StaticBannerPlistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF326027E9A16600DFB792 /* StaticBannerPlistModel.swift */; };
 		FEBF326C27E9A16600DFB792 /* BannerContent+protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF326127E9A16600DFB792 /* BannerContent+protocol.swift */; };
+		FEE314BC282D331C00284DC0 /* CartItemHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE314BB282D331C00284DC0 /* CartItemHeaderView.swift */; };
+		FEE314BE282D372900284DC0 /* CartItemFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE314BD282D372900284DC0 /* CartItemFooterView.swift */; };
+		FEE314C0282D3CC800284DC0 /* ShoppingcartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE314BF282D3CC800284DC0 /* ShoppingcartViewModel.swift */; };
 		FEF9811E27FA7C8A00AA784F /* RxBannerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF9811D27FA7C8A00AA784F /* RxBannerViewDelegate.swift */; };
 		FEFA1BDA2829EF140088BEEB /* BeminBannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1BC82829EF140088BEEB /* BeminBannerViewModel.swift */; };
 		FEFA1BDB2829EF140088BEEB /* BeminBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1BC92829EF140088BEEB /* BeminBannerView.swift */; };
@@ -415,6 +421,9 @@
 		FEBA011227CDD5D700E74FCB /* SignUpPageVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpPageVC.xib; sourceTree = "<group>"; };
 		FEBA011427CDDC5B00E74FCB /* KiflixViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiflixViewModel.swift; sourceTree = "<group>"; };
 		FEBA011627CDE08300E74FCB /* KiflixHttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiflixHttpManager.swift; sourceTree = "<group>"; };
+		FEBA8D39282DDE8100C3E719 /* SampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewModel.swift; sourceTree = "<group>"; };
+		FEBA8D3B282DDF2A00C3E719 /* SampleSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSectionModel.swift; sourceTree = "<group>"; };
+		FEBA8D3D282DE14C00C3E719 /* PresentMenuStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentMenuStateManager.swift; sourceTree = "<group>"; };
 		FEBDC026282CAAF100AB9FD2 /* EmptyCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCartView.swift; sourceTree = "<group>"; };
 		FEBF325227E9A16600DFB792 /* RxBannerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxBannerViewModel.swift; sourceTree = "<group>"; };
 		FEBF325527E9A16600DFB792 /* RxBannerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxBannerButton.swift; sourceTree = "<group>"; };
@@ -427,6 +436,9 @@
 		FEBF325F27E9A16600DFB792 /* StaticBannerContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticBannerContent.swift; sourceTree = "<group>"; };
 		FEBF326027E9A16600DFB792 /* StaticBannerPlistModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticBannerPlistModel.swift; sourceTree = "<group>"; };
 		FEBF326127E9A16600DFB792 /* BannerContent+protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BannerContent+protocol.swift"; sourceTree = "<group>"; };
+		FEE314BB282D331C00284DC0 /* CartItemHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemHeaderView.swift; sourceTree = "<group>"; };
+		FEE314BD282D372900284DC0 /* CartItemFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemFooterView.swift; sourceTree = "<group>"; };
+		FEE314BF282D3CC800284DC0 /* ShoppingcartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingcartViewModel.swift; sourceTree = "<group>"; };
 		FEF9811D27FA7C8A00AA784F /* RxBannerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxBannerViewDelegate.swift; sourceTree = "<group>"; };
 		FEFA1BC82829EF140088BEEB /* BeminBannerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeminBannerViewModel.swift; sourceTree = "<group>"; };
 		FEFA1BC92829EF140088BEEB /* BeminBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeminBannerView.swift; sourceTree = "<group>"; };
@@ -1303,6 +1315,16 @@
 			path = PopupView;
 			sourceTree = "<group>";
 		};
+		FEBA8D38282DDE6F00C3E719 /* Refactoring */ = {
+			isa = PBXGroup;
+			children = (
+				FEBA8D39282DDE8100C3E719 /* SampleViewModel.swift */,
+				FEBA8D3B282DDF2A00C3E719 /* SampleSectionModel.swift */,
+				FEBA8D3D282DE14C00C3E719 /* PresentMenuStateManager.swift */,
+			);
+			path = Refactoring;
+			sourceTree = "<group>";
+		};
 		FEBDC024282CAA3D00AB9FD2 /* CartTableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1387,6 +1409,15 @@
 				FEF9811D27FA7C8A00AA784F /* RxBannerViewDelegate.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		FEE314BA282D330700284DC0 /* HeaderFooterView */ = {
+			isa = PBXGroup;
+			children = (
+				FEE314BB282D331C00284DC0 /* CartItemHeaderView.swift */,
+				FEE314BD282D372900284DC0 /* CartItemFooterView.swift */,
+			);
+			path = HeaderFooterView;
 			sourceTree = "<group>";
 		};
 		FEF8848327BA5C670038F138 /* Login&SignUp */ = {
@@ -1797,13 +1828,14 @@
 		FEFA1F162829FAEC0088BEEB /* PresentVC */ = {
 			isa = PBXGroup;
 			children = (
+				FEBA8D38282DDE6F00C3E719 /* Refactoring */,
+				FEFA1F292829FAEC0088BEEB /* MagnetPresentMenuVC.swift */,
+				FEFA1F282829FAEC0088BEEB /* MagnetPresentMenuViewModel.swift */,
 				FEFA1F172829FAEC0088BEEB /* MagnetPresentMenuModel.swift */,
+				FEFA1F272829FAEC0088BEEB /* MagnetPresentMenuSectionManager.swift */,
 				FEFA1F182829FAEC0088BEEB /* Cells */,
 				FEFA1F212829FAEC0088BEEB /* SectionModel */,
 				FEFA1F232829FAEC0088BEEB /* SubComponent */,
-				FEFA1F272829FAEC0088BEEB /* MagnetPresentMenuSectionManager.swift */,
-				FEFA1F282829FAEC0088BEEB /* MagnetPresentMenuViewModel.swift */,
-				FEFA1F292829FAEC0088BEEB /* MagnetPresentMenuVC.swift */,
 			);
 			path = PresentVC;
 			sourceTree = "<group>";
@@ -1822,10 +1854,10 @@
 		FEFA1F1C2829FAEC0088BEEB /* CountSelectCell */ = {
 			isa = PBXGroup;
 			children = (
+				FEFA1F202829FAEC0088BEEB /* MagnetPresentCountSelectCell.swift */,
 				FEFA1F1E2829FAEC0088BEEB /* MagnetPresentCountSelectViewModel.swift */,
 				FEFA1F1F2829FAEC0088BEEB /* CountChecker.swift */,
 				FEFA1F1D2829FAEC0088BEEB /* CountCheckerViewModel.swift */,
-				FEFA1F202829FAEC0088BEEB /* MagnetPresentCountSelectCell.swift */,
 			);
 			path = CountSelectCell;
 			sourceTree = "<group>";
@@ -1990,6 +2022,7 @@
 			children = (
 				FE54C06D282B470D004DE651 /* DB */,
 				FEFA1F98282A18B70088BEEB /* ShoppingcartVC.swift */,
+				FEE314BF282D3CC800284DC0 /* ShoppingcartViewModel.swift */,
 				FEFA1F9A282A1AE00088BEEB /* SubComponents */,
 			);
 			path = ShoppingCartPage;
@@ -2017,6 +2050,7 @@
 		FEFA1FAF282A246F0088BEEB /* CartItemCell */ = {
 			isa = PBXGroup;
 			children = (
+				FEE314BA282D330700284DC0 /* HeaderFooterView */,
 				FEFA1FAA282A223E0088BEEB /* CartItemCell.swift */,
 				FEFA1FAB282A223E0088BEEB /* CartItemCell.xib */,
 				FE54C06B282B3C9C004DE651 /* CartItemViewModel.swift */,
@@ -2294,6 +2328,7 @@
 				FEFBB5F828029E7200864528 /* ButtonVC3.swift in Sources */,
 				FE85B4E927EAA88C0031F5AC /* SideMenuView+Protocol.swift in Sources */,
 				FE30300327FD3502006F2C63 /* DetailProfileButton.swift in Sources */,
+				FEBA8D3A282DDE8100C3E719 /* SampleViewModel.swift in Sources */,
 				FEFBB5EC28029D3F00864528 /* BottomBarItem.swift in Sources */,
 				FE455F60282C0DFB003F38BD /* PPPUP.swift in Sources */,
 				FE078F1B27C34C7E00D19E34 /* SimpleProfileView.swift in Sources */,
@@ -2318,6 +2353,7 @@
 				FE3EA96727BB8AC100DA36EA /* SimpleTextField.swift in Sources */,
 				FE38F46627F7170F008BBE8B /* BasicLoginViewModel.swift in Sources */,
 				FEFA1F632829FAEC0088BEEB /* MagnetNavigationBarViewModel.swift in Sources */,
+				FEE314BC282D331C00284DC0 /* CartItemHeaderView.swift in Sources */,
 				FE54C06C282B3C9C004DE651 /* CartItemViewModel.swift in Sources */,
 				FE84E49927D06B5000B30F57 /* FullScreenPlayerVC.swift in Sources */,
 				FE54C06F282B471E004DE651 /* CartManager.swift in Sources */,
@@ -2364,6 +2400,7 @@
 				FEFA1EE82829FACD0088BEEB /* ContainerStoreListViewCell.swift in Sources */,
 				FEFA1F5A2829FAEC0088BEEB /* MagnetReviewHeaderCell.swift in Sources */,
 				FEFA1EF12829FACD0088BEEB /* StoreType.swift in Sources */,
+				FEE314BE282D372900284DC0 /* CartItemFooterView.swift in Sources */,
 				FEFBB5E228029D3F00864528 /* TopBarLayoutViewModel.swift in Sources */,
 				FE38F46127F7170F008BBE8B /* LoginIdZone.swift in Sources */,
 				FEFBB5E428029D3F00864528 /* TopBarViewModel.swift in Sources */,
@@ -2396,6 +2433,7 @@
 				FE8EF16227F425E300EEAC69 /* SignupIdZone.swift in Sources */,
 				FE8EF15E27F425E300EEAC69 /* SignupPwZoneViewModel.swift in Sources */,
 				FE74FEAC27CDBCA100F40D5F /* KiflixVC.swift in Sources */,
+				FEE314C0282D3CC800284DC0 /* ShoppingcartViewModel.swift in Sources */,
 				FEFBB5FB28029E7200864528 /* Test3.swift in Sources */,
 				FE9CFC1F282AC330007926ED /* CartTypePopupView.swift in Sources */,
 				FEFA1ED82829FACD0088BEEB /* DeliveryMenuSectionModel.swift in Sources */,
@@ -2421,6 +2459,7 @@
 				FE8D306627FC682A00F55EEE /* StaticBannerCell.swift in Sources */,
 				FE2FD15727EDA31A0094E094 /* RxHttpClient.swift in Sources */,
 				FEFBB5E828029D3F00864528 /* BottomBarViewModel.swift in Sources */,
+				FEBA8D3C282DDF2A00C3E719 /* SampleSectionModel.swift in Sources */,
 				FEFA1F8A2829FAEC0088BEEB /* MagnetBannerCellViewModel.swift in Sources */,
 				FEFBB5DF28029D3F00864528 /* TopBarMainViewController.swift in Sources */,
 				FEF9811E27FA7C8A00AA784F /* RxBannerViewDelegate.swift in Sources */,
@@ -2489,6 +2528,7 @@
 				FE7FC0C627C48581009EB2AE /* SideMenuModel.swift in Sources */,
 				FEFA1ED92829FACD0088BEEB /* DeliveryMenuViewModel.swift in Sources */,
 				FE8D307627FC682A00F55EEE /* StaticSectionViewModel.swift in Sources */,
+				FEBA8D3E282DE14C00C3E719 /* PresentMenuStateManager.swift in Sources */,
 				FEFA1F6B2829FAEC0088BEEB /* CountCheckerViewModel.swift in Sources */,
 				FE84E4A027D07F1C00B30F57 /* PlayerView.swift in Sources */,
 				FEBF326227E9A16600DFB792 /* RxBannerViewModel.swift in Sources */,

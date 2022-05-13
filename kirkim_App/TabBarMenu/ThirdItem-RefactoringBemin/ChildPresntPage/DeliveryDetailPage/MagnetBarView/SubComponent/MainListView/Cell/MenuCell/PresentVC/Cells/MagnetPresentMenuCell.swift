@@ -14,7 +14,6 @@ class MagnetPresentMenuCell: UICollectionViewCell, Reusable {
     private let titleLabel = UILabel()
     private let priceLabel = UILabel()
     private var price: Int = 0
-    var isClicked: Bool = false
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,24 +26,21 @@ class MagnetPresentMenuCell: UICollectionViewCell, Reusable {
     }
     
     override func prepareForReuse() {
-        self.isClicked = false
-        self.checkBoxImageView.image = UIImage(systemName: "circle")
+//        self.checkBoxImageView.image = UIImage(systemName: "circle")
     }
     
     func setData(data: PresentMenuItem) {
         self.titleLabel.text = data.title
         self.price = data.price ?? 0
         self.priceLabel.text = (data.price ?? 0).parsingToKoreanPrice()
+        self.clickedItem(isClicked: data.isSelected)
     }
     
-    func clickedItem() -> Int {
-        isClicked.toggle()
+    func clickedItem(isClicked: Bool) {
         if (isClicked == true) {
             self.checkBoxImageView.image = UIImage(systemName: "circle.circle")
-            return self.price
         } else {
             self.checkBoxImageView.image = UIImage(systemName: "circle")
-            return -self.price
         }
     }
     

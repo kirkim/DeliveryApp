@@ -46,8 +46,8 @@ class MagnetPresentMenuVC: UIViewController {
         self.submitView.bind(viewModel.submitTapViewModel)
         let dataSource = viewModel.dataSource()
         
-        Observable.just(viewModel.data)
-            .bind(to: self.collectionView.rx.items(dataSource: dataSource))
+        viewModel.data
+            .drive(self.collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
         let scrollEvent = self.collectionView.rx.didScroll
@@ -69,9 +69,6 @@ class MagnetPresentMenuVC: UIViewController {
         .disposed(by: disposeBag)
         
         self.collectionView.rx.itemSelected
-            .map({ indexPath -> (IndexPath, UICollectionView) in
-                return (indexPath, self.collectionView)
-            })
             .bind(to: viewModel.itemSelect)
             .disposed(by: disposeBag)
         

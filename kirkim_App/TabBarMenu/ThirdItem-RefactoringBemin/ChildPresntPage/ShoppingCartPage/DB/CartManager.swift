@@ -40,7 +40,7 @@ class CartManager {
             }
             
             let itemData = ShoppingCartSectionModel.cartMenuSection(items: items!)
-            let cartTypeData = ShoppingCartSectionModel.cartTypeSection(items: [type])
+            let cartTypeData = ShoppingCartSectionModel.cartTypeSection(items: [CartTypeItem(type: type)])
             let priceData = ShoppingCartSectionModel.cartPriceSection(items: [CartPriceItem(deliveryTip: deliveryTip, menuPrice: totalPrice)])
             
             dataValue = [itemData, cartTypeData, priceData]
@@ -65,7 +65,7 @@ class CartManager {
     }
     
     func getDataObserver() -> BehaviorRelay<[ShoppingCartSectionModel]> {
-        update()
+//        update()
         return self.dataObserver
     }
     
@@ -96,20 +96,21 @@ class CartManager {
         return nil
     }
     
-    private func saveType(data: CartTypeItem) {
+    func changeType(data: ShoppingCartType) {
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(data) {
             userDefaults.setValue(encoded, forKey: "type")
         }
+        update()
     }
     
-    private func getType() -> CartTypeItem {
+    private func getType() -> ShoppingCartType {
         if let savedData = userDefaults.object(forKey: "type") as? Data {
             let decoder = JSONDecoder()
-            let savedObject = try? decoder.decode(CartTypeItem.self, from: savedData)
-            return savedObject ?? CartTypeItem(type: .delivery)
+            let savedObject = try? decoder.decode(ShoppingCartType.self, from: savedData)
+            return savedObject ?? .delivery
         }
-        return CartTypeItem(type: .delivery)
+        return .delivery
     }
     
     private func saveDeliveryTip(data: Int) {

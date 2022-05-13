@@ -23,8 +23,15 @@ class PPPUP: UIViewController {
         self.view.backgroundColor = .yellow
         presentButton.setTitle("페이지 열기", for: .normal)
         presentButton.addAction(UIAction(handler: { _ in
-            let vc = ShoppingcartVC()
-            self.present(vc, animated: true)
+//            let vc = ShoppingcartVC()
+            MagnetBarHttpModel.shared.loadData(code: "1") {
+                DispatchQueue.main.async {
+                    let vc = MagnetBarView()
+//                    self.present(vc, animated: true)
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+            }
+            
         }), for: .touchUpInside)
         self.view.addSubview(presentButton)
         

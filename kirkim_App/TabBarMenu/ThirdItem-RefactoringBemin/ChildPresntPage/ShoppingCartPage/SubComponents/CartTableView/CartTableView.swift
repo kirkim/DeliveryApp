@@ -13,13 +13,13 @@ class CartTableView: UITableView {
     private let disposeBag = DisposeBag()
     
     //temp
-    let viewModel = CartTableViewModel()
+//    let viewModel = CartTableViewModel()
     
     init() {
         super.init(frame: CGRect.zero, style: .plain)
         attribute()
         layout()
-        bind(viewModel)
+//        bind(viewModel)
     }
     
     required init?(coder: NSCoder) {
@@ -39,6 +39,8 @@ class CartTableView: UITableView {
         self.register(cartItemNib, forCellReuseIdentifier: "CartItemCell")
         self.register(cellType: CartPriceCell.self)
         self.register(cellType: CartTypeCell.self)
+        self.register(headerFooterViewType: CartItemHeaderView.self)
+        self.register(headerFooterViewType: CartItemFooterView.self)
     }
     
     private func layout() {
@@ -56,5 +58,39 @@ extension CartTableView: UITableViewDelegate {
         default:
             return UITableView.automaticDimension
         }
+    }
+    
+    // Header
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if (section == 0) {
+            let header = tableView.dequeueReusableHeaderFooterView(CartItemHeaderView.self)
+ 
+            return header
+        }
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if (section == 0) {
+            return 50
+        }
+        return 0
+    }
+    
+    // Footer
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        if (section == 0) {
+            let footer = tableView.dequeueReusableHeaderFooterView(CartItemFooterView.self)
+ 
+            return footer
+        }
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if (section == 0) {
+            return 50
+        }
+        return 0
     }
 }
