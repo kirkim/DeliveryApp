@@ -14,6 +14,7 @@ class MagnetPresentMenuViewModel {
     private let disposeBag = DisposeBag()
     private let sectionManager = MagnetPresentMenuSectionManager()
     private let countSelectViewModel = MagnetPresentCountSelectViewModel()
+    private let presentMenuStateManager: PresentMenuStateManager
     let submitTapViewModel = MagnetSubmitTapViewModel()
     
     //View -> ViewModel
@@ -22,32 +23,16 @@ class MagnetPresentMenuViewModel {
     
     //ViewModel -> View
     let warningAlert = PublishRelay<String>()
-    let inputPrice = BehaviorRelay<Int>(value: 0)
-    
-    // checker Manager
-    private var initMustOneCell: [Int] = []
-    
     let data: Driver<[PresentMenuSectionModel]>
     let title: String
-    
-    let presentMenuStateManager: PresentMenuStateManager
     
     init(model: MagnetPresentMenuModel) {
         self.title = model.title
         self.presentMenuStateManager = PresentMenuStateManager(model: model)
         self.data = presentMenuStateManager.getDataObserver().asDriver()
-        let totalPrice = inputPrice.scan(0, accumulator: { a, b in
-            return a + b
-        })
         
-        // 최종 가격 결정 옵저버
-        Observable
-            .combineLatest(totalPrice, countSelectViewModel.totalCount.asObservable()) { a, b in
-                return a * b
-            }
-            .subscribe(onNext: {value in
-                self.submitTapViewModel.currentPrice.accept(value)
-            })
+        presentMenuStateManager.getTotalPriceObserver()
+            .bind(to: submitTapViewModel.currentPrice)
             .disposed(by: disposeBag)
                 
         self.itemSelect
@@ -57,6 +42,18 @@ class MagnetPresentMenuViewModel {
         // 제출버튼 유효성 검사
         itemSelect.map { _ in 1 }
             .bind(to: validateSubmitButton)
+            .disposed(by: disposeBag)
+        
+        countSelectViewModel.totalCount
+            .bind { self.presentMenuStateManager.changeCount(value: $0) }
+            .disposed(by: disposeBag)
+        
+        presentMenuStateManager.getErrorMessageObserver()
+            .bind(to: self.warningAlert)
+            .disposed(by: disposeBag)
+        
+        presentMenuStateManager.getIsValidObserver()
+            .bind(to: self.submitTapViewModel.canSubmit)
             .disposed(by: disposeBag)
     }
         

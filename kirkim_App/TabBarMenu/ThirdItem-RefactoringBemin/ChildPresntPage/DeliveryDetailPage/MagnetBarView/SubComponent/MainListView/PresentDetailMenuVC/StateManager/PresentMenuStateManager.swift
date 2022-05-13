@@ -9,43 +9,15 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-
-
-struct PresentMenuReactItem {
-    var header: String
-    let selectType: SelectType
-    var items: [PresentMenuItem]
-    
-    mutating func changeState(row: Int, state: Bool) {
-        self.items[row].isSelected = state
-    }
-    
-    mutating func changeAllStateToFalse() {
-        for i in 0..<self.items.count {
-            self.items[i].isSelected = false
-        }
-    }
-    
-    func countOfSelectedItems() -> Int {
-        var count = 0
-        self.items.forEach { item in
-            if (item.isSelected == true) {
-                count += 1
-            }
-        }
-        return count
-    }
-}
-
 class PresentMenuStateManager {
-    private let dataObserver: BehaviorRelay<[PresentMenuSectionModel]>
     private var headerSectionItem: PresentMenuTitleItem
     private var optionSectionItem: [PresentMenuReactItem] = []
     private var countSectionItem: PresentSelectCountItem
     let sectionTotalCount: Int
-    private let errorMessage = PublishRelay<String>()
-    private let totalPrice: BehaviorRelay<Int>
-    
+    private let dataObserver: BehaviorRelay<[PresentMenuSectionModel]>
+    private let errorMessageObserver = PublishRelay<String>()
+    private let totalPriceObserver: BehaviorRelay<Int>
+    private let isValidObserver = BehaviorRelay<Bool>(value: false)
     
     init(model: MagnetPresentMenuModel) {
         // 초기 데이터 세팅
@@ -68,10 +40,10 @@ class PresentMenuStateManager {
         }
         self.countSectionItem = model.data[lastIndex].items[0] as! PresentSelectCountItem
         price = self.countSectionItem.count * price
-        self.totalPrice = BehaviorRelay<Int>(value: price)
+        self.totalPriceObserver = BehaviorRelay<Int>(value: price)
     }
     
-    //MARK: Private Method
+    //MARK: - Private Method
     private func update() {
         var resultData: [PresentMenuSectionModel] = []
         
@@ -80,22 +52,61 @@ class PresentMenuStateManager {
         resultData.append(headerData)
         
         // 매뉴섹션파싱
+        var price:Int = 0
         self.optionSectionItem.forEach { item in
             let optionItem = PresentMenuSectionModel.SectionMenu(header: item.header, selectType: item.selectType, items: item.items)
             resultData.append(optionItem)
+            item.items.forEach { item in
+                if (item.isSelected == true) {
+                    price += item.price ?? 0
+                }
+            }
         }
+        price = price * self.countSectionItem.count
+        self.totalPriceObserver.accept(price)
         
         // 카운트섹션파싱
         let countData = PresentMenuSectionModel.SectionSelectCount(items: [self.countSectionItem])
         resultData.append(countData)
-        
+        updateValid()
         self.dataObserver.accept(resultData)
     }
     
+    private func updateValid() {
+        var notValidSection:Int = 0
+        self.optionSectionItem.forEach { section in
+            var isValidCount:Int = 0
+            switch section.selectType {
+            case .custom(let min, _):
+                isValidCount = min
+                section.items.forEach { item in
+                    isValidCount = item.isSelected == true ? isValidCount-1 : isValidCount
+                }
+                notValidSection = isValidCount <= 0 ? notValidSection : notValidSection+1
+            case .mustOne:
+                break;
+            }
+        }
+        let isValid = notValidSection == 0 ? true : false
+        isValidObserver.accept(isValid)
+    }
     
-    //MARK: Public Method
+    
+    //MARK: - Public Method
     func getDataObserver() -> BehaviorRelay<[PresentMenuSectionModel]> {
         return self.dataObserver
+    }
+    
+    func getTotalPriceObserver() -> BehaviorRelay<Int> {
+        return self.totalPriceObserver
+    }
+    
+    func getErrorMessageObserver() -> PublishRelay<String> {
+        return self.errorMessageObserver
+    }
+    
+    func getIsValidObserver() -> BehaviorRelay<Bool> {
+        return self.isValidObserver
     }
     
     func changeCount(value: Int) {
@@ -123,7 +134,7 @@ class PresentMenuStateManager {
                 section.changeState(row: row, state: false)
             } else {
                 if (section.countOfSelectedItems() >= max && max != 0) {
-                    errorMessage.accept("\(max)개까지 선택이 가능합니다")
+                    errorMessageObserver.accept("\(max)개까지 선택이 가능합니다")
                 } else {
                     section.changeState(row: row, state: true)
                 }

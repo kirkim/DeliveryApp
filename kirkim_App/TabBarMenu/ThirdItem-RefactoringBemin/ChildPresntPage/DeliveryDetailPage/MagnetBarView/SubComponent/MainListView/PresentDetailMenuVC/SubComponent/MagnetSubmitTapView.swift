@@ -66,7 +66,6 @@ class MagnetSubmitTapView: UIView {
         self.minPriceLabel.text = "배달최소주문금액 23,000원"
         self.minPriceLabel.textColor = .darkGray
         self.submitTitleLabel.text = "1개 담기"
-//        self.submitPriceLabel.text = 25000.parsingToKoreanPrice()
     }
     
     private func layout() {
