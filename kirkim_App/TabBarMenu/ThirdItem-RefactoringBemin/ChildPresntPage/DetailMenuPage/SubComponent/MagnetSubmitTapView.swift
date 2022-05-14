@@ -46,9 +46,7 @@ class MagnetSubmitTapView: UIView {
             .disposed(by: disposeBag)
         
         self.submitButton.rx.tap
-            .bind {
-                print("click!")
-            }
+            .bind(to: viewModel.submitButtonTapped)
             .disposed(by: disposeBag)
     }
     

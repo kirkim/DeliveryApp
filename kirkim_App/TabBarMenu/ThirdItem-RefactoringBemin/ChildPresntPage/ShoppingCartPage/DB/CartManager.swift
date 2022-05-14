@@ -17,11 +17,6 @@ class CartManager {
     private let userDefaults = UserDefaults(suiteName: "ShoppingCart")!
     
     private init() {
-        saveItem(data: [
-            CartMenuItem(title: "찹스테이크", thumbnailUrl: "", menuString: ["굽기: rare"], price: 20000, count: 3),
-            CartMenuItem(title: "포테이토칩", thumbnailUrl: "", menuString: ["salt: 많이", "소스: 머스타드"], price: 5000, count: 7),
-            CartMenuItem(title: "투움바 파스타", thumbnailUrl: "", menuString: ["사리: 면사리추가, 소스추가"], price: 15000, count: 2),
-        ])
         update()
     }
     

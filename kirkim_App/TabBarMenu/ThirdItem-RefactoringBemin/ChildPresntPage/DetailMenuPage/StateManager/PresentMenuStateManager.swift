@@ -8,42 +8,62 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import UIKit
 
 class PresentMenuStateManager {
     private var headerSectionItem: PresentMenuTitleItem
     private var optionSectionItem: [PresentMenuReactItem] = []
     private var countSectionItem: PresentSelectCountItem
     let sectionTotalCount: Int
-    private let dataObserver: BehaviorRelay<[PresentMenuSectionModel]>
+    private let httpManager = HttpModel.shared
+    
+    // Observer
+    private let collectionViewDataObserver: BehaviorRelay<[PresentMenuSectionModel]>
     private let errorMessageObserver = PublishRelay<String>()
-    private let totalPriceObserver: BehaviorRelay<Int>
+    private let totalPriceObserver = BehaviorRelay<Int>(value: 0)
     private let isValidObserver = BehaviorRelay<Bool>(value: false)
+    
+    // Data Storage for ShoppingCart
+//    private let storeCode: String
+    private let indexPath: IndexPath
     
     init(model: MagnetPresentMenuModel) {
         // 초기 데이터 세팅
-        self.dataObserver = BehaviorRelay<[PresentMenuSectionModel]>(value: model.data)
+        self.collectionViewDataObserver = BehaviorRelay<[PresentMenuSectionModel]>(value: model.data)
         self.sectionTotalCount = model.data.count
+//        self.storeCode = httpManager.getStoreCode()
+        self.indexPath = model.indexPath
         // 섹션별로 분류
         self.headerSectionItem = model.data[0].items[0] as! PresentMenuTitleItem
         let lastIndex = model.data.count - 1
+        self.countSectionItem = model.data[lastIndex].items[0] as! PresentSelectCountItem
         var price:Int = 0
         for i in 1..<lastIndex {
             let data = model.data[i]
             let items = (data.items as! [PresentMenuItem])
             let item = PresentMenuReactItem(header: data.headers!, selectType: data.selectType!, items: items)
             optionSectionItem.append(item)
-            items.forEach { menu in
-                if (menu.isSelected == true) {
-                    price += menu.price ?? 0
-                }
-            }
+            price += self.manageMenu(items)
         }
-        self.countSectionItem = model.data[lastIndex].items[0] as! PresentSelectCountItem
+        
         price = self.countSectionItem.count * price
-        self.totalPriceObserver = BehaviorRelay<Int>(value: price)
+        self.totalPriceObserver.accept(price)
     }
     
     //MARK: - Private Method
+    
+    /// manageMenu
+    /// 반환:  매뉴의 선택한 옵션의 가격의 총합
+    private func manageMenu(_ items: [PresentMenuItem]) -> Int {
+        var price:Int = 0
+        items.forEach { menu in
+            if (menu.isSelected == true) {
+                price += menu.price ?? 0
+            }
+        }
+        return price
+    }
+    
     private func update() {
         var resultData: [PresentMenuSectionModel] = []
         
@@ -56,11 +76,7 @@ class PresentMenuStateManager {
         self.optionSectionItem.forEach { item in
             let optionItem = PresentMenuSectionModel.SectionMenu(header: item.header, selectType: item.selectType, items: item.items)
             resultData.append(optionItem)
-            item.items.forEach { item in
-                if (item.isSelected == true) {
-                    price += item.price ?? 0
-                }
-            }
+            price += self.manageMenu(item.items)
         }
         price = price * self.countSectionItem.count
         self.totalPriceObserver.accept(price)
@@ -69,7 +85,7 @@ class PresentMenuStateManager {
         let countData = PresentMenuSectionModel.SectionSelectCount(items: [self.countSectionItem])
         resultData.append(countData)
         updateValid()
-        self.dataObserver.accept(resultData)
+        self.collectionViewDataObserver.accept(resultData)
     }
     
     private func updateValid() {
@@ -93,8 +109,8 @@ class PresentMenuStateManager {
     
     
     //MARK: - Public Method
-    func getDataObserver() -> BehaviorRelay<[PresentMenuSectionModel]> {
-        return self.dataObserver
+    func getCollectionViewDataObserver() -> BehaviorRelay<[PresentMenuSectionModel]> {
+        return self.collectionViewDataObserver
     }
     
     func getTotalPriceObserver() -> BehaviorRelay<Int> {
@@ -142,5 +158,30 @@ class PresentMenuStateManager {
         }
         self.optionSectionItem[index] = section
         update()
+    }
+    
+    func parsingCartData() -> ParsedCartData {
+        let storeName = httpManager.getStoreName()
+        let storeCode = httpManager.getStoreCode()
+        
+        var menuString: [String] = []
+        self.optionSectionItem.forEach { section in
+            var menuArray: [String] = []
+            section.items.forEach { item in
+                if (item.isSelected) {
+                    menuArray.append("\(item.title)(\((item.price ?? 0).parsingToKoreanPrice()))")
+                }
+            }
+            if (!menuArray.isEmpty) {
+                let sectionString = "∙\(section.header): \(menuArray.joined(separator: "/"))"
+                menuString.append(sectionString)
+            }
+        }
+        
+        let imageData = (self.headerSectionItem.image ?? UIImage(systemName: "circle"))!.pngData()!
+        
+        let item = CartMenuItem(indexPath: self.indexPath, title: self.headerSectionItem.mainTitle, thumbnailUrl: imageData, menuString: menuString, price: 0, count: self.countSectionItem.count)
+        
+        return ParsedCartData(storeName: storeName, storeCode: storeCode, item: item)
     }
 }

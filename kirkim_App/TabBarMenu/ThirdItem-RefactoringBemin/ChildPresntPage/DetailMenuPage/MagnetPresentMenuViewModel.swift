@@ -29,7 +29,7 @@ class MagnetPresentMenuViewModel {
     init(model: MagnetPresentMenuModel) {
         self.title = model.title
         self.presentMenuStateManager = PresentMenuStateManager(model: model)
-        self.data = presentMenuStateManager.getDataObserver().asDriver()
+        self.data = presentMenuStateManager.getCollectionViewDataObserver().asDriver()
         
         presentMenuStateManager.getTotalPriceObserver()
             .bind(to: submitTapViewModel.currentPrice)
@@ -55,6 +55,9 @@ class MagnetPresentMenuViewModel {
         presentMenuStateManager.getIsValidObserver()
             .bind(to: self.submitTapViewModel.canSubmit)
             .disposed(by: disposeBag)
+        
+//        self.submitTapViewModel.submitButtonTapped
+            
     }
         
     func createLayout() -> UICollectionViewCompositionalLayout {

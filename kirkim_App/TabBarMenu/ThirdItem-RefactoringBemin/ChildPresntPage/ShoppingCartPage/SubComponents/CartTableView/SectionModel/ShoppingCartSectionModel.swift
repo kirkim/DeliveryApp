@@ -18,8 +18,9 @@ protocol ShoppingCartItem: Codable {
 }
 
 struct CartMenuItem: ShoppingCartItem {
+    var indexPath: IndexPath
     var title: String
-    var thumbnailUrl: String
+    var thumbnailUrl: Data
     var menuString: [String]
     var price: Int
     var count: Int

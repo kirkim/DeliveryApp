@@ -11,10 +11,12 @@ struct MagnetPresentMenuModel {
     private let httpManager = HttpModel.shared
     var data:[PresentMenuSectionModel] = []
     let title: String
+    let indexPath: IndexPath
     
     init(indexPath: IndexPath, image: UIImage?) {
-
+        self.indexPath = indexPath
         // initData
+        
         let hasData = httpManager.getMenuDetail(indexPath: indexPath)
         self.title = httpManager.getMenuTitle(indexPath: indexPath)
         self.data.append(PresentMenuSectionModel.SectionMainTitle(items: [PresentMenuTitleItem(image: image, mainTitle: self.title, description: hasData?.description)]))

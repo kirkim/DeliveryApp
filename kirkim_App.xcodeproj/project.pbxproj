@@ -134,6 +134,7 @@
 		FEA9600127E1874D00FD78B3 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = FEA9600027E1874D00FD78B3 /* RxCocoa */; };
 		FEA9600327E1874D00FD78B3 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = FEA9600227E1874D00FD78B3 /* RxRelay */; };
 		FEA9600527E1874D00FD78B3 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FEA9600427E1874D00FD78B3 /* RxSwift */; };
+		FEB69BC9282FD53700079E30 /* ParsedCartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB69BC8282FD53700079E30 /* ParsedCartData.swift */; };
 		FEBA011327CDD5D700E74FCB /* SignUpPageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEBA011227CDD5D700E74FCB /* SignUpPageVC.xib */; };
 		FEBA011527CDDC5B00E74FCB /* KiflixViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBA011427CDDC5B00E74FCB /* KiflixViewModel.swift */; };
 		FEBA011727CDE08300E74FCB /* KiflixHttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBA011627CDE08300E74FCB /* KiflixHttpManager.swift */; };
@@ -418,6 +419,7 @@
 		FE9CFC1B282ABED5007926ED /* CartTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTypeViewModel.swift; sourceTree = "<group>"; };
 		FE9CFC1E282AC330007926ED /* CartTypePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTypePopupView.swift; sourceTree = "<group>"; };
 		FE9CFC20282AC33E007926ED /* CartTypePopupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTypePopupViewModel.swift; sourceTree = "<group>"; };
+		FEB69BC8282FD53700079E30 /* ParsedCartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsedCartData.swift; sourceTree = "<group>"; };
 		FEBA011227CDD5D700E74FCB /* SignUpPageVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpPageVC.xib; sourceTree = "<group>"; };
 		FEBA011427CDDC5B00E74FCB /* KiflixViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiflixViewModel.swift; sourceTree = "<group>"; };
 		FEBA011627CDE08300E74FCB /* KiflixHttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiflixHttpManager.swift; sourceTree = "<group>"; };
@@ -823,7 +825,7 @@
 			isa = PBXGroup;
 			children = (
 				FEBA8D3D282DE14C00C3E719 /* PresentMenuStateManager.swift */,
-				FE4CBDD8282E5A740060E445 /* PresentMenuReactItem.swift */,
+				FEB69BC7282FD52800079E30 /* Entities */,
 			);
 			path = StateManager;
 			sourceTree = "<group>";
@@ -1322,6 +1324,16 @@
 			path = PopupView;
 			sourceTree = "<group>";
 		};
+		FEB69BC7282FD52800079E30 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				FE4CBDD8282E5A740060E445 /* PresentMenuReactItem.swift */,
+				FEB69BC8282FD53700079E30 /* ParsedCartData.swift */,
+				FEFA1F212829FAEC0088BEEB /* SectionModel */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		FEBDC024282CAA3D00AB9FD2 /* CartTableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1512,13 +1524,14 @@
 			isa = PBXGroup;
 			children = (
 				FEFA1F97282A183E0088BEEB /* ShoppingCartPage */,
-				FEFA1EF32829FAEC0088BEEB /* DeliveryDetailPage */,
-				FEFA1EAA2829FACD0088BEEB /* DeliveryListPage */,
+				FEFA1F162829FAEC0088BEEB /* DetailMenuPage */,
+				FEFA1EF32829FAEC0088BEEB /* DetailStorePage */,
+				FEFA1EAA2829FACD0088BEEB /* DeliveryStoreListPage */,
 			);
 			path = ChildPresntPage;
 			sourceTree = "<group>";
 		};
-		FEFA1EAA2829FACD0088BEEB /* DeliveryListPage */ = {
+		FEFA1EAA2829FACD0088BEEB /* DeliveryStoreListPage */ = {
 			isa = PBXGroup;
 			children = (
 				FEFA1ED22829FACD0088BEEB /* DeliveryMenuVC.swift */,
@@ -1530,7 +1543,7 @@
 				FEFA1ECE2829FACD0088BEEB /* Cell */,
 				FEFA1ED42829FACD0088BEEB /* Entities */,
 			);
-			path = DeliveryListPage;
+			path = DeliveryStoreListPage;
 			sourceTree = "<group>";
 		};
 		FEFA1EAC2829FACD0088BEEB /* SectionModel */ = {
@@ -1681,13 +1694,13 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		FEFA1EF32829FAEC0088BEEB /* DeliveryDetailPage */ = {
+		FEFA1EF32829FAEC0088BEEB /* DetailStorePage */ = {
 			isa = PBXGroup;
 			children = (
 				FEFA1F052829FAEC0088BEEB /* MagnetBarView */,
 				FEFA1EF52829FAEC0088BEEB /* ReviewView */,
 			);
-			path = DeliveryDetailPage;
+			path = DetailStorePage;
 			sourceTree = "<group>";
 		};
 		FEFA1EF52829FAEC0088BEEB /* ReviewView */ = {
@@ -1789,7 +1802,6 @@
 				FEFA1F4E2829FAEC0088BEEB /* MagnetListSectionManager.swift */,
 				FEFA1F112829FAEC0088BEEB /* SectionModel */,
 				FEFA1F142829FAEC0088BEEB /* Cell */,
-				FEFA1F162829FAEC0088BEEB /* PresentDetailMenuVC */,
 			);
 			path = MainListView;
 			sourceTree = "<group>";
@@ -1822,19 +1834,18 @@
 			path = MenuCell;
 			sourceTree = "<group>";
 		};
-		FEFA1F162829FAEC0088BEEB /* PresentDetailMenuVC */ = {
+		FEFA1F162829FAEC0088BEEB /* DetailMenuPage */ = {
 			isa = PBXGroup;
 			children = (
 				FEFA1F292829FAEC0088BEEB /* MagnetPresentMenuVC.swift */,
 				FEBA8D39282DDE8100C3E719 /* MagnetPresentMenuViewModel.swift */,
 				FEFA1F172829FAEC0088BEEB /* MagnetPresentMenuModel.swift */,
-				FE4CBDD7282E5A510060E445 /* StateManager */,
 				FEFA1F272829FAEC0088BEEB /* MagnetPresentMenuSectionManager.swift */,
-				FEFA1F182829FAEC0088BEEB /* Cells */,
-				FEFA1F212829FAEC0088BEEB /* SectionModel */,
+				FE4CBDD7282E5A510060E445 /* StateManager */,
 				FEFA1F232829FAEC0088BEEB /* SubComponent */,
+				FEFA1F182829FAEC0088BEEB /* Cells */,
 			);
-			path = PresentDetailMenuVC;
+			path = DetailMenuPage;
 			sourceTree = "<group>";
 		};
 		FEFA1F182829FAEC0088BEEB /* Cells */ = {
@@ -2513,6 +2524,7 @@
 				FEFA1F622829FAEC0088BEEB /* RemoteMainListBarCell.swift in Sources */,
 				FEFA1EE92829FACD0088BEEB /* ContainerStoreListViewModel.swift in Sources */,
 				FEFA1F682829FAEC0088BEEB /* MagnetPresentMenuHeaderView.swift in Sources */,
+				FEB69BC9282FD53700079E30 /* ParsedCartData.swift in Sources */,
 				FEFA1F892829FAEC0088BEEB /* MagnetHeaderViewModel.swift in Sources */,
 				FEFA1EE22829FACD0088BEEB /* StoreListSectionModel.swift in Sources */,
 				FE38F46827F7170F008BBE8B /* LoginStatus+enum.swift in Sources */,
