@@ -22,7 +22,6 @@ struct MagnetBarViewMath {
     static let headerViewHeight:CGFloat = 150
 }
 
-typealias HttpModel = MagnetBarHttpModel
 class MagnetBarView: UIViewController {
     private let mainListView = MagnetListView()
     private let mainNavigationBar = MagnetNavigationBar()

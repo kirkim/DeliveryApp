@@ -56,8 +56,16 @@ class MagnetPresentMenuViewModel {
             .bind(to: self.submitTapViewModel.canSubmit)
             .disposed(by: disposeBag)
         
-//        self.submitTapViewModel.submitButtonTapped
-            
+        self.submitTapViewModel.submitButtonTapped
+            .map { self.presentMenuStateManager.parsingCartData() }
+            .bind { data in
+                do {
+                    try CartManager.shared.addItem(data: data)
+                } catch {
+                    self.warningAlert.accept(error.localizedDescription)
+                }
+            }
+            .disposed(by: disposeBag)
     }
         
     func createLayout() -> UICollectionViewCompositionalLayout {

@@ -87,6 +87,12 @@ class MagnetPresentMenuVC: UIViewController {
                 }
             }
             .disposed(by: disposeBag)
+        
+        viewModel.submitTapViewModel.submitButtonTapped
+            .bind {
+                self.navigationController?.popViewController(animated: true)
+            }
+            .disposed(by: disposeBag)
     }
     
     private func attribute() {

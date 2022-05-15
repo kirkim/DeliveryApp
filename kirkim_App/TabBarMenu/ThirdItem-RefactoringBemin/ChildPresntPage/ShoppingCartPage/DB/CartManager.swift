@@ -13,8 +13,12 @@ class CartManager {
     static let shared = CartManager()
     private var itemDatas: [CartMenuItem]?
     private let dataObserver = BehaviorRelay<[ShoppingCartSectionModel]>(value: [])
+    private let itemCountObserver = BehaviorRelay<Int>(value: 0)
     private let isValidObserver = BehaviorRelay<Bool>(value: true)
     private let userDefaults = UserDefaults(suiteName: "ShoppingCart")!
+    
+    //
+    private var storeCode:String?
     
     private init() {
         update()
@@ -40,8 +44,10 @@ class CartManager {
             
             dataValue = [itemData, cartTypeData, priceData]
             self.isValidObserver.accept(true)
+            itemCountObserver.accept((items?.count)!)
         } else {
             self.isValidObserver.accept(false)
+            itemCountObserver.accept(0)
         }
         dataObserver.accept(dataValue)
     }
@@ -60,8 +66,11 @@ class CartManager {
     }
     
     func getDataObserver() -> BehaviorRelay<[ShoppingCartSectionModel]> {
-//        update()
         return self.dataObserver
+    }
+    
+    func getItemCountObserver() -> BehaviorRelay<Int> {
+        return self.itemCountObserver
     }
     
     func changeItemCount(indexPath: IndexPath, value: Int) {
@@ -74,6 +83,37 @@ class CartManager {
         update()
     }
     
+    func changeType(data: ShoppingCartType) {
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(data) {
+            userDefaults.setValue(encoded, forKey: "type")
+        }
+        update()
+    }
+    
+    enum AddItemError: Error {
+        case differentStore
+    }
+    
+    func addItem(data: ParsedCartData) throws {
+        guard var items = getItem(),
+              items.count != 0 else {
+            self.saveType(type: .delivery)
+            self.saveItem(data: [data.item])
+            self.saveDeliveryTip(data: data.deliveryTip)
+            update()
+            return
+        }
+        
+        if (data.storeCode != data.storeCode) {
+            throw AddItemError.differentStore
+        }
+        items.append(data.item)
+        self.saveItem(data: items)
+        update()
+    }
+    
+    //MARK: - Private function
     private func saveItem(data: [CartMenuItem]) {
         self.itemDatas = data // 메뉴아이템섹션의 셀은 여러개 나중에 수정할때 참고하기위한 변수
         let encoder = JSONEncoder()
@@ -91,12 +131,11 @@ class CartManager {
         return nil
     }
     
-    func changeType(data: ShoppingCartType) {
+    private func saveType(type: ShoppingCartType) {
         let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode(data) {
+        if let encoded = try? encoder.encode(type) {
             userDefaults.setValue(encoded, forKey: "type")
         }
-        update()
     }
     
     private func getType() -> ShoppingCartType {

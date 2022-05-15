@@ -165,11 +165,13 @@ class PresentMenuStateManager {
         let storeCode = httpManager.getStoreCode()
         
         var menuString: [String] = []
+        var totalPrice:Int = 0
         self.optionSectionItem.forEach { section in
             var menuArray: [String] = []
             section.items.forEach { item in
                 if (item.isSelected) {
                     menuArray.append("\(item.title)(\((item.price ?? 0).parsingToKoreanPrice()))")
+                    totalPrice += item.price ?? 0
                 }
             }
             if (!menuArray.isEmpty) {
@@ -180,8 +182,10 @@ class PresentMenuStateManager {
         
         let imageData = (self.headerSectionItem.image ?? UIImage(systemName: "circle"))!.pngData()!
         
-        let item = CartMenuItem(indexPath: self.indexPath, title: self.headerSectionItem.mainTitle, thumbnailUrl: imageData, menuString: menuString, price: 0, count: self.countSectionItem.count)
+        let item = CartMenuItem(indexPath: self.indexPath, title: self.headerSectionItem.mainTitle, thumbnailUrl: imageData, menuString: menuString, price: totalPrice, count: self.countSectionItem.count)
         
-        return ParsedCartData(storeName: storeName, storeCode: storeCode, item: item)
+        let deliveryTip = httpManager.getDeliveryTip()
+        
+        return ParsedCartData(storeName: storeName, storeCode: storeCode, deliveryTip: deliveryTip, item: item)
     }
 }

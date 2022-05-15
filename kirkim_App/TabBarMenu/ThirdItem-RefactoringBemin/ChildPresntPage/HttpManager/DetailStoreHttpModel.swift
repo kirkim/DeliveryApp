@@ -9,63 +9,23 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-struct OptionMenu: Codable {
-    let title: String
-    var price: Int?
-}
-
-struct OptionSection: Codable {
-    let title: String
-    var min: Int?
-    var max: Int?
-    let optionMenu: [OptionMenu]
-}
-
-struct MenuDetail: Codable {
-    var description: String?
-    let optionSection: [OptionSection]
-}
-
-struct Menu: Codable {
-    let menuCode: String
-    let menuName: String
-    let description: String
-    let menuPhotoUrl: String
-    let price: Int
-    let menuDetail: MenuDetail
-}
-
-struct MenuSection: Codable {
-    let title: String
-    let menu: [Menu]
-}
-
-struct DetailStore: Codable {
-    let code: String
-    let storeName: String
-    let deliveryPrice: Int
-    let minPrice: Int
-    let address: String
-    let bannerPhotoUrl: [String]
-    let thumbnailUrl: String
-    let menuSection: [MenuSection]
-}
-
-class MagnetBarHttpModel {
-    static let shared = MagnetBarHttpModel()
+typealias HttpModel = DetailStoreHttpModel
+class DetailStoreHttpModel {
+    static let shared = DetailStoreHttpModel()
     
     private init() { }
     
-//    let data = PublishRelay<[MagnetSectionModel]>()
-    var data:[MagnetSectionModel]?
-    let httpManager = DeliveryHttpManager.shared
+    private var data:[MagnetSectionModel]?
+    private let httpManager = DeliveryHttpManager.shared
+    private var mainTitle: String?
+    private var bannerPhotoUrl: [String]?
+    private var menuTotalCount: Int?
+    private var storeCode: String?
+    private var minPrice: Int?
+    private var deliveryTip: Int?
+    
     let disposeBag = DisposeBag()
-    var mainTitle: String?
-    var bannerPhotoUrl: [String]?
     let navData = PublishRelay<[String]>()
-    var menuTotalCount: Int?
-    var storeCode: String?
-    var minPrice: Int?
     
     func loadData(code: String, completion: @escaping () -> ()) {
         httpManager.getFetch(type: .detailStore(storeCode: code))
@@ -79,6 +39,7 @@ class MagnetBarHttpModel {
                         self?.mainTitle = dataModel.storeName
                         self?.bannerPhotoUrl = dataModel.bannerPhotoUrl
                         self?.minPrice = dataModel.minPrice
+                        self?.deliveryTip = dataModel.deliveryPrice
                         var data = [
                             MagnetSectionModel.SectionBanner(items: [DetailBannerItem(imageUrl: dataModel.bannerPhotoUrl, mainTitle: dataModel.storeName)]),
                             MagnetSectionModel.SectionInfo(items: [InfoItem(deliveryPrice: dataModel.deliveryPrice, minPrice: dataModel.minPrice, address: dataModel.address, storeCode: dataModel.code)])
@@ -183,5 +144,10 @@ class MagnetBarHttpModel {
             return ""
         }
         return menuData[indexPath.row].title
+    }
+    
+    func getDeliveryTip() -> Int {
+        guard let deliveryTip = self.deliveryTip else { return 0 }
+        return deliveryTip
     }
 }

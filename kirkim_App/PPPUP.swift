@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import SnapKit
 
 class PPPUP: UIViewController {
     private let presentButton = UIButton()
+    private let cartButton = ShoppingCartButton()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -24,7 +26,7 @@ class PPPUP: UIViewController {
         presentButton.setTitle("페이지 열기", for: .normal)
         presentButton.addAction(UIAction(handler: { _ in
 //            let vc = ShoppingcartVC()
-            MagnetBarHttpModel.shared.loadData(code: "1") {
+            HttpModel.shared.loadData(code: "1") {
                 DispatchQueue.main.async {
                     let vc = MagnetBarView()
 //                    self.present(vc, animated: true)
@@ -33,11 +35,14 @@ class PPPUP: UIViewController {
             }
             
         }), for: .touchUpInside)
+        
+        
         self.view.addSubview(presentButton)
         
         presentButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.centerY.equalToSuperview()
         }
+        cartButton.addEventAndFrame(vc: self)
     }
 }

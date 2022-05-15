@@ -16,7 +16,7 @@ class SelectStoreVC: UIViewController {
     private let sortBar = SortSlideBar()
     private let disposeBag = DisposeBag()
     private let containerListView: ContainerStoreListView
-    private let httpModel = MagnetBarHttpModel.shared
+    private let httpModel = HttpModel.shared
     
     init(startPage: Int) {
         self.topBar = TopSlideBar(startPage: startPage)

@@ -61,9 +61,7 @@ class CartItemCell: UITableViewCell {
         self.titleLabel.text = data.title
         self.thumbnailImageView.image = UIImage(systemName: "circle")
         self.menuLabel.text = ""
-        data.menuString.forEach { menuString in
-            self.menuLabel.text! += menuString + "\n"
-        }
+        self.menuLabel.text! = data.menuString.joined(separator: "\n")
         self.basePrice = data.price
         self.stepperViewModel.setCount(count: data.count)
     }
