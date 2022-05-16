@@ -12,7 +12,6 @@ import RxCocoa
 class CartTableView: UITableView {
     private let disposeBag = DisposeBag()
     private let cartManager = CartManager.shared
-    private var footerViewModel: CartItemFooterViewModel?
     
     init() {
         super.init(frame: CGRect.zero, style: .plain)
@@ -30,8 +29,6 @@ class CartTableView: UITableView {
         viewModel.data
             .bind(to: self.rx.items(dataSource: datasource))
             .disposed(by: disposeBag)
-        
-        self.footerViewModel = viewModel.footerViewModel
     }
     
     private func attribute() {
@@ -84,7 +81,6 @@ extension CartTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         if (section == 0) {
             let footer = tableView.dequeueReusableHeaderFooterView(CartItemFooterView.self)
-            footer?.bind(footerViewModel!)
             return footer
         }
         return nil

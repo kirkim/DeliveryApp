@@ -8,15 +8,19 @@
 import UIKit
 import SnapKit
 import Reusable
+import RxGesture
+import RxSwift
 
 class CartItemHeaderView: UITableViewHeaderFooterView, Reusable {
     private let thumbnailImageView = UIImageView()
     private let storeNameLabel = UILabel()
+    private let disposeBag = DisposeBag()
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         attribute()
         layout()
+        bind()
     }
     
     required init?(coder: NSCoder) {
@@ -26,6 +30,13 @@ class CartItemHeaderView: UITableViewHeaderFooterView, Reusable {
     func setData( _ storeName: String, _ thumbnail: UIImage) {
         self.storeNameLabel.text = storeName
         self.thumbnailImageView.image = thumbnail
+    }
+    
+    private func bind() {
+        self.storeNameLabel.rx.tapGesture()
+            .when(.recognized)
+            .bind(to: CartManager.shared.presentStoreVC)
+            .disposed(by: disposeBag)
     }
     
     private func attribute() {

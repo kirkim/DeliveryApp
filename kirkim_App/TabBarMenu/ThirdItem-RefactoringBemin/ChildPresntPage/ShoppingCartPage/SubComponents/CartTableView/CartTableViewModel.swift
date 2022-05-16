@@ -16,7 +16,6 @@ struct CartTableViewModel {
     
 //    let cartItemViewModel = CartItemViewModel()
     let cartTypeViewModel = CartTypeViewModel()
-    let footerViewModel = CartItemFooterViewModel()
     
     // ViewModel -> ParentViewController (ShoppingcartVC)
     let tappedTypeLabel: Signal<ShoppingCartType>
@@ -32,7 +31,7 @@ struct CartTableViewModel {
                 switch dataSource[indexPath.section] {
                 case .cartMenuSection(items: let items):
                     guard let cell = tableView.dequeueReusableCell(withIdentifier: "CartItemCell", for: indexPath) as? CartItemCell else { return UITableViewCell() }
-                    cell.setData(data: items[indexPath.row], indexPath: indexPath)
+                    cell.setData(data: items[indexPath.row], indexPath: items[indexPath.row].indexPath)
 //                    cell.bind(cartItemViewModel)
                     return cell
                 case .cartTypeSection(items: let items):

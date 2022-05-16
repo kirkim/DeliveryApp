@@ -20,20 +20,18 @@ class CartItemFooterView: UITableViewHeaderFooterView, Reusable {
         super.init(reuseIdentifier: reuseIdentifier)
         attribute()
         layout()
+        bind()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func bind(_ viewModel: CartItemFooterViewModel) {
-        if (flag == false) {
-            flag = true
+    func bind() {
             self.titleLabel.rx.tapGesture()
                 .when(.recognized)
-                .bind(to: viewModel.buttonTapped)
+                .bind(to: CartManager.shared.presentStoreVC)
                 .disposed(by: disposeBag)
-        }
     }
     
     private func attribute() {

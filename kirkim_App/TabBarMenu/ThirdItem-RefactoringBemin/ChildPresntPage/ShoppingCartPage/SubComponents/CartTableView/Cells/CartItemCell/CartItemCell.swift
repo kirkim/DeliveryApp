@@ -71,6 +71,7 @@ class CartItemCell: UITableViewCell {
         self.menuLabel.text! = data.menuString.joined(separator: "\n")
         self.basePrice = data.price
         self.stepperViewModel.setCount(count: data.count)
+        
     }
     
 }

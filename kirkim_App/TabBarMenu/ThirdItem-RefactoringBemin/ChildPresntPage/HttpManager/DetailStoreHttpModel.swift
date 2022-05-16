@@ -5,7 +5,7 @@
 //  Created by 김기림 on 2022/04/21.
 //
 
-import Foundation
+import  UIKit
 import RxCocoa
 import RxSwift
 
@@ -151,6 +151,17 @@ class DetailStoreHttpModel {
             return ""
         }
         return menuData[indexPath.row].title
+    }
+    
+    func getMenuThumbnail(indexPath: IndexPath) -> UIImage {
+        guard let data = data,
+              let menuData = data[indexPath.section].items as? [MenuItem] else {
+            return UIImage()
+        }
+        let url = URL(string: menuData[indexPath.row].thumbnail)
+        let imageData = try? Data(contentsOf: url!)
+        let image = UIImage(data: imageData!)
+        return image ?? UIImage()
     }
     
     func getDeliveryTip() -> Int {

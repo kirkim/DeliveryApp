@@ -71,7 +71,7 @@ class ShoppingcartVC: UIViewController {
             }
             .disposed(by: disposeBag)
         
-        viewModel.itemFooterViewTapped
+        viewModel.presentStoreVC
             .bind { [weak self] storeCode in
                 HttpModel.shared.loadData(code: storeCode) {
                     DispatchQueue.main.async {

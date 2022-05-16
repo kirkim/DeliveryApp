@@ -37,6 +37,10 @@ class CartManager {
     private let disposeBag = DisposeBag()
     // itemCell -> CartManager
     let itemTitleTapped = PublishRelay<IndexPath>()
+//    let headerTitleTapped = PublishRelay
+    
+    // Cell -> CartManager -> ViewController
+    let presentStoreVC = PublishRelay<UITapGestureRecognizer>()
     
     // CartManager -> ViewController
     let presentItemVC = PublishRelay<PresentDetailMenuPoint>()

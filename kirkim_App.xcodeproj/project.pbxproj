@@ -32,7 +32,6 @@
 		FE30300327FD3502006F2C63 /* DetailProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE30300227FD3502006F2C63 /* DetailProfileButton.swift */; };
 		FE30300627FD37F2006F2C63 /* DetailProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE30300527FD37F2006F2C63 /* DetailProfileVC.swift */; };
 		FE30300927FD3DC6006F2C63 /* DirectorBlogWebkitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE30300827FD3DC6006F2C63 /* DirectorBlogWebkitView.swift */; };
-		FE32205028327577006093C9 /* CartItemFooterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE32204F28327577006093C9 /* CartItemFooterViewModel.swift */; };
 		FE38F45E27F7170F008BBE8B /* LoginPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE38F44927F7170F008BBE8B /* LoginPageViewModel.swift */; };
 		FE38F45F27F7170F008BBE8B /* LoginButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE38F44E27F7170F008BBE8B /* LoginButtonViewModel.swift */; };
 		FE38F46027F7170F008BBE8B /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE38F44F27F7170F008BBE8B /* LoginButton.swift */; };
@@ -321,7 +320,6 @@
 		FE30300227FD3502006F2C63 /* DetailProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProfileButton.swift; sourceTree = "<group>"; };
 		FE30300527FD37F2006F2C63 /* DetailProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProfileVC.swift; sourceTree = "<group>"; };
 		FE30300827FD3DC6006F2C63 /* DirectorBlogWebkitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectorBlogWebkitView.swift; sourceTree = "<group>"; };
-		FE32204F28327577006093C9 /* CartItemFooterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemFooterViewModel.swift; sourceTree = "<group>"; };
 		FE38F44927F7170F008BBE8B /* LoginPageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewModel.swift; sourceTree = "<group>"; };
 		FE38F44E27F7170F008BBE8B /* LoginButtonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginButtonViewModel.swift; sourceTree = "<group>"; };
 		FE38F44F27F7170F008BBE8B /* LoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
@@ -1455,7 +1453,6 @@
 			children = (
 				FEE314BB282D331C00284DC0 /* CartItemHeaderView.swift */,
 				FEE314BD282D372900284DC0 /* CartItemFooterView.swift */,
-				FE32204F28327577006093C9 /* CartItemFooterViewModel.swift */,
 			);
 			path = HeaderFooterView;
 			sourceTree = "<group>";
@@ -2359,7 +2356,6 @@
 				FE85B4E927EAA88C0031F5AC /* SideMenuView+Protocol.swift in Sources */,
 				FE30300327FD3502006F2C63 /* DetailProfileButton.swift in Sources */,
 				FEBA8D3A282DDE8100C3E719 /* MagnetPresentMenuViewModel.swift in Sources */,
-				FE32205028327577006093C9 /* CartItemFooterViewModel.swift in Sources */,
 				FEFBB5EC28029D3F00864528 /* BottomBarItem.swift in Sources */,
 				FE455F60282C0DFB003F38BD /* PPPUP.swift in Sources */,
 				FE078F1B27C34C7E00D19E34 /* SimpleProfileView.swift in Sources */,

@@ -19,7 +19,9 @@ struct MagnetPresentMenuModel {
         
         let hasData = httpManager.getMenuDetail(indexPath: indexPath)
         self.title = httpManager.getMenuTitle(indexPath: indexPath)
-        self.data.append(PresentMenuSectionModel.SectionMainTitle(items: [PresentMenuTitleItem(image: image, mainTitle: self.title, description: hasData?.description)]))
+        
+        let hasImage = image != nil ? image : httpManager.getMenuThumbnail(indexPath: indexPath)
+        self.data.append(PresentMenuSectionModel.SectionMainTitle(items: [PresentMenuTitleItem(image: hasImage, mainTitle: self.title, description: hasData?.description)]))
         hasData?.optionSection.forEach({ section in
             let sectionType = self.setSectionType(min: section.min, max: section.max)
             var menuBundle:[PresentMenuItem] = []

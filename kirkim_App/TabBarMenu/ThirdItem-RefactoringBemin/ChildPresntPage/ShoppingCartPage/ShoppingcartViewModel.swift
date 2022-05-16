@@ -18,15 +18,15 @@ class ShoppingcartViewModel {
     
     // ViewModel -> View
     let popupCartTypeView:Signal<ShoppingCartType>
-    let itemFooterViewTapped = PublishRelay<String>()
+    let presentStoreVC = PublishRelay<String>()
     let presentDetailMenuVC:Signal<PresentDetailMenuPoint>
     
     init() {
         popupCartTypeView = cartTableViewModel.tappedTypeLabel
         presentDetailMenuVC = cartManager.presentItemVC.asSignal()
-        cartTableViewModel.footerViewModel.buttonTapped
+        cartManager.presentStoreVC
             .map { _ in self.cartManager.getStoreCode() }
-            .bind(to: itemFooterViewTapped)
+            .bind(to: presentStoreVC)
             .disposed(by: disposeBag)
         
         cartTypePopupViewModel.selectedCartType

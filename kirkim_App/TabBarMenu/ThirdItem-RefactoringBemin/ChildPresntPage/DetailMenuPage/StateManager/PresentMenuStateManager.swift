@@ -181,7 +181,6 @@ class PresentMenuStateManager {
         }
         
         let imageData = (self.headerSectionItem.image ?? UIImage(systemName: "circle"))!.pngData()!
-        
         let item = CartMenuItem(indexPath: self.indexPath, title: self.headerSectionItem.mainTitle, thumbnail: imageData, menuString: menuString, price: totalPrice, count: self.countSectionItem.count)
         
         let deliveryTip = httpManager.getDeliveryTip()

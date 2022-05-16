@@ -47,9 +47,12 @@ class MagnetBarView: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         if (self.isPresentMenu != nil) {
-            print(self.isPresentMenu)
-            let vc = MagnetPresentMenuVC(indexPath: IndexPath(row: 2, section: 2), image: UIImage())
+            let vc = MagnetPresentMenuVC(indexPath: self.isPresentMenu!, image: nil)
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
