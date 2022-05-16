@@ -5,7 +5,7 @@
 //  Created by 김기림 on 2022/05/12.
 //
 
-import Foundation
+import UIKit
 import RxSwift
 import RxCocoa
 
@@ -18,14 +18,23 @@ class ShoppingcartViewModel {
     
     // ViewModel -> View
     let popupCartTypeView:Signal<ShoppingCartType>
+    let itemFooterViewTapped = PublishRelay<String>()
+    let presentDetailMenuVC:Signal<PresentDetailMenuPoint>
     
     init() {
         popupCartTypeView = cartTableViewModel.tappedTypeLabel
+        presentDetailMenuVC = cartManager.presentItemVC.asSignal()
+        cartTableViewModel.footerViewModel.buttonTapped
+            .map { _ in self.cartManager.getStoreCode() }
+            .bind(to: itemFooterViewTapped)
+            .disposed(by: disposeBag)
         
         cartTypePopupViewModel.selectedCartType
             .bind{ type in
                 self.cartManager.changeType(data: type)
             }
             .disposed(by: disposeBag)
+        
+        
     }
 }

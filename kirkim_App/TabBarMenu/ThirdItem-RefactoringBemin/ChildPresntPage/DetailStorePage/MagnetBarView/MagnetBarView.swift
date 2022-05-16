@@ -30,6 +30,9 @@ class MagnetBarView: UIViewController {
     private let viewModel = MagnetBarViewModel()
     private let disposeBag = DisposeBag()
     
+    // 디테일메뉴를 바로 열어줄지말지 확인하는 변수
+    private var isPresentMenu: IndexPath?
+    
     init() {
         super.init(nibName: nil, bundle: nil)
         attribute()
@@ -44,6 +47,20 @@ class MagnetBarView: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
+        if (self.isPresentMenu != nil) {
+            print(self.isPresentMenu)
+            let vc = MagnetPresentMenuVC(indexPath: IndexPath(row: 2, section: 2), image: UIImage())
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.isPresentMenu = nil
+    }
+    
+    func readyToOpenDetailMenuVC(indexPath: IndexPath) {
+        self.isPresentMenu = indexPath
     }
     
     private func bind() {

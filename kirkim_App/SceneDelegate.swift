@@ -23,6 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let vc = PPPUP()
         let nav = UINavigationController(rootViewController: vc)
         self.window?.rootViewController = nav
+//        self.window?.rootViewController = RootTabBarController
         self.window?.makeKeyAndVisible()
     }
 

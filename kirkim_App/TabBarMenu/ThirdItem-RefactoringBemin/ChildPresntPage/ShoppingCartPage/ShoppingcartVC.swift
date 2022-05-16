@@ -18,6 +18,9 @@ class ShoppingcartVC: UIViewController {
     
     private let disposeBag = DisposeBag()
     
+    //checker
+    private var parentNavIsHidden:Bool = false
+    
     init() {
         super.init(nibName: nil, bundle: nil)
         attribute()
@@ -29,13 +32,35 @@ class ShoppingcartVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if (self.navigationController?.navigationBar.isHidden == true) {
+            parentNavIsHidden = true
+            self.navigationController?.navigationBar.isHidden = false
+        } else {
+            parentNavIsHidden = false
+        }
+//        let navigationBarAppearace = UINavigationBarAppearance()
+//        navigationBarAppearace.backgroundColor = .white
+//        self.navigationController?.navigationBar.standardAppearance = navigationBarAppearace
+//        self.navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearace
+//        self.navigationController?.navigationBar.compactAppearance = navigationBarAppearace
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if (self.parentNavIsHidden == true) {
+            self.navigationController?.navigationBar.isHidden = true
+        }
+    }
+    
     private func bind(_ viewModel: ShoppingcartViewModel) {
         cartTableView.bind(viewModel.cartTableViewModel)
         cartTypePopupView.bind(viewModel.cartTypePopupViewModel)
         CartManager.shared.getIsValidObserver()
-            .bind { isValid in
-                self.cartTableView.isHidden = !isValid
-                self.emptyCartView.isHidden = isValid
+            .bind { [weak self] isValid in
+                self?.cartTableView.isHidden = !isValid
+                self?.emptyCartView.isHidden = isValid
             }
             .disposed(by: disposeBag)
         
@@ -45,10 +70,33 @@ class ShoppingcartVC: UIViewController {
                 self?.cartTypePopupView.isHidden = false
             }
             .disposed(by: disposeBag)
+        
+        viewModel.itemFooterViewTapped
+            .bind { [weak self] storeCode in
+                HttpModel.shared.loadData(code: storeCode) {
+                    DispatchQueue.main.async {
+                        let vc = MagnetBarView()
+                        self?.navigationController?.pushViewController(vc, animated: true)
+                    }
+                }
+            }
+            .disposed(by: disposeBag)
+        
+        viewModel.presentDetailMenuVC
+            .emit { [weak self] point in
+                HttpModel.shared.loadData(code: point.storeCode) {
+                    DispatchQueue.main.async {
+                        let vc = MagnetBarView()
+                        vc.readyToOpenDetailMenuVC(indexPath: point.indexPath)
+                        self?.navigationController?.pushViewController(vc, animated: true)
+                    }
+                }
+            }
+            .disposed(by: disposeBag)
     }
     
     private func attribute() {
-        self.view.backgroundColor = .green
+        self.view.backgroundColor = .white
         self.title = "장바구니"
         self.cartTypePopupView.isHidden = true
     }

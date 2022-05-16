@@ -14,25 +14,26 @@ import RxSwift
 class CartItemFooterView: UITableViewHeaderFooterView, Reusable {
     private let titleLabel = UILabel()
     private let disposeBag = DisposeBag()
+    private var flag:Bool = false
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         attribute()
         layout()
-        bind()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func bind() {
-        self.titleLabel.rx.tapGesture()
-            .when(.recognized)
-            .bind {_ in
-                print("hello")
-            }
-            .disposed(by: disposeBag)
+    func bind(_ viewModel: CartItemFooterViewModel) {
+        if (flag == false) {
+            flag = true
+            self.titleLabel.rx.tapGesture()
+                .when(.recognized)
+                .bind(to: viewModel.buttonTapped)
+                .disposed(by: disposeBag)
+        }
     }
     
     private func attribute() {

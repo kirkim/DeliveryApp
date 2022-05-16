@@ -45,8 +45,13 @@ class ShoppingCartButton: UIView {
     
     func addEventAndFrame(vc: UIViewController) {
         self.buttonClicked
-            .bind {_ in
-                vc.present(self.shoppingcartVC, animated: true)
+            .bind { [weak self] _ in
+                if (vc.navigationController != nil) {
+                    vc.navigationItem.backButtonTitle = ""
+                    vc.navigationController?.pushViewController((self?.shoppingcartVC)!, animated: true)
+                } else {
+                    vc.present((self?.shoppingcartVC)!, animated: true)
+                }
             }
             .disposed(by: disposeBag)
         vc.view.addSubview(self)

@@ -182,10 +182,12 @@ class PresentMenuStateManager {
         
         let imageData = (self.headerSectionItem.image ?? UIImage(systemName: "circle"))!.pngData()!
         
-        let item = CartMenuItem(indexPath: self.indexPath, title: self.headerSectionItem.mainTitle, thumbnailUrl: imageData, menuString: menuString, price: totalPrice, count: self.countSectionItem.count)
+        let item = CartMenuItem(indexPath: self.indexPath, title: self.headerSectionItem.mainTitle, thumbnail: imageData, menuString: menuString, price: totalPrice, count: self.countSectionItem.count)
         
         let deliveryTip = httpManager.getDeliveryTip()
         
-        return ParsedCartData(storeName: storeName, storeCode: storeCode, deliveryTip: deliveryTip, item: item)
+        let storeThumbnail = httpManager.getthumbnailUrl()
+        
+        return ParsedCartData(storeName: storeName, storeCode: storeCode, deliveryTip: deliveryTip, storeThumbnail: storeThumbnail, item: item)
     }
 }

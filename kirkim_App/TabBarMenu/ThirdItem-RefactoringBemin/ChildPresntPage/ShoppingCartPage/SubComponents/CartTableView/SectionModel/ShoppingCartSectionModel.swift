@@ -20,7 +20,7 @@ protocol ShoppingCartItem: Codable {
 struct CartMenuItem: ShoppingCartItem {
     var indexPath: IndexPath
     var title: String
-    var thumbnailUrl: Data
+    var thumbnail: Data
     var menuString: [String]
     var price: Int
     var count: Int

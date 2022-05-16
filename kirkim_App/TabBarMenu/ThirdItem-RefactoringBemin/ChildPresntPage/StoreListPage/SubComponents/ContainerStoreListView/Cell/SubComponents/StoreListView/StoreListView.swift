@@ -40,16 +40,7 @@ class StoreListView: UICollectionView {
         }
         .bind(to: viewModel.presentStoreDetailVC)
         .disposed(by: disposeBag)
-//        viewModel.presentStoreDetailVC
-//            .bind { storeCode in
-//                self.httpModel.loadData(code: storeCode) {
-//                    DispatchQueue.main.async {
-//                        let vc = MagnetBarView()
-//                        self.navigationController?.pushViewController(vc, animated: true)
-//                    }
-//                }
-//
-//            }
+
     }
     
     private func attribute() {

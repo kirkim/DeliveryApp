@@ -16,6 +16,7 @@ struct CartTableViewModel {
     
 //    let cartItemViewModel = CartItemViewModel()
     let cartTypeViewModel = CartTypeViewModel()
+    let footerViewModel = CartItemFooterViewModel()
     
     // ViewModel -> ParentViewController (ShoppingcartVC)
     let tappedTypeLabel: Signal<ShoppingCartType>

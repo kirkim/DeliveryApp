@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxGesture
 
 class CartItemCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
@@ -49,6 +50,12 @@ class CartItemCell: UITableViewCell {
                 self.cartManager.deleteItem(indexPath: self.indexPath!)
             }
             .disposed(by: disposeBag)
+        
+        self.titleLabel.rx.tapGesture()
+            .when(.recognized)
+            .map { _ in self.indexPath! }
+            .bind(to: self.cartManager.itemTitleTapped)
+            .disposed(by: disposeBag)
     }
     
     private func attribute() {
@@ -59,7 +66,7 @@ class CartItemCell: UITableViewCell {
     func setData(data: CartMenuItem, indexPath: IndexPath) {
         self.indexPath = indexPath
         self.titleLabel.text = data.title
-        self.thumbnailImageView.image = UIImage(systemName: "circle")
+        self.thumbnailImageView.image = UIImage(data: data.thumbnail)
         self.menuLabel.text = ""
         self.menuLabel.text! = data.menuString.joined(separator: "\n")
         self.basePrice = data.price

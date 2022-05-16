@@ -42,9 +42,9 @@ class StoreListCell: UICollectionViewCell, Reusable {
         }
     }
     
-    func setData(data: SummaryStoreItem) {
+    func setData(data: SummaryStoreItem, image: UIImage) {
         self.storeCode = data.storeCode
-        self.thumbnailImageView.image = UIImage(systemName: "circle")
+        self.thumbnailImageView.image = image
         self.titleLabel.text = data.storeName
         
         self.starLabel.text = "★"

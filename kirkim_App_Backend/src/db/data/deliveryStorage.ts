@@ -110,11 +110,10 @@ function updateData(storeCount: number) {
 
 function getThumbnailUrl(): string {
   let thumbnail = '';
-  fs.readdir(mainUrl + '/thumbnail', (_err, files) => {
-    let rand = Math.floor(Math.random() * files.length);
-    thumbnail = files[rand] ?? '';
-  });
-  return thumbnail;
+  let files = fs.readdirSync(mainUrl + '/thumbnail');
+  let rand = Math.floor(Math.random() * files.length);
+  thumbnail = files[rand] ?? '';
+  return hostUrl + '/thumbnail/' + thumbnail;
 }
 
 function makeBannerImageUrlBundle(): string[] {

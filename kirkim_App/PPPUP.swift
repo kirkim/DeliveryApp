@@ -10,6 +10,7 @@ import SnapKit
 
 class PPPUP: UIViewController {
     private let presentButton = UIButton()
+    private let presentButton2 = UIButton()
     private let cartButton = ShoppingCartButton()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -23,26 +24,45 @@ class PPPUP: UIViewController {
     
     private func setUI() {
         self.view.backgroundColor = .yellow
-        presentButton.setTitle("페이지 열기", for: .normal)
+        presentButton.setTitle("스토어1 열기", for: .normal)
         presentButton.addAction(UIAction(handler: { _ in
-//            let vc = ShoppingcartVC()
             HttpModel.shared.loadData(code: "1") {
                 DispatchQueue.main.async {
                     let vc = MagnetBarView()
-//                    self.present(vc, animated: true)
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
             }
-            
         }), for: .touchUpInside)
         
+        presentButton2.setTitle("스토어2 열기", for: .normal)
+        presentButton2.addAction(UIAction(handler: { _ in
+            HttpModel.shared.loadData(code: "2") {
+                DispatchQueue.main.async {
+                    let vc = MagnetBarView()
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+            }
+        }), for: .touchUpInside)
         
-        self.view.addSubview(presentButton)
+        self.presentButton.setTitleColor(.blue, for: .normal)
+        self.presentButton2.setTitleColor(.purple, for: .normal)
+        
+        [presentButton, presentButton2].forEach {
+            self.view.addSubview($0)
+        }
         
         presentButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.centerY.equalToSuperview()
         }
+        
+        presentButton2.snp.makeConstraints {
+            $0.top.equalTo(presentButton.snp.bottom).offset(20)
+            $0.centerX.equalToSuperview()
+        }
+        
         cartButton.addEventAndFrame(vc: self)
+        
+        
     }
 }

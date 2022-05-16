@@ -5,9 +5,21 @@
 //  Created by 김기림 on 2022/05/11.
 //
 
-import Foundation
+import UIKit
 import RxSwift
 import RxCocoa
+import UIKit
+
+struct CartStoreData: Codable {
+    var storeCode:String
+    var storeName:String
+    var storeThumbnail:Data
+}
+
+struct PresentDetailMenuPoint {
+    var storeCode: String
+    var indexPath: IndexPath
+}
 
 class CartManager {
     static let shared = CartManager()
@@ -19,9 +31,24 @@ class CartManager {
     
     //
     private var storeCode:String?
+    private var storeName:String?
+    private var storeThumbnail:Data?
+    
+    private let disposeBag = DisposeBag()
+    // itemCell -> CartManager
+    let itemTitleTapped = PublishRelay<IndexPath>()
+    
+    // CartManager -> ViewController
+    let presentItemVC = PublishRelay<PresentDetailMenuPoint>()
     
     private init() {
         update()
+        itemTitleTapped
+            .map { indexPath in
+                return PresentDetailMenuPoint(storeCode: self.storeCode ?? "", indexPath: indexPath)
+            }
+            .bind(to: presentItemVC)
+            .disposed(by: disposeBag)
     }
     
     private func update() {
@@ -30,7 +57,11 @@ class CartManager {
         if (items?.count != 0 && items != nil) {
             let type = getType()
             let deliveryTip = getDeliveryTip()
+            let storeData = getStoreData()
             
+            self.storeCode = storeData?.storeCode
+            self.storeName = storeData?.storeName
+            self.storeThumbnail = storeData?.storeThumbnail
             self.itemDatas = items // 앱을 껏다켰을때 최신데이터를 임시데이터에 저장
             
             var totalPrice = 0
@@ -73,6 +104,22 @@ class CartManager {
         return self.itemCountObserver
     }
     
+    func getStoreName() -> String {
+        guard let storeName = storeName else { return "" }
+        return storeName
+    }
+    
+    func getStoreCode() -> String {
+        guard let storeCode = storeCode else { return "" }
+        return storeCode
+    }
+    
+    func getStoreThumbnail() -> UIImage {
+        guard let storeThumbnail = storeThumbnail else { return UIImage(systemName: "circle")! }
+        let image = UIImage(data: storeThumbnail)
+        return image ?? UIImage(systemName: "circle")!
+    }
+    
     func changeItemCount(indexPath: IndexPath, value: Int) {
         guard var itemDatas = self.itemDatas else {
             return
@@ -98,6 +145,9 @@ class CartManager {
     func addItem(data: ParsedCartData) throws {
         guard var items = getItem(),
               items.count != 0 else {
+            let image = self.makeImage(urlString: data.storeThumbnail)
+            let imageData = image.pngData()!
+            self.saveStoreData(data: CartStoreData(storeCode: data.storeCode, storeName: data.storeName, storeThumbnail: imageData))
             self.saveType(type: .delivery)
             self.saveItem(data: [data.item])
             self.saveDeliveryTip(data: data.deliveryTip)
@@ -105,7 +155,7 @@ class CartManager {
             return
         }
         
-        if (data.storeCode != data.storeCode) {
+        if (self.storeCode != data.storeCode) {
             throw AddItemError.differentStore
         }
         items.append(data.item)
@@ -114,6 +164,12 @@ class CartManager {
     }
     
     //MARK: - Private function
+    private func makeImage(urlString: String) -> UIImage {
+        guard let url = URL(string: urlString) else { return UIImage(systemName: "circle")! }
+        let data = try? Data(contentsOf: url)
+        return UIImage(data: data!) ?? UIImage(systemName: "circle")!
+    }
+    
     private func saveItem(data: [CartMenuItem]) {
         self.itemDatas = data // 메뉴아이템섹션의 셀은 여러개 나중에 수정할때 참고하기위한 변수
         let encoder = JSONEncoder()
@@ -126,6 +182,22 @@ class CartManager {
         if let savedData = userDefaults.object(forKey: "item") as? Data {
             let decoder = JSONDecoder()
             let savedObject = try? decoder.decode([CartMenuItem].self, from: savedData)
+            return savedObject
+        }
+        return nil
+    }
+    
+    private func saveStoreData(data: CartStoreData) {
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(data) {
+            userDefaults.setValue(encoded, forKey: "store")
+        }
+    }
+    
+    private func getStoreData() -> CartStoreData? {
+        if let savedData = userDefaults.object(forKey: "store") as? Data {
+            let decoder = JSONDecoder()
+            let savedObject = try? decoder.decode(CartStoreData.self, from: savedData)
             return savedObject
         }
         return nil

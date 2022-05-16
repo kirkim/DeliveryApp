@@ -11,6 +11,6 @@ struct ParsedCartData {
     var storeName: String
     var storeCode: String
     var deliveryTip: Int
-//    var storeThumbnail: String
+    var storeThumbnail: String
     var item: CartMenuItem
 }

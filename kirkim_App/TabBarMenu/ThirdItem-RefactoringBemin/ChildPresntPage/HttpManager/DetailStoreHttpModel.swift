@@ -23,6 +23,7 @@ class DetailStoreHttpModel {
     private var storeCode: String?
     private var minPrice: Int?
     private var deliveryTip: Int?
+    private var thumbnailUrl: String?
     
     let disposeBag = DisposeBag()
     let navData = PublishRelay<[String]>()
@@ -40,6 +41,7 @@ class DetailStoreHttpModel {
                         self?.bannerPhotoUrl = dataModel.bannerPhotoUrl
                         self?.minPrice = dataModel.minPrice
                         self?.deliveryTip = dataModel.deliveryPrice
+                        self?.thumbnailUrl = dataModel.thumbnailUrl
                         var data = [
                             MagnetSectionModel.SectionBanner(items: [DetailBannerItem(imageUrl: dataModel.bannerPhotoUrl, mainTitle: dataModel.storeName)]),
                             MagnetSectionModel.SectionInfo(items: [InfoItem(deliveryPrice: dataModel.deliveryPrice, minPrice: dataModel.minPrice, address: dataModel.address, storeCode: dataModel.code)])
@@ -96,6 +98,11 @@ class DetailStoreHttpModel {
     func getStoreName() -> String {
         guard let mainTitle = mainTitle else { return "" }
         return mainTitle
+    }
+    
+    func getthumbnailUrl() -> String {
+        guard let thumbnailUrl = thumbnailUrl else { return "" }
+        return thumbnailUrl
     }
     
     func getBannerImageUrls() -> [String] {
