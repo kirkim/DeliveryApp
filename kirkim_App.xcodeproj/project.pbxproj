@@ -65,6 +65,8 @@
 		FE74FEAD27CDBCA100F40D5F /* KiflixVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE74FEAB27CDBCA100F40D5F /* KiflixVC.xib */; };
 		FE74FEAF27CDBDDE00F40D5F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74FEAE27CDBDDE00F40D5F /* MainTabBarController.swift */; };
 		FE798CB52833280200A7D4F8 /* CartWarningMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE798CB42833280200A7D4F8 /* CartWarningMessageCell.swift */; };
+		FE798CB82833327400A7D4F8 /* CartSubmitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE798CB72833327400A7D4F8 /* CartSubmitView.swift */; };
+		FE798CBA283333B500A7D4F8 /* CartSubmitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE798CB9283333B500A7D4F8 /* CartSubmitViewModel.swift */; };
 		FE7FC0C627C48581009EB2AE /* SideMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7FC0C527C48581009EB2AE /* SideMenuModel.swift */; };
 		FE7FC0CD27C48F22009EB2AE /* TestView1-1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7FC0CB27C48F22009EB2AE /* TestView1-1.swift */; };
 		FE7FC0CE27C48F22009EB2AE /* TestView1-1.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE7FC0CC27C48F22009EB2AE /* TestView1-1.xib */; };
@@ -354,6 +356,8 @@
 		FE74FEAB27CDBCA100F40D5F /* KiflixVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KiflixVC.xib; sourceTree = "<group>"; };
 		FE74FEAE27CDBDDE00F40D5F /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		FE798CB42833280200A7D4F8 /* CartWarningMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartWarningMessageCell.swift; sourceTree = "<group>"; };
+		FE798CB72833327400A7D4F8 /* CartSubmitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartSubmitView.swift; sourceTree = "<group>"; };
+		FE798CB9283333B500A7D4F8 /* CartSubmitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartSubmitViewModel.swift; sourceTree = "<group>"; };
 		FE7FC0C527C48581009EB2AE /* SideMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuModel.swift; sourceTree = "<group>"; };
 		FE7FC0CB27C48F22009EB2AE /* TestView1-1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestView1-1.swift"; sourceTree = "<group>"; };
 		FE7FC0CC27C48F22009EB2AE /* TestView1-1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "TestView1-1.xib"; sourceTree = "<group>"; };
@@ -908,6 +912,15 @@
 				FE798CB42833280200A7D4F8 /* CartWarningMessageCell.swift */,
 			);
 			path = CartWarningMessageCell;
+			sourceTree = "<group>";
+		};
+		FE798CB62833322C00A7D4F8 /* CartSubmitView */ = {
+			isa = PBXGroup;
+			children = (
+				FE798CB72833327400A7D4F8 /* CartSubmitView.swift */,
+				FE798CB9283333B500A7D4F8 /* CartSubmitViewModel.swift */,
+			);
+			path = CartSubmitView;
 			sourceTree = "<group>";
 		};
 		FE7FC0C727C48966009EB2AE /* SideMenuSubView */ = {
@@ -2071,6 +2084,7 @@
 			children = (
 				FEBDC025282CAAA200AB9FD2 /* EmptyCartView */,
 				FEBDC024282CAA3D00AB9FD2 /* CartTableView */,
+				FE798CB62833322C00A7D4F8 /* CartSubmitView */,
 			);
 			path = SubComponents;
 			sourceTree = "<group>";
@@ -2471,6 +2485,7 @@
 				FE8EF16227F425E300EEAC69 /* SignupIdZone.swift in Sources */,
 				FE8EF15E27F425E300EEAC69 /* SignupPwZoneViewModel.swift in Sources */,
 				FE74FEAC27CDBCA100F40D5F /* KiflixVC.swift in Sources */,
+				FE798CBA283333B500A7D4F8 /* CartSubmitViewModel.swift in Sources */,
 				FEE314C0282D3CC800284DC0 /* ShoppingcartViewModel.swift in Sources */,
 				FEFBB5FB28029E7200864528 /* Test3.swift in Sources */,
 				FE9CFC1F282AC330007926ED /* CartTypePopupView.swift in Sources */,
@@ -2594,6 +2609,7 @@
 				FEFA1F662829FAEC0088BEEB /* MagnetListView.swift in Sources */,
 				FEFA1BE22829EF140088BEEB /* BeminBannerCell.swift in Sources */,
 				FE8D307827FC682A00F55EEE /* StaticItem.swift in Sources */,
+				FE798CB82833327400A7D4F8 /* CartSubmitView.swift in Sources */,
 				FEFA1EE12829FACD0088BEEB /* SelectStoreViewModel.swift in Sources */,
 				FEFA1F642829FAEC0088BEEB /* MagnetNavigationBar.swift in Sources */,
 				FE46F4F627D1AD6500DB31EE /* DescriptionView.swift in Sources */,

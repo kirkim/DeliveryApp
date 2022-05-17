@@ -13,6 +13,7 @@ class ShoppingcartVC: UIViewController {
     private let emptyCartView = EmptyCartView()
     private let cartTableView = CartTableView()
     private let cartTypePopupView = CartTypePopupView()
+    private let cartSubmitView = CartSubmitView()
     
     private let viewModel = ShoppingcartViewModel()
     
@@ -40,11 +41,6 @@ class ShoppingcartVC: UIViewController {
         } else {
             parentNavIsHidden = false
         }
-//        let navigationBarAppearace = UINavigationBarAppearance()
-//        navigationBarAppearace.backgroundColor = .white
-//        self.navigationController?.navigationBar.standardAppearance = navigationBarAppearace
-//        self.navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearace
-//        self.navigationController?.navigationBar.compactAppearance = navigationBarAppearace
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -60,6 +56,7 @@ class ShoppingcartVC: UIViewController {
         CartManager.shared.getIsValidObserver()
             .bind { [weak self] isValid in
                 self?.cartTableView.isHidden = !isValid
+                self?.cartSubmitView.isHidden = !isValid
                 self?.emptyCartView.isHidden = isValid
             }
             .disposed(by: disposeBag)
@@ -102,7 +99,7 @@ class ShoppingcartVC: UIViewController {
     }
     
     private func layout() {
-        [emptyCartView, cartTableView, cartTypePopupView].forEach {
+        [emptyCartView, cartTableView, cartSubmitView, cartTypePopupView].forEach {
             self.view.addSubview($0)
         }
         
@@ -111,11 +108,19 @@ class ShoppingcartVC: UIViewController {
             $0.leading.trailing.bottom.equalToSuperview()
         }
         
+        cartSubmitView.snp.makeConstraints {
+            $0.bottom.equalToSuperview().offset(-50)
+            $0.leading.equalToSuperview().offset(15)
+            $0.trailing.equalToSuperview().inset(15)
+            $0.height.equalTo(50)
+        }
+
         cartTableView.snp.makeConstraints {
             $0.top.equalTo(self.view.safeAreaLayoutGuide)
-            $0.leading.trailing.bottom.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(cartSubmitView.snp.top).offset(-10)
         }
-        
+                
         cartTypePopupView.snp.makeConstraints {
             $0.top.equalTo(self.view.safeAreaLayoutGuide)
             $0.leading.trailing.bottom.equalToSuperview()

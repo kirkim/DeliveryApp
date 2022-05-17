@@ -187,6 +187,6 @@ class PresentMenuStateManager {
         
         let storeThumbnail = httpManager.getthumbnailUrl()
         
-        return ParsedCartData(storeName: storeName, storeCode: storeCode, deliveryTip: deliveryTip, storeThumbnail: storeThumbnail, item: item)
+        return ParsedCartData(storeName: storeName, storeCode: storeCode, minPrice: httpManager.getMinPrice(), deliveryTip: deliveryTip, storeThumbnail: storeThumbnail, item: item)
     }
 }

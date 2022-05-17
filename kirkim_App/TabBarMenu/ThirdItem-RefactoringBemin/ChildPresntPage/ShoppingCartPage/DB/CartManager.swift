@@ -21,18 +21,27 @@ struct PresentDetailMenuPoint {
     var indexPath: IndexPath
 }
 
+struct CartDeliveryPrice: Codable {
+    var deliveryTip: Int
+    var minPrice: Int
+}
+
 class CartManager {
     static let shared = CartManager()
     private var itemDatas: [CartMenuItem]?
     private let dataObserver = BehaviorRelay<[ShoppingCartSectionModel]>(value: [])
     private let itemCountObserver = BehaviorRelay<Int>(value: 0)
     private let isValidObserver = BehaviorRelay<Bool>(value: true)
+    private let canSubmitObserver = BehaviorRelay<Bool>(value: false)
     private let userDefaults = UserDefaults(suiteName: "ShoppingCart")!
     
     //
     private var storeCode:String?
     private var storeName:String?
     private var storeThumbnail:Data?
+    private var currentTotalPrice:Int?
+    private var minPrice:Int?
+    private var deliveryTip:Int?
     
     private let disposeBag = DisposeBag()
     // itemCell -> CartManager
@@ -60,7 +69,7 @@ class CartManager {
         let items = getItem()
         if (items?.count != 0 && items != nil) {
             let type = getType()
-            let deliveryTip = getDeliveryTip()
+            let deliveryPrice = getDeliveryPrice()
             let storeData = getStoreData()
             
             self.storeCode = storeData?.storeCode
@@ -72,10 +81,17 @@ class CartManager {
             items!.forEach { item in
                 totalPrice += item.price * item.count
             }
-            
+            self.currentTotalPrice = totalPrice
+            self.minPrice = deliveryPrice.minPrice
+            self.deliveryTip = deliveryPrice.deliveryTip
+            if (totalPrice >= deliveryPrice.minPrice) {
+                self.canSubmitObserver.accept(true)
+            } else {
+                self.canSubmitObserver.accept(false)
+            }
             let itemData = ShoppingCartSectionModel.cartMenuSection(items: items!)
             let cartTypeData = ShoppingCartSectionModel.cartTypeSection(items: [CartTypeItem(type: type)])
-            let priceData = ShoppingCartSectionModel.cartPriceSection(items: [CartPriceItem(deliveryTip: deliveryTip, menuPrice: totalPrice)])
+            let priceData = ShoppingCartSectionModel.cartPriceSection(items: [CartPriceItem(deliveryTip: deliveryPrice.deliveryTip, menuPrice: totalPrice)])
             // 경고메시지도 필요하면 서버로부터 받아오도록 구현가능
             let warningMessageData = ShoppingCartSectionModel.cartWarningMessageSection(items: [CartWarningMessageItem(message: "(주)kirkim은 통신판매중개자이며, 통신판매의 당사자가 아닙니다. 따라서 (주)kirkim은 상품, 거래정보 및 거래에 대하여 책임을 지지 않습니다.")])
             
@@ -102,12 +118,32 @@ class CartManager {
         return self.isValidObserver
     }
     
+    func getCanSubmitObserver() -> BehaviorRelay<Bool> {
+        return self.canSubmitObserver
+    }
+    
     func getDataObserver() -> BehaviorRelay<[ShoppingCartSectionModel]> {
         return self.dataObserver
     }
     
     func getItemCountObserver() -> BehaviorRelay<Int> {
         return self.itemCountObserver
+    }
+    
+    func getMinPrice() -> Int {
+        guard let minPrice = minPrice else { return 0 }
+        return minPrice
+    }
+    
+    func getDeliveryTip() -> Int {
+        guard let deliveryTip = deliveryTip else { return 0 }
+        return deliveryTip
+    }
+    
+    
+    func getTotalPrice() -> Int {
+        guard let currentTotalPrice = currentTotalPrice else { return 0 }
+        return currentTotalPrice
     }
     
     func getStoreName() -> String {
@@ -156,7 +192,7 @@ class CartManager {
             self.saveStoreData(data: CartStoreData(storeCode: data.storeCode, storeName: data.storeName, storeThumbnail: imageData))
             self.saveType(type: .delivery)
             self.saveItem(data: [data.item])
-            self.saveDeliveryTip(data: data.deliveryTip)
+            self.saveDeliveryPrice(data: CartDeliveryPrice(deliveryTip: data.deliveryTip, minPrice: data.minPrice))
             update()
             return
         }
@@ -225,12 +261,19 @@ class CartManager {
         return .delivery
     }
     
-    private func saveDeliveryTip(data: Int) {
-        self.userDefaults.set(data, forKey: "deliveryTip")
+    private func saveDeliveryPrice(data: CartDeliveryPrice) {
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(data) {
+            userDefaults.setValue(encoded, forKey: "deliveryPrice")
+        }
     }
 
-    private func getDeliveryTip() -> Int {
-        let savedData = userDefaults.integer(forKey: "deliveryTip")
-        return savedData
+    private func getDeliveryPrice() -> CartDeliveryPrice {
+        if let savedData = userDefaults.object(forKey: "deliveryPrice") as? Data {
+            let decoder = JSONDecoder()
+            let savedObject = try? decoder.decode(CartDeliveryPrice.self, from: savedData)
+            return savedObject ?? CartDeliveryPrice(deliveryTip: 0, minPrice: 0)
+        }
+        return CartDeliveryPrice(deliveryTip: 0, minPrice: 0)
     }
 }
