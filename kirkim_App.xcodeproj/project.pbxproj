@@ -64,6 +64,7 @@
 		FE74FEAC27CDBCA100F40D5F /* KiflixVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74FEAA27CDBCA100F40D5F /* KiflixVC.swift */; };
 		FE74FEAD27CDBCA100F40D5F /* KiflixVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE74FEAB27CDBCA100F40D5F /* KiflixVC.xib */; };
 		FE74FEAF27CDBDDE00F40D5F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74FEAE27CDBDDE00F40D5F /* MainTabBarController.swift */; };
+		FE798CB52833280200A7D4F8 /* CartWarningMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE798CB42833280200A7D4F8 /* CartWarningMessageCell.swift */; };
 		FE7FC0C627C48581009EB2AE /* SideMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7FC0C527C48581009EB2AE /* SideMenuModel.swift */; };
 		FE7FC0CD27C48F22009EB2AE /* TestView1-1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7FC0CB27C48F22009EB2AE /* TestView1-1.swift */; };
 		FE7FC0CE27C48F22009EB2AE /* TestView1-1.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE7FC0CC27C48F22009EB2AE /* TestView1-1.xib */; };
@@ -352,6 +353,7 @@
 		FE74FEAA27CDBCA100F40D5F /* KiflixVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiflixVC.swift; sourceTree = "<group>"; };
 		FE74FEAB27CDBCA100F40D5F /* KiflixVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KiflixVC.xib; sourceTree = "<group>"; };
 		FE74FEAE27CDBDDE00F40D5F /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		FE798CB42833280200A7D4F8 /* CartWarningMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartWarningMessageCell.swift; sourceTree = "<group>"; };
 		FE7FC0C527C48581009EB2AE /* SideMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuModel.swift; sourceTree = "<group>"; };
 		FE7FC0CB27C48F22009EB2AE /* TestView1-1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestView1-1.swift"; sourceTree = "<group>"; };
 		FE7FC0CC27C48F22009EB2AE /* TestView1-1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "TestView1-1.xib"; sourceTree = "<group>"; };
@@ -898,6 +900,14 @@
 				FE2FD15627EDA31A0094E094 /* RxHttpClient.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		FE798CB3283327D100A7D4F8 /* CartWarningMessageCell */ = {
+			isa = PBXGroup;
+			children = (
+				FE798CB42833280200A7D4F8 /* CartWarningMessageCell.swift */,
+			);
+			path = CartWarningMessageCell;
 			sourceTree = "<group>";
 		};
 		FE7FC0C727C48966009EB2AE /* SideMenuSubView */ = {
@@ -2071,6 +2081,7 @@
 				FEFA1FAF282A246F0088BEEB /* CartItemCell */,
 				FE9CFC16282A9CB0007926ED /* CartTypeCell */,
 				FE9CFC15282A9C82007926ED /* CartPriceCell */,
+				FE798CB3283327D100A7D4F8 /* CartWarningMessageCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -2570,6 +2581,7 @@
 				FEBA011527CDDC5B00E74FCB /* KiflixViewModel.swift in Sources */,
 				FE8EF16727F425E300EEAC69 /* SignupNameZoneViewModel.swift in Sources */,
 				FE8EF15F27F425E300EEAC69 /* SignupPwZone.swift in Sources */,
+				FE798CB52833280200A7D4F8 /* CartWarningMessageCell.swift in Sources */,
 				FE30300927FD3DC6006F2C63 /* DirectorBlogWebkitView.swift in Sources */,
 				FE8EF15D27F425E300EEAC69 /* SignupErrorLabel.swift in Sources */,
 				FE9CFC1C282ABED5007926ED /* CartTypeViewModel.swift in Sources */,

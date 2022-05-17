@@ -60,7 +60,9 @@ class CartItemCell: UITableViewCell {
     
     private func attribute() {
         self.selectionStyle = .none
-        
+        self.menuLabel.textColor = .systemGray
+        self.thumbnailImageView.layer.cornerRadius = 15
+        self.thumbnailImageView.layer.masksToBounds = true
     }
     
     func setData(data: CartMenuItem, indexPath: IndexPath) {

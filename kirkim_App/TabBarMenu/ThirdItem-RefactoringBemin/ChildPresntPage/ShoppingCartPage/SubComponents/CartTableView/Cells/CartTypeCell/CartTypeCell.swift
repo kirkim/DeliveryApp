@@ -10,6 +10,7 @@ import Reusable
 import RxCocoa
 import RxSwift
 import RxGesture
+import SnapKit
 
 class CartTypeCell: UITableViewCell, Reusable {
     private let toggleTypeLabel = UILabel()

@@ -32,13 +32,19 @@ class CartTableView: UITableView {
     }
     
     private func attribute() {
+        self.backgroundColor = .systemGray6
+        self.layoutMargins = UIEdgeInsets.zero
+        self.separatorInset = UIEdgeInsets.zero
+        self.separatorColor = .systemGray6
         self.delegate = self
         let cartItemNib = UINib(nibName: "CartItemCell", bundle: nil)
         self.register(cartItemNib, forCellReuseIdentifier: "CartItemCell")
         self.register(cellType: CartPriceCell.self)
         self.register(cellType: CartTypeCell.self)
+        self.register(cellType: CartWarningMessageCell.self)
         self.register(headerFooterViewType: CartItemHeaderView.self)
         self.register(headerFooterViewType: CartItemFooterView.self)
+        self.sectionHeaderTopPadding = 10
     }
     
     private func layout() {
@@ -52,11 +58,14 @@ extension CartTableView: UITableViewDelegate {
         case 1:
             return 100
         case 2:
-            return 300
+            return 150
+        case 3:
+            return 80
         default:
             return UITableView.automaticDimension
         }
     }
+    
     
     // Header
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

@@ -43,6 +43,10 @@ struct CartTableViewModel {
                     let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CartPriceCell.self)
                     cell.setData(data: items[indexPath.row])
                     return cell
+                case .cartWarningMessageSection(items: let items):
+                    let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CartWarningMessageCell.self)
+                    cell.setData(data: items[indexPath.row])
+                    return cell
                 }
             })
         return dataSource

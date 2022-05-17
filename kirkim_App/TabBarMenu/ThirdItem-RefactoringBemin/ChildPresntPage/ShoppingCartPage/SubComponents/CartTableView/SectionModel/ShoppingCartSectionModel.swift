@@ -35,10 +35,15 @@ struct CartPriceItem: ShoppingCartItem {
     var menuPrice: Int
 }
 
+struct CartWarningMessageItem: ShoppingCartItem {
+    var message: String
+}
+
 enum ShoppingCartSectionModel {
     case cartMenuSection(items: [CartMenuItem])
     case cartTypeSection(items: [CartTypeItem])
     case cartPriceSection(items: [CartPriceItem])
+    case cartWarningMessageSection(items: [CartWarningMessageItem])
 }
 
 extension ShoppingCartSectionModel: SectionModelType {
@@ -56,7 +61,8 @@ extension ShoppingCartSectionModel: SectionModelType {
             return items
         case .cartPriceSection(let items):
             return items
-
+        case .cartWarningMessageSection(let items):
+            return items
         }
     }
 }

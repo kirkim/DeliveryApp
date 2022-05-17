@@ -40,7 +40,7 @@ class CartItemHeaderView: UITableViewHeaderFooterView, Reusable {
     }
     
     private func attribute() {
-        
+        self.contentView.backgroundColor = .white
     }
     
     private func layout() {
@@ -50,12 +50,12 @@ class CartItemHeaderView: UITableViewHeaderFooterView, Reusable {
         
         thumbnailImageView.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(15)
-            $0.width.height.equalTo(20)
+            $0.width.height.equalTo(25)
             $0.centerY.equalToSuperview()
         }
         
         storeNameLabel.snp.makeConstraints {
-            $0.leading.equalTo(thumbnailImageView.snp.trailing).offset(10)
+            $0.leading.equalTo(thumbnailImageView.snp.trailing).offset(5)
             $0.centerY.equalToSuperview()
         }
     }

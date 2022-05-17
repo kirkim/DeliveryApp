@@ -35,8 +35,9 @@ class CartItemFooterView: UITableViewHeaderFooterView, Reusable {
     }
     
     private func attribute() {
+        self.contentView.backgroundColor = .white
         titleLabel.text = "+ 더 담으러 가기"
-        titleLabel.font = .systemFont(ofSize: 25, weight: .bold)
+        titleLabel.font = .systemFont(ofSize: 17, weight: .medium)
     }
     
     private func layout() {

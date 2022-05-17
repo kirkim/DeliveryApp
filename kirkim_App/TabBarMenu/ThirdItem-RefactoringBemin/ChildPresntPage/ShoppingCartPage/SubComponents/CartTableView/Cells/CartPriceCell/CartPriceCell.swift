@@ -7,6 +7,7 @@
 
 import UIKit
 import Reusable
+import SnapKit
 import RxSwift
 import RxCocoa
 
@@ -85,7 +86,7 @@ class CartPriceCell: UITableViewCell, Reusable {
         lineView.snp.makeConstraints {
             $0.top.equalTo(deliveryTitleLabel.snp.bottom).offset(TOP_PADDING)
             $0.leading.equalToSuperview().offset(SIDE_PADDING)
-            $0.trailing.equalToSuperview().offset(SIDE_PADDING)
+            $0.trailing.equalToSuperview().inset(SIDE_PADDING)
             $0.height.equalTo(2)
         }
         

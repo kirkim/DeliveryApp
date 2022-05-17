@@ -76,8 +76,10 @@ class CartManager {
             let itemData = ShoppingCartSectionModel.cartMenuSection(items: items!)
             let cartTypeData = ShoppingCartSectionModel.cartTypeSection(items: [CartTypeItem(type: type)])
             let priceData = ShoppingCartSectionModel.cartPriceSection(items: [CartPriceItem(deliveryTip: deliveryTip, menuPrice: totalPrice)])
+            // 경고메시지도 필요하면 서버로부터 받아오도록 구현가능
+            let warningMessageData = ShoppingCartSectionModel.cartWarningMessageSection(items: [CartWarningMessageItem(message: "(주)kirkim은 통신판매중개자이며, 통신판매의 당사자가 아닙니다. 따라서 (주)kirkim은 상품, 거래정보 및 거래에 대하여 책임을 지지 않습니다.")])
             
-            dataValue = [itemData, cartTypeData, priceData]
+            dataValue = [itemData, cartTypeData, priceData, warningMessageData]
             self.isValidObserver.accept(true)
             itemCountObserver.accept((items?.count)!)
         } else {
