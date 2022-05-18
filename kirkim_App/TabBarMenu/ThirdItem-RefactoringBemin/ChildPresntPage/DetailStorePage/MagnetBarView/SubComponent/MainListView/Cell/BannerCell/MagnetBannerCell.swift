@@ -10,7 +10,7 @@ import UIKit
 import Reusable
 
 class MagnetBannerCell: UICollectionViewCell, Reusable {
-    private let httpManager = HttpModel.shared
+    private let httpManager = DetailStoreDataManager.shared
     private let banner: BeminBannerView
     private let headerView = MagnetHeaderView()
     private var flag: Bool = false

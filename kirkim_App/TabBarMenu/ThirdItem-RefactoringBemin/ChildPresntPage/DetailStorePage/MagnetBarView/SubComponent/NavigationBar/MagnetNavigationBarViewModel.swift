@@ -19,7 +19,7 @@ struct MagnetNavigationBarViewModel {
     let mainTitle:String
     
     init() {
-        self.mainTitle = HttpModel.shared.getStoreName()
+        self.mainTitle = DetailStoreDataManager.shared.getStoreName()
         transItem = scrolled.asSignal()
     }
 }

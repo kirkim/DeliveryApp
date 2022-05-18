@@ -28,7 +28,7 @@ class TopBarCell: UICollectionViewCell {
     
     func isValid(_ isValid: Bool) {
         if (isValid) {
-            self.backgroundColor = .systemMint
+            self.backgroundColor = .systemBrown
             self.titleLabel.textColor = .white
         } else {
             self.backgroundColor = .clear

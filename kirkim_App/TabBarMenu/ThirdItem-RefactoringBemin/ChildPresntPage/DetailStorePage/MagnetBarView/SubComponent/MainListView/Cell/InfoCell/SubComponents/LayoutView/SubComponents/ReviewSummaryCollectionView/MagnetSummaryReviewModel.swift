@@ -13,7 +13,7 @@ class MagnetSummaryReviewModel {
     let data = PublishRelay<[SummaryReviewData?]>()
 
     private let httpManager = DeliveryHttpManager.shared
-    private let storeHttpManager = HttpModel.shared
+    private let storeHttpManager = DetailStoreDataManager.shared
     private let disposeBag = DisposeBag()
     private var summaryReviewImageStorage: [Int : UIImage] = [:]
     var dataCount: Int?

@@ -13,6 +13,8 @@
 		FE078F2F27C3634B00D19E34 /* SideMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE078F2E27C3634B00D19E34 /* SideMenuHeaderView.swift */; };
 		FE078F3727C3737200D19E34 /* SizeMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE078F3627C3737200D19E34 /* SizeMaster.swift */; };
 		FE18A28927C5DE9B00E56F39 /* BannerHttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE18A28827C5DE9B00E56F39 /* BannerHttpManager.swift */; };
+		FE18E1B82834044A006135E6 /* SubmitCheckAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE18E1B72834044A006135E6 /* SubmitCheckAlertView.swift */; };
+		FE18E1BA283415C7006135E6 /* SubmitCheckAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE18E1B9283415C7006135E6 /* SubmitCheckAlertViewModel.swift */; };
 		FE2067EF27BCFDC7005EBEB5 /* KeyboardAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2067EE27BCFDC7005EBEB5 /* KeyboardAnimation.swift */; };
 		FE21132A27BCA6AE003293B2 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE21132927BCA6AE003293B2 /* HttpClient.swift */; };
 		FE21133127BCD095003293B2 /* SignUpPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE21133027BCD095003293B2 /* SignUpPageVC.swift */; };
@@ -192,7 +194,7 @@
 		FEFA1EE72829FACD0088BEEB /* StoreListSectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1EC82829FACD0088BEEB /* StoreListSectionManager.swift */; };
 		FEFA1EE82829FACD0088BEEB /* ContainerStoreListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1ECA2829FACD0088BEEB /* ContainerStoreListViewCell.swift */; };
 		FEFA1EE92829FACD0088BEEB /* ContainerStoreListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1ECB2829FACD0088BEEB /* ContainerStoreListViewModel.swift */; };
-		FEFA1EEA2829FACD0088BEEB /* StoreListHttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1ECC2829FACD0088BEEB /* StoreListHttpManager.swift */; };
+		FEFA1EEA2829FACD0088BEEB /* SummaryStoreHttpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1ECC2829FACD0088BEEB /* SummaryStoreHttpModel.swift */; };
 		FEFA1EEB2829FACD0088BEEB /* ContainerStoreListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1ECD2829FACD0088BEEB /* ContainerStoreListView.swift */; };
 		FEFA1EEC2829FACD0088BEEB /* DeliveryMenuSpecialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1ECF2829FACD0088BEEB /* DeliveryMenuSpecialCell.swift */; };
 		FEFA1EED2829FACD0088BEEB /* DeliveryMenuBasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1ED02829FACD0088BEEB /* DeliveryMenuBasicCell.swift */; };
@@ -305,6 +307,8 @@
 		FE078F2E27C3634B00D19E34 /* SideMenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuHeaderView.swift; sourceTree = "<group>"; };
 		FE078F3627C3737200D19E34 /* SizeMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeMaster.swift; sourceTree = "<group>"; };
 		FE18A28827C5DE9B00E56F39 /* BannerHttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerHttpManager.swift; sourceTree = "<group>"; };
+		FE18E1B72834044A006135E6 /* SubmitCheckAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitCheckAlertView.swift; sourceTree = "<group>"; };
+		FE18E1B9283415C7006135E6 /* SubmitCheckAlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitCheckAlertViewModel.swift; sourceTree = "<group>"; };
 		FE2067EE27BCFDC7005EBEB5 /* KeyboardAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAnimation.swift; sourceTree = "<group>"; };
 		FE21132927BCA6AE003293B2 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		FE21133027BCD095003293B2 /* SignUpPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPageVC.swift; sourceTree = "<group>"; };
@@ -481,7 +485,7 @@
 		FEFA1EC82829FACD0088BEEB /* StoreListSectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreListSectionManager.swift; sourceTree = "<group>"; };
 		FEFA1ECA2829FACD0088BEEB /* ContainerStoreListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerStoreListViewCell.swift; sourceTree = "<group>"; };
 		FEFA1ECB2829FACD0088BEEB /* ContainerStoreListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerStoreListViewModel.swift; sourceTree = "<group>"; };
-		FEFA1ECC2829FACD0088BEEB /* StoreListHttpManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreListHttpManager.swift; sourceTree = "<group>"; };
+		FEFA1ECC2829FACD0088BEEB /* SummaryStoreHttpModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryStoreHttpModel.swift; sourceTree = "<group>"; };
 		FEFA1ECD2829FACD0088BEEB /* ContainerStoreListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerStoreListView.swift; sourceTree = "<group>"; };
 		FEFA1ECF2829FACD0088BEEB /* DeliveryMenuSpecialCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryMenuSpecialCell.swift; sourceTree = "<group>"; };
 		FEFA1ED02829FACD0088BEEB /* DeliveryMenuBasicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryMenuBasicCell.swift; sourceTree = "<group>"; };
@@ -1450,6 +1454,7 @@
 			isa = PBXGroup;
 			children = (
 				FEFA1F4F2829FAEC0088BEEB /* DetailStoreHttpModel.swift */,
+				FEFA1ECC2829FACD0088BEEB /* SummaryStoreHttpModel.swift */,
 				FECC16442830A4EB004A2395 /* Entities */,
 			);
 			path = HttpManager;
@@ -1695,7 +1700,6 @@
 				FEFA1EC32829FACD0088BEEB /* StoreListView.swift */,
 				FEFA1EC42829FACD0088BEEB /* StoreListViewModel.swift */,
 				FEFA1EC72829FACD0088BEEB /* StoreListModel.swift */,
-				FEFA1ECC2829FACD0088BEEB /* StoreListHttpManager.swift */,
 				FEFA1EC82829FACD0088BEEB /* StoreListSectionManager.swift */,
 				FEFA1EC12829FACD0088BEEB /* SectionModel */,
 				FEFA1EC52829FACD0088BEEB /* Cell */,
@@ -1927,6 +1931,8 @@
 				FEFA1F242829FAEC0088BEEB /* PopupLabel.swift */,
 				FEFA1F252829FAEC0088BEEB /* MagnetSubmitTapView.swift */,
 				FEFA1F262829FAEC0088BEEB /* MagnetSubmitTapViewModel.swift */,
+				FE18E1B72834044A006135E6 /* SubmitCheckAlertView.swift */,
+				FE18E1B9283415C7006135E6 /* SubmitCheckAlertViewModel.swift */,
 			);
 			path = SubComponent;
 			sourceTree = "<group>";
@@ -2388,6 +2394,7 @@
 				FE8D306827FC682A00F55EEE /* EventPage1.swift in Sources */,
 				FE74FEAF27CDBDDE00F40D5F /* MainTabBarController.swift in Sources */,
 				FE8EF16127F425E300EEAC69 /* CheckIdButton.swift in Sources */,
+				FE18E1BA283415C7006135E6 /* SubmitCheckAlertViewModel.swift in Sources */,
 				FEFBB5FD28029E7200864528 /* ButtonVC2.swift in Sources */,
 				FEFA1F6E2829FAEC0088BEEB /* MagnetPresentCountSelectCell.swift in Sources */,
 				FEFBB5FA28029E7200864528 /* ButtonVC4.swift in Sources */,
@@ -2496,10 +2503,11 @@
 				FE8EF16927F425E300EEAC69 /* SignUpPageModel.swift in Sources */,
 				FE9CFC21282AC33E007926ED /* CartTypePopupViewModel.swift in Sources */,
 				FEFA1F672829FAEC0088BEEB /* MagnetPresentMenuModel.swift in Sources */,
+				FE18E1B82834044A006135E6 /* SubmitCheckAlertView.swift in Sources */,
 				FEFA1EE42829FACD0088BEEB /* StoreListViewModel.swift in Sources */,
 				FE3EA96527BB751800DA36EA /* TextAnimation.swift in Sources */,
 				FE2BD69727CDD34400A9FB73 /* KiflixCollectionCell.swift in Sources */,
-				FEFA1EEA2829FACD0088BEEB /* StoreListHttpManager.swift in Sources */,
+				FEFA1EEA2829FACD0088BEEB /* SummaryStoreHttpModel.swift in Sources */,
 				FEFA1EF02829FACD0088BEEB /* DeliveryMenuSectionManager.swift in Sources */,
 				FEFA1EE02829FACD0088BEEB /* SortSlideBar.swift in Sources */,
 				FEFA1EDE2829FACD0088BEEB /* SortSlideBarViewModel.swift in Sources */,

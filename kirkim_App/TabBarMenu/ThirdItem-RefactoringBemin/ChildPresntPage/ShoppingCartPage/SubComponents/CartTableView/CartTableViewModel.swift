@@ -12,7 +12,7 @@ import RxDataSources
 
 struct CartTableViewModel {
     let cartManager = CartManager.shared
-    let data: BehaviorRelay<[ShoppingCartSectionModel]>
+    let data: Observable<[ShoppingCartSectionModel]>
     
 //    let cartItemViewModel = CartItemViewModel()
     let cartTypeViewModel = CartTypeViewModel()
@@ -31,8 +31,7 @@ struct CartTableViewModel {
                 switch dataSource[indexPath.section] {
                 case .cartMenuSection(items: let items):
                     guard let cell = tableView.dequeueReusableCell(withIdentifier: "CartItemCell", for: indexPath) as? CartItemCell else { return UITableViewCell() }
-                    cell.setData(data: items[indexPath.row], indexPath: items[indexPath.row].indexPath)
-//                    cell.bind(cartItemViewModel)
+                    cell.setData(data: items[indexPath.row], indexPath: indexPath)
                     return cell
                 case .cartTypeSection(items: let items):
                     let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CartTypeCell.self)

@@ -9,7 +9,7 @@ import  UIKit
 import RxCocoa
 import RxSwift
 
-typealias HttpModel = DetailStoreHttpModel
+typealias DetailStoreDataManager = DetailStoreHttpModel
 class DetailStoreHttpModel {
     static let shared = DetailStoreHttpModel()
     

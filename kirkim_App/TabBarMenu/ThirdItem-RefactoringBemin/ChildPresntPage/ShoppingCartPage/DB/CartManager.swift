@@ -55,6 +55,9 @@ class CartManager {
     let presentItemVC = PublishRelay<PresentDetailMenuPoint>()
     
     private init() {
+//        for key in userDefaults.dictionaryRepresentation().keys {
+//            userDefaults.removeObject(forKey: key.description)
+//                }
         update()
         itemTitleTapped
             .map { indexPath in
@@ -105,29 +108,20 @@ class CartManager {
         dataObserver.accept(dataValue)
     }
     
-    func deleteItem(indexPath: IndexPath) {
-        guard self.itemDatas != nil else {
-            return
-        }
-        self.itemDatas!.remove(at: indexPath.row)
-        saveItem(data: self.itemDatas!)
-        update()
+    func getIsValidObserver() -> Observable<Bool> {
+        return self.isValidObserver.share()
     }
     
-    func getIsValidObserver() -> BehaviorRelay<Bool> {
-        return self.isValidObserver
+    func getCanSubmitObserver() -> Observable<Bool> {
+        return self.canSubmitObserver.share()
     }
     
-    func getCanSubmitObserver() -> BehaviorRelay<Bool> {
-        return self.canSubmitObserver
+    func getDataObserver() -> Observable<[ShoppingCartSectionModel]> {
+        return self.dataObserver.share()
     }
     
-    func getDataObserver() -> BehaviorRelay<[ShoppingCartSectionModel]> {
-        return self.dataObserver
-    }
-    
-    func getItemCountObserver() -> BehaviorRelay<Int> {
-        return self.itemCountObserver
+    func getItemCountObserver() -> Observable<Int> {
+        return self.itemCountObserver.share()
     }
     
     func getMinPrice() -> Int {
@@ -184,6 +178,25 @@ class CartManager {
         case differentStore
     }
     
+    func clearCartAddItem(data: ParsedCartData) {
+        let image = self.makeImage(urlString: data.storeThumbnail)
+        let imageData = image.pngData()!
+        self.saveStoreData(data: CartStoreData(storeCode: data.storeCode, storeName: data.storeName, storeThumbnail: imageData))
+        self.saveType(type: .delivery)
+        self.saveItem(data: [data.item])
+        self.saveDeliveryPrice(data: CartDeliveryPrice(deliveryTip: data.deliveryTip, minPrice: data.minPrice))
+        update()
+    }
+    
+    func deleteItem(indexPath: IndexPath) {
+        guard self.itemDatas != nil else {
+            return
+        }
+        self.itemDatas!.remove(at: indexPath.row)
+        saveItem(data: self.itemDatas!)
+        update()
+    }
+    
     func addItem(data: ParsedCartData) throws {
         guard var items = getItem(),
               items.count != 0 else {
@@ -196,8 +209,7 @@ class CartManager {
             update()
             return
         }
-        
-        if (self.storeCode != data.storeCode) {
+        guard self.storeCode == data.storeCode else {
             throw AddItemError.differentStore
         }
         items.append(data.item)

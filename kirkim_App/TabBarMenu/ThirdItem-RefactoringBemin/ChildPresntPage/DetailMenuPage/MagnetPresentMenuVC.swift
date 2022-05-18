@@ -19,6 +19,7 @@ class MagnetPresentMenuVC: UIViewController {
     private let model: MagnetPresentMenuModel
     
     private let popupLabel = PopupLabel()
+    private let checkAlertView = SubmitCheckAlertView()
     
     private let navigationBarAppearace = UINavigationBarAppearance()
 
@@ -44,6 +45,7 @@ class MagnetPresentMenuVC: UIViewController {
     private func bind(_ viewModel: MagnetPresentMenuViewModel) {
         self.collectionView.collectionViewLayout = viewModel.createLayout()
         self.submitView.bind(viewModel.submitTapViewModel)
+        self.checkAlertView.bind(viewModel.checkAlertViewModel)
         let dataSource = viewModel.dataSource()
         
         viewModel.data
@@ -88,15 +90,29 @@ class MagnetPresentMenuVC: UIViewController {
             }
             .disposed(by: disposeBag)
         
-        viewModel.submitTapViewModel.submitButtonTapped
-            .bind {
+        viewModel.successSubmit
+            .bind { message in
                 self.navigationController?.popViewController(animated: true)
+            }
+            .disposed(by: disposeBag)
+        
+        viewModel.checkAlert
+            .bind { data in
+                self.checkAlertView.setData(data: data)
+                self.checkAlertView.isHidden = false
+            }
+            .disposed(by: disposeBag)
+        
+        viewModel.closeCheckAlert
+            .emit { _ in
+                self.checkAlertView.isHidden = true
             }
             .disposed(by: disposeBag)
     }
     
     private func attribute() {
         self.popupLabel.isHidden = true
+        self.checkAlertView.isHidden = true
         self.collectionView.backgroundColor = .systemGray4
         self.collectionView.contentInsetAdjustmentBehavior = .never
         self.collectionView.register(cellType: MagnetPresentMainTitleCell.self)
@@ -106,7 +122,7 @@ class MagnetPresentMenuVC: UIViewController {
     }
     
     private func layout() {
-        [collectionView, submitView, popupLabel].forEach {
+        [collectionView, submitView, popupLabel, checkAlertView].forEach {
             self.view.addSubview($0)
         }
         
@@ -124,5 +140,10 @@ class MagnetPresentMenuVC: UIViewController {
             $0.centerX.equalToSuperview()
             $0.centerY.equalToSuperview()
         }
+        
+        checkAlertView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        
     }
 }

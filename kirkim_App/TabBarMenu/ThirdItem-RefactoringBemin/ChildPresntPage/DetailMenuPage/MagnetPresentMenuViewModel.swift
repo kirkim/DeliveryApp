@@ -10,11 +10,18 @@ import RxDataSources
 import RxCocoa
 import RxSwift
 
+struct CheckAlertData {
+    var title: String
+    var subTitle: String
+}
+
 class MagnetPresentMenuViewModel {
     private let disposeBag = DisposeBag()
     private let sectionManager = MagnetPresentMenuSectionManager()
     private let countSelectViewModel = MagnetPresentCountSelectViewModel()
     private let presentMenuStateManager: PresentMenuStateManager
+    private let cartManager = CartManager.shared
+    let checkAlertViewModel = SubmitCheckAlertViewModel()
     let submitTapViewModel = MagnetSubmitTapViewModel()
     
     //View -> ViewModel
@@ -23,6 +30,9 @@ class MagnetPresentMenuViewModel {
     
     //ViewModel -> View
     let warningAlert = PublishRelay<String>()
+    let checkAlert = PublishRelay<CheckAlertData>()
+    let successSubmit = PublishRelay<String>()
+    let closeCheckAlert: Signal<UITapGestureRecognizer>
     let data: Driver<[PresentMenuSectionModel]>
     let title: String
     
@@ -30,6 +40,7 @@ class MagnetPresentMenuViewModel {
         self.title = model.title
         self.presentMenuStateManager = PresentMenuStateManager(model: model)
         self.data = presentMenuStateManager.getCollectionViewDataObserver().asDriver()
+        self.closeCheckAlert = checkAlertViewModel.cancelButtonTapped.asSignal()
         
         presentMenuStateManager.getTotalPriceObserver()
             .bind(to: submitTapViewModel.currentPrice)
@@ -58,12 +69,25 @@ class MagnetPresentMenuViewModel {
         
         self.submitTapViewModel.submitButtonTapped
             .map { self.presentMenuStateManager.parsingCartData() }
-            .bind { data in
+            .bind { [weak self] data in
                 do {
-                    try CartManager.shared.addItem(data: data)
+                    try self?.cartManager.addItem(data: data)
+                    self?.successSubmit.accept("장바구니에 매뉴를 추가했습니다.")
                 } catch {
-                    self.warningAlert.accept(error.localizedDescription)
+                    let data = CheckAlertData(
+                        title: "장바구니에는 같은 가게의 매뉴만 담을 수 있습니다.",
+                        subTitle: "선택하신 메뉴를 장바구니에 담을 경우 이전에 담은 메뉴가 삭제됩니다."
+                    )
+                    self?.checkAlert.accept(data)
                 }
+            }
+            .disposed(by: disposeBag)
+            
+        checkAlertViewModel.okButtonTapped
+            .bind { [weak self] _ in
+                let data = self?.presentMenuStateManager.parsingCartData()
+                self?.cartManager.clearCartAddItem(data: data!)
+                self?.successSubmit.accept("장바구니에 매뉴를 추가했습니다.")
             }
             .disposed(by: disposeBag)
     }

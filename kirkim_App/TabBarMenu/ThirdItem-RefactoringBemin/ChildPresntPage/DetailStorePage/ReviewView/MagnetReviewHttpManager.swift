@@ -21,7 +21,7 @@ class MagnetReviewHttpManager {
     }
     
     private let httpmanager = DeliveryHttpManager.shared
-    private let storeHttpManager = HttpModel.shared
+    private let storeHttpManager = DetailStoreDataManager.shared
     private let disposeBag = DisposeBag()
     var reviewData: MagnetReviewSectionModel?
     var totalRatingData: MagnetReviewSectionModel?

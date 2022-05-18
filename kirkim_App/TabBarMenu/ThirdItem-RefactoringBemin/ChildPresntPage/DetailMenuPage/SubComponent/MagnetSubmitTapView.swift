@@ -37,7 +37,7 @@ class MagnetSubmitTapView: UIView {
             .bind { canSubmit in
                 if (canSubmit == true) {
                     self.submitButton.isEnabled = true
-                    self.submitButton.backgroundColor = .systemMint
+                    self.submitButton.backgroundColor = .systemBrown
                 } else {
                     self.submitButton.isEnabled = false
                     self.submitButton.backgroundColor = .gray
@@ -61,7 +61,7 @@ class MagnetSubmitTapView: UIView {
         self.submitPriceLabel.textColor = .white
         
         //Temp
-        let minPrice = HttpModel.shared.getMinPrice()
+        let minPrice = DetailStoreDataManager.shared.getMinPrice()
         self.minPriceLabel.text = "배달최소주문금액 \(minPrice.parsingToKoreanPrice())"
         self.minPriceLabel.textColor = .darkGray
         self.submitTitleLabel.text = "1개 담기"

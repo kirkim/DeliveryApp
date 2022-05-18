@@ -11,6 +11,11 @@ import RxGesture
 import RxCocoa
 import RxSwift
 
+enum DetailStoreType {
+    case basic
+    case fake
+}
+
 class ShoppingCartButton: UIView {
     // UI
     private let imageView = UIImageView()
@@ -19,14 +24,16 @@ class ShoppingCartButton: UIView {
     private let BUTTONSIZE = 80.0
     private let COUNTLABELSIZE = 20.0
     
-    private let shoppingcartVC = ShoppingcartVC()
     private let cartManager = CartManager.shared
     
     private let disposeBag = DisposeBag()
     private let buttonClicked = PublishRelay<UITapGestureRecognizer>()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    private let detailStoreType: DetailStoreType
+    
+    init(type: DetailStoreType = .basic) {
+        self.detailStoreType = type
+        super.init(frame: CGRect.zero)
         attribute()
         layout()
         bind()
@@ -41,40 +48,6 @@ class ShoppingCartButton: UIView {
             .when(.recognized)
             .bind(to: buttonClicked)
             .disposed(by: disposeBag)
-    }
-    
-    func addEventAndFrame(vc: UIViewController) {
-        self.buttonClicked
-            .bind { [weak self] _ in
-                if (vc.navigationController != nil) {
-                    vc.navigationItem.backButtonTitle = ""
-                    vc.navigationController?.pushViewController((self?.shoppingcartVC)!, animated: true)
-                } else {
-                    vc.present((self?.shoppingcartVC)!, animated: true)
-                }
-            }
-            .disposed(by: disposeBag)
-        vc.view.addSubview(self)
-        let x = vc.view.frame.width - BUTTONSIZE - 30.0
-        let y = vc.view.frame.height - BUTTONSIZE - 70.0
-        self.frame = CGRect(x: x, y: y, width: BUTTONSIZE, height: BUTTONSIZE)
-    }
-    
-    private func attribute() {
-        self.backgroundColor = .systemMint
-        self.layer.cornerRadius = BUTTONSIZE / 2
-        
-        self.countLabel.backgroundColor = .white
-        self.countLabel.textColor = .systemMint
-        self.countLabel.textAlignment = .center
-        self.countLabel.layer.cornerRadius = COUNTLABELSIZE / 2
-        self.countLabel.layer.masksToBounds = true
-        
-        self.fakeCircle.backgroundColor = .systemMint
-        self.fakeCircle.layer.cornerRadius = (COUNTLABELSIZE+4) / 2
-        
-        self.imageView.image = UIImage(systemName: "cart.fill")
-        self.imageView.tintColor = .white
         
         cartManager.getItemCountObserver()
             .map { String($0) }
@@ -88,16 +61,64 @@ class ShoppingCartButton: UIView {
             .disposed(by: disposeBag)
     }
     
+    func addEventAndFrame(vc: UIViewController) {
+        self.buttonClicked
+            .bind { [weak self] _ in
+                guard self?.detailStoreType != .fake else {
+                    vc.navigationController?.popViewController(animated: true)
+                    return
+                }
+                let shoppingcartVC = ShoppingcartVC()
+                if (vc.navigationController != nil) {
+                    vc.navigationItem.backButtonTitle = ""
+                    vc.navigationController?.pushViewController(shoppingcartVC, animated: true)
+                } else {
+                    vc.present(shoppingcartVC, animated: true)
+                }
+            }
+            .disposed(by: disposeBag)
+        vc.view.addSubview(self)
+        let x = vc.view.frame.width - BUTTONSIZE - 20.0
+        let y = vc.view.frame.height - BUTTONSIZE - 50.0
+        self.frame = CGRect(x: x, y: y, width: BUTTONSIZE, height: BUTTONSIZE)
+    }
+    
+    private func attribute() {
+        self.backgroundColor = .systemBrown
+        self.layer.cornerRadius = BUTTONSIZE / 2
+        
+        self.countLabel.backgroundColor = .white
+        self.countLabel.textColor = .systemBrown
+        self.countLabel.textAlignment = .center
+        self.countLabel.layer.cornerRadius = COUNTLABELSIZE / 2
+        self.countLabel.layer.masksToBounds = true
+        
+        self.fakeCircle.backgroundColor = .systemBrown
+        self.fakeCircle.layer.cornerRadius = (COUNTLABELSIZE+4) / 2
+        
+        self.imageView.image = UIImage(systemName: "cart.fill")
+        self.imageView.tintColor = .white
+        
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.masksToBounds = false
+        self.layer.shadowOffset = CGSize(width: 0, height: 4)
+        self.layer.shadowRadius = 2
+        self.layer.shadowOpacity = 0.5
+    }
+    
     private func layout() {
         [imageView, fakeCircle, countLabel].forEach {
             self.addSubview($0)
         }
         
         imageView.snp.makeConstraints {
-            $0.edges.equalToSuperview().inset(14)
+            $0.top.equalToSuperview().offset(16)
+            $0.leading.equalToSuperview().offset(13)
+            $0.trailing.equalToSuperview().inset(15)
+            $0.bottom.equalToSuperview().offset(-12)
         }
         
-        let padding = BUTTONSIZE / 8
+        let padding = BUTTONSIZE / 7
         
         fakeCircle.snp.makeConstraints {
             $0.top.equalToSuperview().offset(padding)

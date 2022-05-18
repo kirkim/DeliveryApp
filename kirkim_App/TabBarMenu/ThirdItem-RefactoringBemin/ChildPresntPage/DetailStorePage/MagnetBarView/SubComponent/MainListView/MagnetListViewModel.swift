@@ -27,7 +27,7 @@ class MagnetListViewModel {
     
     let data: [MagnetSectionModel]
     
-    private let httpModel = HttpModel.shared
+    private let httpModel = DetailStoreDataManager.shared
     private let mainTitle: String
     private let disposeBag = DisposeBag()
     

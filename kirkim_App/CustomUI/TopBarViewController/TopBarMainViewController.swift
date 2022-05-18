@@ -15,6 +15,7 @@ class TopBarMainViewController: UIViewController {
     private let layoutView: TopBarLayoutView
     private let topBar: TopBar
     private var bottomBar = BottomBar()
+    private let cartButton = ShoppingCartButton()
     
     init(startPage: Int = 0) {
         self.layoutView = TopBarLayoutView(startPage: startPage)
@@ -57,7 +58,7 @@ class TopBarMainViewController: UIViewController {
     
     //MARK: attribute(), layout() function
     private func attribute() {
-        self.view.backgroundColor = .systemMint
+        self.view.backgroundColor = .systemBrown
     }
     
     private func layout() {
@@ -81,5 +82,6 @@ class TopBarMainViewController: UIViewController {
             $0.leading.trailing.bottom.equalToSuperview()
             $0.height.equalTo(80)
         }
+        cartButton.addEventAndFrame(vc: self)
     }
 }

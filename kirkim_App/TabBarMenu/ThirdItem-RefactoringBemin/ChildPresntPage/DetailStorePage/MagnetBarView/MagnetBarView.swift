@@ -26,14 +26,18 @@ class MagnetBarView: UIViewController {
     private let mainListView = MagnetListView()
     private let mainNavigationBar = MagnetNavigationBar()
     private let stickyHeader = RemoteMainListBar()
+    private let cartButton: ShoppingCartButton
     
     private let viewModel = MagnetBarViewModel()
     private let disposeBag = DisposeBag()
     
     // 디테일메뉴를 바로 열어줄지말지 확인하는 변수
     private var isPresentMenu: IndexPath?
+    private let type: DetailStoreType
     
-    init() {
+    init(type: DetailStoreType = .basic) {
+        self.type = type
+        self.cartButton = ShoppingCartButton(type: type)
         super.init(nibName: nil, bundle: nil)
         attribute()
         layout()
@@ -137,5 +141,6 @@ class MagnetBarView: UIViewController {
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(MagnetBarViewMath.stickyHeaderHeight)
         }
+        cartButton.addEventAndFrame(vc: self)
     }
 }

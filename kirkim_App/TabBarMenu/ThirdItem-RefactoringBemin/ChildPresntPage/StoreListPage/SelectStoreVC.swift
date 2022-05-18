@@ -16,7 +16,8 @@ class SelectStoreVC: UIViewController {
     private let sortBar = SortSlideBar()
     private let disposeBag = DisposeBag()
     private let containerListView: ContainerStoreListView
-    private let httpModel = HttpModel.shared
+    private let httpModel = DetailStoreDataManager.shared
+    private let cartButton = ShoppingCartButton()
     
     init(startPage: Int) {
         self.topBar = TopSlideBar(startPage: startPage)
@@ -91,5 +92,6 @@ class SelectStoreVC: UIViewController {
             $0.leading.trailing.equalToSuperview()
             $0.bottom.equalToSuperview()
         }
+        cartButton.addEventAndFrame(vc: self)
     }
 }

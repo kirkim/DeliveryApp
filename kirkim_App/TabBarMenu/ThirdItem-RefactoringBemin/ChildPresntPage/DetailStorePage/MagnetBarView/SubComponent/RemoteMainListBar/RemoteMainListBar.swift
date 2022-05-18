@@ -34,7 +34,7 @@ class RemoteMainListBar: UICollectionView {
             .drive(self.rx.items(cellIdentifier: "RemoteMainListBarCell", cellType: RemoteMainListBarCell.self)) { row, data, cell in
                 cell.setData(title: data)
                 cell.layer.cornerRadius = 15
-                cell.layer.borderColor = UIColor.systemMint.cgColor
+                cell.layer.borderColor = UIColor.systemBrown.cgColor
                 cell.layer.borderWidth = 1
             }
             .disposed(by: disposeBag)
@@ -51,7 +51,7 @@ class RemoteMainListBar: UICollectionView {
                     (cell as? RemoteMainListBarCell)?.titleLabel.textColor = .black
                 }
                 guard let cell = self?.cellForItem(at: indexPath) as? RemoteMainListBarCell else { return }
-                self?.cellForItem(at: indexPath)?.backgroundColor = .systemMint
+                self?.cellForItem(at: indexPath)?.backgroundColor = .systemBrown
                 cell.titleLabel.textColor = .white
                 self?.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
             }

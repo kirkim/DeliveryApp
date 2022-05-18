@@ -20,10 +20,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        let rootVC = UIStoryboard(name: "SideMenu", bundle: nil).instantiateViewController(withIdentifier: "SideMenuNavi")
         let RootTabBarController = MainTabBarController()
 //        let vc = ShoppingcartVC()
-        let vc = PPPUP()
-        let nav = UINavigationController(rootViewController: vc)
-        self.window?.rootViewController = nav
-//        self.window?.rootViewController = RootTabBarController
+//        let vc = PPPUP()
+//        let nav = UINavigationController(rootViewController: vc)
+//        self.window?.rootViewController = nav
+        self.window?.rootViewController = RootTabBarController
         self.window?.makeKeyAndVisible()
     }
 

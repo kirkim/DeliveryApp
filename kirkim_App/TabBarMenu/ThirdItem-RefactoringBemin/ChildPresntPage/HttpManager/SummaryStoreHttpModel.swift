@@ -9,12 +9,13 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class StoreListHttpManager {
+typealias SummaryStoreDataManager = SummaryStoreHttpModel
+class SummaryStoreHttpModel {
     private let disposeBag = DisposeBag()
     
     let httpManager = DeliveryHttpManager.shared
 //    let data = PublishRelay<[StoreListSection]>()
-    static let shared = StoreListHttpManager()
+    static let shared = SummaryStoreHttpModel()
     private init() { }
     
     func load(storeType: StoreType, completion: @escaping (([StoreListSection]) -> ())) {

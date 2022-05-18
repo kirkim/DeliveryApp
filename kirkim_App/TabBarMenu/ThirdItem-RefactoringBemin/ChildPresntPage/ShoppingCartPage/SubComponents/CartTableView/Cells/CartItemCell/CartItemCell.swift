@@ -19,6 +19,7 @@ class CartItemCell: UITableViewCell {
     @IBOutlet weak var deleteButton: UIButton!
     
     private var basePrice: Int = 0
+    private var menuIndexPath: IndexPath?
     private var indexPath: IndexPath?
     private let stepperViewModel = CountStepperViewModel()
     private let disposeBag = DisposeBag()
@@ -39,7 +40,7 @@ class CartItemCell: UITableViewCell {
             .disposed(by: disposeBag)
         stepperViewModel.totalCountChanged
             .bind { value in
-                if let indexPath = self.indexPath {
+                if let indexPath = self.menuIndexPath {
                     self.cartManager.changeItemCount(indexPath: indexPath, value: value)
                 }
             }
@@ -53,7 +54,7 @@ class CartItemCell: UITableViewCell {
         
         self.titleLabel.rx.tapGesture()
             .when(.recognized)
-            .map { _ in self.indexPath! }
+            .map { _ in self.menuIndexPath! }
             .bind(to: self.cartManager.itemTitleTapped)
             .disposed(by: disposeBag)
     }
@@ -67,6 +68,7 @@ class CartItemCell: UITableViewCell {
     
     func setData(data: CartMenuItem, indexPath: IndexPath) {
         self.indexPath = indexPath
+        self.menuIndexPath = data.indexPath
         self.titleLabel.text = data.title
         self.thumbnailImageView.image = UIImage(data: data.thumbnail)
         self.menuLabel.text = ""
