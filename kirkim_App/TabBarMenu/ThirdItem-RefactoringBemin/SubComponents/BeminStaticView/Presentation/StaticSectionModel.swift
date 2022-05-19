@@ -12,6 +12,7 @@ struct StaticSectionModel {
     let deliveryListViewModel = DeliveryMenuViewModel()
     let itemSelected = PublishRelay<IndexPath>()
     let presentVC: Driver<UIViewController>
+    let bannerSource: BannerSources
     
     init() {
         presentVC = itemSelected
@@ -53,5 +54,17 @@ struct StaticSectionModel {
                 return vc
             }
             .asDriver(onErrorJustReturn: UIViewController())
+        bannerSource = BannerSources(
+            bannerType: .event,
+            title: "이벤트",
+            subTitle: "지금 진행 중!",
+            totalViewCellRatio: 0.5,
+            sources: [
+                BannerSource(bannerImage: BeminCellImage.urlImage(url: "http://localhost:8080/banner/1.png"), totalViewCellImage: BeminCellImage.urlImage(url: "http://localhost:8080/banner/1.png"), presentVC: EventPage1()),
+                BannerSource(bannerImage: BeminCellImage.urlImage(url: "http://localhost:8080/banner/4.png"), totalViewCellImage: BeminCellImage.urlImage(url: "http://localhost:8080/banner/4.png"), presentVC: EventPage1()),
+                BannerSource(bannerImage: BeminCellImage.urlImage(url: "http://localhost:8080/banner/2.png"), totalViewCellImage: BeminCellImage.urlImage(url: "http://localhost:8080/banner/2.png"), presentVC: EventPage1()),
+                BannerSource(bannerImage: BeminCellImage.urlImage(url: "http://localhost:8080/banner/3.png"), totalViewCellImage: BeminCellImage.urlImage(url: "http://localhost:8080/banner/3.png"), presentVC: EventPage1()),
+                BannerSource(bannerImage: BeminCellImage.urlImage(url: "http://localhost:8080/banner/4.png"), totalViewCellImage: BeminCellImage.urlImage(url: "http://localhost:8080/banner/4.png"), presentVC: EventPage1()),
+            ])
     }
 }

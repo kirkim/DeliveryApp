@@ -13,10 +13,11 @@ import UIKit
 
 class DeliveryMenuViewModel {
     private let deliveryListViewModel = SelectStoreViewModel()
+    private let model = DeliveryMenuModel()
     private let disposeBag = DisposeBag()
     
     // ViewModel -> View
-    let data: [DeliveryMenuSectionModel]
+    let data: Driver<[DeliveryMenuSectionModel]>
     
     // View -> ViewModel
     let itemSelected = PublishRelay<IndexPath>()
@@ -24,8 +25,8 @@ class DeliveryMenuViewModel {
     // ViewModel -> View
     let presentVC = PublishRelay<SelectStoreVC>()
     
-    init(_ model: DeliveryMenuModel = DeliveryMenuModel()) {
-        self.data = model.data
+    init() {
+        self.data = model.dataObservable.asDriver()
         
         itemSelected.filter { $0.section == 2 }
         .map { [weak self] indexPath in
@@ -37,13 +38,17 @@ class DeliveryMenuViewModel {
         .disposed(by: disposeBag)
     }
     
+    func setBannerTouchEvent(at viewController: UIViewController) {
+        self.model.setBannerTouchEvent(at: viewController)
+    }
+    
     func dataSource() -> RxCollectionViewSectionedReloadDataSource<DeliveryMenuSectionModel> {
         let dataSource = RxCollectionViewSectionedReloadDataSource<DeliveryMenuSectionModel>(
             configureCell: { dataSource, collectionView, indexPath, item in
                 switch dataSource[indexPath.section] {
                 case .SectionBanner(items: let items):
                     let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: DeliveryMenuBannerCell.self)
-                    cell.setData(data: items[indexPath.row].data)
+                    cell.setBanner(banner: items[indexPath.row].banner)
                     return cell
                 case .SectionSpecialMenu(items: let items):
                     let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: DeliveryMenuSpecialCell.self)

@@ -19,7 +19,7 @@ protocol DeliveryMenuSectionItem {
 }
 
 struct BannerItem: DeliveryMenuSectionItem {
-    var data: BannerSources
+    var banner: BeminBannerView
 }
 
 

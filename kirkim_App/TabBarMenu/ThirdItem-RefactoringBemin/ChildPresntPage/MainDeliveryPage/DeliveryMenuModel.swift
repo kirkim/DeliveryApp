@@ -5,19 +5,13 @@
 //  Created by 김기림 on 2022/05/06.
 //
 
-import Foundation
 import UIKit
+import RxCocoa
 
 struct DeliveryMenuModel {
-    var data: [DeliveryMenuSectionModel] = []
-    let bannerCellData = DeliveryMenuSectionModel.SectionBanner(items: [
-        BannerItem(data: BannerSources(bannerType: .basic,
-                                       sources: [
-                                        BannerSource(bannerImage: BeminCellImage.storedImage(name: "space_bread1"), presentVC: UIViewController()),
-                                        BannerSource(bannerImage: BeminCellImage.storedImage(name: "space_bread2"), presentVC: UIViewController()),
-                                        BannerSource(bannerImage: BeminCellImage.storedImage(name: "space_bread3"), presentVC: UIViewController())
-                                       ]
-                                      ))])
+    let dataObservable: BehaviorRelay<[DeliveryMenuSectionModel]>
+    let bannerCellData: DeliveryMenuSectionModel
+    let basicCellData: DeliveryMenuSectionModel
     let specialCellData = DeliveryMenuSectionModel.SectionSpecialMenu(items: [
         SpecialMenuItem(title: "딱\n1인분", backgroundImage: ""),
         SpecialMenuItem(title: "군침 싹!\n비빔밥", backgroundImage: ""),
@@ -25,18 +19,30 @@ struct DeliveryMenuModel {
         SpecialMenuItem(title: "떡볶이\n타임", backgroundImage: ""),
         SpecialMenuItem(title: "special Menu five", backgroundImage: "")
     ])
-    
-    let basicCellData: DeliveryMenuSectionModel
+    let banner: BeminBannerView
     
     init() {
+        self.banner = BeminBannerView(
+            data: BannerSources(bannerType: .basic,
+                                sources: [
+                                    BannerSource(bannerImage: BeminCellImage.storedImage(name: "space_bread1"), presentVC: EventPage1()),
+                                    BannerSource(bannerImage: BeminCellImage.storedImage(name: "space_bread2"), presentVC: EventPage1()),
+                                    BannerSource(bannerImage: BeminCellImage.storedImage(name: "space_bread3"), presentVC: EventPage1())
+                                ]
+                               ))
+        bannerCellData = DeliveryMenuSectionModel.SectionBanner(items: [BannerItem(banner: self.banner)])
+                        
         let basicItems = StoreType.allCases.map { type in
             return BasicMenuItem(logoImage: type.logoImage, menuType: type)
         }
         basicCellData = DeliveryMenuSectionModel.SectionBasicMenu(items: basicItems)
         
-        [bannerCellData, specialCellData, basicCellData].forEach {
-            self.data.append($0)
-        }
+        let data = [bannerCellData, specialCellData, basicCellData]
+        dataObservable = BehaviorRelay<[DeliveryMenuSectionModel]>(value: data)
+    }
+    
+    func setBannerTouchEvent(at viewController: UIViewController) {
+        self.banner.addTouchEvent(targetViewController: viewController)
     }
     
     func getBasicCellTitles() -> [String] {

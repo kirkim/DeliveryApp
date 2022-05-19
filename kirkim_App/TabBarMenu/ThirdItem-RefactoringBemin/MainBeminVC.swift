@@ -85,7 +85,7 @@ class MainBeminVC: UIViewController {
                 return cell
             }
             .disposed(by: disposeBag)
-        
+        staticSectionViewModel.bannerView.addTouchEvent(targetViewController: self)
     }
     
     func createLayout() -> UICollectionViewCompositionalLayout {

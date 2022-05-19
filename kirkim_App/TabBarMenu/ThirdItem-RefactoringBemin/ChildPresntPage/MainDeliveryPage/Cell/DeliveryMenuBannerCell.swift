@@ -9,9 +9,6 @@ import UIKit
 import Reusable
 
 class DeliveryMenuBannerCell: UICollectionViewCell, Reusable {
-    var bannerView: BeminBannerView?
-    private var flag: Bool = false
-        
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -20,21 +17,16 @@ class DeliveryMenuBannerCell: UICollectionViewCell, Reusable {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setData(data: BannerSources) {
-        if (flag == false) {
-            self.flag = true
-            let hasBannerView = BeminBannerView(data: data)
-            self.bannerView = hasBannerView
-            self.addSubview(hasBannerView)
-            hasBannerView.snp.makeConstraints {
-                $0.edges.equalToSuperview()
-            }
-            let btnWidth = 100.0
-            let btnHeight = 30.0
-            let x = 300.0
-            let y = 100.0
-            hasBannerView.setButtonFrame(frame: CGRect(x: x, y: y, width: btnWidth, height: btnHeight))
+    func setBanner(banner: BeminBannerView) {
+        self.contentView.addSubview(banner)
+        banner.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
         
+        let width = 100.0
+        let height = 30.0
+        let x = self.contentView.frame.width - width - 10.0
+        let y = self.contentView.frame.height - height - 10.0
+        banner.setButtonFrame(frame: CGRect(x: x, y: y, width: width, height: height))
     }
 }

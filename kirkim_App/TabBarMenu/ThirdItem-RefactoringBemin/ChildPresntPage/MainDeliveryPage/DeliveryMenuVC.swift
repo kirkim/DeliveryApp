@@ -31,8 +31,8 @@ class DeliveryMenuVC: UIViewController {
     
     func bind(_ viewModel: DeliveryMenuViewModel) {
         let dataSource = viewModel.dataSource()
-        Observable.just(viewModel.data)
-            .bind(to: self.collectionView.rx.items(dataSource: dataSource))
+        viewModel.data
+            .drive(self.collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
         self.collectionView.rx.itemSelected

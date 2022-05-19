@@ -8,8 +8,8 @@
 import UIKit
 
 class TopBarVCWithProfile: BaseVC {
-    private let deliveryListVC = DeliveryMenuVC()
-    private let deliveryListViewModel = DeliveryMenuViewModel()
+    private let deliveryMenuVC = DeliveryMenuVC()
+    private let deliveryMenuViewModel = DeliveryMenuViewModel()
     private let viewModel: TopBarMainViewModel
     private let startPage: Int
     
@@ -18,7 +18,7 @@ class TopBarVCWithProfile: BaseVC {
         
         self.viewModel = TopBarMainViewModel(
             topBarItems: [
-                TopBarItem(viewController: deliveryListVC, itemTitle: "배민1"),
+                TopBarItem(viewController: deliveryMenuVC, itemTitle: "배민1"),
                 TopBarItem(viewController: Test2(), itemTitle: "배달"),
                 TopBarItem(viewController: Test3(), itemTitle: "포장"),
                 TopBarItem(viewController: Test1(), itemTitle: "B마트"),
@@ -37,7 +37,8 @@ class TopBarVCWithProfile: BaseVC {
         )
 //        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        deliveryListVC.bind(deliveryListViewModel)
+        deliveryMenuViewModel.setBannerTouchEvent(at: self)
+        deliveryMenuVC.bind(deliveryMenuViewModel)
     }
     
     required init?(coder: NSCoder) {

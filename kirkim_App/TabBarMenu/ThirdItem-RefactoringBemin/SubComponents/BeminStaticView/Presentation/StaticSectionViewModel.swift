@@ -14,6 +14,7 @@ struct StaticSectionViewModel {
     var sectionContents: [RxStaticSectionData]
     private var sectionUIType: [StaticCellUIType]
     private let staticSectionModel = StaticSectionModel()
+    let bannerView: BeminBannerView
     
     private let disposeBag = DisposeBag()
     // View -> ViewModel
@@ -36,6 +37,8 @@ struct StaticSectionViewModel {
             .disposed(by: disposeBag)
         
         presentVC = staticSectionModel.presentVC
+        bannerView = BeminBannerView(
+            data: staticSectionModel.bannerSource)
     }
     
     // RxDataSources 형식으로 만든 셀 데이터
@@ -56,7 +59,9 @@ struct StaticSectionViewModel {
                 case .small_4:
                     cell = collectionView.dequeueReusableCell(withReuseIdentifier: StaticSmall_4Cell.cellId, for: indexPath)  as! StaticCellProtocol
                 case .banner:
-                    cell = collectionView.dequeueReusableCell(withReuseIdentifier: StaticBannerCell.cellId, for: indexPath) as! StaticCellProtocol
+                    let bannerCell = collectionView.dequeueReusableCell(withReuseIdentifier: StaticBannerCell.cellId, for: indexPath) as! StaticBannerCell
+                    bannerCell.setBanner(banner: bannerView)
+                    return bannerCell
                 }
                 cell.setData(item: item)
                 return cell as! UICollectionViewCell
