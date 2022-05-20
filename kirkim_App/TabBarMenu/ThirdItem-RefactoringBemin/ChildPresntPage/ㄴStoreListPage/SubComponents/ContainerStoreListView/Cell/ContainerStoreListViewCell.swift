@@ -25,7 +25,10 @@ class ContainerStoreListViewCell: UICollectionViewCell {
     }
     
     func bind(_ viewModel: StoreListViewModel) {
-        self.storeListView.bind(viewModel)
+        if (flag == false) {
+            flag = true
+            self.storeListView.bind(viewModel)
+        }
     }
     
     private func layout() {

@@ -232,6 +232,9 @@ function makeReview(): ReviewBundle {
     reviewCount++;
     reviews.push(item);
   });
+  // Typesecript에서 Date타입 연산하기위해서는 '+'기호를 붙여서 명시적으로 연산이 가능한 숫자로 표시해야됨
+  reviews.sort((a, b) => +b.createAt - +a.createAt);
+
   reviewBundle = {
     reviews: reviews,
     averageRating: reviewCount == 0 ? 0.0 : sumRating / reviewCount,

@@ -31,7 +31,6 @@ struct DeliveryMenuModel {
                                 ]
                                ))
         bannerCellData = DeliveryMenuSectionModel.SectionBanner(items: [BannerItem(banner: self.banner)])
-                        
         let basicItems = StoreType.allCases.map { type in
             return BasicMenuItem(logoImage: type.logoImage, menuType: type)
         }

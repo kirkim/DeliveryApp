@@ -24,12 +24,14 @@ class MagnetSummaryReviewModel {
                 switch result {
                 case .success(let data):
                     do {
-                        let dataModel = try JSONDecoder().decode([ReviewItem].self, from: data)
+                        var dataModel = try JSONDecoder().decode([ReviewItem].self, from: data)
+//                        dataModel.sort(by: (self?.sortLatest(a:b:))!)
                         var summaryReviews: [SummaryReviewData?] = []
                         dataModel.forEach { item in
                             let summaryReview = SummaryReviewData(thumbnail: item.photoUrl ?? "", review: item.description, rating: item.rating)
                             summaryReviews.append(summaryReview)
                         }
+                        
                         summaryReviews.append(nil)
                         self?.dataCount = summaryReviews.count - 1
                         self?.data.accept(summaryReviews)
@@ -44,6 +46,10 @@ class MagnetSummaryReviewModel {
             }
             .disposed(by: disposeBag)
     }
+    
+//    func sortLatest(a: ReviewItem, b: ReviewItem) -> Bool {
+//        return a.createAt > b.createAt
+//    }
     
     func setData(coView: UICollectionView) {
         self.data

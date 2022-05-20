@@ -48,6 +48,7 @@ class MagnetListViewModel {
             .asSignal()
         
         self.itemSelected
+            .filter { $0.section >= 3 }
             .map { MagnetPresentMenuVC(indexPath: $0, image: self.MenuImageStorage[$0]) }
             .bind(to: presentMenuVC)
             .disposed(by: disposeBag)

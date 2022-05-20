@@ -1753,13 +1753,13 @@
 		FEFA1EF52829FAEC0088BEEB /* ReviewView */ = {
 			isa = PBXGroup;
 			children = (
-				FEFA1EF62829FAEC0088BEEB /* SectionModel */,
-				FEFA1EF82829FAEC0088BEEB /* MagnetReviewHttpManager.swift */,
-				FEFA1EF92829FAEC0088BEEB /* PopupView */,
-				FEFA1EFC2829FAEC0088BEEB /* MagnetReviewViewModel.swift */,
-				FEFA1EFD2829FAEC0088BEEB /* Cell */,
 				FEFA1F032829FAEC0088BEEB /* MagnetReviewVC.swift */,
 				FEFA1F042829FAEC0088BEEB /* MagnetReviewModel.swift */,
+				FEFA1EF82829FAEC0088BEEB /* MagnetReviewHttpManager.swift */,
+				FEFA1EFC2829FAEC0088BEEB /* MagnetReviewViewModel.swift */,
+				FEFA1EF62829FAEC0088BEEB /* SectionModel */,
+				FEFA1EF92829FAEC0088BEEB /* PopupView */,
+				FEFA1EFD2829FAEC0088BEEB /* Cell */,
 			);
 			path = ReviewView;
 			sourceTree = "<group>";

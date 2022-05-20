@@ -44,7 +44,6 @@ class DeliveryMenuVC: UIViewController {
                 DispatchQueue.main.async {
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
-//
             }
             .disposed(by: disposeBag)
     }
