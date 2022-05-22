@@ -26,8 +26,8 @@ class RxSignupPageViewModel {
             idZoneViewModel.idText.share(),
             pwZoneViewModel.pwText.share(),
             nameZoneViewModel.nameText.share()
-        ) {  SignupUser(userID: $0, password: $1, name: $2) }
-            .asSignal(onErrorJustReturn:  SignupUser(userID: "", password: "", name: ""))
+        ) {  UserData(userID: $0, password: $1, name: $2) }
+            .asSignal(onErrorJustReturn:  UserData(userID: "", password: "", name: ""))
         
         SharedSequence.combineLatest(
             idZoneViewModel.isValid,

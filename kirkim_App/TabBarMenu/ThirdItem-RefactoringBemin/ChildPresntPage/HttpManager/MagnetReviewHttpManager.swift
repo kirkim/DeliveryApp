@@ -9,11 +9,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-struct ReviewJSONData: Codable {
-    var reviews: [ReviewItem]
-    var averageRating: CGFloat
-}
-
 class MagnetReviewHttpManager {
     static let shared = MagnetReviewHttpManager()
     private init() {

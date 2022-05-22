@@ -5,6 +5,7 @@ import cors from 'cors';
 import userRouter from './router/userRouter.js';
 import bannerRouter from './router/bannerRouter.js';
 import deliveryRouter from './router/deliveryRouter.js';
+import reviewRouter from './router/reviewRouter.js';
 
 const server = express();
 const PORT = config.host.port;
@@ -18,6 +19,7 @@ server.use(express.static(staticUrl));
 server.use('/user', userRouter);
 server.use('/banner', bannerRouter);
 server.use('/delivery', deliveryRouter);
+server.use('/review', reviewRouter);
 
 server.use((_req: Request, res: Response, _next: NextFunction) => {
   return res.sendStatus(404);

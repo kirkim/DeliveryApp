@@ -25,7 +25,7 @@ class MagnetReviewCell: UITableViewCell {
     }
     
     func setData(data: ReviewItem, image: UIImage?) {
-        self.nameLabel.text = data.userId
+        self.nameLabel.text = data.userInfo.name
         self.ratingLabel.text = setStar(rating: data.rating)
         self.dateLabel.text = parsingDate(date: data.createAt).description
         self.reviewLabel.text = data.description

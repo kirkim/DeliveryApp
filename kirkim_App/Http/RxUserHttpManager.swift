@@ -24,7 +24,7 @@ class RxUserHttpManager {
         return self.postFetch(type: .checkId, body: data)
     }
     
-    public func signUpUser(userData: SignupUser) -> Single<Result<Data, CustomError>> {
+    public func signUpUser(userData: UserData) -> Single<Result<Data, CustomError>> {
         return self.postFetch(type: .signUp, body: userData)
     }
     

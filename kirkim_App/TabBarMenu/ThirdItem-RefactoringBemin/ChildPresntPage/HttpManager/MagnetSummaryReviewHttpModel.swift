@@ -9,7 +9,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class MagnetSummaryReviewModel {
+class MagnetSummaryReviewHttpModel {
     let data = PublishRelay<[SummaryReviewData?]>()
 
     private let httpManager = DeliveryHttpManager.shared
@@ -24,8 +24,7 @@ class MagnetSummaryReviewModel {
                 switch result {
                 case .success(let data):
                     do {
-                        var dataModel = try JSONDecoder().decode([ReviewItem].self, from: data)
-//                        dataModel.sort(by: (self?.sortLatest(a:b:))!)
+                        let dataModel = try JSONDecoder().decode([ReviewItem].self, from: data)
                         var summaryReviews: [SummaryReviewData?] = []
                         dataModel.forEach { item in
                             let summaryReview = SummaryReviewData(thumbnail: item.photoUrl ?? "", review: item.description, rating: item.rating)

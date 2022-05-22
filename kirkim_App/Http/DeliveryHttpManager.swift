@@ -22,9 +22,9 @@ enum DeliveryGetType: UrlType {
         case .detailStore(let code):
             return "\(BASE_URL)/delivery/detail?storeCode=\(code)"
         case .allReviews(let code):
-            return "\(BASE_URL)/delivery/reviews?storeCode=\(code)"
+            return "\(BASE_URL)/review/all?storeCode=\(code)"
         case .summaryReviews(let code, let count):
-            return "\(BASE_URL)/delivery/review?storeCode=\(code)&count=\(count)"
+            return "\(BASE_URL)/review/some?storeCode=\(code)&count=\(count)"
         }
     }
 }

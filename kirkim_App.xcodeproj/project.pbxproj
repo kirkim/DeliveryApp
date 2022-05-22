@@ -87,6 +87,7 @@
 		FE84E4A027D07F1C00B30F57 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE84E49F27D07F1C00B30F57 /* PlayerView.swift */; };
 		FE85B4E927EAA88C0031F5AC /* SideMenuView+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85B4E827EAA88C0031F5AC /* SideMenuView+Protocol.swift */; };
 		FE85B4F327EAAC5E0031F5AC /* KiflixModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85B4F227EAAC5E0031F5AC /* KiflixModel.swift */; };
+		FE8AC93C2839DB8300CF11A2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8AC93B2839DB8300CF11A2 /* User.swift */; };
 		FE8BE4BF27F2CD2C002F744F /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8BE4BE27F2CD2C002F744F /* CustomError.swift */; };
 		FE8D305D27FC682A00F55EEE /* MainBeminViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D302827FC682900F55EEE /* MainBeminViewModel.swift */; };
 		FE8D305E27FC682A00F55EEE /* BeminSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D302B27FC682900F55EEE /* BeminSearchView.swift */; };
@@ -130,6 +131,7 @@
 		FE94DD7127B655190017D776 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE94DD7027B655190017D776 /* Assets.xcassets */; };
 		FE94DD7427B655190017D776 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE94DD7227B655190017D776 /* LaunchScreen.storyboard */; };
 		FE9AF67B27F20DD0006E8472 /* RxUserHttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9AF67A27F20DD0006E8472 /* RxUserHttpManager.swift */; };
+		FE9C6589283A0A44005088A3 /* ReviewJSONData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9C6588283A0A44005088A3 /* ReviewJSONData.swift */; };
 		FE9CFC18282A9CD2007926ED /* CartTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9CFC17282A9CD2007926ED /* CartTypeCell.swift */; };
 		FE9CFC1A282A9D20007926ED /* CartPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9CFC19282A9D20007926ED /* CartPriceCell.swift */; };
 		FE9CFC1C282ABED5007926ED /* CartTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9CFC1B282ABED5007926ED /* CartTypeViewModel.swift */; };
@@ -246,7 +248,7 @@
 		FEFA1F7D2829FAEC0088BEEB /* MagnetInfoReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F392829FAEC0088BEEB /* MagnetInfoReviewCell.swift */; };
 		FEFA1F7E2829FAEC0088BEEB /* MagnetInfoMoreButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F3A2829FAEC0088BEEB /* MagnetInfoMoreButtonCell.swift */; };
 		FEFA1F7F2829FAEC0088BEEB /* SummaryReviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F3C2829FAEC0088BEEB /* SummaryReviewData.swift */; };
-		FEFA1F802829FAEC0088BEEB /* MagnetSummaryReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F3D2829FAEC0088BEEB /* MagnetSummaryReviewModel.swift */; };
+		FEFA1F802829FAEC0088BEEB /* MagnetSummaryReviewHttpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F3D2829FAEC0088BEEB /* MagnetSummaryReviewHttpModel.swift */; };
 		FEFA1F812829FAEC0088BEEB /* MagnetSummaryReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F3E2829FAEC0088BEEB /* MagnetSummaryReviewViewModel.swift */; };
 		FEFA1F822829FAEC0088BEEB /* MagnetSummaryReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F3F2829FAEC0088BEEB /* MagnetSummaryReviewView.swift */; };
 		FEFA1F832829FAEC0088BEEB /* TakeoutInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA1F412829FAEC0088BEEB /* TakeoutInfoView.swift */; };
@@ -380,6 +382,7 @@
 		FE84E49F27D07F1C00B30F57 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		FE85B4E827EAA88C0031F5AC /* SideMenuView+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SideMenuView+Protocol.swift"; sourceTree = "<group>"; };
 		FE85B4F227EAAC5E0031F5AC /* KiflixModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiflixModel.swift; sourceTree = "<group>"; };
+		FE8AC93B2839DB8300CF11A2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FE8BE4BE27F2CD2C002F744F /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		FE8D302827FC682900F55EEE /* MainBeminViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainBeminViewModel.swift; sourceTree = "<group>"; };
 		FE8D302B27FC682900F55EEE /* BeminSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeminSearchView.swift; sourceTree = "<group>"; };
@@ -424,6 +427,7 @@
 		FE94DD7327B655190017D776 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE94DD7527B655190017D776 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE9AF67A27F20DD0006E8472 /* RxUserHttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxUserHttpManager.swift; sourceTree = "<group>"; };
+		FE9C6588283A0A44005088A3 /* ReviewJSONData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewJSONData.swift; sourceTree = "<group>"; };
 		FE9CFC17282A9CD2007926ED /* CartTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTypeCell.swift; sourceTree = "<group>"; };
 		FE9CFC19282A9D20007926ED /* CartPriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPriceCell.swift; sourceTree = "<group>"; };
 		FE9CFC1B282ABED5007926ED /* CartTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTypeViewModel.swift; sourceTree = "<group>"; };
@@ -537,7 +541,7 @@
 		FEFA1F392829FAEC0088BEEB /* MagnetInfoReviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetInfoReviewCell.swift; sourceTree = "<group>"; };
 		FEFA1F3A2829FAEC0088BEEB /* MagnetInfoMoreButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetInfoMoreButtonCell.swift; sourceTree = "<group>"; };
 		FEFA1F3C2829FAEC0088BEEB /* SummaryReviewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryReviewData.swift; sourceTree = "<group>"; };
-		FEFA1F3D2829FAEC0088BEEB /* MagnetSummaryReviewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetSummaryReviewModel.swift; sourceTree = "<group>"; };
+		FEFA1F3D2829FAEC0088BEEB /* MagnetSummaryReviewHttpModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetSummaryReviewHttpModel.swift; sourceTree = "<group>"; };
 		FEFA1F3E2829FAEC0088BEEB /* MagnetSummaryReviewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetSummaryReviewViewModel.swift; sourceTree = "<group>"; };
 		FEFA1F3F2829FAEC0088BEEB /* MagnetSummaryReviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetSummaryReviewView.swift; sourceTree = "<group>"; };
 		FEFA1F412829FAEC0088BEEB /* TakeoutInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakeoutInfoView.swift; sourceTree = "<group>"; };
@@ -793,7 +797,6 @@
 			isa = PBXGroup;
 			children = (
 				FE38F45A27F7170F008BBE8B /* LoginStatus+enum.swift */,
-				FE38F45B27F7170F008BBE8B /* UserModel.swift */,
 				FE38F45C27F7170F008BBE8B /* LoginUserModel.swift */,
 			);
 			path = Entities;
@@ -1075,6 +1078,15 @@
 			path = ProfileView;
 			sourceTree = "<group>";
 		};
+		FE8AC93A2839D68000CF11A2 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				FE38F45B27F7170F008BBE8B /* UserModel.swift */,
+				FE8AC93B2839DB8300CF11A2 /* User.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		FE8D302727FC682900F55EEE /* ThirdItem-RefactoringBemin */ = {
 			isa = PBXGroup;
 			children = (
@@ -1308,6 +1320,7 @@
 		FE94DD6327B655190017D776 /* kirkim_App */ = {
 			isa = PBXGroup;
 			children = (
+				FE8AC93A2839D68000CF11A2 /* User */,
 				FEF8848327BA5C670038F138 /* Login&SignUp */,
 				FE74FEB427CDC3F900F40D5F /* TabBarMenu */,
 				FE078F1227C341D100D19E34 /* SideMenu */,
@@ -1454,6 +1467,8 @@
 			children = (
 				FEFA1F4F2829FAEC0088BEEB /* DetailStoreHttpModel.swift */,
 				FEFA1ECC2829FACD0088BEEB /* SummaryStoreHttpModel.swift */,
+				FEFA1F3D2829FAEC0088BEEB /* MagnetSummaryReviewHttpModel.swift */,
+				FEFA1EF82829FAEC0088BEEB /* MagnetReviewHttpManager.swift */,
 				FECC16442830A4EB004A2395 /* Entities */,
 			);
 			path = HttpManager;
@@ -1463,6 +1478,7 @@
 			isa = PBXGroup;
 			children = (
 				FECC16452830A50A004A2395 /* DetailStore.swift */,
+				FE9C6588283A0A44005088A3 /* ReviewJSONData.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1754,9 +1770,8 @@
 			isa = PBXGroup;
 			children = (
 				FEFA1F032829FAEC0088BEEB /* MagnetReviewVC.swift */,
-				FEFA1F042829FAEC0088BEEB /* MagnetReviewModel.swift */,
-				FEFA1EF82829FAEC0088BEEB /* MagnetReviewHttpManager.swift */,
 				FEFA1EFC2829FAEC0088BEEB /* MagnetReviewViewModel.swift */,
+				FEFA1F042829FAEC0088BEEB /* MagnetReviewModel.swift */,
 				FEFA1EF62829FAEC0088BEEB /* SectionModel */,
 				FEFA1EF92829FAEC0088BEEB /* PopupView */,
 				FEFA1EFD2829FAEC0088BEEB /* Cell */,
@@ -1785,10 +1800,10 @@
 			isa = PBXGroup;
 			children = (
 				FEFA1EFE2829FAEC0088BEEB /* MagnetReviewTotalRatingCell.swift */,
+				FEFA1F022829FAEC0088BEEB /* MagnetReviewCell.xib */,
 				FEFA1EFF2829FAEC0088BEEB /* MagnetReviewCell.swift */,
 				FEFA1F002829FAEC0088BEEB /* MagnetReviewHeaderCell.swift */,
 				FEFA1F012829FAEC0088BEEB /* MagnetReviewHeaderCellViewModel.swift */,
-				FEFA1F022829FAEC0088BEEB /* MagnetReviewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1977,8 +1992,6 @@
 			isa = PBXGroup;
 			children = (
 				FEFA1F362829FAEC0088BEEB /* SubComponents */,
-				FEFA1F432829FAEC0088BEEB /* MagnetInfoView.swift */,
-				FEFA1F442829FAEC0088BEEB /* MagnetInfoViewModel.swift */,
 			);
 			path = LayoutView;
 			sourceTree = "<group>";
@@ -1986,6 +1999,8 @@
 		FEFA1F362829FAEC0088BEEB /* SubComponents */ = {
 			isa = PBXGroup;
 			children = (
+				FEFA1F432829FAEC0088BEEB /* MagnetInfoView.swift */,
+				FEFA1F442829FAEC0088BEEB /* MagnetInfoViewModel.swift */,
 				FEFA1F372829FAEC0088BEEB /* ReviewSummaryCollectionView */,
 				FEFA1F402829FAEC0088BEEB /* DeliveryOrTakeoutInfoView */,
 			);
@@ -1995,11 +2010,10 @@
 		FEFA1F372829FAEC0088BEEB /* ReviewSummaryCollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				FEFA1F3F2829FAEC0088BEEB /* MagnetSummaryReviewView.swift */,
+				FEFA1F3E2829FAEC0088BEEB /* MagnetSummaryReviewViewModel.swift */,
 				FEFA1F382829FAEC0088BEEB /* Cells */,
 				FEFA1F3B2829FAEC0088BEEB /* Entitiy */,
-				FEFA1F3D2829FAEC0088BEEB /* MagnetSummaryReviewModel.swift */,
-				FEFA1F3E2829FAEC0088BEEB /* MagnetSummaryReviewViewModel.swift */,
-				FEFA1F3F2829FAEC0088BEEB /* MagnetSummaryReviewView.swift */,
 			);
 			path = ReviewSummaryCollectionView;
 			sourceTree = "<group>";
@@ -2365,7 +2379,7 @@
 				FEFA1BE02829EF140088BEEB /* TotalBannerListViewModel.swift in Sources */,
 				FEFA1EDB2829FACD0088BEEB /* TopSlideBarViewModel.swift in Sources */,
 				FE7FC0CD27C48F22009EB2AE /* TestView1-1.swift in Sources */,
-				FEFA1F802829FAEC0088BEEB /* MagnetSummaryReviewModel.swift in Sources */,
+				FEFA1F802829FAEC0088BEEB /* MagnetSummaryReviewHttpModel.swift in Sources */,
 				FE8EF12827F3E74F00EEAC69 /* UserType.swift in Sources */,
 				FEFBB5E928029D3F00864528 /* BundleBaseButton.swift in Sources */,
 				FEFA1F542829FAEC0088BEEB /* MagnetReviewHttpManager.swift in Sources */,
@@ -2445,6 +2459,7 @@
 				FE8D307527FC682A00F55EEE /* StaticSectionCell.swift in Sources */,
 				FE8EF16327F425E300EEAC69 /* SignupIdZoneViewModel.swift in Sources */,
 				FEFA1FA9282A218E0088BEEB /* CountStepperViewModel.swift in Sources */,
+				FE8AC93C2839DB8300CF11A2 /* User.swift in Sources */,
 				FE21133127BCD095003293B2 /* SignUpPageVC.swift in Sources */,
 				FEFA1EEE2829FACD0088BEEB /* DeliveryMenuBannerCell.swift in Sources */,
 				FEFA1F552829FAEC0088BEEB /* PickSortTypeViewModel.swift in Sources */,
@@ -2453,6 +2468,7 @@
 				FE38F46A27F7170F008BBE8B /* LoginUserModel.swift in Sources */,
 				FE47CAD027C114210077806D /* UserHttpManager.swift in Sources */,
 				FEFA1F9C282A1B050088BEEB /* CartTableView.swift in Sources */,
+				FE9C6589283A0A44005088A3 /* ReviewJSONData.swift in Sources */,
 				FEFA1F7C2829FAEC0088BEEB /* MagnetInfoButton.swift in Sources */,
 				FEFA1BDB2829EF140088BEEB /* BeminBannerView.swift in Sources */,
 				FEFA1EE82829FACD0088BEEB /* ContainerStoreListViewCell.swift in Sources */,

@@ -1,20 +1,6 @@
 import fs from 'fs';
 import config from '../../config.js';
-
-/****** Review ******/
-export type Review = {
-  reviewId: number;
-  userId: string;
-  rating: number;
-  description: string;
-  photoUrl: string | undefined;
-  createAt: Date;
-};
-
-export type ReviewBundle = {
-  reviews: Array<Review>;
-  averageRating: number;
-};
+import { storeCodes } from './storeCodes.js';
 
 /****** Menu ******/
 export type Menu = {
@@ -59,7 +45,6 @@ export type Store = {
   bannerPhotoUrl: string[];
   thumbnailUrl: string;
   menuSection: Array<MenuSection>;
-  review: ReviewBundle;
 };
 
 export type DetailStore = {
@@ -79,16 +64,16 @@ export type StoreBundle = {
   updatedAt: Date;
 };
 
-export let data: StoreBundle;
+export let storeData: StoreBundle;
 
 let mainUrl = config.static.url + '/delivery';
 let hostUrl = config.server.baseUrl + '/delivery';
 
-function updateData(storeCount: number) {
+function updateData(storeCodes: string[]) {
   let storeBundle: Store[] = [];
-  for (let i = 0; i < storeCount; i++) {
+  storeCodes.forEach((storeCode) => {
     let store: Store = {
-      code: i.toString(),
+      code: storeCode,
       storeType: randomStoreType(),
       storeName: randomStoreName(),
       deliveryPrice: randomDeliveryPrice(),
@@ -97,11 +82,10 @@ function updateData(storeCount: number) {
       bannerPhotoUrl: makeBannerImageUrlBundle(),
       thumbnailUrl: getThumbnailUrl(),
       menuSection: makeSection(),
-      review: makeReview(),
     };
     storeBundle.push(store);
-  }
-  data = {
+  });
+  storeData = {
     storeCount: storeBundle.length,
     stores: storeBundle,
     updatedAt: new Date(),
@@ -208,50 +192,7 @@ function makeOptionMenu(): OptionMenu {
   return optionMenu;
 }
 
-function makeReview(): ReviewBundle {
-  let reviewBundle: ReviewBundle;
-  let reviews: Review[] = [];
-  let reviewCount: number = 0;
-  let sumRating: number = 0;
-
-  let files = fs.readdirSync(mainUrl + '/review'); // 리뷰모델은 요소들의 평점 평균값을 실시간으로 계산해야하므로 동기적으로 처리함
-  let totalCount = files.length;
-  let minCount = 4;
-  let rand = Math.floor(Math.random() * (totalCount - minCount) + minCount);
-  let numberArray = randomNumberArray(rand, totalCount);
-  numberArray.forEach((index) => {
-    let item: Review = {
-      reviewId: index,
-      userId: '1', // [TODO] 랜덤유저아이디 만들어주자
-      rating: randomRating(),
-      description: randomReviewDescription(),
-      photoUrl: sometimesGiveUndefined(files[index]!),
-      createAt: randomDate(),
-    };
-    sumRating += item.rating;
-    reviewCount++;
-    reviews.push(item);
-  });
-  // Typesecript에서 Date타입 연산하기위해서는 '+'기호를 붙여서 명시적으로 연산이 가능한 숫자로 표시해야됨
-  reviews.sort((a, b) => +b.createAt - +a.createAt);
-
-  reviewBundle = {
-    reviews: reviews,
-    averageRating: reviewCount == 0 ? 0.0 : sumRating / reviewCount,
-  };
-  return reviewBundle;
-}
-
-function sometimesGiveUndefined(fileName: string): string | undefined {
-  let rand = Math.floor(Math.random() * 10);
-  if (rand > 3) {
-    return hostUrl + /review/ + fileName;
-  } else {
-    return undefined;
-  }
-}
-
-function randomNumberArray(pickCount: number, totalCount: number): number[] {
+export function randomNumberArray(pickCount: number, totalCount: number): number[] {
   if (pickCount > totalCount) {
     console.log('why pickCount is bigger than totalCount!');
     return [];
@@ -289,16 +230,6 @@ function randomPriceOrUndefined(): number | undefined {
   return rValue;
 }
 
-function randomRating(): number {
-  let price: number[] = [1, 2, 3, 4, 5];
-  let rand = Math.floor(Math.random() * price.length);
-  let rValue = price[rand];
-  if (rValue == undefined) {
-    rValue = 5;
-  }
-  return rValue;
-}
-
 function randomDeliveryPrice(): number {
   let price: number[] = [0, 1000, 2000, 3000, 4000];
   let rand = Math.floor(Math.random() * price.length);
@@ -307,13 +238,6 @@ function randomDeliveryPrice(): number {
     rValue = 0;
   }
   return rValue;
-}
-
-function randomDate(): Date {
-  const today = new Date();
-  const rand = Math.floor(Math.random() * 60);
-  const resultDate = new Date(today.setDate(today.getDate() - rand));
-  return resultDate;
 }
 
 function randomAddressType(): string {
@@ -451,35 +375,6 @@ function randomDetailMenuDescription(): string | undefined {
   return rValue;
 }
 
-function randomReviewDescription(): string {
-  let description: string[] = [
-    '떡볶이 쫄깃하고 맵달하니 맛있어요! 순대는 하도 맛있다길래 얼마나 맛있나 했더니 아버지도 먹자마자 순대 맛있단 말씀부터 하시네요 ㅋㅋㅋ',
-    '1인세트인데 닭강정 양도 푸짐하고 김밥에 참치도 아낌없이 넣어주시네요 👍🏻 단골될 것 같아요 잘 먹었습니다~',
-    '잘먹었습니다!',
-    '항상 맛있게 잘 먹구 있습니다~ 번창하세요!!',
-    '항상 그랬듯너무 맛있습니다~~ 근데 종이용기가 안 와서 아쉬웠어요 ㅠㅠ',
-    '로제 떡볶이도 완전 맛있는 소스였고~ 빙수는 양이 많아 좋습니다 맛있어요',
-    '별점 난리났길래 걱정했는데 잘 왔음',
-    '야채 진짜 꽉채워주시고 배송도 빨라요!!!! 대만족 앞으로도 섭웨이는 여기서 시켜먹을겁니당 ㅎㅎ',
-    '항상 가서만 먹었는데 너무 빨리 가져다주시고 감사합니다 너무 맛있게 잘 먹었습니다👍🏻 👍🏻 👍🏻',
-    '음식 너무 맛있는데/n배달 너무 늦었어요.o.o/n음료수라도 주실줄 알았는데..ㅡㅡ',
-    '찹쌀페이스트리는 언제 먹어도 맛있네요',
-    '너무 늦은 시간에 주문했는데 수락해주시고 정성껏 만들어 보내주셔서 감사합니다!',
-    '달달하고 너무 맛있어용',
-    '도우가 너무 특별했습니다 말랑말랑 부드럽고 피자를 먹으면 소화가 잘 안되는데 속이 너무 편하고 소화가 잘 됐습니다 그래서 우리아이가 피자를 싫어하는데 이건 너무 맛있다고 합니다 맛도 있고 양도 푸짐하고 피자는 여기로 정착해야 겠어요~~^^',
-    '역시는역시!!굿굿',
-    '',
-    '두 번째로 시켰는데 역시 맛있었습니다 양도 푸짐하고 ㅎㅎ 혼밥러 최고 배달집입니다',
-    '어떤분이 리뷰에서 추천한 새우볼 진짜 맛있어요! 맵찔이인 저에게 보통맛도 맵지만 ㅠ 맛있게 먹었습니다.. 맵찔이도 매운거 먹고 싶은 날이 있잖아요..\n맛있게 매워요!',
-  ];
-  let rand = Math.floor(Math.random() * description.length);
-  let rValue = description[rand];
-  if (rValue == undefined) {
-    rValue = '';
-  }
-  return rValue;
-}
-
 function randomSectionName(): string {
   let description: string[] = [
     '추천메뉴',
@@ -590,4 +485,4 @@ function randomOptionName(): string {
   return rValue;
 }
 
-updateData(200);
+updateData(storeCodes);

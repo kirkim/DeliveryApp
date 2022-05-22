@@ -13,7 +13,7 @@ import Reusable
 class MagnetSummaryReviewView: UICollectionView {
     private let disposeBag = DisposeBag()
     private let viewModel = MagnetSummaryReviewViewModel()
-    private let model = MagnetSummaryReviewModel()
+    private let model = MagnetSummaryReviewHttpModel()
     
     init() {
         super.init(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())

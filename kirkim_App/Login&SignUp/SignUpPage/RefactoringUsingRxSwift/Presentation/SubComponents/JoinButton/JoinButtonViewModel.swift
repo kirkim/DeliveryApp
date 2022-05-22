@@ -21,7 +21,7 @@ struct JoinButtonViewModel {
     let presentAlert = PublishRelay<CustomAlert>()
     
     //ParentViewModel(RxSignupPageViewModel) -> ViewModel
-    let postSigUp = PublishRelay<SignupUser>()
+    let postSigUp = PublishRelay<UserData>()
     
     init() {
         buttonTapped
@@ -30,7 +30,7 @@ struct JoinButtonViewModel {
             .disposed(by: disposeBag)
     }
     
-    private func signUp(userData: SignupUser) {
+    private func signUp(userData: UserData) {
         self.httpManager.signUpUser(userData: userData)
             .observe(on: MainScheduler.instance)
             .subscribe { result in

@@ -12,9 +12,15 @@ protocol MagnetReviewItem {
     
 }
 
+struct UserInfo: Codable {
+    var userID: String
+    var name: String
+    var id: String
+}
+
 struct ReviewItem: MagnetReviewItem, Codable {
     var reviewId: Int
-    var userId: String
+    var userInfo: UserInfo
     var rating: Int
     var description: String
     var photoUrl: String?

@@ -1,4 +1,5 @@
-import { data, StoreType, DetailStore, ReviewBundle, Review } from './data/deliveryStorage.js';
+import { storeData, StoreType, DetailStore } from './data/deliveryStorage.js';
+import { getReviewDataForSummary } from './reviewData.js';
 
 export type SummaryStore = {
   storeCode: string;
@@ -13,17 +14,18 @@ export type SummaryStore = {
 };
 
 export async function getSummaryStores(type: StoreType): Promise<Array<SummaryStore>> {
-  let validStores = data.stores.filter((store) => {
+  let validStores = storeData.stores.filter((store) => {
     return store.storeType == type;
   });
 
   let summaryStores: Array<SummaryStore> = validStores.map((store) => {
+    let reviewData = getReviewDataForSummary(store.code);
     let summaryStore: SummaryStore = {
       storeCode: store.code,
       storeType: store.storeType,
       storeName: store.storeName,
-      averageRating: store.review.averageRating,
-      reviewCount: store.review.reviews.length,
+      averageRating: reviewData.average,
+      reviewCount: reviewData.count,
       minPrice: store.minPrice,
       deliveryPrice: store.deliveryPrice,
       thumbnailUrl: store.thumbnailUrl,
@@ -38,7 +40,7 @@ export async function getSummaryStores(type: StoreType): Promise<Array<SummarySt
 }
 
 export async function getDetailStore(storeCode: string): Promise<DetailStore | undefined> {
-  let store = data.stores.find((store) => store.code === storeCode);
+  let store = storeData.stores.find((store) => store.code === storeCode);
   if (store == undefined) {
     return undefined;
   }
@@ -53,31 +55,4 @@ export async function getDetailStore(storeCode: string): Promise<DetailStore | u
     menuSection: store.menuSection,
   };
   return detailStore;
-}
-
-export async function getAllReviews(storeCode: string): Promise<ReviewBundle | undefined> {
-  let store = data.stores.find((store) => store.code === storeCode);
-  if (store == undefined) {
-    return undefined;
-  }
-  return store.review;
-}
-
-export async function getReviews(storeCode: string, count: number): Promise<Review[] | undefined> {
-  let store = data.stores.find((store) => store.code === storeCode);
-  if (store == undefined) {
-    return undefined;
-  }
-  let reviewBundle = store.review.reviews.filter((review) => {
-    return review.photoUrl !== undefined;
-  });
-  let reviews: Review[] = [];
-  count = count > reviewBundle.length ? reviewBundle.length : count;
-  for (let i = 0; i < count; i++) {
-    let review = reviewBundle[i];
-    if (review !== undefined) {
-      reviews.push(review);
-    }
-  }
-  return reviews;
 }

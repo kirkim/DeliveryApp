@@ -1,6 +1,12 @@
 import bcrypt from 'bcrypt';
 import config from '../config.js';
 
+export type UserInfo = {
+  userID: string;
+  name: string;
+  id: string;
+};
+
 export type User = {
   userID: string;
   password: string;
@@ -31,6 +37,16 @@ let userDatas: UserDatas = [
     id: '2',
   },
 ];
+
+export function getRandomUser(): UserInfo {
+  let rand = Math.floor(Math.random() * userDatas.length);
+  let rValue = userDatas[rand]!;
+  return {
+    userID: rValue.data.userID,
+    name: rValue.data.name,
+    id: rValue.id,
+  };
+}
 
 async function hashPassword(password: string): Promise<string> {
   return await bcrypt.hash(password, config.bcrypt.saltRounds);

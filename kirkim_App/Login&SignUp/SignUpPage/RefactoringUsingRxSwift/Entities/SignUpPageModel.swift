@@ -7,18 +7,7 @@
 
 import Foundation
 
-struct User: Codable {
-    var data: SignupUser
-    var id: String
-}
-
-struct SignupUser: Codable {
-    var userID: String
-    var password: String
-    var name: String
-}
-
-//SignupUser은 Rx버전에서는 사용x
+//SignUserData은 Rx버전에서는 사용x
 struct SignUserData: Codable {
     var userID: String
     var password: String
