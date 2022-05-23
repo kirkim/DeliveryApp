@@ -1,12 +1,18 @@
 import fs from 'fs';
 import config from '../../config.js';
+import { getStoreInfo } from '../deliveryData.js';
 import { getRandomUser, UserInfo } from '../userData.js';
 import { randomNumberArray } from './deliveryStorage.js';
 import { storeCodes } from './storeCodes.js';
 
+export type StoreInfo = {
+  storeCode: string;
+  storeName: string;
+};
+
 /****** Review ******/
 export type Review = {
-  storeCode: string;
+  storeInfo: StoreInfo;
   reviewId: number;
   userInfo: UserInfo;
   rating: number;
@@ -38,7 +44,7 @@ function makeReviews(storeCode: string): Review[] {
   let numberArray = randomNumberArray(rand, totalCount);
   numberArray.forEach((index) => {
     let item: Review = {
-      storeCode: storeCode,
+      storeInfo: getStoreInfo(storeCode),
       reviewId: index,
       userInfo: getRandomUser(),
       rating: randomRating(),

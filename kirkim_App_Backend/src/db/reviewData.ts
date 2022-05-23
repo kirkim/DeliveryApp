@@ -14,7 +14,7 @@ export function getReviewDataForSummary(storeCode: string): ReviewDataForSummary
   let totalCount: number = 0;
   let sumRating: number = 0;
   reviewData.forEach((review) => {
-    if (review.storeCode === storeCode) {
+    if (review.storeInfo.storeCode === storeCode) {
       totalCount += 1;
       sumRating += review.rating;
       return true;
@@ -38,7 +38,7 @@ export async function getAllReviews(storeCode: string): Promise<ReviewJson | und
   let totalCount: number = 0;
   let sumRating: number = 0;
   let reviews = reviewData.filter((review) => {
-    if (review.storeCode === storeCode) {
+    if (review.storeInfo.storeCode === storeCode) {
       totalCount += 1;
       sumRating += review.rating;
       return true;
@@ -57,19 +57,29 @@ export async function getAllReviews(storeCode: string): Promise<ReviewJson | und
 
 export async function getReviews(storeCode: string, count: number): Promise<Review[] | undefined> {
   let reviews: Review[] = [];
-  let i = 0;
-  reviewData.filter((review) => {
-    if (review.storeCode === storeCode) {
-      i++;
+  let flag: number = 0;
+  for (let i = 0; i < reviewData.length; i++) {
+    let review = reviewData[i]!;
+    if (review.storeInfo.storeCode === storeCode && review.photoUrl !== undefined) {
+      flag++;
       reviews.push(review);
     }
-    if (i == count) {
-      return;
+    if (flag === count) {
+      break;
     }
-  });
+  }
   if (reviews == undefined) {
     return undefined;
   }
+  return reviews;
+}
 
+export async function getReviewsById(id: String): Promise<Review[] | undefined> {
+  let reviews: Review[] = [];
+  reviewData.forEach((review) => {
+    if (review.userInfo.id == id) {
+      reviews.push(review);
+    }
+  });
   return reviews;
 }

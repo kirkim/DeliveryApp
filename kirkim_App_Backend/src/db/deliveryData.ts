@@ -1,4 +1,5 @@
 import { storeData, StoreType, DetailStore } from './data/deliveryStorage.js';
+import { StoreInfo } from './data/reviewStorage.js';
 import { getReviewDataForSummary } from './reviewData.js';
 
 export type SummaryStore = {
@@ -12,6 +13,20 @@ export type SummaryStore = {
   thumbnailUrl: string;
   twoMainMenuName: [string, string];
 };
+
+export function getStoreInfo(storeCode: string): StoreInfo {
+  var name: string = '';
+  storeData.stores.forEach((store) => {
+    if (store.code === storeCode) {
+      name = store.storeName;
+      return;
+    }
+  });
+  return {
+    storeCode: storeCode,
+    storeName: name,
+  };
+}
 
 export async function getSummaryStores(type: StoreType): Promise<Array<SummaryStore>> {
   let validStores = storeData.stores.filter((store) => {

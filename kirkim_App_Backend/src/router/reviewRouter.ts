@@ -1,9 +1,9 @@
-import express from 'express';
-import * as reviewController from '../controller/reviewController.js';
+// import express from 'express';
+// import * as reviewController from '../controller/reviewController.js';
 
-const reviewRouter = express.Router();
+// const reviewRouter = express.Router();
 
-reviewRouter.route('/all').get(reviewController.getAllReviews);
-reviewRouter.route('/some').get(reviewController.getReviews);
+// reviewRouter.route('/store').get(reviewController.getReviewsByStoreCode);
+// reviewRouter.route('/id');
 
-export default reviewRouter;
+// export default reviewRouter;

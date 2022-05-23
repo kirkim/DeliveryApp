@@ -15,7 +15,7 @@ class MagnetSummaryReviewHttpModel {
     private let httpManager = DeliveryHttpManager.shared
     private let storeHttpManager = DetailStoreDataManager.shared
     private let disposeBag = DisposeBag()
-    private var summaryReviewImageStorage: [Int : UIImage] = [:]
+    private var summaryReviewImageStorage: [String : UIImage] = [:]
     var dataCount: Int?
     
     init() {
@@ -59,21 +59,23 @@ class MagnetSummaryReviewHttpModel {
                 } else {
                     let cell = collectionView.dequeueReusableCell(for: IndexPath(row: row, section: 0), cellType: MagnetInfoReviewCell.self)
                     guard let data = data else { return cell }
-                    cell.setData(data: data, image: self.makeSummryReviewImage(index: row, url: data.thumbnail))
+                    cell.setData(data: data, image: self.makeSummryReviewImage(url: data.thumbnail))
                     return cell
                 }
             }
             .disposed(by: disposeBag)
     }
 
-    private func makeSummryReviewImage(index: Int, url: String) -> UIImage {
-        if (summaryReviewImageStorage[index] != nil) {
-            return summaryReviewImageStorage[index]!
+    private func makeSummryReviewImage(url: String) -> UIImage {
+        if (summaryReviewImageStorage[url] != nil) {
+            return summaryReviewImageStorage[url]!
         } else {
-            let url = URL(string: url)
-            let data = try? Data(contentsOf: url!)
+            guard let dataUrl = URL(string: url) else {
+                return UIImage(systemName: "circle")!
+            }
+            let data = try? Data(contentsOf: dataUrl)
             let image = UIImage(data: data!)
-            if let image = image { self.summaryReviewImageStorage.updateValue(image, forKey: index) }
+            if let image = image { self.summaryReviewImageStorage.updateValue(image, forKey: url) }
             return image ?? UIImage()
         }
     }

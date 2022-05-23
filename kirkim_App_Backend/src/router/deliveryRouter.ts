@@ -5,5 +5,6 @@ const deliveryRouter = express.Router();
 
 deliveryRouter.route('/summary').get(deliveryController.getSummaryStores);
 deliveryRouter.route('/detail').get(deliveryController.getDetailStore);
+deliveryRouter.route('/reviews').get(deliveryController.getReviews);
 
 export default deliveryRouter;

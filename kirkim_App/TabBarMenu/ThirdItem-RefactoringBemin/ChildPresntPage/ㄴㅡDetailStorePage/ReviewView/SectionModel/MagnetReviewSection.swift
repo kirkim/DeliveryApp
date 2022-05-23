@@ -12,6 +12,11 @@ protocol MagnetReviewItem {
     
 }
 
+struct StoreInfo: Codable {
+    var storeCode: String
+    var storeName: String
+}
+
 struct UserInfo: Codable {
     var userID: String
     var name: String
@@ -19,6 +24,7 @@ struct UserInfo: Codable {
 }
 
 struct ReviewItem: MagnetReviewItem, Codable {
+    var storeInfo: StoreInfo
     var reviewId: Int
     var userInfo: UserInfo
     var rating: Int

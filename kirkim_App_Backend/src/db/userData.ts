@@ -68,9 +68,7 @@ export async function findByID(id: string): Promise<UserData | undefined> {
 }
 
 export async function checkByUserID(userID: string): Promise<Boolean> {
-  console.log(userID);
   let checkValue = userDatas.find((user) => user.data.userID === userID);
-  console.log(checkValue);
   if (checkValue === undefined) {
     return true;
   }
