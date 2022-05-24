@@ -9,27 +9,23 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class ReviewHttpManager {
-    static let shared = ReviewHttpManager()
+class BasicReviewHttpManager {
+    static let shared = BasicReviewHttpManager()
     private init() {
     }
     
     private let httpmanager = DeliveryHttpManager.shared
     private let disposeBag = DisposeBag()
-    var reviewData: MagnetReviewSectionModel?
-    var totalRatingData: MagnetReviewSectionModel?
     
-    func load(id: String, completion: @escaping () -> ()) {
+    func load(id: String, completion: @escaping ([ReviewItem]) -> ()) {
         httpmanager.getFetch(type: .reviewById(id: id))
             .subscribe(
-                onSuccess: { [weak self] result in
+                onSuccess: { result in
                     switch result {
                     case .success(let data):
                         do {
-                            let dataModel = try JSONDecoder().decode(ReviewJSONData.self, from: data)
-                            self?.totalRatingData = MagnetReviewSectionModel.totalRatingSection(items: [TotalRatingItem(totalCount: dataModel.reviews.count, averageRating: dataModel.averageRating)])
-                            self?.reviewData = MagnetReviewSectionModel.reviewSection(items: dataModel.reviews)
-                            completion()
+                            let dataModel = try JSONDecoder().decode([ReviewItem].self, from: data)
+                            completion(dataModel)
                         } catch {
                             print("decoding error: ", error.localizedDescription)
                         }

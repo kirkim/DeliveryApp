@@ -22,10 +22,13 @@ class ReviewCell: UITableViewCell {
     
     private func attribute() {
         self.selectionStyle = .none
+        storeLabel.font = .systemFont(ofSize: 18, weight: .bold)
+        dateLabel.font = .systemFont(ofSize: 15, weight: .medium)
+        dateLabel.textColor = .systemGray
     }
     
     func setData(data: ReviewItem, image: UIImage?) {
-        self.storeLabel.text = data.userInfo.name
+        self.storeLabel.text = "\(data.storeInfo.storeName) >"
         self.ratingLabel.text = setStar(rating: data.rating)
         self.dateLabel.text = parsingDate(date: data.createAt).description
         self.reviewLabel.text = data.description

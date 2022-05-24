@@ -11,13 +11,28 @@ import RxSwift
 import RxDataSources
 import RxCocoa
 
-class ReviewListVC: UIViewController {
-    private let tableView = UITableView(frame: CGRect.zero, style: .plain)
+enum BasicReviewType {
+    case me(userInfo: UserInfo)
+    case other(userInfo: UserInfo)
+    var id: String {
+        switch self {
+        case .me(let info):
+            return info.id
+        case .other(let info):
+            return info.id
+        }
+    }
+}
+
+class BasicReviewVC: UIViewController {
+    private let tableView = UITableView(frame: CGRect.zero, style: .grouped)
     private let disposeBag = DisposeBag()
-    private let viewModel = ReviewListViewModel()
-    private let pickerSortTypeView = PickSortTypeView()
+    private let viewModel: BasicReviewViewModel
+    private let type: BasicReviewType
     
-    init() {
+    init(type: BasicReviewType) {
+        viewModel = BasicReviewViewModel(id: type.id)
+        self.type = type
         super.init(nibName: nil, bundle: nil)
         self.attribute()
         self.layout()
@@ -30,7 +45,7 @@ class ReviewListVC: UIViewController {
         let navigationBarAppearace = UINavigationBarAppearance()
         navigationBarAppearace.backgroundColor = .white
         self.navigationController?.navigationBar.standardAppearance = navigationBarAppearace
-
+        self.navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearace
     }
     
     required init?(coder: NSCoder) {
@@ -39,21 +54,30 @@ class ReviewListVC: UIViewController {
     
     func bind() {
         let dataSource = viewModel.dataSource()
-        viewModel.data
-            .bind(to: self.tableView.rx.items(dataSource: dataSource))
+        viewModel.getDataObservable()
+            .drive(self.tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
     }
     
     private func attribute() {
+        switch self.type {
+        case .me(userInfo: _):
+            self.title = "리뷰관리"
+        case .other(let info):
+            self.title = "\(info.name)님의 리뷰"
+        }
         self.view.backgroundColor = .white
-        self.title = "\(viewModel.storeName) 리뷰"
         self.tableView.delegate = self
         let cellNib = UINib(nibName: "ReviewCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: "ReviewCell")
+        tableView.register(headerFooterViewType: ReviewByMeHeaderView.self)
+        tableView.register(headerFooterViewType: ReviewByOtherHeaderView.self)
+        
+        self.tableView.sectionHeaderTopPadding = 10
     }
 
     private func layout() {
-        [tableView, pickerSortTypeView].forEach {
+        [tableView].forEach {
             self.view.addSubview($0)
         }
         
@@ -63,21 +87,23 @@ class ReviewListVC: UIViewController {
     }
 }
 
-extension ReviewListVC: UITableViewDelegate {
+extension BasicReviewVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if (section == 0) {
-            let header = tableView.dequeueReusableHeaderFooterView(ReviewHeaderView.self)
-//            header?.bind(viewModel.headerViewModel)
+        switch self.type {
+        case .me(_):
+            let header =  tableView.dequeueReusableHeaderFooterView(ReviewByMeHeaderView.self)
+            header?.setData(totalCount: viewModel.getTotalReviewsCount())
+            return header
+        case .other(let info):
+            let header = tableView.dequeueReusableHeaderFooterView(ReviewByOtherHeaderView.self)
+            header?.setData(totalCount: viewModel.getTotalReviewsCount(), name: info.name)
             return header
         }
-        return nil
+        
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if (section == 1) {
-            return 50
-        }
-        return 0
+        return 80
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {

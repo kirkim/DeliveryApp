@@ -30,7 +30,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAS-sL-3u1">
-                        <rect key="frame" x="120" y="46" width="30" height="21"/>
+                        <rect key="frame" x="115" y="46" width="30" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -59,7 +59,7 @@
                     <constraint firstItem="OxS-fn-4XY" firstAttribute="top" secondItem="1Er-kL-sod" secondAttribute="top" constant="20" id="LFO-gV-mkE"/>
                     <constraint firstItem="2JW-dv-f5n" firstAttribute="leading" secondItem="OxS-fn-4XY" secondAttribute="leading" id="RkC-hg-7qa"/>
                     <constraint firstAttribute="bottom" secondItem="LDE-fT-Z0O" secondAttribute="bottom" priority="249" constant="20" id="UhC-Qs-U4o"/>
-                    <constraint firstItem="jAS-sL-3u1" firstAttribute="leading" secondItem="2JW-dv-f5n" secondAttribute="trailing" constant="15" id="UiZ-WL-5kK"/>
+                    <constraint firstItem="jAS-sL-3u1" firstAttribute="leading" secondItem="2JW-dv-f5n" secondAttribute="trailing" constant="10" id="UiZ-WL-5kK"/>
                     <constraint firstItem="jAS-sL-3u1" firstAttribute="top" secondItem="2JW-dv-f5n" secondAttribute="top" id="glb-G6-OGV"/>
                     <constraint firstItem="LDE-fT-Z0O" firstAttribute="trailing" secondItem="gOi-XS-IvY" secondAttribute="trailing" id="ida-US-aLy"/>
                     <constraint firstItem="gOi-XS-IvY" firstAttribute="top" secondItem="2JW-dv-f5n" secondAttribute="bottom" constant="5" id="koT-EE-5tG"/>

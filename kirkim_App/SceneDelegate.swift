@@ -18,12 +18,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = UIWindow(windowScene: windowScene)
         self.windowWidth = self.window?.frame.width
 //        let rootVC = UIStoryboard(name: "SideMenu", bundle: nil).instantiateViewController(withIdentifier: "SideMenuNavi")
-        let RootTabBarController = MainTabBarController()
+        
+        //Main
+//        let RootTabBarController = MainTabBarController()
+//        self.window?.rootViewController = RootTabBarController
+        
 //        let vc = ShoppingcartVC()
-//        let vc = PPPUP()
-//        let nav = UINavigationController(rootViewController: vc)
-//        self.window?.rootViewController = nav
-        self.window?.rootViewController = RootTabBarController
+        let vc = PPPUP2()
+        let nav = UINavigationController(rootViewController: vc)
+        self.window?.rootViewController = nav
+        
         self.window?.makeKeyAndVisible()
     }
 

@@ -9,8 +9,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-
-
 class MagnetReviewModel {
     private let disposeBag = DisposeBag()
     private let httpManager = MagnetReviewHttpManager.shared
@@ -21,7 +19,7 @@ class MagnetReviewModel {
         storeName = httpManager.storeName
     }
     
-    func makeReviewImage(index: Int, url: String?) -> UIImage? {
+    func makeReviewImage(url: String?) -> UIImage? {
         guard let url = url else {
             return nil
         }

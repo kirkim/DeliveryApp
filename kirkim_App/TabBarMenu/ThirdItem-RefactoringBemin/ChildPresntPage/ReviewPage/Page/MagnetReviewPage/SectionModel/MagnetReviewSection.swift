@@ -8,37 +8,6 @@
 import UIKit
 import RxDataSources
 
-protocol MagnetReviewItem {
-    
-}
-
-struct StoreInfo: Codable {
-    var storeCode: String
-    var storeName: String
-}
-
-struct UserInfo: Codable {
-    var userID: String
-    var name: String
-    var id: String
-}
-
-struct ReviewItem: MagnetReviewItem, Codable {
-    var storeInfo: StoreInfo
-    var reviewId: Int
-    var userInfo: UserInfo
-    var rating: Int
-    var description: String
-    var photoUrl: String?
-    var createAt: String
-}
-
-struct TotalRatingItem: MagnetReviewItem {
-    var totalCount: Int
-    var averageRating: CGFloat
-}
-
-
 enum MagnetReviewSectionModel {
     case totalRatingSection(items: [TotalRatingItem])
     case reviewSection(items: [ReviewItem])
