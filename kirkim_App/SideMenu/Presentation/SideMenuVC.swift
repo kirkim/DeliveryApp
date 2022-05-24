@@ -6,22 +6,23 @@
 //
 
 import UIKit
+import SnapKit
 import RxSwift
 
 class SideMenuVC: UIViewController {
-    @IBOutlet weak var menuTableView: UITableView!
+    private let menuTableView = UITableView(frame: CGRect.zero, style: .plain)
     private let user = UserModel()
     private let sideMenuCellModel = SideMenuCellModel()
     private let disposeBag = DisposeBag()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.menuTableView.dataSource = self
-        self.menuTableView.delegate = self
-        self.navigationItem.title = ""
-        menuTableView.register(SideMenuHeaderView.self, forHeaderFooterViewReuseIdentifier: SideMenuHeaderView.identifier)
-        menuTableView.register(SideMenuFooterView.self, forHeaderFooterViewReuseIdentifier: SideMenuFooterView.identifier)
-        registerCell()
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        layout()
+        attribute()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     private func registerCell() {
@@ -34,6 +35,22 @@ class SideMenuVC: UIViewController {
     
     @IBAction func handleCloseButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    private func attribute() {
+        self.menuTableView.dataSource = self
+        self.menuTableView.delegate = self
+        self.navigationItem.title = ""
+        menuTableView.register(SideMenuHeaderView.self, forHeaderFooterViewReuseIdentifier: SideMenuHeaderView.identifier)
+        menuTableView.register(SideMenuFooterView.self, forHeaderFooterViewReuseIdentifier: SideMenuFooterView.identifier)
+        registerCell()
+    }
+    
+    private func layout() {
+        self.view.addSubview(menuTableView)
+        menuTableView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
     }
 }
 

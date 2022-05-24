@@ -23,7 +23,8 @@ class BaseVC: UIViewController {
     }
     
     @objc private func handleSideBarMenuButton() {
-        let sideBarMenuNavi = UIStoryboard(name: "SideMenu", bundle: nil).instantiateViewController(withIdentifier: "SideMenuNavi")
+        let sideMenuVC = SideMenuVC()
+        let sideBarMenuNavi = UINavigationController(rootViewController: sideMenuVC)
         sideBarMenuNavi.modalPresentationStyle = .fullScreen
         self.present(sideBarMenuNavi, animated: true, completion: nil)
     }

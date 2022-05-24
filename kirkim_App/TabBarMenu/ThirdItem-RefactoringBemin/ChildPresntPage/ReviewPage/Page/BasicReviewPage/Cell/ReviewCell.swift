@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxGesture
+import RxSwift
 
 class ReviewCell: UITableViewCell {
     @IBOutlet weak var storeLabel: UILabel!
@@ -14,10 +16,29 @@ class ReviewCell: UITableViewCell {
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var reviewLabel: UILabel!
     @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
+    private var storeCode: String?
+    private var flag:Bool = false
+    private let disposeBag = DisposeBag()
     
     override func awakeFromNib() {
         super.awakeFromNib()
         attribute()
+    }
+    
+    func bind(_ viewModel: ReviewCellViewModel) {
+        if (self.flag == false) {
+            self.flag = true
+            self.storeLabel.rx.tapGesture()
+                .when(.recognized)
+                .map { [weak self] _ -> String in
+                    guard let storeCode = self?.storeCode else {
+                        return ""
+                    }
+                    return storeCode
+                }
+                .bind(to: viewModel.storeLabelTapped)
+                .disposed(by: disposeBag)
+        }
     }
     
     private func attribute() {
@@ -28,6 +49,7 @@ class ReviewCell: UITableViewCell {
     }
     
     func setData(data: ReviewItem, image: UIImage?) {
+        self.storeCode = data.storeInfo.storeCode
         self.storeLabel.text = "\(data.storeInfo.storeName) >"
         self.ratingLabel.text = setStar(rating: data.rating)
         self.dateLabel.text = parsingDate(date: data.createAt).description

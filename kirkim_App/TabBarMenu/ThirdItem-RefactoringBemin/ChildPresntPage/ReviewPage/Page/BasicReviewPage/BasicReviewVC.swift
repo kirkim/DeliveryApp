@@ -57,6 +57,16 @@ class BasicReviewVC: UIViewController {
         viewModel.getDataObservable()
             .drive(self.tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
+        
+        viewModel.presentDetailStoreVC
+            .emit(onNext: { storeCode in
+                DetailStoreDataManager.shared.loadData(code: storeCode) {
+                    DispatchQueue.main.async {
+                        let vc = MagnetBarView()
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                }
+            })
     }
     
     private func attribute() {

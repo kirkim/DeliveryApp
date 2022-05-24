@@ -81,6 +81,13 @@ class MagnetReviewVC: UIViewController {
                 }, completion: nil)
             }
             .disposed(by: disposeBag)
+        
+        viewModel.presentUserReviewList
+            .emit(onNext: { userInfo in
+                let basicReviewVC = BasicReviewVC(type: .other(userInfo: userInfo))
+                self.navigationController?.pushViewController(basicReviewVC, animated: true)
+            })
+            .disposed(by: disposeBag)
     }
     
     private func attribute() {

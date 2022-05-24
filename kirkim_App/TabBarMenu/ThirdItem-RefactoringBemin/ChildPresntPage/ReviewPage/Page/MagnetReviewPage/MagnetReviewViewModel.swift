@@ -13,11 +13,13 @@ import RxSwift
 class MagnetReviewViewModel {
     let model = MagnetReviewModel()
     let headerViewModel = MagnetReviewHeaderCellViewModel()
+    private let cellViewModel = MagnetReviewCellViewModel()
     let pickSortTypeViewModel = PickSortTypeViewModel()
     let data = BehaviorRelay<[MagnetReviewSectionModel]>(value: [])
     
     // childViewModel -> ViewModel -> View
     let movingSortTypeView = PublishRelay<Bool>()
+    let presentUserReviewList: Signal<UserInfo>
     
     private let disposeBag = DisposeBag()
     
@@ -25,6 +27,7 @@ class MagnetReviewViewModel {
     
     init() {
         storeName = model.storeName
+        self.presentUserReviewList = cellViewModel.nameLabelTapped.asSignal()
         let pickSortTypeButton = pickSortTypeViewModel.selectedSortType.share()
         
         MagnetReviewHttpManager.shared.load {
@@ -55,7 +58,7 @@ class MagnetReviewViewModel {
     
     func dataSource() -> RxTableViewSectionedReloadDataSource<MagnetReviewSectionModel> {
         let dataSource = RxTableViewSectionedReloadDataSource<MagnetReviewSectionModel>(
-            configureCell: { dataSource, tableView, indexPath, item in
+            configureCell: { [weak self] dataSource, tableView, indexPath, item in
                 switch dataSource[indexPath.section] {
                 case .totalRatingSection(items: let items):
                     let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MagnetReviewTotalRatingCell.self)
@@ -63,7 +66,8 @@ class MagnetReviewViewModel {
                     return cell
                 case .reviewSection(items: let items):
                     let cell = tableView.dequeueReusableCell(withIdentifier: "MagnetReviewCell", for: indexPath) as! MagnetReviewCell
-                    cell.setData(data: items[indexPath.row], image: self.model.makeReviewImage(url: items[indexPath.row].photoUrl))
+                    cell.setData(data: items[indexPath.row], image: self?.model.makeReviewImage(url: items[indexPath.row].photoUrl))
+                    cell.bind((self?.cellViewModel)!)
                     return cell
                 }
             })

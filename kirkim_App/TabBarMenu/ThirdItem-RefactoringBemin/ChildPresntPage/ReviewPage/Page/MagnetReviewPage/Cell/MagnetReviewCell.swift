@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxGesture
+import RxSwift
 
 class MagnetReviewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
@@ -15,9 +17,29 @@ class MagnetReviewCell: UITableViewCell {
     @IBOutlet weak var reviewLabel: UILabel!
     @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
     
+    private var userInfo: UserInfo?
+    private var flag:Bool = false
+    private let disposeBag = DisposeBag()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         attribute()
+    }
+    
+    func bind(_ viewModel: MagnetReviewCellViewModel) {
+        if (self.flag == false) {
+            self.flag = true
+            self.nameLabel.rx.tapGesture()
+                .when(.recognized)
+                .map { [weak self] _ -> UserInfo in
+                    guard let userInfo = self?.userInfo else {
+                        return UserInfo(userID: "", name: "", id: "")
+                    }
+                    return userInfo
+                }
+                .bind(to: viewModel.nameLabelTapped)
+                .disposed(by: disposeBag)
+        }
     }
     
     private func attribute() {
@@ -25,6 +47,7 @@ class MagnetReviewCell: UITableViewCell {
     }
     
     func setData(data: ReviewItem, image: UIImage?) {
+        self.userInfo = data.userInfo
         self.nameLabel.text = data.userInfo.name
         self.ratingLabel.text = setStar(rating: data.rating)
         self.dateLabel.text = parsingDate(date: data.createAt).description

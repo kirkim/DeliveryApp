@@ -32,14 +32,4 @@ class SideMenuCell: UITableViewCell {
         self.mainTitle.frame = CGRect(x: width + 18, y: 5, width: 100, height: width)
         self.thumbnailImageView.frame = CGRect(x: 8, y: 5, width: width, height: width)
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
-    }
 }

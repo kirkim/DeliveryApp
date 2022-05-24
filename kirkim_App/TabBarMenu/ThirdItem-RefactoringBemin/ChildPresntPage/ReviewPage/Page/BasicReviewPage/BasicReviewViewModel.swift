@@ -11,11 +11,16 @@ import RxCocoa
 import RxSwift
 
 class BasicReviewViewModel {
-    let model: BasicReviewModel
+    private let model: BasicReviewModel
+    private let reviewCellViewModel = ReviewCellViewModel()
     private let disposeBag = DisposeBag()
+    
+    // ViewModel -> View
+    let presentDetailStoreVC: Signal<String>
     
     init(id: String) {
         self.model = BasicReviewModel(id: id)
+        self.presentDetailStoreVC = reviewCellViewModel.storeLabelTapped.asSignal()
     }
     
     func updata(id: String, completion: @escaping () -> ()) {
@@ -32,9 +37,10 @@ class BasicReviewViewModel {
     
     func dataSource() -> RxTableViewSectionedReloadDataSource<ReviewSectionModel> {
         let dataSource = RxTableViewSectionedReloadDataSource<ReviewSectionModel>(
-            configureCell: { dataSource, tableView, indexPath, item in
+            configureCell: { [weak self] dataSource, tableView, indexPath, item in
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as! ReviewCell
-                cell.setData(data: item, image: self.model.makeReviewImage(url: item.photoUrl))
+                cell.setData(data: item, image: self?.model.makeReviewImage(url: item.photoUrl))
+                cell.bind((self?.reviewCellViewModel)!)
                 return cell
             })
         return dataSource
