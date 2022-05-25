@@ -7,8 +7,8 @@
 
 import UIKit
 
-class TestView3_1: UIViewController, SideMenuView {
-    static var sideMenuViewInfo = SideMenuViewInfo(thumnailImage: "flame", mainTitle: "TestView3-1", section: .three, identifier: "TestView3-1")
+class TestView3_1: UIViewController, SideMenuViewProtocol {
+    static var sideMenuViewInfo = SideMenuViewInfo(uiType: .xib, thumnailImage: "flame", mainTitle: "TestView3-1", section: .three, identifier: "TestView3-1")
     
     override func viewDidLoad() {
         super.viewDidLoad()

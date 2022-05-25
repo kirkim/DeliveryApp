@@ -9,26 +9,41 @@ import UIKit
 import SnapKit
 import RxCocoa
 import RxSwift
+import Reusable
 
-class SideMenuFooterView: UITableViewHeaderFooterView {
+class SideMenuFooterView: UITableViewHeaderFooterView, Reusable {
     static let identifier = "SideMenuFooterView"
     private let logoutView = LogoutView()
     private let copyrightInfoView = CopyrightInfoView()
     private let disposeBag = DisposeBag()
-    
-    // View -> ParentView(SideMenuVC)
-    let logoutButtonTapped = PublishRelay<Void>()
-    let copyrightButtonTapped = PublishRelay<Void>()
+    private var flag:Bool = false
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         layout()
         attribute()
-        bind()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func bind(_ viewModel: SideMenuFooterViewModel) {
+        if (self.flag == false) {
+            self.flag = true
+            self.logoutView.buttonTapped
+                .bind(to: viewModel.logoutButtonTapped)
+                .disposed(by: disposeBag)
+            
+            self.copyrightInfoView.buttonTapped
+                .bind(to: viewModel.copyrightButtonTapped)
+                .disposed(by: disposeBag)
+            
+        }
+    }
+    
+    private func attribute() {
+        contentView.backgroundColor = .clear
     }
     
     private func layout() {
@@ -44,19 +59,5 @@ class SideMenuFooterView: UITableViewHeaderFooterView {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(logoutView.snp.bottom)
         }
-    }
-    
-    private func bind() {
-        self.logoutView.buttonTapped
-            .bind(to: logoutButtonTapped)
-            .disposed(by: disposeBag)
-        
-        self.copyrightInfoView.buttonTapped
-            .bind(to: copyrightButtonTapped)
-            .disposed(by: disposeBag)
-    }
-    
-    private func attribute() {
-        contentView.backgroundColor = .systemGray6
     }
 }

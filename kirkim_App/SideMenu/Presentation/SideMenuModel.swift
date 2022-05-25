@@ -10,33 +10,9 @@
 
 import UIKit
 
-struct SideMenuCellModel {
-    private let manager = SideMenuCellManager()
-    
-    func getCellsBySection(section: Int) -> [SideMenuViewInfo] {
-        return manager.getCellsBySection(section: section)
-    }
-    
-    func getAllCells() -> [SideMenuViewInfo] {
-        return manager.getAllCells()
-    }
-    
-    func getCellByIndexPath(indexPath: IndexPath) -> SideMenuCell {
-        return manager.getCellByIndexPath(indexPath: indexPath)
-    }
-    
-    func getCellInfoByIndexPath(indexPath: IndexPath) -> SideMenuViewInfo {
-        return manager.getCellInfoByIndexPath(indexPath: indexPath)
-    }
-    
-    func getSectionCount() -> Int {
-        return manager.getSectionCount()
-    }
-}
-
-struct SideMenuCellManager {
+struct SideMenuModel {
     // sidebar에 xib파일을 만들때마다 다음 storageData배열에 직접 추가해줘야함(단, xib파일은 SideMenuCellView프로토콜을 따른다)
-    private var storageData: [SideMenuViewInfo] = [TestView1_1.sideMenuViewInfo, TestView1_2.sideMenuViewInfo, TestView2_1.sideMenuViewInfo, TestView3_1.sideMenuViewInfo]
+    private var storageData: [SideMenuViewInfo] = [SeeMyReviewView.sideMenuViewInfo, TestView1_1.sideMenuViewInfo, TestView1_2.sideMenuViewInfo, TestView2_1.sideMenuViewInfo, TestView3_1.sideMenuViewInfo]
     
     init() {
         

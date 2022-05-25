@@ -16,11 +16,17 @@ enum SideMenuSection: Int {
     }
 }
 
-protocol SideMenuView {
+protocol SideMenuViewProtocol {
     static var sideMenuViewInfo: SideMenuViewInfo { get }
 }
 
+enum UIType {
+    case xib
+    case onlyCode(className: UIViewController)
+}
+
 struct SideMenuViewInfo {
+    var uiType: UIType
     var thumnailImage: String?
     var mainTitle: String?
     var section: SideMenuSection?

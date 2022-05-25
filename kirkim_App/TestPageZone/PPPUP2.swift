@@ -24,8 +24,12 @@ class PPPUP2: UIViewController {
         self.view.backgroundColor = .yellow
         presentButton.setTitle("내가 쓴리뷰", for: .normal)
         presentButton.addAction(UIAction(handler: { _ in
-            let vc = BasicReviewVC(type: BasicReviewType.me(userInfo: UserInfo(userID: "", name: "", id: "1")))
-            self.navigationController?.pushViewController(vc, animated: true)
+//            let vc = BasicReviewVC(type: BasicReviewType.me(userInfo: UserInfo(userID: "", name: "", id: "1")))
+            let vc = SideMenuVC()
+            let nav = UINavigationController(rootViewController: vc)
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: true)
+//            self.navigationController?.pushViewController(vc, animated: true)
         }), for: .touchUpInside)
         
         presentButton2.setTitle("남이 쓴리뷰", for: .normal)
