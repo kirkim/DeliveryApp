@@ -83,14 +83,14 @@
 		FE798CB82833327400A7D4F8 /* CartSubmitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE798CB72833327400A7D4F8 /* CartSubmitView.swift */; };
 		FE798CBA283333B500A7D4F8 /* CartSubmitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE798CB9283333B500A7D4F8 /* CartSubmitViewModel.swift */; };
 		FE7FC0C627C48581009EB2AE /* SideMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7FC0C527C48581009EB2AE /* SideMenuModel.swift */; };
-		FE7FC0CD27C48F22009EB2AE /* TestView1-1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7FC0CB27C48F22009EB2AE /* TestView1-1.swift */; };
-		FE7FC0CE27C48F22009EB2AE /* TestView1-1.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE7FC0CC27C48F22009EB2AE /* TestView1-1.xib */; };
-		FE7FC0D127C48F31009EB2AE /* TestView1-2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7FC0CF27C48F31009EB2AE /* TestView1-2.swift */; };
-		FE7FC0D227C48F31009EB2AE /* TestView1-2.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE7FC0D027C48F31009EB2AE /* TestView1-2.xib */; };
-		FE7FC0D527C48F3F009EB2AE /* TestView2-1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7FC0D327C48F3F009EB2AE /* TestView2-1.swift */; };
-		FE7FC0D627C48F3F009EB2AE /* TestView2-1.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE7FC0D427C48F3F009EB2AE /* TestView2-1.xib */; };
-		FE7FC0D927C48F4F009EB2AE /* TestView3-1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7FC0D727C48F4F009EB2AE /* TestView3-1.swift */; };
-		FE7FC0DA27C48F4F009EB2AE /* TestView3-1.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE7FC0D827C48F4F009EB2AE /* TestView3-1.xib */; };
+		FE7FC0CD27C48F22009EB2AE /* TestView1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7FC0CB27C48F22009EB2AE /* TestView1_1.swift */; };
+		FE7FC0CE27C48F22009EB2AE /* TestView1_1.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE7FC0CC27C48F22009EB2AE /* TestView1_1.xib */; };
+		FE7FC0D127C48F31009EB2AE /* TestView1_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7FC0CF27C48F31009EB2AE /* TestView1_2.swift */; };
+		FE7FC0D227C48F31009EB2AE /* TestView1_2.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE7FC0D027C48F31009EB2AE /* TestView1_2.xib */; };
+		FE7FC0D527C48F3F009EB2AE /* TestView2_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7FC0D327C48F3F009EB2AE /* TestView2_1.swift */; };
+		FE7FC0D627C48F3F009EB2AE /* TestView2_1.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE7FC0D427C48F3F009EB2AE /* TestView2_1.xib */; };
+		FE7FC0D927C48F4F009EB2AE /* TestView3_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7FC0D727C48F4F009EB2AE /* TestView3_1.swift */; };
+		FE7FC0DA27C48F4F009EB2AE /* TestView3_1.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE7FC0D827C48F4F009EB2AE /* TestView3_1.xib */; };
 		FE7FC0E427C4AE90009EB2AE /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7FC0E327C4AE90009EB2AE /* SideMenuCell.swift */; };
 		FE84E49627D0666600B30F57 /* KiflixPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE84E49527D0666600B30F57 /* KiflixPlayer.swift */; };
 		FE84E49927D06B5000B30F57 /* FullScreenPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE84E49727D06B5000B30F57 /* FullScreenPlayerVC.swift */; };
@@ -395,14 +395,14 @@
 		FE798CB72833327400A7D4F8 /* CartSubmitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartSubmitView.swift; sourceTree = "<group>"; };
 		FE798CB9283333B500A7D4F8 /* CartSubmitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartSubmitViewModel.swift; sourceTree = "<group>"; };
 		FE7FC0C527C48581009EB2AE /* SideMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuModel.swift; sourceTree = "<group>"; };
-		FE7FC0CB27C48F22009EB2AE /* TestView1-1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestView1-1.swift"; sourceTree = "<group>"; };
-		FE7FC0CC27C48F22009EB2AE /* TestView1-1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "TestView1-1.xib"; sourceTree = "<group>"; };
-		FE7FC0CF27C48F31009EB2AE /* TestView1-2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestView1-2.swift"; sourceTree = "<group>"; };
-		FE7FC0D027C48F31009EB2AE /* TestView1-2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "TestView1-2.xib"; sourceTree = "<group>"; };
-		FE7FC0D327C48F3F009EB2AE /* TestView2-1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestView2-1.swift"; sourceTree = "<group>"; };
-		FE7FC0D427C48F3F009EB2AE /* TestView2-1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "TestView2-1.xib"; sourceTree = "<group>"; };
-		FE7FC0D727C48F4F009EB2AE /* TestView3-1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestView3-1.swift"; sourceTree = "<group>"; };
-		FE7FC0D827C48F4F009EB2AE /* TestView3-1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "TestView3-1.xib"; sourceTree = "<group>"; };
+		FE7FC0CB27C48F22009EB2AE /* TestView1_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView1_1.swift; sourceTree = "<group>"; };
+		FE7FC0CC27C48F22009EB2AE /* TestView1_1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestView1_1.xib; sourceTree = "<group>"; };
+		FE7FC0CF27C48F31009EB2AE /* TestView1_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView1_2.swift; sourceTree = "<group>"; };
+		FE7FC0D027C48F31009EB2AE /* TestView1_2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestView1_2.xib; sourceTree = "<group>"; };
+		FE7FC0D327C48F3F009EB2AE /* TestView2_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView2_1.swift; sourceTree = "<group>"; };
+		FE7FC0D427C48F3F009EB2AE /* TestView2_1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestView2_1.xib; sourceTree = "<group>"; };
+		FE7FC0D727C48F4F009EB2AE /* TestView3_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView3_1.swift; sourceTree = "<group>"; };
+		FE7FC0D827C48F4F009EB2AE /* TestView3_1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestView3_1.xib; sourceTree = "<group>"; };
 		FE7FC0E327C4AE90009EB2AE /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		FE84E49527D0666600B30F57 /* KiflixPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiflixPlayer.swift; sourceTree = "<group>"; };
 		FE84E49727D06B5000B30F57 /* FullScreenPlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenPlayerVC.swift; sourceTree = "<group>"; };
@@ -1040,10 +1040,10 @@
 			isa = PBXGroup;
 			children = (
 				FE93B840283DC5C300E59C5F /* SeeMyReviewView.swift */,
-				FE7FC0CB27C48F22009EB2AE /* TestView1-1.swift */,
-				FE7FC0CC27C48F22009EB2AE /* TestView1-1.xib */,
-				FE7FC0CF27C48F31009EB2AE /* TestView1-2.swift */,
-				FE7FC0D027C48F31009EB2AE /* TestView1-2.xib */,
+				FE7FC0CB27C48F22009EB2AE /* TestView1_1.swift */,
+				FE7FC0CC27C48F22009EB2AE /* TestView1_1.xib */,
+				FE7FC0CF27C48F31009EB2AE /* TestView1_2.swift */,
+				FE7FC0D027C48F31009EB2AE /* TestView1_2.xib */,
 			);
 			path = Section1;
 			sourceTree = "<group>";
@@ -1051,8 +1051,8 @@
 		FE7FC0C927C48ED9009EB2AE /* Section2 */ = {
 			isa = PBXGroup;
 			children = (
-				FE7FC0D327C48F3F009EB2AE /* TestView2-1.swift */,
-				FE7FC0D427C48F3F009EB2AE /* TestView2-1.xib */,
+				FE7FC0D327C48F3F009EB2AE /* TestView2_1.swift */,
+				FE7FC0D427C48F3F009EB2AE /* TestView2_1.xib */,
 			);
 			path = Section2;
 			sourceTree = "<group>";
@@ -1060,8 +1060,8 @@
 		FE7FC0CA27C48EE0009EB2AE /* Section3 */ = {
 			isa = PBXGroup;
 			children = (
-				FE7FC0D727C48F4F009EB2AE /* TestView3-1.swift */,
-				FE7FC0D827C48F4F009EB2AE /* TestView3-1.xib */,
+				FE7FC0D727C48F4F009EB2AE /* TestView3_1.swift */,
+				FE7FC0D827C48F4F009EB2AE /* TestView3_1.xib */,
 			);
 			path = Section3;
 			sourceTree = "<group>";
@@ -2422,15 +2422,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE66E6D9283BAC69006B5A05 /* ReviewCell.xib in Resources */,
-				FE7FC0CE27C48F22009EB2AE /* TestView1-1.xib in Resources */,
-				FE7FC0DA27C48F4F009EB2AE /* TestView3-1.xib in Resources */,
+				FE7FC0CE27C48F22009EB2AE /* TestView1_1.xib in Resources */,
+				FE7FC0DA27C48F4F009EB2AE /* TestView3_1.xib in Resources */,
 				FEFA1FAD282A223E0088BEEB /* CartItemCell.xib in Resources */,
 				FE57F23C27CF29C000B205F9 /* KiflixDetailVC.xib in Resources */,
 				FE84E49A27D06B5000B30F57 /* FullScreenPlayerVC.xib in Resources */,
 				FE8D307727FC682A00F55EEE /* BeminStaticContent.plist in Resources */,
 				FE94DD7427B655190017D776 /* LaunchScreen.storyboard in Resources */,
 				FE74FEAD27CDBCA100F40D5F /* KiflixVC.xib in Resources */,
-				FE7FC0D227C48F31009EB2AE /* TestView1-2.xib in Resources */,
+				FE7FC0D227C48F31009EB2AE /* TestView1_2.xib in Resources */,
 				FEFA1F5C2829FAEC0088BEEB /* MagnetReviewCell.xib in Resources */,
 				FE3CCB8727D1CB2B00D770F8 /* DescriptionView.xib in Resources */,
 				FE94DD7127B655190017D776 /* Assets.xcassets in Resources */,
@@ -2439,7 +2439,7 @@
 				FE2BD69827CDD34400A9FB73 /* KiflixCollectionCell.xib in Resources */,
 				FEBF326927E9A16600DFB792 /* StaticBannerContent.plist in Resources */,
 				FE2BD69227CDC9C400A9FB73 /* MainVC.xib in Resources */,
-				FE7FC0D627C48F3F009EB2AE /* TestView2-1.xib in Resources */,
+				FE7FC0D627C48F3F009EB2AE /* TestView2_1.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2477,7 +2477,7 @@
 			files = (
 				FEFA1BE02829EF140088BEEB /* TotalBannerListViewModel.swift in Sources */,
 				FEFA1EDB2829FACD0088BEEB /* TopSlideBarViewModel.swift in Sources */,
-				FE7FC0CD27C48F22009EB2AE /* TestView1-1.swift in Sources */,
+				FE7FC0CD27C48F22009EB2AE /* TestView1_1.swift in Sources */,
 				FEFA1F802829FAEC0088BEEB /* MagnetSummaryReviewHttpModel.swift in Sources */,
 				FE8EF12827F3E74F00EEAC69 /* UserType.swift in Sources */,
 				FEFBB5E928029D3F00864528 /* BundleBaseButton.swift in Sources */,
@@ -2537,7 +2537,7 @@
 				FEBDC027282CAAF100AB9FD2 /* EmptyCartView.swift in Sources */,
 				FEBF326C27E9A16600DFB792 /* BannerContent+protocol.swift in Sources */,
 				FEFA1F96282A05150088BEEB /* TopBarVCWithProfile.swift in Sources */,
-				FE7FC0D527C48F3F009EB2AE /* TestView2-1.swift in Sources */,
+				FE7FC0D527C48F3F009EB2AE /* TestView2_1.swift in Sources */,
 				FEFA1F7E2829FAEC0088BEEB /* MagnetInfoMoreButtonCell.swift in Sources */,
 				FE078F2F27C3634B00D19E34 /* SideMenuHeaderView.swift in Sources */,
 				FEFA1F5D2829FAEC0088BEEB /* MagnetReviewVC.swift in Sources */,
@@ -2690,7 +2690,7 @@
 				FE8D307B27FC682A00F55EEE /* MainBeminVC.swift in Sources */,
 				FE601A01283C7C410053745E /* PPPUP2.swift in Sources */,
 				FEFA1F5E2829FAEC0088BEEB /* MagnetReviewModel.swift in Sources */,
-				FE7FC0D927C48F4F009EB2AE /* TestView3-1.swift in Sources */,
+				FE7FC0D927C48F4F009EB2AE /* TestView3_1.swift in Sources */,
 				FEFBB5E328029D3F00864528 /* TopBarLayoutViewCell.swift in Sources */,
 				FE8EF16627F425E300EEAC69 /* SignupNameZone.swift in Sources */,
 				FE38F46B27F7170F008BBE8B /* LoginPageVC.swift in Sources */,
@@ -2728,7 +2728,7 @@
 				FE94DD6727B655190017D776 /* SceneDelegate.swift in Sources */,
 				FEFA1EED2829FACD0088BEEB /* DeliveryMenuBasicCell.swift in Sources */,
 				FE38F46527F7170F008BBE8B /* BasicLoginView.swift in Sources */,
-				FE7FC0D127C48F31009EB2AE /* TestView1-2.swift in Sources */,
+				FE7FC0D127C48F31009EB2AE /* TestView1_2.swift in Sources */,
 				FEBA011527CDDC5B00E74FCB /* KiflixViewModel.swift in Sources */,
 				FE8EF16727F425E300EEAC69 /* SignupNameZoneViewModel.swift in Sources */,
 				FE8EF15F27F425E300EEAC69 /* SignupPwZone.swift in Sources */,

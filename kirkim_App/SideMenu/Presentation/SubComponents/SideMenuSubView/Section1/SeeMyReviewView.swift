@@ -8,7 +8,7 @@
 import UIKit
 
 class SeeMyReviewView: BasicReviewVC, SideMenuViewProtocol {
-    static var sideMenuViewInfo = SideMenuViewInfo(uiType: .onlyCode(className: SeeMyReviewView()), thumnailImage: "flame", mainTitle: "내 리뷰 보기", section: .one, identifier: "SeeMyReviewView")
+    static var sideMenuViewInfo = SideMenuViewInfo(thumnailImage: "flame", mainTitle: "내 리뷰 보기", section: .one, identifier: "SeeMyReviewView")
     
     init() {
         super.init(type: .me(userInfo: UserInfo(userID: "", name: "", id: (UserModel().info?.id)!)))

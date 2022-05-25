@@ -75,21 +75,6 @@ class SideMenuVC: UIViewController {
         self.menuTableView.rowHeight = 60
         menuTableView.register(headerFooterViewType: SideMenuHeaderView.self)
         menuTableView.register(SideMenuFooterView.self, forHeaderFooterViewReuseIdentifier: SideMenuFooterView.identifier)
-        registerCell()
-    }
-    
-    private func registerCell() {
-//        for cell in viewModel.getAllCells() {
-//            switch cell.uiType {
-//            case .xib:
-//                guard let id = cell.identifier else { return }
-//                let nib = UINib(nibName: id, bundle: nil)
-//                self.menuTableView.register(nib, forCellReuseIdentifier: id)
-//            case .onlyCode(let className):
-//                guard let id = cell.identifier else { return }
-//                self.menuTableView.register(className.self, forCellReuseIdentifier: id)
-//            }
-//        }
     }
     
     private func layout() {
@@ -156,12 +141,21 @@ extension SideMenuVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cellInfo = viewModel.getCellInfoByIndexPath(indexPath: indexPath)
         var vc: UIViewController?
-        switch cellInfo.uiType {
-        case .xib:
-            vc = UIViewController(nibName: cellInfo.identifier, bundle: nil)
-        case .onlyCode(className: let className):
-            vc = className
+        switch cellInfo.identifier {
+        case "TestView1_1":
+            vc = TestView1_1(nibName: cellInfo.identifier, bundle: nil)
+        case "TestView1_2":
+            vc = TestView1_2(nibName: cellInfo.identifier, bundle: nil)
+        case "TestView2_1":
+            vc = TestView2_1(nibName: cellInfo.identifier, bundle: nil)
+        case "TestView3_1":
+            vc = TestView3_1(nibName: cellInfo.identifier, bundle: nil)
+        case "SeeMyReviewView":
+            vc = SeeMyReviewView()
+        default:
+            vc = UIViewController()
         }
+
         guard let vc = vc else {
             return
         }
