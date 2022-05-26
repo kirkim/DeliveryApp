@@ -61,7 +61,7 @@ class MagnetSubmitTapView: UIView {
         self.submitPriceLabel.textColor = .white
         
         //Temp
-        let minPrice = DetailStoreDataManager.shared.getMinPrice()
+        let minPrice = DetailStoreHttpManager.shared.getMinPrice()
         self.minPriceLabel.text = "배달최소주문금액 \(minPrice.parsingToKoreanPrice())"
         self.minPriceLabel.textColor = .darkGray
         self.submitTitleLabel.text = "1개 담기"

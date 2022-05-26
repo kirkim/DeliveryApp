@@ -16,7 +16,7 @@ class SelectStoreVC: UIViewController {
     private let sortBar = SortSlideBar()
     private let disposeBag = DisposeBag()
     private let containerListView: ContainerStoreListView
-    private let httpModel = DetailStoreDataManager.shared
+    private let httpModel = DetailStoreHttpManager.shared
     private let cartButton = ShoppingCartButton()
     
     init(startPage: Int) {
@@ -47,13 +47,7 @@ class SelectStoreVC: UIViewController {
         
         viewModel.presentStoreDetailVC
             .emit { storeCode in
-                self.httpModel.loadData(code: storeCode) {
-                    DispatchQueue.main.async {
-                        let vc = MagnetBarView()
-                        self.navigationController?.pushViewController(vc, animated: true)
-                    }
-                }
-
+                MagnetBarVC.presentView(target: self, type: .basic(storeCode: storeCode))
             }
             .disposed(by: disposeBag)
     }

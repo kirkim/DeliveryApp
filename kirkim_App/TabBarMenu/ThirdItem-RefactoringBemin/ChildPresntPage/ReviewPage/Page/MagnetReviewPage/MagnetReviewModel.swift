@@ -52,7 +52,7 @@ class MagnetReviewModel {
     }
     
     func update(completion: (() -> ())? = nil) {
-        MagnetReviewHttpManager.shared.load(storeCode: DetailStoreDataManager.shared.getStoreCode()) { jsonData in
+        MagnetReviewHttpManager.shared.load(storeCode: DetailStoreHttpManager.shared.getStoreCode()) { jsonData in
             self.storeNameObservable.accept( jsonData.storeInfo.storeName )
             var items = jsonData.reviews
             let totalRatingData = MagnetReviewSectionModel.totalRatingSection(items: [TotalRatingItem(totalCount: items.count, averageRating: jsonData.averageRating)])
@@ -79,7 +79,6 @@ class MagnetReviewModel {
             
             self.dataObservable.accept( [totalRatingData, MagnetReviewSectionModel.reviewSection(items: photoItems)] )
             completion?()
-            return
         }
         
         func sortLatest(a: ReviewItem, b: ReviewItem) -> Bool {
@@ -93,7 +92,6 @@ class MagnetReviewModel {
         func sortLowRating(a: ReviewItem, b: ReviewItem) -> Bool {
             return a.rating < b.rating
         }
-        
     }
     
 }

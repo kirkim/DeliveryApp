@@ -60,12 +60,7 @@ class BasicReviewVC: UIViewController {
         
         viewModel.presentDetailStoreVC
             .emit(onNext: { storeCode in
-                DetailStoreDataManager.shared.loadData(code: storeCode) {
-                    DispatchQueue.main.async {
-                        let vc = MagnetBarView()
-                        self.navigationController?.pushViewController(vc, animated: true)
-                    }
-                }
+                MagnetBarVC.presentView(target: self, type: .basic(storeCode: storeCode))
             })
             .disposed(by: disposeBag)
     }

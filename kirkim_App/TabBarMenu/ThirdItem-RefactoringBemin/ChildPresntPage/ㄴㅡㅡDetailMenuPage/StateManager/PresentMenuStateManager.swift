@@ -15,7 +15,7 @@ class PresentMenuStateManager {
     private var optionSectionItem: [PresentMenuReactItem] = []
     private var countSectionItem: PresentSelectCountItem
     let sectionTotalCount: Int
-    private let httpManager = DetailStoreDataManager.shared
+    private let httpManager = DetailStoreHttpManager.shared
     
     // Observer
     private let collectionViewDataObserver: BehaviorRelay<[PresentMenuSectionModel]>

@@ -18,7 +18,7 @@ struct CartStoreData: Codable {
 
 struct PresentDetailMenuPoint {
     var storeCode: String
-    var indexPath: IndexPath
+    var indexPath: IndexPath?
 }
 
 struct CartDeliveryPrice: Codable {

@@ -22,7 +22,27 @@ struct MagnetBarViewMath {
     static let headerViewHeight:CGFloat = 150
 }
 
-class MagnetBarView: UIViewController {
+class MagnetBarVC: UIViewController {
+    static func presentView(target: UIViewController, type: DetailStoreType) {
+        var storeCode:String = ""
+        var indexPath: IndexPath?
+        switch type {
+        case .basic(let code):
+            storeCode = code
+        case .fake(point: let point):
+            storeCode = point.storeCode
+            indexPath = point.indexPath
+        }
+        DetailStoreHttpManager.shared.loadData(code: storeCode) {
+            DispatchQueue.main.async {
+                let vc = MagnetBarVC(type: type)
+                if (indexPath != nil) {
+                    vc.readyToOpenDetailMenuVC(indexPath: indexPath!)
+                }
+                target.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
     private let mainListView = MagnetListView()
     private let mainNavigationBar = MagnetNavigationBar()
     private let stickyHeader = RemoteMainListBar()
@@ -35,12 +55,12 @@ class MagnetBarView: UIViewController {
     private var isPresentMenu: IndexPath?
     private let type: DetailStoreType
     
-    init(type: DetailStoreType = .basic) {
+    private init(type: DetailStoreType = .basic(storeCode: DetailStoreHttpManager.shared.getStoreCode())) {
         self.type = type
         self.cartButton = ShoppingCartButton(type: type)
         super.init(nibName: nil, bundle: nil)
-        attribute()
         layout()
+        attribute()
         bind()
     }
     

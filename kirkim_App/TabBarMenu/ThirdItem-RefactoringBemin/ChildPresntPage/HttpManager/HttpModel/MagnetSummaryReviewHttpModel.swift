@@ -9,11 +9,12 @@ import UIKit
 import RxCocoa
 import RxSwift
 
+
 class MagnetSummaryReviewHttpModel {
     let data = PublishRelay<[SummaryReviewData?]>()
 
     private let httpManager = DeliveryHttpManager.shared
-    private let storeHttpManager = DetailStoreDataManager.shared
+    private let storeHttpManager = DetailStoreHttpManager.shared
     private let disposeBag = DisposeBag()
     private var summaryReviewImageStorage: [String : UIImage] = [:]
     var dataCount: Int?

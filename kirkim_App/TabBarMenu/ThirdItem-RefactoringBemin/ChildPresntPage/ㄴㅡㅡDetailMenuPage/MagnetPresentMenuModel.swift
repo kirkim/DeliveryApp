@@ -8,7 +8,7 @@
 import UIKit
 
 struct MagnetPresentMenuModel {
-    private let httpManager = DetailStoreDataManager.shared
+    private let httpManager = DetailStoreHttpManager.shared
     var data:[PresentMenuSectionModel] = []
     let title: String
     let indexPath: IndexPath

@@ -33,7 +33,7 @@ class ContainerStoreListView: UICollectionView {
         Driver.just(viewModel.cellData)
             .drive(self.rx.items(cellIdentifier: "ContainerStoreListViewCell", cellType: ContainerStoreListViewCell.self)) { row, data, cell in
                 cell.bind(viewModel.storeListViewModel)
-                SummaryStoreDataManager.shared.load(storeType: data) { loadData in
+                SummaryStoreHttpManager.shared.load(storeType: data) { loadData in
                     cell.setData(data: loadData, type: data)
                     if (self.flag == false) {
                         self.flag = true

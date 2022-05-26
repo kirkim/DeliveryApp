@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-typealias SummaryStoreDataManager = SummaryStoreHttpModel
+
 class SummaryStoreHttpModel {
     private let disposeBag = DisposeBag()
     

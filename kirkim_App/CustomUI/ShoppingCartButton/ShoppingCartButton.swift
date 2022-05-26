@@ -12,8 +12,8 @@ import RxCocoa
 import RxSwift
 
 enum DetailStoreType {
-    case basic
-    case fake
+    case basic(storeCode: String)
+    case fake(point: PresentDetailMenuPoint)
 }
 
 class ShoppingCartButton: UIView {
@@ -31,7 +31,7 @@ class ShoppingCartButton: UIView {
     
     private let detailStoreType: DetailStoreType
     
-    init(type: DetailStoreType = .basic) {
+    init(type: DetailStoreType = .basic(storeCode: DetailStoreHttpManager.shared.getStoreCode())) {
         self.detailStoreType = type
         super.init(frame: CGRect.zero)
         attribute()
@@ -64,9 +64,12 @@ class ShoppingCartButton: UIView {
     func addEventAndFrame(vc: UIViewController) {
         self.buttonClicked
             .bind { [weak self] _ in
-                guard self?.detailStoreType != .fake else {
+                switch self?.detailStoreType {
+                case .fake(point: _):
                     vc.navigationController?.popViewController(animated: true)
                     return
+                default:
+                    break;
                 }
                 let shoppingcartVC = ShoppingcartVC()
                 if (vc.navigationController != nil) {

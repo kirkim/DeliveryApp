@@ -52,7 +52,7 @@ class StoreListView: UICollectionView {
     
     @objc private func didPullToRefresh() {
         DispatchQueue.global().async {
-            SummaryStoreDataManager.shared.load(storeType: self.type!) { loadData in
+            SummaryStoreHttpManager.shared.load(storeType: self.type!) { loadData in
                 self.model.updateData(data: loadData)
                 sleep(1) // 임시로 지연시간 1초 주기
                 DispatchQueue.main.async {

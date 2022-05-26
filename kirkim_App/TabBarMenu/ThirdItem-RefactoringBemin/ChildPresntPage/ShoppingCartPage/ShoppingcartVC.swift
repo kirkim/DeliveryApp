@@ -70,24 +70,13 @@ class ShoppingcartVC: UIViewController {
         
         viewModel.presentStoreVC
             .bind { [weak self] storeCode in
-                DetailStoreDataManager.shared.loadData(code: storeCode) {
-                    DispatchQueue.main.async {
-                        let vc = MagnetBarView(type: .fake)
-                        self?.navigationController?.pushViewController(vc, animated: true)
-                    }
-                }
+                MagnetBarVC.presentView(target: self!, type: .fake(point: PresentDetailMenuPoint(storeCode: storeCode)))
             }
             .disposed(by: disposeBag)
         
         viewModel.presentDetailMenuVC
             .emit { [weak self] point in
-                DetailStoreDataManager.shared.loadData(code: point.storeCode) {
-                    DispatchQueue.main.async {
-                        let vc = MagnetBarView(type: .fake)
-                        vc.readyToOpenDetailMenuVC(indexPath: point.indexPath)
-                        self?.navigationController?.pushViewController(vc, animated: true)
-                    }
-                }
+                MagnetBarVC.presentView(target: self!, type: .fake(point: point))
             }
             .disposed(by: disposeBag)
     }
