@@ -67,6 +67,7 @@ class BasicReviewVC: UIViewController {
                     }
                 }
             })
+            .disposed(by: disposeBag)
     }
     
     private func attribute() {
@@ -84,7 +85,21 @@ class BasicReviewVC: UIViewController {
         tableView.register(headerFooterViewType: ReviewByOtherHeaderView.self)
         
         self.tableView.sectionHeaderTopPadding = 10
+        self.tableView.refreshControl = UIRefreshControl()
+        self.tableView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
     }
+    
+    @objc private func didPullToRefresh() {
+        DispatchQueue.global().async {
+            self.viewModel.updata(id: self.type.id) {
+                sleep(1) // 임시로 지연시간 1초 주기
+                    DispatchQueue.main.async {
+                        self.tableView.refreshControl?.endRefreshing()
+                    }
+            }
+        }
+    }
+
 
     private func layout() {
         [tableView].forEach {

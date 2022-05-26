@@ -15,7 +15,7 @@ class MagnetReviewViewModel {
     let headerViewModel = MagnetReviewHeaderCellViewModel()
     private let cellViewModel = MagnetReviewCellViewModel()
     let pickSortTypeViewModel = PickSortTypeViewModel()
-    let data = BehaviorRelay<[MagnetReviewSectionModel]>(value: [])
+//    let data = BehaviorRelay<[MagnetReviewSectionModel]>(value: [])
     
     // childViewModel -> ViewModel -> View
     let movingSortTypeView = PublishRelay<Bool>()
@@ -23,24 +23,19 @@ class MagnetReviewViewModel {
     
     private let disposeBag = DisposeBag()
     
-    let storeName: String
-    
     init() {
-        storeName = model.storeName
         self.presentUserReviewList = cellViewModel.nameLabelTapped.asSignal()
         let pickSortTypeButton = pickSortTypeViewModel.selectedSortType.share()
         
-        MagnetReviewHttpManager.shared.load {
-            Observable.combineLatest(
-                self.headerViewModel.hasPhoto,
-                self.pickSortTypeViewModel.selectedSortType) {
-                    ($0, $1)
-                }
-                .map(self.model.getData)
-                .bind(to: self.data)
-                .disposed(by: self.disposeBag)
-        }
-    
+        Observable.combineLatest(
+            self.headerViewModel.hasPhoto,
+            self.pickSortTypeViewModel.selectedSortType) {
+                ($0, $1)
+            }
+            .bind(onNext: self.model.updateByoptionChanged)
+            .disposed(by: self.disposeBag)
+        
+        
         headerViewModel.sortButtonTapped
             .map { true }
             .bind(to: movingSortTypeView)
@@ -54,6 +49,20 @@ class MagnetReviewViewModel {
             .map { _ in false }
             .bind(to: self.movingSortTypeView)
             .disposed(by: disposeBag)
+    }
+    
+    // public function
+    func getStoreNameObservable() -> Driver<String> {
+        return model.getStoreNameObservable().asDriver(onErrorJustReturn: "")
+    }
+    
+    
+    func getDataObservable() -> Driver<[MagnetReviewSectionModel]> {
+        return model.getDataObservable().asDriver(onErrorJustReturn: [])
+    }
+    
+    func update(completion: (() -> ())? = nil) {
+        model.update(completion: completion)
     }
     
     func dataSource() -> RxTableViewSectionedReloadDataSource<MagnetReviewSectionModel> {

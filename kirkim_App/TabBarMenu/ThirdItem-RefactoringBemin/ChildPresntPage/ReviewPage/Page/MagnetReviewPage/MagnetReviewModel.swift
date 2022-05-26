@@ -11,12 +11,14 @@ import RxCocoa
 
 class MagnetReviewModel {
     private let disposeBag = DisposeBag()
-    private let httpManager = MagnetReviewHttpManager.shared
     private var reviewImageStorage: [String : UIImage] = [:]
-    let storeName: String
+    private let httpManager = MagnetReviewHttpManager.shared
+    private let dataObservable = BehaviorRelay<[MagnetReviewSectionModel]>(value: [])
+    private let storeNameObservable = BehaviorRelay<String>(value: "")
+    private var hasPhoto: Bool = false
+    private var sortType: ReViewSortType = .latestOrder
     
     init() {
-        storeName = httpManager.storeName
     }
     
     func makeReviewImage(url: String?) -> UIImage? {
@@ -35,39 +37,63 @@ class MagnetReviewModel {
         }
     }
     
-    func getData(hasPhoto: Bool, sortType: ReViewSortType) -> [MagnetReviewSectionModel] {
-        guard let totalRatingData = self.httpManager.totalRatingData,
-              let reviewData = self.httpManager.reviewData else { return [] }
-        var items = (reviewData.items as! [ReviewItem])
-        
-        items.sort(by: sortLatest(a:b:))
-        switch sortType {
-        case .latestOrder:
-            break;
-        case .highStarRating:
-            items.sort(by: self.sortHighRating(a:b:))
-        case .lowStarRating:
-            items.sort(by: self.sortLowRating(a:b:))
+    func getDataObservable() -> Observable<[MagnetReviewSectionModel]> {
+        return self.dataObservable.share()
+    }
+    
+    func getStoreNameObservable() -> Observable<String> {
+        return storeNameObservable.share()
+    }
+    
+    func updateByoptionChanged(hasPhoto: Bool, sortType: ReViewSortType) {
+        self.hasPhoto = hasPhoto
+        self.sortType = sortType
+        update()
+    }
+    
+    func update(completion: (() -> ())? = nil) {
+        MagnetReviewHttpManager.shared.load(storeCode: DetailStoreDataManager.shared.getStoreCode()) { jsonData in
+            self.storeNameObservable.accept( jsonData.storeInfo.storeName )
+            var items = jsonData.reviews
+            let totalRatingData = MagnetReviewSectionModel.totalRatingSection(items: [TotalRatingItem(totalCount: items.count, averageRating: jsonData.averageRating)])
+            
+            items.sort(by: sortLatest(a:b:))
+            switch self.sortType {
+            case .latestOrder:
+                break;
+            case .highStarRating:
+                items.sort(by: sortHighRating(a:b:))
+            case .lowStarRating:
+                items.sort(by: sortLowRating(a:b:))
+            }
+            
+            guard self.hasPhoto == true else {
+                self.dataObservable.accept( [totalRatingData, MagnetReviewSectionModel.reviewSection(items: items)] )
+                completion?()
+                return
+            }
+            
+            let photoItems = items.filter { item in
+                return item.photoUrl != nil
+            }
+            
+            self.dataObservable.accept( [totalRatingData, MagnetReviewSectionModel.reviewSection(items: photoItems)] )
+            completion?()
+            return
         }
         
-        guard hasPhoto == true else { return [totalRatingData, MagnetReviewSectionModel.reviewSection(items: items)] }
-        
-        let photoItems = items.filter { item in
-            return item.photoUrl != nil
+        func sortLatest(a: ReviewItem, b: ReviewItem) -> Bool {
+            return a.createAt > b.createAt
         }
         
-        return [totalRatingData, MagnetReviewSectionModel.reviewSection(items: photoItems)]
+        func sortHighRating(a: ReviewItem, b: ReviewItem) -> Bool {
+            return a.rating > b.rating
+        }
+        
+        func sortLowRating(a: ReviewItem, b: ReviewItem) -> Bool {
+            return a.rating < b.rating
+        }
+        
     }
     
-    func sortLatest(a: ReviewItem, b: ReviewItem) -> Bool {
-        return a.createAt > b.createAt
-    }
-    
-    func sortHighRating(a: ReviewItem, b: ReviewItem) -> Bool {
-        return a.rating > b.rating
-    }
-    
-    func sortLowRating(a: ReviewItem, b: ReviewItem) -> Bool {
-        return a.rating < b.rating
-    }
 }

@@ -10,4 +10,5 @@ import UIKit
 struct ReviewJSONData: Codable {
     var reviews: [ReviewItem]
     var averageRating: CGFloat
+    var storeInfo: StoreInfo
 }

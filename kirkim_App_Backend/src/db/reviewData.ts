@@ -1,8 +1,10 @@
-import { Review, reviewData } from './data/reviewStorage.js';
+import { Review, reviewData, StoreInfo } from './data/reviewStorage.js';
+import { getStoreInfo } from './deliveryData.js';
 
 export type ReviewJson = {
   reviews: Review[];
   averageRating: number;
+  storeInfo: StoreInfo;
 };
 
 export type ReviewDataForSummary = {
@@ -51,6 +53,7 @@ export async function getAllReviews(storeCode: string): Promise<ReviewJson | und
   let reviewJson: ReviewJson = {
     reviews: reviews,
     averageRating: sumRating / totalCount,
+    storeInfo: getStoreInfo(storeCode),
   };
   return reviewJson;
 }

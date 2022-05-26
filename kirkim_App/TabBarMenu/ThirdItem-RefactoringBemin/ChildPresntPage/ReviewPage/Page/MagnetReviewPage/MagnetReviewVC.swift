@@ -52,8 +52,15 @@ class MagnetReviewVC: UIViewController {
     func bind() {
         pickerSortTypeView.bind(viewModel.pickSortTypeViewModel)
         let dataSource = viewModel.dataSource()
-        viewModel.data
-            .bind(to: self.tableView.rx.items(dataSource: dataSource))
+        viewModel.getStoreNameObservable()
+            .map { storeName -> String in
+                return "\(storeName) 리뷰"
+            }
+            .drive(self.rx.title)
+            .disposed(by: disposeBag)
+        
+        viewModel.getDataObservable()
+            .drive(self.tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
         viewModel.movingSortTypeView
@@ -92,7 +99,7 @@ class MagnetReviewVC: UIViewController {
     
     private func attribute() {
         self.view.backgroundColor = .white
-        self.title = "\(viewModel.storeName) 리뷰"
+//        self.title = "\(viewModel.getStoreName()) 리뷰"
         self.tableView.delegate = self
         let cellNib = UINib(nibName: "MagnetReviewCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: "MagnetReviewCell")
@@ -103,6 +110,19 @@ class MagnetReviewVC: UIViewController {
         
         self.tapBackgroundView.isHidden = true
         self.tapBackgroundView.backgroundColor = .clear
+        self.tableView.refreshControl = UIRefreshControl()
+        self.tableView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
+    }
+    
+    @objc private func didPullToRefresh() {
+        DispatchQueue.global().async {
+            self.viewModel.update {
+                sleep(1) // 임시로 지연시간 1초 주기
+                DispatchQueue.main.async {
+                    self.tableView.refreshControl?.endRefreshing()
+                }
+            }
+        }
     }
 
     private func layout() {
