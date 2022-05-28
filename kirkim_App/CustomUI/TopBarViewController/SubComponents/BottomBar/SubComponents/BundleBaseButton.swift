@@ -9,14 +9,15 @@ import UIKit
 import SnapKit
 import RxCocoa
 import RxSwift
+import RxGesture
 
 class BundleBaseButton: UIView {
     private let disposeBag = DisposeBag()
     
-    private let button1 = UIButton()
-    private let button2 = UIButton()
-    private let button3 = UIButton()
-    private let button4 = UIButton()
+    private let button1 = BottomButtonView()
+    private let button2 = BottomButtonView()
+    private let button3 = BottomButtonView()
+    private let button4 = BottomButtonView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,34 +31,39 @@ class BundleBaseButton: UIView {
     
     //MARK: bind function
     func bind(_ viewModel: BundleBaseButtonViewModel) {
-        button1.rx.tap
-            .map { .one }
+        button1.rx.tapGesture()
+            .when(.recognized)
+            .map { _ in .one }
             .bind(to: viewModel.buttonTapped)
             .disposed(by: disposeBag)
-        button2.rx.tap
-            .map { .two }
-            .bind(to: viewModel.buttonTapped)
-            .disposed(by: disposeBag)
-        
-        button3.rx.tap
-            .map { .three }
+        button2.rx.tapGesture()
+            .when(.recognized)
+            .map { _ in .two }
             .bind(to: viewModel.buttonTapped)
             .disposed(by: disposeBag)
         
-        button4.rx.tap
-            .map { .four }
+        button3.rx.tapGesture()
+            .when(.recognized)
+            .map { _ in .three }
             .bind(to: viewModel.buttonTapped)
             .disposed(by: disposeBag)
+        
+        button4.rx.tapGesture()
+            .when(.recognized)
+            .map { _ in .four }
+            .bind(to: viewModel.buttonTapped)
+            .disposed(by: disposeBag)
+        
+        let buttonDatas = viewModel.getButtonDatas()
+        self.button1.setData(data: buttonDatas.button1)
+        self.button2.setData(data: buttonDatas.button2)
+        self.button3.setData(data: buttonDatas.button3)
+        self.button4.setData(data: buttonDatas.button4)
     }
     
     //MARK: attribute(), layout() function
     private func attribute() {
         self.backgroundColor = .white
-        self.button1.backgroundColor = .systemCyan
-        self.button2.backgroundColor = .yellow
-        self.button3.backgroundColor = .green
-        self.button4.backgroundColor = .systemBrown
-    
     }
     
     private func layout() {

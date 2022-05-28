@@ -1,9 +1,10 @@
 import fs from 'fs';
 import config from '../../config.js';
 import { getStoreInfo } from '../deliveryData.js';
-import { getRandomUser, UserInfo } from '../userData.js';
+import { getRandomUser } from '../userData.js';
 import { randomNumberArray } from './deliveryStorage.js';
 import { storeCodes } from './storeCodes.js';
+import { UserInfo } from './userStorage.js';
 
 export type StoreInfo = {
   storeCode: string;

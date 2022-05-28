@@ -1,42 +1,6 @@
 import bcrypt from 'bcrypt';
 import config from '../config.js';
-
-export type UserInfo = {
-  userID: string;
-  name: string;
-  id: string;
-};
-
-export type User = {
-  userID: string;
-  password: string;
-  name: string;
-};
-
-export type UserData = {
-  data: User;
-  id: string;
-};
-export type UserDatas = UserData[];
-
-let userDatas: UserDatas = [
-  {
-    data: {
-      userID: 'chichu',
-      password: '$2b$12$onO6FjcLQx4ZHlpMgwzHg.2yAT9b6Jgde3ul6Jgr2CsUTza1JTqpm',
-      name: 'Jisoo',
-    },
-    id: '1',
-  },
-  {
-    data: {
-      userID: 'Bob123',
-      password: '$2b$12$onO6FjcLQx4ZHlpMgwzHg.2yAT9b6Jgde3ul6Jgr2CsUTza1JTqpm',
-      name: 'Bob',
-    },
-    id: '2',
-  },
-];
+import { User, UserData, UserDatas, userDatas, UserInfo } from './data/userStorage.js';
 
 export function getRandomUser(): UserInfo {
   let rand = Math.floor(Math.random() * userDatas.length);
@@ -54,7 +18,7 @@ async function hashPassword(password: string): Promise<string> {
 
 export async function create(user: User) {
   user.password = await hashPassword(user.password);
-  const created = { data: user, id: Date.now().toString() };
+  const created = { data: user, id: Date.now().toString(), likeStores: [] };
   userDatas.push(created);
   return;
 }
@@ -77,4 +41,29 @@ export async function checkByUserID(userID: string): Promise<Boolean> {
 
 export async function getAllUser(): Promise<UserDatas> {
   return userDatas;
+}
+
+export async function findLikeStoresById(id: string): Promise<string[] | undefined> {
+  let data = userDatas.find((data) => data.id === id);
+  return data?.likeStores;
+}
+
+export async function addOrRemoveLikeStore(id: string, storeCode: string): Promise<boolean> {
+  let user = userDatas.find((user) => user.id === id);
+  if (user === undefined) {
+    throw new Error('No User');
+  }
+  let isDelete: boolean = false;
+  let hasStore = user?.likeStores.filter((code) => {
+    if (code == storeCode) {
+      isDelete = true;
+      return false;
+    }
+    return true;
+  });
+  if (isDelete == false) {
+    hasStore?.unshift(storeCode);
+  }
+  user.likeStores = hasStore;
+  return !isDelete;
 }

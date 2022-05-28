@@ -21,21 +21,30 @@ struct BundleBaseButtonViewModel {
     // ViewModel -> ParentViewModel
     let presentVC = PublishRelay<UIViewController>()
     
-    init(bottomBarItem: BottomBarItem) {
+    // ViewModel -> View
+    private let buttonDatas: BottomBarDatas
+    
+    init(bottomBarItems: BottomBarItems) {
+        let presentVCBundle = bottomBarItems.presentVC
         buttonTapped
             .map { buttonType in
                 switch buttonType {
                 case .one:
-                    return bottomBarItem.presentVC1
+                    return presentVCBundle.button1
                 case .two:
-                    return bottomBarItem.presentVC2
+                    return presentVCBundle.button2
                 case .three:
-                    return bottomBarItem.presentVC3
+                    return presentVCBundle.button3
                 case .four:
-                    return bottomBarItem.presentVC4
+                    return presentVCBundle.button4
                 }
             }
             .bind(to: presentVC)
             .disposed(by: disposeBag)
+        self.buttonDatas = bottomBarItems.datas
+    }
+    
+    func getButtonDatas() -> BottomBarDatas {
+        return self.buttonDatas
     }
 }

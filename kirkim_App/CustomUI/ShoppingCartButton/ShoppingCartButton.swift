@@ -82,7 +82,7 @@ class ShoppingCartButton: UIView {
             .disposed(by: disposeBag)
         vc.view.addSubview(self)
         let x = vc.view.frame.width - BUTTONSIZE - 20.0
-        let y = vc.view.frame.height - BUTTONSIZE - 50.0
+        let y = vc.view.frame.height - BUTTONSIZE - 70.0
         self.frame = CGRect(x: x, y: y, width: BUTTONSIZE, height: BUTTONSIZE)
     }
     

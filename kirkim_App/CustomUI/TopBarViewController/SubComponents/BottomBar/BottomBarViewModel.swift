@@ -20,8 +20,8 @@ struct BottomBarViewModel {
     let presentVC: Signal<UIViewController>
     let dismissVC: Signal<Void>
     
-    init(bottomBarItem: BottomBarItem) {
-        bundleBaseButtonViewModel = BundleBaseButtonViewModel(bottomBarItem: bottomBarItem)
+    init(bottomBarItems: BottomBarItems) {
+        bundleBaseButtonViewModel = BundleBaseButtonViewModel(bottomBarItems: bottomBarItems)
         presentVC = bundleBaseButtonViewModel.presentVC.asSignal()
         dismissVC = centerButtonTapped.asSignal()
     }

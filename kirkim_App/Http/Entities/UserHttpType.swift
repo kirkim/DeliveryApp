@@ -24,14 +24,30 @@ enum UserPostType: String, UrlType {
         }
     }
 }
-enum UserGetType: String, UrlType {
+
+enum UserGetType: UrlType {
     case usersData__Dev
+    case likeStoreList(id: String)
     
     var url: String {
         let BASE_URL: String = "http://localhost:8080"
         switch self {
+        case .likeStoreList(let id):
+            return "\(BASE_URL)/user/like?id=\(id)"
         case .usersData__Dev:
             return "\(BASE_URL)/user"
+        }
+    }
+}
+
+enum UserPutType: UrlType {
+    case toggleLikeStore(id: String, storeCode: String)
+    
+    var url: String {
+        let BASE_URL: String = "http://localhost:8080"
+        switch self {
+        case .toggleLikeStore(id: let id, storeCode: let storeCode):
+            return "\(BASE_URL)/user/toggleLike?id=\(id)&storeCode=\(storeCode)"
         }
     }
 }

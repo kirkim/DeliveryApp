@@ -10,3 +10,4 @@ typealias SummaryStoreHttpManager = SummaryStoreHttpModel
 typealias MagnetSummaryReviewHttpManager = MagnetSummaryReviewHttpModel
 typealias BasicReviewHttpManager = BasicReviewHttpModel
 typealias MagnetReviewHttpManager = MagnetReviewHttpModel
+typealias MyLikeStoreHttpManager = MyLikeStoreHttpModel

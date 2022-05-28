@@ -39,7 +39,11 @@ class MagnetBarVC: UIViewController {
                 if (indexPath != nil) {
                     vc.readyToOpenDetailMenuVC(indexPath: indexPath!)
                 }
-                target.navigationController?.pushViewController(vc, animated: true)
+                if (target.navigationController != nil) {
+                    target.navigationController?.pushViewController(vc, animated: true)
+                } else {
+                    target.present(vc, animated: true)
+                }
             }
         }
     }

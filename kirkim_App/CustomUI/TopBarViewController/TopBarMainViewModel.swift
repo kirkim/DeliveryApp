@@ -23,14 +23,14 @@ struct TopBarMainViewModel {
     let presentVC: Signal<UIViewController>
     let dismissVC: Signal<Void>
     
-    init(topBarItems: [TopBarItem], bottomBarItem: BottomBarItem) {
+    init(topBarItems: [TopBarItem], bottomBarItem: BottomBarItems) {
         let titles = topBarItems.map { $0.itemTitle }
         let viewControllers = topBarItems.map { $0.viewController }
         
         self.subViewControllers = viewControllers
         self.layoutViewModel = TopBarLayoutViewModel(views: viewControllers.map { $0.view })
         self.topBarViewModel = TopBarViewModel(itemTitles: titles)
-        self.bottomBarViewModel = BottomBarViewModel(bottomBarItem: bottomBarItem)
+        self.bottomBarViewModel = BottomBarViewModel(bottomBarItems: bottomBarItem)
         
         layoutViewModel.scrolledPage
             .emit(to: topBarViewModel.scrolledPage)

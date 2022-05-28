@@ -1,19 +1,17 @@
 //
-//  StoreListView.swift
-//  DeliveryMenuPage
+//  MyLikeStoresCollectionView.swift
+//  kirkim_App
 //
-//  Created by 김기림 on 2022/05/08.
+//  Created by 김기림 on 2022/05/28.
 //
 
 import UIKit
 import RxSwift
 import RxCocoa
 
-class StoreListView: UICollectionView {
+class MyLikeStoresListView: UICollectionView {
     private let disposeBag = DisposeBag()
-//    private let sectionManager = StoreListSectionManager()
-    private let model = StoreListModel()
-    private var type: StoreType?
+    private var viewModel: MyLikeStoresListViewModel?
     
     init() {
         super.init(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
@@ -24,18 +22,15 @@ class StoreListView: UICollectionView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setData(data: [StoreListSection], type: StoreType) {
-        self.model.updateData(data: data)
-        self.type = type
-    }
-    
-    func bind(_ viewModel: StoreListViewModel) {
-        let dataSource = model.dataSource()
-        model.cellData
-            .bind(to: self.rx.items(dataSource: dataSource))
+    func bind(_ viewModel: MyLikeStoresListViewModel) {
+        self.viewModel = viewModel
+        let dataSource = viewModel.getDataSource()
+        let cellData = viewModel.getCellData()
+        cellData
+            .drive(self.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
 
-        self.rx.itemSelected.withLatestFrom(model.cellData) { indexPath, cellData in
+        self.rx.itemSelected.withLatestFrom(cellData) { indexPath, cellData in
             return cellData[indexPath.section].items[indexPath.row].storeCode
         }
         .bind(to: viewModel.presentStoreDetailVC)
@@ -52,8 +47,7 @@ class StoreListView: UICollectionView {
     
     @objc private func didPullToRefresh() {
         DispatchQueue.global().async {
-            SummaryStoreHttpManager.shared.load(type: .storeType(type: self.type!)) { loadData in
-                self.model.updateData(data: loadData)
+            self.viewModel?.update {
                 sleep(1) // 임시로 지연시간 1초 주기
                 DispatchQueue.main.async {
                     self.refreshControl?.endRefreshing()
@@ -61,10 +55,14 @@ class StoreListView: UICollectionView {
             }
         }
     }
+    
+    func update() {
+        self.viewModel?.update()
+    }
 }
 
-//MARK: - StoreListView: UICollectionViewDelegateFlowLayout
-extension StoreListView: UICollectionViewDelegateFlowLayout {
+//MARK: - MyLikeStoresListView: UICollectionViewDelegateFlowLayout
+extension MyLikeStoresListView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = self.frame.width
         let height = self.frame.height/8

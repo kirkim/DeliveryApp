@@ -14,18 +14,26 @@ class SummaryStoreHttpModel {
     private let disposeBag = DisposeBag()
     
     let httpManager = DeliveryHttpManager.shared
-//    let data = PublishRelay<[StoreListSection]>()
     static let shared = SummaryStoreHttpModel()
     private init() { }
     
-    func load(storeType: StoreType, completion: @escaping (([StoreListSection]) -> ())) {
-        httpManager.getFetch(type: .summaryStores(type: storeType))
+    func load(type: GetSummaryType, completion: @escaping (([StoreListSection]) -> ())) {
+        
+        var validType: DeliveryGetType {
+            switch type {
+            case .storeType(type: let t):
+                return .summaryStores(type: t)
+            case .userCode(code: let id):
+                return .likeSummaryStores(userCode: id)
+            }
+        }
+        
+        httpManager.getFetch(type: validType)
             .subscribe { result in
                 switch result {
                 case .success(let data):
                     do {
                         let dataModel = try JSONDecoder().decode([SummaryStoreItem].self, from: data)
-//                        self.data.accept([StoreListSection(items: dataModel)])
                         completion([StoreListSection(items: dataModel)])
                     } catch {
                         print("decoding error: ", error.localizedDescription)

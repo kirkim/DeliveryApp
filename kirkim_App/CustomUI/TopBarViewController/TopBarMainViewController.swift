@@ -41,7 +41,11 @@ class TopBarMainViewController: UIViewController {
         
         viewModel.presentVC
             .emit { [weak self] vc in
-                self?.present(vc, animated: true)
+                if (self?.navigationController != nil) {
+                    self?.navigationController?.pushViewController(vc, animated: true)
+                } else {
+                    self?.present(vc, animated: true)
+                }
             }
             .disposed(by: disposeBag)
         

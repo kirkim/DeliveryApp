@@ -28,12 +28,17 @@ class TopBarVCWithProfile: BaseVC {
                 TopBarItem(viewController: Test1(), itemTitle: "선물하기"),
                 TopBarItem(viewController: Test2(), itemTitle: "전국별미"),
             ],
-            bottomBarItem: BottomBarItem(
-                presentVC1: ButtonVC1(),
-                presentVC2: ButtonVC2(),
-                presentVC3: ButtonVC3(),
-                presentVC4: ButtonVC4()
-            )
+            bottomBarItem: BottomBarItems(
+                presentVC: BottomBarPresentVC(
+                    button1: ButtonVC1(),
+                    button2: MyLikeStoresPageVC(),
+                    button3: ButtonVC3(),
+                    button4: ButtonVC4()),
+                datas: BottomBarDatas(
+                    button1: BottomButtonData(image: UIImage(systemName: "person.circle")!, title: "내 정보", tintColor: .white, backgroundColor: .blue),
+                    button2: BottomButtonData(image: UIImage(systemName: "heart")!, title: "찜"),
+                    button3: BottomButtonData(title: ""),
+                    button4: BottomButtonData(title: "")))
         )
 //        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)

@@ -62,4 +62,26 @@ class RxHttpClient {
             }
             .asSingle()
     }
+    
+    func putHttp(type postType: UrlType, headers: [RequestValue]?) -> Single<Result<Data, CustomError>> {
+        guard let url = URL(string: postType.url) else {
+            return .just(.failure(.invalidURL))
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        headers?.forEach {
+            request.setValue($0.value, forHTTPHeaderField: $0.key)
+        }
+        return session.rx.response(request: request)
+            .flatMap { response, data -> Single<Result<Data, CustomError>> in
+                if (200..<300 ~= response.statusCode) {
+                    return .just(.success(data))
+                } else {
+                    return .just(.failure(.responseError))
+                }
+            }
+            .asSingle()
+    }
 }

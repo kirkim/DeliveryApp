@@ -26,11 +26,24 @@ struct UserModel {
     func logOut() {
         manager.logOut()
     }
+    
+    func checkStoreIsLiked(storeCode: String) -> Bool {
+        return manager.checkStoreIsLiked(storeCode: storeCode)
+    }
+    
+    func getLikeStoreCodes() -> [String] {
+        return manager.getLikeStoreCodes()
+    }
+    
+    func updateLikeStore() {
+        return manager.updateLikeStore()
+    }
 }
 
 final class UserManager {
     static let shared = UserManager()
     private let userHttpManager = RxUserHttpManager()
+    private var userLikeModel = UserLikeModel()
     private let disposeBag = DisposeBag()
     var info: User?
     var isLogin: Bool = false
@@ -40,8 +53,10 @@ final class UserManager {
     private func setUser(user: User) {
         self.info = user
         self.isLogin = true
+        self.userLikeModel.update(id: user.id)
     }
     
+    // Public function
     func logIn(loginUserData: LoginUser) -> Single<CustomError?>  {
         return userHttpManager.logInUser(loginUserData: loginUserData)
             .flatMap { [weak self] result -> Single<CustomError?> in
@@ -59,5 +74,18 @@ final class UserManager {
     func logOut() {
         self.info = nil
         self.isLogin = false
+    }
+    
+    func checkStoreIsLiked(storeCode: String) -> Bool {
+        return self.userLikeModel.checkStoreIsLiked(storeCode: storeCode)
+    }
+    
+    func getLikeStoreCodes() -> [String] {
+        return self.userLikeModel.getLikeStoreCodes()
+    }
+    
+    func updateLikeStore() {
+        guard let id = info?.id  else { return }
+        return self.userLikeModel.update(id: id)
     }
 }

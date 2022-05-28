@@ -18,6 +18,10 @@ class RxUserHttpManager {
     public func getFetch(type getType: UserGetType) -> Single<Result<Data, CustomError>> {
         return httpClient.getHttp(type: getType, headers: nil)
     }
+    
+    public func putFetch(type postType: UserPutType) -> Single<Result<Data, CustomError>> {
+        return httpClient.putHttp(type: postType, headers: nil)
+    }
 
     public func checkUserId(id: String) -> Single<Result<Data, CustomError>> {
         let data = CheckId(userID: id)
