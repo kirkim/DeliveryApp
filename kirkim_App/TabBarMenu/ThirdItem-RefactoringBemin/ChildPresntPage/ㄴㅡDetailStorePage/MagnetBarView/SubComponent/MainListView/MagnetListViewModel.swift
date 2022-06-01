@@ -77,9 +77,13 @@ class MagnetListViewModel {
                 case .SectionMenu(header: _, items: let items):
                     let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: MagnetMenuCell.self)
                     
-                    let image = self.makeMenuImage(indexPath: indexPath, url: items[indexPath.row].thumbnail )
-                    
-                    cell.setData(data: items[indexPath.row], image: image)
+                    cell.setData(data: items[indexPath.row])
+                    DispatchQueue.global().async {
+                        let image = self.makeMenuImage(indexPath: indexPath,url: items[indexPath.row].thumbnail )
+                        DispatchQueue.main.async {
+                            cell.setImage(image: image)
+                        }
+                    }
                     return cell
                 }
             })
@@ -102,10 +106,12 @@ class MagnetListViewModel {
         if (MenuImageStorage[indexPath] != nil) {
             return MenuImageStorage[indexPath]!
         } else {
-            let url = URL(string: url)
-            let data = try? Data(contentsOf: url!)
-            let image = UIImage(data: data!)
-            if let image = image { self.MenuImageStorage.updateValue(image, forKey: indexPath) }
+            let hasUrl = URL(string: url)
+            let data = try? Data(contentsOf: hasUrl!)
+            let image = data != nil ? UIImage(data: data!) : UIImage(systemName: "icloud.slash")!
+            DispatchQueue.main.async {
+                if let image = image { self.MenuImageStorage.updateValue(image, forKey: indexPath) }
+            }
             return image ?? UIImage()
         }
     }

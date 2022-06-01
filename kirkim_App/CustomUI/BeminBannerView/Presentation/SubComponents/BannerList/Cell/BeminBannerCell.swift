@@ -51,7 +51,7 @@ class BeminBannerCell: UICollectionViewCell {
                 let url = URL(string: imageUrl)
                 let data = try? Data(contentsOf: url!)
                 DispatchQueue.main.async {
-                    let image = UIImage(data: data!)
+                    let image = data != nil ? UIImage(data: data!) : UIImage(systemName: "circle")!
                     if let image = image { self.storage.updateValue(image, forKey: imageUrl) }
                     self.imageView.image = image
                 }

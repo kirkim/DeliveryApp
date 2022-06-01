@@ -47,10 +47,6 @@ class MagnetSummaryReviewHttpModel {
             .disposed(by: disposeBag)
     }
     
-//    func sortLatest(a: ReviewItem, b: ReviewItem) -> Bool {
-//        return a.createAt > b.createAt
-//    }
-    
     func setData(coView: UICollectionView) {
         self.data
             .bind(to: coView.rx.items) { collectionView, row, data in
@@ -60,7 +56,13 @@ class MagnetSummaryReviewHttpModel {
                 } else {
                     let cell = collectionView.dequeueReusableCell(for: IndexPath(row: row, section: 0), cellType: MagnetInfoReviewCell.self)
                     guard let data = data else { return cell }
-                    cell.setData(data: data, image: self.makeSummryReviewImage(url: data.thumbnail))
+                    cell.setData(data: data)
+                    DispatchQueue.global().async {
+                        let image = self.makeSummryReviewImage(url: data.thumbnail)
+                        DispatchQueue.main.async {
+                            cell.setImage(image: image)
+                        }
+                    }
                     return cell
                 }
             }
@@ -75,8 +77,10 @@ class MagnetSummaryReviewHttpModel {
                 return UIImage(systemName: "circle")!
             }
             let data = try? Data(contentsOf: dataUrl)
-            let image = UIImage(data: data!)
-            if let image = image { self.summaryReviewImageStorage.updateValue(image, forKey: url) }
+            let image = data != nil ? UIImage(data: data!) : UIImage(systemName: "icloud.slash")!
+            DispatchQueue.main.async {
+                if let image = image { self.summaryReviewImageStorage.updateValue(image, forKey: url) }
+            }
             return image ?? UIImage()
         }
     }

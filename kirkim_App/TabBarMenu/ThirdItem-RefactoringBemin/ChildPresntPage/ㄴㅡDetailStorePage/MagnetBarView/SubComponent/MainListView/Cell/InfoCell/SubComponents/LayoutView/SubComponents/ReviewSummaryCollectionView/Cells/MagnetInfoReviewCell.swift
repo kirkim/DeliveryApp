@@ -37,12 +37,14 @@ class MagnetInfoReviewCell: UICollectionViewCell, Reusable {
         self.layer.borderColor = UIColor.black.cgColor
     }
     
-    func setData(data: SummaryReviewData, image: UIImage) {
-        self.reviewLabel.text = data.review
-        self.ratingLabel.text = setStar(rating: data.rating)
-        
+    func setImage(image: UIImage) {
         let parsedImage = resizeImage(image: image, height: self.contentView.frame.height)
         self.thumbnailView.image = parsedImage
+    }
+    
+    func setData(data: SummaryReviewData) {
+        self.reviewLabel.text = data.review
+        self.ratingLabel.text = setStar(rating: data.rating)
     }
     
     private func setStar(rating: Int = 5) -> String {

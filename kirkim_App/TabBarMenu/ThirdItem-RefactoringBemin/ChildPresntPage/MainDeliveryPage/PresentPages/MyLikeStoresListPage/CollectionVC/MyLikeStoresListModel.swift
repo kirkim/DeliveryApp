@@ -37,8 +37,14 @@ class MyLikeStoresListModel {
         let dataSource = RxCollectionViewSectionedReloadDataSource<StoreListSection>(
             configureCell: { dataSource, collectionView, indexPath, item in
                 let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: StoreListCell.self)
-                let image = self.makeMenuImage(urlString: item.thumbnailUrl)
-                cell.setData(data: item, image: image)
+//                let image = self.makeMenuImage(urlString: item.thumbnailUrl)
+                cell.setData(data: item)
+                DispatchQueue.global().async {
+                    let image = self.makeMenuImage(urlString: item.thumbnailUrl)
+                    DispatchQueue.main.async {
+                        cell.setImage(image: image)
+                    }
+                }
                 return cell
             })
         

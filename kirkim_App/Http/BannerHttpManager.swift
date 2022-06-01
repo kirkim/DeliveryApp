@@ -15,7 +15,7 @@ final class BannerHttpManager {
         case image(urlString: String)
         
         var url: String {
-            let BASE_URL: String = "http://localhost:8080"
+            let BASE_URL: String = "https://kirkim.com"
             switch self {
             case .basic:
                 return "\(BASE_URL)/banner"

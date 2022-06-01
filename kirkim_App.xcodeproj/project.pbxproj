@@ -1715,8 +1715,8 @@
 		FEFA1BC72829EF140088BEEB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				FEFA1BC82829EF140088BEEB /* BeminBannerViewModel.swift */,
 				FEFA1BC92829EF140088BEEB /* BeminBannerView.swift */,
+				FEFA1BC82829EF140088BEEB /* BeminBannerViewModel.swift */,
 				FEFA1BCA2829EF140088BEEB /* SubComponents */,
 			);
 			path = Presentation;

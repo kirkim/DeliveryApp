@@ -8,7 +8,7 @@ import deliveryRouter from './router/deliveryRouter.js';
 // import reviewRouter from './router/reviewRouter.js';
 
 const server = express();
-const PORT = config.host.port;
+// const PORT = config.host.port;
 const staticUrl = config.static.url;
 
 server.use(morgan('dev'));
@@ -29,4 +29,5 @@ server.use((error: ErrorRequestHandler, _req: Request, res: Response, _next: Nex
   return res.sendStatus(500);
 });
 
-server.listen(PORT, () => console.log(`success connect server✨ ${config.server.baseUrl}`));
+// server.listen(PORT, () => console.log(`success connect server✨ ${config.server.baseUrl}`));
+export default server;

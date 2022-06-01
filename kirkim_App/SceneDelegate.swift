@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //Main
         let RootTabBarController = MainTabBarController()
         self.window?.rootViewController = RootTabBarController
-        
+        window?.overrideUserInterfaceStyle = .light        
 //        let vc = ShoppingcartVC()
 //        let vc = PPPUP()
 //        let nav = UINavigationController(rootViewController: vc)

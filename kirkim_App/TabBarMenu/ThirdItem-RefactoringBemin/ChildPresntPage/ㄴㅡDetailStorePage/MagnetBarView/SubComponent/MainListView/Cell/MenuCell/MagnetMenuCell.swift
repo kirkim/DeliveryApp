@@ -38,13 +38,15 @@ class MagnetMenuCell: UICollectionViewCell, Reusable {
         self.backgroundColor = .white
     }
     
-    func setData(data: MenuItem, image: UIImage) {
+    func setImage(image: UIImage) {
+        self.thumbnailView.image = image
+    }
+    
+    func setData(data: MenuItem) {
         self.titleLabel.text = data.title
         self.descriptionLabel.text = data.description
         self.priceLabel.text = data.price.parsingToKoreanPrice()
         self.code = data.menuCode
-
-        self.thumbnailView.image = image
     }
     
     private func layout() {
