@@ -37,11 +37,11 @@ class LogoutView: UIView {
     
     //attribute, layout
     private func attribute() {
-        self.backgroundColor = .systemGray5
+        self.backgroundColor = .systemBrown.withAlphaComponent(0.8)
         var config = UIButton.Configuration.plain()
         config.title = " 로그아웃"
         config.image = UIImage(systemName: "rectangle.portrait.and.arrow.right")
-        config.baseForegroundColor = .brown
+        config.baseForegroundColor = .white
         logoutButton.configuration = config
     }
     

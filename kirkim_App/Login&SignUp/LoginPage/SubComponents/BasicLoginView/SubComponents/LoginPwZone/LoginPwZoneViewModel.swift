@@ -18,7 +18,7 @@ struct LoginPwZoneViewModel {
     init() {
         isValid = pwText
             .map({ pw -> Bool in
-                let emailRegEx = "[A-Z0-9a-z._%+-]{1,}"
+                let emailRegEx = "[A-Z0-9a-z._@#$!&^%+-]{1,}"
                 let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
                 return emailTest.evaluate(with: pw)
             })

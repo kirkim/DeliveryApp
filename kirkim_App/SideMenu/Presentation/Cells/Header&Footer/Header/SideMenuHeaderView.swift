@@ -45,17 +45,17 @@ class SideMenuHeaderView: UITableViewHeaderFooterView, Reusable {
     }
     
     private func attribute() {
-        contentView.backgroundColor = .systemGray5
+        contentView.backgroundColor = .systemBrown.withAlphaComponent(0.8)
         nameLabel.text = user.info?.data.name ?? "Geust"
         nameLabel.font = SideMenuSize.labelFont
+        nameLabel.textColor = .white
         
         var config = UIButton.Configuration.plain()
         config.buttonSize = .large
         config.image = UIImage(systemName: "chevron.right")
-        config.baseForegroundColor = .brown
+        config.baseForegroundColor = .white
         detailProfileButton.configuration = config
 
-        
         profileView.layer.cornerRadius = 25
     }
     

@@ -11,7 +11,7 @@ class SimpleProfileView: UIButton {
     private var firstLetter: String?
     
     init(userName: String) {
-        super.init(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        super.init(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
         self.firstLetter = String(userName[userName.startIndex])
         makeUI()
     }
@@ -22,7 +22,7 @@ class SimpleProfileView: UIButton {
     
     private func makeUI() {
         self.clipsToBounds = true
-        self.layer.cornerRadius = 20
+        self.layer.cornerRadius = self.frame.width / 2
         self.backgroundColor = .blue
         self.setTitle(self.firstLetter, for: .normal)
         self.tintColor = .white

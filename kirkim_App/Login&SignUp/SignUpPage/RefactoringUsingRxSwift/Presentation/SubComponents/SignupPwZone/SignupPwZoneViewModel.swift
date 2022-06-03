@@ -22,7 +22,7 @@ struct SignupPwZoneViewModel {
     init() {
         isValidPw = pwText
             .map { pw -> Bool in
-                let passwordRegEx = "^[a-zA-Z0-9]{8,}$"
+                let passwordRegEx = "^[A-Z0-9a-z._@#$!&^%+-]{8,}$"
                 let passwordTest = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
                 return passwordTest.evaluate(with: pw)
             }

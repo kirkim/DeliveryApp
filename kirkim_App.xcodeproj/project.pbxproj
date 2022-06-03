@@ -1167,19 +1167,19 @@
 				FE078F1E27C353B500D19E34 /* SideMenuVC.swift */,
 				FE93B83A283DB3FA00E59C5F /* SideMenuViewModel.swift */,
 				FE7FC0C527C48581009EB2AE /* SideMenuModel.swift */,
-				FE85B4ED27EAAB280031F5AC /* SubComponents */,
+				FE85B4ED27EAAB280031F5AC /* Cells */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
 		};
-		FE85B4ED27EAAB280031F5AC /* SubComponents */ = {
+		FE85B4ED27EAAB280031F5AC /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				FE7FC0E327C4AE90009EB2AE /* SideMenuCell.swift */,
 				FE7FC0DF27C4ACE3009EB2AE /* Header&Footer */,
 				FE7FC0C727C48966009EB2AE /* SideMenuSubView */,
 			);
-			path = SubComponents;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		FE85B4EE27EAAB870031F5AC /* Entities */ = {

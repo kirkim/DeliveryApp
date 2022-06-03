@@ -40,7 +40,6 @@ class TopBarVCWithProfile: BaseVC {
                     button3: BottomButtonData(title: ""),
                     button4: BottomButtonData(title: "")))
         )
-//        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         deliveryMenuViewModel.setBannerTouchEvent(at: self)
         deliveryMenuVC.bind(deliveryMenuViewModel)

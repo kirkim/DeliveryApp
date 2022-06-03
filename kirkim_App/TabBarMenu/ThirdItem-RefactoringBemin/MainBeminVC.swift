@@ -22,6 +22,12 @@ class BeminVC: BaseVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.title = "배민"
+        self.navigationController?.navigationBar.tintColor = .white
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.backgroundColor = .systemBrown
+        self.navigationController?.navigationBar.standardAppearance = navigationBarAppearance
+        self.navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
+
     }
 }
 
@@ -47,9 +53,9 @@ class MainBeminVC: UIViewController {
     }
     
     private func attribute() {
-        self.view.backgroundColor = .white
         self.collectionView.register(StaticSectionCell.self, forCellWithReuseIdentifier: "StaticSectionCell")
         self.collectionView.collectionViewLayout = createLayout()
+        self.collectionView.backgroundColor = .systemBrown
 //        self.collectionView.refreshControl = UIRefreshControl()
 //        self.collectionView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
     }

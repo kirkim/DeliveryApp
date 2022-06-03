@@ -11,10 +11,14 @@ class MainTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBar.tintColor = .green
-        self.tabBar.barTintColor = .white
-        self.tabBar.unselectedItemTintColor = .black
         setVC()
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.backgroundColor = UIColor.init(red: 110/256, green: 77/256, blue: 65/256, alpha: 1)
+//        tabBarAppearance.backgroundColor = UIColor.init(red: 157/256, green: 120/256, blue: 109/256, alpha: 1)
+        self.tabBar.standardAppearance = tabBarAppearance
+        self.tabBar.scrollEdgeAppearance = tabBarAppearance
+        self.tabBar.tintColor = .white
+
     }
     
     private func setVC() {

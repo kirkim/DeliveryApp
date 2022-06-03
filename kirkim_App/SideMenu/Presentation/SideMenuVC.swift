@@ -8,15 +8,19 @@
 import UIKit
 import SnapKit
 import RxSwift
+import RxCocoa
 import RxGesture
 
 class SideMenuVC: UIViewController {
     private let backbuttonLabel = UILabel()
-    private let menuTableView = UITableView(frame: CGRect.zero, style: .plain)
+    private let menuTableView = UITableView(frame: CGRect.zero, style: .grouped)
     
     private let user = UserModel()
     private let viewModel = SideMenuViewModel()
     private let disposeBag = DisposeBag()
+    
+    private var baseTableOffsetY:CGFloat?
+    private var isInit:Bool = false
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -57,15 +61,41 @@ class SideMenuVC: UIViewController {
                 self.navigationController?.pushViewController(directorBlogPage, animated: true)
             })
             .disposed(by: disposeBag)
+        
+        let scrollEvent = self.menuTableView.rx.didScroll
+            .map { [weak self] _ -> CGFloat? in
+                return self?.menuTableView.contentOffset.y
+            }
+            .share()
+        scrollEvent.bind { [weak self] offsetY in
+            if (self?.isInit == false) {
+                self?.isInit = true
+                self?.baseTableOffsetY = offsetY
+            }
+        }
+        .disposed(by: disposeBag)
+        
+        scrollEvent
+            .filter { $0 != nil && self.baseTableOffsetY != nil }
+            .map { $0! }
+            .bind { [weak self] offsetY in
+                if (offsetY > (self?.baseTableOffsetY)!) {
+                    self?.backbuttonLabel.textColor = .black
+                } else {
+                    self?.backbuttonLabel.textColor = .white
+                }
+            }
+            .disposed(by: disposeBag)
     }
     
     private func attribute() {
         self.navigationItem.title = ""
-        self.view.backgroundColor = .systemGray
-        self.menuTableView.backgroundColor = .clear
+        self.view.backgroundColor = .systemBrown
+        self.menuTableView.backgroundColor = .white.withAlphaComponent(0.5)
         
         // backbutton UI
         self.backbuttonLabel.text = "X"
+        self.backbuttonLabel.textColor = .white
         self.backbuttonLabel.font = .systemFont(ofSize: 25, weight: .bold)
         let backbuttonContainer = UIBarButtonItem(customView: backbuttonLabel)
         self.navigationItem.leftBarButtonItem = backbuttonContainer
@@ -73,6 +103,8 @@ class SideMenuVC: UIViewController {
         self.menuTableView.dataSource = self
         self.menuTableView.delegate = self
         self.menuTableView.rowHeight = 60
+        self.menuTableView.sectionHeaderTopPadding = 0
+        
         menuTableView.register(headerFooterViewType: SideMenuHeaderView.self)
         menuTableView.register(SideMenuFooterView.self, forHeaderFooterViewReuseIdentifier: SideMenuFooterView.identifier)
     }
@@ -118,7 +150,8 @@ extension SideMenuVC: UITableViewDelegate {
         if (section == 0) {
             return SideMenuSize.headerHeight
         }
-        return CGFloat.leastNormalMagnitude
+        
+        return 20
     }
     
     //MARK: - Footer

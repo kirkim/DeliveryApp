@@ -38,7 +38,8 @@ class BottomBar: UIView {
     //MARK: attribute(), layout() function
     private func attribute() {
         self.backgroundColor = .black.withAlphaComponent(0.2) // 뷰를 그림자로써 사용
-        self.centerButton.backgroundColor = .systemBlue
+        self.centerButton.backgroundColor = UIColor.init(red: 110/256, green: 77/256, blue: 65/256, alpha: 1)
+
         self.centerButton.layer.cornerRadius = windowWidth! * CENTERBUTTONRATIO / 2
         
         // 뷰(그림자), 기본버튼번들뷰의 코너를 설정

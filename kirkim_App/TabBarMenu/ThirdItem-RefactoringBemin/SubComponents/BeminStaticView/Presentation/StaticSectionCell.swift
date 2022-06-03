@@ -29,7 +29,7 @@ class StaticSectionCell: UICollectionViewCell {
     //MARK: - BeminStaticCell: attribute, layout
     private func attribute() {
         self.registerCells(on: collectionView)
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .clear
     }
     
     private func layout() {
