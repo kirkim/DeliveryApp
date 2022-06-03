@@ -13,7 +13,7 @@ enum UserPostType: String, UrlType {
     case checkId
     
     var url: String {
-        let BASE_URL: String = "https://kirkim.com"
+        let BASE_URL: String = HttpConfig.url
         switch self {
         case .login:
             return "\(BASE_URL)/user/login"
@@ -30,7 +30,7 @@ enum UserGetType: UrlType {
     case likeStoreList(id: String)
     
     var url: String {
-        let BASE_URL: String = "http://localhost:8080"
+        let BASE_URL: String = HttpConfig.url
         switch self {
         case .likeStoreList(let id):
             return "\(BASE_URL)/user/like?id=\(id)"
@@ -44,7 +44,7 @@ enum UserPutType: UrlType {
     case toggleLikeStore(id: String, storeCode: String)
     
     var url: String {
-        let BASE_URL: String = "http://localhost:8080"
+        let BASE_URL: String = HttpConfig.url
         switch self {
         case .toggleLikeStore(id: let id, storeCode: let storeCode):
             return "\(BASE_URL)/user/toggleLike?id=\(id)&storeCode=\(storeCode)"

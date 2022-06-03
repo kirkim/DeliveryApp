@@ -15,7 +15,7 @@ function required(key: string, defaultValue?: any): Value {
 
 const config = {
   host: {
-    port: Number(required('HOST_PORT', 8080)),
+    port: Number(required('HOST_PORT', 4000)),
   },
   bcrypt: {
     saltRounds: parseInt(required('BCRTPY_SALT_ROUNDS', 10)),
@@ -24,7 +24,7 @@ const config = {
     url: required('BASE_URL', path.resolve() + '/assets'),
   },
   server: {
-    baseUrl: required('SERVER_BASE_URL', 'http://localhost:8080'),
+    baseUrl: required('SERVER_BASE_URL', 'http://localhost:4000'),
   },
 };
 

@@ -39,7 +39,17 @@ class BasicReviewViewModel {
         let dataSource = RxTableViewSectionedReloadDataSource<ReviewSectionModel>(
             configureCell: { [weak self] dataSource, tableView, indexPath, item in
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as! ReviewCell
-                cell.setData(data: item, image: self?.model.makeReviewImage(url: item.photoUrl))
+                if (item.photoUrl != nil) {
+                    cell.setData(data: item, isImage: true)
+                    DispatchQueue.global().async {
+                        let image = self?.model.makeReviewImage(url: item.photoUrl)
+                        DispatchQueue.main.async {
+                            cell.setImage(image: image!)
+                        }
+                    }
+                } else {
+                    cell.setData(data: item, isImage: false)
+                }
                 cell.bind((self?.reviewCellViewModel)!)
                 return cell
             })

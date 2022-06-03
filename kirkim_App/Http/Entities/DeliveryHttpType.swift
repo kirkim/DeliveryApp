@@ -16,7 +16,7 @@ enum DeliveryGetType: UrlType {
     case reviewById(id: String)
     
     var url: String {
-        let BASE_URL: String = "https://kirkim.com"
+        let BASE_URL: String = HttpConfig.url
         switch self {
         case .summaryStores(let type):
             return "\(BASE_URL)/delivery/summary?type=\(type.rawValue)"

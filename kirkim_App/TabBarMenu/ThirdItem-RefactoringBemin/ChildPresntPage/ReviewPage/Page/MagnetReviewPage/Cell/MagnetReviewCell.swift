@@ -46,20 +46,23 @@ class MagnetReviewCell: UITableViewCell {
         self.selectionStyle = .none
     }
     
-    func setData(data: ReviewItem, image: UIImage?) {
+    func setData(data: ReviewItem, isImage: Bool) {
         self.userInfo = data.userInfo
         self.nameLabel.text = data.userInfo.name
         self.ratingLabel.text = setStar(rating: data.rating)
         self.dateLabel.text = parsingDate(date: data.createAt).description
         self.reviewLabel.text = data.description
         self.reviewLabel.numberOfLines = 0
-        if (image != nil) {
-            self.photoImageView.image = image
+        if (isImage == true) {
 //            photoImageView.contentMode = .scaleAspectFill
             self.imageViewHeightConstraint.constant = self.photoImageView.frame.width
         } else {
             self.imageViewHeightConstraint.constant = 0
         }
+    }
+    
+    func setImage(image: UIImage) {
+        self.photoImageView.image = image
     }
     
     private func parsingDate(date: String) -> String {

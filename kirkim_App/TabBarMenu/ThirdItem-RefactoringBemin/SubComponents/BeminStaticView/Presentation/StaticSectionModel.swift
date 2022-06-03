@@ -54,7 +54,7 @@ struct StaticSectionModel {
                 return vc
             }
             .asDriver(onErrorJustReturn: UIViewController())
-        let BASE_URL = "https://kirkim.com/banner"
+        let BASE_URL = "\(HttpConfig.url)/banner"
         bannerSource = BannerSources(
             bannerType: .event,
             title: "이벤트",

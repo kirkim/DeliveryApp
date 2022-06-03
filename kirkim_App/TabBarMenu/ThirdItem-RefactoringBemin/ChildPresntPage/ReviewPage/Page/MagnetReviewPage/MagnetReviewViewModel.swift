@@ -75,7 +75,17 @@ class MagnetReviewViewModel {
                     return cell
                 case .reviewSection(items: let items):
                     let cell = tableView.dequeueReusableCell(withIdentifier: "MagnetReviewCell", for: indexPath) as! MagnetReviewCell
-                    cell.setData(data: items[indexPath.row], image: self?.model.makeReviewImage(url: items[indexPath.row].photoUrl))
+                    if (items[indexPath.row].photoUrl != nil) {
+                        cell.setData(data: items[indexPath.row], isImage: true)
+                        DispatchQueue.global().async {
+                            let image = self?.model.makeReviewImage(url: items[indexPath.row].photoUrl)
+                            DispatchQueue.main.async {
+                                cell.setImage(image: image!)
+                            }
+                        }
+                    } else {
+                        cell.setData(data: items[indexPath.row], isImage: false)
+                    }
                     cell.bind((self?.cellViewModel)!)
                     return cell
                 }

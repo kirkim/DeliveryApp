@@ -32,7 +32,9 @@ class MagnetReviewModel {
             let imageUrl = URL(string: url)
             let data = try? Data(contentsOf: imageUrl!)
             let image = UIImage(data: data!)
-            if let image = image { self.reviewImageStorage.updateValue(image, forKey: url) }
+            DispatchQueue.main.async {
+                if let image = image { self.reviewImageStorage.updateValue(image, forKey: url) }
+            }
             return image ?? UIImage()
         }
     }

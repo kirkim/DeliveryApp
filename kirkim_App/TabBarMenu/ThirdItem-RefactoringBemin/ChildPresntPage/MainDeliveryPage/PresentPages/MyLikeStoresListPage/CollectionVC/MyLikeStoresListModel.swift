@@ -62,8 +62,8 @@ class MyLikeStoresListModel {
             return MenuImageStorage[urlString]!
         } else {
             guard let url = URL(string: urlString) else { return UIImage(systemName: "circle")! }
-            let data = try? Data(contentsOf: url)
-            let image = UIImage(data: data!)
+            guard let data = try? Data(contentsOf: url) else { return UIImage(systemName: "circle")! }
+            let image = UIImage(data: data)
             if let image = image { self.MenuImageStorage.updateValue(image, forKey: urlString) }
             return image ?? UIImage()
         }
