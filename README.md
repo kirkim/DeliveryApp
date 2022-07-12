@@ -37,14 +37,30 @@
 
 <img src="https://kirkim.github.io/assets/storage/deliveryApp/set1.png" style="width:600px">
 
+<br><br>
+내가 쓴 리뷰 페이지에서 매장이름을 클릭하면 해당매장의 페이지로 이동할 수 있습니다.
+
 <img src="https://kirkim.github.io/assets/storage/deliveryApp/set2.png" style="width:600px">
+
+<br><br>
+클릭한 셀과 일치하는 슬롯으로 이동합니다. 위쪽의 탭바 혹은 가로방향 스크롤로 슬롯이동이 가능합니다.
 
 <img src="https://kirkim.github.io/assets/storage/deliveryApp/set3.png" style="width:600px">
 
+<br><br>
+매장리뷰페이지에서 유저이름을 클릭하면 해당유저의 리뷰목록페이지로 이동할 수 있습니다.
+<br>메뉴페이지에서는 각섹션별 조건(최소 2개이상, 최소 1개이상 등등..)을 모두 만족하면 장바구니에 추가할 수 있습니다.
+
 <img src="https://kirkim.github.io/assets/storage/deliveryApp/set4.png" style="width:600px">
+
+<br><br>
+장바구니에 메뉴가 1개이상 있을 경우 장바구니 아이콘이 표시됩니다.
+<br>기존 메뉴가 있는경우 다른매장의 메뉴는 담을 수 없으며, 담을 경우 확인용 Alert창이 나타나 기존메뉴를 없애고 담아줄 수 있습니다.
+<br>장바구니페이지에서 메뉴의 갯수를 조정할 수 있습니다.
 
 <img src="https://kirkim.github.io/assets/storage/deliveryApp/set5.png" style="width:600px">
 
+<br><br>
 아래의 지도앱은 M1맥의 시뮬레이터에서 제대로 실행되지 않는 이슈가 있어서 레퍼지토리를 분리하였습니다. 👉🏻 <a href="https://github.com/kirkim/PracticeKakaoMap">카카오맵레퍼지토리</a>
 <br>(M1맥에서 xcode를 로제타로 실행하기로 하거나, 모바일로 직접실행하면 제대로 작동하지만 개발시간이 오래걸리기 때문에 가장 마지막에 합칠 예정입니다.)
 
