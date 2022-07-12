@@ -44,3 +44,8 @@
 <img src="https://kirkim.github.io/assets/storage/deliveryApp/set4.png" style="width:600px">
 
 <img src="https://kirkim.github.io/assets/storage/deliveryApp/set5.png" style="width:600px">
+
+아래의 지도앱은 M1맥의 시뮬레이터에서 제대로 실행되지 않는 이슈가 있어서 레퍼지토리를 분리하였습니다. 👉🏻 <a href="https://github.com/kirkim/PracticeKakaoMap">카카오맵레퍼지토리</a>
+<br>(M1맥에서 xcode를 로제타로 실행하기로 하거나, 모바일로 직접실행하면 제대로 작동하지만 개발시간이 오래걸리기 때문에 가장 마지막에 합칠 예정입니다.)
+
+<img src="https://kirkim.github.io/assets/storage/deliveryApp/set6.png" style="width:600px">
