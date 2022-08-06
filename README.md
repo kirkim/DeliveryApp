@@ -36,6 +36,15 @@
 ---
 # 📲 화면구성
 
+단순히 UI만 구현한 것이 아닌 내부기능(장바구니, 가게타입분류, 음식담기버튼 활성화조건, 리뷰목록에서 작성자클릭시 해당작성자리뷰목록창열기, 장바구니가게명클릭시 해당가게창열기 등등..) 디테일하게 구현하고자 노력했습니다.
+
+|1|2|3|4|
+|:--:|:--:|:--:|:--:|
+|<img src="https://kirkim.github.io/assets/storage/deliveryApp/delivery4.gif" style="width:200px">|<img src="https://kirkim.github.io/assets/storage/deliveryApp/delivery1.gif" style="width:200px">|<img src="https://kirkim.github.io/assets/storage/deliveryApp/delivery2.gif" style="width:200px">|<img src="https://kirkim.github.io/assets/storage/deliveryApp/delivery3.gif" style="width:200px">|
+
+<br><br>
+
+로그인화면과 회원가입화면입니다. (apple로그인, kakao로그인 기능을 추가할 예정입니다)
 <img src="https://kirkim.github.io/assets/storage/deliveryApp/set1.png" style="width:600px">
 
 <br><br>
